@@ -5,8 +5,13 @@ import os
 BASE_URL = "https://weights.replicate.delivery/default/comfy-ui"
 BASE_PATH = "ComfyUI/models"
 
-CHECKPOINTS = ["v1-5-pruned-emaonly.ckpt", "512-inpainting-ema.safetensors"]
+CHECKPOINTS = [
+    "sd_xl_base_1.0.safetensors",
+    "v1-5-pruned-emaonly.ckpt",
+    "512-inpainting-ema.safetensors",
+]
 UPSCALE_MODELS = ["RealESRGAN_x2.pth", "RealESRGAN_x4.pth", "RealESRGAN_x8.pth"]
+CLIP_VISION = ["clip_vision_g.safetensors"]
 
 
 def generate_weights_map(keys, dest):
@@ -22,6 +27,7 @@ def generate_weights_map(keys, dest):
 WEIGHTS_MAP = {
     **generate_weights_map(CHECKPOINTS, "checkpoints"),
     **generate_weights_map(UPSCALE_MODELS, "upscale_models"),
+    **generate_weights_map(CLIP_VISION, "clip_vision"),
 }
 
 
