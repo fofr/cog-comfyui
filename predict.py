@@ -5,8 +5,9 @@ from cog import BasePredictor, Input, Path
 from comfyui_helpers import ComfyUIHelpers
 
 OUTPUT_DIR = "/tmp/outputs"
+INPUT_DIR = "/tmp/inputs"
 
-with open("workflow_api_json.json", "r") as file:
+with open("workflow_api_img2img.json", "r") as file:
     WORKFLOW_JSON = file.read()
 
 
@@ -20,9 +21,10 @@ class Predictor(BasePredictor):
         workflow_json: str = Input(description="JSON workflow", default=False),
     ) -> List[Path]:
         """Run a single prediction on the model"""
-        if os.path.exists(OUTPUT_DIR):
-            shutil.rmtree(OUTPUT_DIR)
-        os.makedirs(OUTPUT_DIR)
+        for directory in [OUTPUT_DIR, INPUT_DIR]:
+            if os.path.exists(directory):
+                shutil.rmtree(directory)
+            os.makedirs(directory)
 
         wf = self.comfyUI.load_workflow(workflow_json or WORKFLOW_JSON)
         self.comfyUI.connect()

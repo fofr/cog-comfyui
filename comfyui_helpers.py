@@ -1,3 +1,5 @@
+import os
+import urllib.request
 import subprocess
 import threading
 import time
@@ -57,6 +59,26 @@ class ComfyUIHelpers:
             print("Checking weights: ", weight)
             WeightsDownloader.download_weights(weight)
 
+
+    def download_inputs(self, workflow):
+        print("Starting to download inputs...")
+        image_filetypes = [".png", ".jpg", ".jpeg"]
+        download_directory = "/tmp/inputs"
+        os.makedirs(download_directory, exist_ok=True)
+
+        for node in workflow.values():
+            if "inputs" in node:
+                for input_key, input_value in node["inputs"].items():
+                    if isinstance(input_value, str):
+                        if any(input_value.endswith(ft) for ft in image_filetypes) or input_value.startswith(('http://', 'https://')):
+                            filename = os.path.join(download_directory, os.path.basename(input_value))
+                            print(f"Downloading input: {input_value} to {filename}")
+                            urllib.request.urlretrieve(input_value, filename)
+                            node["inputs"][input_key] = filename
+                            print(f'[!] {node["inputs"]}')
+        print("Finished downloading inputs.")
+
+
     def connect(self):
         self.client_id = str(uuid.uuid4())
         self.ws = websocket.WebSocket()
@@ -92,6 +114,7 @@ class ComfyUIHelpers:
         # If vanilla we should convert it to API JSON
         wf = json.loads(workflow)
         self.download_weights(wf)
+        self.download_inputs(wf)
         return wf
 
     def run_workflow(self, workflow):
