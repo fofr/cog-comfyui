@@ -13,6 +13,7 @@ CHECKPOINTS = [
 ]
 UPSCALE_MODELS = ["RealESRGAN_x2.pth", "RealESRGAN_x4.pth", "RealESRGAN_x8.pth"]
 CLIP_VISION = ["clip_vision_g.safetensors"]
+LORAS = ["lcm_lora_sdxl.safetensors"]
 
 
 def generate_weights_map(keys, dest):
@@ -29,6 +30,7 @@ WEIGHTS_MAP = {
     **generate_weights_map(CHECKPOINTS, "checkpoints"),
     **generate_weights_map(UPSCALE_MODELS, "upscale_models"),
     **generate_weights_map(CLIP_VISION, "clip_vision"),
+    **generate_weights_map(LORAS, "loras"),
 }
 
 
