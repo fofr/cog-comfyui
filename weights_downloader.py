@@ -1,7 +1,6 @@
 import subprocess
 import time
 import os
-import shutil
 
 BASE_URL = "https://weights.replicate.delivery/default/comfy-ui"
 BASE_PATH = "ComfyUI/models"
@@ -9,6 +8,10 @@ BASE_PATH = "ComfyUI/models"
 WEIGHTS_MAP = {
     "v1-5-pruned-emaonly.ckpt": {
         "url": f"{BASE_URL}/v1-5-pruned-emaonly.tar",
+        "dest": f"{BASE_PATH}/checkpoints",
+    },
+    "512-inpainting-ema.safetensors": {
+        "url": f"{BASE_URL}/512-inpainting-ema.tar",
         "dest": f"{BASE_PATH}/checkpoints",
     }
 }
