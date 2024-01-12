@@ -59,7 +59,6 @@ class ComfyUIHelpers:
             print("Checking weights: ", weight)
             WeightsDownloader.download_weights(weight)
 
-
     def download_inputs(self, workflow):
         print("Starting to download inputs...")
         image_filetypes = [".png", ".jpg", ".jpeg"]
@@ -70,14 +69,17 @@ class ComfyUIHelpers:
             if "inputs" in node:
                 for input_key, input_value in node["inputs"].items():
                     if isinstance(input_value, str):
-                        if any(input_value.endswith(ft) for ft in image_filetypes) or input_value.startswith(('http://', 'https://')):
-                            filename = os.path.join(download_directory, os.path.basename(input_value))
+                        if any(
+                            input_value.endswith(ft) for ft in image_filetypes
+                        ) or input_value.startswith(("http://", "https://")):
+                            filename = os.path.join(
+                                download_directory, os.path.basename(input_value)
+                            )
                             print(f"Downloading input: {input_value} to {filename}")
                             urllib.request.urlretrieve(input_value, filename)
                             node["inputs"][input_key] = filename
                             print(f'[!] {node["inputs"]}')
         print("Finished downloading inputs.")
-
 
     def connect(self):
         self.client_id = str(uuid.uuid4())
@@ -110,9 +112,13 @@ class ComfyUIHelpers:
                 continue
 
     def load_workflow(self, workflow):
-        # TODO: Check if workflow is API JSON or vanilla
-        # If vanilla we should convert it to API JSON
         wf = json.loads(workflow)
+
+        if any(key in wf.keys() for key in ["last_node_id", "last_link_id", "version"]):
+            raise ValueError(
+                "You need to use the API JSON version of a ComfyUI workflow. To do this go to your ComfyUI settings and turn on 'Enable Dev mode Options'. Then you can save your ComfyUI workflow via the 'Save (API Format)' button."
+            )
+
         self.download_weights(wf)
         self.download_inputs(wf)
         return wf
