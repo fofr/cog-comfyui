@@ -8,6 +8,7 @@ BASE_PATH = "ComfyUI/models"
 CHECKPOINTS = [
     "sd_xl_base_1.0.safetensors",
     "sd_xl_refiner_1.0.safetensors",
+    "sd_xl_turbo_1.0_fp16.safetensors",
     "v2-1_768-ema-pruned.ckpt",
     "v1-5-pruned-emaonly.ckpt",
     "512-inpainting-ema.safetensors",

@@ -6,8 +6,9 @@ from comfyui_helpers import ComfyUIHelpers
 
 OUTPUT_DIR = "/tmp/outputs"
 INPUT_DIR = "/tmp/inputs"
+COMFYUI_TEMP_OUTPUT_DIR = "ComfyUI/temp"
 
-with open("examples/upscale.json", "r") as file:
+with open("examples/sdxlturbo_example.json", "r") as file:
     EXAMPLE_WORKFLOW_JSON = file.read()
 
 
@@ -21,7 +22,7 @@ class Predictor(BasePredictor):
         workflow_json: str = Input(description="JSON workflow", default=""),
     ) -> List[Path]:
         """Run a single prediction on the model"""
-        for directory in [OUTPUT_DIR, INPUT_DIR]:
+        for directory in [OUTPUT_DIR, INPUT_DIR, COMFYUI_TEMP_OUTPUT_DIR]:
             if os.path.exists(directory):
                 shutil.rmtree(directory)
             os.makedirs(directory)
@@ -31,7 +32,8 @@ class Predictor(BasePredictor):
         self.comfyUI.run_workflow(wf)
 
         return [
-            Path(os.path.join(OUTPUT_DIR, f))
-            for f in os.listdir(OUTPUT_DIR)
-            if os.path.isfile(os.path.join(OUTPUT_DIR, f))
+            Path(os.path.join(directory, f))
+            for directory in [OUTPUT_DIR, COMFYUI_TEMP_OUTPUT_DIR]
+            for f in os.listdir(directory)
+            if os.path.isfile(os.path.join(directory, f))
         ]
