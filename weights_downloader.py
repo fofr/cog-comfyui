@@ -12,6 +12,8 @@ CHECKPOINTS = [
     "v2-1_768-ema-pruned.ckpt",
     "v1-5-pruned-emaonly.ckpt",
     "512-inpainting-ema.safetensors",
+    "svd.safetensors",
+    "svd_xt.safetensors",
 ]
 UPSCALE_MODELS = [
     "RealESRGAN_x2.pth",
