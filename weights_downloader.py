@@ -13,6 +13,10 @@ WEIGHTS_MAP = {
     "512-inpainting-ema.safetensors": {
         "url": f"{BASE_URL}/512-inpainting-ema.tar",
         "dest": f"{BASE_PATH}/checkpoints",
+    },
+    "RealESRGAN_x2.pth": {
+        "url": f"{BASE_URL}/RealESRGAN_x2.tar",
+        "dest": f"{BASE_PATH}/upscale_models",
     }
 }
 

@@ -44,7 +44,7 @@ class ComfyUIHelpers:
 
     def download_weights(self, workflow):
         weights_to_download = []
-        weights_filetypes = [".ckpt", ".safetensors"]
+        weights_filetypes = [".ckpt", ".safetensors", ".pth", ".bin"]
         for node in workflow.values():
             if "inputs" in node:
                 for input in node["inputs"].values():
@@ -53,7 +53,7 @@ class ComfyUIHelpers:
                     ):
                         weights_to_download.append(input)
 
-        weights_to_download = [w.lower().replace("_", "-") for w in weights_to_download]
+        # weights_to_download = [w.lower().replace("_", "-") for w in weights_to_download]
 
         for weight in weights_to_download:
             print("Checking weights: ", weight)
