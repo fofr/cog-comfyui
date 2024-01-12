@@ -13,7 +13,11 @@ CHECKPOINTS = [
 ]
 UPSCALE_MODELS = ["RealESRGAN_x2.pth", "RealESRGAN_x4.pth", "RealESRGAN_x8.pth"]
 CLIP_VISION = ["clip_vision_g.safetensors"]
-LORAS = ["lcm_lora_sdxl.safetensors"]
+LORAS = [
+    "lcm_lora_sdxl.safetensors",
+    "lcm-lora-sdv1-5.safetensors",
+    "lcm-lora-ssd-1b.safetensors",
+]
 
 
 def generate_weights_map(keys, dest):
