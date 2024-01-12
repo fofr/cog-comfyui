@@ -5,7 +5,9 @@ import json
 import urllib
 import uuid
 import json
+import os
 import websocket
+from weights_downloader import WeightsDownloader
 from urllib.error import URLError
 
 
@@ -38,6 +40,23 @@ class ComfyUIHelpers:
         except URLError:
             return False
 
+    def download_weights(self, workflow):
+        weights_to_download = []
+        weights_filetypes = [".ckpt", ".safetensors"]
+        for node in workflow.values():
+            if "inputs" in node:
+                for input in node["inputs"].values():
+                    if isinstance(input, str) and any(
+                        input.endswith(ft) for ft in weights_filetypes
+                    ):
+                        weights_to_download.append(input)
+
+        weights_to_download = [w.lower().replace("_", "-") for w in weights_to_download]
+
+        for weight in weights_to_download:
+            print("Checking weights: ", weight)
+            WeightsDownloader.download_weights(weight)
+
     def connect(self):
         self.client_id = str(uuid.uuid4())
         self.ws = websocket.WebSocket()
@@ -69,10 +88,13 @@ class ComfyUIHelpers:
                 continue
 
     def load_workflow(self, workflow):
-        return json.loads(workflow)
+        # TODO: Check if workflow is API JSON or vanilla
+        # If vanilla we should convert it to API JSON
+        wf = json.loads(workflow)
+        self.download_weights(wf)
+        return wf
 
-    def run_workflow(self, workflow_json):
-        workflow = self.load_workflow(workflow_json)
+    def run_workflow(self, workflow):
         prompt_id = self.queue_prompt(workflow)
         self.wait_for_prompt_completion(prompt_id)
         output_json = self.get_history(prompt_id)

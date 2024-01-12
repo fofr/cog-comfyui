@@ -17,15 +17,16 @@ class Predictor(BasePredictor):
 
     def predict(
         self,
-        workflow_json: str = Input(description="JSON workflow"),
+        workflow_json: str = Input(description="JSON workflow", default=False),
     ) -> List[Path]:
         """Run a single prediction on the model"""
         if os.path.exists(OUTPUT_DIR):
             shutil.rmtree(OUTPUT_DIR)
         os.makedirs(OUTPUT_DIR)
 
+        wf = self.comfyUI.load_workflow(workflow_json or WORKFLOW_JSON)
         self.comfyUI.connect()
-        self.comfyUI.run_workflow(WORKFLOW_JSON)
+        self.comfyUI.run_workflow(wf)
 
         return [
             Path(os.path.join(OUTPUT_DIR, f))
