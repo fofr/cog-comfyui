@@ -7,8 +7,8 @@ from comfyui_helpers import ComfyUIHelpers
 OUTPUT_DIR = "/tmp/outputs"
 INPUT_DIR = "/tmp/inputs"
 
-with open("workflow_api_img2img.json", "r") as file:
-    WORKFLOW_JSON = file.read()
+with open("examples/upscale.json", "r") as file:
+    EXAMPLE_WORKFLOW_JSON = file.read()
 
 
 class Predictor(BasePredictor):
@@ -26,7 +26,7 @@ class Predictor(BasePredictor):
                 shutil.rmtree(directory)
             os.makedirs(directory)
 
-        wf = self.comfyUI.load_workflow(workflow_json or WORKFLOW_JSON)
+        wf = self.comfyUI.load_workflow(workflow_json or EXAMPLE_WORKFLOW_JSON)
         self.comfyUI.connect()
         self.comfyUI.run_workflow(wf)
 

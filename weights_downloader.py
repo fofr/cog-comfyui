@@ -5,19 +5,23 @@ import os
 BASE_URL = "https://weights.replicate.delivery/default/comfy-ui"
 BASE_PATH = "ComfyUI/models"
 
-WEIGHTS_MAP = {
-    "v1-5-pruned-emaonly.ckpt": {
-        "url": f"{BASE_URL}/v1-5-pruned-emaonly.tar",
-        "dest": f"{BASE_PATH}/checkpoints",
-    },
-    "512-inpainting-ema.safetensors": {
-        "url": f"{BASE_URL}/512-inpainting-ema.tar",
-        "dest": f"{BASE_PATH}/checkpoints",
-    },
-    "RealESRGAN_x2.pth": {
-        "url": f"{BASE_URL}/RealESRGAN_x2.tar",
-        "dest": f"{BASE_PATH}/upscale_models",
+CHECKPOINTS = ["v1-5-pruned-emaonly.ckpt", "512-inpainting-ema.safetensors"]
+UPSCALE_MODELS = ["RealESRGAN_x2.pth", "RealESRGAN_x4.pth", "RealESRGAN_x8.pth"]
+
+
+def generate_weights_map(keys, dest):
+    return {
+        key: {
+            "url": f"{BASE_URL}/{os.path.splitext(key)[0]}.tar",
+            "dest": f"{BASE_PATH}/{dest}",
+        }
+        for key in keys
     }
+
+
+WEIGHTS_MAP = {
+    **generate_weights_map(CHECKPOINTS, "checkpoints"),
+    **generate_weights_map(UPSCALE_MODELS, "upscale_models"),
 }
 
 
