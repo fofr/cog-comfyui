@@ -18,7 +18,7 @@ class Predictor(BasePredictor):
 
     def predict(
         self,
-        workflow_json: str = Input(description="JSON workflow", default=False),
+        workflow_json: str = Input(description="JSON workflow", default=""),
     ) -> List[Path]:
         """Run a single prediction on the model"""
         for directory in [OUTPUT_DIR, INPUT_DIR]:
