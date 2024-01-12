@@ -2,3 +2,5 @@
 *.png
 *.ckpt
 *.safetensors
+*.pth
+*.bin
