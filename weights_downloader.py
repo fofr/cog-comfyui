@@ -12,7 +12,12 @@ CHECKPOINTS = [
     "v1-5-pruned-emaonly.ckpt",
     "512-inpainting-ema.safetensors",
 ]
-UPSCALE_MODELS = ["RealESRGAN_x2.pth", "RealESRGAN_x4.pth", "RealESRGAN_x8.pth"]
+UPSCALE_MODELS = [
+    "RealESRGAN_x2.pth",
+    "RealESRGAN_x4.pth",
+    "RealESRGAN_x8.pth",
+    "RealESRGAN_x4plus.pth",
+]
 CLIP_VISION = ["clip_vision_g.safetensors"]
 LORAS = [
     "lcm_lora_sdxl.safetensors",
