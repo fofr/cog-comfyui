@@ -20,6 +20,10 @@ class Predictor(BasePredictor):
     def predict(
         self,
         workflow_json: str = Input(description="JSON workflow", default=""),
+        return_temp_files: bool = Input(
+            description="Return temp files, such as preprocessed controlnet images. Useful for debugging.",
+            default=False,
+        ),
     ) -> List[Path]:
         """Run a single prediction on the model"""
         for directory in [OUTPUT_DIR, INPUT_DIR, COMFYUI_TEMP_OUTPUT_DIR]:
@@ -45,7 +49,11 @@ class Predictor(BasePredictor):
             return files
 
         files = []
-        for directory in [OUTPUT_DIR, COMFYUI_TEMP_OUTPUT_DIR]:
+        output_directories = [OUTPUT_DIR]
+        if return_temp_files:
+            output_directories.append(COMFYUI_TEMP_OUTPUT_DIR)
+
+        for directory in output_directories:
             print(f"Contents of {directory}:")
             files.extend(log_and_collect_files(directory))
 
