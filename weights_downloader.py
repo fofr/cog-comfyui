@@ -14,6 +14,8 @@ CHECKPOINTS = [
     "512-inpainting-ema.safetensors",
     "svd.safetensors",
     "svd_xt.safetensors",
+    # civit ai
+    "turbovisionxlSuperFastXLBasedOnNew_tvxlV32Bakedvae.safetensors",
 ]
 UPSCALE_MODELS = [
     "RealESRGAN_x2.pth",
@@ -33,8 +35,17 @@ LORAS = [
     "lcm-lora-sdv1-5.safetensors",
     "lcm-lora-ssd-1b.safetensors",
 ]
-CONTROLNET = ["thibaud_xl_openpose.safetensors"]
-IPADAPTER = ["ip-adapter-plus-face_sdxl_vit-h.bin"]
+CONTROLNET = [
+    "controlnet-canny-sdxl-1.0.fp16.safetensors",
+    "controlnet-depth-sdxl-1.0.fp16.safetensors",
+    "thibaud_xl_openpose.safetensors",
+]
+IPADAPTER = [
+    "ip-adapter-plus-face_sdxl_vit-h.bin",
+    "ip-adapter-plus-face_sdxl_vit-h.safetensors",
+    "ip-adapter-plus_sdxl_vit-h.bin",
+    "ip-adapter-plus_sdxl_vit-h.safetensors",
+]
 ONNX = ["yolox_l.onnx", "dw-ll_ucoco_384.onnx"]
 
 
@@ -55,6 +66,7 @@ WEIGHTS_MAP = {
     **generate_weights_map(LORAS, "loras"),
     **generate_weights_map(IPADAPTER, "ipadapter"),
     **generate_weights_map(ONNX, "onnx"),
+    **generate_weights_map(CONTROLNET, "controlnet"),
 }
 
 
@@ -62,7 +74,6 @@ class WeightsDownloader:
     @staticmethod
     def download_weights(weight_str):
         if weight_str in WEIGHTS_MAP:
-            print(f"Weights {weight_str} are available")
             WeightsDownloader.download_if_not_exists(
                 weight_str,
                 WEIGHTS_MAP[weight_str]["url"],

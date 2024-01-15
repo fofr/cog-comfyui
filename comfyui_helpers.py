@@ -53,15 +53,13 @@ class ComfyUIHelpers:
                     ):
                         weights_to_download.append(input)
 
-        # weights_to_download = [w.lower().replace("_", "-") for w in weights_to_download]
-
         for weight in weights_to_download:
-            print("Checking weights: ", weight)
             WeightsDownloader.download_weights(weight)
+            print(f"✅ {weight}")
 
     def download_inputs(self, workflow):
         print("Starting to download inputs...")
-        image_filetypes = [".png", ".jpg", ".jpeg"]
+        image_filetypes = [".png", ".jpg", ".jpeg", ".webp"]
         download_directory = "/tmp/inputs"
         os.makedirs(download_directory, exist_ok=True)
 
@@ -75,11 +73,11 @@ class ComfyUIHelpers:
                             filename = os.path.join(
                                 download_directory, os.path.basename(input_value)
                             )
-                            print(f"Downloading input: {input_value} to {filename}")
-                            urllib.request.urlretrieve(input_value, filename)
+                            if not os.path.exists(filename):
+                                print(f"Downloading {input_value} to {filename}")
+                                urllib.request.urlretrieve(input_value, filename)
                             node["inputs"][input_key] = filename
-                            print(f'[!] {node["inputs"]}')
-        print("Finished downloading inputs.")
+                            print(f"✅ {filename}")
 
     def connect(self):
         self.client_id = str(uuid.uuid4())

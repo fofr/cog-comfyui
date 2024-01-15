@@ -7,8 +7,10 @@
 # List of repositories and their commit hashes to clone
 # Each entry in the array is a string containing the repository URL and the commit hash separated by a space.
 repos=(
-  "https://github.com/cubiq/ComfyUI_IPAdapter_plus.git 4e898fe"
+  "https://github.com/cubiq/ComfyUI_IPAdapter_plus 4e898fe"
   "https://github.com/Fannovel16/comfyui_controlnet_aux 6d6f63c"
+  "https://github.com/ltdrdata/ComfyUI-Inspire-Pack c8231dd"
+  "https://github.com/theUpsider/ComfyUI-Logic fb88973"
 )
 
 # Destination directory

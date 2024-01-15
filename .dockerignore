@@ -4,3 +4,6 @@
 *.safetensors
 *.pth
 *.bin
+ComfyUI/venv
+ComfyUI/temp
+.git/

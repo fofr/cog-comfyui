@@ -31,9 +31,22 @@ class Predictor(BasePredictor):
         self.comfyUI.connect()
         self.comfyUI.run_workflow(wf)
 
-        return [
-            Path(os.path.join(directory, f))
-            for directory in [OUTPUT_DIR, COMFYUI_TEMP_OUTPUT_DIR]
-            for f in os.listdir(directory)
-            if os.path.isfile(os.path.join(directory, f))
-        ]
+        # Log the contents of the temp and output directories recursively
+        def log_and_collect_files(directory, prefix=""):
+            files = []
+            for f in os.listdir(directory):
+                path = os.path.join(directory, f)
+                if os.path.isfile(path):
+                    print(f"{prefix}{f}")
+                    files.append(Path(path))
+                elif os.path.isdir(path):
+                    print(f"{prefix}{f}/")
+                    files.extend(log_and_collect_files(path, prefix=f"{prefix}{f}/"))
+            return files
+
+        files = []
+        for directory in [OUTPUT_DIR, COMFYUI_TEMP_OUTPUT_DIR]:
+            print(f"Contents of {directory}:")
+            files.extend(log_and_collect_files(directory))
+
+        return files

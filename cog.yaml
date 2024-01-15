@@ -20,6 +20,26 @@ build:
     - tqdm
     - psutil
     - websocket-client==1.6.3
+
+    # comfyui_controlnet_aux
+    # https://github.com/Fannovel16/comfyui_controlnet_aux/blob/main/requirements.txt
+    - importlib_metadata
+    - opencv-python-headless>=4.0.1.24
+    - filelock
+    - numpy
+    - einops
+    - pyyaml
+    - scikit-image
+    - python-dateutil
+    - mediapipe
+    - svglib
+    - fvcore
+    - yapf
+    - omegaconf
+    - ftfy
+    - addict
+    - yacs
+    - trimesh[easy]
   run:
     - curl -o /usr/local/bin/pget -L "https://github.com/replicate/pget/releases/download/v0.5.6/pget_linux_x86_64" && chmod +x /usr/local/bin/pget
 predict: "predict.py:Predictor"
