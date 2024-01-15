@@ -28,7 +28,9 @@ def tar_file(filename):
 
 def upload_to_gcloud(local_file, destination_blob_name, subfolder):
     confirm_step(f"About to upload {local_file} to {destination_blob_name}/{subfolder}")
-    subprocess.run(["gcloud", "storage", "cp", local_file, f"{destination_blob_name}/{subfolder}"])
+    subprocess.run(
+        ["gcloud", "storage", "cp", local_file, f"{destination_blob_name}/{subfolder}"]
+    )
     print(f"Successfully uploaded to {destination_blob_name}")
 
 
@@ -40,12 +42,23 @@ def remove_files(*filenames):
 
 
 def get_subfolder():
-    subfolders = ["checkpoints", "upscale_models", "clip_vision", "loras", "ipadapter", "Other"]
+    subfolders = [
+        "checkpoints",
+        "upscale_models",
+        "controlnet",
+        "clip_vision",
+        "loras",
+        "ipadapter",
+        "onnx",
+        "Other",
+    ]
     for i, subfolder in enumerate(subfolders, start=1):
         print(f"{i}. {subfolder}")
-    choice = int(input("Choose the type of file by selecting the corresponding number: "))
+    choice = int(
+        input("Choose the type of file by selecting the corresponding number: ")
+    )
     if choice == len(subfolders):
-        return input("Enter the subfolder name: ")
+        return input("Enter the subfolder name: ") + "/"
     else:
         return subfolders[choice - 1]
 

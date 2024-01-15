@@ -33,8 +33,9 @@ LORAS = [
     "lcm-lora-sdv1-5.safetensors",
     "lcm-lora-ssd-1b.safetensors",
 ]
+CONTROLNET = ["thibaud_xl_openpose.safetensors"]
 IPADAPTER = ["ip-adapter-plus-face_sdxl_vit-h.bin"]
-ONNX = ["yolox_l.onnx"]
+ONNX = ["yolox_l.onnx", "dw-ll_ucoco_384.onnx"]
 
 
 def generate_weights_map(keys, dest):
