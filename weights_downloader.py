@@ -21,13 +21,20 @@ UPSCALE_MODELS = [
     "RealESRGAN_x8.pth",
     "RealESRGAN_x4plus.pth",
 ]
-CLIP_VISION = ["clip_vision_g.safetensors"]
+CLIP_VISION = [
+    "clip_vision_g.safetensors",
+    # https://huggingface.co/h94/IP-Adapter/blob/main/models/image_encoder/model.safetensors
+    "model.15.safetensors",
+    # https://huggingface.co/h94/IP-Adapter/blob/main/sdxl_models/image_encoder/model.safetensors
+    "model.sdxl.safetensors",
+]
 LORAS = [
     "lcm_lora_sdxl.safetensors",
     "lcm-lora-sdv1-5.safetensors",
     "lcm-lora-ssd-1b.safetensors",
 ]
 IPADAPTER = ["ip-adapter-plus-face_sdxl_vit-h.bin"]
+ONNX = ["yolox_l.onnx"]
 
 
 def generate_weights_map(keys, dest):
@@ -46,6 +53,7 @@ WEIGHTS_MAP = {
     **generate_weights_map(CLIP_VISION, "clip_vision"),
     **generate_weights_map(LORAS, "loras"),
     **generate_weights_map(IPADAPTER, "ipadapter"),
+    **generate_weights_map(ONNX, "onnx"),
 }
 
 
