@@ -1,9 +1,30 @@
+__pycache__
+.git/
+
+# Outputs
 *.jpg
 *.png
+
+# Models
 *.ckpt
 *.safetensors
 *.pth
 *.bin
+*.pt
+*.onnx
+
+# ComfyUI
 ComfyUI/venv
 ComfyUI/temp
-.git/
+ComfyUI/user
+ComfyUI/models
+ComfyUI/custom_nodes/comfyUI_controlnet_aux/ckpts
+
+# ComfyUI bits we just don’t need
+ComfyUI/tests
+ComfyUI/tests-ui
+ComfyUI/notebooks
+ComfyUI/script_examples
+ComfyUI/.github
+ComfyUI/.ci
+ComfyUI/comfyui_screenshot.png
