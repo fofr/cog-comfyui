@@ -18,6 +18,8 @@ class ComfyUIHelpers:
         self.server_address = server_address
 
     def start_server(self, output_directory):
+        self.download_pre_start_models()
+
         server_thread = threading.Thread(
             target=self.run_server, args=(output_directory,)
         )
@@ -42,10 +44,21 @@ class ComfyUIHelpers:
         except URLError:
             return False
 
+    def download_pre_start_models(self):
+        # Some models need to be downloaded and loaded before starting ComfyUI
+        WeightsDownloader.download_torch_checkpoints()
+
+    def controlnet_aux_weights_mapping(self):
+        return {"Zoe-DepthMapPreprocessor": "ZoeD_M12_N.pt"}
+
     def download_weights(self, workflow):
         weights_to_download = []
-        weights_filetypes = [".ckpt", ".safetensors", ".pth", ".bin", ".onnx"]
+        weights_filetypes = [".ckpt", ".safetensors", ".pt", ".pth", ".bin", ".onnx"]
+        controlnet_aux_weights = self.controlnet_aux_weights_mapping()
+
         for node in workflow.values():
+            if "class_type" in node and node["class_type"] in controlnet_aux_weights:
+                weights_to_download.append(controlnet_aux_weights[node["class_type"]])
             if "inputs" in node:
                 for input in node["inputs"].values():
                     if isinstance(input, str) and any(

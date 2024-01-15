@@ -50,6 +50,7 @@ IPADAPTER = [
 CONTROLNET_AUX_MODELS = {
     "dw-ll_ucoco_384.onnx": "yzd-v/DWPose",
     "yolox_l.onnx": "yzd-v/DWPose",
+    "ZoeD_M12_N.pt": "lllyasviel/Annotators",
 }
 
 
@@ -62,6 +63,7 @@ def generate_weights_map(keys, dest):
         for key in keys
     }
 
+
 def generate_controlnet_aux_weights_map(keys):
     return {
         key: {
@@ -70,6 +72,7 @@ def generate_controlnet_aux_weights_map(keys):
         }
         for key in keys
     }
+
 
 WEIGHTS_MAP = {
     **generate_weights_map(CHECKPOINTS, "checkpoints"),
@@ -95,6 +98,14 @@ class WeightsDownloader:
             raise ValueError(
                 f"{weight_str} not available. Available weights are: {', '.join(WEIGHTS_MAP.keys())}"
             )
+
+    @staticmethod
+    def download_torch_checkpoints():
+        WeightsDownloader.download_if_not_exists(
+            "mobilenet_v2-b0353104.pth",
+            f"{BASE_URL}/comfyui_controlnet_aux/mobilenet_v2-b0353104.pth.tar",
+            "/root/.cache/torch/hub/checkpoints/"
+        )
 
     @staticmethod
     def download_if_not_exists(weight_str, url, dest):
