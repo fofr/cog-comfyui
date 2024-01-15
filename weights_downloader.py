@@ -46,7 +46,11 @@ IPADAPTER = [
     "ip-adapter-plus_sdxl_vit-h.bin",
     "ip-adapter-plus_sdxl_vit-h.safetensors",
 ]
-ONNX = ["yolox_l.onnx", "dw-ll_ucoco_384.onnx"]
+
+CONTROLNET_AUX_MODELS = {
+    "dw-ll_ucoco_384.onnx": "yzd-v/DWPose",
+    "yolox_l.onnx": "yzd-v/DWPose",
+}
 
 
 def generate_weights_map(keys, dest):
@@ -58,6 +62,14 @@ def generate_weights_map(keys, dest):
         for key in keys
     }
 
+def generate_controlnet_aux_weights_map(keys):
+    return {
+        key: {
+            "url": f"{BASE_URL}/comfyui_controlnet_aux/{key}.tar",
+            "dest": f"ComfyUI/custom_nodes/comfyui_controlnet_aux/ckpts/{keys[key]}",
+        }
+        for key in keys
+    }
 
 WEIGHTS_MAP = {
     **generate_weights_map(CHECKPOINTS, "checkpoints"),
@@ -65,8 +77,8 @@ WEIGHTS_MAP = {
     **generate_weights_map(CLIP_VISION, "clip_vision"),
     **generate_weights_map(LORAS, "loras"),
     **generate_weights_map(IPADAPTER, "ipadapter"),
-    **generate_weights_map(ONNX, "onnx"),
     **generate_weights_map(CONTROLNET, "controlnet"),
+    **generate_controlnet_aux_weights_map(CONTROLNET_AUX_MODELS),
 }
 
 
