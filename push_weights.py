@@ -19,16 +19,16 @@ def download_file(url, filename=None):
 
 
 def tar_file(filename):
-    tar_filename = filename.split(".")[0] + ".tar"
+    tar_filename = filename + ".tar"
     confirm_step(f"About to tar file {filename} and save as {tar_filename}")
     subprocess.run(["tar", "-cvf", tar_filename, filename])
     print(f"Successfully tarred {filename} to {tar_filename}")
     return tar_filename
 
 
-def upload_to_gcloud(local_file, destination_blob_name):
-    confirm_step(f"About to upload {local_file} to {destination_blob_name}")
-    subprocess.run(["gcloud", "storage", "cp", local_file, destination_blob_name])
+def upload_to_gcloud(local_file, destination_blob_name, subfolder):
+    confirm_step(f"About to upload {local_file} to {destination_blob_name}/{subfolder}")
+    subprocess.run(["gcloud", "storage", "cp", local_file, f"{destination_blob_name}/{subfolder}"])
     print(f"Successfully uploaded to {destination_blob_name}")
 
 
@@ -37,6 +37,17 @@ def remove_files(*filenames):
     for filename in filenames:
         os.remove(filename)
         print(f"Successfully removed {filename}")
+
+
+def get_subfolder():
+    subfolders = ["checkpoints", "upscale_models", "clip_vision", "loras", "ipadapter", "Other"]
+    for i, subfolder in enumerate(subfolders, start=1):
+        print(f"{i}. {subfolder}")
+    choice = int(input("Choose the type of file by selecting the corresponding number: "))
+    if choice == len(subfolders):
+        return input("Enter the subfolder name: ")
+    else:
+        return subfolders[choice - 1]
 
 
 def main():
@@ -52,7 +63,8 @@ def main():
 
     local_file = download_file(args.url, args.filename)
     tarred_file = tar_file(local_file)
-    upload_to_gcloud(tarred_file, "gs://replicate-weights/comfy-ui/" + tarred_file)
+    subfolder = get_subfolder()
+    upload_to_gcloud(tarred_file, "gs://replicate-weights/comfy-ui", subfolder)
     remove_files(local_file, tarred_file)
 
 

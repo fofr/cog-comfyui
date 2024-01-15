@@ -27,12 +27,13 @@ LORAS = [
     "lcm-lora-sdv1-5.safetensors",
     "lcm-lora-ssd-1b.safetensors",
 ]
+IPADAPTER = ["ip-adapter-plus-face_sdxl_vit-h.bin"]
 
 
 def generate_weights_map(keys, dest):
     return {
         key: {
-            "url": f"{BASE_URL}/{os.path.splitext(key)[0]}.tar",
+            "url": f"{BASE_URL}/{dest}/{key}.tar",
             "dest": f"{BASE_PATH}/{dest}",
         }
         for key in keys
@@ -44,6 +45,7 @@ WEIGHTS_MAP = {
     **generate_weights_map(UPSCALE_MODELS, "upscale_models"),
     **generate_weights_map(CLIP_VISION, "clip_vision"),
     **generate_weights_map(LORAS, "loras"),
+    **generate_weights_map(IPADAPTER, "ipadapter"),
 }
 
 
