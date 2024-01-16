@@ -31,6 +31,9 @@ class Predictor(BasePredictor):
                 shutil.rmtree(directory)
             os.makedirs(directory)
 
+        # TODO: Record the previous models loaded
+        # If different, run /free to free up models and memory
+
         wf = self.comfyUI.load_workflow(workflow_json or EXAMPLE_WORKFLOW_JSON)
         self.comfyUI.connect()
         self.comfyUI.run_workflow(wf)
