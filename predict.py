@@ -38,10 +38,10 @@ class Predictor(BasePredictor):
         else:
             raise ValueError(f"Unsupported file type: {file_extension}")
 
-        print('====================================')
+        print("====================================")
         print(f"Inputs uploaded to {INPUT_DIR}:")
         self.log_and_collect_files(INPUT_DIR)
-        print('====================================')
+        print("====================================")
 
     def log_and_collect_files(self, directory, prefix=""):
         files = []

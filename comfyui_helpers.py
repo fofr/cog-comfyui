@@ -74,7 +74,7 @@ class ComfyUIHelpers:
             WeightsDownloader.download_weights(weight)
             print(f"✅ {weight}")
 
-        print('====================================')
+        print("====================================")
 
     def handle_inputs(self, workflow):
         print("Checking inputs")
@@ -98,27 +98,25 @@ class ComfyUIHelpers:
                             node["inputs"][input_key] = filename
                             print(f"✅ {filename}")
 
-        print('====================================')
+        print("====================================")
 
     def connect(self):
         self.client_id = str(uuid.uuid4())
         self.ws = websocket.WebSocket()
-        self.ws.connect(
-            "ws://{}/ws?clientId={}".format(self.server_address, self.client_id)
-        )
+        self.ws.connect(f"ws://{self.server_address}/ws?clientId={self.client_id}")
 
     def queue_prompt(self, prompt):
         # Prompt is the loaded workflow (prompt is the label comfyUI uses)
         p = {"prompt": prompt, "client_id": self.client_id}
         data = json.dumps(p).encode("utf-8")
         req = urllib.request.Request(
-            "http://{}/prompt".format(self.server_address), data=data
+            f"http://{self.server_address}/prompt?{self.client_id}", data=data
         )
 
         output = json.loads(urllib.request.urlopen(req).read())
         return output["prompt_id"]
 
-    def wait_for_prompt_completion(self, prompt_id):
+    def wait_for_prompt_completion(self, workflow, prompt_id):
         while True:
             out = self.ws.recv()
             if isinstance(out, str):
@@ -127,6 +125,13 @@ class ComfyUIHelpers:
                     data = message["data"]
                     if data["node"] is None and data["prompt_id"] == prompt_id:
                         break
+                    elif data["prompt_id"] == prompt_id:
+                        node = workflow.get(data["node"], {})
+                        meta = node.get("_meta", {})
+                        class_type = node.get("class_type", "Unknown")
+                        print(
+                            f"Executing node {data['node']}, title: {meta.get('title', 'Unknown')}, class type: {class_type}"
+                        )
             else:
                 continue
 
@@ -144,17 +149,26 @@ class ComfyUIHelpers:
         self.handle_inputs(wf)
         return wf
 
+    # TODO: Find a better way of doing this
+    # Nuclear reset
+    def reset_execution_cache(self):
+        with open("examples/reset.json", "r") as file:
+            reset_workflow = json.loads(file.read())
+        self.queue_prompt(reset_workflow)
+
     def run_workflow(self, workflow):
         print("Running workflow")
+        # self.reset_execution_cache()
+
         prompt_id = self.queue_prompt(workflow)
-        self.wait_for_prompt_completion(prompt_id)
+        self.wait_for_prompt_completion(workflow, prompt_id)
         output_json = self.get_history(prompt_id)
         print("outputs: ", output_json)
-        print('====================================')
+        print("====================================")
 
     def get_history(self, prompt_id):
         with urllib.request.urlopen(
-            "http://{}/history/{}".format(self.server_address, prompt_id)
+            f"http://{self.server_address}/history/{prompt_id}"
         ) as response:
             output = json.loads(response.read())
             return output[prompt_id]["outputs"]
