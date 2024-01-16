@@ -25,7 +25,10 @@ class ComfyUIHelpers:
         )
         server_thread.start()
 
+        start_time = time.time()
         while not self.is_server_running():
+            if time.time() - start_time > 60:  # If more than a minute has passed
+                raise TimeoutError("Server did not start within 60 seconds")
             time.sleep(1)  # Wait for 1 second before checking again
 
         print("Server running")
@@ -51,7 +54,8 @@ class ComfyUIHelpers:
     def controlnet_aux_weights_mapping(self):
         return {"Zoe-DepthMapPreprocessor": "ZoeD_M12_N.pt"}
 
-    def download_weights(self, workflow):
+    def handle_weights(self, workflow):
+        print("Checking weights")
         weights_to_download = []
         weights_filetypes = [".ckpt", ".safetensors", ".pt", ".pth", ".bin", ".onnx"]
         controlnet_aux_weights = self.controlnet_aux_weights_mapping()
@@ -70,8 +74,10 @@ class ComfyUIHelpers:
             WeightsDownloader.download_weights(weight)
             print(f"✅ {weight}")
 
-    def download_inputs(self, workflow):
-        print("Starting to download inputs...")
+        print('====================================')
+
+    def handle_inputs(self, workflow):
+        print("Checking inputs")
         image_filetypes = [".png", ".jpg", ".jpeg", ".webp"]
         download_directory = "/tmp/inputs"
         os.makedirs(download_directory, exist_ok=True)
@@ -91,6 +97,8 @@ class ComfyUIHelpers:
                                 urllib.request.urlretrieve(input_value, filename)
                             node["inputs"][input_key] = filename
                             print(f"✅ {filename}")
+
+        print('====================================')
 
     def connect(self):
         self.client_id = str(uuid.uuid4())
@@ -125,20 +133,24 @@ class ComfyUIHelpers:
     def load_workflow(self, workflow):
         wf = json.loads(workflow)
 
+        # There are two types of ComfyUI JSON
+        # We need the API version
         if any(key in wf.keys() for key in ["last_node_id", "last_link_id", "version"]):
             raise ValueError(
                 "You need to use the API JSON version of a ComfyUI workflow. To do this go to your ComfyUI settings and turn on 'Enable Dev mode Options'. Then you can save your ComfyUI workflow via the 'Save (API Format)' button."
             )
 
-        self.download_weights(wf)
-        self.download_inputs(wf)
+        self.handle_weights(wf)
+        self.handle_inputs(wf)
         return wf
 
     def run_workflow(self, workflow):
+        print("Running workflow")
         prompt_id = self.queue_prompt(workflow)
         self.wait_for_prompt_completion(prompt_id)
         output_json = self.get_history(prompt_id)
         print("outputs: ", output_json)
+        print('====================================')
 
     def get_history(self, prompt_id):
         with urllib.request.urlopen(

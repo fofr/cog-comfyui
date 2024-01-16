@@ -110,12 +110,10 @@ class WeightsDownloader:
     @staticmethod
     def download_if_not_exists(weight_str, url, dest):
         if not os.path.exists(f"{dest}/{weight_str}"):
-            WeightsDownloader.download(url, dest)
+            WeightsDownloader.download(weight_str, url, dest)
 
     @staticmethod
-    def download(url, dest):
+    def download(weight_str, url, dest):
         start = time.time()
-        print("downloading url: ", url)
-        print("downloading to: ", dest)
-        subprocess.check_call(["pget", "-xf", url, dest], close_fds=False)
-        print("downloading took: ", time.time() - start)
+        subprocess.check_call(["pget", "--log-level", "warn", "-xf", url, dest], close_fds=False)
+        print(f"downloading {weight_str} took: {(time.time() - start):.2f}s")
