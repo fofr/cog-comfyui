@@ -10,14 +10,14 @@ OUTPUT_DIR = "/tmp/outputs"
 INPUT_DIR = "/tmp/inputs"
 COMFYUI_TEMP_OUTPUT_DIR = "ComfyUI/temp"
 
-with open("examples/sdxlturbo_example.json", "r") as file:
+with open("examples/ipadapter.json", "r") as file:
     EXAMPLE_WORKFLOW_JSON = file.read()
 
 
 class Predictor(BasePredictor):
     def setup(self):
         self.comfyUI = ComfyUIHelpers("127.0.0.1:8188")
-        self.comfyUI.start_server(OUTPUT_DIR)
+        self.comfyUI.start_server(OUTPUT_DIR, INPUT_DIR)
 
     def cleanup(self):
         for directory in [OUTPUT_DIR, INPUT_DIR, COMFYUI_TEMP_OUTPUT_DIR]:

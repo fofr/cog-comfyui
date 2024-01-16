@@ -4,6 +4,7 @@ __pycache__
 # Outputs
 *.jpg
 *.png
+*.zip
 
 # Models
 *.ckpt

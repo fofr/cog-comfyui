@@ -17,11 +17,14 @@ class ComfyUIHelpers:
     def __init__(self, server_address):
         self.server_address = server_address
 
-    def start_server(self, output_directory):
+    def start_server(self, output_directory, input_directory):
+        self.input_directory = input_directory
+        self.output_directory = output_directory
+
         self.download_pre_start_models()
 
         server_thread = threading.Thread(
-            target=self.run_server, args=(output_directory,)
+            target=self.run_server, args=(output_directory, input_directory)
         )
         server_thread.start()
 
@@ -33,8 +36,8 @@ class ComfyUIHelpers:
 
         print("Server running")
 
-    def run_server(self, output_directory):
-        command = f"python ./ComfyUI/main.py --output-directory {output_directory}"
+    def run_server(self, output_directory, input_directory):
+        command = f"python ./ComfyUI/main.py --output-directory {output_directory} --input-directory {input_directory}"
         server_process = subprocess.Popen(command, shell=True)
         server_process.wait()
 
@@ -76,27 +79,35 @@ class ComfyUIHelpers:
 
         print("====================================")
 
+    def is_image_value(self, value):
+        image_filetypes = [".png", ".jpg", ".jpeg", ".webp"]
+        return isinstance(value, str) and any(
+            value.endswith(ft) for ft in image_filetypes
+        )
+
     def handle_inputs(self, workflow):
         print("Checking inputs")
-        image_filetypes = [".png", ".jpg", ".jpeg", ".webp"]
-        download_directory = "/tmp/inputs"
-        os.makedirs(download_directory, exist_ok=True)
-
         for node in workflow.values():
             if "inputs" in node:
                 for input_key, input_value in node["inputs"].items():
                     if isinstance(input_value, str):
-                        if any(
-                            input_value.endswith(ft) for ft in image_filetypes
-                        ) or input_value.startswith(("http://", "https://")):
+                        if input_value.startswith(("http://", "https://")):
                             filename = os.path.join(
-                                download_directory, os.path.basename(input_value)
+                                self.input_directory, os.path.basename(input_value)
                             )
                             if not os.path.exists(filename):
                                 print(f"Downloading {input_value} to {filename}")
                                 urllib.request.urlretrieve(input_value, filename)
                             node["inputs"][input_key] = filename
                             print(f"✅ {filename}")
+                        elif self.is_image_value(input_value):
+                            filename = os.path.join(
+                                self.input_directory, os.path.basename(input_value)
+                            )
+                            if not os.path.exists(filename):
+                                print(f"❌ {filename} not provided")
+                            else:
+                                print(f"✅ {filename}")
 
         print("====================================")
 
