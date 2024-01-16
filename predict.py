@@ -4,7 +4,7 @@ import tarfile
 import zipfile
 from typing import List
 from cog import BasePredictor, Input, Path
-from comfyui_helpers import ComfyUIHelpers
+from helpers.comfyui import ComfyUI
 
 OUTPUT_DIR = "/tmp/outputs"
 INPUT_DIR = "/tmp/inputs"
@@ -16,7 +16,7 @@ with open("examples/ipadapter.json", "r") as file:
 
 class Predictor(BasePredictor):
     def setup(self):
-        self.comfyUI = ComfyUIHelpers("127.0.0.1:8188")
+        self.comfyUI = ComfyUI("127.0.0.1:8188")
         self.comfyUI.start_server(OUTPUT_DIR, INPUT_DIR)
 
     def cleanup(self):
@@ -46,6 +46,8 @@ class Predictor(BasePredictor):
     def log_and_collect_files(self, directory, prefix=""):
         files = []
         for f in os.listdir(directory):
+            if f == "__MACOSX":
+                continue
             path = os.path.join(directory, f)
             if os.path.isfile(path):
                 print(f"{prefix}{f}")

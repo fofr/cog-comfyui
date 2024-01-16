@@ -12,10 +12,15 @@ import websocket
 from weights_downloader import WeightsDownloader
 from urllib.error import URLError
 
+# custom_nodes helpers
+from helpers.ComfyUI_IPAdapter_plus import ComfyUI_IPAdapter_plus
+from helpers.ComfyUI_Controlnet_Aux import ComfyUI_Controlnet_Aux
 
-class ComfyUIHelpers:
+
+class ComfyUI:
     def __init__(self, server_address):
         self.server_address = server_address
+        ComfyUI_IPAdapter_plus.prepare()
 
     def start_server(self, output_directory, input_directory):
         self.input_directory = input_directory
@@ -54,18 +59,16 @@ class ComfyUIHelpers:
         # Some models need to be downloaded and loaded before starting ComfyUI
         WeightsDownloader.download_torch_checkpoints()
 
-    def controlnet_aux_weights_mapping(self):
-        return {"Zoe-DepthMapPreprocessor": "ZoeD_M12_N.pt"}
-
     def handle_weights(self, workflow):
         print("Checking weights")
         weights_to_download = []
         weights_filetypes = [".ckpt", ".safetensors", ".pt", ".pth", ".bin", ".onnx"]
-        controlnet_aux_weights = self.controlnet_aux_weights_mapping()
 
         for node in workflow.values():
-            if "class_type" in node and node["class_type"] in controlnet_aux_weights:
-                weights_to_download.append(controlnet_aux_weights[node["class_type"]])
+            ComfyUI_Controlnet_Aux.add_controlnet_preprocessor_weight(
+                weights_to_download, node
+            )
+
             if "inputs" in node:
                 for input in node["inputs"].values():
                     if isinstance(input, str) and any(
