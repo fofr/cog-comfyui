@@ -49,6 +49,10 @@ MODELS = {
 
 class ComfyUI_Controlnet_Aux:
     @staticmethod
+    def models():
+        return MODELS
+
+    @staticmethod
     def weights_map(base_url):
         return {
             key: {

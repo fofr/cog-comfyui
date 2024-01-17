@@ -261,6 +261,10 @@ class WeightsDownloader:
             "VAE": VAE,
             "AnimateDiff": ComfyUI_AnimateDiff_Evolved.models(),
             "AnimateDiff LORAs": ComfyUI_AnimateDiff_Evolved.loras(),
+            "ControlNet Preprocessors": sorted({
+                f"{repo}/{filename}"
+                for filename, repo in ComfyUI_Controlnet_Aux.models().items()
+            }),
         }
         with open("supported_weights.md", "w") as f:
             for weight_type, weights in weight_lists.items():
