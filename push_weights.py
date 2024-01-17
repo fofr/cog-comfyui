@@ -9,11 +9,16 @@ def confirm_step(message):
 
 
 def download_file(url, filename=None):
-    if not filename:
+    if not filename and 'huggingface.co' in url:
         filename = url.split("/")[-1]
         filename = filename.rstrip("?download=true")
-    print(f"Downloading {url} to {filename}")
-    subprocess.run(["wget", url, "-O", filename])
+    if filename:
+        print(f"Downloading {url} to {filename}")
+        subprocess.run(["wget", url, "-O", filename])
+    else:
+        print(f"Downloading {url} (no filename)")
+        subprocess.run(["wget", url])
+        exit(1)
     print(f"Successfully downloaded {filename}")
     return filename
 
@@ -66,6 +71,7 @@ def get_subfolder():
 
 
 def process_file(url, filename=None, subfolder=None):
+    print(f"Processing {url}")
     local_file = download_file(url, filename)
     tarred_file = tar_file(local_file)
     upload_to_gcloud(tarred_file, "gs://replicate-weights/comfy-ui", subfolder)
