@@ -22,6 +22,14 @@ LORAS = [
 
 class ComfyUI_AnimateDiff_Evolved:
     @staticmethod
+    def loras():
+        return LORAS
+
+    @staticmethod
+    def models():
+        return MODELS
+
+    @staticmethod
     def weights_map(base_url):
         return {
             model: {

@@ -259,6 +259,8 @@ class WeightsDownloader:
             "IPAdapter": IPADAPTER,
             "ControlNet": CONTROLNET,
             "VAE": VAE,
+            "AnimateDiff": ComfyUI_AnimateDiff_Evolved.models(),
+            "AnimateDiff LORAs": ComfyUI_AnimateDiff_Evolved.loras(),
         }
         with open("supported_weights.md", "w") as f:
             for weight_type, weights in weight_lists.items():
