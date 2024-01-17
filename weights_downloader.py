@@ -1,7 +1,9 @@
 import subprocess
 import time
 import os
+
 from helpers.ComfyUI_Controlnet_Aux import ComfyUI_Controlnet_Aux
+from helpers.ComfyUI_AnimateDiff_Evolved import ComfyUI_AnimateDiff_Evolved
 
 BASE_URL = "https://weights.replicate.delivery/default/comfy-ui"
 BASE_PATH = "ComfyUI/models"
@@ -72,6 +74,7 @@ WEIGHTS_MAP = {
     **generate_weights_map(CONTROLNET, "controlnet"),
     **generate_weights_map(VAE, "vae"),
     **ComfyUI_Controlnet_Aux.weights_map(BASE_URL),
+    **ComfyUI_AnimateDiff_Evolved.weights_map(BASE_URL),
 }
 
 
@@ -112,5 +115,7 @@ class WeightsDownloader:
 
     @staticmethod
     def print_weights_urls():
-        weights_urls = [weight_info['url'] for weight_str, weight_info in WEIGHTS_MAP.items()]
+        weights_urls = [
+            weight_info["url"] for weight_str, weight_info in WEIGHTS_MAP.items()
+        ]
         return weights_urls
