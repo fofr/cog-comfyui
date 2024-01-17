@@ -47,6 +47,10 @@ IPADAPTER = [
     "ip-adapter-plus_sdxl_vit-h.safetensors",
 ]
 
+VAE = [
+    "vae-ft-mse-840000-ema-pruned.safetensors",
+]
+
 CONTROLNET_AUX_MODELS = {
     "dw-ll_ucoco_384.onnx": "yzd-v/DWPose",
     "yolox_l.onnx": "yzd-v/DWPose",
@@ -81,6 +85,7 @@ WEIGHTS_MAP = {
     **generate_weights_map(LORAS, "loras"),
     **generate_weights_map(IPADAPTER, "ipadapter"),
     **generate_weights_map(CONTROLNET, "controlnet"),
+    **generate_weights_map(VAE, "vae"),
     **generate_controlnet_aux_weights_map(CONTROLNET_AUX_MODELS),
 }
 
@@ -104,7 +109,7 @@ class WeightsDownloader:
         WeightsDownloader.download_if_not_exists(
             "mobilenet_v2-b0353104.pth",
             f"{BASE_URL}/comfyui_controlnet_aux/mobilenet_v2-b0353104.pth.tar",
-            "/root/.cache/torch/hub/checkpoints/"
+            "/root/.cache/torch/hub/checkpoints/",
         )
 
     @staticmethod
@@ -115,5 +120,12 @@ class WeightsDownloader:
     @staticmethod
     def download(weight_str, url, dest):
         start = time.time()
-        subprocess.check_call(["pget", "--log-level", "warn", "-xf", url, dest], close_fds=False)
+        subprocess.check_call(
+            ["pget", "--log-level", "warn", "-xf", url, dest], close_fds=False
+        )
         print(f"downloading {weight_str} took: {(time.time() - start):.2f}s")
+
+    @staticmethod
+    def print_weights_urls():
+        weights_urls = [weight_info['url'] for weight_str, weight_info in WEIGHTS_MAP.items()]
+        return weights_urls
