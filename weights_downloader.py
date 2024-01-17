@@ -1,6 +1,7 @@
 import subprocess
 import time
 import os
+from helpers.ComfyUI_Controlnet_Aux import ComfyUI_Controlnet_Aux
 
 BASE_URL = "https://weights.replicate.delivery/default/comfy-ui"
 BASE_PATH = "ComfyUI/models"
@@ -51,28 +52,12 @@ VAE = [
     "vae-ft-mse-840000-ema-pruned.safetensors",
 ]
 
-CONTROLNET_AUX_MODELS = {
-    "dw-ll_ucoco_384.onnx": "yzd-v/DWPose",
-    "yolox_l.onnx": "yzd-v/DWPose",
-    "ZoeD_M12_N.pt": "lllyasviel/Annotators",
-}
-
 
 def generate_weights_map(keys, dest):
     return {
         key: {
             "url": f"{BASE_URL}/{dest}/{key}.tar",
             "dest": f"{BASE_PATH}/{dest}",
-        }
-        for key in keys
-    }
-
-
-def generate_controlnet_aux_weights_map(keys):
-    return {
-        key: {
-            "url": f"{BASE_URL}/custom_nodes/comfyui_controlnet_aux/{key}.tar",
-            "dest": f"ComfyUI/custom_nodes/comfyui_controlnet_aux/ckpts/{keys[key]}",
         }
         for key in keys
     }
@@ -86,7 +71,7 @@ WEIGHTS_MAP = {
     **generate_weights_map(IPADAPTER, "ipadapter"),
     **generate_weights_map(CONTROLNET, "controlnet"),
     **generate_weights_map(VAE, "vae"),
-    **generate_controlnet_aux_weights_map(CONTROLNET_AUX_MODELS),
+    **ComfyUI_Controlnet_Aux.weights_map(BASE_URL),
 }
 
 
