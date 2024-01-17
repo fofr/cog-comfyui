@@ -12,7 +12,6 @@ def download_file(url, filename=None):
     if not filename:
         filename = url.split("/")[-1]
         filename = filename.rstrip("?download=true")
-    # confirm_step(f"About to download file from {url} to {filename}")
     print(f"Downloading {url} to {filename}")
     subprocess.run(["wget", url, "-O", filename])
     print(f"Successfully downloaded {filename}")
@@ -27,16 +26,14 @@ def tar_file(filename):
 
 
 def upload_to_gcloud(local_file, destination_blob_name, subfolder):
-    # confirm_step(f"About to upload {local_file} to {destination_blob_name}/{subfolder}/{local_file}")
     print(f"Uploading {local_file} to {destination_blob_name}/{subfolder}/{local_file}")
     subprocess.run(
         ["gcloud", "storage", "cp", local_file, f"{destination_blob_name}/{subfolder}/{local_file}"]
     )
-    print(f"Successfully uploaded to {destination_blob_name}")
+    print(f"Successfully uploaded to {destination_blob_name}/{subfolder}/{local_file}")
 
 
 def remove_files(*filenames):
-    # confirm_step(f"About to remove the following files: {', '.join(filenames)}")
     print(f"About to remove the following files: {', '.join(filenames)}")
     for filename in filenames:
         os.remove(filename)
@@ -68,19 +65,18 @@ def get_subfolder():
         return subfolders[choice - 1]
 
 
-def process_file(url, filename=None):
+def process_file(url, filename=None, subfolder=None):
     local_file = download_file(url, filename)
     tarred_file = tar_file(local_file)
-    subfolder = get_subfolder()
     upload_to_gcloud(tarred_file, "gs://replicate-weights/comfy-ui", subfolder)
     remove_files(local_file, tarred_file)
 
 
-def process_weights_file(weights_file):
+def process_weights_file(weights_file, subfolder=None):
     with open(weights_file, 'r') as f:
         for line in f:
             url, filename = line.strip().split()
-            process_file(url, filename)
+            process_file(url, filename, subfolder)
 
 
 def main():
@@ -95,10 +91,12 @@ def main():
     )
     args = parser.parse_args()
 
+    subfolder = get_subfolder()
+
     if args.file:
-        process_weights_file(args.file)
+        process_weights_file(args.file, subfolder)
     elif args.url:
-        process_file(args.url, args.filename)
+        process_file(args.url, args.filename, subfolder)
 
 
 if __name__ == "__main__":

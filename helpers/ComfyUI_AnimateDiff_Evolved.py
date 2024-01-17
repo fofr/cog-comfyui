@@ -25,14 +25,14 @@ class ComfyUI_AnimateDiff_Evolved:
     def weights_map(base_url):
         return {
             model: {
-                "url": f"{base_url}/custom_nodes/ComfyUI_AnimateDiff_Evolved/{model}.tar",
-                "dest": f"ComfyUI/custom_nodes/ComfyUI_AnimateDiff_Evolved/models/{model}",
+                "url": f"{base_url}/custom_nodes/ComfyUI-AnimateDiff-Evolved/{model}.tar",
+                "dest": "ComfyUI/custom_nodes/ComfyUI-AnimateDiff-Evolved/models",
             }
             for model in MODELS
         } | {
             lora: {
                 "url": f"{base_url}/custom_nodes/ComfyUI_AnimateDiff_Evolved/{lora}.tar",
-                "dest": f"ComfyUI/custom_nodes/ComfyUI_AnimateDiff_Evolved/motion_lora/{lora}",
+                "dest": "ComfyUI/custom_nodes/ComfyUI_AnimateDiff_Evolved/motion_lora",
             }
             for lora in LORAS
         }

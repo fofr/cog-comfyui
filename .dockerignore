@@ -4,6 +4,8 @@ __pycache__
 # Outputs
 *.jpg
 *.png
+*.gif
+*.mp4
 *.zip
 
 # Models

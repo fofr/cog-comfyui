@@ -1,8 +1,12 @@
 __pycache__
 *.png
 *.jpg
+*.gif
+*.mp4
 *.zip
 *.ckpt
 *.safetensors
 *.pth
 *.bin
+weights.txt
+manifest.txt
