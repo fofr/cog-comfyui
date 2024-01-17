@@ -36,6 +36,14 @@ MODELS = {
     "graphormer_hand_state_dict.bin": "hr16/ControlNet-HandRefiner-pruned",
     "hrnetv2_w64_imagenet_pretrained.pth": "hr16/ControlNet-HandRefiner-pruned",
     "isnetis.ckpt": "skytnt/anime-seg",
+    "dw-ll_ucoco.onnx": "hr16/UnJIT-DWPose",
+    "dw-ll_ucoco_384_fp16.onnx": "hr16/UnJIT-DWPose",
+    "dw-ll_ucoco_fp16.onnx": "hr16/UnJIT-DWPose",
+    "dw-mm_ucoco.onnx": "hr16/UnJIT-DWPose",
+    "dw-mm_ucoco_fp16.onnx": "hr16/UnJIT-DWPose",
+    "dw-ss_ucoco.onnx": "hr16/UnJIT-DWPose",
+    "dw-ss_ucoco_fp16.onnx": "hr16/UnJIT-DWPose",
+    "rtmpose-m_ap10k_256.onnx": "hr16/UnJIT-DWPose",
 }
 
 
@@ -55,7 +63,11 @@ class ComfyUI_Controlnet_Aux:
     # avoid them being downloaded automatically from elsewhere
     @staticmethod
     def weights_mapping():
-        return {"Zoe-DepthMapPreprocessor": "ZoeD_M12_N.pt"}
+        return {
+            "AnimeFace_SemSegPreprocessor": "isnetis.ckpt",
+            "DensePosePreprocessor": "densepose_r50_fpn_dl.torchscript",
+            "Zoe-DepthMapPreprocessor": "ZoeD_M12_N.pt",
+        }
 
     @staticmethod
     def add_controlnet_preprocessor_weight(weights_to_download, node):

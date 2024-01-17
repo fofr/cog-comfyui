@@ -62,7 +62,15 @@ class ComfyUI:
     def handle_weights(self, workflow):
         print("Checking weights")
         weights_to_download = []
-        weights_filetypes = [".ckpt", ".safetensors", ".pt", ".pth", ".bin", ".onnx"]
+        weights_filetypes = [
+            ".ckpt",
+            ".safetensors",
+            ".pt",
+            ".pth",
+            ".bin",
+            ".onnx",
+            ".torchscript",
+        ]
 
         for node in workflow.values():
             ComfyUI_Controlnet_Aux.add_controlnet_preprocessor_weight(
