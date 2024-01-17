@@ -12,6 +12,11 @@ repos=(
   "https://github.com/ltdrdata/ComfyUI-Inspire-Pack c8231dd"
   "https://github.com/theUpsider/ComfyUI-Logic fb88973"
   "https://github.com/Kosinkadink/ComfyUI-AnimateDiff-Evolved d2bf367"
+  "https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite 1dbf01b"
+  "https://github.com/Kosinkadink/ComfyUI-Advanced-ControlNet bd5bcbf"
+  "https://github.com/jags111/efficiency-nodes-comfyui 1ac5f18"
+  "https://github.com/Derfuu/Derfuu_ComfyUI_ModdedNodes 2ace4c4"
+  "https://github.com/FizzleDorf/ComfyUI_FizzNodes cd6cadd"
 )
 
 # Destination directory

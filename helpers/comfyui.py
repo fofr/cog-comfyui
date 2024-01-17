@@ -84,24 +84,28 @@ class ComfyUI:
                     ):
                         weights_to_download.append(input)
 
+        weights_to_download = list(set(weights_to_download))
+
         for weight in weights_to_download:
             WeightsDownloader.download_weights(weight)
             print(f"✅ {weight}")
 
         print("====================================")
 
-    def is_image_value(self, value):
-        image_filetypes = [".png", ".jpg", ".jpeg", ".webp"]
+    def is_image_or_video_value(self, value):
         return isinstance(value, str) and any(
-            value.endswith(ft) for ft in image_filetypes
+            value.endswith(ft)
+            for ft in [".png", ".jpg", ".jpeg", ".webp", ".mp4", ".webm"]
         )
 
     def handle_inputs(self, workflow):
         print("Checking inputs")
+        seen_inputs = set()
         for node in workflow.values():
             if "inputs" in node:
                 for input_key, input_value in node["inputs"].items():
-                    if isinstance(input_value, str):
+                    if isinstance(input_value, str) and input_value not in seen_inputs:
+                        seen_inputs.add(input_value)
                         if input_value.startswith(("http://", "https://")):
                             filename = os.path.join(
                                 self.input_directory, os.path.basename(input_value)
@@ -111,7 +115,7 @@ class ComfyUI:
                                 urllib.request.urlretrieve(input_value, filename)
                             node["inputs"][input_key] = filename
                             print(f"✅ {filename}")
-                        elif self.is_image_value(input_value):
+                        elif self.is_image_or_video_value(input_value):
                             filename = os.path.join(
                                 self.input_directory, os.path.basename(input_value)
                             )

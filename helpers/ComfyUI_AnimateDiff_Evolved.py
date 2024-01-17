@@ -7,6 +7,7 @@ MODELS = [
     "v3_sd15_mm.ckpt",
     "v3_sd15_sparsectrl_rgb.ckpt",
     "v3_sd15_sparsectrl_scribble.ckpt",
+    "temporaldiff-v1-animatediff.ckpt",
 ]
 
 LORAS = [
@@ -39,8 +40,8 @@ class ComfyUI_AnimateDiff_Evolved:
             for model in MODELS
         } | {
             lora: {
-                "url": f"{base_url}/custom_nodes/ComfyUI_AnimateDiff_Evolved/{lora}.tar",
-                "dest": "ComfyUI/custom_nodes/ComfyUI_AnimateDiff_Evolved/motion_lora",
+                "url": f"{base_url}/custom_nodes/ComfyUI-AnimateDiff-Evolved/{lora}.tar",
+                "dest": "ComfyUI/custom_nodes/ComfyUI-AnimateDiff-Evolved/motion_lora",
             }
             for lora in LORAS
         }
