@@ -108,7 +108,7 @@ class WeightsDownloader:
     def download_torch_checkpoints():
         WeightsDownloader.download_if_not_exists(
             "mobilenet_v2-b0353104.pth",
-            f"{BASE_URL}/comfyui_controlnet_aux/custom_nodes/mobilenet_v2-b0353104.pth.tar",
+            f"{BASE_URL}/custom_nodes/comfyui_controlnet_aux/mobilenet_v2-b0353104.pth.tar",
             "/root/.cache/torch/hub/checkpoints/",
         )
 
