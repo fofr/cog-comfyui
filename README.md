@@ -1,6 +1,7 @@
 # cog-comfyui
 
 Run ComfyUI workflows on Replicate:
+
 https://replicate.com/fofr/comfyui
 
 It is ideal for using a ComfyUI workflow with a production ready API. And it's ideal for using with deployments.
@@ -14,6 +15,7 @@ We recommend:
 ## What’s included
 
 We've tried to include many of the most popular model weights:
+
 [View list of supported weights](https://github.com/fofr/cog-comfyui/blob/main/supported_weights.md)
 
 The following custom nodes are also supported, these are fixed to specific commits:
