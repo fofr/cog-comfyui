@@ -16,6 +16,7 @@ __pycache__
 *.bin
 *.pt
 *.onnx
+*.torchscript
 
 # ComfyUI
 ComfyUI/venv
@@ -23,6 +24,8 @@ ComfyUI/temp
 ComfyUI/user
 ComfyUI/models
 ComfyUI/custom_nodes/comfyUI_controlnet_aux/ckpts
+ComfyUI/custom_nodes/ComfyUI-AnimateDiff-Evolved/models
+ComfyUI/custom_nodes/ComfyUI-AnimateDiff-Evolved/motion_lora
 
 # ComfyUI bits we just don’t need
 ComfyUI/tests
