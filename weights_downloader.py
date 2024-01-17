@@ -250,6 +250,24 @@ class WeightsDownloader:
         print(f"downloading {weight_str} took: {(time.time() - start):.2f}s")
 
     @staticmethod
+    def write_supported_weights():
+        weight_lists = {
+            "Checkpoints": CHECKPOINTS,
+            "Upscale models": UPSCALE_MODELS,
+            "CLIP Vision": CLIP_VISION,
+            "LORAs": LORAS,
+            "IPAdapter": IPADAPTER,
+            "ControlNet": CONTROLNET,
+            "VAE": VAE,
+        }
+        with open("supported_weights.md", "w") as f:
+            for weight_type, weights in weight_lists.items():
+                f.write(f"## {weight_type}\n\n")
+                for weight in weights:
+                    f.write(f"- {weight}\n")
+                f.write("\n")
+
+    @staticmethod
     def print_weights_urls():
         weights_urls = [
             weight_info["url"] for weight_str, weight_info in WEIGHTS_MAP.items()
