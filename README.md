@@ -10,6 +10,8 @@ We recommend:
 - writing code to customise the JSON you pass to the model, for example changing seeds or prompts
 - using the Replicate API to run the workflow
 
+TLDR: json blob -> img/mp4
+
 ## What’s included
 
 We've tried to include many of the most popular model weights:

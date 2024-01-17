@@ -189,6 +189,7 @@
 - v3_sd15_mm.ckpt
 - v3_sd15_sparsectrl_rgb.ckpt
 - v3_sd15_sparsectrl_scribble.ckpt
+- temporaldiff-v1-animatediff.ckpt
 
 ## AnimateDiff LORAs
 
@@ -248,4 +249,3 @@
 - skytnt/anime-seg/isnetis.ckpt
 - yzd-v/DWPose/dw-ll_ucoco_384.onnx
 - yzd-v/DWPose/yolox_l.onnx
-
