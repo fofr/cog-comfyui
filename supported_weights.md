@@ -204,42 +204,30 @@
 
 ## ControlNet Preprocessors
 
+- LayerNorm/DensePose-TorchScript-with-hint-image/densepose_r101_fpn_dl.torchscript
 - LayerNorm/DensePose-TorchScript-with-hint-image/densepose_r50_fpn_dl.torchscript
+- bdsqlsz/qinglong_controlnet-lllite/Annotators/UNet.pth
 - dhkim2810/MobileSAM/mobile_sam.pt
-- hr16/ControlNet-HandRefiner-pruned/control_sd15_inpaint_depth_hand_fp16.safetensors
 - hr16/ControlNet-HandRefiner-pruned/graphormer_hand_state_dict.bin
 - hr16/ControlNet-HandRefiner-pruned/hrnetv2_w64_imagenet_pretrained.pth
 - hr16/DWPose-TorchScript-BatchSize5/dw-ll_ucoco_384_bs5.torchscript.pt
 - hr16/DWPose-TorchScript-BatchSize5/rtmpose-m_ap10k_256_bs5.torchscript.pt
-- hr16/UnJIT-DWPose/dw-ll_ucoco.onnx
-- hr16/UnJIT-DWPose/dw-ll_ucoco_384_fp16.onnx
-- hr16/UnJIT-DWPose/dw-ll_ucoco_fp16.onnx
-- hr16/UnJIT-DWPose/dw-mm_ucoco.onnx
-- hr16/UnJIT-DWPose/dw-mm_ucoco_fp16.onnx
-- hr16/UnJIT-DWPose/dw-ss_ucoco.onnx
-- hr16/UnJIT-DWPose/dw-ss_ucoco_fp16.onnx
 - hr16/UnJIT-DWPose/rtmpose-m_ap10k_256.onnx
-- hr16/yolo-nas-fp16/yolo_nas_l_fp16.onnx
 - hr16/yolo-nas-fp16/yolo_nas_m_fp16.onnx
 - hr16/yolo-nas-fp16/yolo_nas_s_fp16.onnx
 - hr16/yolox-onnx/yolox_l.torchscript.pt
 - lllyasviel/Annotators/150_16_swin_l_oneformer_coco_100ep.pth
 - lllyasviel/Annotators/250_16_swin_l_oneformer_ade20k_160k.pth
 - lllyasviel/Annotators/ControlNetHED.pth
-- lllyasviel/Annotators/ControlNetLama.pth
-- lllyasviel/Annotators/RealESRGAN_x4plus.pth
 - lllyasviel/Annotators/ZoeD_M12_N.pt
 - lllyasviel/Annotators/body_pose_model.pth
-- lllyasviel/Annotators/clip_g.pth
 - lllyasviel/Annotators/dpt_hybrid-midas-501f0c75.pt
 - lllyasviel/Annotators/erika.pth
 - lllyasviel/Annotators/facenet.pth
 - lllyasviel/Annotators/hand_pose_model.pth
-- lllyasviel/Annotators/lama.ckpt
 - lllyasviel/Annotators/latest_net_G.pth
 - lllyasviel/Annotators/mlsd_large_512_fp32.pth
 - lllyasviel/Annotators/netG.pth
-- lllyasviel/Annotators/network-bsds500.pth
 - lllyasviel/Annotators/res101.pth
 - lllyasviel/Annotators/scannet.pt
 - lllyasviel/Annotators/sk_model.pth
@@ -249,3 +237,4 @@
 - skytnt/anime-seg/isnetis.ckpt
 - yzd-v/DWPose/dw-ll_ucoco_384.onnx
 - yzd-v/DWPose/yolox_l.onnx
+

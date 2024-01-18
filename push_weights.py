@@ -2,12 +2,6 @@ import argparse
 import subprocess
 import os
 
-
-def confirm_step(message):
-    print(message)
-    input("Press Enter to continue...")
-
-
 def download_file(url, filename=None):
     if not filename and 'huggingface.co' in url:
         filename = url.split("/")[-1]
