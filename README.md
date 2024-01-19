@@ -2,7 +2,7 @@
 
 Run ComfyUI workflows on Replicate:
 
-https://replicate.com/fofr/comfyui
+https://replicate.com/fofr/any-comfyui-workflow
 
 We recommend:
 
