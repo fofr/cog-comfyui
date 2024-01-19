@@ -225,7 +225,7 @@ class WeightsDownloader:
             )
         else:
             raise ValueError(
-                f"{weight_str} not available. Available weights are: {', '.join(WEIGHTS_MAP.keys())}"
+                f"{weight_str} unavailable. View the list of available weights: https://github.com/fofr/cog-comfyui/blob/main/supported_weights.md"
             )
 
     @staticmethod

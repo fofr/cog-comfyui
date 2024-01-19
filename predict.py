@@ -59,18 +59,21 @@ class Predictor(BasePredictor):
 
     def predict(
         self,
+        workflow_json: str = Input(
+            description="Your ComfyUI workflow as JSON. You must use the API version of your workflow. Get it from ComfyUI using ‘Save (API format)’. Instructions here: https://github.com/fofr/cog-comfyui",
+            default="",
+        ),
         input_file: Path = Input(
-            description="Input image, tar or zip file",
+            description="Input image, tar or zip file. Read guidance on workflows and input files here: https://github.com/fofr/cog-comfyui. Alternatively, you can replace inputs with URLs in your JSON workflow and the model will download them.",
             default=None,
         ),
-        workflow_json: str = Input(description="JSON workflow", default=""),
         return_temp_files: bool = Input(
-            description="Return temp files, such as preprocessed controlnet images. Useful for debugging.",
+            description="Return any temporary files, such as preprocessed controlnet images. Useful for debugging.",
             default=False,
         ),
         randomise_seeds: bool = Input(
             description="Automatically randomise seeds (seed, noise_seed, rand_seed)",
-            default=False,
+            default=True,
         ),
     ) -> List[Path]:
         """Run a single prediction on the model"""
