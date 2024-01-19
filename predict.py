@@ -10,7 +10,7 @@ OUTPUT_DIR = "/tmp/outputs"
 INPUT_DIR = "/tmp/inputs"
 COMFYUI_TEMP_OUTPUT_DIR = "ComfyUI/temp"
 
-with open("examples/all_preprocessors.json", "r") as file:
+with open("examples/sd15_txt2img.json", "r") as file:
     EXAMPLE_WORKFLOW_JSON = file.read()
 
 
@@ -68,6 +68,10 @@ class Predictor(BasePredictor):
             description="Return temp files, such as preprocessed controlnet images. Useful for debugging.",
             default=False,
         ),
+        randomise_seeds: bool = Input(
+            description="Automatically randomise seeds (seed, noise_seed, rand_seed)",
+            default=False,
+        ),
     ) -> List[Path]:
         """Run a single prediction on the model"""
         self.cleanup()
@@ -79,6 +83,10 @@ class Predictor(BasePredictor):
         # If different, run /free to free up models and memory
 
         wf = self.comfyUI.load_workflow(workflow_json or EXAMPLE_WORKFLOW_JSON)
+
+        if randomise_seeds:
+            self.comfyUI.randomise_seeds(wf)
+
         self.comfyUI.connect()
         self.comfyUI.run_workflow(wf)
 

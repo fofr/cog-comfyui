@@ -9,6 +9,7 @@ import uuid
 import json
 import os
 import websocket
+import random
 from weights_downloader import WeightsDownloader
 from urllib.error import URLError
 
@@ -181,6 +182,19 @@ class ComfyUI:
         with open("examples/reset.json", "r") as file:
             reset_workflow = json.loads(file.read())
         self.queue_prompt(reset_workflow)
+
+    def randomise_input_seed(self, input_key, inputs):
+        if input_key in inputs and isinstance(inputs[input_key], (int, float)):
+            new_seed = random.randint(0, 2**32 - 1)
+            print(f"Randomising {input_key} to {new_seed}")
+            inputs[input_key] = new_seed
+
+    def randomise_seeds(self, workflow):
+        for node_id, node in workflow.items():
+            inputs = node.get("inputs", {})
+            seed_keys = ["seed", "noise_seed", "rand_seed"]
+            for seed_key in seed_keys:
+                self.randomise_input_seed(seed_key, inputs)
 
     def run_workflow(self, workflow):
         print("Running workflow")
