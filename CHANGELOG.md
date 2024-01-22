@@ -7,6 +7,8 @@ New models added:
 - RealESRGAN_x4plus_anime_6B.pth
 - 4x_NMKD-Siax_200k.pth
 - 4x-UltraSharp.pth
+- Harrlogos_v2.0.safetensors
+- starlightXLAnimated_v3.safetensors
 
 New custom nodes added:
 

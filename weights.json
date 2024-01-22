@@ -28,6 +28,7 @@
     "sd_xl_base_1.0.safetensors",
     "sd_xl_refiner_1.0.safetensors",
     "sd_xl_turbo_1.0_fp16.safetensors",
+    "starlightXLAnimated_v3.safetensors",
     "svd.safetensors",
     "svd_xt.safetensors",
     "turbovisionxlSuperFastXLBasedOnNew_tvxlV32Bakedvae.safetensors",
@@ -54,7 +55,8 @@
   "LORAS": [
     "lcm_lora_sdxl.safetensors",
     "lcm-lora-sdv1-5.safetensors",
-    "lcm-lora-ssd-1b.safetensors"
+    "lcm-lora-ssd-1b.safetensors",
+    "Harrlogos_v2.0.safetensors"
   ],
   "CONTROLNET": [
     "control_lora_rank128_v11e_sd15_ip2p_fp16.safetensors",
