@@ -42,6 +42,9 @@
 - RealESRGAN_x4.pth
 - RealESRGAN_x8.pth
 - RealESRGAN_x4plus.pth
+- RealESRGAN_x4plus_anime_6B.pth
+- 4x_NMKD-Siax_200k.pth
+- 4x-UltraSharp.pth
 
 ## CLIP Vision
 

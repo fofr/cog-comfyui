@@ -55,13 +55,13 @@ class WeightsDownloader:
         if not os.path.exists(WEIGHTS_MANIFEST_PATH):
             raise FileNotFoundError("The weights manifest file does not exist.")
         with open(WEIGHTS_MANIFEST_PATH, "r") as f:
-            weights_manifest = json.load(f)
+            self.weights_manifest = json.load(f)
 
         weights_map = {}
-        for key in weights_manifest.keys():
+        for key in self.weights_manifest.keys():
             if key.isupper():
                 weights_map.update(
-                    self._generate_weights_map(weights_manifest[key], key.lower())
+                    self._generate_weights_map(self.weights_manifest[key], key.lower())
                 )
         weights_map.update(ComfyUI_Controlnet_Aux.weights_map(BASE_URL))
         weights_map.update(ComfyUI_AnimateDiff_Evolved.weights_map(BASE_URL))
@@ -101,15 +101,15 @@ class WeightsDownloader:
         file_size_megabytes = file_size_bytes / (1024 * 1024)
         print(f"⌛️ Download {weight_str} took: {elapsed_time:.2f}s, size: {file_size_megabytes:.2f}MB")
 
-    def write_supported_weights(self, weights_manifest):
+    def write_supported_weights(self):
         weight_lists = {
-            "Checkpoints": weights_manifest.get("CHECKPOINTS", []),
-            "Upscale models": weights_manifest.get("UPSCALE_MODELS", []),
-            "CLIP Vision": weights_manifest.get("CLIP_VISION", []),
-            "LORAs": weights_manifest.get("LORAS", []),
-            "IPAdapter": weights_manifest.get("IPADAPTER", []),
-            "ControlNet": weights_manifest.get("CONTROLNET", []),
-            "VAE": weights_manifest.get("VAE", []),
+            "Checkpoints": self.weights_manifest.get("CHECKPOINTS", []),
+            "Upscale models": self.weights_manifest.get("UPSCALE_MODELS", []),
+            "CLIP Vision": self.weights_manifest.get("CLIP_VISION", []),
+            "LORAs": self.weights_manifest.get("LORAS", []),
+            "IPAdapter": self.weights_manifest.get("IPADAPTER", []),
+            "ControlNet": self.weights_manifest.get("CONTROLNET", []),
+            "VAE": self.weights_manifest.get("VAE", []),
             "AnimateDiff": ComfyUI_AnimateDiff_Evolved.models(),
             "AnimateDiff LORAs": ComfyUI_AnimateDiff_Evolved.loras(),
             "ControlNet Preprocessors": sorted(
