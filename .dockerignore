@@ -20,6 +20,7 @@ __pycache__
 *.pt
 *.onnx
 *.torchscript
+weights.json
 
 # ComfyUI
 ComfyUI/venv

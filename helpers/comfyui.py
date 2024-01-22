@@ -20,6 +20,7 @@ from helpers.ComfyUI_Controlnet_Aux import ComfyUI_Controlnet_Aux
 
 class ComfyUI:
     def __init__(self, server_address):
+        self.weights_downloader = WeightsDownloader()
         self.server_address = server_address
         ComfyUI_IPAdapter_plus.prepare()
 
@@ -58,7 +59,7 @@ class ComfyUI:
 
     def download_pre_start_models(self):
         # Some models need to be downloaded and loaded before starting ComfyUI
-        WeightsDownloader.download_torch_checkpoints()
+        self.weights_downloader.download_torch_checkpoints()
 
     def handle_weights(self, workflow):
         print("Checking weights")
@@ -88,7 +89,7 @@ class ComfyUI:
         weights_to_download = list(set(weights_to_download))
 
         for weight in weights_to_download:
-            WeightsDownloader.download_weights(weight)
+            self.weights_downloader.download_weights(weight)
             print(f"✅ {weight}")
 
         print("====================================")
