@@ -49,6 +49,8 @@ To get your API JSON:
 2. Load your workflow into ComfyUI
 3. Export your API JSON using the "Save (API format)" button
 
+https://private-user-images.githubusercontent.com/319055/298630636-e3af1b59-ddd8-426c-a833-808e7f199fac.mp4
+
 ### 2. Gather your input files
 
 If your model takes inputs, like images for img2img or controlnet, you have 3 options:
