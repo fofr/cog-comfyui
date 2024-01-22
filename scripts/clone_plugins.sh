@@ -37,11 +37,16 @@ for repo in "${repos[@]}"; do
   # Extract the repository name from the URL by removing the .git extension
   repo_name=$(basename "$repo_url" .git)
 
-  # Clone the repository into the destination directory
-  echo "Cloning $repo_url into $dest_dir$repo_name and checking out to commit $commit_hash"
-  git clone --recursive "$repo_url" "$dest_dir$repo_name"
+  # Check if the repository directory already exists
+  if [ ! -d "$dest_dir$repo_name" ]; then
+    # Clone the repository into the destination directory
+    echo "Cloning $repo_url into $dest_dir$repo_name and checking out to commit $commit_hash"
+    git clone --recursive "$repo_url" "$dest_dir$repo_name"
 
-  # Use a subshell to avoid changing the main shell's working directory
-  # Inside the subshell, change to the repository's directory and checkout to the specific commit
-  (cd "$dest_dir$repo_name" && git checkout "$commit_hash")
+    # Use a subshell to avoid changing the main shell's working directory
+    # Inside the subshell, change to the repository's directory and checkout to the specific commit
+    (cd "$dest_dir$repo_name" && git checkout "$commit_hash")
+  else
+    echo "Skipping clone for $repo_name, directory already exists"
+  fi
 done
