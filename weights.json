@@ -1,6 +1,7 @@
 {
   "CHECKPOINTS": [
     "512-inpainting-ema.safetensors",
+    "albedobaseXL_v13.safetensors",
     "Deliberate_v2.safetensors",
     "DreamShaper_6.2_BakedVae_pruned.safetensors",
     "DreamShaper_6.31_BakedVae.safetensors",
@@ -175,5 +176,8 @@
   ],
   "VAE": [
     "vae-ft-mse-840000-ema-pruned.safetensors"
+  ],
+  "PHOTOMAKER": [
+    "photomaker-v1.bin"
   ]
 }

@@ -1,6 +1,7 @@
 ## Checkpoints
 
 - 512-inpainting-ema.safetensors
+- albedobaseXL_v13.safetensors
 - Deliberate_v2.safetensors
 - DreamShaper_6.2_BakedVae_pruned.safetensors
 - DreamShaper_6.31_BakedVae.safetensors
@@ -240,4 +241,3 @@
 - skytnt/anime-seg/isnetis.ckpt
 - yzd-v/DWPose/dw-ll_ucoco_384.onnx
 - yzd-v/DWPose/yolox_l.onnx
-

@@ -10,7 +10,7 @@ OUTPUT_DIR = "/tmp/outputs"
 INPUT_DIR = "/tmp/inputs"
 COMFYUI_TEMP_OUTPUT_DIR = "ComfyUI/temp"
 
-with open("examples/sd15_txt2img.json", "r") as file:
+with open("examples/photomaker.json", "r") as file:
     EXAMPLE_WORKFLOW_JSON = file.read()
 
 

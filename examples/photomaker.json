@@ -1,0 +1,557 @@
+{
+  "3": {
+    "inputs": {
+      "seed": 816687600925376,
+      "steps": 20,
+      "cfg": 5,
+      "sampler_name": "euler",
+      "scheduler": "normal",
+      "denoise": 1,
+      "model": [
+        "53",
+        0
+      ],
+      "positive": [
+        "54",
+        0
+      ],
+      "negative": [
+        "7",
+        0
+      ],
+      "latent_image": [
+        "5",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "KSampler"
+    }
+  },
+  "4": {
+    "inputs": {
+      "ckpt_name": "albedobaseXL_v13.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Load Checkpoint"
+    }
+  },
+  "5": {
+    "inputs": {
+      "width": 1024,
+      "height": 1024,
+      "batch_size": 1
+    },
+    "class_type": "EmptyLatentImage",
+    "_meta": {
+      "title": "Empty Latent Image"
+    }
+  },
+  "6": {
+    "inputs": {
+      "text": [
+        "29",
+        0
+      ],
+      "clip": [
+        "4",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "7": {
+    "inputs": {
+      "text": [
+        "70",
+        1
+      ],
+      "clip": [
+        "4",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "8": {
+    "inputs": {
+      "samples": [
+        "3",
+        0
+      ],
+      "vae": [
+        "4",
+        2
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "20": {
+    "inputs": {
+      "add_noise": "enable",
+      "noise_seed": 816687600925376,
+      "steps": 20,
+      "cfg": 5,
+      "sampler_name": "euler",
+      "scheduler": "normal",
+      "start_at_step": 0,
+      "end_at_step": 10,
+      "return_with_leftover_noise": "enable",
+      "model": [
+        "53",
+        0
+      ],
+      "positive": [
+        "6",
+        0
+      ],
+      "negative": [
+        "7",
+        0
+      ],
+      "latent_image": [
+        "5",
+        0
+      ]
+    },
+    "class_type": "KSamplerAdvanced",
+    "_meta": {
+      "title": "KSampler (Advanced)"
+    }
+  },
+  "21": {
+    "inputs": {
+      "add_noise": "disable",
+      "noise_seed": 816687600925376,
+      "steps": 20,
+      "cfg": 5,
+      "sampler_name": "euler",
+      "scheduler": "normal",
+      "start_at_step": 10,
+      "end_at_step": 10000,
+      "return_with_leftover_noise": "disable",
+      "model": [
+        "53",
+        0
+      ],
+      "positive": [
+        "54",
+        0
+      ],
+      "negative": [
+        "7",
+        0
+      ],
+      "latent_image": [
+        "20",
+        0
+      ]
+    },
+    "class_type": "KSamplerAdvanced",
+    "_meta": {
+      "title": "KSampler (Advanced)"
+    }
+  },
+  "26": {
+    "inputs": {
+      "samples": [
+        "21",
+        0
+      ],
+      "vae": [
+        "4",
+        2
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "29": {
+    "inputs": {
+      "action": "replace",
+      "tidy_tags": "no",
+      "text_a": [
+        "70",
+        0
+      ],
+      "text_b": "/ img/",
+      "text_c": ""
+    },
+    "class_type": "StringFunction|pysssss",
+    "_meta": {
+      "title": "String Function 🐍"
+    }
+  },
+  "31": {
+    "inputs": {
+      "image1": [
+        "32",
+        0
+      ],
+      "image2": [
+        "33",
+        0
+      ]
+    },
+    "class_type": "ImageBatch",
+    "_meta": {
+      "title": "Batch Images"
+    }
+  },
+  "32": {
+    "inputs": {
+      "image": "https://replicate.delivery/pbxt/KFNauNDOaImWQhgoxtVSVCvBg5nk32c2x6CdclmSOGm8m5e0/Screenshot%202024-01-18%20at%2009.44.44.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "33": {
+    "inputs": {
+      "image": "https://replicate.delivery/pbxt/KFNaudqUV40O5ua2X6F52W7uw7dCkAn8bPTczl7mzZWBbgKY/Screenshot%202024-01-18%20at%2009.44.50.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "34": {
+    "inputs": {
+      "images": [
+        "47",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "38": {
+    "inputs": {
+      "interpolation": "LANCZOS",
+      "crop_position": "top",
+      "sharpening": 0,
+      "image": [
+        "32",
+        0
+      ]
+    },
+    "class_type": "PrepImageForClipVision",
+    "_meta": {
+      "title": "Prepare Image For Clip Vision"
+    }
+  },
+  "39": {
+    "inputs": {
+      "interpolation": "LANCZOS",
+      "crop_position": "top",
+      "sharpening": 0,
+      "image": [
+        "33",
+        0
+      ]
+    },
+    "class_type": "PrepImageForClipVision",
+    "_meta": {
+      "title": "Prepare Image For Clip Vision"
+    }
+  },
+  "42": {
+    "inputs": {
+      "image1": [
+        "38",
+        0
+      ],
+      "image2": [
+        "39",
+        0
+      ]
+    },
+    "class_type": "ImageBatch",
+    "_meta": {
+      "title": "Batch Images"
+    }
+  },
+  "45": {
+    "inputs": {
+      "image": "https://replicate.delivery/pbxt/KFNauL1WWGAsKYtrxKwCP4wvv66ecsYIepNikgMRe7vVR58q/Screenshot%202024-01-18%20at%2009.45.06.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "46": {
+    "inputs": {
+      "interpolation": "LANCZOS",
+      "crop_position": "top",
+      "sharpening": 0,
+      "image": [
+        "45",
+        0
+      ]
+    },
+    "class_type": "PrepImageForClipVision",
+    "_meta": {
+      "title": "Prepare Image For Clip Vision"
+    }
+  },
+  "47": {
+    "inputs": {
+      "image1": [
+        "42",
+        0
+      ],
+      "image2": [
+        "46",
+        0
+      ]
+    },
+    "class_type": "ImageBatch",
+    "_meta": {
+      "title": "Batch Images"
+    }
+  },
+  "48": {
+    "inputs": {
+      "image1": [
+        "31",
+        0
+      ],
+      "image2": [
+        "45",
+        0
+      ]
+    },
+    "class_type": "ImageBatch",
+    "_meta": {
+      "title": "Batch Images"
+    }
+  },
+  "53": {
+    "inputs": {
+      "lora_name": "photomaker-v1.bin",
+      "strength_model": 1,
+      "model": [
+        "4",
+        0
+      ]
+    },
+    "class_type": "LoraLoaderModelOnly",
+    "_meta": {
+      "title": "LoraLoaderModelOnly"
+    }
+  },
+  "54": {
+    "inputs": {
+      "trigger_word": "img",
+      "text": [
+        "70",
+        0
+      ],
+      "clip": [
+        "4",
+        1
+      ],
+      "photomaker": [
+        "56",
+        0
+      ],
+      "image": [
+        "47",
+        0
+      ]
+    },
+    "class_type": "PhotoMakerEncode",
+    "_meta": {
+      "title": "PhotoMaker Encode"
+    }
+  },
+  "56": {
+    "inputs": {
+      "name": "photomaker-v1.bin"
+    },
+    "class_type": "PhotoMakerLoader",
+    "_meta": {
+      "title": "Load PhotoMaker"
+    }
+  },
+  "57": {
+    "inputs": {
+      "path": "",
+      "interpolation": "lanczos",
+      "crop_position": "center"
+    },
+    "class_type": "PrepImagesForClipVisionFromPath",
+    "_meta": {
+      "title": "Prepare Images For ClipVision From Path"
+    }
+  },
+  "59": {
+    "inputs": {
+      "conditioning_1": [
+        "60",
+        0
+      ],
+      "conditioning_2": [
+        "62",
+        0
+      ]
+    },
+    "class_type": "ConditioningCombine",
+    "_meta": {
+      "title": "Conditioning (Combine)"
+    }
+  },
+  "60": {
+    "inputs": {
+      "start": 0,
+      "end": 0.5,
+      "conditioning": [
+        "6",
+        0
+      ]
+    },
+    "class_type": "ConditioningSetTimestepRange",
+    "_meta": {
+      "title": "ConditioningSetTimestepRange"
+    }
+  },
+  "62": {
+    "inputs": {
+      "start": 0.5,
+      "end": 1,
+      "conditioning": [
+        "54",
+        0
+      ]
+    },
+    "class_type": "ConditioningSetTimestepRange",
+    "_meta": {
+      "title": "ConditioningSetTimestepRange"
+    }
+  },
+  "63": {
+    "inputs": {
+      "seed": 816687600925376,
+      "steps": 20,
+      "cfg": 5,
+      "sampler_name": "euler",
+      "scheduler": "normal",
+      "denoise": 1,
+      "model": [
+        "53",
+        0
+      ],
+      "positive": [
+        "59",
+        0
+      ],
+      "negative": [
+        "7",
+        0
+      ],
+      "latent_image": [
+        "5",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "KSampler"
+    }
+  },
+  "65": {
+    "inputs": {
+      "samples": [
+        "63",
+        0
+      ],
+      "vae": [
+        "4",
+        2
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "67": {
+    "inputs": {
+      "filename_prefix": "ComfyUI",
+      "images": [
+        "8",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Image"
+    }
+  },
+  "68": {
+    "inputs": {
+      "filename_prefix": "ComfyUI",
+      "images": [
+        "26",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Image"
+    }
+  },
+  "69": {
+    "inputs": {
+      "filename_prefix": "ComfyUI",
+      "images": [
+        "65",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Image"
+    }
+  },
+  "70": {
+    "inputs": {
+      "style_name": "Photographic (Default)",
+      "positive": "photo of a man img, high quality, film grain",
+      "negative": "asymmetry, worst quality, low quality, illustration, 3d, 2d, painting, cartoons, sketch), open mouth"
+    },
+    "class_type": "PhotoMakerStyles",
+    "_meta": {
+      "title": "Apply PhotoMaker Style"
+    }
+  },
+  "72": {
+    "inputs": {
+      "value": ""
+    },
+    "class_type": "String",
+    "_meta": {
+      "title": "String"
+    }
+  }
+}

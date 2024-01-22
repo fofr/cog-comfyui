@@ -110,6 +110,7 @@ class WeightsDownloader:
             "IPAdapter": self.weights_manifest.get("IPADAPTER", []),
             "ControlNet": self.weights_manifest.get("CONTROLNET", []),
             "VAE": self.weights_manifest.get("VAE", []),
+            "PhotoMaker": self.weights_manifest.get("PHOTOMAKER", []),
             "AnimateDiff": ComfyUI_AnimateDiff_Evolved.models(),
             "AnimateDiff LORAs": ComfyUI_AnimateDiff_Evolved.loras(),
             "ControlNet Preprocessors": sorted(
