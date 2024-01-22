@@ -17,6 +17,9 @@ repos=(
   "https://github.com/jags111/efficiency-nodes-comfyui 1ac5f18"
   "https://github.com/Derfuu/Derfuu_ComfyUI_ModdedNodes 2ace4c4"
   "https://github.com/FizzleDorf/ComfyUI_FizzNodes cd6cadd"
+  "https://github.com/TinyTerra/ComfyUI_tinyterraNodes eda8a09"
+  "https://github.com/ssitu/ComfyUI_UltimateSDUpscale bcefc5b"
+  "https://github.com/cubiq/ComfyUI_essentials c9236fe"
 )
 
 # Destination directory
@@ -34,7 +37,7 @@ for repo in "${repos[@]}"; do
 
   # Clone the repository into the destination directory
   echo "Cloning $repo_url into $dest_dir$repo_name and checking out to commit $commit_hash"
-  git clone "$repo_url" "$dest_dir$repo_name"
+  git clone --recursive "$repo_url" "$dest_dir$repo_name"
 
   # Use a subshell to avoid changing the main shell's working directory
   # Inside the subshell, change to the repository's directory and checkout to the specific commit

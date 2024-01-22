@@ -1,0 +1,158 @@
+{
+  "187": {
+    "inputs": {
+      "text": "evening sunset scenery blue sky nature, glass bottle with a galaxy in it"
+    },
+    "class_type": "ttN text",
+    "_meta": {
+      "title": "text"
+    }
+  },
+  "188": {
+    "inputs": {
+      "text": "text, watermark"
+    },
+    "class_type": "ttN text",
+    "_meta": {
+      "title": "text"
+    }
+  },
+  "194": {
+    "inputs": {
+      "lora_name": "None",
+      "lora_model_strength": 1,
+      "lora_clip_strength": 1,
+      "upscale_method": "None",
+      "factor": 2,
+      "crop": "disabled",
+      "sampler_state": "Sample",
+      "add_noise": "enable",
+      "steps": 20,
+      "cfg": 9.5,
+      "sampler_name": "uni_pc_bh2",
+      "scheduler": "normal",
+      "start_at_step": 0,
+      "end_at_step": 14,
+      "return_with_leftover_noise": "enable",
+      "image_output": "Hide",
+      "save_prefix": "ComfyUI",
+      "noise_seed": 319330427537704,
+      "pipe": [
+        "197",
+        0
+      ]
+    },
+    "class_type": "ttN pipeKSamplerAdvanced",
+    "_meta": {
+      "title": "pipeKSamplerAdvanced - Base"
+    }
+  },
+  "195": {
+    "inputs": {
+      "lora_name": "None",
+      "lora_model_strength": 1,
+      "lora_clip_strength": 1,
+      "upscale_method": "None",
+      "factor": 2,
+      "crop": "disabled",
+      "sampler_state": "Sample",
+      "add_noise": "disable",
+      "steps": 20,
+      "cfg": 9.5,
+      "sampler_name": "uni_pc_bh2",
+      "scheduler": "normal",
+      "start_at_step": 14,
+      "end_at_step": 60,
+      "return_with_leftover_noise": "disable",
+      "image_output": "Save",
+      "save_prefix": "ComfyUI",
+      "noise_seed": 425870239082281,
+      "pipe": [
+        "196",
+        0
+      ],
+      "optional_latent": [
+        "194",
+        4
+      ]
+    },
+    "class_type": "ttN pipeKSamplerAdvanced",
+    "_meta": {
+      "title": "pipeKSamplerAdvanced - Refiner"
+    }
+  },
+  "196": {
+    "inputs": {
+      "ckpt_name": "sd_xl_refiner_1.0.safetensors",
+      "config_name": "Default",
+      "vae_name": "Baked VAE",
+      "clip_skip": -1,
+      "lora1_name": "None",
+      "lora1_model_strength": 1,
+      "lora1_clip_strength": 1,
+      "lora2_name": "None",
+      "lora2_model_strength": 1,
+      "lora2_clip_strength": 1,
+      "lora3_name": "None",
+      "lora3_model_strength": 1,
+      "lora3_clip_strength": 1,
+      "positive": [
+        "187",
+        0
+      ],
+      "positive_token_normalization": "none",
+      "positive_weight_interpretation": "comfy",
+      "negative": [
+        "188",
+        0
+      ],
+      "negative_token_normalization": "none",
+      "negative_weight_interpretation": "comfy",
+      "empty_latent_width": 768,
+      "empty_latent_height": 768,
+      "batch_size": 1,
+      "seed": 0
+    },
+    "class_type": "ttN pipeLoader",
+    "_meta": {
+      "title": "pipeLoader - Refiner"
+    }
+  },
+  "197": {
+    "inputs": {
+      "ckpt_name": "RealVisXL_V3.0.safetensors",
+      "config_name": "Default",
+      "vae_name": "Baked VAE",
+      "clip_skip": -1,
+      "lora1_name": "None",
+      "lora1_model_strength": 1,
+      "lora1_clip_strength": 1,
+      "lora2_name": "None",
+      "lora2_model_strength": 1,
+      "lora2_clip_strength": 1,
+      "lora3_name": "None",
+      "lora3_model_strength": 1,
+      "lora3_clip_strength": 1,
+      "positive": [
+        "187",
+        0
+      ],
+      "positive_token_normalization": "none",
+      "positive_weight_interpretation": "comfy",
+      "negative": [
+        "188",
+        0
+      ],
+      "negative_token_normalization": "none",
+      "negative_weight_interpretation": "comfy",
+      "empty_latent_width": 768,
+      "empty_latent_height": 768,
+      "batch_size": 1,
+      "seed": 0
+    },
+    "class_type": "ttN pipeLoader",
+    "_meta": {
+      "title": "pipeLoader - Base"
+    }
+  }
+}

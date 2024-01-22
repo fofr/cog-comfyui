@@ -1,0 +1,299 @@
+{
+  "1": {
+    "inputs": {
+      "image": [
+        "7",
+        0
+      ]
+    },
+    "class_type": "GetImageSize+",
+    "_meta": {
+      "title": "🔧 Get Image Size"
+    }
+  },
+  "2": {
+    "inputs": {
+      "width": 256,
+      "height": 64,
+      "interpolation": "lanczos",
+      "keep_proportion": true,
+      "condition": "always",
+      "image": [
+        "7",
+        0
+      ]
+    },
+    "class_type": "ImageResize+",
+    "_meta": {
+      "title": "🔧 Image Resize"
+    }
+  },
+  "4": {
+    "inputs": {
+      "axis": "xy",
+      "image": [
+        "7",
+        0
+      ]
+    },
+    "class_type": "ImageFlip+",
+    "_meta": {
+      "title": "🔧 Image Flip"
+    }
+  },
+  "6": {
+    "inputs": {
+      "threshold": 0.5,
+      "image": [
+        "7",
+        0
+      ]
+    },
+    "class_type": "ImagePosterize+",
+    "_meta": {
+      "title": "🔧 Image Posterize"
+    }
+  },
+  "7": {
+    "inputs": {
+      "image": "https://replicate.delivery/pbxt/qiQ6LiceeNrlDEVHH7HzS0yjI3WeAAerd1eWI4W2N98aViwRC/out-1.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "8": {
+    "inputs": {
+      "prefix": "Width:",
+      "value": [
+        "1",
+        0
+      ]
+    },
+    "class_type": "ConsoleDebug+",
+    "_meta": {
+      "title": "🔧 Console Debug"
+    }
+  },
+  "9": {
+    "inputs": {
+      "prefix": "Height:",
+      "value": [
+        "1",
+        1
+      ]
+    },
+    "class_type": "ConsoleDebug+",
+    "_meta": {
+      "title": "🔧 Console Debug"
+    }
+  },
+  "10": {
+    "inputs": {
+      "images": [
+        "2",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "11": {
+    "inputs": {
+      "images": [
+        "40",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "12": {
+    "inputs": {
+      "images": [
+        "4",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "13": {
+    "inputs": {
+      "images": [
+        "37",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "14": {
+    "inputs": {
+      "images": [
+        "6",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "15": {
+    "inputs": {
+      "amount": 45,
+      "mask": [
+        "20",
+        0
+      ]
+    },
+    "class_type": "MaskBlur+",
+    "_meta": {
+      "title": "🔧 Mask Blur"
+    }
+  },
+  "16": {
+    "inputs": {
+      "axis": "xy",
+      "mask": [
+        "20",
+        0
+      ]
+    },
+    "class_type": "MaskFlip+",
+    "_meta": {
+      "title": "🔧 Mask Flip"
+    }
+  },
+  "18": {
+    "inputs": {
+      "mask": [
+        "15",
+        0
+      ]
+    },
+    "class_type": "MaskPreview+",
+    "_meta": {
+      "title": "🔧 Mask Preview"
+    }
+  },
+  "20": {
+    "inputs": {
+      "image": "cwf_inpaint_example_mask.png",
+      "channel": "alpha",
+      "upload": "image"
+    },
+    "class_type": "LoadImageMask",
+    "_meta": {
+      "title": "Load Image (as Mask)"
+    }
+  },
+  "21": {
+    "inputs": {
+      "mask": [
+        "16",
+        0
+      ]
+    },
+    "class_type": "MaskPreview+",
+    "_meta": {
+      "title": "🔧 Mask Preview"
+    }
+  },
+  "23": {
+    "inputs": {
+      "prefix": "Value:",
+      "value": [
+        "36",
+        0
+      ]
+    },
+    "class_type": "ConsoleDebug+",
+    "_meta": {
+      "title": "🔧 Console Debug"
+    }
+  },
+  "27": {
+    "inputs": {
+      "amount": 0.8,
+      "image": [
+        "7",
+        0
+      ]
+    },
+    "class_type": "ImageCASharpening+",
+    "_meta": {
+      "title": "🔧 Image Contrast Adaptive Sharpening"
+    }
+  },
+  "28": {
+    "inputs": {
+      "images": [
+        "27",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "36": {
+    "inputs": {
+      "value": "a*b",
+      "a": [
+        "2",
+        1
+      ],
+      "b": [
+        "2",
+        2
+      ]
+    },
+    "class_type": "SimpleMath+",
+    "_meta": {
+      "title": "🔧 Simple Math"
+    }
+  },
+  "37": {
+    "inputs": {
+      "factor": 1,
+      "image": [
+        "7",
+        0
+      ]
+    },
+    "class_type": "ImageDesaturate+",
+    "_meta": {
+      "title": "🔧 Image Desaturate"
+    }
+  },
+  "40": {
+    "inputs": {
+      "width": 256,
+      "height": 256,
+      "position": "center",
+      "x_offset": 0,
+      "y_offset": 0,
+      "image": [
+        "7",
+        0
+      ]
+    },
+    "class_type": "ImageCrop+",
+    "_meta": {
+      "title": "🔧 Image Crop"
+    }
+  }
+}

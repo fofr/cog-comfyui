@@ -21,6 +21,9 @@ build:
     - psutil
     - websocket-client==1.6.3
 
+    # ComfyUI_essentials
+    - numba
+
     # ComfyUI_FizzNodes
     - pandas
     - numexpr
