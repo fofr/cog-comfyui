@@ -1,9 +1,11 @@
 import argparse
 import subprocess
 import os
+import sys
+
 
 def download_file(url, filename=None):
-    if not filename and 'huggingface.co' in url:
+    if not filename and "huggingface.co" in url:
         filename = url.split("/")[-1]
         filename = filename.rstrip("?download=true")
     if filename:
@@ -25,11 +27,14 @@ def tar_file(filename):
 
 
 def upload_to_gcloud(local_file, destination_blob_name, subfolder):
-    print(f"Uploading {local_file} to {destination_blob_name}/{subfolder}/{local_file}")
-    subprocess.run(
-        ["gcloud", "storage", "cp", local_file, f"{destination_blob_name}/{subfolder}/{local_file}"]
+    destination_path = (
+        f"{destination_blob_name}/{subfolder}/{local_file}"
+        if subfolder
+        else f"{destination_blob_name}/{local_file}"
     )
-    print(f"Successfully uploaded to {destination_blob_name}/{subfolder}/{local_file}")
+    print(f"Uploading {local_file} to {destination_path}")
+    subprocess.run(["gcloud", "storage", "cp", local_file, destination_path])
+    print(f"Successfully uploaded to {destination_path}")
 
 
 def remove_files(*filenames):
@@ -64,16 +69,20 @@ def get_subfolder():
         return subfolders[choice - 1]
 
 
-def process_file(url, filename=None, subfolder=None):
-    print(f"Processing {url}")
-    local_file = download_file(url, filename)
+def process_file(url=None, filename=None, subfolder=None):
+    if url:
+        print(f"Processing {url}")
+        local_file = download_file(url, filename)
+    else:
+        print(f"Processing {filename}")
+        local_file = filename
     tarred_file = tar_file(local_file)
     upload_to_gcloud(tarred_file, "gs://replicate-weights/comfy-ui", subfolder)
     remove_files(local_file, tarred_file)
 
 
 def process_weights_file(weights_file, subfolder=None):
-    with open(weights_file, 'r') as f:
+    with open(weights_file, "r") as f:
         for line in f:
             url, filename = line.strip().split()
             process_file(url, filename, subfolder)
@@ -83,7 +92,14 @@ def main():
     parser = argparse.ArgumentParser(
         description="Download a file, tar it, and upload to Google Cloud Storage"
     )
-    parser.add_argument("--file", help="The weights file with URLs to download")
+    parser.add_argument(
+        "--weights_list",
+        help="The weights list file with URLs to download",
+    )
+    parser.add_argument(
+        "--local_file",
+        help="The local file to process",
+    )
     parser.add_argument("--url", help="The URL of the file to download")
     parser.add_argument(
         "--filename",
@@ -93,8 +109,14 @@ def main():
 
     subfolder = get_subfolder()
 
-    if args.file:
-        process_weights_file(args.file, subfolder)
+    if args.weights_list:
+        process_weights_file(args.weights_list, subfolder)
+    elif args.local_file:
+        if os.path.isfile(args.local_file):
+            process_file(filename=args.local_file, subfolder=subfolder)
+        else:
+            print(f"Error: The file {args.local_file} does not exist.")
+            sys.exit(1)
     elif args.url:
         process_file(args.url, args.filename, subfolder)
 
