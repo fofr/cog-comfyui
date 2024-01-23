@@ -65,6 +65,10 @@ class WeightsDownloader:
                 )
         weights_map.update(ComfyUI_Controlnet_Aux.weights_map(BASE_URL))
         weights_map.update(ComfyUI_AnimateDiff_Evolved.weights_map(BASE_URL))
+        print("Allowed weights:")
+        for weight in weights_map.keys():
+            print(weight)
+
         return weights_map
 
     def download_weights(self, weight_str):
