@@ -7,7 +7,7 @@ from helpers.ComfyUI_Controlnet_Aux import ComfyUI_Controlnet_Aux
 from helpers.ComfyUI_AnimateDiff_Evolved import ComfyUI_AnimateDiff_Evolved
 
 WEIGHTS_MANIFEST_URL = (
-    "https://weights.replicate.delivery/default/comfy-ui/weights.json"
+    "https://weights.replicate.delivery/default/comfy-ui/weights.json?cache_bypass"
 )
 WEIGHTS_MANIFEST_PATH = "weights.json"
 BASE_URL = "https://weights.replicate.delivery/default/comfy-ui"
@@ -103,7 +103,9 @@ class WeightsDownloader:
         elapsed_time = time.time() - start
         file_size_bytes = os.path.getsize(f"{dest}/{weight_str}")
         file_size_megabytes = file_size_bytes / (1024 * 1024)
-        print(f"⌛️ Download {weight_str} took: {elapsed_time:.2f}s, size: {file_size_megabytes:.2f}MB")
+        print(
+            f"⌛️ Download {weight_str} took: {elapsed_time:.2f}s, size: {file_size_megabytes:.2f}MB"
+        )
 
     def write_supported_weights(self):
         weight_lists = {
