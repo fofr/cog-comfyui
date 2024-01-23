@@ -3,6 +3,7 @@
     "512-inpainting-ema.safetensors",
     "albedobaseXL_v13.safetensors",
     "Deliberate_v2.safetensors",
+    "dreamlabsoil_V2_v2.safetensors",
     "DreamShaper_6.2_BakedVae_pruned.safetensors",
     "DreamShaper_6.31_BakedVae.safetensors",
     "DreamShaper_6.31_BakedVae_pruned.safetensors",
@@ -56,7 +57,8 @@
     "lcm_lora_sdxl.safetensors",
     "lcm-lora-sdv1-5.safetensors",
     "lcm-lora-ssd-1b.safetensors",
-    "Harrlogos_v2.0.safetensors"
+    "Harrlogos_v2.0.safetensors",
+    "COOLKIDS_MERGE_V2.5.safetensors"
   ],
   "CONTROLNET": [
     "control_lora_rank128_v11e_sd15_ip2p_fp16.safetensors",
