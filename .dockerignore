@@ -1,6 +1,7 @@
-__pycache__
-.git/
-.github/
+**/__pycache__
+**/.git
+**/.github
+**/.ci
 
 # Outputs
 *.jpg
@@ -31,7 +32,6 @@ ComfyUI/custom_nodes/comfyUI_controlnet_aux/ckpts
 ComfyUI/custom_nodes/ComfyUI-AnimateDiff-Evolved/models
 ComfyUI/custom_nodes/ComfyUI-AnimateDiff-Evolved/motion_lora
 ComfyUI/custom_nodes/efficiency-nodes-comfyui/images
-
 
 # ComfyUI bits we just don’t need
 ComfyUI/tests
