@@ -8,5 +8,7 @@ __pycache__
 *.safetensors
 *.pth
 *.bin
+*.torchscript
 weights.txt
 manifest.txt
+updated_weights.json

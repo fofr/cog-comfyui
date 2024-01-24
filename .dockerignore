@@ -24,7 +24,7 @@
 
 # Files
 scripts/*
-weights.json
+updated_weights.json
 
 # ComfyUI
 ComfyUI/venv
