@@ -7,7 +7,7 @@ from helpers.ComfyUI_Controlnet_Aux import ComfyUI_Controlnet_Aux
 from helpers.ComfyUI_AnimateDiff_Evolved import ComfyUI_AnimateDiff_Evolved
 
 WEIGHTS_MANIFEST_URL = (
-    "https://weights.replicate.delivery/default/comfy-ui/weights.json?cache_bypass"
+    f"https://weights.replicate.delivery/default/comfy-ui/weights.json?cache_bypass&time={int(time.time())}"
 )
 WEIGHTS_MANIFEST_PATH = "weights.json"
 BASE_URL = "https://weights.replicate.delivery/default/comfy-ui"

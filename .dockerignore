@@ -21,6 +21,9 @@
 *.pt
 *.onnx
 *.torchscript
+
+# Files
+scripts/*
 weights.json
 
 # ComfyUI
@@ -38,6 +41,4 @@ ComfyUI/tests
 ComfyUI/tests-ui
 ComfyUI/notebooks
 ComfyUI/script_examples
-ComfyUI/.github
-ComfyUI/.ci
 ComfyUI/comfyui_screenshot.png
