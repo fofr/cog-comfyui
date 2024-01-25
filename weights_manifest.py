@@ -6,7 +6,7 @@ import json
 from helpers.ComfyUI_Controlnet_Aux import ComfyUI_Controlnet_Aux
 from helpers.ComfyUI_AnimateDiff_Evolved import ComfyUI_AnimateDiff_Evolved
 
-UPDATED_WEIGHTS_MANIFEST_URL = f"https://weights.replicate.delivery/default/comfy-ui/weights.json?cache_bypass&time={int(time.time())}"
+UPDATED_WEIGHTS_MANIFEST_URL = f"https://weights.replicate.delivery/default/comfy-ui/weights.json?cache_bypass={int(time.time())}"
 UPDATED_WEIGHTS_MANIFEST_PATH = "updated_weights.json"
 WEIGHTS_MANIFEST_PATH = "weights.json"
 
