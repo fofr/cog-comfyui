@@ -15,12 +15,11 @@
 # Models
 *.ckpt
 *.safetensors
-*.pt
 *.pth
 *.bin
-*.pt
 *.onnx
 *.torchscript
+# .pt files are used by efficiency-nodes-comfyui
 
 # Files
 scripts/*
