@@ -2,16 +2,20 @@
 
 - 512-inpainting-ema.safetensors
 - albedobaseXL_v13.safetensors
+- anything-v3-fp16-pruned.safetensors
 - Deliberate_v2.safetensors
+- dreamlabsoil_V2_v2.safetensors
 - DreamShaper_6.2_BakedVae_pruned.safetensors
 - DreamShaper_6.31_BakedVae.safetensors
 - DreamShaper_6.31_BakedVae_pruned.safetensors
 - DreamShaper_6.31_INPAINTING.inpainting.safetensors
 - DreamShaper_6_BakedVae.safetensors
+- dreamshaper_8.safetensors
+- dreamshaper_8LCM.safetensors
+- juggernautXL_v8Rundiffusion.safetensors
 - LCM_Dreamshaper_v7_4k.safetensors
-- RealVisXL_V2.0.safetensors
-- RealVisXL_V3.0.safetensors
-- RealVisXL_V3.0_Turbo.safetensors
+- motionctrl.pth
+- proteus_v02.safetensors
 - Realistic_Vision_V5.1-inpainting.ckpt
 - Realistic_Vision_V5.1-inpainting.safetensors
 - Realistic_Vision_V5.1.ckpt
@@ -24,40 +28,64 @@
 - Realistic_Vision_V6.0_NV_B1_fp16.safetensors
 - Realistic_Vision_V6.0_NV_B1_inpainting.safetensors
 - Realistic_Vision_V6.0_NV_B1_inpainting_fp16.safetensors
-- SSD-1B.safetensors
+- RealVisXL_V2.0.safetensors
+- RealVisXL_V3.0.safetensors
+- RealVisXL_V3.0_Turbo.safetensors
 - sd_xl_base_1.0.safetensors
+- sd_xl_base_1.0_0.9vae.safetensors
 - sd_xl_refiner_1.0.safetensors
+- sd_xl_refiner_1.0_0.9vae.safetensors
+- sd_xl_turbo_1.0.safetensors
 - sd_xl_turbo_1.0_fp16.safetensors
+- segmind-vega.safetensors
+- SSD-1B.safetensors
+- starlightXLAnimated_v3.safetensors
 - svd.safetensors
 - svd_xt.safetensors
 - turbovisionxlSuperFastXLBasedOnNew_tvxlV32Bakedvae.safetensors
 - v1-5-pruned-emaonly.ckpt
+- v2-1_512-ema-pruned.safetensors
 - v2-1_768-ema-pruned.ckpt
 - v2-1_768-ema-pruned.safetensors
 - v2-1_768-nonema-pruned.ckpt
 - v2-1_768-nonema-pruned.safetensors
+- wd-illusion-fp16.safetensors
+- x4-upscaler-ema.safetensors
 
 ## Upscale models
 
+- 4x-AnimeSharp.pth
+- 4x-UltraSharp.pth
+- 4x_foolhardy_Remacri.pth
+- 4x_NMKD-Siax_200k.pth
+- 8x_NMKD-Superscale_150000_G.pth
+- ESRGAN_4x.pth
 - RealESRGAN_x2.pth
 - RealESRGAN_x4.pth
-- RealESRGAN_x8.pth
 - RealESRGAN_x4plus.pth
 - RealESRGAN_x4plus_anime_6B.pth
-- 4x_NMKD-Siax_200k.pth
-- 4x-UltraSharp.pth
+- RealESRGAN_x8.pth
 
 ## CLIP Vision
 
+- CLIP-ViT-bigG-14-laion2B-39B-b160k.safetensors
+- CLIP-ViT-H-14-laion2B-s32B-b79K.safetensors
+- clip-vit-large-patch14.bin
 - clip_vision_g.safetensors
 - model.15.safetensors
 - model.sdxl.safetensors
 
 ## LORAs
 
-- lcm_lora_sdxl.safetensors
+- COOLKIDS_MERGE_V2.5.safetensors
+- Harrlogos_v2.0.safetensors
 - lcm-lora-sdv1-5.safetensors
 - lcm-lora-ssd-1b.safetensors
+- lcm_lora_sdxl.safetensors
+- sd_xl_offset_example-lora_1.0.safetensors
+- Segmind-VegaRT.safetensors
+- theovercomer8sContrastFix_sd15.safetensors
+- theovercomer8sContrastFix_sd21768.safetensors
 
 ## IPAdapter
 
@@ -67,6 +95,7 @@
 - ip-adapter-faceid-plusv2_sd15_lora.safetensors
 - ip-adapter-faceid-plusv2_sdxl.bin
 - ip-adapter-faceid-plusv2_sdxl_lora.safetensors
+- ip-adapter-faceid-portrait_sd15.bin
 - ip-adapter-faceid_sd15.bin
 - ip-adapter-faceid_sd15_lora.safetensors
 - ip-adapter-faceid_sdxl.bin
@@ -87,9 +116,20 @@
 - ip-adapter_sd15_light.safetensors
 - ip-adapter_sd15_vit-G.bin
 - ip-adapter_sd15_vit-G.safetensors
+- ip-adapter_sdxl.safetensors
+- ip-adapter_sdxl_vit-h.safetensors
 
 ## ControlNet
 
+- control-lora-canny-rank128.safetensors
+- control-lora-canny-rank256.safetensors
+- control-lora-depth-rank128.safetensors
+- control-lora-depth-rank256.safetensors
+- control-lora-recolor-rank128.safetensors
+- control-lora-recolor-rank256.safetensors
+- control-lora-sketch-rank128-metadata.safetensors
+- control-lora-sketch-rank256.safetensors
+- control_boxdepth_LooseControlfp16.safetensors
 - control_lora_rank128_v11e_sd15_ip2p_fp16.safetensors
 - control_lora_rank128_v11e_sd15_shuffle_fp16.safetensors
 - control_lora_rank128_v11f1e_sd15_tile_fp16.safetensors
@@ -104,6 +144,7 @@
 - control_lora_rank128_v11p_sd15_seg_fp16.safetensors
 - control_lora_rank128_v11p_sd15_softedge_fp16.safetensors
 - control_lora_rank128_v11p_sd15s2_lineart_anime_fp16.safetensors
+- control_sd15_inpaint_depth_hand_fp16.safetensors
 - control_v11e_sd15_ip2p.pth
 - control_v11e_sd15_ip2p_fp16.safetensors
 - control_v11e_sd15_shuffle.pth
@@ -133,8 +174,12 @@
 - control_v11p_sd15s2_lineart_anime.pth
 - control_v11p_sd15s2_lineart_anime_fp16.safetensors
 - control_v11u_sd15_tile_fp16.safetensors
+- controllllite_v01032064e_sdxl_canny_anime.safetensors
 - controlnet-canny-sdxl-1.0.fp16.safetensors
 - controlnet-depth-sdxl-1.0.fp16.safetensors
+- controlnet-sd-xl-1.0-softedge-dexined.safetensors
+- controlnet-temporalnet-sdxl-1.0.safetensors
+- depth-zoe-xl-v1.0-controlnet.safetensors
 - diffusers_xl_canny_full.safetensors
 - diffusers_xl_canny_mid.safetensors
 - diffusers_xl_canny_small.safetensors
@@ -155,6 +200,7 @@
 - kohya_controllllite_xl_openpose_anime.safetensors
 - kohya_controllllite_xl_openpose_anime_v2.safetensors
 - kohya_controllllite_xl_scribble_anime.safetensors
+- OpenPoseXL2.safetensors
 - sai_xl_canny_128lora.safetensors
 - sai_xl_canny_256lora.safetensors
 - sai_xl_depth_128lora.safetensors
@@ -176,12 +222,25 @@
 - t2i-adapter_xl_canny.safetensors
 - t2i-adapter_xl_openpose.safetensors
 - t2i-adapter_xl_sketch.safetensors
+- t2iadapter_canny_sd14v1.pth
+- t2iadapter_color_sd14v1.pth
+- t2iadapter_depth_sd14v1.pth
+- t2iadapter_keypose_sd14v1.pth
+- t2iadapter_openpose_sd14v1.pth
+- t2iadapter_seg_sd14v1.pth
+- t2iadapter_sketch_sd14v1.pth
+- t2iadapter_style_sd14v1.pth
+- temporalnetversion2.ckpt
 - thibaud_xl_openpose.safetensors
 - thibaud_xl_openpose_256lora.safetensors
 
 ## VAE
 
 - vae-ft-mse-840000-ema-pruned.safetensors
+
+## PhotoMaker
+
+- photomaker-v1.bin
 
 ## AnimateDiff
 
@@ -194,6 +253,11 @@
 - v3_sd15_sparsectrl_rgb.ckpt
 - v3_sd15_sparsectrl_scribble.ckpt
 - temporaldiff-v1-animatediff.ckpt
+- mm-Stabilized_high.pth
+- mm-Stabilized_mid.pth
+- lt_long_mm_32_frames.ckpt
+- lt_long_mm_16_64_frames.ckpt
+- lt_long_mm_16_64_frames_v1.1.ckpt
 
 ## AnimateDiff LORAs
 
@@ -241,3 +305,4 @@
 - skytnt/anime-seg/isnetis.ckpt
 - yzd-v/DWPose/dw-ll_ucoco_384.onnx
 - yzd-v/DWPose/yolox_l.onnx
+
