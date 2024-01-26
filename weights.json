@@ -53,8 +53,12 @@
     "x4-upscaler-ema.safetensors"
   ],
   "UPSCALE_MODELS": [
+    "4x-AnimeSharp.pth",
     "4x-UltraSharp.pth",
+    "4x_foolhardy_Remacri.pth",
     "4x_NMKD-Siax_200k.pth",
+    "8x_NMKD-Superscale_150000_G.pth",
+    "ESRGAN_4x.pth",
     "RealESRGAN_x2.pth",
     "RealESRGAN_x4.pth",
     "RealESRGAN_x4plus.pth",
@@ -74,7 +78,11 @@
     "Harrlogos_v2.0.safetensors",
     "lcm-lora-sdv1-5.safetensors",
     "lcm-lora-ssd-1b.safetensors",
-    "lcm_lora_sdxl.safetensors"
+    "lcm_lora_sdxl.safetensors",
+    "sd_xl_offset_example-lora_1.0.safetensors",
+    "Segmind-VegaRT.safetensors",
+    "theovercomer8sContrastFix_sd15.safetensors",
+    "theovercomer8sContrastFix_sd21768.safetensors"
   ],
   "EMBEDDINGS": [
     "bad_prompt_version2-neg.pt",
@@ -184,6 +192,14 @@
     "t2i-adapter_xl_canny.safetensors",
     "t2i-adapter_xl_openpose.safetensors",
     "t2i-adapter_xl_sketch.safetensors",
+    "t2iadapter_canny_sd14v1.pth",
+    "t2iadapter_color_sd14v1.pth",
+    "t2iadapter_depth_sd14v1.pth",
+    "t2iadapter_keypose_sd14v1.pth",
+    "t2iadapter_openpose_sd14v1.pth",
+    "t2iadapter_seg_sd14v1.pth",
+    "t2iadapter_sketch_sd14v1.pth",
+    "t2iadapter_style_sd14v1.pth",
     "temporalnetversion2.ckpt",
     "thibaud_xl_openpose.safetensors",
     "thibaud_xl_openpose_256lora.safetensors"

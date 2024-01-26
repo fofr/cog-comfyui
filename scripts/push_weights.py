@@ -53,6 +53,7 @@ def get_subfolder():
         "clip_vision",
         "loras",
         "ipadapter",
+        "embeddings",
         "onnx",
         "vae",
         "custom_nodes/ComfyUI-AnimateDiff-Evolved",
