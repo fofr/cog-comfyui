@@ -8,6 +8,11 @@ MODELS = [
     "v3_sd15_sparsectrl_rgb.ckpt",
     "v3_sd15_sparsectrl_scribble.ckpt",
     "temporaldiff-v1-animatediff.ckpt",
+    "mm-Stabilized_high.pth",
+    "mm-Stabilized_mid.pth",
+    "lt_long_mm_32_frames.ckpt",
+    "lt_long_mm_16_64_frames.ckpt",
+    "lt_long_mm_16_64_frames_v1.1.ckpt",
 ]
 
 LORAS = [

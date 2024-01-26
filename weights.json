@@ -41,7 +41,16 @@
     "v2-1_768-ema-pruned.ckpt",
     "v2-1_768-ema-pruned.safetensors",
     "v2-1_768-nonema-pruned.ckpt",
-    "v2-1_768-nonema-pruned.safetensors"
+    "v2-1_768-nonema-pruned.safetensors",
+    "x4-upscaler-ema.safetensors",
+    "sd_xl_turbo_1.0.safetensors",
+    "sd_xl_base_1.0_0.9vae.safetensors",
+    "sd_xl_refiner_1.0_0.9vae.safetensors",
+    "v2-1_512-ema-pruned.safetensors",
+    "anything-v3-fp16-pruned.safetensors",
+    "wd-illusion-fp16.safetensors",
+    "segmind-vega.safetensors",
+    "motionctrl.pth"
   ],
   "UPSCALE_MODELS": [
     "RealESRGAN_x2.pth",
@@ -55,7 +64,10 @@
   "CLIP_VISION": [
     "clip_vision_g.safetensors",
     "model.15.safetensors",
-    "model.sdxl.safetensors"
+    "model.sdxl.safetensors",
+    "clip-vit-large-patch14.bin",
+    "CLIP-ViT-H-14-laion2B-s32B-b79K.safetensors",
+    "CLIP-ViT-bigG-14-laion2B-39B-b160k.safetensors"
   ],
   "LORAS": [
     "lcm_lora_sdxl.safetensors",
@@ -152,7 +164,23 @@
     "t2i-adapter_xl_openpose.safetensors",
     "t2i-adapter_xl_sketch.safetensors",
     "thibaud_xl_openpose.safetensors",
-    "thibaud_xl_openpose_256lora.safetensors"
+    "thibaud_xl_openpose_256lora.safetensors",
+    "temporalnetversion2.ckpt",
+    "control-lora-canny-rank128.safetensors",
+    "control-lora-depth-rank128.safetensors",
+    "control-lora-recolor-rank128.safetensors",
+    "control-lora-sketch-rank128-metadata.safetensors",
+    "control-lora-canny-rank256.safetensors",
+    "control-lora-depth-rank256.safetensors",
+    "control-lora-recolor-rank256.safetensors",
+    "control-lora-sketch-rank256.safetensors",
+    "controllllite_v01032064e_sdxl_canny_anime.safetensors",
+    "OpenPoseXL2.safetensors",
+    "controlnet-sd-xl-1.0-softedge-dexined.safetensors",
+    "depth-zoe-xl-v1.0-controlnet.safetensors",
+    "control_sd15_inpaint_depth_hand_fp16.safetensors",
+    "control_boxdepth_LooseControlfp16.safetensors",
+    "controlnet-temporalnet-sdxl-1.0.safetensors"
   ],
   "IPADAPTER": [
     "ip-adapter-faceid-plus_sd15.bin",
