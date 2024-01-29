@@ -16,6 +16,7 @@ from urllib.error import URLError
 # custom_nodes helpers
 from helpers.ComfyUI_IPAdapter_plus import ComfyUI_IPAdapter_plus
 from helpers.ComfyUI_Controlnet_Aux import ComfyUI_Controlnet_Aux
+from helpers.ComfyUI_Reactor_Node import ComfyUI_Reactor_Node
 
 
 class ComfyUI:
@@ -78,6 +79,8 @@ class ComfyUI:
             ComfyUI_Controlnet_Aux.add_controlnet_preprocessor_weight(
                 weights_to_download, node
             )
+
+            ComfyUI_Reactor_Node.add_reactor_weight(weights_to_download, node)
 
             if "inputs" in node:
                 for input in node["inputs"].values():

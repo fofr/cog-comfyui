@@ -29,7 +29,7 @@ Commercial use is not permitted without direct consultation from the author.
 https://huggingface.co/dataautogpt3/ProteusV0.2 by [@DataPlusEngine](https://twitter.com/DataPlusEngine)
 Support them: https://www.buymeacoffee.com/DataVoid
 
-### inswapper_128.onnx and inswapper_128_fp16.onnx
+### inswapper_128.onnx, inswapper_128_fp16.onnx and buffalo_l
 
 InsightFace FaceSwap models are non-commercial research only
 
