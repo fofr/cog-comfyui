@@ -9,10 +9,15 @@ BASE_URL = "https://weights.replicate.delivery/default/comfy-ui"
 
 class WeightsDownloader:
     def __init__(self):
-        self.weights_map = WeightsManifest().weights_map
+        self.weights_manifest = WeightsManifest()
+        self.weights_map = self.weights_manifest.weights_map
 
     def download_weights(self, weight_str):
         if weight_str in self.weights_map:
+            if self.weights_manifest.is_non_commercial_only(weight_str):
+                print(
+                    f"⚠️  {weight_str} is for non-commercial use only. Unless you have obtained a commercial license.\nDetails: https://github.com/fofr/cog-comfyui/blob/main/weights_licenses.md"
+                )
             self.download_if_not_exists(
                 weight_str,
                 self.weights_map[weight_str]["url"],

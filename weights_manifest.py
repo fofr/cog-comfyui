@@ -91,6 +91,22 @@ class WeightsManifest:
 
         return weights_map
 
+    def non_commercial_weights(self):
+        return [
+            "inswapper_128.onnx",
+            "inswapper_128_fp16.onnx",
+            "proteus_v02.safetensors",
+            "RealVisXL_V3.0_Turbo.safetensors",
+            "sd_xl_turbo_1.0.safetensors",
+            "sd_xl_turbo_1.0_fp16.safetensors",
+            "svd.safetensors",
+            "svd_xt.safetensors",
+            "turbovisionxlSuperFastXLBasedOnNew_tvxlV32Bakedvae",
+        ]
+
+    def is_non_commercial_only(self, weight_str):
+        return weight_str in self.non_commercial_weights()
+
     def write_supported_weights(self):
         weight_lists = {
             "Checkpoints": self.weights_manifest.get("CHECKPOINTS", []),
