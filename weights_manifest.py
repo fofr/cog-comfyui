@@ -120,6 +120,7 @@ class WeightsManifest:
             "Face restoration models": self.weights_manifest.get(
                 "FACERESTORE_MODELS", []
             ),
+            "Face detection models": self.weights_manifest.get("FACEDETECTION", []),
             "AnimateDiff": ComfyUI_AnimateDiff_Evolved.models(),
             "AnimateDiff LORAs": ComfyUI_AnimateDiff_Evolved.loras(),
             "ControlNet Preprocessors": sorted(

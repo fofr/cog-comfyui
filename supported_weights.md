@@ -284,11 +284,17 @@
 ## Face restoration models
 
 - codeformer.pth
-- detection_mobilenet0.25_Final.pth
-- detection_Resnet50_Final.pth
 - GFPGANv1.3.pth
 - GFPGANv1.4.pth
 - RestoreFormer.pth
+
+## Face detection models
+
+- detection_mobilenet0.25_Final.pth
+- detection_Resnet50_Final.pth
+- parsing_parsenet.pth
+- yolov5l-face.pth
+- yolov5n-face.pth
 
 ## AnimateDiff
 
