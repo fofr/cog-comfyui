@@ -280,6 +280,10 @@
   "PHOTOMAKER": [
     "photomaker-v1.bin"
   ],
+  "INSIGHTFACE": [
+    "inswapper_128.onnx",
+    "inswapper_128_fp16.onnx"
+  ],
   "FACERESTORE_MODELS": [
     "codeformer.pth",
     "detection_mobilenet0.25_Final.pth",

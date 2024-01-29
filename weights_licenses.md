@@ -32,4 +32,5 @@ Support them: https://www.buymeacoffee.com/DataVoid
 ### inswapper_128.onnx and inswapper_128_fp16.onnx
 
 InsightFace FaceSwap models are non-commercial research only
+
 https://github.com/deepinsight/insightface?tab=readme-ov-file#license

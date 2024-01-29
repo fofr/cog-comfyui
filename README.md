@@ -35,6 +35,7 @@ The following custom nodes are also supported, these are fixed to specific commi
 - [ComfyUI UltimateSDUpscale](https://github.com/ssitu/ComfyUI_UltimateSDUpscale/tree/bcefc5b)
 - [ComfyUI Essentials](https://github.com/cubiq/ComfyUI_essentials/tree/c9236fe)
 - [masquerade-nodes-comfyui](https://github.com/BadCafeCode/tree/masquerade-nodes-comfyui/240209b)
+- [comfyui-reactor-node](https://github.com/Gourieff/comfyui-reactor-node/tree/ae98c19)
 
 Raise an issue to request more custom nodes or models, or use this model as a template to roll your own.
 
