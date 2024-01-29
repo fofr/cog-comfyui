@@ -281,6 +281,15 @@
 
 - photomaker-v1.bin
 
+## Face restoration models
+
+- codeformer.pth
+- detection_mobilenet0.25_Final.pth
+- detection_Resnet50_Final.pth
+- GFPGANv1.3.pth
+- GFPGANv1.4.pth
+- RestoreFormer.pth
+
 ## AnimateDiff
 
 - mm_sd_v14.ckpt

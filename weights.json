@@ -279,5 +279,13 @@
   ],
   "PHOTOMAKER": [
     "photomaker-v1.bin"
+  ],
+  "FACERESTORE_MODELS": [
+    "codeformer.pth",
+    "detection_mobilenet0.25_Final.pth",
+    "detection_Resnet50_Final.pth",
+    "GFPGANv1.3.pth",
+    "GFPGANv1.4.pth",
+    "RestoreFormer.pth"
   ]
 }

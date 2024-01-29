@@ -1,4 +1,9 @@
 import json
+import os
+import sys
+
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+from weights_manifest import WeightsManifest
 
 # Load the JSON data from a file
 with open('weights.json', 'r') as file:
@@ -12,3 +17,5 @@ for key in data:
 # Write the sorted JSON data back to the file
 with open('weights.json', 'w') as file:
     json.dump(data, file, indent=2)
+
+WeightsManifest().write_supported_weights()
