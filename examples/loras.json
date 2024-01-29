@@ -1,0 +1,82 @@
+{
+  "4": {
+    "inputs": {
+      "seed": 591400986231589,
+      "steps": 20,
+      "cfg": 8,
+      "sampler_name": "euler",
+      "scheduler": "normal",
+      "denoise": 1,
+      "model": [
+        "12",
+        0
+      ],
+      "positive": [
+        "12",
+        1
+      ],
+      "negative": [
+        "12",
+        2
+      ],
+      "latent_image": [
+        "12",
+        3
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "KSampler"
+    }
+  },
+  "5": {
+    "inputs": {
+      "filename_prefix": "ComfyUI",
+      "images": [
+        "6",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Image"
+    }
+  },
+  "6": {
+    "inputs": {
+      "samples": [
+        "4",
+        0
+      ],
+      "vae": [
+        "12",
+        4
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "12": {
+    "inputs": {
+      "ckpt_name": "sd_xl_base_1.0.safetensors",
+      "vae_name": "Baked VAE",
+      "clip_skip": -1,
+      "lora_name": "artificialguybr/3DRedmond-3DRenderStyle-3DRenderAF.safetensors",
+      "lora_model_strength": 0.7,
+      "lora_clip_strength": 1,
+      "positive": "3D render style, 3DRenderAF, Cute panda",
+      "negative": "ugly, distorted, artefacts, watermark, text",
+      "token_normalization": "mean",
+      "weight_interpretation": "comfy",
+      "empty_latent_width": 768,
+      "empty_latent_height": 768,
+      "batch_size": 1
+    },
+    "class_type": "Efficient Loader",
+    "_meta": {
+      "title": "Efficient Loader"
+    }
+  }
+}
