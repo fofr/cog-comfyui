@@ -28,11 +28,6 @@ build:
     - pandas
     - numexpr
 
-    # comfyui-reactor-node
-    - insightface==0.7.3
-    - onnx>=1.14.0
-    - onnxruntime
-
     # comfyui_controlnet_aux
     # https://github.com/Fannovel16/comfyui_controlnet_aux/blob/main/requirements.txt
     - importlib_metadata
