@@ -12,6 +12,7 @@
     "DreamShaper_6_BakedVae.safetensors",
     "dreamshaper_8.safetensors",
     "dreamshaper_8LCM.safetensors",
+    "epicrealism_naturalSinRC1VAE.safetensors",
     "juggernautXL_v8Rundiffusion.safetensors",
     "LCM_Dreamshaper_v7_4k.safetensors",
     "motionctrl.pth",
