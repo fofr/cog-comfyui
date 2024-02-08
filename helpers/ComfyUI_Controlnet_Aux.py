@@ -91,14 +91,22 @@ class ComfyUI_Controlnet_Aux:
 
     @staticmethod
     def add_controlnet_preprocessor_weight(weights_to_download, node):
-        if (
-            "class_type" in node
-            and node["class_type"] in ComfyUI_Controlnet_Aux.node_class_mapping()
-        ):
-            class_weights = ComfyUI_Controlnet_Aux.node_class_mapping()[
-                node["class_type"]
-            ]
+        node_class = node.get("class_type")
+        node_mapping = ComfyUI_Controlnet_Aux.node_class_mapping()
+
+        if node_class and node_class in node_mapping:
+            class_weights = node_mapping[node_class]
             if isinstance(class_weights, list):
                 weights_to_download.extend(class_weights)
             else:
                 weights_to_download.append(class_weights)
+
+        # Additional check for AIO_Preprocessor and its preprocessor input value
+        if node_class == "AIO_Preprocessor" and "preprocessor" in node.get("inputs", {}):
+            preprocessor = node["inputs"]["preprocessor"]
+            if preprocessor in node_mapping:
+                preprocessor_weights = node_mapping[preprocessor]
+                if isinstance(preprocessor_weights, list):
+                    weights_to_download.extend(preprocessor_weights)
+                else:
+                    weights_to_download.append(preprocessor_weights)
