@@ -12,9 +12,11 @@
 - DreamShaper_6_BakedVae.safetensors
 - dreamshaper_8.safetensors
 - dreamshaper_8LCM.safetensors
+- epicrealism_naturalSinRC1VAE.safetensors
 - juggernautXL_v8Rundiffusion.safetensors
 - LCM_Dreamshaper_v7_4k.safetensors
 - motionctrl.pth
+- motionctrl_svd.ckpt
 - proteus_v02.safetensors
 - Realistic_Vision_V5.1-inpainting.ckpt
 - Realistic_Vision_V5.1-inpainting.safetensors
@@ -275,6 +277,7 @@
 
 ## VAE
 
+- sdxl_vae.safetensors
 - vae-ft-mse-840000-ema-pruned.safetensors
 
 ## PhotoMaker
