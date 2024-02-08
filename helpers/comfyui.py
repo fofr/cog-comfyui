@@ -164,7 +164,10 @@ class ComfyUI:
                 continue
 
     def load_workflow(self, workflow):
-        wf = json.loads(workflow)
+        if not isinstance(workflow, dict):
+            wf = json.loads(workflow)
+        else:
+            wf = workflow
 
         # There are two types of ComfyUI JSON
         # We need the API version
