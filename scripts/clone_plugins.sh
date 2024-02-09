@@ -49,7 +49,19 @@ for repo in "${repos[@]}"; do
 
     # Use a subshell to avoid changing the main shell's working directory
     # Inside the subshell, change to the repository's directory and checkout to the specific commit
-    (cd "$dest_dir$repo_name" && git checkout "$commit_hash")
+    (
+      cd "$dest_dir$repo_name" && git checkout "$commit_hash"
+      rm -rf .git
+
+      # Recursively remove .git directories from submodules
+      find . -type d -name ".git" -exec rm -rf {} +
+
+      # If the repository is efficiency-nodes-comfyui, also remove the images directory
+      if [ "$repo_name" = "efficiency-nodes-comfyui" ]; then
+        echo "Removing images and workflows directories from $repo_name"
+        rm -rf images workflows
+      fi
+    )
   else
     echo "Skipping clone for $repo_name, directory already exists"
   fi
