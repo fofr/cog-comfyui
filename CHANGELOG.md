@@ -1,3 +1,24 @@
+## 2024-02-09
+
+Models added:
+
+- [artificialguybr](https://huggingface.co/artificialguybr) LoRAs
+- [epicrealism_naturalSinRC1VAE.safetensors](https://civitai.com/models/25694/epicrealism)
+- [motionctrl_svd.ckpt](https://huggingface.co/TencentARC/MotionCtrl)
+- [sdxl_vae.safetensors](https://huggingface.co/stabilityai/sdxl-vae)
+
+Face restoration and detection models:
+
+- codeformer.pth
+- GFPGANv1.3.pth
+- GFPGANv1.4.pth
+- RestoreFormer.pth
+- detection_mobilenet0.25_Final.pth
+- detection_Resnet50_Final.pth
+- parsing_parsenet.pth
+- yolov5l-face.pth
+- yolov5n-face.pth
+
 ## 2024-01-23
 
 Models added:
