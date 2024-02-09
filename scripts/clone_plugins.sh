@@ -26,6 +26,7 @@ repos=(
   "https://github.com/BadCafeCode/masquerade-nodes-comfyui 240209b"
   "https://github.com/Gourieff/comfyui-reactor-node ae81f62"
   "https://github.com/cubiq/ComfyUI_InstantID 94d08d2"
+  "https://github.com/WASasquatch/was-node-suite-comfyui 33534f2"
 )
 
 # Destination directory

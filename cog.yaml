@@ -21,6 +21,23 @@ build:
     - psutil
     - websocket-client==1.6.3
 
+    # was-node-suite-comfyui
+    # https://github.com/WASasquatch/was-node-suite-comfyui/blob/main/requirements.txt
+    - cmake
+    - fairscale>=0.4.4
+    - git+https://github.com/WASasquatch/img2texture.git
+    - git+https://github.com/WASasquatch/cstr
+    - git+https://github.com/WASasquatch/ffmpy.git
+    - gitpython
+    - imageio
+    - joblib
+    - matplotlib
+    - pilgram
+    - scikit-learn
+    - timm>=0.4.12
+    # RemBG causes Tiny_TerraNodes to take >40s to start
+    # - rembg
+
     # ComfyUI_essentials
     - numba
 

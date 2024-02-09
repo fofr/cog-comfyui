@@ -20,6 +20,7 @@ We've tried to include many of the most popular model weights:
 
 The following custom nodes are also supported, these are fixed to specific commits:
 
+- [WAS Node Suite](https://github.com/WASasquatch/was-node-suite-comfyui/tree/33534f2)
 - [ComfyUI PhotoMaker](https://github.com/shiimizu/ComfyUI-PhotoMaker/tree/75542a4)
 - [ComfyUI IPAdapter Plus](https://github.com/cubiq/ComfyUI_IPAdapter_plus/tree/4e898fe)
 - [ComfyUI Controlnet Aux](https://github.com/Fannovel16/comfyui_controlnet_aux/tree/6d6f63c)
