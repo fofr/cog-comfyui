@@ -1,0 +1,179 @@
+{
+  "3": {
+    "inputs": {
+      "seed": 1117419494228065,
+      "steps": 20,
+      "cfg": 8,
+      "sampler_name": "euler",
+      "scheduler": "normal",
+      "denoise": 1,
+      "model": [
+        "4",
+        0
+      ],
+      "positive": [
+        "6",
+        0
+      ],
+      "negative": [
+        "7",
+        0
+      ],
+      "latent_image": [
+        "5",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "KSampler"
+    }
+  },
+  "4": {
+    "inputs": {
+      "ckpt_name": "Deliberate_v2.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Load Checkpoint"
+    }
+  },
+  "5": {
+    "inputs": {
+      "width": 512,
+      "height": 512,
+      "batch_size": 1
+    },
+    "class_type": "EmptyLatentImage",
+    "_meta": {
+      "title": "Empty Latent Image"
+    }
+  },
+  "6": {
+    "inputs": {
+      "text": "a landscape scene",
+      "clip": [
+        "4",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "7": {
+    "inputs": {
+      "text": "bad hands",
+      "clip": [
+        "4",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "8": {
+    "inputs": {
+      "samples": [
+        "3",
+        0
+      ],
+      "vae": [
+        "4",
+        2
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "9": {
+    "inputs": {
+      "filename_prefix": "ComfyUI",
+      "images": [
+        "14",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Original Image"
+    }
+  },
+  "10": {
+    "inputs": {
+      "width": 512,
+      "height": 512,
+      "direction": "horizontal",
+      "tolerance": 0,
+      "gradient_stops": "0:63,38,22\n25:64,45,73\n50:178,114,55\n75:224,214,136\n100:255,251,216"
+    },
+    "class_type": "Image Generate Gradient",
+    "_meta": {
+      "title": "Image Generate Gradient"
+    }
+  },
+  "11": {
+    "inputs": {
+      "flip_left_right": "false",
+      "image": [
+        "8",
+        0
+      ],
+      "gradient_image": [
+        "10",
+        0
+      ]
+    },
+    "class_type": "Image Gradient Map",
+    "_meta": {
+      "title": "Image Gradient Map"
+    }
+  },
+  "13": {
+    "inputs": {
+      "images": [
+        "10",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Gradient Image"
+    }
+  },
+  "14": {
+    "inputs": {
+      "mode": "overlay",
+      "blend_percentage": 1,
+      "image_a": [
+        "8",
+        0
+      ],
+      "image_b": [
+        "11",
+        0
+      ]
+    },
+    "class_type": "Image Blending Mode",
+    "_meta": {
+      "title": "Image Blending Mode"
+    }
+  },
+  "17": {
+    "inputs": {
+      "images": [
+        "8",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Gradient Mapped Image"
+    }
+  }
+}

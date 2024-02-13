@@ -19,6 +19,7 @@ from helpers.ComfyUI_Controlnet_Aux import ComfyUI_Controlnet_Aux
 from helpers.ComfyUI_Reactor_Node import ComfyUI_Reactor_Node
 from helpers.ComfyUI_InstantID import ComfyUI_InstantID
 from helpers.ComfyUI_Impact_Pack import ComfyUI_Impact_Pack
+from helpers.WAS_Node_Suite import WAS_Node_Suite
 
 
 class ComfyUI:
@@ -87,6 +88,8 @@ class ComfyUI:
             ]:
                 handler.add_weights(weights_to_download, node)
 
+            WAS_Node_Suite.add_WAS_weights(weights_to_download, node)
+
             if "inputs" in node:
                 for input in node["inputs"].values():
                     if isinstance(input, str) and any(
@@ -107,6 +110,10 @@ class ComfyUI:
             value.endswith(ft)
             for ft in [".png", ".jpg", ".jpeg", ".webp", ".mp4", ".webm"]
         )
+
+    def handle_known_unsupported_nodes(self, workflow):
+        for node in workflow.values():
+            WAS_Node_Suite.check_for_unsupported_nodes(node)
 
     def handle_inputs(self, workflow):
         print("Checking inputs")
@@ -184,8 +191,9 @@ class ComfyUI:
                 "You need to use the API JSON version of a ComfyUI workflow. To do this go to your ComfyUI settings and turn on 'Enable Dev mode Options'. Then you can save your ComfyUI workflow via the 'Save (API Format)' button."
             )
 
-        self.handle_weights(wf)
+        self.handle_known_unsupported_nodes(wf)
         self.handle_inputs(wf)
+        self.handle_weights(wf)
         return wf
 
     # TODO: Find a better way of doing this
