@@ -4,6 +4,14 @@
 - Add support for AIO_Preprocessor on ComfyUI_Controlnet_Aux
 - 6cb5ad0 – Allow passing of an already parsed JSON workflow (helpful when forking the repo to push new Replicate models)
 
+Models added:
+
+- [copaxTimelessxlSDXL1_v8.safetensors](https://civitai.com/models/118111?modelVersionId=198246)
+
+Loras added:
+
+- [MODILL_XL_0.27_RC.safetensors](https://civitai.com/models/192139/modillxl-modern-colorful-illustration-style-lora)
+
 ## 2024-02-09
 
 Models added:
