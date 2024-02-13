@@ -1,3 +1,9 @@
+## 2024-02-13
+
+- Disable metadata on saved outputs (#14 by @digitaljohn)
+- Add support for AIO_Preprocessor on ComfyUI_Controlnet_Aux
+- 6cb5ad0 – Allow passing of an already parsed JSON workflow (helpful when forking the repo to push new Replicate models)
+
 ## 2024-02-09
 
 Models added:
