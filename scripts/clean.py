@@ -1,5 +1,6 @@
 import os
 import argparse
+import shutil
 
 # Define the file types to be removed
 file_types = [
@@ -25,6 +26,7 @@ whitelist = [
 ]
 
 def remove_model_files(directory, dry_run=False):
+    # Remove specified file types and preserve whitelist
     for root, dirs, files in os.walk(directory):
         for file in files:
             file_path = os.path.join(root, file)
@@ -35,8 +37,19 @@ def remove_model_files(directory, dry_run=False):
                     os.remove(file_path)
                     print(f"Removed file: {file_path}")
 
+    # Remove contents of ComfyUI/output and ComfyUI/input
+    comfyui_dirs = ['./ComfyUI/output', './ComfyUI/input']
+    for comfyui_dir in comfyui_dirs:
+        if os.path.exists(comfyui_dir):
+            if dry_run:
+                print(f"Will remove contents of directory: {comfyui_dir}")
+            else:
+                shutil.rmtree(comfyui_dir)
+                os.makedirs(comfyui_dir)
+                print(f"Removed contents of directory: {comfyui_dir}")
+
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Remove model files from a directory.")
+    parser = argparse.ArgumentParser(description="Remove model files from a directory and clear ComfyUI directories.")
     parser.add_argument("directory", nargs='?', default='.', type=str, help="Directory to remove files from. Defaults to the current directory.")
     parser.add_argument(
         "--dry-run",
