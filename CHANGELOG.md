@@ -1,12 +1,14 @@
 ## 2024-02-14
 
-- Add support for comfyui-reactor-nodes
+- Add support for [comfyui-reactor-nodes](https://github.com/Gourieff/comfyui-reactor-node)
+- Improve support for Insightface in ComfyUI_IPAdapter_plus
+- [Fix FaceID lora location](https://github.com/fofr/cog-comfyui/issues/15)
 
 ## 2024-02-13
 
 - Disable metadata on saved outputs (#14 by @digitaljohn)
 - Add support for AIO_Preprocessor on ComfyUI_Controlnet_Aux
-- 6cb5ad0 – Allow passing of an already parsed JSON workflow (helpful when forking the repo to push new Replicate models)
+- Allow passing of an already parsed JSON workflow (helpful when forking the repo to push new Replicate models)
 
 Models added:
 
