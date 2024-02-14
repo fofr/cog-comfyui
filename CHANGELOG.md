@@ -1,3 +1,7 @@
+## 2024-02-14
+
+- Add support for comfyui-reactor-nodes
+
 ## 2024-02-13
 
 - Disable metadata on saved outputs (#14 by @digitaljohn)
