@@ -73,6 +73,7 @@
     "CLIP-ViT-H-14-laion2B-s32B-b79K.safetensors",
     "clip-vit-large-patch14.bin",
     "clip_vision_g.safetensors",
+    "IPAdapter_image_encoder_sd15.safetensors",
     "model.15.safetensors",
     "model.sdxl.safetensors"
   ],
