@@ -7,7 +7,7 @@ class ComfyUI_Reactor_Node:
     }
 
     @staticmethod
-    def add_reactor_weight(weights_to_download, node):
+    def add_weights(weights_to_download, node):
         if "class_type" in node and node["class_type"] in [
             "ReActorFaceSwap",
             "ReActorLoadFaceModel",

@@ -9,3 +9,10 @@ class ComfyUI_IPAdapter_plus:
         # and won't look for our ipadaters that are downloaded on demand
         if not os.path.exists("ComfyUI/models/ipadapter"):
             os.makedirs("ComfyUI/models/ipadapter")
+
+    @staticmethod
+    def add_weights(weights_to_download, node):
+        if "class_type" in node and node["class_type"] in [
+            "InsightFaceLoader",
+        ]:
+            weights_to_download.append("buffalo_l")

@@ -76,11 +76,9 @@ class ComfyUI:
         ]
 
         for node in workflow.values():
-            ComfyUI_Controlnet_Aux.add_controlnet_preprocessor_weight(
-                weights_to_download, node
-            )
-
-            ComfyUI_Reactor_Node.add_reactor_weight(weights_to_download, node)
+            ComfyUI_Controlnet_Aux.add_weights(weights_to_download, node)
+            ComfyUI_Reactor_Node.add_weights(weights_to_download, node)
+            ComfyUI_IPAdapter_plus.add_weights(weights_to_download, node)
 
             if "inputs" in node:
                 for input in node["inputs"].values():

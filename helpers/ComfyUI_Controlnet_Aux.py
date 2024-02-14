@@ -90,7 +90,7 @@ class ComfyUI_Controlnet_Aux:
         }
 
     @staticmethod
-    def add_controlnet_preprocessor_weight(weights_to_download, node):
+    def add_weights(weights_to_download, node):
         node_class = node.get("class_type")
         node_mapping = ComfyUI_Controlnet_Aux.node_class_mapping()
 
