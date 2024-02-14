@@ -1,0 +1,62 @@
+{
+  "9": {
+    "inputs": {
+      "filename_prefix": "ComfyUI",
+      "images": [
+        "12",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Image"
+    }
+  },
+  "12": {
+    "inputs": {
+      "enabled": true,
+      "swap_model": "inswapper_128_fp16.onnx",
+      "facedetection": "retinaface_resnet50",
+      "face_restore_model": "codeformer.pth",
+      "face_restore_visibility": 1,
+      "codeformer_weight": 0.5,
+      "detect_gender_source": "no",
+      "detect_gender_input": "no",
+      "source_faces_index": "0",
+      "input_faces_index": "0",
+      "console_log_level": 1,
+      "input_image": [
+        "14",
+        0
+      ],
+      "source_image": [
+        "13",
+        0
+      ]
+    },
+    "class_type": "ReActorFaceSwap",
+    "_meta": {
+      "title": "ReActor - Fast Face Swap"
+    }
+  },
+  "13": {
+    "inputs": {
+      "image": "https://replicate.delivery/pbxt/KJJUD2bFRLjW3cbCZiPrbRI3sdNzKUS0ALG3bRFFhxFcecfU/lecun.jpg",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "14": {
+    "inputs": {
+      "image": "https://replicate.delivery/pbxt/YbeAK6ZmjvSsb6Dkf0WSQLvtnpeAT6fRzVDC5tKdYceefyhHJA/ComfyUI_00001_.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  }
+}
