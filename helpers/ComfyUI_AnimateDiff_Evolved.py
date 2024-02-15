@@ -13,6 +13,9 @@ MODELS = [
     "lt_long_mm_32_frames.ckpt",
     "lt_long_mm_16_64_frames.ckpt",
     "lt_long_mm_16_64_frames_v1.1.ckpt",
+    "sd15_t2v_beta.ckpt",
+    "hsxl_temporal_layers.f16.safetensors",
+    "hsxl_temporal_layers.safetensors",
 ]
 
 LORAS = [
