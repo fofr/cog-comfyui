@@ -17,6 +17,7 @@ from urllib.error import URLError
 from helpers.ComfyUI_IPAdapter_plus import ComfyUI_IPAdapter_plus
 from helpers.ComfyUI_Controlnet_Aux import ComfyUI_Controlnet_Aux
 from helpers.ComfyUI_Reactor_Node import ComfyUI_Reactor_Node
+from helpers.ComfyUI_InstantID import ComfyUI_InstantID
 
 
 class ComfyUI:
@@ -76,9 +77,13 @@ class ComfyUI:
         ]
 
         for node in workflow.values():
-            ComfyUI_Controlnet_Aux.add_weights(weights_to_download, node)
-            ComfyUI_Reactor_Node.add_weights(weights_to_download, node)
-            ComfyUI_IPAdapter_plus.add_weights(weights_to_download, node)
+            for handler in [
+                ComfyUI_Controlnet_Aux,
+                ComfyUI_Reactor_Node,
+                ComfyUI_IPAdapter_plus,
+                ComfyUI_InstantID,
+            ]:
+                handler.add_weights(weights_to_download, node)
 
             if "inputs" in node:
                 for input in node["inputs"].values():
