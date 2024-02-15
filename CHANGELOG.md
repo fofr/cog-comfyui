@@ -1,8 +1,15 @@
 ## 2024-02-14
 
+- Add support for [InstantID](https://github.com/cubiq/ComfyUI_InstantID)
 - Add support for [comfyui-reactor-nodes](https://github.com/Gourieff/comfyui-reactor-node)
 - Improve support for Insightface in ComfyUI_IPAdapter_plus
 - [Fix FaceID lora location](https://github.com/fofr/cog-comfyui/issues/15)
+
+Models added:
+
+- instantid-ipadapter.bin
+- instantid-controlnet.safetensors
+- antelopev2
 
 ## 2024-02-13
 

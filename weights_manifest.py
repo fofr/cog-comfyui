@@ -119,6 +119,8 @@ class WeightsManifest:
             "ControlNet": self.weights_manifest.get("CONTROLNET", []),
             "VAE": self.weights_manifest.get("VAE", []),
             "PhotoMaker": self.weights_manifest.get("PHOTOMAKER", []),
+            "InstantID": self.weights_manifest.get("INSTANTID", []),
+            "InsightFace": self.weights_manifest.get("INSIGHTFACE", []),
             "Face restoration models": self.weights_manifest.get(
                 "FACERESTORE_MODELS", []
             ),
