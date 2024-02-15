@@ -288,6 +288,17 @@
 
 - photomaker-v1.bin
 
+## InstantID
+
+- instantid-ip-adapter.bin
+
+## InsightFace
+
+- antelopev2
+- buffalo_l
+- inswapper_128.onnx
+- inswapper_128_fp16.onnx
+
 ## Face restoration models
 
 - codeformer.pth
