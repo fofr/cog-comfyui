@@ -36,6 +36,7 @@ The following custom nodes are also supported, these are fixed to specific commi
 - [ComfyUI Essentials](https://github.com/cubiq/ComfyUI_essentials/tree/c9236fe)
 - [masquerade-nodes-comfyui](https://github.com/BadCafeCode/tree/masquerade-nodes-comfyui/240209b)
 - [comfyui-reactor-node](https://github.com/Gourieff/comfyui-reactor-node/tree/ae81f62)
+- [ComfyUI InstantID](https://github.com/cubiq/ComfyUI_InstantID/tree/94d08d2)
 
 Raise an issue to request more custom nodes or models, or use this model as a template to roll your own.
 
