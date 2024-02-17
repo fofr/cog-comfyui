@@ -32,6 +32,10 @@ build:
     - insightface
     - onnx
 
+    # ComfyUI-Impact-Pack
+    - segment-anything
+    - piexif
+
     # comfyui_controlnet_aux
     # https://github.com/Fannovel16/comfyui_controlnet_aux/blob/main/requirements.txt
     - importlib_metadata

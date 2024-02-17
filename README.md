@@ -23,6 +23,7 @@ The following custom nodes are also supported, these are fixed to specific commi
 - [ComfyUI PhotoMaker](https://github.com/shiimizu/ComfyUI-PhotoMaker/tree/75542a4)
 - [ComfyUI IPAdapter Plus](https://github.com/cubiq/ComfyUI_IPAdapter_plus/tree/4e898fe)
 - [ComfyUI Controlnet Aux](https://github.com/Fannovel16/comfyui_controlnet_aux/tree/6d6f63c)
+- [ComfyUI Impact Pack](https://github.com/ltdrdata/ComfyUI-Impact-Pack/tree/6aee0aa)
 - [ComfyUI Inspire Pack](https://github.com/ltdrdata/ComfyUI-Inspire-Pack/tree/c8231dd)
 - [ComfyUI Logic](https://github.com/theUpsider/ComfyUI-Logic/tree/fb88973)
 - [ComfyUI AnimateDiff Evolved](https://github.com/Kosinkadink/ComfyUI-AnimateDiff-Evolved/tree/d2bf367)
