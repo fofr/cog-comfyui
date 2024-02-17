@@ -308,5 +308,11 @@
     "GFPGANv1.3.pth",
     "GFPGANv1.4.pth",
     "RestoreFormer.pth"
+  ],
+  "MMDETS": [
+    "bbox/mmdet_anime-face_yolov3.pth"
+  ],
+  "SAMS": [
+    "sam_vit_b_01ec64.pth"
   ]
 }
