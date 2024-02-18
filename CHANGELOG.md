@@ -2,6 +2,7 @@
 
 - Add support for [ComfyUI-Impact-Pack](https://github.com/fofr/cog-comfyui/pull/22)
 - Add ViT-H, ViT-L and ViT-B [segment anything models](https://github.com/facebookresearch/segment-anything)
+https://github.com/fofr/cog-comfyui/issues/19))
 
 ## 2024-02-14
 
