@@ -11,7 +11,7 @@ repos=(
   "https://github.com/Fannovel16/comfyui_controlnet_aux 6d6f63c"
   "https://github.com/ltdrdata/ComfyUI-Inspire-Pack c8231dd"
   "https://github.com/theUpsider/ComfyUI-Logic fb88973"
-  "https://github.com/Kosinkadink/ComfyUI-AnimateDiff-Evolved d2bf367"
+  "https://github.com/Kosinkadink/ComfyUI-AnimateDiff-Evolved 6148195"
   "https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite 1dbf01b"
   "https://github.com/Kosinkadink/ComfyUI-Advanced-ControlNet bd5bcbf"
   "https://github.com/jags111/efficiency-nodes-comfyui 1ac5f18"
