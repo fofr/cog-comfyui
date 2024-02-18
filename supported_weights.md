@@ -58,6 +58,7 @@
 ## Upscale models
 
 - 4x-AnimeSharp.pth
+- 4x-UltraMix_Smooth.pth
 - 4x-UltraSharp.pth
 - 4x_foolhardy_Remacri.pth
 - 4x_NMKD-Siax_200k.pth
@@ -298,6 +299,22 @@
 - buffalo_l
 - inswapper_128.onnx
 - inswapper_128_fp16.onnx
+
+## Ultralytics
+
+- bbox/face_yolov8m.pt
+- bbox/hand_yolov8s.pt
+- segm/person_yolov8m-seg.pt
+
+## Segment anything models (SAM)
+
+- sam_vit_b_01ec64.pth
+- sam_vit_h_4b8939.pth
+- sam_vit_l_0b3195.pth
+
+## MMDets
+
+- bbox/mmdet_anime-face_yolov3.pth
 
 ## Face restoration models
 

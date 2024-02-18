@@ -18,6 +18,7 @@ from helpers.ComfyUI_IPAdapter_plus import ComfyUI_IPAdapter_plus
 from helpers.ComfyUI_Controlnet_Aux import ComfyUI_Controlnet_Aux
 from helpers.ComfyUI_Reactor_Node import ComfyUI_Reactor_Node
 from helpers.ComfyUI_InstantID import ComfyUI_InstantID
+from helpers.ComfyUI_Impact_Pack import ComfyUI_Impact_Pack
 
 
 class ComfyUI:
@@ -82,6 +83,7 @@ class ComfyUI:
                 ComfyUI_Reactor_Node,
                 ComfyUI_IPAdapter_plus,
                 ComfyUI_InstantID,
+                ComfyUI_Impact_Pack,
             ]:
                 handler.add_weights(weights_to_download, node)
 
