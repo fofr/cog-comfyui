@@ -36,6 +36,9 @@ build:
     - segment-anything
     - piexif
 
+    # ComfyUI-Impact-Subpack
+    - ultralytics!=8.0.177
+
     # comfyui_controlnet_aux
     # https://github.com/Fannovel16/comfyui_controlnet_aux/blob/main/requirements.txt
     - importlib_metadata
