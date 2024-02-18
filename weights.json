@@ -316,8 +316,8 @@
     "sam_vit_b_01ec64.pth"
   ],
   "ULTRALYTICS": [
-    "bbox/hand_yolov8s.pt",
     "bbox/face_yolov8m.pt",
+    "bbox/hand_yolov8s.pt",
     "segm/person_yolov8m-seg.pt"
   ]
 }

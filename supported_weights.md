@@ -299,6 +299,20 @@
 - inswapper_128.onnx
 - inswapper_128_fp16.onnx
 
+## Ultralytics
+
+- bbox/face_yolov8m.pt
+- bbox/hand_yolov8s.pt
+- segm/person_yolov8m-seg.pt
+
+## Segment anything models (SAM)
+
+- sam_vit_b_01ec64.pth
+
+## MMDets
+
+- bbox/mmdet_anime-face_yolov3.pth
+
 ## Face restoration models
 
 - codeformer.pth
