@@ -9,7 +9,7 @@ class WAS_Node_Suite:
         return CLIPSEG_MODELS
 
     @staticmethod
-    def add_WAS_weights(weights_to_download, node):
+    def add_weights(weights_to_download, node):
         node_class = node.get("class_type")
         model_name = node.get("inputs", {}).get("model")
         if (

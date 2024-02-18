@@ -85,10 +85,9 @@ class ComfyUI:
                 ComfyUI_IPAdapter_plus,
                 ComfyUI_InstantID,
                 ComfyUI_Impact_Pack,
+                WAS_Node_Suite,
             ]:
                 handler.add_weights(weights_to_download, node)
-
-            WAS_Node_Suite.add_WAS_weights(weights_to_download, node)
 
             if "inputs" in node:
                 for input in node["inputs"].values():
