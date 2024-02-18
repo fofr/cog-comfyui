@@ -58,6 +58,7 @@
 ## Upscale models
 
 - 4x-AnimeSharp.pth
+- 4x-UltraMix_Smooth.pth
 - 4x-UltraSharp.pth
 - 4x_foolhardy_Remacri.pth
 - 4x_NMKD-Siax_200k.pth
