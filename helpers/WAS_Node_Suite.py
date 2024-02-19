@@ -12,11 +12,17 @@ class WAS_Node_Suite:
     def add_weights(weights_to_download, node):
         node_class = node.get("class_type")
         model_name = node.get("inputs", {}).get("model")
-        if (
-            node_class == "CLIPSeg Model Loader"
-            and model_name == "CIDAS/clipseg-rd64-refined"
-        ):
+        model_size = node.get("inputs", {}).get("model_size")
+        if node_class == "CLIPSeg Model Loader" and model_name == "CIDAS/clipseg-rd64-refined":
             weights_to_download.extend(CLIPSEG_MODELS)
+        elif node_class == "SAM Model Loader":
+            sam_model_weights = {
+                "ViT-H": "sam_vit_h_4b8939.pth",
+                "ViT-B": "sam_vit_b_01ec64.pth",
+                "ViT-L": "sam_vit_l_0b3195.pth",
+            }
+            if model_size in sam_model_weights:
+                weights_to_download.append(sam_model_weights[model_size])
 
     @staticmethod
     def weights_map(base_url):

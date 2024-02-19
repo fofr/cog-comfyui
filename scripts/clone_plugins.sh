@@ -67,3 +67,6 @@ for repo in "${repos[@]}"; do
     echo "Skipping clone for $repo_name, directory already exists"
   fi
 done
+
+# Copy the was_suite_config.json to the appropriate directory
+cp custom_node_configs/was_suite_config.json "$dest_dir"was-node-suite-comfyui/
