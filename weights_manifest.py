@@ -126,6 +126,7 @@ class WeightsManifest:
             "InsightFace": self.weights_manifest.get("INSIGHTFACE", []),
             "Ultralytics": self.weights_manifest.get("ULTRALYTICS", []),
             "Segment anything models (SAM)": self.weights_manifest.get("SAMS", []),
+            "GroundingDino": self.weights_manifest.get("GROUNDING-DINO", []),
             "MMDets": self.weights_manifest.get("MMDETS", []),
             "Face restoration models": self.weights_manifest.get(
                 "FACERESTORE_MODELS", []
