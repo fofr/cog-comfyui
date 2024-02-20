@@ -60,4 +60,4 @@ class WeightsDownloader:
                 f"⌛️ Downloaded {weight_str} in {elapsed_time:.2f}s, size: {file_size_megabytes:.2f}MB"
             )
         except FileNotFoundError:
-            print(f"Warning: Could not get the file size for {weight_str}")
+            print(f"⌛️ Downloaded {weight_str} in {elapsed_time:.2f}s")

@@ -326,6 +326,9 @@
     "groundingdino_swinb_cogcoor.pth",
     "groundingdino_swint_ogc.pth"
   ],
+  "BERT-BASE-UNCASED": [
+    "bert-base-uncased"
+  ],
   "ULTRALYTICS": [
     "bbox/face_yolov8m.pt",
     "bbox/hand_yolov8s.pt",
