@@ -12,17 +12,11 @@ class WAS_Node_Suite:
     def add_weights(weights_to_download, node):
         node_class = node.get("class_type")
         model_name = node.get("inputs", {}).get("model")
-        model_size = node.get("inputs", {}).get("model_size")
-        if node_class == "CLIPSeg Model Loader" and model_name == "CIDAS/clipseg-rd64-refined":
+        if (
+            node_class == "CLIPSeg Model Loader"
+            and model_name == "CIDAS/clipseg-rd64-refined"
+        ):
             weights_to_download.extend(CLIPSEG_MODELS)
-        elif node_class == "SAM Model Loader":
-            sam_model_weights = {
-                "ViT-H": "sam_vit_h_4b8939.pth",
-                "ViT-B": "sam_vit_b_01ec64.pth",
-                "ViT-L": "sam_vit_l_0b3195.pth",
-            }
-            if model_size in sam_model_weights:
-                weights_to_download.append(sam_model_weights[model_size])
 
     @staticmethod
     def weights_map(base_url):
@@ -36,11 +30,24 @@ class WAS_Node_Suite:
 
     @staticmethod
     def check_for_unsupported_nodes(node):
-        unsupported_nodes = [
-            "BLIP Model Loader",
-            "Diffusers Model Loader",
-            "Diffusers Hub Model Down-Loader",
-        ]
+        unsupported_nodes = {
+            "BLIP Model Loader": "BLIP version 1 not supported by Transformers",
+            "BLIP Analyze Image": "BLIP version 1 not supported by Transformers",
+            "CLIPTextEncode (NSP)": "Makes an HTTP request out to a Github file",
+            "Diffusers Model Loader": "Diffusers is not going to be included as a requirement for this custom node",
+            "Diffusers Hub Model Down-Loader": "Diffusers is not going to be included as a requirement for this custom node",
+            "SAM Model Loader": "There are better SAM Loader modules to use. This implementation is not supported",
+            "Text Parse Noodle Soup Prompts": "Makes an HTTP request out to a Github file",
+            "Text Random Prompt": "Makes an HTTP request out to Lexica, which is unsupported",
+            "True Random.org Number Generator": "Needs an API key which cannot be supplied",
+            "Image Seamless Texture": "img2texture dependency has not been added",
+            "Image Rembg (Remove Background)": "rembg dependency has not been added because it causes custom nodes to fail",
+            "MiDaS Model Loader": "WAS MiDaS nodes are not currently supported",
+            "MiDaS Mask Image": "WAS MiDaS nodes are not currently supported",
+            "MiDaS Depth Approximation": "WAS MiDaS nodes are not currently supported",
+            "Text File History Loader": "History is not persisted",
+        }
         node_class = node.get("class_type")
         if node_class in unsupported_nodes:
-            raise ValueError(f"{node_class} nodes are not supported.")
+            reason = unsupported_nodes[node_class]
+            raise ValueError(f"{node_class} node is not supported: {reason}")
