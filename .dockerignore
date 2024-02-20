@@ -25,6 +25,10 @@
 scripts/*
 updated_weights.json
 
+# Extension files
+*.ipynb
+*.bat
+
 # ComfyUI
 ComfyUI/venv
 ComfyUI/temp
