@@ -314,9 +314,20 @@
     "bbox/mmdet_anime-face_yolov3.pth"
   ],
   "SAMS": [
+    "mobile_sam.pt",
+    "sam_hq_vit_b.pth",
+    "sam_hq_vit_h.pth",
+    "sam_hq_vit_l.pth",
     "sam_vit_b_01ec64.pth",
     "sam_vit_h_4b8939.pth",
     "sam_vit_l_0b3195.pth"
+  ],
+  "GROUNDING-DINO": [
+    "groundingdino_swinb_cogcoor.pth",
+    "groundingdino_swint_ogc.pth"
+  ],
+  "BERT-BASE-UNCASED": [
+    "bert-base-uncased"
   ],
   "ULTRALYTICS": [
     "bbox/face_yolov8m.pt",

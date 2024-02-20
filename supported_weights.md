@@ -308,9 +308,18 @@
 
 ## Segment anything models (SAM)
 
+- mobile_sam.pt
+- sam_hq_vit_b.pth
+- sam_hq_vit_h.pth
+- sam_hq_vit_l.pth
 - sam_vit_b_01ec64.pth
 - sam_vit_h_4b8939.pth
 - sam_vit_l_0b3195.pth
+
+## GroundingDino
+
+- groundingdino_swinb_cogcoor.pth
+- groundingdino_swint_ogc.pth
 
 ## MMDets
 

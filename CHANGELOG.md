@@ -1,3 +1,17 @@
+## 2024-02-20
+
+- Add support for [WAS nodes](https://github.com/fofr/cog-comfyui/pull/25)
+- Add support for [comfyui-segment-anything](https://github.com/storyicon/comfyui_segment_anything)
+
+Models added:
+
+- mobile_sam.pt
+- sam_hq_vit_b.pth
+- sam_hq_vit_h.pth
+- sam_hq_vit_l.pth
+- groundingdino_swinb_cogcoor.pth
+- groundingdino_swint_ogc.pth
+
 ## 2024-02-17
 
 - Add support for [ComfyUI-Impact-Pack](https://github.com/fofr/cog-comfyui/pull/22)
