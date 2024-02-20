@@ -1,6 +1,7 @@
 ## Checkpoints
 
 - 512-inpainting-ema.safetensors
+- absolutereality_v181.safetensors
 - albedobaseXL_v13.safetensors
 - anything-v3-fp16-pruned.safetensors
 - copaxTimelessxlSDXL1_v8.safetensors
@@ -132,10 +133,20 @@
 - lcm-lora-ssd-1b.safetensors
 - lcm_lora_sdxl.safetensors
 - MODILL_XL_0.27_RC.safetensors
+- more_details.safetensors
+- PerfectEyesXL.safetensors
 - sd_xl_offset_example-lora_1.0.safetensors
 - Segmind-VegaRT.safetensors
 - theovercomer8sContrastFix_sd15.safetensors
 - theovercomer8sContrastFix_sd21768.safetensors
+
+## Embeddings
+
+- bad_prompt_version2-neg.pt
+- easynegative.safetensors
+- FastNegativeV2.pt
+- negative_hand-neg.pt
+- ng_deepnegative_v1_75t.pt
 
 ## IPAdapter
 

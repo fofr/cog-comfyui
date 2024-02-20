@@ -118,6 +118,7 @@ class WeightsManifest:
             "Upscale models": self.weights_manifest.get("UPSCALE_MODELS", []),
             "CLIP Vision": self.weights_manifest.get("CLIP_VISION", []),
             "LORAs": self.weights_manifest.get("LORAS", []),
+            "Embeddings": self.weights_manifest.get("EMBEDDINGS", []),
             "IPAdapter": self.weights_manifest.get("IPADAPTER", []),
             "ControlNet": self.weights_manifest.get("CONTROLNET", []),
             "VAE": self.weights_manifest.get("VAE", []),

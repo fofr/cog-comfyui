@@ -11,6 +11,10 @@ Models added:
 - sam_hq_vit_l.pth
 - groundingdino_swinb_cogcoor.pth
 - groundingdino_swint_ogc.pth
+- absolutereality_v181.safetensors
+- [PerfectEyesXL Lora](https://civitai.com/models/118427/perfect-eyes-xl)
+- [More details Lora](https://civitai.com/models/82098/add-more-details-detail-enhancer-tweaker-lora)
+- [FastNegative embedding](https://civitai.com/models/71961/fast-negative-embedding-fastnegativev2)
 
 ## 2024-02-17
 
