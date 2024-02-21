@@ -107,6 +107,7 @@ class WeightsManifest:
             "turbovisionxlSuperFastXLBasedOnNew_tvxlV32Bakedvae",
             "copaxTimelessxlSDXL1_v8.safetensors",
             "MODILL_XL_0.27_RC.safetensors",
+            "epicrealismXL_v10.safetensors",
         ]
 
     def is_non_commercial_only(self, weight_str):

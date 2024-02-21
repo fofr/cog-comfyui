@@ -15,6 +15,7 @@
 - dreamshaper_8.safetensors
 - dreamshaper_8LCM.safetensors
 - epicrealism_naturalSinRC1VAE.safetensors
+- epicrealismXL_v10.safetensors
 - juggernautXL_v8Rundiffusion.safetensors
 - LCM_Dreamshaper_v7_4k.safetensors
 - motionctrl.pth
@@ -35,6 +36,7 @@
 - RealVisXL_V2.0.safetensors
 - RealVisXL_V3.0.safetensors
 - RealVisXL_V3.0_Turbo.safetensors
+- RealVisXL_V4.0.safetensors
 - sd_xl_base_1.0.safetensors
 - sd_xl_base_1.0_0.9vae.safetensors
 - sd_xl_refiner_1.0.safetensors
