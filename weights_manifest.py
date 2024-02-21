@@ -123,6 +123,7 @@ class WeightsManifest:
             "IPAdapter": self.weights_manifest.get("IPADAPTER", []),
             "ControlNet": self.weights_manifest.get("CONTROLNET", []),
             "VAE": self.weights_manifest.get("VAE", []),
+            "UNets": self.weights_manifest.get("UNET", []),
             "PhotoMaker": self.weights_manifest.get("PHOTOMAKER", []),
             "InstantID": self.weights_manifest.get("INSTANTID", []),
             "InsightFace": self.weights_manifest.get("INSIGHTFACE", []),

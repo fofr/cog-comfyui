@@ -301,6 +301,13 @@
 - sdxl_vae.safetensors
 - vae-ft-mse-840000-ema-pruned.safetensors
 
+## UNets
+
+- sdxl_lightning_1step_unet_x0.pth
+- sdxl_lightning_2step_unet.pth
+- sdxl_lightning_4step_unet.pth
+- sdxl_lightning_8step_unet.pth
+
 ## PhotoMaker
 
 - photomaker-v1.bin
