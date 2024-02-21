@@ -138,6 +138,9 @@
 - more_details.safetensors
 - PerfectEyesXL.safetensors
 - sd_xl_offset_example-lora_1.0.safetensors
+- sdxl_lightning_2step_lora.pth
+- sdxl_lightning_4step_lora.pth
+- sdxl_lightning_8step_lora.pth
 - Segmind-VegaRT.safetensors
 - theovercomer8sContrastFix_sd15.safetensors
 - theovercomer8sContrastFix_sd21768.safetensors

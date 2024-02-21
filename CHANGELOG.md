@@ -1,3 +1,19 @@
+## 2024-02-21
+
+- Add SDXL lightning UNETs and Lora weights
+
+Models added:
+
+- sdxl_lightning_2step_lora.pth
+- sdxl_lightning_4step_lora.pth
+- sdxl_lightning_8step_lora.pth
+- sdxl_lightning_1step_unet_x0.pth
+- sdxl_lightning_2step_unet.pth
+- sdxl_lightning_4step_unet.pth
+- sdxl_lightning_8step_unet.pth
+- epicrealismXL_v10.safetensors
+- RealVisXL_V4.0.safetensors
+
 ## 2024-02-20
 
 - Add support for [WAS nodes](https://github.com/fofr/cog-comfyui/pull/25)
