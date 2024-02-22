@@ -44,6 +44,10 @@
     "sd_xl_refiner_1.0_0.9vae.safetensors",
     "sd_xl_turbo_1.0.safetensors",
     "sd_xl_turbo_1.0_fp16.safetensors",
+    "sdxl_lightning_1step_x0.safetensors",
+    "sdxl_lightning_2step.safetensors",
+    "sdxl_lightning_4step.safetensors",
+    "sdxl_lightning_8step.safetensors",
     "segmind-vega.safetensors",
     "SSD-1B.safetensors",
     "starlightXLAnimated_v3.safetensors",
@@ -138,8 +142,11 @@
     "PerfectEyesXL.safetensors",
     "sd_xl_offset_example-lora_1.0.safetensors",
     "sdxl_lightning_2step_lora.pth",
+    "sdxl_lightning_2step_lora.safetensors",
     "sdxl_lightning_4step_lora.pth",
+    "sdxl_lightning_4step_lora.safetensors",
     "sdxl_lightning_8step_lora.pth",
+    "sdxl_lightning_8step_lora.safetensors",
     "Segmind-VegaRT.safetensors",
     "theovercomer8sContrastFix_sd15.safetensors",
     "theovercomer8sContrastFix_sd21768.safetensors"
@@ -298,9 +305,13 @@
   ],
   "UNET": [
     "sdxl_lightning_1step_unet_x0.pth",
+    "sdxl_lightning_1step_unet_x0.safetensors",
     "sdxl_lightning_2step_unet.pth",
+    "sdxl_lightning_2step_unet.safetensors",
     "sdxl_lightning_4step_unet.pth",
-    "sdxl_lightning_8step_unet.pth"
+    "sdxl_lightning_4step_unet.safetensors",
+    "sdxl_lightning_8step_unet.pth",
+    "sdxl_lightning_8step_unet.safetensors"
   ],
   "PHOTOMAKER": [
     "photomaker-v1.bin"

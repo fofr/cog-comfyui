@@ -1,3 +1,7 @@
+## 2024-02-22
+
+- Add safetensor SDXL lightning checkpoints, UNETs and Loras
+
 ## 2024-02-21
 
 - Add SDXL lightning UNETs and Lora weights
