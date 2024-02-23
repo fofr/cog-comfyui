@@ -100,12 +100,13 @@ def main():
         help="The URL of the file to download or the local file to process",
     )
     parser.add_argument(
-        "--weights_list",
-        help="The weights list file with URLs to download",
+        "filename",
+        nargs="?",
+        help="The local filename to save the file as. Defaults to the filename in the URL",
     )
     parser.add_argument(
-        "--filename",
-        help="The local filename to save the file as. Defaults to the filename in the URL",
+        "--weights_list",
+        help="The weights list file with URLs to download",
     )
     args = parser.parse_args()
 
@@ -114,10 +115,11 @@ def main():
     if args.weights_list:
         process_weights_file(args.weights_list, subfolder)
     elif args.file:
+        filename = args.filename if args.filename else args.file
         if args.file.startswith(("http://", "https://")):
-            process_file(url=args.file, filename=args.filename, subfolder=subfolder)
+            process_file(url=args.file, filename=filename, subfolder=subfolder)
         elif os.path.isfile(args.file):
-            process_file(filename=args.file, subfolder=subfolder)
+            process_file(filename=filename, subfolder=subfolder)
         else:
             print(f"Error: The file or URL {args.file} is not valid.")
             sys.exit(1)

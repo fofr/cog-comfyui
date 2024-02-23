@@ -22,6 +22,8 @@
 - motionctrl.pth
 - motionctrl_svd.ckpt
 - proteus_v02.safetensors
+- ProteusV0.4-Lighting.safetensors
+- ProteusV0.4.safetensors
 - Realistic_Vision_V5.1-inpainting.ckpt
 - Realistic_Vision_V5.1-inpainting.safetensors
 - Realistic_Vision_V5.1.ckpt
