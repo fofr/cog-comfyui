@@ -49,13 +49,22 @@ def get_subfolder():
     subfolders = [
         "checkpoints",
         "upscale_models",
-        "controlnet",
         "clip_vision",
         "loras",
-        "ipadapter",
         "embeddings",
-        "onnx",
+        "controlnet",
+        "ipadapter",
         "vae",
+        "unet",
+        "photomaker",
+        "instantid",
+        "insightface",
+        "facedetection",
+        "facerestore_models",
+        "mmdets",
+        "sams",
+        "grounding-dino",
+        "ultralytics",
         "custom_nodes/ComfyUI-AnimateDiff-Evolved",
         "custom_nodes/comfyui_controlnet_aux",
         "Other",
@@ -81,6 +90,7 @@ def process_file(url=None, filename=None, subfolder=None):
     tarred_file = tar_file(local_file)
     upload_to_gcloud(tarred_file, "gs://replicate-weights/comfy-ui", subfolder)
     remove_files(local_file, tarred_file)
+    subprocess.run(["python", "scripts/sort_weights.py"])
 
 
 def process_weights_file(weights_file, subfolder=None):
