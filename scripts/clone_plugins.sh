@@ -28,6 +28,7 @@ repos=(
   "https://github.com/cubiq/ComfyUI_InstantID 94d08d2"
   "https://github.com/WASasquatch/was-node-suite-comfyui 33534f2"
   "https://github.com/fofr/comfyui_segment_anything 8bc6178"
+  "https://github.com/ZHO-ZHO-ZHO/ComfyUI-BRIA_AI-RMBG 44a3f8f"
 )
 
 # Destination directory
