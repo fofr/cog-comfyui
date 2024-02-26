@@ -1,3 +1,8 @@
+## 2024-02-26
+
+- Fix: Always cancel and clear the ComfyUI server queue after a prediction
+- Add support for ComfyUI_Comfyroll_CustomNodes
+
 ## 2024-02-22
 
 - Add safetensor SDXL lightning checkpoints, UNETs and Loras
