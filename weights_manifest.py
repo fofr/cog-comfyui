@@ -115,28 +115,29 @@ class WeightsManifest:
     def is_non_commercial_only(self, weight_str):
         return weight_str in self.non_commercial_weights()
 
+    def get_weights_by_type(self, weight_type):
+        return self.weights_manifest.get(weight_type, [])
+
     def write_supported_weights(self):
         weight_lists = {
-            "Checkpoints": self.weights_manifest.get("CHECKPOINTS", []),
-            "Upscale models": self.weights_manifest.get("UPSCALE_MODELS", []),
-            "CLIP Vision": self.weights_manifest.get("CLIP_VISION", []),
-            "LORAs": self.weights_manifest.get("LORAS", []),
-            "Embeddings": self.weights_manifest.get("EMBEDDINGS", []),
-            "IPAdapter": self.weights_manifest.get("IPADAPTER", []),
-            "ControlNet": self.weights_manifest.get("CONTROLNET", []),
-            "VAE": self.weights_manifest.get("VAE", []),
-            "UNets": self.weights_manifest.get("UNET", []),
-            "PhotoMaker": self.weights_manifest.get("PHOTOMAKER", []),
-            "InstantID": self.weights_manifest.get("INSTANTID", []),
-            "InsightFace": self.weights_manifest.get("INSIGHTFACE", []),
-            "Ultralytics": self.weights_manifest.get("ULTRALYTICS", []),
-            "Segment anything models (SAM)": self.weights_manifest.get("SAMS", []),
-            "GroundingDino": self.weights_manifest.get("GROUNDING-DINO", []),
-            "MMDets": self.weights_manifest.get("MMDETS", []),
-            "Face restoration models": self.weights_manifest.get(
-                "FACERESTORE_MODELS", []
-            ),
-            "Face detection models": self.weights_manifest.get("FACEDETECTION", []),
+            "Checkpoints": self.get_weights_by_type("CHECKPOINTS"),
+            "Upscale models": self.get_weights_by_type("UPSCALE_MODELS"),
+            "CLIP Vision": self.get_weights_by_type("CLIP_VISION"),
+            "LORAs": self.get_weights_by_type("LORAS"),
+            "Embeddings": self.get_weights_by_type("EMBEDDINGS"),
+            "IPAdapter": self.get_weights_by_type("IPADAPTER"),
+            "ControlNet": self.get_weights_by_type("CONTROLNET"),
+            "VAE": self.get_weights_by_type("VAE"),
+            "UNets": self.get_weights_by_type("UNET"),
+            "PhotoMaker": self.get_weights_by_type("PHOTOMAKER"),
+            "InstantID": self.get_weights_by_type("INSTANTID"),
+            "InsightFace": self.get_weights_by_type("INSIGHTFACE"),
+            "Ultralytics": self.get_weights_by_type("ULTRALYTICS"),
+            "Segment anything models (SAM)": self.get_weights_by_type("SAMS"),
+            "GroundingDino": self.get_weights_by_type("GROUNDING-DINO"),
+            "MMDets": self.get_weights_by_type("MMDETS"),
+            "Face restoration models": self.get_weights_by_type("FACERESTORE_MODELS"),
+            "Face detection models": self.get_weights_by_type("FACEDETECTION"),
             "AnimateDiff": ComfyUI_AnimateDiff_Evolved.models(),
             "AnimateDiff LORAs": ComfyUI_AnimateDiff_Evolved.loras(),
             "ControlNet Preprocessors": sorted(

@@ -2,6 +2,7 @@
 
 - Fix: Always cancel and clear the ComfyUI server queue after a prediction
 - Add support for ComfyUI_Comfyroll_CustomNodes
+- Correctly download embeddings nested within prompt strings
 
 ## 2024-02-22
 

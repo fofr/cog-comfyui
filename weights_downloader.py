@@ -12,6 +12,9 @@ class WeightsDownloader:
         self.weights_manifest = WeightsManifest()
         self.weights_map = self.weights_manifest.weights_map
 
+    def get_weights_by_type(self, type):
+        return self.weights_manifest.get_weights_by_type(type)
+
     def download_weights(self, weight_str):
         if weight_str in self.weights_map:
             if self.weights_manifest.is_non_commercial_only(weight_str):

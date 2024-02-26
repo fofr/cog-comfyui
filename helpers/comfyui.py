@@ -13,6 +13,7 @@ import random
 from weights_downloader import WeightsDownloader
 from urllib.error import URLError
 
+
 # custom_nodes helpers
 from helpers.ComfyUI_IPAdapter_plus import ComfyUI_IPAdapter_plus
 from helpers.ComfyUI_Controlnet_Aux import ComfyUI_Controlnet_Aux
@@ -69,6 +70,8 @@ class ComfyUI:
 
     def handle_weights(self, workflow):
         print("Checking weights")
+        embeddings = self.weights_downloader.get_weights_by_type("EMBEDDINGS")
+        embedding_to_fullname = {emb.split(".")[0]: emb for emb in embeddings}
         weights_to_download = []
         weights_filetypes = [
             ".ckpt",
@@ -95,10 +98,15 @@ class ComfyUI:
 
             if "inputs" in node:
                 for input in node["inputs"].values():
-                    if isinstance(input, str) and any(
-                        input.endswith(ft) for ft in weights_filetypes
-                    ):
-                        weights_to_download.append(input)
+                    if isinstance(input, str):
+                        if any(key in input for key in embedding_to_fullname):
+                            weights_to_download.extend(
+                                embedding_to_fullname[key]
+                                for key in embedding_to_fullname
+                                if key in input
+                            )
+                        elif any(input.endswith(ft) for ft in weights_filetypes):
+                            weights_to_download.append(input)
 
         weights_to_download = list(set(weights_to_download))
 
