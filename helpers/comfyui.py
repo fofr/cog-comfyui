@@ -151,6 +151,20 @@ class ComfyUI:
         self.ws = websocket.WebSocket()
         self.ws.connect(f"ws://{self.server_address}/ws?clientId={self.client_id}")
 
+    def clear_queue(self):
+        json_data = json.dumps({"clear": True}).encode("utf-8")
+        req = urllib.request.Request(
+            f"http://{self.server_address}/queue",
+            data=json_data,
+            headers={"Content-Type": "application/json"},
+            method="POST",
+        )
+        with urllib.request.urlopen(req) as response:
+            if response.status == 200:
+                print("Queue cleared successfully.")
+            else:
+                print(f"Failed to clear queue, status code: {response.status}")
+
     def queue_prompt(self, prompt):
         try:
             # Prompt is the loaded workflow (prompt is the label comfyUI uses)
@@ -167,7 +181,9 @@ class ComfyUI:
             http_error = True
 
         if http_error:
-            raise Exception("ComfyUI Error – Your workflow could not be run. This usually happens if you’re trying to use an unsupported node. Check the logs for 'KeyError: ' details, and go to https://github.com/fofr/cog-comfyui to see the list of supported custom nodes.")
+            raise Exception(
+                "ComfyUI Error – Your workflow could not be run. This usually happens if you’re trying to use an unsupported node. Check the logs for 'KeyError: ' details, and go to https://github.com/fofr/cog-comfyui to see the list of supported custom nodes."
+            )
 
     def wait_for_prompt_completion(self, workflow, prompt_id):
         while True:
