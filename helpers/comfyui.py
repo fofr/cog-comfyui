@@ -151,19 +151,21 @@ class ComfyUI:
         self.ws = websocket.WebSocket()
         self.ws.connect(f"ws://{self.server_address}/ws?clientId={self.client_id}")
 
-    def clear_queue(self):
-        json_data = json.dumps({"clear": True}).encode("utf-8")
+    def post_request(self, endpoint, data=None):
+        url = f"http://{self.server_address}{endpoint}"
+        headers = {"Content-Type": "application/json"} if data else {}
+        json_data = json.dumps(data).encode("utf-8") if data else None
         req = urllib.request.Request(
-            f"http://{self.server_address}/queue",
-            data=json_data,
-            headers={"Content-Type": "application/json"},
-            method="POST",
+            url, data=json_data, headers=headers, method="POST"
         )
         with urllib.request.urlopen(req) as response:
-            if response.status == 200:
-                print("Queue cleared successfully.")
-            else:
-                print(f"Failed to clear queue, status code: {response.status}")
+            if response.status != 200:
+                print(f"Failed: {endpoint}, status code: {response.status}")
+
+    # https://github.com/comfyanonymous/ComfyUI/blob/master/server.py
+    def clear_queue(self):
+        self.post_request("/queue", {"clear": True})
+        self.post_request("/interrupt")
 
     def queue_prompt(self, prompt):
         try:
