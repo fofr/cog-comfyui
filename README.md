@@ -23,6 +23,7 @@ The following custom nodes are also supported, these are fixed to specific commi
 - [ComfyUI Advanced ControlNet](https://github.com/Kosinkadink/ComfyUI-Advanced-ControlNet/tree/bd5bcbf)
 - [ComfyUI AnimateDiff Evolved](https://github.com/Kosinkadink/ComfyUI-AnimateDiff-Evolved/tree/6148195)
 - [ComfyUI BRIA AI RMBG](https://github.com/ZHO-ZHO-ZHO/ComfyUI-BRIA_AI-RMBG/tree/44a3f8f)
+- [ComfyUI Comfyroll CustomNodes](https://github.com/Suzie1/ComfyUI_Comfyroll_CustomNodes/tree/d78b780)
 - [ComfyUI Controlnet Aux](https://github.com/Fannovel16/comfyui_controlnet_aux/tree/6d6f63c)
 - [ComfyUI Essentials](https://github.com/cubiq/ComfyUI_essentials/tree/c9236fe)
 - [ComfyUI FizzNodes](https://github.com/FizzleDorf/ComfyUI_FizzNodes/tree/cd6cadd)
