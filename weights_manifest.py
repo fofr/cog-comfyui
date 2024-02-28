@@ -110,6 +110,7 @@ class WeightsManifest:
             "copaxTimelessxlSDXL1_v8.safetensors",
             "MODILL_XL_0.27_RC.safetensors",
             "epicrealismXL_v10.safetensors",
+            "RMBG-1.4/model.pth",
         ]
 
     def is_non_commercial_only(self, weight_str):

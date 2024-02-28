@@ -22,6 +22,12 @@ The following fine-tunes are also based on SDXL Turbo, and have the same license
 - turbovisionxlSuperFastXLBasedOnNew_tvxlV32Bakedvae.safetensors
 - RealVisXL_V3.0_Turbo.safetensors
 
+### BRIA AI RMBG 1.4
+
+BRIA AI’s remove background tool cannot be used commercially without prior agreement. [See full licence details](https://bria.ai/bria-huggingface-model-license-agreement/)
+
+- RMBG-1.4/model.pth
+
 ### proteus_v02.safetensors
 
 Commercial use is not permitted without direct consultation from the author.
@@ -29,7 +35,7 @@ Commercial use is not permitted without direct consultation from the author.
 https://huggingface.co/dataautogpt3/ProteusV0.2 by [@DataPlusEngine](https://twitter.com/DataPlusEngine)
 Support them: https://www.buymeacoffee.com/DataVoid
 
-### inswapper_128.onnx, inswapper_128_fp16.onnx and buffalo_l
+### inswapper_128.onnx, inswapper_128_fp16.onnx, antelopev2 and buffalo_l
 
 InsightFace FaceSwap models are non-commercial research only
 
