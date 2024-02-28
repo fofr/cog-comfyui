@@ -29,7 +29,7 @@ The following custom nodes are also supported, these are fixed to specific commi
 - [ComfyUI FizzNodes](https://github.com/FizzleDorf/ComfyUI_FizzNodes/tree/cd6cadd)
 - [ComfyUI Impact Pack](https://github.com/ltdrdata/ComfyUI-Impact-Pack/tree/6aee0aa)
 - [ComfyUI Inspire Pack](https://github.com/ltdrdata/ComfyUI-Inspire-Pack/tree/c8231dd)
-- [ComfyUI InstantID](https://github.com/cubiq/ComfyUI_InstantID/tree/94d08d2)
+- [ComfyUI InstantID](https://github.com/cubiq/ComfyUI_InstantID/tree/0fcf494)
 - [ComfyUI IPAdapter Plus](https://github.com/cubiq/ComfyUI_IPAdapter_plus/tree/4e898fe)
 - [ComfyUI Logic](https://github.com/theUpsider/ComfyUI-Logic/tree/fb88973)
 - [ComfyUI PhotoMaker](https://github.com/shiimizu/ComfyUI-PhotoMaker/tree/75542a4)

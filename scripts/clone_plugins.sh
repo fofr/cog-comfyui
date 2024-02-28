@@ -25,7 +25,7 @@ repos=(
   "https://github.com/pythongosssss/ComfyUI-Custom-Scripts 9916c13"
   "https://github.com/BadCafeCode/masquerade-nodes-comfyui 240209b"
   "https://github.com/Gourieff/comfyui-reactor-node ae81f62"
-  "https://github.com/cubiq/ComfyUI_InstantID 94d08d2"
+  "https://github.com/cubiq/ComfyUI_InstantID 0fcf494"
   "https://github.com/WASasquatch/was-node-suite-comfyui 33534f2"
   "https://github.com/fofr/comfyui_segment_anything 8bc6178"
   "https://github.com/ZHO-ZHO-ZHO/ComfyUI-BRIA_AI-RMBG 44a3f8f"
