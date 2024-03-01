@@ -117,9 +117,9 @@ class ComfyUI:
         print("====================================")
 
     def is_image_or_video_value(self, value):
+        filetypes = [".png", ".jpg", ".jpeg", ".webp", ".mp4", ".webm"]
         return isinstance(value, str) and any(
-            value.endswith(ft)
-            for ft in [".png", ".jpg", ".jpeg", ".webp", ".mp4", ".webm"]
+            value.lower().endswith(ft) for ft in filetypes
         )
 
     def handle_known_unsupported_nodes(self, workflow):

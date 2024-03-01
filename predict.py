@@ -27,7 +27,7 @@ class Predictor(BasePredictor):
             os.makedirs(directory)
 
     def handle_input_file(self, input_file: Path):
-        file_extension = os.path.splitext(input_file)[1]
+        file_extension = os.path.splitext(input_file)[1].lower()
         if file_extension == ".tar":
             with tarfile.open(input_file, "r") as tar:
                 tar.extractall(INPUT_DIR)
