@@ -6,6 +6,10 @@ from weights_manifest import WeightsManifest
 
 BASE_URL = "https://weights.replicate.delivery/default/comfy-ui"
 
+CUSTOM_WEIGHTS = {"juggernautXL_v7Rundiffusion.safetensors":"https://civitai.com/api/download/models/240840",
+"sdxl-vae-fp16-fix.safetensors": "https://huggingface.co/madebyollin/sdxl-vae-fp16-fix/resolve/main/sdxl_vae.safetensors",
+"more_details.safetensors": "https://civitai.com/api/download/models/87153",
+"elsajean_SDXL.safetensors": "https://civitai.com/api/download/models/155559",
 
 class WeightsDownloader:
     def __init__(self):
@@ -21,11 +25,18 @@ class WeightsDownloader:
                 print(
                     f"⚠️  {weight_str} is for non-commercial use only. Unless you have obtained a commercial license.\nDetails: https://github.com/fofr/cog-comfyui/blob/main/weights_licenses.md"
                 )
-            self.download_if_not_exists(
+            if weight_str in list(CUSTOM_WEIGHTS.keys()):
+                self.download_if_not_exists(
                 weight_str,
-                self.weights_map[weight_str]["url"],
+                CUSTOM_WEIGHTS[weight_str],
                 self.weights_map[weight_str]["dest"],
-            )
+                )
+            else:
+                self.download_if_not_exists(
+                    weight_str,
+                    self.weights_map[weight_str]["url"],
+                    self.weights_map[weight_str]["dest"],
+                )
         else:
             raise ValueError(
                 f"{weight_str} unavailable. View the list of available weights: https://github.com/fofr/cog-comfyui/blob/main/supported_weights.md"
