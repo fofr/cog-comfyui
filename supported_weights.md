@@ -248,6 +248,8 @@
 - control_v11p_sd15s2_lineart_anime.pth
 - control_v11p_sd15s2_lineart_anime_fp16.safetensors
 - control_v11u_sd15_tile_fp16.safetensors
+- control_v1p_sd15_qrcode_monster.safetensors
+- control_v1p_sdxl_qrcode_monster.safetensors
 - controllllite_v01032064e_sdxl_canny_anime.safetensors
 - controlnet-canny-sdxl-1.0.fp16.safetensors
 - controlnet-depth-sdxl-1.0.fp16.safetensors

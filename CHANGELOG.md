@@ -1,3 +1,10 @@
+## 2024-03-04
+
+Add QR Monster control nets for illusions:
+
+- control_v1p_sd15_qrcode_monster.safetensors
+- control_v1p_sdxl_qrcode_monster.safetensors
+
 ## 2024-02-26
 
 - Fix: Always cancel and clear the ComfyUI server queue after a prediction
