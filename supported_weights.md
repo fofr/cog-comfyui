@@ -42,6 +42,7 @@
 - RealVisXL_V3.0.safetensors
 - RealVisXL_V3.0_Turbo.safetensors
 - RealVisXL_V4.0.safetensors
+- RealVisXL_V4.0_Lightning.safetensors
 - sd_xl_base_1.0.safetensors
 - sd_xl_base_1.0_0.9vae.safetensors
 - sd_xl_refiner_1.0.safetensors

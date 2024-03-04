@@ -5,6 +5,10 @@ Add QR Monster control nets for illusions:
 - control_v1p_sd15_qrcode_monster.safetensors
 - control_v1p_sdxl_qrcode_monster.safetensors
 
+Add RealVis XL V4 Lightning:
+
+- RealVisXL_V4.0_Lightning.safetensors
+
 ## 2024-02-26
 
 - Fix: Always cancel and clear the ComfyUI server queue after a prediction
