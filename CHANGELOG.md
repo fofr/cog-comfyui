@@ -1,3 +1,9 @@
+## 2024-03-05
+
+Add Juggernaut v9:
+
+- Juggernaut-XL_v9_RunDiffusionPhoto_v2.safetensors
+
 ## 2024-03-04
 
 Add QR Monster control nets for illusions:
