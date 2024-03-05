@@ -19,6 +19,7 @@
     "epicrealism_naturalSinRC1VAE.safetensors",
     "epicrealismXL_v10.safetensors",
     "Juggernaut-XL_v9_RunDiffusionPhoto_v2.safetensors",
+    "Juggernaut_RunDiffusionPhoto2_Lightning_4Steps.safetensors",
     "juggernautXL_v8Rundiffusion.safetensors",
     "LCM_Dreamshaper_v7_4k.safetensors",
     "motionctrl.pth",

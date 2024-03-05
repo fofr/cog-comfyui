@@ -1,8 +1,9 @@
 ## 2024-03-05
 
-Add Juggernaut v9:
+Add Juggernaut v9 and lightning:
 
 - Juggernaut-XL_v9_RunDiffusionPhoto_v2.safetensors
+- Juggernaut_RunDiffusionPhoto2_Lightning_4Steps.safetensors
 
 ## 2024-03-04
 
