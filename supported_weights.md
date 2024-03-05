@@ -3,6 +3,7 @@
 - 512-inpainting-ema.safetensors
 - absolutereality_v181.safetensors
 - albedobaseXL_v13.safetensors
+- albedobaseXL_v21.safetensors
 - anything-v3-fp16-pruned.safetensors
 - copaxTimelessxlSDXL1_v8.safetensors
 - Deliberate_v2.safetensors

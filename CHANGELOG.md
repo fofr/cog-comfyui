@@ -5,6 +5,10 @@ Add Juggernaut v9 and lightning:
 - Juggernaut-XL_v9_RunDiffusionPhoto_v2.safetensors
 - Juggernaut_RunDiffusionPhoto2_Lightning_4Steps.safetensors
 
+Add Albedobase XL v2.1:
+
+- albedobaseXL_v21.safetensors
+
 ## 2024-03-04
 
 Add QR Monster control nets for illusions:
