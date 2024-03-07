@@ -15,4 +15,4 @@ class ComfyUI_IPAdapter_plus:
         if "class_type" in node and node["class_type"] in [
             "InsightFaceLoader",
         ]:
-            weights_to_download.append("buffalo_l")
+            weights_to_download.append("models/buffalo_l")

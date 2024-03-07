@@ -346,6 +346,8 @@
 - buffalo_l
 - inswapper_128.onnx
 - inswapper_128_fp16.onnx
+- models/antelopev2
+- models/buffalo_l
 
 ## Ultralytics
 

@@ -13,7 +13,7 @@ class ComfyUI_Reactor_Node:
             "ReActorLoadFaceModel",
             "ReActorSaveFaceModel",
         ]:
-            weights_to_download.append("buffalo_l")
+            weights_to_download.append("models/buffalo_l")
             weights_to_download.append("parsing_parsenet.pth")
 
             if "facedetection" in node["inputs"]:

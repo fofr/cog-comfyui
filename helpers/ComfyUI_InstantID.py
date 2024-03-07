@@ -3,7 +3,7 @@ class ComfyUI_InstantID:
     def add_weights(weights_to_download, node):
         if "class_type" in node:
             if node["class_type"] == "InstantIDFaceAnalysis":
-                weights_to_download.append("antelopev2")
+                weights_to_download.append("models/antelopev2")
             elif node["class_type"] == "InstantIDModelLoader":
                 if "inputs" in node and "instantid_file" in node["inputs"]:
                     if node["inputs"]["instantid_file"] == "ipadapter.bin":
