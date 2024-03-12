@@ -1,0 +1,1023 @@
+{
+    "28": {
+        "inputs": {
+            "vae_name": "vae-ft-mse-840000-ema-pruned.safetensors"
+        },
+        "class_type": "VAELoader",
+        "_meta": {
+            "title": "Load VAE"
+        }
+    },
+    "29": {
+        "inputs": {
+            "text": "$NEGATIVE_PROMPT",
+            "clip": [
+                "73",
+                0
+            ]
+        },
+        "class_type": "CLIPTextEncode",
+        "_meta": {
+            "title": "Negative"
+        }
+    },
+    "30": {
+        "inputs": {
+            "width": [
+                "173",
+                1
+            ],
+            "height": [
+                "173",
+                2
+            ],
+            "batch_size": [
+                "70",
+                1
+            ]
+        },
+        "class_type": "EmptyLatentImage",
+        "_meta": {
+            "title": "Batch Size"
+        }
+    },
+    "31": {
+        "inputs": {
+            "model_name": "v3_sd15_mm.ckpt",
+            "beta_schedule": "sqrt_linear (AnimateDiff)",
+            "motion_scale": 1,
+            "apply_v2_models_properly": true,
+            "model": [
+                "148",
+                0
+            ],
+            "context_options": [
+                "32",
+                0
+            ]
+        },
+        "class_type": "ADE_AnimateDiffLoaderWithContext",
+        "_meta": {
+            "title": "AnimateDiff Loader [Legacy] 🎭🅐🅓①"
+        }
+    },
+    "32": {
+        "inputs": {
+            "context_length": 16,
+            "context_stride": 1,
+            "context_overlap": 2,
+            "context_schedule": "uniform",
+            "closed_loop": false,
+            "fuse_method": "flat",
+            "use_on_equal_length": false,
+            "start_percent": 0,
+            "guarantee_steps": 1
+        },
+        "class_type": "ADE_AnimateDiffUniformContextOptions",
+        "_meta": {
+            "title": "Context Options◆Looped Uniform 🎭🅐🅓"
+        }
+    },
+    "33": {
+        "inputs": {
+            "strength": 0.75,
+            "start_percent": 0,
+            "end_percent": 0.6,
+            "positive": [
+                "43",
+                0
+            ],
+            "negative": [
+                "29",
+                0
+            ],
+            "control_net": [
+                "34",
+                0
+            ],
+            "image": [
+                "38",
+                0
+            ]
+        },
+        "class_type": "ControlNetApplyAdvanced",
+        "_meta": {
+            "title": "Apply ControlNet (Advanced)"
+        }
+    },
+    "34": {
+        "inputs": {
+            "control_net_name": "controlGIF_checkpoint.ckpt"
+        },
+        "class_type": "ControlNetLoaderAdvanced",
+        "_meta": {
+            "title": "Load Advanced ControlNet Model 🛂🅐🅒🅝"
+        }
+    },
+    "36": {
+        "inputs": {
+            "seed": 1099033124877092,
+            "steps": "$FIRST_NUM_INFERENCE_STEPS",
+            "cfg": "$FIRST_GUIDANCE_SCALE",
+            "sampler_name": "ddpm",
+            "scheduler": "normal",
+            "denoise": 1,
+            "model": [
+                "42",
+                0
+            ],
+            "positive": [
+                "182",
+                0
+            ],
+            "negative": [
+                "182",
+                1
+            ],
+            "latent_image": [
+                "30",
+                0
+            ]
+        },
+        "class_type": "KSampler",
+        "_meta": {
+            "title": "KSampler"
+        }
+    },
+    "37": {
+        "inputs": {
+            "seed": 9330636737804,
+            "steps": "$SECOND_NUM_INFERENCE_STEPS",
+            "cfg": "$SECOND_GUIDANCE_SCALE",
+            "sampler_name": "ddpm",
+            "scheduler": "normal",
+            "denoise": 0.8,
+            "model": [
+                "42",
+                0
+            ],
+            "positive": [
+                "135",
+                0
+            ],
+            "negative": [
+                "135",
+                1
+            ],
+            "latent_image": [
+                "156",
+                0
+            ]
+        },
+        "class_type": "KSampler",
+        "_meta": {
+            "title": "KSampler"
+        }
+    },
+    "38": {
+        "inputs": {
+            "samples": [
+                "36",
+                0
+            ],
+            "vae": [
+                "28",
+                0
+            ]
+        },
+        "class_type": "VAEDecode",
+        "_meta": {
+            "title": "VAE Decode"
+        }
+    },
+    "39": {
+        "inputs": {
+            "samples": [
+                "37",
+                0
+            ],
+            "vae": [
+                "28",
+                0
+            ]
+        },
+        "class_type": "VAEDecode",
+        "_meta": {
+            "title": "VAE Decode"
+        }
+    },
+    "40": {
+        "inputs": {
+            "frame_rate": 24,
+            "loop_count": 0,
+            "filename_prefix": "2024_03_05/ADHR",
+            "format": "video/h264-mp4",
+            "pix_fmt": "yuv420p",
+            "crf": 19,
+            "save_metadata": true,
+            "pingpong": false,
+            "save_output": true,
+            "images": [
+                "46",
+                0
+            ]
+        },
+        "class_type": "VHS_VideoCombine",
+        "_meta": {
+            "title": "Video Combine 🎥🅥🅗🅢"
+        }
+    },
+    "41": {
+        "inputs": {
+            "amount": 0.4,
+            "image": [
+                "39",
+                0
+            ]
+        },
+        "class_type": "ImageCASharpening+",
+        "_meta": {
+            "title": "🔧 Image Contrast Adaptive Sharpening"
+        }
+    },
+    "42": {
+        "inputs": {
+            "b1": 1.1,
+            "b2": 1.2,
+            "s1": 0.9,
+            "s2": 0.4,
+            "model": [
+                "31",
+                0
+            ]
+        },
+        "class_type": "FreeU_V2",
+        "_meta": {
+            "title": "FreeU_V2"
+        }
+    },
+    "43": {
+        "inputs": {
+            "text": "$PROMPT",
+            "max_frames": [
+                "70",
+                1
+            ],
+            "print_output": false,
+            "pre_text": "illustration",
+            "app_text": "high quality, detailed, high resolution, 4k",
+            "start_frame": 0,
+            "pw_a": 0,
+            "pw_b": 0,
+            "pw_c": 0,
+            "pw_d": 0,
+            "clip": [
+                "73",
+                0
+            ]
+        },
+        "class_type": "BatchPromptSchedule",
+        "_meta": {
+            "title": "Batch Prompt Schedule 📅🅕🅝"
+        }
+    },
+    "44": {
+        "inputs": {
+            "frame_rate": 12,
+            "loop_count": 0,
+            "filename_prefix": "2024_03_05/AD",
+            "format": "video/h264-mp4",
+            "pix_fmt": "yuv420p",
+            "crf": 19,
+            "save_metadata": true,
+            "pingpong": false,
+            "save_output": true,
+            "images": [
+                "38",
+                0
+            ]
+        },
+        "class_type": "VHS_VideoCombine",
+        "_meta": {
+            "title": "Video Combine 🎥🅥🅗🅢"
+        }
+    },
+    "46": {
+        "inputs": {
+            "ckpt_name": "rife47.pth",
+            "clear_cache_after_n_frames": 10,
+            "multiplier": 2,
+            "fast_mode": true,
+            "ensemble": true,
+            "scale_factor": 1,
+            "frames": [
+                "41",
+                0
+            ]
+        },
+        "class_type": "RIFE VFI",
+        "_meta": {
+            "title": "RIFE VFI (recommend rife47 and rife49)"
+        }
+    },
+    "50": {
+        "inputs": {
+            "strength": 0.8,
+            "start_percent": 0,
+            "end_percent": 0.8,
+            "positive": [
+                "43",
+                0
+            ],
+            "negative": [
+                "29",
+                0
+            ],
+            "control_net": [
+                "51",
+                0
+            ],
+            "image": [
+                "69",
+                0
+            ]
+        },
+        "class_type": "ControlNetApplyAdvanced",
+        "_meta": {
+            "title": "Apply ControlNet (Advanced)"
+        }
+    },
+    "51": {
+        "inputs": {
+            "control_net_name": "control_v11p_sd15_openpose.pth"
+        },
+        "class_type": "ControlNetLoaderAdvanced",
+        "_meta": {
+            "title": "Load Advanced ControlNet Model 🛂🅐🅒🅝"
+        }
+    },
+    "64": {
+        "inputs": {
+            "lora_name": "v3_sd15_adapter_lora.ckpt",
+            "strength_model": 0.5,
+            "model": [
+                "72",
+                0
+            ]
+        },
+        "class_type": "LoraLoaderModelOnly",
+        "_meta": {
+            "title": "LoraLoaderModelOnly"
+        }
+    },
+    "69": {
+        "inputs": {
+            "detect_hand": "enable",
+            "detect_body": "enable",
+            "detect_face": "enable",
+            "resolution": 512,
+            "bbox_detector": "yolox_l.onnx",
+            "pose_estimator": "dw-ll_ucoco_384_bs5.torchscript.pt",
+            "image": [
+                "173",
+                0
+            ]
+        },
+        "class_type": "DWPreprocessor",
+        "_meta": {
+            "title": "DWPose Estimator"
+        }
+    },
+    "70": {
+        "inputs": {
+            "video": "POSE_VIDEO.mp4",
+            "force_rate": 0,
+            "force_size": "Disabled",
+            "custom_width": 512,
+            "custom_height": 512,
+            "frame_load_cap": [
+                "168",
+                0
+            ],
+            "skip_first_frames": 0,
+            "select_every_nth": [
+                "169",
+                0
+            ]
+        },
+        "class_type": "VHS_LoadVideo",
+        "_meta": {
+            "title": "Load Video (Upload) 🎥🅥🅗🅢"
+        }
+    },
+    "71": {
+        "inputs": {
+            "images": [
+                "69",
+                0
+            ]
+        },
+        "class_type": "PreviewImage",
+        "_meta": {
+            "title": "Preview Image"
+        }
+    },
+    "72": {
+        "inputs": {
+            "ckpt_name": "dreamshaper_8.safetensors",
+            "beta_schedule": "sqrt_linear (AnimateDiff)",
+            "use_custom_scale_factor": false,
+            "scale_factor": 0.18215
+        },
+        "class_type": "CheckpointLoaderSimpleWithNoiseSelect",
+        "_meta": {
+            "title": "Load Checkpoint w/ Noise Select 🎭🅐🅓"
+        }
+    },
+    "73": {
+        "inputs": {
+            "stop_at_clip_layer": -2,
+            "clip": [
+                "72",
+                1
+            ]
+        },
+        "class_type": "CLIPSetLastLayer",
+        "_meta": {
+            "title": "CLIP Set Last Layer"
+        }
+    },
+    "98": {
+        "inputs": {
+            "strength": "$SUBJECT_CONTROLNET_STRENGTH",
+            "start_percent": 0,
+            "end_percent": 0.7000000000000001,
+            "positive": [
+                "50",
+                0
+            ],
+            "negative": [
+                "50",
+                1
+            ],
+            "control_net": [
+                "99",
+                0
+            ],
+            "image": [
+                "102",
+                0
+            ]
+        },
+        "class_type": "ControlNetApplyAdvanced",
+        "_meta": {
+            "title": "Apply ControlNet (Advanced)"
+        }
+    },
+    "99": {
+        "inputs": {
+            "control_net_name": "control_v11p_sd15_lineart.pth"
+        },
+        "class_type": "ControlNetLoaderAdvanced",
+        "_meta": {
+            "title": "Load Advanced ControlNet Model 🛂🅐🅒🅝"
+        }
+    },
+    "101": {
+        "inputs": {
+            "images": [
+                "102",
+                0
+            ]
+        },
+        "class_type": "PreviewImage",
+        "_meta": {
+            "title": "Preview Image"
+        }
+    },
+    "102": {
+        "inputs": {
+            "preprocessor": "LineArtPreprocessor",
+            "resolution": 512,
+            "image": [
+                "115",
+                0
+            ]
+        },
+        "class_type": "AIO_Preprocessor",
+        "_meta": {
+            "title": "AIO Aux Preprocessor"
+        }
+    },
+    "109": {
+        "inputs": {
+            "resolution": 512,
+            "image": [
+                "173",
+                0
+            ]
+        },
+        "class_type": "OneFormer-COCO-SemSegPreprocessor",
+        "_meta": {
+            "title": "OneFormer COCO Segmentor"
+        }
+    },
+    "110": {
+        "inputs": {
+            "red": 220,
+            "green": 20,
+            "blue": 60,
+            "threshold": 1,
+            "image": [
+                "109",
+                0
+            ]
+        },
+        "class_type": "MaskFromColor+",
+        "_meta": {
+            "title": "🔧 Mask From Color"
+        }
+    },
+    "111": {
+        "inputs": {
+            "expand": 0,
+            "tapered_corners": true,
+            "mask": [
+                "110",
+                0
+            ]
+        },
+        "class_type": "GrowMask",
+        "_meta": {
+            "title": "GrowMask"
+        }
+    },
+    "112": {
+        "inputs": {
+            "amount": 0.2,
+            "mask": [
+                "111",
+                0
+            ]
+        },
+        "class_type": "MaskBlur+",
+        "_meta": {
+            "title": "🔧 Mask Blur"
+        }
+    },
+    "113": {
+        "inputs": {
+            "width": [
+                "173",
+                1
+            ],
+            "height": [
+                "173",
+                2
+            ],
+            "batch_size": [
+                "70",
+                1
+            ],
+            "color": 0
+        },
+        "class_type": "EmptyImage",
+        "_meta": {
+            "title": "EmptyImage"
+        }
+    },
+    "114": {
+        "inputs": {
+            "upscale_method": "lanczos",
+            "width": [
+                "173",
+                1
+            ],
+            "height": [
+                "173",
+                2
+            ],
+            "crop": "disabled",
+            "image": [
+                "173",
+                0
+            ]
+        },
+        "class_type": "ImageScale",
+        "_meta": {
+            "title": "Upscale Image"
+        }
+    },
+    "115": {
+        "inputs": {
+            "x": 0,
+            "y": 0,
+            "resize_source": false,
+            "destination": [
+                "113",
+                0
+            ],
+            "source": [
+                "114",
+                0
+            ],
+            "mask": [
+                "112",
+                0
+            ]
+        },
+        "class_type": "ImageCompositeMasked",
+        "_meta": {
+            "title": "ImageCompositeMasked"
+        }
+    },
+    "116": {
+        "inputs": {
+            "mask": [
+                "112",
+                0
+            ]
+        },
+        "class_type": "InvertMask",
+        "_meta": {
+            "title": "InvertMask"
+        }
+    },
+    "130": {
+        "inputs": {
+            "images": [
+                "115",
+                0
+            ]
+        },
+        "class_type": "PreviewImage",
+        "_meta": {
+            "title": "Preview Image"
+        }
+    },
+    "131": {
+        "inputs": {
+            "images": [
+                "109",
+                0
+            ]
+        },
+        "class_type": "PreviewImage",
+        "_meta": {
+            "title": "Preview Image"
+        }
+    },
+    "135": {
+        "inputs": {
+            "strength": 0.75,
+            "start_percent": 0,
+            "end_percent": 0.6,
+            "positive": [
+                "33",
+                0
+            ],
+            "negative": [
+                "33",
+                1
+            ],
+            "control_net": [
+                "136",
+                0
+            ],
+            "image": [
+                "137",
+                0
+            ]
+        },
+        "class_type": "ControlNetApplyAdvanced",
+        "_meta": {
+            "title": "Apply ControlNet (Advanced)"
+        }
+    },
+    "136": {
+        "inputs": {
+            "control_net_name": "control_v11p_sd15_lineart.pth"
+        },
+        "class_type": "ControlNetLoaderAdvanced",
+        "_meta": {
+            "title": "Load Advanced ControlNet Model 🛂🅐🅒🅝"
+        }
+    },
+    "137": {
+        "inputs": {
+            "preprocessor": "LineArtPreprocessor",
+            "resolution": 512,
+            "image": [
+                "38",
+                0
+            ]
+        },
+        "class_type": "AIO_Preprocessor",
+        "_meta": {
+            "title": "AIO Aux Preprocessor"
+        }
+    },
+    "139": {
+        "inputs": {
+            "weight": 1,
+            "noise": 0.33,
+            "weight_type": "original",
+            "start_at": 0,
+            "end_at": 0.7000000000000001,
+            "unfold_batch": true,
+            "ipadapter": [
+                "142",
+                0
+            ],
+            "clip_vision": [
+                "146",
+                0
+            ],
+            "image": [
+                "141",
+                0
+            ],
+            "model": [
+                "64",
+                0
+            ],
+            "attn_mask": [
+                "112",
+                0
+            ]
+        },
+        "class_type": "IPAdapterApply",
+        "_meta": {
+            "title": "Apply IPAdapter"
+        }
+    },
+    "140": {
+        "inputs": {
+            "image": "SUBJECT_IMAGE.jpg",
+            "upload": "image"
+        },
+        "class_type": "LoadImage",
+        "_meta": {
+            "title": "Load Image"
+        }
+    },
+    "141": {
+        "inputs": {
+            "interpolation": "LANCZOS",
+            "crop_position": "pad",
+            "sharpening": 0.2,
+            "image": [
+                "140",
+                0
+            ]
+        },
+        "class_type": "PrepImageForClipVision",
+        "_meta": {
+            "title": "Prepare Image For Clip Vision"
+        }
+    },
+    "142": {
+        "inputs": {
+            "ipadapter_file": "ip-adapter-plus_sd15.bin"
+        },
+        "class_type": "IPAdapterModelLoader",
+        "_meta": {
+            "title": "Load IPAdapter Model"
+        }
+    },
+    "143": {
+        "inputs": {
+            "images": [
+                "141",
+                0
+            ]
+        },
+        "class_type": "PreviewImage",
+        "_meta": {
+            "title": "Preview Image"
+        }
+    },
+    "146": {
+        "inputs": {
+            "clip_name": "CV_LEFT.safetensors"
+        },
+        "class_type": "CLIPVisionLoader",
+        "_meta": {
+            "title": "Load CLIP Vision"
+        }
+    },
+    "148": {
+        "inputs": {
+            "weight": 0.7000000000000001,
+            "noise": 0.33,
+            "weight_type": "original",
+            "start_at": 0,
+            "end_at": 0.7000000000000001,
+            "unfold_batch": false,
+            "ipadapter": [
+                "151",
+                0
+            ],
+            "clip_vision": [
+                "155",
+                0
+            ],
+            "image": [
+                "150",
+                0
+            ],
+            "model": [
+                "139",
+                0
+            ],
+            "attn_mask": [
+                "116",
+                0
+            ]
+        },
+        "class_type": "IPAdapterApply",
+        "_meta": {
+            "title": "Apply IPAdapter"
+        }
+    },
+    "149": {
+        "inputs": {
+            "image": "BACKGROUND_IMAGE.jpg",
+            "upload": "image"
+        },
+        "class_type": "LoadImage",
+        "_meta": {
+            "title": "Load Image"
+        }
+    },
+    "150": {
+        "inputs": {
+            "interpolation": "LANCZOS",
+            "crop_position": "center",
+            "sharpening": 0.2,
+            "image": [
+                "149",
+                0
+            ]
+        },
+        "class_type": "PrepImageForClipVision",
+        "_meta": {
+            "title": "Prepare Image For Clip Vision"
+        }
+    },
+    "151": {
+        "inputs": {
+            "ipadapter_file": "ip-adapter-plus_sd15.bin"
+        },
+        "class_type": "IPAdapterModelLoader",
+        "_meta": {
+            "title": "Load IPAdapter Model"
+        }
+    },
+    "152": {
+        "inputs": {
+            "images": [
+                "150",
+                0
+            ]
+        },
+        "class_type": "PreviewImage",
+        "_meta": {
+            "title": "Preview Image"
+        }
+    },
+    "155": {
+        "inputs": {
+            "clip_name": "CV_LEFT.safetensors"
+        },
+        "class_type": "CLIPVisionLoader",
+        "_meta": {
+            "title": "Load CLIP Vision"
+        }
+    },
+    "156": {
+        "inputs": {
+            "upscale_method": "bilinear",
+            "scale_by": 1.5,
+            "samples": [
+                "36",
+                0
+            ]
+        },
+        "class_type": "LatentUpscaleBy",
+        "_meta": {
+            "title": "Upscale Latent By"
+        }
+    },
+    "157": {
+        "inputs": {
+            "images": [
+                "173",
+                0
+            ]
+        },
+        "class_type": "PreviewImage",
+        "_meta": {
+            "title": "Preview Image"
+        }
+    },
+    "168": {
+        "inputs": {
+            "value": 116
+        },
+        "class_type": "ImpactInt",
+        "_meta": {
+            "title": "Image Load Cap (ImpactInt)"
+        }
+    },
+    "169": {
+        "inputs": {
+            "value": 2
+        },
+        "class_type": "ImpactInt",
+        "_meta": {
+            "title": "Select Every (x) Images (ImpactInt)"
+        }
+    },
+    "173": {
+        "inputs": {
+            "width": 912,
+            "height": 512,
+            "interpolation": "nearest",
+            "keep_proportion": true,
+            "condition": "always",
+            "image": [
+                "70",
+                0
+            ]
+        },
+        "class_type": "ImageResize+",
+        "_meta": {
+            "title": "🔧 Image Resize"
+        }
+    },
+    "179": {
+        "inputs": {
+            "mask": [
+                "112",
+                0
+            ]
+        },
+        "class_type": "MaskToImage",
+        "_meta": {
+            "title": "Convert Mask to Image"
+        }
+    },
+    "180": {
+        "inputs": {
+            "images": [
+                "179",
+                0
+            ]
+        },
+        "class_type": "PreviewImage",
+        "_meta": {
+            "title": "Preview Image"
+        }
+    },
+    "182": {
+        "inputs": {
+            "strength": "$BACKGROUND_CONTROLNET_STRENGTH",
+            "start_percent": 0,
+            "end_percent": 1,
+            "positive": [
+                "98",
+                0
+            ],
+            "negative": [
+                "98",
+                1
+            ],
+            "control_net": [
+                "183",
+                0
+            ],
+            "image": [
+                "149",
+                0
+            ],
+            "mask_optional": [
+                "116",
+                0
+            ]
+        },
+        "class_type": "ACN_AdvancedControlNetApply",
+        "_meta": {
+            "title": "Apply Advanced ControlNet 🛂🅐🅒🅝"
+        }
+    },
+    "183": {
+        "inputs": {
+            "control_net_name": "control_v11f1e_sd15_tile.pth"
+        },
+        "class_type": "ControlNetLoaderAdvanced",
+        "_meta": {
+            "title": "Load Advanced ControlNet Model 🛂🅐🅒🅝"
+        }
+    }
+}

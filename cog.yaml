@@ -51,7 +51,33 @@ build:
     - addict
     - yacs
     - trimesh[easy]
+
+    # KJ-Nodes
+    - librosa
+    - audioread>=2.1.9
+    - soundfile>=0.12.1
+    - pooch>=1.0
+    - soxr>=0.3.2
+    - decorator>=4.3.0
+    - msgpack>=1.0
+    - color-matcher
+    - docutils
+    - ddt
+    - kornia>=0.7.1
+
+    # Others?
+    - GitPython
+    - gitdb<5,>=4.0.1
+    - smmap<6,>=3.0.1
+    - ultralytics!=8.0.177
+    - thop>=0.1.1
+    - opencv-python>=4.6.0
+    - py-cpuinfo
+    - seaborn>=0.11.0
+    - segment-anything
+    - piexif
+
   run:
-    - curl -o /usr/local/bin/pget -L "https://github.com/replicate/pget/releases/download/v0.6.0/pget_linux_x86_64" && chmod +x /usr/local/bin/pget
+    - curl -o /usr/local/bin/pget -L "https://github.com/replicate/pget/releases/download/v0.6.1/pget_linux_x86_64" && chmod +x /usr/local/bin/pget
     - pip install onnxruntime-gpu --extra-index-url https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/
 predict: "predict.py:Predictor"
