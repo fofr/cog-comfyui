@@ -197,6 +197,7 @@
 - ip-adapter_sd15_vit-G.safetensors
 - ip-adapter_sdxl.safetensors
 - ip-adapter_sdxl_vit-h.safetensors
+- ip_plus_composition_sd15.safetensors
 
 ## ControlNet
 

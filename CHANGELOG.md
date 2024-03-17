@@ -1,3 +1,7 @@
+## 2024-03-17
+
+Add [ip_plus_composition_sd15.safetensors](https://huggingface.co/ostris/ip-composition-adapter) IPAdapter
+
 ## 2024-03-05
 
 Add Juggernaut v9 and lightning:
