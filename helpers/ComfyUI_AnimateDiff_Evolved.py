@@ -16,6 +16,14 @@ MODELS = [
     "sd15_t2v_beta.ckpt",
     "hsxl_temporal_layers.f16.safetensors",
     "hsxl_temporal_layers.safetensors",
+    "animatediff_lightning_1step_comfyui.safetensors",
+    "animatediff_lightning_1step_diffusers.safetensors",
+    "animatediff_lightning_2step_comfyui.safetensors",
+    "animatediff_lightning_2step_diffusers.safetensors",
+    "animatediff_lightning_4step_comfyui.safetensors",
+    "animatediff_lightning_4step_diffusers.safetensors",
+    "animatediff_lightning_8step_comfyui.safetensors",
+    "animatediff_lightning_8step_diffusers.safetensors"
 ]
 
 LORAS = [

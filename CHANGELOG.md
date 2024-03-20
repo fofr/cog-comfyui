@@ -2,6 +2,17 @@
 
 Add [ip_plus_composition_sdxl.safetensors](https://huggingface.co/ostris/ip-composition-adapter) IPAdapter
 
+Add [AnimateDiff lightning weights](https://huggingface.co/ByteDance/AnimateDiff-Lightning):
+
+- animatediff_lightning_1step_comfyui.safetensors
+- animatediff_lightning_1step_diffusers.safetensors
+- animatediff_lightning_2step_comfyui.safetensors
+- animatediff_lightning_2step_diffusers.safetensors
+- animatediff_lightning_4step_comfyui.safetensors
+- animatediff_lightning_4step_diffusers.safetensors
+- animatediff_lightning_8step_comfyui.safetensors
+- animatediff_lightning_8step_diffusers.safetensors
+
 ## 2024-03-17
 
 Add [ip_plus_composition_sd15.safetensors](https://huggingface.co/ostris/ip-composition-adapter) IPAdapter
