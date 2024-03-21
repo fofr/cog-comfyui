@@ -1,5 +1,7 @@
 ## 2024-03-20
 
+- [CinematicRedmond.safetensors](https://huggingface.co/artificialguybr/CinematicRedmond-SDXL)
+
 New SD1.5 checkpoints for AnimateDiff:
 
 - dynavision_v20Bakedvae.safetensors

@@ -5,6 +5,7 @@
 - albedobaseXL_v13.safetensors
 - albedobaseXL_v21.safetensors
 - anything-v3-fp16-pruned.safetensors
+- CinematicRedmond.safetensors
 - copaxTimelessxlSDXL1_v8.safetensors
 - Deliberate_v2.safetensors
 - dreamlabsoil_V2_v2.safetensors
