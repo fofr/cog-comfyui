@@ -1,3 +1,14 @@
+## 2024-03-20
+
+New SD1.5 checkpoints for AnimateDiff:
+
+- dynavision_v20Bakedvae.safetensors
+- imp_v10.safetensors
+- magicmixReverie_v10.safetensors
+- majicmixRealistic_v7.safetensors
+- rcnzCartoon3d_v20.safetensors
+- toonyou_beta6.safetensors
+
 ## 2024-03-19
 
 Add [ip_plus_composition_sdxl.safetensors](https://huggingface.co/ostris/ip-composition-adapter) IPAdapter
