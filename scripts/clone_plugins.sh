@@ -12,6 +12,7 @@ repos=(
   "https://github.com/fofr/ComfyUI-Impact-Pack cc29d62"
   "https://github.com/ltdrdata/ComfyUI-Inspire-Pack c8231dd"
   "https://github.com/theUpsider/ComfyUI-Logic fb88973"
+  "https://github.com/Acly/comfyui-tooling-nodes bcb591c"
   "https://github.com/Kosinkadink/ComfyUI-AnimateDiff-Evolved 6148195"
   "https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite 1dbf01b"
   "https://github.com/Kosinkadink/ComfyUI-Advanced-ControlNet bd5bcbf"
