@@ -183,7 +183,9 @@
 - ip-adapter-faceid-plus_sd15.bin
 - ip-adapter-faceid-plusv2_sd15.bin
 - ip-adapter-faceid-plusv2_sdxl.bin
+- ip-adapter-faceid-portrait-v11_sd15.bin
 - ip-adapter-faceid-portrait_sd15.bin
+- ip-adapter-faceid-portrait_sdxl.bin
 - ip-adapter-faceid_sd15.bin
 - ip-adapter-faceid_sdxl.bin
 - ip-adapter-full-face_sd15.bin
@@ -200,6 +202,7 @@
 - ip-adapter_sd15.safetensors
 - ip-adapter_sd15_light.bin
 - ip-adapter_sd15_light.safetensors
+- ip-adapter_sd15_light_v11.bin
 - ip-adapter_sd15_vit-G.bin
 - ip-adapter_sd15_vit-G.safetensors
 - ip-adapter_sdxl.safetensors

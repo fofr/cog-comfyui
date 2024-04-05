@@ -1,3 +1,9 @@
+## 2024-04-05
+
+- Update ComfyUI [to latest (6c6a392)](https://github.com/comfyanonymous/ComfyUI/commit/6c6a39251fe313c56a88c90d820009073b623dfe)
+- Update to latest [IPAdapter Plus (
+1ac1cae)](https://github.com/cubiq/ComfyUI_IPAdapter_plus) (breaking changes, custom nodes re-written)
+
 ## 2024-03-20
 
 - [CinematicRedmond.safetensors](https://huggingface.co/artificialguybr/CinematicRedmond-SDXL)
