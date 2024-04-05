@@ -1,17 +1,4 @@
 {
-  "1": {
-    "inputs": {
-      "preset": "FULL FACE - SD1.5 only (portraits stronger)",
-      "model": [
-        "5",
-        0
-      ]
-    },
-    "class_type": "IPAdapterUnifiedLoader",
-    "_meta": {
-      "title": "IPAdapter Unified Loader"
-    }
-  },
   "2": {
     "inputs": {
       "seed": 451700479914124,
@@ -21,7 +8,7 @@
       "scheduler": "normal",
       "denoise": 1,
       "model": [
-        "1",
+        "13",
         0
       ],
       "positive": [
@@ -73,7 +60,7 @@
   },
   "5": {
     "inputs": {
-      "ckpt_name": "Deliberate_v2.safetensors"
+      "ckpt_name": "albedobaseXL_v13.safetensors"
     },
     "class_type": "CheckpointLoaderSimple",
     "_meta": {
@@ -115,6 +102,21 @@
     "class_type": "EmptyLatentImage",
     "_meta": {
       "title": "Empty Latent Image"
+    }
+  },
+  "13": {
+    "inputs": {
+      "preset": "FACEID PLUS V2",
+      "lora_strength": 0.6,
+      "provider": "CPU",
+      "model": [
+        "5",
+        0
+      ]
+    },
+    "class_type": "IPAdapterUnifiedLoaderFaceID",
+    "_meta": {
+      "title": "IPAdapter Unified Loader FaceID"
     }
   }
 }
