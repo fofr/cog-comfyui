@@ -133,7 +133,8 @@ class ComfyUI_IPAdapter_plus:
             "IPAdapterUnifiedLoaderFaceID",
             "IPAdapterUnifiedLoaderCommunity",
         ]:
-            preset = node.get("preset")
+            preset = node["inputs"]["preset"]
+            print(f"Including weights for IPAdapter preset: {preset}")
             if preset:
                 weights_to_download.extend(
                     ComfyUI_IPAdapter_plus.get_preset_weights(preset)
