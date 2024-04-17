@@ -12,6 +12,7 @@ import websocket
 import random
 from weights_downloader import WeightsDownloader
 from urllib.error import URLError
+import requests
 
 
 # custom_nodes helpers
@@ -140,9 +141,16 @@ class ComfyUI:
                             )
                             if not os.path.exists(filename):
                                 print(f"Downloading {input_value} to {filename}")
-                                urllib.request.urlretrieve(input_value, filename)
-                            node["inputs"][input_key] = filename
-                            print(f"✅ {filename}")
+                                try:
+                                    response = requests.get(input_value)
+                                    response.raise_for_status()
+                                    with open(filename, "wb") as file:
+                                        file.write(response.content)
+                                    node["inputs"][input_key] = filename
+                                    print(f"✅ {filename}")
+                                except requests.exceptions.RequestException as e:
+                                    print(f"❌ Error downloading {input_value}: {e}")
+
                         elif self.is_image_or_video_value(input_value):
                             filename = os.path.join(
                                 self.input_directory, os.path.basename(input_value)
