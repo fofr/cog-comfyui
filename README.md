@@ -33,7 +33,7 @@ The following custom nodes are also supported, these are fixed to specific commi
 - [ComfyUI IPAdapter Plus](https://github.com/cubiq/ComfyUI_IPAdapter_plus/tree/1ac1cae)
 - [ComfyUI Logic](https://github.com/theUpsider/ComfyUI-Logic/tree/fb88973)
 - [ComfyUI Nodes for External Tooling](https://github.com/Acly/comfyui-tooling-nodes/tree/bcb591c)
-- [ComfyUI PhotoMaker](https://github.com/shiimizu/ComfyUI-PhotoMaker/tree/75542a4)
+- [ComfyUI PhotoMaker Plus](https://github.com/shiimizu/ComfyUI-PhotoMaker-Plus/tree/4c61084)
 - [ComfyUI TinyTerra Nodes](https://github.com/TinyTerra/ComfyUI_tinyterraNodes/tree/eda8a09)
 - [ComfyUI UltimateSDUpscale](https://github.com/ssitu/ComfyUI_UltimateSDUpscale/tree/bcefc5b)
 - [ComfyUI VideoHelperSuite](https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite/tree/1dbf01b)
