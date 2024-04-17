@@ -4,6 +4,8 @@
 
 Add support for [comfyui-tooling-nodes](https://github.com/Acly/comfyui-tooling-nodes) to [add base64 image handling](https://github.com/fofr/cog-comfyui/pull/50)
 
+Add option to return WebP optimised images from model
+
 AnimateDiff LCM Motion module:
 
 - [animatediffLCMMotion_v10.ckpt](https://civitai.com/models/326698/animatediff-lcm-motion-model)
