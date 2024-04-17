@@ -76,7 +76,6 @@ build:
   #comfyui-tooling-nodes
   #https://github.com/Acly/comfyui-tooling-nodes/blob/bcb591c7b998e13f12e2d47ee08cf8af8f791e50/api.py
     - aiohttp
-    - typing
   run:
     - curl -o /usr/local/bin/pget -L "https://github.com/replicate/pget/releases/download/v0.6.0/pget_linux_x86_64" && chmod +x /usr/local/bin/pget
     - pip install onnxruntime-gpu --extra-index-url https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/
