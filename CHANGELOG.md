@@ -2,6 +2,8 @@
 
 [Update the Impact-Pack custom node](https://github.com/fofr/ComfyUI-Impact-Pack/commit/07a18e7c31ff7489fe7169370b3475a8af41ed4a) to support latest IPAdapter-Plus nodes.
 
+Add support for [comfyui-tooling-nodes](https://github.com/Acly/comfyui-tooling-nodes) to [add base64 image handling](https://github.com/fofr/cog-comfyui/pull/50)
+
 AnimateDiff LCM Motion module:
 
 - [animatediffLCMMotion_v10.ckpt](https://civitai.com/models/326698/animatediff-lcm-motion-model)

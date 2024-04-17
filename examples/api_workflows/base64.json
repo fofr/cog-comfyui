@@ -1,0 +1,132 @@
+{
+  "3": {
+    "inputs": {
+      "seed": 60351490103421,
+      "steps": 20,
+      "cfg": 8,
+      "sampler_name": "euler",
+      "scheduler": "normal",
+      "denoise": 0.5,
+      "model": [
+        "4",
+        0
+      ],
+      "positive": [
+        "6",
+        0
+      ],
+      "negative": [
+        "7",
+        0
+      ],
+      "latent_image": [
+        "14",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "KSampler"
+    }
+  },
+  "4": {
+    "inputs": {
+      "ckpt_name": "albedobaseXL_v13.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Load Checkpoint"
+    }
+  },
+  "5": {
+    "inputs": {
+      "width": 512,
+      "height": 512,
+      "batch_size": 1
+    },
+    "class_type": "EmptyLatentImage",
+    "_meta": {
+      "title": "Empty Latent Image"
+    }
+  },
+  "6": {
+    "inputs": {
+      "text": "beautiful scenery nature glass bottle landscape, , purple galaxy bottle,",
+      "clip": [
+        "4",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "7": {
+    "inputs": {
+      "text": "text, watermark",
+      "clip": [
+        "4",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "8": {
+    "inputs": {
+      "samples": [
+        "3",
+        0
+      ],
+      "vae": [
+        "4",
+        2
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "11": {
+    "inputs": {
+      "filename_prefix": "ComfyUI",
+      "images": [
+        "8",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Image"
+    }
+  },
+  "12": {
+    "inputs": {
+      "image": "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"
+    },
+    "class_type": "ETN_LoadImageBase64",
+    "_meta": {
+      "title": "Load Image (Base64)"
+    }
+  },
+  "14": {
+    "inputs": {
+      "pixels": [
+        "12",
+        0
+      ],
+      "vae": [
+        "4",
+        2
+      ]
+    },
+    "class_type": "VAEEncode",
+    "_meta": {
+      "title": "VAE Encode"
+    }
+  }
+}
