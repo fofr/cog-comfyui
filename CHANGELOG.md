@@ -1,3 +1,29 @@
+## 2024-04-17
+
+AnimateDiff LCM Motion module:
+
+- [animatediffLCMMotion_v10.ckpt](https://civitai.com/models/326698/animatediff-lcm-motion-model)
+
+New models added:
+
+- [rundiffusionXL_beta.safetensors](https://civitai.com/models/120964/rundiffusion-xl)
+- [pixlAnimeCartoonComic_v10.safetensors](https://civitai.com/models/260599/pixl-animecartooncomic-style)
+- [realisticLCMBYStable_v10.safetensors](https://civitai.com/models/232228?modelVersionId=262126)
+- [photonLCM_v10.safetensors](https://civitai.com/models/306814/photon-lcm)
+
+New loras:
+
+- [pk_trainer_xl_v1.safetensors](https://huggingface.co/sWizad/pokemon-trainer-sprite-pixelart)
+- [glowneon_xl_v1.safetensors](https://civitai.com/models/310235/glowneon-xl-lora)
+- [add-detail-xl.safetensors](https://civitai.com/models/122359/detail-tweaker-xl)
+- [aesthetic_anime_v1s.safetensors](https://civitai.com/models/295100/aesthetic-anime-lora)
+
+New embeddings:
+
+- [verybadimagenegative_v1.3.pt](https://civitai.com/models/11772/verybadimagenegative)
+- [epiCNegative.pt](https://civitai.com/models/89484?modelVersionId=95256)
+- [epiCRealism.pt](https://civitai.com/models/89484?modelVersionId=95263)
+
 ## 2024-04-05
 
 - Update ComfyUI [to latest (6c6a392)](https://github.com/comfyanonymous/ComfyUI/commit/6c6a39251fe313c56a88c90d820009073b623dfe)

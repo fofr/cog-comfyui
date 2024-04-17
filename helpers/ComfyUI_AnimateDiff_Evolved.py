@@ -23,7 +23,8 @@ MODELS = [
     "animatediff_lightning_4step_comfyui.safetensors",
     "animatediff_lightning_4step_diffusers.safetensors",
     "animatediff_lightning_8step_comfyui.safetensors",
-    "animatediff_lightning_8step_diffusers.safetensors"
+    "animatediff_lightning_8step_diffusers.safetensors",
+    "animatediffLCMMotion_v10.ckpt",
 ]
 
 LORAS = [
