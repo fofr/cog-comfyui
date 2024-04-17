@@ -1,10 +1,9 @@
 ## 2024-04-17
 
-[Update the Impact-Pack custom node](https://github.com/fofr/ComfyUI-Impact-Pack/commit/07a18e7c31ff7489fe7169370b3475a8af41ed4a) to support latest IPAdapter-Plus nodes.
-
-Add support for [comfyui-tooling-nodes](https://github.com/Acly/comfyui-tooling-nodes) to [add base64 image handling](https://github.com/fofr/cog-comfyui/pull/50)
-
-Add option to return WebP optimised images from model
+- [Update the Impact-Pack custom node](https://github.com/fofr/ComfyUI-Impact-Pack/commit/07a18e7c31ff7489fe7169370b3475a8af41ed4a) to support latest IPAdapter-Plus nodes.
+- Add support for [comfyui-tooling-nodes](https://github.com/Acly/comfyui-tooling-nodes) to [add base64 image handling](https://github.com/fofr/cog-comfyui/pull/50)
+- Add option to return WebP optimised images from model
+- Fix PhotoMaker by using official implementation and updating custom node
 
 AnimateDiff LCM Motion module:
 
