@@ -1,5 +1,7 @@
 ## 2024-04-17
 
+[Update the Impact-Pack custom node](https://github.com/fofr/ComfyUI-Impact-Pack/commit/07a18e7c31ff7489fe7169370b3475a8af41ed4a) to support latest IPAdapter-Plus nodes.
+
 AnimateDiff LCM Motion module:
 
 - [animatediffLCMMotion_v10.ckpt](https://civitai.com/models/326698/animatediff-lcm-motion-model)
