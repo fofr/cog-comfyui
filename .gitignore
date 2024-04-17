@@ -9,6 +9,7 @@ __pycache__
 *.pth
 *.bin
 *.torchscript
+*.webp
 weights.txt
 manifest.txt
 updated_weights.json

@@ -2,6 +2,8 @@ import os
 import shutil
 import tarfile
 import zipfile
+import mimetypes
+from PIL import Image
 from typing import List
 from cog import BasePredictor, Input, Path
 from helpers.comfyui import ComfyUI
@@ -10,7 +12,9 @@ OUTPUT_DIR = "/tmp/outputs"
 INPUT_DIR = "/tmp/inputs"
 COMFYUI_TEMP_OUTPUT_DIR = "ComfyUI/temp"
 
-with open("examples/api_workflows/base64.json", "r") as file:
+mimetypes.add_type("image/webp", ".webp")
+
+with open("examples/api_workflows/sdxl_simple_example.json", "r") as file:
     EXAMPLE_WORKFLOW_JSON = file.read()
 
 
@@ -72,6 +76,14 @@ class Predictor(BasePredictor):
             description="Return any temporary files, such as preprocessed controlnet images. Useful for debugging.",
             default=False,
         ),
+        optimise_output_images: bool = Input(
+            description="Optimise output images by using webp",
+            default=True,
+        ),
+        optimise_output_images_quality: int = Input(
+            description="Quality of the output images, from 0 to 100",
+            default=80,
+        ),
         randomise_seeds: bool = Input(
             description="Automatically randomise seeds (seed, noise_seed, rand_seed)",
             default=True,
@@ -102,5 +114,22 @@ class Predictor(BasePredictor):
         for directory in output_directories:
             print(f"Contents of {directory}:")
             files.extend(self.log_and_collect_files(directory))
+
+        if optimise_output_images:
+            optimised_files = []
+            for file in files:
+                if file.is_file() and file.suffix in [".jpg", ".jpeg", ".png"]:
+                    image = Image.open(file)
+                    optimised_file_path = file.with_suffix(".webp")
+                    image.save(
+                        optimised_file_path,
+                        quality=optimise_output_images_quality,
+                        optimize=True,
+                    )
+                    optimised_files.append(optimised_file_path)
+                else:
+                    optimised_files.append(file)
+
+            files = optimised_files
 
         return files
