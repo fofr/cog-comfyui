@@ -19,7 +19,12 @@ build:
     - scipy
     - tqdm
     - psutil
+    - kornia>=0.7.1
     - websocket-client==1.6.3
+
+    # fix for pydantic issues in cog
+    # https://github.com/replicate/cog/issues/1623
+    - albumentations==1.4.3
 
     # was-node-suite-comfyui
     # https://github.com/WASasquatch/was-node-suite-comfyui/blob/main/requirements.txt

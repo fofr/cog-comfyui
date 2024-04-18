@@ -16,7 +16,7 @@ repos=(
   "https://github.com/Kosinkadink/ComfyUI-AnimateDiff-Evolved f9e0343"
   "https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite 5b5026c"
   "https://github.com/Kosinkadink/ComfyUI-Advanced-ControlNet fbf005f"
-  "https://github.com/jags111/efficiency-nodes-comfyui 1ac5f18"
+  "https://github.com/jags111/efficiency-nodes-comfyui 3b7e89d"
   "https://github.com/Derfuu/Derfuu_ComfyUI_ModdedNodes 2ace4c4"
   "https://github.com/FizzleDorf/ComfyUI_FizzNodes cd6cadd"
   "https://github.com/TinyTerra/ComfyUI_tinyterraNodes eda8a09"
