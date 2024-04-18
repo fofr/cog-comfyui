@@ -1,7 +1,12 @@
 ## 2024-04-18
 
-- Update IPAdapter plus to support new adapter `ip-adapter-faceid-portrait_sdxl_unnorm.bin` for "extreme profile styles"
-- [Update ComfyUI](https://github.com/comfyanonymous/ComfyUI/compare/6c6a39251fe313c56a88c90d820009073b623dfe...a88b0ebc2d2f933c94e42aa689c42e836eedaf3c)
+Update dependencies:
+
+- IPAdapter plus to support new adapter `ip-adapter-faceid-portrait_sdxl_unnorm.bin` for "extreme profile styles"
+- [ComfyUI](https://github.com/comfyanonymous/ComfyUI/compare/6c6a39251fe313c56a88c90d820009073b623dfe...a88b0ebc2d2f933c94e42aa689c42e836eedaf3c)
+- AnimateDiff-Evolved
+- VideoHelperSuite
+- Advanced-ControlNet
 
 ## 2024-04-17
 
