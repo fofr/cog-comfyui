@@ -197,6 +197,7 @@
 - ip-adapter-faceid-portrait-v11_sd15.bin
 - ip-adapter-faceid-portrait_sd15.bin
 - ip-adapter-faceid-portrait_sdxl.bin
+- ip-adapter-faceid-portrait_sdxl_unnorm.bin
 - ip-adapter-faceid_sd15.bin
 - ip-adapter-faceid_sdxl.bin
 - ip-adapter-full-face_sd15.bin

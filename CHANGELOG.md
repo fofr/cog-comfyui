@@ -1,3 +1,8 @@
+## 2024-04-18
+
+- Update IPAdapter plus to support new adapter `ip-adapter-faceid-portrait_sdxl_unnorm.bin` for "extreme profile styles"
+- [Update ComfyUI](https://github.com/comfyanonymous/ComfyUI/compare/6c6a39251fe313c56a88c90d820009073b623dfe...a88b0ebc2d2f933c94e42aa689c42e836eedaf3c)
+
 ## 2024-04-17
 
 - [Update the Impact-Pack custom node](https://github.com/fofr/ComfyUI-Impact-Pack/commit/07a18e7c31ff7489fe7169370b3475a8af41ed4a) to support latest IPAdapter-Plus nodes.

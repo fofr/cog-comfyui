@@ -30,7 +30,7 @@ The following custom nodes are also supported, these are fixed to specific commi
 - [ComfyUI Impact Pack](https://github.com/fofr/ComfyUI-Impact-Pack/tree/07a18e7)
 - [ComfyUI Inspire Pack](https://github.com/ltdrdata/ComfyUI-Inspire-Pack/tree/c8231dd)
 - [ComfyUI InstantID](https://github.com/cubiq/ComfyUI_InstantID/tree/0fcf494)
-- [ComfyUI IPAdapter Plus](https://github.com/cubiq/ComfyUI_IPAdapter_plus/tree/1ac1cae)
+- [ComfyUI IPAdapter Plus](https://github.com/cubiq/ComfyUI_IPAdapter_plus/tree/0d0a7b3)
 - [ComfyUI Logic](https://github.com/theUpsider/ComfyUI-Logic/tree/fb88973)
 - [ComfyUI Nodes for External Tooling](https://github.com/Acly/comfyui-tooling-nodes/tree/bcb591c)
 - [ComfyUI PhotoMaker Plus](https://github.com/shiimizu/ComfyUI-PhotoMaker-Plus/tree/4c61084)
