@@ -8,6 +8,16 @@ BASE_URL = "https://weights.replicate.delivery/default/comfy-ui"
 
 
 class WeightsDownloader:
+    supported_filetypes = [
+        ".ckpt",
+        ".safetensors",
+        ".pt",
+        ".pth",
+        ".bin",
+        ".onnx",
+        ".torchscript",
+    ]
+
     def __init__(self):
         self.weights_manifest = WeightsManifest()
         self.weights_map = self.weights_manifest.weights_map

@@ -74,15 +74,7 @@ class ComfyUI:
         embeddings = self.weights_downloader.get_weights_by_type("EMBEDDINGS")
         embedding_to_fullname = {emb.split(".")[0]: emb for emb in embeddings}
         weights_to_download = []
-        weights_filetypes = [
-            ".ckpt",
-            ".safetensors",
-            ".pt",
-            ".pth",
-            ".bin",
-            ".onnx",
-            ".torchscript",
-        ]
+        weights_filetypes = self.weights_downloader.supported_filetypes
 
         for node in workflow.values():
             for handler in [
