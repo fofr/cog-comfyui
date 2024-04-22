@@ -1,3 +1,22 @@
+## 2024-04-22
+
+- Add [ComfyUI-layerdiffuse](https://github.com/huchenlei/ComfyUI-layerdiffuse) custom node
+
+Add [weights for layerdiffuse](https://huggingface.co/LayerDiffusion/layerdiffusion-v1):
+
+- layer_sd15_bg2fg.safetensors
+- layer_sd15_fg2bg.safetensors
+- layer_sd15_joint.safetensors
+- layer_sd15_transparent_attn.safetensors
+- layer_sd15_vae_transparent_decoder.safetensors
+- layer_xl_bg2ble.safetensors
+- layer_xl_bgble2fg.safetensors
+- layer_xl_fg2ble.safetensors
+- layer_xl_fgble2bg.safetensors
+- layer_xl_transparent_attn.safetensors
+- layer_xl_transparent_conv.safetensors
+- vae_transparent_decoder.safetensors
+
 ## 2024-04-18
 
 Update dependencies:

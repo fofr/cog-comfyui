@@ -21,6 +21,7 @@ from helpers.ComfyUI_Controlnet_Aux import ComfyUI_Controlnet_Aux
 from helpers.ComfyUI_Reactor_Node import ComfyUI_Reactor_Node
 from helpers.ComfyUI_InstantID import ComfyUI_InstantID
 from helpers.ComfyUI_Impact_Pack import ComfyUI_Impact_Pack
+from helpers.ComfyUI_LayerDiffuse import ComfyUI_LayerDiffuse
 from helpers.ComfyUI_Segment_Anything import ComfyUI_Segment_Anything
 from helpers.ComfyUI_BRIA_AI_RMBG import ComfyUI_BRIA_AI_RMBG
 from helpers.WAS_Node_Suite import WAS_Node_Suite
@@ -83,6 +84,7 @@ class ComfyUI:
                 ComfyUI_IPAdapter_plus,
                 ComfyUI_InstantID,
                 ComfyUI_Impact_Pack,
+                ComfyUI_LayerDiffuse,
                 ComfyUI_Segment_Anything,
                 ComfyUI_BRIA_AI_RMBG,
                 WAS_Node_Suite,
