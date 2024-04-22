@@ -166,7 +166,6 @@
 - MODILL_XL_0.27_RC.safetensors
 - more_details.safetensors
 - PerfectEyesXL.safetensors
-- pixlAnimeCartoonComic_v10.safetensors
 - sd_xl_offset_example-lora_1.0.safetensors
 - sdxl_lightning_2step_lora.pth
 - sdxl_lightning_2step_lora.safetensors
@@ -412,6 +411,21 @@
 - parsing_parsenet.pth
 - yolov5l-face.pth
 - yolov5n-face.pth
+
+## LayerDiffusion
+
+- layer_sd15_bg2fg.safetensors
+- layer_sd15_fg2bg.safetensors
+- layer_sd15_joint.safetensors
+- layer_sd15_transparent_attn.safetensors
+- layer_sd15_vae_transparent_decoder.safetensors
+- layer_xl_bg2ble.safetensors
+- layer_xl_bgble2fg.safetensors
+- layer_xl_fg2ble.safetensors
+- layer_xl_fgble2bg.safetensors
+- layer_xl_transparent_attn.safetensors
+- layer_xl_transparent_conv.safetensors
+- vae_transparent_decoder.safetensors
 
 ## AnimateDiff
 
