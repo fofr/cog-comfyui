@@ -22,6 +22,9 @@ build:
     - kornia>=0.7.1
     - websocket-client==1.6.3
 
+    # layerdiffuse
+    - diffusers>=0.25.0
+
     # fix for pydantic issues in cog
     # https://github.com/replicate/cog/issues/1623
     - albumentations==1.4.3

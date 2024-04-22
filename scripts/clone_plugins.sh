@@ -31,6 +31,7 @@ repos=(
   "https://github.com/fofr/comfyui_segment_anything 8bc6178"
   "https://github.com/ZHO-ZHO-ZHO/ComfyUI-BRIA_AI-RMBG 44a3f8f"
   "https://github.com/Suzie1/ComfyUI_Comfyroll_CustomNodes d78b780"
+  "https://github.com/huchenlei/ComfyUI-layerdiffuse 151f746"
 )
 
 # Destination directory

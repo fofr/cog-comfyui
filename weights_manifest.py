@@ -139,6 +139,7 @@ class WeightsManifest:
             "MMDets": self.get_weights_by_type("MMDETS"),
             "Face restoration models": self.get_weights_by_type("FACERESTORE_MODELS"),
             "Face detection models": self.get_weights_by_type("FACEDETECTION"),
+            "LayerDiffusion": self.get_weights_by_type("LAYER_MODEL"),
             "AnimateDiff": ComfyUI_AnimateDiff_Evolved.models(),
             "AnimateDiff LORAs": ComfyUI_AnimateDiff_Evolved.loras(),
             "ControlNet Preprocessors": sorted(
