@@ -7,6 +7,7 @@ from helpers.ComfyUI_Controlnet_Aux import ComfyUI_Controlnet_Aux
 from helpers.ComfyUI_AnimateDiff_Evolved import ComfyUI_AnimateDiff_Evolved
 from helpers.ComfyUI_BRIA_AI_RMBG import ComfyUI_BRIA_AI_RMBG
 from helpers.WAS_Node_Suite import WAS_Node_Suite
+from helpers.ComfyUI_Frame_Interpolation import ComfyUI_Frame_Interpolation
 
 UPDATED_WEIGHTS_MANIFEST_URL = f"https://weights.replicate.delivery/default/comfy-ui/weights.json?cache_bypass={int(time.time())}"
 UPDATED_WEIGHTS_MANIFEST_PATH = "updated_weights.json"
@@ -88,6 +89,7 @@ class WeightsManifest:
         weights_map.update(ComfyUI_Controlnet_Aux.weights_map(BASE_URL))
         weights_map.update(ComfyUI_AnimateDiff_Evolved.weights_map(BASE_URL))
         weights_map.update(ComfyUI_BRIA_AI_RMBG.weights_map(BASE_URL))
+        weights_map.update(ComfyUI_Frame_Interpolation.weights_map(BASE_URL))
 
         print("Allowed weights:")
         for weight in weights_map.keys():
@@ -142,6 +144,7 @@ class WeightsManifest:
             "CLIP Segmentation": self.get_weights_by_type("CLIPSEG"),
             "AnimateDiff": ComfyUI_AnimateDiff_Evolved.models(),
             "AnimateDiff LORAs": ComfyUI_AnimateDiff_Evolved.loras(),
+            "Frame Interpolation": ComfyUI_Frame_Interpolation.models(),
             "ControlNet Preprocessors": sorted(
                 {
                     f"{repo}/{filename}"

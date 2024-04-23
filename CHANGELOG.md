@@ -1,5 +1,6 @@
 ## 2024-04-23
 
+- Add [ComfyUI-Frame-Interpolation](https://github.com/Fannovel16/ComfyUI-Frame-Interpolation)
 - Add [ComfyUI-KJNodes](https://github.com/kijai/ComfyUI-KJNodes)
 
 New AnimateDiff weights for [AnimateLCM](https://huggingface.co/wangfuyun/AnimateLCM):

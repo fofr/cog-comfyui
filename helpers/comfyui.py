@@ -25,6 +25,7 @@ from helpers.ComfyUI_LayerDiffuse import ComfyUI_LayerDiffuse
 from helpers.ComfyUI_Segment_Anything import ComfyUI_Segment_Anything
 from helpers.ComfyUI_BRIA_AI_RMBG import ComfyUI_BRIA_AI_RMBG
 from helpers.ComfyUI_KJNodes import ComfyUI_KJNodes
+from helpers.ComfyUI_Frame_Interpolation import ComfyUI_Frame_Interpolation
 from helpers.WAS_Node_Suite import WAS_Node_Suite
 
 
@@ -121,6 +122,7 @@ class ComfyUI:
     def handle_known_unsupported_nodes(self, workflow):
         for node in workflow.values():
             ComfyUI_KJNodes.check_for_unsupported_nodes(node)
+            ComfyUI_Frame_Interpolation.check_for_unsupported_nodes(node)
             WAS_Node_Suite.check_for_unsupported_nodes(node)
 
     def handle_inputs(self, workflow):

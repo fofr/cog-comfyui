@@ -33,6 +33,7 @@ repos=(
   "https://github.com/Suzie1/ComfyUI_Comfyroll_CustomNodes d78b780"
   "https://github.com/huchenlei/ComfyUI-layerdiffuse 151f746"
   "https://github.com/kijai/ComfyUI-KJNodes 48d5a18"
+  "https://github.com/Fannovel16/ComfyUI-Frame-Interpolation 5e11679"
 )
 
 # Destination directory
