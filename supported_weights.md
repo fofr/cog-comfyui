@@ -474,6 +474,26 @@
 - v2_lora_ZoomIn.ckpt
 - v2_lora_ZoomOut.ckpt
 
+## Frame Interpolation
+
+- rife40.pth
+- rife41.pth
+- rife42.pth
+- rife43.pth
+- rife44.pth
+- rife45.pth
+- rife46.pth
+- rife47.pth
+- rife48.pth
+- rife49.pth
+- sudo_rife4_269.662_testV1_scale1.pth
+- film_net_fp32.pt
+- amt-s.pth
+- amt-g.pth
+- amt-l.pth
+- gopro_amt-s.pth
+- pretrained_cain.pth
+
 ## ControlNet Preprocessors
 
 - LayerNorm/DensePose-TorchScript-with-hint-image/densepose_r101_fpn_dl.torchscript
