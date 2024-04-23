@@ -39,36 +39,20 @@ class ComfyUI_Frame_Interpolation:
 
     @staticmethod
     def weights_map(base_url):
-        return (
-            {
-                model: {
-                    "url": f"{base_url}/custom_nodes/ComfyUI-Frame-Interpolation/rife/{model}.tar",
-                    "dest": FRAME_INTERPOLATION_MODELS_PATH + "/rife",
+        model_categories = {
+            "rife": RIFE_MODELS,
+            "film": FILM_MODELS,
+            "amt": AMT_MODELS,
+            "cain": CAIN_MODELS,
+        }
+        weights = {}
+        for category, models in model_categories.items():
+            for model in models:
+                weights[model] = {
+                    "url": f"{base_url}/custom_nodes/ComfyUI-Frame-Interpolation/{category}/{model}.tar",
+                    "dest": f"{FRAME_INTERPOLATION_MODELS_PATH}/{category}",
                 }
-                for model in RIFE_MODELS
-            }
-            | {
-                model: {
-                    "url": f"{base_url}/custom_nodes/ComfyUI-Frame-Interpolation/film/{model}.tar",
-                    "dest": FRAME_INTERPOLATION_MODELS_PATH + "/film",
-                }
-                for model in FILM_MODELS
-            }
-            | {
-                model: {
-                    "url": f"{base_url}/custom_nodes/ComfyUI-Frame-Interpolation/amt/{model}.tar",
-                    "dest": FRAME_INTERPOLATION_MODELS_PATH + "/amt",
-                }
-                for model in AMT_MODELS
-            }
-            | {
-                model: {
-                    "url": f"{base_url}/custom_nodes/ComfyUI-Frame-Interpolation/cain/{model}.tar",
-                    "dest": FRAME_INTERPOLATION_MODELS_PATH + "/cain",
-                }
-                for model in CAIN_MODELS
-            }
-        )
+        return weights
 
     @staticmethod
     def check_for_unsupported_nodes(node):
