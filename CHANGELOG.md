@@ -2,6 +2,15 @@
 
 - Add [ComfyUI-KJNodes](https://github.com/kijai/ComfyUI-KJNodes)
 
+New AnimateDiff weights for [AnimateLCM](https://huggingface.co/wangfuyun/AnimateLCM):
+
+- AnimateLCM_sd15_t2v.ckpt
+- AnimateLCM_sd15_t2v_lora.safetensors
+
+New checkpoint:
+
+- [juggernaut_reborn.safetensors](https://civitai.com/models/46422/juggernaut) (SD15)
+
 ## 2024-04-22
 
 - Add [ComfyUI-layerdiffuse](https://github.com/huchenlei/ComfyUI-layerdiffuse) custom node

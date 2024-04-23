@@ -23,6 +23,7 @@
 - epicrealismXL_v10.safetensors
 - imp_v10.safetensors
 - Juggernaut-XL_v9_RunDiffusionPhoto_v2.safetensors
+- juggernaut_reborn.safetensors
 - Juggernaut_RunDiffusionPhoto2_Lightning_4Steps.safetensors
 - juggernautXL_v8Rundiffusion.safetensors
 - LCM_Dreamshaper_v7_4k.safetensors
@@ -112,6 +113,7 @@
 
 - add-detail-xl.safetensors
 - aesthetic_anime_v1s.safetensors
+- AnimateLCM_sd15_t2v_lora.safetensors
 - artificialguybr/3DRedmond-3DRenderStyle-3DRenderAF.safetensors
 - artificialguybr/AnalogRedmond-AnalogRedmAF.safetensors
 - artificialguybr/AnalogRedmondV2-Analog-AnalogRedmAF.safetensors
@@ -427,6 +429,10 @@
 - layer_xl_transparent_conv.safetensors
 - vae_transparent_decoder.safetensors
 
+## CLIP Segmentation
+
+- models--CIDAS--clipseg-rd64-refined
+
 ## AnimateDiff
 
 - mm_sd_v14.ckpt
@@ -455,6 +461,7 @@
 - animatediff_lightning_8step_comfyui.safetensors
 - animatediff_lightning_8step_diffusers.safetensors
 - animatediffLCMMotion_v10.ckpt
+- AnimateLCM_sd15_t2v.ckpt
 
 ## AnimateDiff LORAs
 
