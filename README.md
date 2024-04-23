@@ -27,6 +27,7 @@ The following custom nodes are also supported, these are fixed to specific commi
 - [ComfyUI Controlnet Aux](https://github.com/Fannovel16/comfyui_controlnet_aux/tree/6d6f63c)
 - [ComfyUI Essentials](https://github.com/cubiq/ComfyUI_essentials/tree/c9236fe)
 - [ComfyUI FizzNodes](https://github.com/FizzleDorf/ComfyUI_FizzNodes/tree/cd6cadd)
+- [ComfyUI Frame Interpolation](https://github.com/Fannovel16/ComfyUI-Frame-Interpolation/tree/5e11679)
 - [ComfyUI Impact Pack](https://github.com/fofr/ComfyUI-Impact-Pack/tree/07a18e7)
 - [ComfyUI Inspire Pack](https://github.com/ltdrdata/ComfyUI-Inspire-Pack/tree/c8231dd)
 - [ComfyUI InstantID](https://github.com/cubiq/ComfyUI_InstantID/tree/0fcf494)
