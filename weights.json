@@ -411,5 +411,8 @@
     "layer_xl_transparent_attn.safetensors",
     "layer_xl_transparent_conv.safetensors",
     "vae_transparent_decoder.safetensors"
+  ],
+  "CLIPSEG": [
+    "models--CIDAS--clipseg-rd64-refined"
   ]
 }

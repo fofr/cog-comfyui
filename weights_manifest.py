@@ -87,7 +87,6 @@ class WeightsManifest:
                 )
         weights_map.update(ComfyUI_Controlnet_Aux.weights_map(BASE_URL))
         weights_map.update(ComfyUI_AnimateDiff_Evolved.weights_map(BASE_URL))
-        weights_map.update(WAS_Node_Suite.weights_map(BASE_URL))
         weights_map.update(ComfyUI_BRIA_AI_RMBG.weights_map(BASE_URL))
 
         print("Allowed weights:")
@@ -140,6 +139,7 @@ class WeightsManifest:
             "Face restoration models": self.get_weights_by_type("FACERESTORE_MODELS"),
             "Face detection models": self.get_weights_by_type("FACEDETECTION"),
             "LayerDiffusion": self.get_weights_by_type("LAYER_MODEL"),
+            "CLIP Segmentation": self.get_weights_by_type("CLIPSEG"),
             "AnimateDiff": ComfyUI_AnimateDiff_Evolved.models(),
             "AnimateDiff LORAs": ComfyUI_AnimateDiff_Evolved.loras(),
             "ControlNet Preprocessors": sorted(

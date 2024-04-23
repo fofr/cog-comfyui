@@ -31,6 +31,7 @@ The following custom nodes are also supported, these are fixed to specific commi
 - [ComfyUI Inspire Pack](https://github.com/ltdrdata/ComfyUI-Inspire-Pack/tree/c8231dd)
 - [ComfyUI InstantID](https://github.com/cubiq/ComfyUI_InstantID/tree/0fcf494)
 - [ComfyUI IPAdapter Plus](https://github.com/cubiq/ComfyUI_IPAdapter_plus/tree/0d0a7b3)
+- [ComfyUI KJNodes](https://github.com/kijai/ComfyUI-KJNodes/tree/48d5a18)
 - [ComfyUI LayerDiffuse](https://github.com/huchenlei/ComfyUI-layerdiffuse/tree/151f746)
 - [ComfyUI Logic](https://github.com/theUpsider/ComfyUI-Logic/tree/fb88973)
 - [ComfyUI Nodes for External Tooling](https://github.com/Acly/comfyui-tooling-nodes/tree/bcb591c)

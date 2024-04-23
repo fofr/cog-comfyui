@@ -1,3 +1,7 @@
+## 2024-04-23
+
+- Add [ComfyUI-KJNodes](https://github.com/kijai/ComfyUI-KJNodes)
+
 ## 2024-04-22
 
 - Add [ComfyUI-layerdiffuse](https://github.com/huchenlei/ComfyUI-layerdiffuse) custom node
