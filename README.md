@@ -30,7 +30,7 @@ The following custom nodes are also supported, these are fixed to specific commi
 - [ComfyUI Frame Interpolation](https://github.com/Fannovel16/ComfyUI-Frame-Interpolation/tree/5e11679)
 - [ComfyUI Impact Pack](https://github.com/fofr/ComfyUI-Impact-Pack/tree/07a18e7)
 - [ComfyUI Inspire Pack](https://github.com/ltdrdata/ComfyUI-Inspire-Pack/tree/c8231dd)
-- [ComfyUI InstantID](https://github.com/cubiq/ComfyUI_InstantID/tree/0fcf494)
+- [ComfyUI InstantID](https://github.com/cubiq/ComfyUI_InstantID/tree/8b7932a)
 - [ComfyUI IPAdapter Plus](https://github.com/cubiq/ComfyUI_IPAdapter_plus/tree/0d0a7b3)
 - [ComfyUI KJNodes](https://github.com/kijai/ComfyUI-KJNodes/tree/48d5a18)
 - [ComfyUI LayerDiffuse](https://github.com/huchenlei/ComfyUI-layerdiffuse/tree/151f746)
