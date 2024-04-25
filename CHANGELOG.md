@@ -1,3 +1,14 @@
+## 2024-04-25
+
+New SD15 loras and embeddings as requested in [#72](https://github.com/fofr/cog-comfyui/issues/72):
+
+- [age_slider-LECO-v1.safetensors](https://civitai.com/models/179792/age-slider)
+- [weight_slider-LECO-v1.safetensors](https://civitai.com/models/180008?modelVersionId=202032)
+- [SDXLrender_v2.0.safetensors](https://civitai.com/models/171159?modelVersionId=236130)
+- [JuggernautNegative-neg.pt](https://civitai.com/models/81563/juggernaut-negative-embedding)
+
+Also added ultralytics model [hair_yolov8n-seg_60.pt](https://github.com/hben35096/assets/releases/tag/yolo8)
+
 ## 2024-04-23
 
 - Add [ComfyUI-Frame-Interpolation](https://github.com/Fannovel16/ComfyUI-Frame-Interpolation)

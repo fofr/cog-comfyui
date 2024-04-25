@@ -113,6 +113,7 @@
 
 - add-detail-xl.safetensors
 - aesthetic_anime_v1s.safetensors
+- age_slider-LECO-v1.safetensors
 - AnimateLCM_sd15_t2v_lora.safetensors
 - artificialguybr/3DRedmond-3DRenderStyle-3DRenderAF.safetensors
 - artificialguybr/AnalogRedmond-AnalogRedmAF.safetensors
@@ -175,9 +176,11 @@
 - sdxl_lightning_4step_lora.safetensors
 - sdxl_lightning_8step_lora.pth
 - sdxl_lightning_8step_lora.safetensors
+- SDXLrender_v2.0.safetensors
 - Segmind-VegaRT.safetensors
 - theovercomer8sContrastFix_sd15.safetensors
 - theovercomer8sContrastFix_sd21768.safetensors
+- weight_slider-LECO-v1.safetensors
 
 ## Embeddings
 
@@ -186,6 +189,7 @@
 - epiCNegative.pt
 - epiCRealism.pt
 - FastNegativeV2.pt
+- JuggernautNegative-neg.pt
 - negative_hand-neg.pt
 - ng_deepnegative_v1_75t.pt
 - verybadimagenegative_v1.3.pt
@@ -378,6 +382,7 @@
 
 - bbox/face_yolov8m.pt
 - bbox/hand_yolov8s.pt
+- segm/hair_yolov8n-seg_60.pt
 - segm/person_yolov8m-seg.pt
 
 ## Segment anything models (SAM)
