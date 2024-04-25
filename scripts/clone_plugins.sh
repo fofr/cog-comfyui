@@ -21,7 +21,7 @@ repos=(
   "https://github.com/FizzleDorf/ComfyUI_FizzNodes cd6cadd"
   "https://github.com/TinyTerra/ComfyUI_tinyterraNodes eda8a09"
   "https://github.com/ssitu/ComfyUI_UltimateSDUpscale bcefc5b"
-  "https://github.com/cubiq/ComfyUI_essentials c9236fe"
+  "https://github.com/cubiq/ComfyUI_essentials 101ebae"
   "https://github.com/shiimizu/ComfyUI-PhotoMaker-Plus 4c61084"
   "https://github.com/pythongosssss/ComfyUI-Custom-Scripts 9916c13"
   "https://github.com/BadCafeCode/masquerade-nodes-comfyui 240209b"
