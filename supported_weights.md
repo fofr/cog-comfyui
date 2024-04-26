@@ -21,6 +21,8 @@
 - dynavision_v20Bakedvae.safetensors
 - epicrealism_naturalSinRC1VAE.safetensors
 - epicrealismXL_v10.safetensors
+- Hyper-SDXL-1step-Unet-Comfyui.fp16.safetensors
+- Hyper-SDXL-1step-Unet.safetensors
 - imp_v10.safetensors
 - Juggernaut-XL_v9_RunDiffusionPhoto_v2.safetensors
 - juggernaut_reborn.safetensors
@@ -360,8 +362,6 @@
 
 ## UNets
 
-- Hyper-SDXL-1step-Unet-Comfyui.fp16.safetensors
-- Hyper-SDXL-1step-Unet.safetensors
 - sdxl_lightning_1step_unet_x0.pth
 - sdxl_lightning_1step_unet_x0.safetensors
 - sdxl_lightning_2step_unet.pth
