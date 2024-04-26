@@ -3,6 +3,7 @@ import argparse
 import subprocess
 import os
 import sys
+import json
 
 
 def download_file(url, filename=None):
@@ -80,6 +81,23 @@ def get_subfolder():
         return subfolders[choice - 1]
 
 
+def update_weights_json(subfolder, filename):
+    subfolder = subfolder.upper()
+    with open("weights.json", "r+") as f:
+        weights_data = json.load(f)
+        if subfolder in weights_data:
+            if filename not in weights_data[subfolder]:
+                weights_data[subfolder].append(filename)
+                f.seek(0)
+                json.dump(weights_data, f, indent=4)
+                f.truncate()
+                print(f"Added {filename} to {subfolder} in weights.json")
+            else:
+                print(f"{filename} already exists in {subfolder} in weights.json")
+        else:
+            print(f"{subfolder} not found in weights.json")
+
+
 def process_file(url=None, filename=None, subfolder=None):
     if url:
         print(f"Processing {url}")
@@ -89,6 +107,7 @@ def process_file(url=None, filename=None, subfolder=None):
         local_file = filename
     tarred_file = tar_file(local_file)
     upload_to_gcloud(tarred_file, "gs://replicate-weights/comfy-ui", subfolder)
+    update_weights_json(subfolder, local_file)
     remove_files(local_file, tarred_file)
     subprocess.run(["python", "scripts/sort_weights.py"])
 

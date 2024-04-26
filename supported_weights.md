@@ -158,6 +158,14 @@
 - fofr/emoji.safetensors
 - glowneon_xl_v1.safetensors
 - Harrlogos_v2.0.safetensors
+- Hyper-SD15-1step-lora.safetensors
+- Hyper-SD15-2steps-lora.safetensors
+- Hyper-SD15-4steps-lora.safetensors
+- Hyper-SD15-8steps-lora.safetensors
+- Hyper-SDXL-1step-lora.safetensors
+- Hyper-SDXL-2steps-lora.safetensors
+- Hyper-SDXL-4steps-lora.safetensors
+- Hyper-SDXL-8steps-lora.safetensors
 - ip-adapter-faceid-plus_sd15_lora.safetensors
 - ip-adapter-faceid-plusv2_sd15_lora.safetensors
 - ip-adapter-faceid-plusv2_sdxl_lora.safetensors
@@ -352,6 +360,8 @@
 
 ## UNets
 
+- Hyper-SDXL-1step-Unet-Comfyui.fp16.safetensors
+- Hyper-SDXL-1step-Unet.safetensors
 - sdxl_lightning_1step_unet_x0.pth
 - sdxl_lightning_1step_unet_x0.safetensors
 - sdxl_lightning_2step_unet.pth

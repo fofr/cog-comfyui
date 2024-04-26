@@ -1,3 +1,18 @@
+## 2024-04-26
+
+Add [Hyper-SD Lora and UNet weights](https://huggingface.co/ByteDance/Hyper-SD):
+
+- Hyper-SD15-1step-lora.safetensors
+- Hyper-SD15-2steps-lora.safetensors
+- Hyper-SD15-4steps-lora.safetensors
+- Hyper-SD15-8steps-lora.safetensors
+- Hyper-SDXL-1step-lora.safetensors
+- Hyper-SDXL-2steps-lora.safetensors
+- Hyper-SDXL-4steps-lora.safetensors
+- Hyper-SDXL-8steps-lora.safetensors
+- Hyper-SDXL-1step-Unet-Comfyui.fp16.safetensors
+- Hyper-SDXL-1step-Unet.safetensors
+
 ## 2024-04-25
 
 Update [ComfyUI_Essentials to latest](https://github.com/cubiq/ComfyUI_essentials/commit/101ebaef8df8b0c7f55a810c8394e3276b0487e1) as requested in [#71](https://github.com/fofr/cog-comfyui/issues/71)
