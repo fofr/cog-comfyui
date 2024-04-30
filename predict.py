@@ -76,13 +76,16 @@ class Predictor(BasePredictor):
             description="Return any temporary files, such as preprocessed controlnet images. Useful for debugging.",
             default=False,
         ),
-        optimise_output_images: bool = Input(
-            description="Optimise output images by using webp",
-            default=True,
+        output_format: str = Input(
+            description="Format of the output images",
+            choices=["webp", "jpg", "png"],
+            default="webp",
         ),
-        optimise_output_images_quality: int = Input(
-            description="Quality of the output images, from 0 to 100",
+        output_quality: int = Input(
+            description="Quality of the output images, from 0 to 100. 100 is best quality, 0 is lowest quality.",
             default=80,
+            ge=0,
+            le=100,
         ),
         randomise_seeds: bool = Input(
             description="Automatically randomise seeds (seed, noise_seed, rand_seed)",
@@ -115,15 +118,15 @@ class Predictor(BasePredictor):
             print(f"Contents of {directory}:")
             files.extend(self.log_and_collect_files(directory))
 
-        if optimise_output_images:
+        if output_quality < 100 or output_format in ["webp", "jpg"]:
             optimised_files = []
             for file in files:
                 if file.is_file() and file.suffix in [".jpg", ".jpeg", ".png"]:
                     image = Image.open(file)
-                    optimised_file_path = file.with_suffix(".webp")
+                    optimised_file_path = file.with_suffix(f".{output_format}")
                     image.save(
                         optimised_file_path,
-                        quality=optimise_output_images_quality,
+                        quality=output_quality,
                         optimize=True,
                     )
                     optimised_files.append(optimised_file_path)
