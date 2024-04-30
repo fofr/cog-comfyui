@@ -238,13 +238,6 @@ class ComfyUI:
         self.handle_weights(wf)
         return wf
 
-    # TODO: Find a better way of doing this
-    # Nuclear reset
-    def reset_execution_cache(self):
-        with open("examples/reset.json", "r") as file:
-            reset_workflow = json.loads(file.read())
-        self.queue_prompt(reset_workflow)
-
     def randomise_input_seed(self, input_key, inputs):
         if input_key in inputs and isinstance(inputs[input_key], (int, float)):
             new_seed = random.randint(0, 2**32 - 1)
@@ -260,8 +253,6 @@ class ComfyUI:
 
     def run_workflow(self, workflow):
         print("Running workflow")
-        # self.reset_execution_cache()
-
         prompt_id = self.queue_prompt(workflow)
         self.wait_for_prompt_completion(workflow, prompt_id)
         output_json = self.get_history(prompt_id)
