@@ -13,3 +13,4 @@ __pycache__
 weights.txt
 manifest.txt
 updated_weights.json
+.cog

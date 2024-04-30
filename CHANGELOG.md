@@ -1,3 +1,7 @@
+## 2024-04-30
+
+- Update ComfyUI to latest ([eecd69b](https://github.com/comfyanonymous/ComfyUI/commit/eecd69b53a896343775bcb02a4f8349e7442ffd1))
+
 ## 2024-04-26
 
 Add [Hyper-SD Lora and UNet weights](https://huggingface.co/ByteDance/Hyper-SD):
