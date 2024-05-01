@@ -1,3 +1,18 @@
+## 2024-05-01
+
+Update [ComfyUI Controlnet Aux](https://github.com/Fannovel16/comfyui_controlnet_aux/tree/692a3d0)
+
+New controlnets:
+
+- [depth-anything.safetensors](https://huggingface.co/spaces/LiheYoung/Depth-Anything/blob/main/checkpoints_controlnet/diffusion_pytorch_model.safetensors)
+
+New controlnet preprocessors:
+
+- [Diffusion-Edge](https://huggingface.co/hr16/Diffusion-Edge) ([Paper](https://github.com/GuHuangAI/DiffusionEdge))
+- [Depth-Anything](https://huggingface.co/spaces/LiheYoung/Depth-Anything/tree/main/checkpoints) and [Zoe Depth-Anything](https://huggingface.co/spaces/LiheYoung/Depth-Anything/tree/main/checkpoints_metric_depth)
+- [Unimatch](https://huggingface.co/hr16/Unimatch) optical flow estimation
+- [TEED](https://huggingface.co/bdsqlsz/qinglong_controlnet-lllite/blob/main/Annotators/7_model.pth)
+
 ## 2024-04-30
 
 - Update ComfyUI to latest ([eecd69b](https://github.com/comfyanonymous/ComfyUI/commit/eecd69b53a896343775bcb02a4f8349e7442ffd1))

@@ -300,6 +300,7 @@
 - controlnet-depth-sdxl-1.0.fp16.safetensors
 - controlnet-sd-xl-1.0-softedge-dexined.safetensors
 - controlnet-temporalnet-sdxl-1.0.safetensors
+- depth-anything.safetensors
 - depth-zoe-xl-v1.0-controlnet.safetensors
 - diffusers_xl_canny_full.safetensors
 - diffusers_xl_canny_mid.safetensors
@@ -514,13 +515,26 @@
 
 - LayerNorm/DensePose-TorchScript-with-hint-image/densepose_r101_fpn_dl.torchscript
 - LayerNorm/DensePose-TorchScript-with-hint-image/densepose_r50_fpn_dl.torchscript
+- LiheYoung/Depth-Anything/checkpoints/depth_anything_vitb14.pth
+- LiheYoung/Depth-Anything/checkpoints/depth_anything_vitl14.pth
+- LiheYoung/Depth-Anything/checkpoints/depth_anything_vits14.pth
+- LiheYoung/Depth-Anything/checkpoints_metric_depth/depth_anything_metric_depth_indoor.pt
+- LiheYoung/Depth-Anything/checkpoints_metric_depth/depth_anything_metric_depth_outdoor.pt
+- bdsqlsz/qinglong_controlnet-lllite/Annotators/7_model.pth
 - bdsqlsz/qinglong_controlnet-lllite/Annotators/UNet.pth
 - dhkim2810/MobileSAM/mobile_sam.pt
 - hr16/ControlNet-HandRefiner-pruned/graphormer_hand_state_dict.bin
 - hr16/ControlNet-HandRefiner-pruned/hrnetv2_w64_imagenet_pretrained.pth
 - hr16/DWPose-TorchScript-BatchSize5/dw-ll_ucoco_384_bs5.torchscript.pt
 - hr16/DWPose-TorchScript-BatchSize5/rtmpose-m_ap10k_256_bs5.torchscript.pt
+- hr16/Diffusion-Edge/diffusion_edge_indoor.pt
+- hr16/Diffusion-Edge/diffusion_edge_natrual.pt
+- hr16/Diffusion-Edge/diffusion_edge_urban.pt
+- hr16/Diffusion-Edge/dsine.pt
 - hr16/UnJIT-DWPose/rtmpose-m_ap10k_256.onnx
+- hr16/Unimatch/gmflow-scale1-mixdata.pth
+- hr16/Unimatch/gmflow-scale2-mixdata.pth
+- hr16/Unimatch/gmflow-scale2-regrefine6-mixdata.pth
 - hr16/yolo-nas-fp16/yolo_nas_m_fp16.onnx
 - hr16/yolo-nas-fp16/yolo_nas_s_fp16.onnx
 - hr16/yolox-onnx/yolox_l.torchscript.pt
@@ -543,6 +557,8 @@
 - lllyasviel/Annotators/table5_pidinet.pth
 - lllyasviel/Annotators/upernet_global_small.pth
 - skytnt/anime-seg/isnetis.ckpt
+- torch/swin_b-68c6b09e.pth
+- torch/vgg16-397923af.pth
 - yzd-v/DWPose/dw-ll_ucoco_384.onnx
 - yzd-v/DWPose/yolox_l.onnx
 

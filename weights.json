@@ -262,6 +262,7 @@
     "controlnet-depth-sdxl-1.0.fp16.safetensors",
     "controlnet-sd-xl-1.0-softedge-dexined.safetensors",
     "controlnet-temporalnet-sdxl-1.0.safetensors",
+    "depth-anything.safetensors",
     "depth-zoe-xl-v1.0-controlnet.safetensors",
     "diffusers_xl_canny_full.safetensors",
     "diffusers_xl_canny_mid.safetensors",

@@ -32,6 +32,21 @@ MODELS = {
     "isnetis.ckpt": "skytnt/anime-seg",
     "yolox_l.onnx": "yzd-v/DWPose",
     "dw-ll_ucoco_384.onnx": "yzd-v/DWPose",
+    "7_model.pth": "bdsqlsz/qinglong_controlnet-lllite/Annotators",
+    "gmflow-scale1-mixdata.pth": "hr16/Unimatch",
+    "gmflow-scale2-mixdata.pth": "hr16/Unimatch",
+    "gmflow-scale2-regrefine6-mixdata.pth": "hr16/Unimatch",
+    "depth_anything_vitl14.pth": "LiheYoung/Depth-Anything/checkpoints",
+    "depth_anything_vitb14.pth": "LiheYoung/Depth-Anything/checkpoints",
+    "depth_anything_vits14.pth": "LiheYoung/Depth-Anything/checkpoints",
+    "diffusion_edge_indoor.pt": "hr16/Diffusion-Edge",
+    "diffusion_edge_natrual.pt": "hr16/Diffusion-Edge",  # (model has a typo)
+    "diffusion_edge_urban.pt": "hr16/Diffusion-Edge",
+    "dsine.pt": "hr16/Diffusion-Edge",
+    "swin_b-68c6b09e.pth": "torch",
+    "vgg16-397923af.pth": "torch",
+    "depth_anything_metric_depth_indoor.pt": "LiheYoung/Depth-Anything/checkpoints_metric_depth",
+    "depth_anything_metric_depth_outdoor.pt": "LiheYoung/Depth-Anything/checkpoints_metric_depth",
 }
 
 
@@ -65,6 +80,15 @@ class ComfyUI_Controlnet_Aux:
                 "hrnetv2_w64_imagenet_pretrained.pth",
                 "graphormer_hand_state_dict.bin",
             ],
+            "DepthAnythingPreprocessor": [
+                "depth_anything_vitl14.pth",
+                "depth_anything_vitb14.pth",
+                "depth_anything_vits14.pth",
+            ],
+            "Zoe_DepthAnythingPreprocessor": [
+                "depth_anything_metric_depth_indoor.pt",
+                "depth_anything_metric_depth_outdoor.pt",
+            ],
             # Segmentation
             "BAE-NormalMapPreprocessor": "scannet.pt",
             "OneFormer-COCO-SemSegPreprocessor": "150_16_swin_l_oneformer_coco_100ep.pth",
@@ -73,6 +97,7 @@ class ComfyUI_Controlnet_Aux:
             "SemSegPreprocessor": "upernet_global_small.pth",
             "AnimeFace_SemSegPreprocessor": ["UNet.pth", "isnetis.ckpt"],
             "SAMPreprocessor": "mobile_sam.pt",
+            "DSINE-NormalMapPreprocessor": "dsine.pt",
             # Line extractors
             "AnimeLineArtPreprocessor": "netG.pth",
             "HEDPreprocessor": "ControlNetHED.pth",
@@ -81,11 +106,25 @@ class ComfyUI_Controlnet_Aux:
             "PiDiNetPreprocessor": "table5_pidinet.pth",
             "LineArtPreprocessor": ["sk_model.pth", "sk_model2.pth"],
             "Manga2Anime_LineArt_Preprocessor": "erika.pth",
+            "TEEDPreprocessor": "7_model.pth",
+            "DiffusionEdge_Preprocessor": [
+                "diffusion_edge_indoor.pt",
+                "diffusion_edge_natrual.pt",  # model has a typo
+                "diffusion_edge_urban.pt",
+                "vgg16-397923af.pth",
+                "swin_b-68c6b09e.pth",
+            ],
             # Pose
             "OpenposePreprocessor": [
                 "body_pose_model.pth",
                 "hand_pose_model.pth",
                 "facenet.pth",
+            ],
+            # Optical flow
+            "Unimatch_OptFlowPreprocessor": [
+                "gmflow-scale1-mixdata.pth",
+                "gmflow-scale2-mixdata.pth",
+                "gmflow-scale2-regrefine6-mixdata.pth",
             ],
         }
 
@@ -96,17 +135,19 @@ class ComfyUI_Controlnet_Aux:
 
         if node_class and node_class in node_mapping:
             class_weights = node_mapping[node_class]
-            if isinstance(class_weights, list):
-                weights_to_download.extend(class_weights)
-            else:
-                weights_to_download.append(class_weights)
+            weights_to_download.extend(
+                class_weights if isinstance(class_weights, list) else [class_weights]
+            )
 
         # Additional check for AIO_Preprocessor and its preprocessor input value
-        if node_class == "AIO_Preprocessor" and "preprocessor" in node.get("inputs", {}):
+        if node_class == "AIO_Preprocessor" and "preprocessor" in node.get(
+            "inputs", {}
+        ):
             preprocessor = node["inputs"]["preprocessor"]
             if preprocessor in node_mapping:
                 preprocessor_weights = node_mapping[preprocessor]
-                if isinstance(preprocessor_weights, list):
-                    weights_to_download.extend(preprocessor_weights)
-                else:
-                    weights_to_download.append(preprocessor_weights)
+                weights_to_download.extend(
+                    preprocessor_weights
+                    if isinstance(preprocessor_weights, list)
+                    else [preprocessor_weights]
+                )
