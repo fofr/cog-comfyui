@@ -1,0 +1,114 @@
+[
+  {
+    "repo": "https://github.com/cubiq/ComfyUI_IPAdapter_plus",
+    "commit": "0d0a7b3"
+  },
+  {
+    "repo": "https://github.com/Fannovel16/comfyui_controlnet_aux",
+    "commit": "692a3d0"
+  },
+  {
+    "repo": "https://github.com/fofr/ComfyUI-Impact-Pack",
+    "commit": "07a18e7"
+  },
+  {
+    "repo": "https://github.com/ltdrdata/ComfyUI-Inspire-Pack",
+    "commit": "c8231dd"
+  },
+  {
+    "repo": "https://github.com/theUpsider/ComfyUI-Logic",
+    "commit": "fb88973"
+  },
+  {
+    "repo": "https://github.com/Acly/comfyui-tooling-nodes",
+    "commit": "bcb591c"
+  },
+  {
+    "repo": "https://github.com/Kosinkadink/ComfyUI-AnimateDiff-Evolved",
+    "commit": "f9e0343"
+  },
+  {
+    "repo": "https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite",
+    "commit": "5b5026c"
+  },
+  {
+    "repo": "https://github.com/Kosinkadink/ComfyUI-Advanced-ControlNet",
+    "commit": "fbf005f"
+  },
+  {
+    "repo": "https://github.com/jags111/efficiency-nodes-comfyui",
+    "commit": "3b7e89d"
+  },
+  {
+    "repo": "https://github.com/Derfuu/Derfuu_ComfyUI_ModdedNodes",
+    "commit": "2ace4c4"
+  },
+  {
+    "repo": "https://github.com/FizzleDorf/ComfyUI_FizzNodes",
+    "commit": "cd6cadd"
+  },
+  {
+    "repo": "https://github.com/TinyTerra/ComfyUI_tinyterraNodes",
+    "commit": "eda8a09"
+  },
+  {
+    "repo": "https://github.com/ssitu/ComfyUI_UltimateSDUpscale",
+    "commit": "bcefc5b"
+  },
+  {
+    "repo": "https://github.com/cubiq/ComfyUI_essentials",
+    "commit": "101ebae"
+  },
+  {
+    "repo": "https://github.com/shiimizu/ComfyUI-PhotoMaker-Plus",
+    "commit": "4c61084"
+  },
+  {
+    "repo": "https://github.com/pythongosssss/ComfyUI-Custom-Scripts",
+    "commit": "9916c13"
+  },
+  {
+    "repo": "https://github.com/BadCafeCode/masquerade-nodes-comfyui",
+    "commit": "240209b"
+  },
+  {
+    "repo": "https://github.com/Gourieff/comfyui-reactor-node",
+    "commit": "ae81f62"
+  },
+  {
+    "repo": "https://github.com/cubiq/ComfyUI_InstantID",
+    "commit": "8b7932a"
+  },
+  {
+    "repo": "https://github.com/WASasquatch/was-node-suite-comfyui",
+    "commit": "33534f2"
+  },
+  {
+    "repo": "https://github.com/fofr/comfyui_segment_anything",
+    "commit": "8bc6178"
+  },
+  {
+    "repo": "https://github.com/ZHO-ZHO-ZHO/ComfyUI-BRIA_AI-RMBG",
+    "commit": "44a3f8f"
+  },
+  {
+    "repo": "https://github.com/Suzie1/ComfyUI_Comfyroll_CustomNodes",
+    "commit": "d78b780"
+  },
+  {
+    "repo": "https://github.com/huchenlei/ComfyUI-layerdiffuse",
+    "commit": "151f746"
+  },
+  {
+    "repo": "https://github.com/kijai/ComfyUI-KJNodes",
+    "commit": "48d5a18"
+  },
+  {
+    "repo": "https://github.com/Fannovel16/ComfyUI-Frame-Interpolation",
+    "commit": "5e11679"
+  },
+  {
+    "repo": "https://github.com/fofr/ComfyUI-HyperSDXL1StepUnetScheduler",
+    "commit": "5073c7a"
+  }
+]

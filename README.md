@@ -122,11 +122,13 @@ Clone this repository:
 git clone --recurse-submodules https://github.com/fofr/cog-comfyui.git
 ```
 
-Run the [following script](https://github.com/fofr/cog-comfyui/blob/main/scripts/clone_plugins.sh) to install all the custom nodes:
+Run the [following script](https://github.com/fofr/cog-comfyui/blob/main/scripts/install_custom_nodes.py) to install all the custom nodes:
 
 ```sh
-./scripts/clone_plugins.sh
+./scripts/install_custom_nodes.py
 ```
+
+You can view the list of nodes in [custom_nodes.json](https://github.com/fofr/cog-comfyui/blob/main/custom_nodes.json)
 
 ### Running the Web UI from your Cog container
 
