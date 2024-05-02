@@ -14,41 +14,21 @@ TLDR: json blob -> img/mp4
 
 ## What’s included
 
-We've tried to include many of the most popular model weights:
+We've tried to include many of the most popular model weights and custom nodes:
 
-[View list of supported weights](https://github.com/fofr/cog-comfyui/blob/main/supported_weights.md)
-
-The following custom nodes are also supported, these are fixed to specific commits:
-
-- [ComfyUI Advanced ControlNet](https://github.com/Kosinkadink/ComfyUI-Advanced-ControlNet/tree/bd5bcbf)
-- [ComfyUI AnimateDiff Evolved](https://github.com/Kosinkadink/ComfyUI-AnimateDiff-Evolved/tree/6148195)
-- [ComfyUI BRIA AI RMBG](https://github.com/ZHO-ZHO-ZHO/ComfyUI-BRIA_AI-RMBG/tree/44a3f8f)
-- [ComfyUI Comfyroll CustomNodes](https://github.com/Suzie1/ComfyUI_Comfyroll_CustomNodes/tree/d78b780)
-- [ComfyUI Controlnet Aux](https://github.com/Fannovel16/comfyui_controlnet_aux/tree/692a3d0)
-- [ComfyUI Essentials](https://github.com/cubiq/ComfyUI_essentials/tree/101ebae)
-- [ComfyUI FizzNodes](https://github.com/FizzleDorf/ComfyUI_FizzNodes/tree/cd6cadd)
-- [ComfyUI Frame Interpolation](https://github.com/Fannovel16/ComfyUI-Frame-Interpolation/tree/5e11679)
-- [ComfyUI HyperSDXL1StepUnetScheduler](https://github.com/fofr/ComfyUI-HyperSDXL1StepUnetScheduler/tree/5073c7a)
-- [ComfyUI Impact Pack](https://github.com/fofr/ComfyUI-Impact-Pack/tree/07a18e7)
-- [ComfyUI Inspire Pack](https://github.com/ltdrdata/ComfyUI-Inspire-Pack/tree/c8231dd)
-- [ComfyUI InstantID](https://github.com/cubiq/ComfyUI_InstantID/tree/8b7932a)
-- [ComfyUI IPAdapter Plus](https://github.com/cubiq/ComfyUI_IPAdapter_plus/tree/0d0a7b3)
-- [ComfyUI KJNodes](https://github.com/kijai/ComfyUI-KJNodes/tree/48d5a18)
-- [ComfyUI LayerDiffuse](https://github.com/huchenlei/ComfyUI-layerdiffuse/tree/151f746)
-- [ComfyUI Logic](https://github.com/theUpsider/ComfyUI-Logic/tree/fb88973)
-- [ComfyUI Nodes for External Tooling](https://github.com/Acly/comfyui-tooling-nodes/tree/bcb591c)
-- [ComfyUI PhotoMaker Plus](https://github.com/shiimizu/ComfyUI-PhotoMaker-Plus/tree/4c61084)
-- [ComfyUI TinyTerra Nodes](https://github.com/TinyTerra/ComfyUI_tinyterraNodes/tree/eda8a09)
-- [ComfyUI UltimateSDUpscale](https://github.com/ssitu/ComfyUI_UltimateSDUpscale/tree/bcefc5b)
-- [ComfyUI VideoHelperSuite](https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite/tree/1dbf01b)
-- [comfyui-reactor-node](https://github.com/Gourieff/comfyui-reactor-node/tree/ae81f62)
-- [comfyui_segment_anything](https://github.com/storyicon/comfyui_segment_anything/tree/681d977)
-- [Derfuu ComfyUI ModdedNodes](https://github.com/Derfuu/Derfuu_ComfyUI_ModdedNodes/tree/2ace4c4)
-- [Efficiency Nodes ComfyUI](https://github.com/jags111/efficiency-nodes-comfyui/tree/1ac5f18)
-- [masquerade-nodes-comfyui](https://github.com/BadCafeCode/tree/masquerade-nodes-comfyui/240209b)
-- [WAS Node Suite](https://github.com/WASasquatch/was-node-suite-comfyui/tree/33534f2)
+- [View list of supported weights](https://github.com/fofr/cog-comfyui/blob/main/supported_weights.md)
+- [View list of supported custom nodes](https://github.com/fofr/cog-comfyui/blob/main/custom_nodes.json)
 
 Raise an issue to request more custom nodes or models, or use this model as a template to roll your own.
+
+## Examples of models derived from this one
+
+See the commits on these repositories to see how to convert this repo into a new Replicate model:
+
+- https://github.com/fofr/cog-face-to-many
+- https://github.com/fofr/cog-video-morpher
+- https://github.com/fofr/cog-stickers
+- https://github.com/fofr/cog-material-transfer
 
 ## How to use
 
