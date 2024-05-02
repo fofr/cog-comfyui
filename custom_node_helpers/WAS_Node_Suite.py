@@ -24,7 +24,6 @@ class WAS_Node_Suite(CustomNodeHelper):
             "Text Random Prompt": "Makes an HTTP request out to Lexica, which is unsupported",
             "True Random.org Number Generator": "Needs an API key which cannot be supplied",
             "Image Seamless Texture": "img2texture dependency has not been added",
-            "Image Rembg (Remove Background)": "rembg dependency has not been added because it causes custom nodes to fail",
             "MiDaS Model Loader": "WAS MiDaS nodes are not currently supported",
             "MiDaS Mask Image": "WAS MiDaS nodes are not currently supported",
             "MiDaS Depth Approximation": "WAS MiDaS nodes are not currently supported",
