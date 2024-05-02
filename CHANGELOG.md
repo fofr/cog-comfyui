@@ -1,3 +1,9 @@
+## 2024-05-02
+
+Adding support for [rembg](https://github.com/danielgatis/rembg), used in a variety of custom nodes
+
+Update ComfyUI_tinyterraNodes to latest, but [fork to remove inefficient rembg nodes](https://github.com/fofr/ComfyUI_tinyterraNodes/tree/without-rembg)
+
 ## 2024-05-01
 
 Update [ComfyUI Controlnet Aux](https://github.com/Fannovel16/comfyui_controlnet_aux/tree/692a3d0)
