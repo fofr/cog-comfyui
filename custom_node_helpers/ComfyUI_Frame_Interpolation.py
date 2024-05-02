@@ -1,3 +1,5 @@
+from custom_node_helper import CustomNodeHelper
+
 RIFE_MODELS = [
     "rife40.pth",
     "rife41.pth",
@@ -32,7 +34,7 @@ FRAME_INTERPOLATION_MODELS_PATH = (
 )
 
 
-class ComfyUI_Frame_Interpolation:
+class ComfyUI_Frame_Interpolation(CustomNodeHelper):
     @staticmethod
     def models():
         return RIFE_MODELS + FILM_MODELS + AMT_MODELS + CAIN_MODELS

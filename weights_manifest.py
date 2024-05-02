@@ -2,12 +2,7 @@ import subprocess
 import time
 import os
 import json
-from custom_node_helpers import (
-    ComfyUI_AnimateDiff_Evolved,
-    ComfyUI_BRIA_AI_RMBG,
-    ComfyUI_Controlnet_Aux,
-    ComfyUI_Frame_Interpolation,
-)
+import custom_node_helpers as helpers
 
 UPDATED_WEIGHTS_MANIFEST_URL = f"https://weights.replicate.delivery/default/comfy-ui/weights.json?cache_bypass={int(time.time())}"
 UPDATED_WEIGHTS_MANIFEST_PATH = "updated_weights.json"
@@ -86,13 +81,12 @@ class WeightsManifest:
                 weights_map.update(
                     self._generate_weights_map(self.weights_manifest[key], key.lower())
                 )
-        for module in [
-            ComfyUI_Controlnet_Aux,
-            ComfyUI_AnimateDiff_Evolved,
-            ComfyUI_BRIA_AI_RMBG,
-            ComfyUI_Frame_Interpolation,
-        ]:
-            weights_map.update(module.weights_map(BASE_URL))
+
+        for module_name in dir(helpers):
+            print(module_name)
+            module = getattr(helpers, module_name)
+            if hasattr(module, "weights_map"):
+                weights_map.update(module.weights_map(BASE_URL))
 
         return weights_map
 
@@ -141,13 +135,13 @@ class WeightsManifest:
             "Face detection models": self.get_weights_by_type("FACEDETECTION"),
             "LayerDiffusion": self.get_weights_by_type("LAYER_MODEL"),
             "CLIP Segmentation": self.get_weights_by_type("CLIPSEG"),
-            "AnimateDiff": ComfyUI_AnimateDiff_Evolved.models(),
-            "AnimateDiff LORAs": ComfyUI_AnimateDiff_Evolved.loras(),
-            "Frame Interpolation": ComfyUI_Frame_Interpolation.models(),
+            "AnimateDiff": helpers.ComfyUI_AnimateDiff_Evolved.models(),
+            "AnimateDiff LORAs": helpers.ComfyUI_AnimateDiff_Evolved.loras(),
+            "Frame Interpolation": helpers.ComfyUI_Frame_Interpolation.models(),
             "ControlNet Preprocessors": sorted(
                 {
                     f"{repo}/{filename}"
-                    for filename, repo in ComfyUI_Controlnet_Aux.models().items()
+                    for filename, repo in helpers.ComfyUI_Controlnet_Aux.models().items()
                 }
             ),
         }

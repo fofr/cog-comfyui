@@ -1,4 +1,6 @@
-class ComfyUI_LayerDiffuse:
+from custom_node_helper import CustomNodeHelper
+
+class ComfyUI_LayerDiffuse(CustomNodeHelper):
     @staticmethod
     def get_config_weights(config):
         config_weights_map = {

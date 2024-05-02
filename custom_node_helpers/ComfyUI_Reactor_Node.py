@@ -1,4 +1,6 @@
-class ComfyUI_Reactor_Node:
+from custom_node_helper import CustomNodeHelper
+
+class ComfyUI_Reactor_Node(CustomNodeHelper):
     facedetection_weights = {
         "retinaface_resnet50": "detection_Resnet50_Final.pth",
         "retinaface_mobile0.25": "detection_mobilenet0.25_Final.pth",

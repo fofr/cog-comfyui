@@ -1,5 +1,7 @@
 import os
 
+from custom_node_helper import CustomNodeHelper
+
 # List of presets
 PRESETS = [
     # IPAdapterUnifiedLoader
@@ -9,20 +11,18 @@ PRESETS = [
     "PLUS (high strength)",
     "PLUS FACE (portraits)",
     "FULL FACE - SD1.5 only (portraits stronger)",
-
     # IPAdapterUnifiedLoaderFaceID
     "FACEID",
     "FACEID PLUS - SD1.5 only",
     "FACEID PLUS V2",
     "FACEID PORTRAIT (style transfer)",
     "FACEID PORTRAIT UNNORM - SDXL only (strong)",
-
     # IPAdapterUnifiedLoaderCommunity
     "Composition",
 ]
 
 
-class ComfyUI_IPAdapter_plus:
+class ComfyUI_IPAdapter_plus(CustomNodeHelper):
     @staticmethod
     def prepare():
         # create the ipadapter folder in ComfyUI/models/ipadapter

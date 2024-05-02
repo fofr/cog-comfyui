@@ -1,4 +1,6 @@
-class ComfyUI_KJNodes:
+from custom_node_helper import CustomNodeHelper
+
+class ComfyUI_KJNodes(CustomNodeHelper):
     @staticmethod
     def add_weights(weights_to_download, node):
         if node.get("class_type") == "BatchCLIPSeg":

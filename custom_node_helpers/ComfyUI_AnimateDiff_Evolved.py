@@ -1,3 +1,5 @@
+from custom_node_helper import CustomNodeHelper
+
 MODELS = [
     "mm_sd_v14.ckpt",
     "mm_sd_v15.ckpt",
@@ -39,7 +41,7 @@ LORAS = [
     "v2_lora_ZoomOut.ckpt",
 ]
 
-class ComfyUI_AnimateDiff_Evolved:
+class ComfyUI_AnimateDiff_Evolved(CustomNodeHelper):
     @staticmethod
     def loras():
         return LORAS

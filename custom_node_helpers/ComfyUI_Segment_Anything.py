@@ -1,3 +1,5 @@
+from custom_node_helper import CustomNodeHelper
+
 MODEL_WEIGHTS = {
     "sam_vit_h (2.56GB)": "sam_vit_h_4b8939.pth",
     "sam_vit_l (1.25GB)": "sam_vit_l_0b3195.pth",
@@ -11,7 +13,7 @@ MODEL_WEIGHTS = {
 }
 
 
-class ComfyUI_Segment_Anything:
+class ComfyUI_Segment_Anything(CustomNodeHelper):
     @staticmethod
     def add_weights(weights_to_download, node):
         if "class_type" in node and node["class_type"] in [

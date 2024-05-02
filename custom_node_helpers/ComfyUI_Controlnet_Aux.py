@@ -1,3 +1,5 @@
+from custom_node_helper import CustomNodeHelper
+
 MODELS = {
     "UNet.pth": "bdsqlsz/qinglong_controlnet-lllite/Annotators",
     "mobile_sam.pt": "dhkim2810/MobileSAM",
@@ -50,7 +52,7 @@ MODELS = {
 }
 
 
-class ComfyUI_Controlnet_Aux:
+class ComfyUI_Controlnet_Aux(CustomNodeHelper):
     @staticmethod
     def models():
         return MODELS

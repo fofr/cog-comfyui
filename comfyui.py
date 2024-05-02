@@ -9,28 +9,16 @@ import uuid
 import websocket
 import random
 import requests
+import custom_node_helpers as helpers
 from weights_downloader import WeightsDownloader
 from urllib.error import URLError
-from custom_node_helpers import (
-    ComfyUI_BRIA_AI_RMBG,
-    ComfyUI_Controlnet_Aux,
-    ComfyUI_Frame_Interpolation,
-    ComfyUI_Impact_Pack,
-    ComfyUI_InstantID,
-    ComfyUI_IPAdapter_plus,
-    ComfyUI_KJNodes,
-    ComfyUI_LayerDiffuse,
-    ComfyUI_Reactor_Node,
-    ComfyUI_Segment_Anything,
-    WAS_Node_Suite,
-)
 
 
 class ComfyUI:
     def __init__(self, server_address):
         self.weights_downloader = WeightsDownloader()
         self.server_address = server_address
-        ComfyUI_IPAdapter_plus.prepare()
+        helpers.ComfyUI_IPAdapter_plus.prepare()
 
     def start_server(self, output_directory, input_directory):
         self.input_directory = input_directory
@@ -71,6 +59,15 @@ class ComfyUI:
         # Some models need to be downloaded and loaded before starting ComfyUI
         self.weights_downloader.download_torch_checkpoints()
 
+    def apply_helper_methods(self, method_name, *args, **kwargs):
+        # Dynamically applies a method from helpers module with given args.
+        # Example usage: self.apply_helper_methods("add_weights", weights_to_download, node)
+        for module_name in dir(helpers):
+            module = getattr(helpers, module_name)
+            method = getattr(module, method_name, None)
+            if callable(method):
+                method(*args, **kwargs)
+
     def handle_weights(self, workflow):
         print("Checking weights")
         embeddings = self.weights_downloader.get_weights_by_type("EMBEDDINGS")
@@ -79,18 +76,7 @@ class ComfyUI:
         weights_filetypes = self.weights_downloader.supported_filetypes
 
         for node in workflow.values():
-            for handler in [
-                ComfyUI_Controlnet_Aux,
-                ComfyUI_Reactor_Node,
-                ComfyUI_IPAdapter_plus,
-                ComfyUI_InstantID,
-                ComfyUI_Impact_Pack,
-                ComfyUI_LayerDiffuse,
-                ComfyUI_Segment_Anything,
-                ComfyUI_BRIA_AI_RMBG,
-                WAS_Node_Suite,
-            ]:
-                handler.add_weights(weights_to_download, node)
+            self.apply_helper_methods("add_weights", weights_to_download, node)
 
             if "inputs" in node:
                 for input in node["inputs"].values():
@@ -120,9 +106,7 @@ class ComfyUI:
 
     def handle_known_unsupported_nodes(self, workflow):
         for node in workflow.values():
-            ComfyUI_KJNodes.check_for_unsupported_nodes(node)
-            ComfyUI_Frame_Interpolation.check_for_unsupported_nodes(node)
-            WAS_Node_Suite.check_for_unsupported_nodes(node)
+            self.apply_helper_methods("check_for_unsupported_nodes", node)
 
     def handle_inputs(self, workflow):
         print("Checking inputs")

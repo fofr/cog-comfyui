@@ -1,8 +1,10 @@
+from custom_node_helper import CustomNodeHelper
+
 MODELS = [
     "RMBG-1.4/model.pth",
 ]
 
-class ComfyUI_BRIA_AI_RMBG:
+class ComfyUI_BRIA_AI_RMBG(CustomNodeHelper):
     @staticmethod
     def models():
         return MODELS

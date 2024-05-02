@@ -1,4 +1,6 @@
-class WAS_Node_Suite:
+from custom_node_helper import CustomNodeHelper
+
+class WAS_Node_Suite(CustomNodeHelper):
     @staticmethod
     def add_weights(weights_to_download, node):
         node_class = node.get("class_type")

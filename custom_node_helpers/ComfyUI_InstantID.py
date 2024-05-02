@@ -1,4 +1,6 @@
-class ComfyUI_InstantID:
+from custom_node_helper import CustomNodeHelper
+
+class ComfyUI_InstantID(CustomNodeHelper):
     @staticmethod
     def add_weights(weights_to_download, node):
         if "class_type" in node:
