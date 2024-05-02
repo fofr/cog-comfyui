@@ -83,7 +83,6 @@ class WeightsManifest:
                 )
 
         for module_name in dir(helpers):
-            print(module_name)
             module = getattr(helpers, module_name)
             if hasattr(module, "weights_map"):
                 weights_map.update(module.weights_map(BASE_URL))
