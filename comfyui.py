@@ -6,27 +6,24 @@ import time
 import json
 import urllib
 import uuid
-import json
-import os
 import websocket
 import random
+import requests
 from weights_downloader import WeightsDownloader
 from urllib.error import URLError
-import requests
-
-
-# custom_nodes helpers
-from helpers.ComfyUI_IPAdapter_plus import ComfyUI_IPAdapter_plus
-from helpers.ComfyUI_Controlnet_Aux import ComfyUI_Controlnet_Aux
-from helpers.ComfyUI_Reactor_Node import ComfyUI_Reactor_Node
-from helpers.ComfyUI_InstantID import ComfyUI_InstantID
-from helpers.ComfyUI_Impact_Pack import ComfyUI_Impact_Pack
-from helpers.ComfyUI_LayerDiffuse import ComfyUI_LayerDiffuse
-from helpers.ComfyUI_Segment_Anything import ComfyUI_Segment_Anything
-from helpers.ComfyUI_BRIA_AI_RMBG import ComfyUI_BRIA_AI_RMBG
-from helpers.ComfyUI_KJNodes import ComfyUI_KJNodes
-from helpers.ComfyUI_Frame_Interpolation import ComfyUI_Frame_Interpolation
-from helpers.WAS_Node_Suite import WAS_Node_Suite
+from custom_node_helpers import (
+    ComfyUI_BRIA_AI_RMBG,
+    ComfyUI_Controlnet_Aux,
+    ComfyUI_Frame_Interpolation,
+    ComfyUI_Impact_Pack,
+    ComfyUI_InstantID,
+    ComfyUI_IPAdapter_plus,
+    ComfyUI_KJNodes,
+    ComfyUI_LayerDiffuse,
+    ComfyUI_Reactor_Node,
+    ComfyUI_Segment_Anything,
+    WAS_Node_Suite,
+)
 
 
 class ComfyUI:
@@ -38,21 +35,23 @@ class ComfyUI:
     def start_server(self, output_directory, input_directory):
         self.input_directory = input_directory
         self.output_directory = output_directory
-
         self.download_pre_start_models()
 
+        start_time = time.time()
         server_thread = threading.Thread(
             target=self.run_server, args=(output_directory, input_directory)
         )
         server_thread.start()
-
-        start_time = time.time()
         while not self.is_server_running():
-            if time.time() - start_time > 60:  # If more than a minute has passed
+            # If more than a minute has passed
+            if time.time() - start_time > 60:
                 raise TimeoutError("Server did not start within 60 seconds")
-            time.sleep(1)  # Wait for 1 second before checking again
 
-        print("Server running")
+            # Wait for 500ms before checking again
+            time.sleep(0.5)
+
+        elapsed_time = time.time() - start_time
+        print(f"Server started in {elapsed_time:.2f} seconds")
 
     def run_server(self, output_directory, input_directory):
         command = f"python ./ComfyUI/main.py --output-directory {output_directory} --input-directory {input_directory} --disable-metadata --gpu-only"

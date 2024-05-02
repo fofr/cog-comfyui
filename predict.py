@@ -6,7 +6,7 @@ import mimetypes
 from PIL import Image
 from typing import List
 from cog import BasePredictor, Input, Path
-from helpers.comfyui import ComfyUI
+from comfyui import ComfyUI
 
 OUTPUT_DIR = "/tmp/outputs"
 INPUT_DIR = "/tmp/inputs"
@@ -97,9 +97,6 @@ class Predictor(BasePredictor):
 
         if input_file:
             self.handle_input_file(input_file)
-
-        # TODO: Record the previous models loaded
-        # If different, run /free to free up models and memory
 
         wf = self.comfyUI.load_workflow(workflow_json or EXAMPLE_WORKFLOW_JSON)
 
