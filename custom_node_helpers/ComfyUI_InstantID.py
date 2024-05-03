@@ -13,12 +13,9 @@ class ComfyUI_InstantID(CustomNodeHelper):
             node.set_input("instantid_file", "instantid-ip-adapter.bin")
             weights_to_download.append("instantid-ip-adapter.bin")
         elif node.is_type("ControlNetLoader"):
-            if node.has_key("control_net_name"):
-                if (
-                    node.input("control_net_name")
-                    == "instantid/diffusion_pytorch_model.safetensors"
-                ):
-                    node.set_input(
-                        "control_net_name", "instantid-controlnet.safetensors"
-                    )
-                    weights_to_download.append("instantid-controlnet.safetensors")
+            if (
+                node.input("control_net_name")
+                == "instantid/diffusion_pytorch_model.safetensors"
+            ):
+                node.set_input("control_net_name", "instantid-controlnet.safetensors")
+                weights_to_download.append("instantid-controlnet.safetensors")
