@@ -48,9 +48,8 @@
     "commit": "cd6cadd"
   },
   {
-    "repo": "https://github.com/fofr/ComfyUI_tinyterraNodes",
-    "comments": "Forked to remove rembg nodes which were causing a slow startup time. https://github.com/TinyTerra/ComfyUI_tinyterraNodes/issues/104",
-    "commit": "e980b9c"
+    "repo": "https://github.com/TinyTerra/ComfyUI_tinyterraNodes",
+    "commit": "8d8bb56"
   },
   {
     "repo": "https://github.com/ssitu/ComfyUI_UltimateSDUpscale",
