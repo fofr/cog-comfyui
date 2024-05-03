@@ -138,18 +138,18 @@ class ComfyUI_IPAdapter_plus(CustomNodeHelper):
 
     @staticmethod
     def add_weights(weights_to_download, node):
-        if "class_type" in node and node["class_type"] in [
-            "IPAdapterUnifiedLoader",
-            "IPAdapterUnifiedLoaderFaceID",
-            "IPAdapterUnifiedLoaderCommunity",
-        ]:
-            preset = node["inputs"]["preset"]
+        if node.is_type_in(
+            [
+                "IPAdapterUnifiedLoader",
+                "IPAdapterUnifiedLoaderFaceID",
+                "IPAdapterUnifiedLoaderCommunity",
+            ]
+        ):
+            preset = node.input("preset")
             print(f"Including weights for IPAdapter preset: {preset}")
             if preset:
                 weights_to_download.extend(
                     ComfyUI_IPAdapter_plus.get_preset_weights(preset)
                 )
-        elif "class_type" in node and node["class_type"] in [
-            "IPAdapterInsightFaceLoader",
-        ]:
+        elif node.is_type("IPAdapterInsightFaceLoader"):
             weights_to_download.append("models/buffalo_l")

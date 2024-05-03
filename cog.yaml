@@ -37,8 +37,7 @@ build:
     - matplotlib
     - pilgram
     - scikit-learn
-    # RemBG causes Tiny_TerraNodes to take >40s to start
-    # - rembg
+    - rembg
 
     # ComfyUI_essentials
     - numba

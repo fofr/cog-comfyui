@@ -16,12 +16,14 @@ MODEL_WEIGHTS = {
 class ComfyUI_Segment_Anything(CustomNodeHelper):
     @staticmethod
     def add_weights(weights_to_download, node):
-        if "class_type" in node and node["class_type"] in [
-            "SAMModelLoader (segment anything)",
-            "GroundingDinoModelLoader (segment anything)",
-        ]:
-            model_name = node["inputs"].get("model_name")
-            if model_name and model_name in MODEL_WEIGHTS:
+        if node.is_type_in(
+            [
+                "SAMModelLoader (segment anything)",
+                "GroundingDinoModelLoader (segment anything)",
+            ]
+        ):
+            model_name = node.input("model_name")
+            if model_name in MODEL_WEIGHTS:
                 weights_to_download.append(MODEL_WEIGHTS[model_name])
 
                 if "GroundingDINO" in model_name:

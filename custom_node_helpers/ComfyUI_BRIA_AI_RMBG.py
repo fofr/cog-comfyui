@@ -11,9 +11,7 @@ class ComfyUI_BRIA_AI_RMBG(CustomNodeHelper):
 
     @staticmethod
     def add_weights(weights_to_download, node):
-        if "class_type" in node and node["class_type"] in [
-            "BRIA_RMBG_ModelLoader_Zho",
-        ]:
+        if node.is_type("BRIA_RMBG_ModelLoader_Zho"):
             weights_to_download.extend(MODELS)
 
     @staticmethod

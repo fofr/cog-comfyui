@@ -1,5 +1,6 @@
 from custom_node_helper import CustomNodeHelper
 
+
 class ComfyUI_LayerDiffuse(CustomNodeHelper):
     @staticmethod
     def get_config_weights(config):
@@ -34,23 +35,27 @@ class ComfyUI_LayerDiffuse(CustomNodeHelper):
 
     @staticmethod
     def add_weights(weights_to_download, node):
-        if "class_type" in node and node["class_type"] in [
-            "LayeredDiffusionApply",
-            "LayeredDiffusionJointApply",
-            "LayeredDiffusionCondApply",
-            "LayeredDiffusionCondJointApply",
-        ]:
-            config = node["inputs"]["config"]
+        if node.is_type_in(
+            [
+                "LayeredDiffusionApply",
+                "LayeredDiffusionJointApply",
+                "LayeredDiffusionCondApply",
+                "LayeredDiffusionCondJointApply",
+            ]
+        ):
+            config = node.input("config")
             weights_to_download.extend(ComfyUI_LayerDiffuse.get_config_weights(config))
-        elif "class_type" in node and node["class_type"] in [
+        elif node.is_type(
             "LayeredDiffusionDiffApply",
-        ]:
-            config = f"Diff, {node['inputs']['config']}"
+        ):
+            config = f"Diff, {node.input('config')}"
             weights_to_download.extend(ComfyUI_LayerDiffuse.get_config_weights(config))
-        elif "class_type" in node and node["class_type"] in [
-            "LayeredDiffusionDecode",
-            "LayeredDiffusionDecodeRGBA",
-            "LayeredDiffusionDecodeSplit",
-        ]:
-            sd_version = node["inputs"]["sd_version"]
+        elif node.is_type_in(
+            [
+                "LayeredDiffusionDecode",
+                "LayeredDiffusionDecodeRGBA",
+                "LayeredDiffusionDecodeSplit",
+            ]
+        ):
+            sd_version = node.input("sd_version")
             weights_to_download.extend(ComfyUI_LayerDiffuse.get_vae_weights(sd_version))
