@@ -67,7 +67,7 @@
   },
   "11": {
     "inputs": {
-      "instantid_file": "instantid-ip-adapter.bin"
+      "instantid_file": "ipadapter.bin"
     },
     "class_type": "InstantIDModelLoader",
     "_meta": {
@@ -76,7 +76,7 @@
   },
   "13": {
     "inputs": {
-      "image": "unnamed-2.png",
+      "image": "https://replicate.delivery/pbxt/Kr1IxUhFxQij1VZgKpAmkjtbKaZu93KoFymbgOOOEjNYQPWv/0_3.webp",
       "upload": "image"
     },
     "class_type": "LoadImage",
@@ -98,7 +98,7 @@
   },
   "16": {
     "inputs": {
-      "control_net_name": "instantid-controlnet.safetensors"
+      "control_net_name": "instantid/diffusion_pytorch_model.safetensors"
     },
     "class_type": "ControlNetLoader",
     "_meta": {

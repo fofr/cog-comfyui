@@ -16,7 +16,7 @@
   },
   "2": {
     "inputs": {
-      "image": "example.png",
+      "image": "https://replicate.delivery/pbxt/iFAVZOMyKxJmDhOiyYTLFBBrG9M1TTlJl9Ye2KprPu2e6ovSA/ComfyUI_00001_.webp",
       "upload": "image"
     },
     "class_type": "LoadImage",
@@ -206,7 +206,7 @@
   },
   "21": {
     "inputs": {
-      "image": "hands.png",
+      "image": "https://replicate.delivery/pbxt/KqQAtDFPsCYgBjuv0Pviq87qq7oYNiHtZvjnvVdsqmuqi6w3/IMG_0406.jpeg",
       "upload": "image"
     },
     "class_type": "LoadImage",
@@ -804,7 +804,7 @@
   },
   "66": {
     "inputs": {
-      "image": "man.png",
+      "image": "https://replicate.delivery/pbxt/KqN2iJQ0LZNjDm3WWl2XCJ01qwxcLLMWVKoUiI1tCm4IUhaJ/0_3.webp",
       "upload": "image"
     },
     "class_type": "LoadImage",
@@ -986,7 +986,7 @@
   },
   "81": {
     "inputs": {
-      "image": "cat.png",
+      "image": "https://replicate.delivery/pbxt/iFAVZOMyKxJmDhOiyYTLFBBrG9M1TTlJl9Ye2KprPu2e6ovSA/ComfyUI_00001_.webp",
       "upload": "image"
     },
     "class_type": "LoadImage",
