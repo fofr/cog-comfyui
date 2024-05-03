@@ -9,6 +9,7 @@
 *.gif
 *.mp4
 *.zip
+*.tar
 *.webp
 *.webm
 
@@ -23,6 +24,7 @@
 
 # Files
 scripts/*
+test/*
 updated_weights.json
 
 # Extension files
