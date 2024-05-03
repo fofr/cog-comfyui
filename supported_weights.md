@@ -450,6 +450,18 @@
 
 - models--CIDAS--clipseg-rd64-refined
 
+## REMBG (Remove background)
+
+- isnet-anime.onnx
+- isnet-general-use.onnx
+- silueta.onnx
+- u2net.onnx
+- u2net_cloth_seg.onnx
+- u2net_human_seg.onnx
+- u2netp.onnx
+- vit_b-decoder-quant.onnx
+- vit_b-encoder-quant.onnx
+
 ## AnimateDiff
 
 - mm_sd_v14.ckpt

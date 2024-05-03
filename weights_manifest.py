@@ -134,6 +134,7 @@ class WeightsManifest:
             "Face detection models": self.get_weights_by_type("FACEDETECTION"),
             "LayerDiffusion": self.get_weights_by_type("LAYER_MODEL"),
             "CLIP Segmentation": self.get_weights_by_type("CLIPSEG"),
+            "REMBG (Remove background)": self.get_weights_by_type("REMBG"),
             "AnimateDiff": helpers.ComfyUI_AnimateDiff_Evolved.models(),
             "AnimateDiff LORAs": helpers.ComfyUI_AnimateDiff_Evolved.loras(),
             "Frame Interpolation": helpers.ComfyUI_Frame_Interpolation.models(),
