@@ -1,8 +1,7 @@
-## 2024-05-02
+## 2024-05-03
 
-Adding support for [rembg](https://github.com/danielgatis/rembg), used in a variety of custom nodes
-
-Update ComfyUI_tinyterraNodes to latest, but [fork to remove inefficient rembg nodes](https://github.com/fofr/ComfyUI_tinyterraNodes/tree/without-rembg)
+- Adding support for [rembg](https://github.com/danielgatis/rembg), used in a variety of custom nodes
+- Update ComfyUI_tinyterraNodes to latest to fix rembg issue
 
 ## 2024-05-01
 
