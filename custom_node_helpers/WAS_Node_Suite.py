@@ -1,13 +1,12 @@
 from custom_node_helper import CustomNodeHelper
 
+
 class WAS_Node_Suite(CustomNodeHelper):
     @staticmethod
     def add_weights(weights_to_download, node):
-        node_class = node.get("class_type")
-        model_name = node.get("inputs", {}).get("model")
         if (
-            node_class == "CLIPSeg Model Loader"
-            and model_name == "CIDAS/clipseg-rd64-refined"
+            node.is_type("CLIPSeg Model Loader")
+            and node.input("model") == "CIDAS/clipseg-rd64-refined"
         ):
             weights_to_download.extend(["models--CIDAS--clipseg-rd64-refined"])
 
@@ -29,7 +28,4 @@ class WAS_Node_Suite(CustomNodeHelper):
             "MiDaS Depth Approximation": "WAS MiDaS nodes are not currently supported",
             "Text File History Loader": "History is not persisted",
         }
-        node_class = node.get("class_type")
-        if node_class in unsupported_nodes:
-            reason = unsupported_nodes[node_class]
-            raise ValueError(f"{node_class} node is not supported: {reason}")
+        node.raise_if_unsupported(unsupported_nodes)

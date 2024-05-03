@@ -59,17 +59,12 @@ class ComfyUI_Frame_Interpolation(CustomNodeHelper):
     @staticmethod
     def check_for_unsupported_nodes(node):
         unsupported_nodes = {
-            "IFRNet VFI": "IFRNet weights are not available",
-            "IFUnet VFI": "IFUnet weights are not available",
-            "MCM VFI": "MCM is not available because cupy is not installed",
-            "GMFSS Fortuna VFI": "GMFSS Fortuna VFI is not available because cupy is not installed",
-            "Sepconv VFI": "Sepconv VFI is not available because cupy is not installed",
-            "STMFNet VFI": "STMFNet VFI is not available because cupy is not installed",
-            "FLAVR VFI": "FLAVR VFI weights are not available",
+            "IFRNet VFI": "Use RIFE or FILM - IFRNet weights are not available",
+            "IFUnet VFI": "Use RIFE or FILM - IFUnet weights are not available",
+            "MCM VFI": "Use RIFE or FILM - MCM is not available because cupy is not installed",
+            "GMFSS Fortuna VFI": "Use RIFE or FILM - GMFSS Fortuna VFI is not available because cupy is not installed",
+            "Sepconv VFI": "Use RIFE or FILM - Sepconv VFI is not available because cupy is not installed",
+            "STMFNet VFI": "Use RIFE or FILM - STMFNet VFI is not available because cupy is not installed",
+            "FLAVR VFI": "Use RIFE or FILM - FLAVR VFI weights are not available",
         }
-        node_class = node.get("class_type")
-        if node_class in unsupported_nodes:
-            reason = unsupported_nodes[node_class]
-            raise ValueError(
-                f"{node_class} node is not supported: Use RIFE or FILM - {reason}"
-            )
+        node.raise_if_unsupported(unsupported_nodes)

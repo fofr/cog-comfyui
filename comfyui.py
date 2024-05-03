@@ -10,6 +10,7 @@ import websocket
 import random
 import requests
 import custom_node_helpers as helpers
+from node import Node
 from weights_downloader import WeightsDownloader
 from urllib.error import URLError
 
@@ -76,19 +77,18 @@ class ComfyUI:
         weights_filetypes = self.weights_downloader.supported_filetypes
 
         for node in workflow.values():
-            self.apply_helper_methods("add_weights", weights_to_download, node)
+            self.apply_helper_methods("add_weights", weights_to_download, Node(node))
 
-            if "inputs" in node:
-                for input in node["inputs"].values():
-                    if isinstance(input, str):
-                        if any(key in input for key in embedding_to_fullname):
-                            weights_to_download.extend(
-                                embedding_to_fullname[key]
-                                for key in embedding_to_fullname
-                                if key in input
-                            )
-                        elif any(input.endswith(ft) for ft in weights_filetypes):
-                            weights_to_download.append(input)
+            for input in node["inputs"].values():
+                if isinstance(input, str):
+                    if any(key in input for key in embedding_to_fullname):
+                        weights_to_download.extend(
+                            embedding_to_fullname[key]
+                            for key in embedding_to_fullname
+                            if key in input
+                        )
+                    elif any(input.endswith(ft) for ft in weights_filetypes):
+                        weights_to_download.append(input)
 
         weights_to_download = list(set(weights_to_download))
 
@@ -106,7 +106,7 @@ class ComfyUI:
 
     def handle_known_unsupported_nodes(self, workflow):
         for node in workflow.values():
-            self.apply_helper_methods("check_for_unsupported_nodes", node)
+            self.apply_helper_methods("check_for_unsupported_nodes", Node(node))
 
     def handle_inputs(self, workflow):
         print("Checking inputs")

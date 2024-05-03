@@ -19,8 +19,8 @@ class rembg(CustomNodeHelper):
     @staticmethod
     def add_weights(weights_to_download, node):
         # RemBGSession+ is in ComfyUI_essentials
-        if Node.is_type(node, "RemBGSession+"):
-            model = Node.value(node, "model")
+        if node.is_type("RemBGSession+"):
+            model = node.input("model")
             model_weights = {
                 "u2net: general purpose": ["u2net.onnx"],
                 "u2netp: lightweight general purpose": ["u2netp.onnx"],
@@ -38,8 +38,8 @@ class rembg(CustomNodeHelper):
                 weights_to_download.extend(model_weights[model])
 
         # Image Rembg (Remove Background) is in WAS nodes
-        elif Node.is_type(node, "Image Rembg (Remove Background)"):
-            model = Node.value(node, "model")
+        elif node.is_type("Image Rembg (Remove Background)"):
+            model = node.input("model")
             if model == "sam":
                 weights_to_download.extend(
                     [

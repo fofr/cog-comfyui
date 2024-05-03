@@ -1,5 +1,4 @@
 from custom_node_helper import CustomNodeHelper
-from node import Node
 
 MODELS = [
     "RMBG-1.4/model.pth",
@@ -12,7 +11,7 @@ class ComfyUI_BRIA_AI_RMBG(CustomNodeHelper):
 
     @staticmethod
     def add_weights(weights_to_download, node):
-        if Node.is_type(node, "BRIA_RMBG_ModelLoader_Zho"):
+        if node.is_type("BRIA_RMBG_ModelLoader_Zho"):
             weights_to_download.extend(MODELS)
 
     @staticmethod

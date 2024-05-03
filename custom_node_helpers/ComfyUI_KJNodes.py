@@ -3,7 +3,7 @@ from custom_node_helper import CustomNodeHelper
 class ComfyUI_KJNodes(CustomNodeHelper):
     @staticmethod
     def add_weights(weights_to_download, node):
-        if node.get("class_type") == "BatchCLIPSeg":
+        if node.is_type("BatchCLIPSeg"):
             weights_to_download.extend(["models--CIDAS--clipseg-rd64-refined"])
 
     @staticmethod
@@ -12,7 +12,4 @@ class ComfyUI_KJNodes(CustomNodeHelper):
             "StabilityAPI_SD3": "Calling an external API and passing your key is not supported and is unsafe",
             "Superprompt": "Superprompt is not supported as it needs to download T5 weights",
         }
-        node_class = node.get("class_type")
-        if node_class in unsupported_nodes:
-            reason = unsupported_nodes[node_class]
-            raise ValueError(f"{node_class} node is not supported: {reason}")
+        node.raise_if_unsupported(unsupported_nodes)

@@ -1,5 +1,4 @@
 from custom_node_helper import CustomNodeHelper
-from node import Node
 
 MODELS = {
     "UNet.pth": "bdsqlsz/qinglong_controlnet-lllite/Annotators",
@@ -133,18 +132,17 @@ class ComfyUI_Controlnet_Aux(CustomNodeHelper):
 
     @staticmethod
     def add_weights(weights_to_download, node):
-        node_class = node.get("class_type")
         node_mapping = ComfyUI_Controlnet_Aux.node_class_mapping()
 
-        if Node.is_type_in(node, node_mapping.keys()):
-            class_weights = node_mapping[node_class]
+        if node.is_type_in(node_mapping.keys()):
+            class_weights = node_mapping[node.type()]
             weights_to_download.extend(
                 class_weights if isinstance(class_weights, list) else [class_weights]
             )
 
         # Additional check for AIO_Preprocessor and its preprocessor input value
-        if Node.is_type(node, "AIO_Preprocessor"):
-            preprocessor = Node.value(node, "preprocessor")
+        if node.is_type("AIO_Preprocessor"):
+            preprocessor = node.value("preprocessor")
             if preprocessor in node_mapping:
                 preprocessor_weights = node_mapping[preprocessor]
                 weights_to_download.extend(
