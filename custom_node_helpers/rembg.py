@@ -1,6 +1,5 @@
 from custom_node_helper import CustomNodeHelper
 
-BASE_PATH = "/root/.u2net/"
 
 class rembg(CustomNodeHelper):
     @staticmethod
