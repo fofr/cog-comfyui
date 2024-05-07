@@ -1,3 +1,10 @@
+## 2024-05-07
+
+New checkpoints:
+
+- [sdxlUnstableDiffusers_nihilmania.safetensors](https://civitai.com/models/84040?modelVersionId=395107)
+- [sdxlUnstableDiffusers_v11Rundiffusion.safetensors](https://civitai.com/models/84040?modelVersionId=309729)
+
 ## 2024-05-03
 
 - Adding support for [rembg](https://github.com/danielgatis/rembg), used in a variety of custom nodes

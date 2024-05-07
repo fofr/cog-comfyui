@@ -70,6 +70,8 @@
 - sdxl_lightning_2step.safetensors
 - sdxl_lightning_4step.safetensors
 - sdxl_lightning_8step.safetensors
+- sdxlUnstableDiffusers_nihilmania.safetensors
+- sdxlUnstableDiffusers_v11Rundiffusion.safetensors
 - segmind-vega.safetensors
 - SSD-1B.safetensors
 - starlightXLAnimated_v3.safetensors
