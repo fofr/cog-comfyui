@@ -1,13 +1,10 @@
 import site
-from weights_downloader import WeightsDownloader
 from custom_node_helper import CustomNodeHelper
 
 HUGGINGFACE_CACHE_PATH = "/root/.cache/huggingface/hub"
 PACKAGE_ROOT_PATH = site.getsitepackages()[0]
 FACEXLIB_PATH = f"{PACKAGE_ROOT_PATH}/facexlib/weights"
 BASE_FILE_PATH = "https://weights.replicate.delivery/default/comfy-ui"
-
-weights_downloader = WeightsDownloader()
 
 facexlib_models = [
     "detection_Resnet50_Final.pth",
@@ -21,6 +18,9 @@ eva_clip_model = "models--QuanSun--EVA-CLIP"
 class PuLID_ComfyUI(CustomNodeHelper):
     @staticmethod
     def add_weights(weights_to_download, node):
+        from weights_downloader import WeightsDownloader
+        weights_downloader = WeightsDownloader()
+
         if node.is_type("PulidEvaClipLoader"):
             weights_downloader.download_if_not_exists(
                 eva_clip_model,
