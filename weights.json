@@ -24,6 +24,7 @@
     "Hyper-SDXL-1step-Unet-Comfyui.fp16.safetensors",
     "Hyper-SDXL-1step-Unet.safetensors",
     "imp_v10.safetensors",
+    "jibMixRealisticXL_v10Lightning46Step.safetensors",
     "Juggernaut-XL_v9_RunDiffusionPhoto_v2.safetensors",
     "juggernaut_reborn.safetensors",
     "Juggernaut_RunDiffusionPhoto2_Lightning_4Steps.safetensors",

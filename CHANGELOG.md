@@ -1,3 +1,9 @@
+## 2024-05-08
+
+New checkpoints:
+
+- [jibMixRealisticXL_v10Lightning46Step.safetensors](https://civitai.com/models/194768?modelVersionId=395827)
+
 ## 2024-05-07
 
 New checkpoints:
