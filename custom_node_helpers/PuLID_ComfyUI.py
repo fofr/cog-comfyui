@@ -19,6 +19,7 @@ class PuLID_ComfyUI(CustomNodeHelper):
     @staticmethod
     def add_weights(weights_to_download, node):
         from weights_downloader import WeightsDownloader
+
         weights_downloader = WeightsDownloader()
 
         if node.is_type("PulidEvaClipLoader"):
