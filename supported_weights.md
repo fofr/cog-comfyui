@@ -430,6 +430,7 @@
 
 - detection_mobilenet0.25_Final.pth
 - detection_Resnet50_Final.pth
+- parsing_bisenet.pth
 - parsing_parsenet.pth
 - yolov5l-face.pth
 - yolov5n-face.pth

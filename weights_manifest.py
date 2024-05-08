@@ -41,8 +41,6 @@ class WeightsManifest:
             print(
                 f"Downloading {UPDATED_WEIGHTS_MANIFEST_URL} took: {(time.time() - start):.2f}s"
             )
-        else:
-            print("Updated weights manifest file already exists")
 
     def _merge_manifests(self):
         if os.path.exists(WEIGHTS_MANIFEST_PATH):

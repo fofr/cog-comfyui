@@ -1,7 +1,7 @@
 [
   {
     "repo": "https://github.com/cubiq/ComfyUI_IPAdapter_plus",
-    "commit": "0d0a7b3"
+    "commit": "20125bf"
   },
   {
     "repo": "https://github.com/Fannovel16/comfyui_controlnet_aux",
@@ -110,5 +110,9 @@
   {
     "repo": "https://github.com/fofr/ComfyUI-HyperSDXL1StepUnetScheduler",
     "commit": "5073c7a"
+  },
+  {
+    "repo": "https://github.com/cubiq/PuLID_ComfyUI",
+    "commit": "b88e5aa"
   }
 ]
