@@ -49,7 +49,12 @@ class WeightsDownloader:
         )
 
     def download_if_not_exists(self, weight_str, url, dest):
-        if not os.path.exists(f"{dest}/{weight_str}"):
+        if dest.endswith(weight_str):
+            path_string = dest
+        else:
+            path_string = os.path.join(dest, weight_str)
+
+        if not os.path.exists(path_string):
             self.download(weight_str, url, dest)
 
     def download(self, weight_str, url, dest):
