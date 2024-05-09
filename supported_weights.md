@@ -105,6 +105,10 @@
 - RealESRGAN_x4plus_anime_6B.pth
 - RealESRGAN_x8.pth
 
+## CLIP
+
+- models--QuanSun--EVA-CLIP
+
 ## CLIP Vision
 
 - CLIP-ViT-bigG-14-laion2B-39B-b160k.safetensors
@@ -430,6 +434,7 @@
 
 - detection_mobilenet0.25_Final.pth
 - detection_Resnet50_Final.pth
+- parsing_bisenet.pth
 - parsing_parsenet.pth
 - yolov5l-face.pth
 - yolov5n-face.pth
@@ -464,6 +469,10 @@
 - u2netp.onnx
 - vit_b-decoder-quant.onnx
 - vit_b-encoder-quant.onnx
+
+## PuLID
+
+- ip-adapter_pulid_sdxl_fp16.safetensors
 
 ## AnimateDiff
 

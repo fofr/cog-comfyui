@@ -1,5 +1,7 @@
 ## 2024-05-08
 
+Add [PuLID-ComfyUI](https://github.com/cubiq/PuLID_ComfyUI) custom node support
+
 New checkpoints:
 
 - [jibMixRealisticXL_v10Lightning46Step.safetensors](https://civitai.com/models/194768?modelVersionId=395827)

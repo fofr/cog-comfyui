@@ -41,8 +41,6 @@ class WeightsManifest:
             print(
                 f"Downloading {UPDATED_WEIGHTS_MANIFEST_URL} took: {(time.time() - start):.2f}s"
             )
-        else:
-            print("Updated weights manifest file already exists")
 
     def _merge_manifests(self):
         if os.path.exists(WEIGHTS_MANIFEST_PATH):
@@ -116,6 +114,7 @@ class WeightsManifest:
         weight_lists = {
             "Checkpoints": self.get_weights_by_type("CHECKPOINTS"),
             "Upscale models": self.get_weights_by_type("UPSCALE_MODELS"),
+            "CLIP": self.get_weights_by_type("CLIP"),
             "CLIP Vision": self.get_weights_by_type("CLIP_VISION"),
             "LORAs": self.get_weights_by_type("LORAS"),
             "Embeddings": self.get_weights_by_type("EMBEDDINGS"),
@@ -135,6 +134,7 @@ class WeightsManifest:
             "LayerDiffusion": self.get_weights_by_type("LAYER_MODEL"),
             "CLIP Segmentation": self.get_weights_by_type("CLIPSEG"),
             "REMBG (Remove background)": self.get_weights_by_type("REMBG"),
+            "PuLID": self.get_weights_by_type("PULID"),
             "AnimateDiff": helpers.ComfyUI_AnimateDiff_Evolved.models(),
             "AnimateDiff LORAs": helpers.ComfyUI_AnimateDiff_Evolved.loras(),
             "Frame Interpolation": helpers.ComfyUI_Frame_Interpolation.models(),
