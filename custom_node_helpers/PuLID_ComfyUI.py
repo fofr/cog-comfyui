@@ -18,21 +18,24 @@ eva_clip_model = "models--QuanSun--EVA-CLIP"
 class PuLID_ComfyUI(CustomNodeHelper):
     @staticmethod
     def add_weights(weights_to_download, node):
-        from weights_downloader import WeightsDownloader
+        if node.is_type_in(["PulidEvaClipLoader", "ApplyPulid"]):
+            from weights_downloader import WeightsDownloader
 
-        weights_downloader = WeightsDownloader()
+            weights_downloader = WeightsDownloader()
 
-        if node.is_type("PulidEvaClipLoader"):
-            weights_downloader.download_if_not_exists(
-                eva_clip_model,
-                f"{BASE_FILE_PATH}/clip/{eva_clip_model}.tar",
-                HUGGINGFACE_CACHE_PATH,
-            )
-
-        if node.is_type("ApplyPulid"):
-            for file in facexlib_models:
+            if node.is_type("PulidEvaClipLoader"):
                 weights_downloader.download_if_not_exists(
-                    file,
-                    f"{BASE_FILE_PATH}/facedetection/{file}.tar",
-                    FACEXLIB_PATH,
+                    eva_clip_model,
+                    f"{BASE_FILE_PATH}/clip/{eva_clip_model}.tar",
+                    HUGGINGFACE_CACHE_PATH,
                 )
+
+            if node.is_type("ApplyPulid"):
+                for file in facexlib_models:
+                    weights_downloader.download_if_not_exists(
+                        file,
+                        f"{BASE_FILE_PATH}/facedetection/{file}.tar",
+                        FACEXLIB_PATH,
+                    )
+        elif node.is_type("PulidInsightFaceLoader"):
+            weights_to_download.append("models/antelopev2")
