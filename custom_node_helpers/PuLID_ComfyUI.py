@@ -27,7 +27,7 @@ class PuLID_ComfyUI(CustomNodeHelper):
                 weights_downloader.download_if_not_exists(
                     eva_clip_model,
                     f"{BASE_FILE_PATH}/clip/{eva_clip_model}.tar",
-                    HUGGINGFACE_CACHE_PATH,
+                    f"{HUGGINGFACE_CACHE_PATH}/{eva_clip_model}",
                 )
 
             if node.is_type("ApplyPulid"):
