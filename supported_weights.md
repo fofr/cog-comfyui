@@ -31,6 +31,7 @@
 - juggernautXL_juggernautX.safetensors
 - juggernautXL_v8Rundiffusion.safetensors
 - LCM_Dreamshaper_v7_4k.safetensors
+- leosamsHelloworldXL_helloworldXL60.safetensors
 - magicmixReverie_v10.safetensors
 - majicmixRealistic_v7.safetensors
 - motionctrl.pth
@@ -330,6 +331,8 @@
 - kohya_controllllite_xl_openpose_anime.safetensors
 - kohya_controllllite_xl_openpose_anime_v2.safetensors
 - kohya_controllllite_xl_scribble_anime.safetensors
+- mistoLine_fp16.safetensors
+- mistoLine_rank256.safetensors
 - OpenPoseXL2.safetensors
 - sai_xl_canny_128lora.safetensors
 - sai_xl_canny_256lora.safetensors

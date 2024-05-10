@@ -1,3 +1,14 @@
+## 2024-05-10
+
+New checkpoints:
+
+- [leosamsHelloworldXL_helloworldXL60.safetensors](https://civitai.com/models/43977/leosams-helloworld-xl)
+
+Added [MistoLine lineart controlnets](https://huggingface.co/TheMistoAI/MistoLine/tree/main):
+
+- mistoLine_fp16.safetensors
+- mistoLine_rank256.safetensors
+
 ## 2024-05-08
 
 Add [PuLID-ComfyUI](https://github.com/cubiq/PuLID_ComfyUI) custom node support
