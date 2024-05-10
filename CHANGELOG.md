@@ -3,6 +3,7 @@
 New checkpoints:
 
 - [leosamsHelloworldXL_helloworldXL60.safetensors](https://civitai.com/models/43977/leosams-helloworld-xl)
+- [copaxCuteXLSDXL10_v4.safetensors](https://civitai.com/models/119226)
 
 Added [MistoLine lineart controlnets](https://huggingface.co/TheMistoAI/MistoLine/tree/main):
 
