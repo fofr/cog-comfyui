@@ -114,5 +114,9 @@
   {
     "repo": "https://github.com/cubiq/PuLID_ComfyUI",
     "commit": "b88e5aa"
+  },
+  {
+    "repo": "https://github.com/huchenlei/ComfyUI-IC-Light-Native",
+    "commit": "5c065e1"
   }
 ]

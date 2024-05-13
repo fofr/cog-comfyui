@@ -1,3 +1,12 @@
+## 2024-05-13
+
+Add support for [ComfyUI-IC-Light-Native](https://github.com/huchenlei/ComfyUI-IC-Light-Native)
+
+New [UNets for IC Light](https://huggingface.co/huchenlei/IC-Light-ldm/tree/main):
+
+- iclight_sd15_fbc_unet_ldm.safetensors
+- iclight_sd15_fc_unet_ldm.safetensors
+
 ## 2024-05-10
 
 New checkpoints:
