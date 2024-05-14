@@ -3,6 +3,7 @@ import shutil
 import tarfile
 import zipfile
 import mimetypes
+from cog_model_helpers import optimise_images
 from PIL import Image
 from typing import List
 from cog import BasePredictor, Input, Path
@@ -76,17 +77,8 @@ class Predictor(BasePredictor):
             description="Return any temporary files, such as preprocessed controlnet images. Useful for debugging.",
             default=False,
         ),
-        output_format: str = Input(
-            description="Format of the output images",
-            choices=["webp", "jpg", "png"],
-            default="webp",
-        ),
-        output_quality: int = Input(
-            description="Quality of the output images, from 0 to 100. 100 is best quality, 0 is lowest quality.",
-            default=80,
-            ge=0,
-            le=100,
-        ),
+        output_format: str = optimise_images.predict_output_format(),
+        output_quality: int = optimise_images.predict_output_quality(),
         randomise_seeds: bool = Input(
             description="Automatically randomise seeds (seed, noise_seed, rand_seed)",
             default=True,
@@ -115,21 +107,6 @@ class Predictor(BasePredictor):
             print(f"Contents of {directory}:")
             files.extend(self.log_and_collect_files(directory))
 
-        if output_quality < 100 or output_format in ["webp", "jpg"]:
-            optimised_files = []
-            for file in files:
-                if file.is_file() and file.suffix in [".jpg", ".jpeg", ".png"]:
-                    image = Image.open(file)
-                    optimised_file_path = file.with_suffix(f".{output_format}")
-                    image.save(
-                        optimised_file_path,
-                        quality=output_quality,
-                        optimize=True,
-                    )
-                    optimised_files.append(optimised_file_path)
-                else:
-                    optimised_files.append(file)
-
-            files = optimised_files
-
-        return files
+        return optimise_images.optimise_image_files(
+            output_format, output_quality, files
+        )
