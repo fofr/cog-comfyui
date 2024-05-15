@@ -118,5 +118,9 @@
   {
     "repo": "https://github.com/huchenlei/ComfyUI-IC-Light-Native",
     "commit": "5c065e1"
+  },
+  {
+    "repo": "https://github.com/blepping/comfyui_jankhidiffusion",
+    "commit": "e54ff4d"
   }
 ]

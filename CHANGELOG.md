@@ -1,3 +1,7 @@
+## 2024-05-15
+
+Add support for HiDiffusion via [comfyui_jankhidiffusion](https://github.com/blepping/comfyui_jankhidiffusion)
+
 ## 2024-05-13
 
 Add support for [ComfyUI-IC-Light-Native](https://github.com/huchenlei/ComfyUI-IC-Light-Native)
