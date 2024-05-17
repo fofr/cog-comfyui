@@ -123,6 +123,7 @@
 
 ## LORAs
 
+- 3d_render_style_xl.safetensors
 - add-detail-xl.safetensors
 - aesthetic_anime_v1s.safetensors
 - age_slider-LECO-v1.safetensors

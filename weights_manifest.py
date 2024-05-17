@@ -16,12 +16,14 @@ BASE_PATH = "ComfyUI/models"
 
 
 class WeightsManifest:
-    def __init__(self):
+    def __init__(self, download_latest_weights_manifest=True):
+        self.download_latest_weights_manifest = download_latest_weights_manifest
         self.weights_manifest = self._load_weights_manifest()
         self.weights_map = self._initialize_weights_map()
 
     def _load_weights_manifest(self):
-        self._download_updated_weights_manifest()
+        if self.download_latest_weights_manifest:
+            self._download_updated_weights_manifest()
         return self._merge_manifests()
 
     def _download_updated_weights_manifest(self):
@@ -123,45 +125,3 @@ class WeightsManifest:
 
     def get_weights_by_type(self, weight_type):
         return self.weights_manifest.get(weight_type, [])
-
-    def write_supported_weights(self):
-        weight_lists = {
-            "Checkpoints": self.get_weights_by_type("CHECKPOINTS"),
-            "Upscale models": self.get_weights_by_type("UPSCALE_MODELS"),
-            "CLIP": self.get_weights_by_type("CLIP"),
-            "CLIP Vision": self.get_weights_by_type("CLIP_VISION"),
-            "LORAs": self.get_weights_by_type("LORAS"),
-            "Embeddings": self.get_weights_by_type("EMBEDDINGS"),
-            "IPAdapter": self.get_weights_by_type("IPADAPTER"),
-            "ControlNet": self.get_weights_by_type("CONTROLNET"),
-            "VAE": self.get_weights_by_type("VAE"),
-            "UNets": self.get_weights_by_type("UNET"),
-            "PhotoMaker": self.get_weights_by_type("PHOTOMAKER"),
-            "InstantID": self.get_weights_by_type("INSTANTID"),
-            "InsightFace": self.get_weights_by_type("INSIGHTFACE"),
-            "Ultralytics": self.get_weights_by_type("ULTRALYTICS"),
-            "Segment anything models (SAM)": self.get_weights_by_type("SAMS"),
-            "GroundingDino": self.get_weights_by_type("GROUNDING-DINO"),
-            "MMDets": self.get_weights_by_type("MMDETS"),
-            "Face restoration models": self.get_weights_by_type("FACERESTORE_MODELS"),
-            "Face detection models": self.get_weights_by_type("FACEDETECTION"),
-            "LayerDiffusion": self.get_weights_by_type("LAYER_MODEL"),
-            "CLIP Segmentation": self.get_weights_by_type("CLIPSEG"),
-            "REMBG (Remove background)": self.get_weights_by_type("REMBG"),
-            "PuLID": self.get_weights_by_type("PULID"),
-            "AnimateDiff": helpers.ComfyUI_AnimateDiff_Evolved.models(),
-            "AnimateDiff LORAs": helpers.ComfyUI_AnimateDiff_Evolved.loras(),
-            "Frame Interpolation": helpers.ComfyUI_Frame_Interpolation.models(),
-            "ControlNet Preprocessors": sorted(
-                {
-                    f"{repo}/{filename}"
-                    for filename, repo in helpers.ComfyUI_Controlnet_Aux.models().items()
-                }
-            ),
-        }
-        with open("supported_weights.md", "w") as f:
-            for weight_type, weights in weight_lists.items():
-                f.write(f"## {weight_type}\n\n")
-                for weight in weights:
-                    f.write(f"- {weight}\n")
-                f.write("\n")
