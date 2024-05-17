@@ -4,7 +4,10 @@ import os
 import json
 import custom_node_helpers as helpers
 
-UPDATED_WEIGHTS_MANIFEST_URL = f"https://weights.replicate.delivery/default/comfy-ui/weights.json?cache_bypass={int(time.time())}"
+UPDATED_WEIGHTS_MANIFEST_URL = (
+    "https://raw.githubusercontent.com/fofr/cog-comfyui/main/weights.json"
+)
+
 UPDATED_WEIGHTS_MANIFEST_PATH = "updated_weights.json"
 WEIGHTS_MANIFEST_PATH = "weights.json"
 
@@ -27,20 +30,28 @@ class WeightsManifest:
                 f"Downloading updated weights manifest from {UPDATED_WEIGHTS_MANIFEST_URL}"
             )
             start = time.time()
-            subprocess.check_call(
-                [
-                    "pget",
-                    "--log-level",
-                    "warn",
-                    "-f",
-                    UPDATED_WEIGHTS_MANIFEST_URL,
-                    UPDATED_WEIGHTS_MANIFEST_PATH,
-                ],
-                close_fds=False,
-            )
-            print(
-                f"Downloading {UPDATED_WEIGHTS_MANIFEST_URL} took: {(time.time() - start):.2f}s"
-            )
+            try:
+                subprocess.check_call(
+                    [
+                        "pget",
+                        "--log-level",
+                        "warn",
+                        "-f",
+                        UPDATED_WEIGHTS_MANIFEST_URL,
+                        UPDATED_WEIGHTS_MANIFEST_PATH,
+                    ],
+                    close_fds=False,
+                    timeout=5,
+                )
+                print(
+                    f"Downloading {UPDATED_WEIGHTS_MANIFEST_URL} took: {(time.time() - start):.2f}s"
+                )
+            except subprocess.CalledProcessError:
+                print(f"Failed to download {UPDATED_WEIGHTS_MANIFEST_URL}")
+                pass
+            except subprocess.TimeoutExpired:
+                print(f"Download from {UPDATED_WEIGHTS_MANIFEST_URL} timed out")
+                pass
 
     def _merge_manifests(self):
         if os.path.exists(WEIGHTS_MANIFEST_PATH):
@@ -48,6 +59,9 @@ class WeightsManifest:
                 original_manifest = json.load(f)
         else:
             original_manifest = {}
+
+        if not os.path.exists(UPDATED_WEIGHTS_MANIFEST_PATH):
+            return original_manifest
 
         with open(UPDATED_WEIGHTS_MANIFEST_PATH, "r") as f:
             updated_manifest = json.load(f)
