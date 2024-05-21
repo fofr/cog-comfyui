@@ -1,8 +1,14 @@
 ## 2024-05-21
 
-New checkpoint:
+Add support for custom nodes:
+
+- [rgthree-comfy](https://github.com/rgthree/rgthree-comfy)
+- [ComfyUI-Anyline](https://github.com/TheMistoAI/ComfyUI-Anyline)
+
+New models:
 
 - [crystalClearXL_ccxl.safetensors](https://civitai.com/models/122822/crystal-clear-xl)
+- Anyline preprocessor [MTEED.pth](https://huggingface.co/TheMistoAI/MistoLine/tree/main/Anyline)
 
 ## 2024-05-15
 

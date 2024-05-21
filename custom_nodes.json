@@ -126,5 +126,9 @@
   {
     "repo": "https://github.com/TheMistoAI/ComfyUI-Anyline",
     "commit": "d84ba37"
+  },
+  {
+    "repo": "https://github.com/rgthree/rgthree-comfy",
+    "commit": "23fddb8"
   }
 ]
