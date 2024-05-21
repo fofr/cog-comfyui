@@ -1,3 +1,9 @@
+## 2024-05-21
+
+New checkpoint:
+
+- [crystalClearXL_ccxl.safetensors](https://civitai.com/models/122822/crystal-clear-xl)
+
 ## 2024-05-15
 
 Add support for HiDiffusion via [comfyui_jankhidiffusion](https://github.com/blepping/comfyui_jankhidiffusion)
