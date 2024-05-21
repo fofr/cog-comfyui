@@ -8,6 +8,7 @@
 - CinematicRedmond.safetensors
 - copaxCuteXLSDXL10_v4.safetensors
 - copaxTimelessxlSDXL1_v8.safetensors
+- crystalClearXL_ccxl.safetensors
 - Deliberate_v2.safetensors
 - dreamlabsoil_V2_v2.safetensors
 - DreamShaper_6.2_BakedVae_pruned.safetensors
