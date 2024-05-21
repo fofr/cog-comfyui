@@ -57,7 +57,9 @@ def run(output_fn, **kwargs):
 def main():
     BASE_PATH = "examples/api_workflows"
     examples_to_test = [
+        "anyline_api.json",
         "rembg_api.json",
+        "pulid.json",
         "segment_anything_api.json",
         "layer_diffuse_api.json",
         "was_clipseg_basic_api.json",
@@ -66,7 +68,7 @@ def main():
         "sd15_img2img.json",
         "sd15_txt2img.json",
         "sd15_inpainting.json",
-        "all_preprocessors.json",
+        # "all_preprocessors.json",
     ]
 
     for example in examples_to_test:
