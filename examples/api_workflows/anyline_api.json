@@ -1,0 +1,36 @@
+{
+  "1": {
+    "inputs": {
+      "image": [
+        "2",
+        0
+      ]
+    },
+    "class_type": "AnyLinePreprocessor",
+    "_meta": {
+      "title": "TheMisto.ai Anyline"
+    }
+  },
+  "2": {
+    "inputs": {
+      "image": "https://replicate.delivery/pbxt/SZFzNuGhKEqGEJgho78vVhkpyG6DcpQnTcq0fg2TSmcwpLbJA/out-0.png",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "3": {
+    "inputs": {
+      "images": [
+        "1",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  }
+}

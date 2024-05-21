@@ -482,6 +482,10 @@
 
 - ip-adapter_pulid_sdxl_fp16.safetensors
 
+## Anyline
+
+- MTEED.pth
+
 ## AnimateDiff
 
 - mm_sd_v14.ckpt

@@ -122,5 +122,9 @@
   {
     "repo": "https://github.com/blepping/comfyui_jankhidiffusion",
     "commit": "e54ff4d"
+  },
+  {
+    "repo": "https://github.com/TheMistoAI/ComfyUI-Anyline",
+    "commit": "d84ba37"
   }
 ]
