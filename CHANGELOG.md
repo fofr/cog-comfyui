@@ -8,6 +8,12 @@
 
 [Update ComfyUI_InstantID to fix PuLID compatibility](https://github.com/cubiq/ComfyUI_InstantID/commit/d8c70a0cd8ce0d4d62e78653674320c9c3084ec1)
 
+[Update ComfyUI-Inspire-Pack to latest](https://github.com/cubiq/ComfyUI_Inspire_Pack/commit/c8231dd...0916454)
+
+[Update ComfyUI-AnimateDiff-Evolved to latest](https://github.com/kosinkadink/ComfyUI-AnimateDiff-Evolved/commit/f9e0343...eba6a50) and add support for:
+
+- CameraCtrl ([CameraCtrl_pruned.safetensors](https://huggingface.co/Kosinkadink/CameraCtrl/tree/main))
+
 Add support for [GLIGEN weights](https://huggingface.co/comfyanonymous/GLIGEN_pruned_safetensors/tree/main):
 
 - gligen_sd14_textbox_pruned.safetensors

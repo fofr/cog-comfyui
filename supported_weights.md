@@ -520,6 +520,7 @@
 - animatediff_lightning_8step_diffusers.safetensors
 - animatediffLCMMotion_v10.ckpt
 - AnimateLCM_sd15_t2v.ckpt
+- CameraCtrl_pruned.safetensors
 
 ## AnimateDiff LORAs
 
