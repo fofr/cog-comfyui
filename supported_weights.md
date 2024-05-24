@@ -482,6 +482,11 @@
 
 - ip-adapter_pulid_sdxl_fp16.safetensors
 
+## GLIGEN
+
+- gligen_sd14_textbox_pruned.safetensors
+- gligen_sd14_textbox_pruned_fp16.safetensors
+
 ## Anyline
 
 - MTEED.pth

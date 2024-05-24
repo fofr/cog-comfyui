@@ -37,6 +37,7 @@ def write_supported_weights():
         "CLIP Segmentation": weights_manifest.get_weights_by_type("CLIPSEG"),
         "REMBG (Remove background)": weights_manifest.get_weights_by_type("REMBG"),
         "PuLID": weights_manifest.get_weights_by_type("PULID"),
+        "GLIGEN": weights_manifest.get_weights_by_type("GLIGEN"),
         "Anyline": helpers.ComfyUI_Anyline.models(),
         "AnimateDiff": helpers.ComfyUI_AnimateDiff_Evolved.models(),
         "AnimateDiff LORAs": helpers.ComfyUI_AnimateDiff_Evolved.loras(),

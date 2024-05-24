@@ -1,3 +1,10 @@
+## 2024-05-24
+
+Add support for [GLIGEN weights](https://huggingface.co/comfyanonymous/GLIGEN_pruned_safetensors/tree/main):
+
+- gligen_sd14_textbox_pruned.safetensors
+- gligen_sd14_textbox_pruned_fp16.safetensors
+
 ## 2024-05-21
 
 Add support for custom nodes:
