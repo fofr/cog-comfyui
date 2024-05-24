@@ -49,6 +49,10 @@ MODELS = {
     "vgg16-397923af.pth": "torch",
     "depth_anything_metric_depth_indoor.pt": "LiheYoung/Depth-Anything/checkpoints_metric_depth",
     "depth_anything_metric_depth_outdoor.pt": "LiheYoung/Depth-Anything/checkpoints_metric_depth",
+    "MTEED.pth": "TheMistoAI/MistoLine/Anyline",
+    "metric_depth_vit_small_800k.pth": "JUGGHM/Metric3D",
+    "metric_depth_vit_large_800k.pth": "JUGGHM/Metric3D",
+    "metric_depth_vit_giant2_800k.pth": "JUGGHM/Metric3D",
 }
 
 
@@ -91,6 +95,16 @@ class ComfyUI_Controlnet_Aux(CustomNodeHelper):
                 "depth_anything_metric_depth_indoor.pt",
                 "depth_anything_metric_depth_outdoor.pt",
             ],
+            "Metric3DPreprocessor": [
+                "metric_depth_vit_small_800k.pth",
+                "metric_depth_vit_large_800k.pth",
+                "metric_depth_vit_giant2_800k.pth",
+            ],
+            "Metric3D-NormalMapPreprocessor": [
+                "metric_depth_vit_small_800k.pth",
+                "metric_depth_vit_large_800k.pth",
+                "metric_depth_vit_giant2_800k.pth",
+            ],
             # Segmentation
             "BAE-NormalMapPreprocessor": "scannet.pt",
             "OneFormer-COCO-SemSegPreprocessor": "150_16_swin_l_oneformer_coco_100ep.pth",
@@ -115,6 +129,12 @@ class ComfyUI_Controlnet_Aux(CustomNodeHelper):
                 "diffusion_edge_urban.pt",
                 "vgg16-397923af.pth",
                 "swin_b-68c6b09e.pth",
+            ],
+            "AnyLineArtPreprocessor_aux": [
+                "MTEED.pth",
+                "erika.pth",
+                "netG.pth",
+                "sk_model2.pth"
             ],
             # Pose
             "OpenposePreprocessor": [

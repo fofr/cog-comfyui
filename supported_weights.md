@@ -554,6 +554,9 @@
 
 ## ControlNet Preprocessors
 
+- JUGGHM/Metric3D/metric_depth_vit_giant2_800k.pth
+- JUGGHM/Metric3D/metric_depth_vit_large_800k.pth
+- JUGGHM/Metric3D/metric_depth_vit_small_800k.pth
 - LayerNorm/DensePose-TorchScript-with-hint-image/densepose_r101_fpn_dl.torchscript
 - LayerNorm/DensePose-TorchScript-with-hint-image/densepose_r50_fpn_dl.torchscript
 - LiheYoung/Depth-Anything/checkpoints/depth_anything_vitb14.pth
@@ -561,6 +564,7 @@
 - LiheYoung/Depth-Anything/checkpoints/depth_anything_vits14.pth
 - LiheYoung/Depth-Anything/checkpoints_metric_depth/depth_anything_metric_depth_indoor.pt
 - LiheYoung/Depth-Anything/checkpoints_metric_depth/depth_anything_metric_depth_outdoor.pt
+- TheMistoAI/MistoLine/Anyline/MTEED.pth
 - bdsqlsz/qinglong_controlnet-lllite/Annotators/7_model.pth
 - bdsqlsz/qinglong_controlnet-lllite/Annotators/UNet.pth
 - dhkim2810/MobileSAM/mobile_sam.pt
