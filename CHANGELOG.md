@@ -1,5 +1,7 @@
 ## 2024-05-24
 
+[Update ComfyUI_InstantID to fix PuLID compatibility](https://github.com/cubiq/ComfyUI_InstantID/commit/d8c70a0cd8ce0d4d62e78653674320c9c3084ec1)
+
 Add support for [GLIGEN weights](https://huggingface.co/comfyanonymous/GLIGEN_pruned_safetensors/tree/main):
 
 - gligen_sd14_textbox_pruned.safetensors
