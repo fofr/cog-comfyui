@@ -12,8 +12,7 @@
 
 Update custom nodes:
 
-- [ComfyUI_InstantID to fix PuLID compatibility](https://github.com/cubiq/ComfyUI_InstantID/commit/
-d8c70a0cd8ce0d4d62e78653674320c9c3084ec1)
+- [ComfyUI_InstantID to fix PuLID compatibility](https://github.com/cubiq/ComfyUI_InstantID/commit/d8c70a0cd8ce0d4d62e78653674320c9c3084ec1)
 - [ComfyUI-Frame-Interpolation](https://github.com/Fannovel16/ComfyUI-Frame-Interpolation/compare/5e11679...1c4c4b4)
 - [PuLID_ComfyUI](https://github.com/cubiq/PuLID_ComfyUI/compare/b88e5aa...45f7709)
 - [ComfyUI-VideoHelperSuite](https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite/compare/5b5026c...acbf789)
