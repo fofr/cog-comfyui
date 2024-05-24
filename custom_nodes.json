@@ -29,15 +29,15 @@
   },
   {
     "repo": "https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite",
-    "commit": "5b5026c"
+    "commit": "acbf789"
   },
   {
     "repo": "https://github.com/Kosinkadink/ComfyUI-Advanced-ControlNet",
-    "commit": "fbf005f"
+    "commit": "6788448"
   },
   {
     "repo": "https://github.com/jags111/efficiency-nodes-comfyui",
-    "commit": "3b7e89d"
+    "commit": "97f284b"
   },
   {
     "repo": "https://github.com/Derfuu/Derfuu_ComfyUI_ModdedNodes",
@@ -45,7 +45,7 @@
   },
   {
     "repo": "https://github.com/FizzleDorf/ComfyUI_FizzNodes",
-    "commit": "cd6cadd"
+    "commit": "ebf7fbf"
   },
   {
     "repo": "https://github.com/TinyTerra/ComfyUI_tinyterraNodes",
@@ -53,11 +53,11 @@
   },
   {
     "repo": "https://github.com/ssitu/ComfyUI_UltimateSDUpscale",
-    "commit": "bcefc5b"
+    "commit": "233f8b8"
   },
   {
     "repo": "https://github.com/cubiq/ComfyUI_essentials",
-    "commit": "101ebae"
+    "commit": "94b7450"
   },
   {
     "repo": "https://github.com/shiimizu/ComfyUI-PhotoMaker-Plus",
