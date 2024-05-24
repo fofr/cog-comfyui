@@ -14,7 +14,7 @@ COMFYUI_TEMP_OUTPUT_DIR = "ComfyUI/temp"
 
 mimetypes.add_type("image/webp", ".webp")
 
-with open("examples/api_workflows/pulid.json", "r") as file:
+with open("examples/api_workflows/sd15_txt2img.json", "r") as file:
     EXAMPLE_WORKFLOW_JSON = file.read()
 
 
@@ -91,6 +91,10 @@ class Predictor(BasePredictor):
             description="Automatically randomise seeds (seed, noise_seed, rand_seed)",
             default=True,
         ),
+        force_reset_cache: bool = Input(
+            description="Force reset the ComfyUI cache before running the workflow. Useful for debugging.",
+            default=False,
+        ),
     ) -> List[Path]:
         """Run a single prediction on the model"""
         self.cleanup()
@@ -100,10 +104,14 @@ class Predictor(BasePredictor):
 
         wf = self.comfyUI.load_workflow(workflow_json or EXAMPLE_WORKFLOW_JSON)
 
+        self.comfyUI.connect()
+
+        if force_reset_cache or not randomise_seeds:
+            self.comfyUI.reset_execution_cache()
+
         if randomise_seeds:
             self.comfyUI.randomise_seeds(wf)
 
-        self.comfyUI.connect()
         self.comfyUI.run_workflow(wf)
 
         files = []

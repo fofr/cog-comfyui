@@ -221,6 +221,12 @@ class ComfyUI:
         self.handle_weights(wf)
         return wf
 
+    def reset_execution_cache(self):
+        print("Resetting execution cache")
+        with open("reset.json", "r") as file:
+            reset_workflow = json.loads(file.read())
+        self.queue_prompt(reset_workflow)
+
     def randomise_input_seed(self, input_key, inputs):
         if input_key in inputs and isinstance(inputs[input_key], (int, float)):
             new_seed = random.randint(0, 2**32 - 1)
