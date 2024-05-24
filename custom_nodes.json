@@ -105,7 +105,7 @@
   },
   {
     "repo": "https://github.com/Fannovel16/ComfyUI-Frame-Interpolation",
-    "commit": "5e11679"
+    "commit": "1c4c4b4"
   },
   {
     "repo": "https://github.com/fofr/ComfyUI-HyperSDXL1StepUnetScheduler",
@@ -113,7 +113,7 @@
   },
   {
     "repo": "https://github.com/cubiq/PuLID_ComfyUI",
-    "commit": "b88e5aa"
+    "commit": "45f7709"
   },
   {
     "repo": "https://github.com/huchenlei/ComfyUI-IC-Light-Native",

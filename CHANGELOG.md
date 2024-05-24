@@ -12,14 +12,17 @@
 
 Update custom nodes:
 
-- [ComfyUI_InstantID to fix PuLID compatibility](https://github.com/cubiq/ComfyUI_InstantID/commit/d8c70a0cd8ce0d4d62e78653674320c9c3084ec1)
+- [ComfyUI_InstantID to fix PuLID compatibility](https://github.com/cubiq/ComfyUI_InstantID/commit/
+d8c70a0cd8ce0d4d62e78653674320c9c3084ec1)
+- [ComfyUI-Frame-Interpolation](https://github.com/Fannovel16/ComfyUI-Frame-Interpolation/compare/5e11679...1c4c4b4)
+- [PuLID_ComfyUI](https://github.com/cubiq/PuLID_ComfyUI/compare/b88e5aa...45f7709)
 - [ComfyUI-VideoHelperSuite](https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite/compare/5b5026c...acbf789)
 - [ComfyUI-Advanced-ControlNet](https://github.com/Kosinkadink/ComfyUI-Advanced-ControlNet/compare/fbf005f...6788448)
 - [efficiency-nodes-comfyui](https://github.com/jags111/efficiency-nodes-comfyui/compare/3b7e89d...97f284b)
 - [ComfyUI_FizzNodes](https://github.com/FizzleDorf/ComfyUI_FizzNodes/compare/cd6cadd...ebf7fbf)
 - [ComfyUI_UltimateSDUpscale](https://github.com/ssitu/ComfyUI_UltimateSDUpscale/compare/bcefc5b...233f8b8)
 - [ComfyUI_essentials](https://github.com/cubiq/ComfyUI_essentials/compare/101ebae...94b7450)
-- [ComfyUI-Inspire-Pack](https://github.com/cubiq/ComfyUI_Inspire_Pack/commit/c8231dd...0916454)
+- [ComfyUI-Inspire-Pack](https://github.com/cubiq/ComfyUI_Inspire_Pack/compare/c8231dd...0916454)
 
 Add support for [GLIGEN weights](https://huggingface.co/comfyanonymous/GLIGEN_pruned_safetensors/tree/main):
 
