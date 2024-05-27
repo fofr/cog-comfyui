@@ -8,7 +8,11 @@ from weights_downloader import WeightsDownloader
 def download_weight_files(weight_files):
     wd = WeightsDownloader()
     for weight_file in weight_files:
-        wd.download_weights(weight_file)
+        try:
+            wd.download_weights(weight_file)
+        except Exception as e:
+            print(f"Failed to download {weight_file}: {str(e)}")
+            continue
 
 def extract_weights_from_workflow(workflow_path):
     with open(workflow_path, 'r') as f:
