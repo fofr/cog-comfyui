@@ -70,6 +70,8 @@
     "sd_xl_refiner_1.0_0.9vae.safetensors",
     "sd_xl_turbo_1.0.safetensors",
     "sd_xl_turbo_1.0_fp16.safetensors",
+    "SDXL-Flash.safetensors",
+    "SDXL-Flash_Mini.safetensors",
     "sdxl_lightning_1step_x0.safetensors",
     "sdxl_lightning_2step.safetensors",
     "sdxl_lightning_4step.safetensors",
