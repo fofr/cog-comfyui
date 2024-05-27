@@ -162,7 +162,7 @@ class ComfyUI_Controlnet_Aux(CustomNodeHelper):
 
         # Additional check for AIO_Preprocessor and its preprocessor input value
         if node.is_type("AIO_Preprocessor"):
-            preprocessor = node.value("preprocessor")
+            preprocessor = node.input("preprocessor")
             if preprocessor in node_mapping:
                 preprocessor_weights = node_mapping[preprocessor]
                 weights_to_download.extend(
