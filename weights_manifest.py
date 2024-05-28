@@ -16,7 +16,12 @@ BASE_PATH = "ComfyUI/models"
 
 
 class WeightsManifest:
-    def __init__(self, download_latest_weights_manifest=True):
+    def __init__(
+        self,
+        bring_your_own_weights_manifest=None,
+        download_latest_weights_manifest=True,
+    ):
+        self.bring_your_own_weights_manifest = bring_your_own_weights_manifest
         self.download_latest_weights_manifest = download_latest_weights_manifest
         self.weights_manifest = self._load_weights_manifest()
         self.weights_map = self._initialize_weights_map()
@@ -62,38 +67,59 @@ class WeightsManifest:
         else:
             original_manifest = {}
 
-        if not os.path.exists(UPDATED_WEIGHTS_MANIFEST_PATH):
-            return original_manifest
+        if os.path.exists(UPDATED_WEIGHTS_MANIFEST_PATH):
+            with open(UPDATED_WEIGHTS_MANIFEST_PATH, "r") as f:
+                updated_manifest = json.load(f)
 
-        with open(UPDATED_WEIGHTS_MANIFEST_PATH, "r") as f:
-            updated_manifest = json.load(f)
-
-        for key in updated_manifest:
-            if key in original_manifest:
-                for item in updated_manifest[key]:
-                    if item not in original_manifest[key]:
-                        print(f"Adding {item} to {key}")
-                        original_manifest[key].append(item)
-            else:
-                original_manifest[key] = updated_manifest[key]
+            for key in updated_manifest:
+                if key in original_manifest:
+                    for item in updated_manifest[key]:
+                        if item not in original_manifest[key]:
+                            print(f"Adding {item} to {key}")
+                            original_manifest[key].append(item)
+                else:
+                    original_manifest[key] = updated_manifest[key]
 
         return original_manifest
 
-    def _generate_weights_map(self, keys, dest):
+    def _generate_weights_map(self, filenames, dest):
         return {
-            key: {
-                "url": f"{BASE_URL}/{dest}/{key}.tar",
+            filename: {
+                "url": f"{BASE_URL}/{dest}/{filename}.tar",
                 "dest": f"{BASE_PATH}/{dest}",
             }
-            for key in keys
+            for filename in filenames
+        }
+
+    def _generate_bring_your_own_weights_map(self, filenames_and_urls, dest):
+        for filename, url in filenames_and_urls.items():
+            print(filename, url)
+
+        return {
+            filename: {
+                "url": url,
+                "dest": f"{BASE_PATH}/{dest}/{filename}",
+            }
+            for filename, url in filenames_and_urls.items()
         }
 
     def _initialize_weights_map(self):
         weights_map = {}
-        for key in self.weights_manifest.keys():
-            if key.isupper():
+        types = self.weights_manifest.keys()
+        for type in types:
+            if type.isupper():
+                dest = type.lower()
                 weights_map.update(
-                    self._generate_weights_map(self.weights_manifest[key], key.lower())
+                    self._generate_weights_map(self.weights_manifest[type], dest)
+                )
+
+        if self.bring_your_own_weights_manifest:
+            for type in self.bring_your_own_weights_manifest.keys():
+                dest = type.lower()
+                weights_map.update(
+                    self._generate_bring_your_own_weights_map(
+                        self.bring_your_own_weights_manifest[type], dest
+                    )
                 )
 
         for module_name in dir(helpers):

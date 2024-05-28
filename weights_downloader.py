@@ -5,6 +5,7 @@ import os
 from weights_manifest import WeightsManifest
 
 BASE_URL = "https://weights.replicate.delivery/default/comfy-ui"
+os.environ["HF_HUB_ENABLE_HF_TRANSFER"] = "1"
 
 
 class WeightsDownloader:
@@ -18,8 +19,15 @@ class WeightsDownloader:
         ".torchscript",
     ]
 
-    def __init__(self):
-        self.weights_manifest = WeightsManifest()
+    valid_domains = [
+        "https://huggingface.co/",
+        "https://civitai.com/",
+        "https://weights.replicate.delivery",
+        "https://replicate.delivery",
+    ]
+
+    def __init__(self, bring_your_own_weights_manifest=None):
+        self.weights_manifest = WeightsManifest(bring_your_own_weights_manifest)
         self.weights_map = self.weights_manifest.weights_map
 
     def get_weights_by_type(self, type):
@@ -58,6 +66,13 @@ class WeightsDownloader:
             self.download(weight_str, url, dest)
 
     def download(self, weight_str, url, dest):
+        is_archive = weight_str.endswith(".tar")
+
+        if not any(url.startswith(domain) for domain in self.valid_domains):
+            raise ValueError(
+                f"URL must be on one of the valid domains: {self.valid_domains}"
+            )
+
         if "/" in weight_str:
             subfolder = weight_str.rsplit("/", 1)[0]
             dest = os.path.join(dest, subfolder)
@@ -66,7 +81,8 @@ class WeightsDownloader:
         print(f"⏳ Downloading {weight_str} to {dest}")
         start = time.time()
         subprocess.check_call(
-            ["pget", "--log-level", "warn", "-xf", url, dest], close_fds=False
+            ["pget", "--log-level", "warn", "-xf" if is_archive else "-f", url, dest],
+            close_fds=False,
         )
         elapsed_time = time.time() - start
         try:

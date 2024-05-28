@@ -72,6 +72,10 @@ class Predictor(BasePredictor):
             description="Input image, tar or zip file. Read guidance on workflows and input files here: https://github.com/fofr/cog-comfyui. Alternatively, you can replace inputs with URLs in your JSON workflow and the model will download them.",
             default=None,
         ),
+        weights_json: str = Input(
+            description="Bring your own weights. See example JSON on https://github.com/fofr/cog-comfyui. Only weights on Replicate, HuggingFace and civitai are supported.",
+            default="",
+        ),
         return_temp_files: bool = Input(
             description="Return any temporary files, such as preprocessed controlnet images. Useful for debugging.",
             default=False,
@@ -102,7 +106,9 @@ class Predictor(BasePredictor):
         if input_file:
             self.handle_input_file(input_file)
 
-        wf = self.comfyUI.load_workflow(workflow_json or EXAMPLE_WORKFLOW_JSON)
+        wf = self.comfyUI.load_workflow(
+            workflow_json or EXAMPLE_WORKFLOW_JSON, weights_json
+        )
 
         self.comfyUI.connect()
 

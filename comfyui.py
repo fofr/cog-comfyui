@@ -69,8 +69,72 @@ class ComfyUI:
             if callable(method):
                 method(*args, **kwargs)
 
-    def handle_weights(self, workflow):
+    def is_valid_weights_json(self, weights_json):
+        valid_keys = [
+            "CHECKPOINTS",
+            "UPSCALE_MODELS",
+            "CLIP",
+            "CLIP_VISION",
+            "LORAS",
+            "EMBEDDINGS",
+            "IPADAPTER",
+            "CONTROLNET",
+            "VAE",
+            "UNET",
+            "PHOTOMAKER",
+            "INSTANTID",
+            "INSIGHTFACE",
+            "ULTRALYTICS",
+            "SAMS",
+            "GROUNDING-DINO",
+            "MMDETS",
+            "FACERESTORE_MODELS",
+            "FACEDETECTION",
+            "LAYER_MODEL",
+            "CLIPSEG",
+            "REMBG",
+            "PULID",
+            "GLIGEN",
+        ]
+
+        valid_domains = [
+            "https://huggingface.co/",
+            "https://civitai.com/",
+            "https://weights.replicate.delivery",
+            "https://replicate.delivery",
+        ]
+
+        for key in weights_json:
+            if key not in valid_keys:
+                raise ValueError(
+                    f"Invalid key in weights_json: {key}. Must be one of {valid_keys}"
+                )
+            if not isinstance(weights_json[key], dict):
+                raise ValueError(f"Value for key {key} is not a dictionary")
+            for filename, url in weights_json[key].items():
+                if not isinstance(filename, str) or not isinstance(url, str):
+                    raise ValueError(
+                        f"Invalid filename or url in weights_json: {filename}, {url}"
+                    )
+                if not any(domain in url for domain in valid_domains):
+                    raise ValueError(
+                        f"Invalid url format in weights_json: {url}. Must be a URL from {valid_domains}"
+                    )
+        return True
+
+    def handle_bring_your_own_weights(self, weights_json):
+        for weight in weights_json:
+            print(weight)
+            self.weights_downloader.download_if_not_exists(weight)
+
+    def handle_weights(self, workflow, weights_json):
         print("Checking weights")
+
+        if weights_json:
+            weights_json = json.loads(weights_json)
+            if self.is_valid_weights_json(weights_json):
+                self.handle_bring_your_own_weights(weights_json)
+
         embeddings = self.weights_downloader.get_weights_by_type("EMBEDDINGS")
         embedding_to_fullname = {emb.split(".")[0]: emb for emb in embeddings}
         weights_to_download = []
@@ -203,7 +267,7 @@ class ComfyUI:
             else:
                 continue
 
-    def load_workflow(self, workflow):
+    def load_workflow(self, workflow, weights_json):
         if not isinstance(workflow, dict):
             wf = json.loads(workflow)
         else:
@@ -218,7 +282,7 @@ class ComfyUI:
 
         self.handle_known_unsupported_nodes(wf)
         self.handle_inputs(wf)
-        self.handle_weights(wf)
+        self.handle_weights(wf, weights_json)
         return wf
 
     def reset_execution_cache(self):
