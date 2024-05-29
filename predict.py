@@ -8,12 +8,12 @@ from cog import BasePredictor, Input, Path
 from comfyui import ComfyUI
 from cog_model_helpers import optimise_images
 
+os.environ["DOWNLOAD_LATEST_WEIGHTS_MANIFEST"] = "true"
+mimetypes.add_type("image/webp", ".webp")
 OUTPUT_DIR = "/tmp/outputs"
 INPUT_DIR = "/tmp/inputs"
 COMFYUI_TEMP_OUTPUT_DIR = "ComfyUI/temp"
 ALL_DIRECTORIES = [OUTPUT_DIR, INPUT_DIR, COMFYUI_TEMP_OUTPUT_DIR]
-
-mimetypes.add_type("image/webp", ".webp")
 
 with open("examples/api_workflows/sd15_txt2img.json", "r") as file:
     EXAMPLE_WORKFLOW_JSON = file.read()

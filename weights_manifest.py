@@ -20,8 +20,10 @@ class WeightsManifest:
     def base_url():
         return BASE_URL
 
-    def __init__(self, download_latest_weights_manifest=True):
-        self.download_latest_weights_manifest = download_latest_weights_manifest
+    def __init__(self):
+        self.download_latest_weights_manifest = (
+            os.getenv("DOWNLOAD_LATEST_WEIGHTS_MANIFEST", "false").lower() == "true"
+        )
         self.weights_manifest = self._load_weights_manifest()
         self.weights_map = self._initialize_weights_map()
 
