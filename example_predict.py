@@ -4,7 +4,6 @@
 import os
 import mimetypes
 import json
-import shutil
 from PIL import Image, ExifTags
 from typing import List
 from cog import BasePredictor, Input, Path
