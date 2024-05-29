@@ -2,9 +2,11 @@
 
 This guide will help you adapt the `cog-comfyui` template repository for your own model.
 
-If you haven’t used `cog` before, this is a good starting guide:
+If you haven’t used `cog` before or pushed a Replicate model, these are good starting guides:
 
-https://cog.run/getting-started-own-model
+- https://cog.run/getting-started-own-model
+- https://replicate.com/docs/guides/push-a-model
+
 
 ## Create a new repo from the template
 
