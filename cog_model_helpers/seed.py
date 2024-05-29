@@ -1,4 +1,4 @@
-from typing import Input
+from cog import Input
 import random
 
 

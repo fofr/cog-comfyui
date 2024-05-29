@@ -1,4 +1,4 @@
-from typing import Input
+from cog import Input
 from PIL import Image
 
 IMAGE_FILE_EXTENSIONS = [".jpg", ".jpeg", ".png"]
