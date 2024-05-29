@@ -34,5 +34,9 @@ for file in FILES_TO_DELETE:
             os.remove(file)
 
 # Overwrite the README.md with a blank file and header "# Your repo"
+print("Overwriting README.md with a blank file and header")
 with open("README.md", "w") as f:
     f.write("# Your repo\n")
+
+print("Replacing predict.py with example_predict.py")
+shutil.move("example_predict.py", "predict.py")
