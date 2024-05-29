@@ -4,9 +4,11 @@ import json
 import os
 import subprocess
 
-# This script is used to clone specific versions of repositories.
-# It reads a JSON file containing repositories and their commit hashes, clones them into a specific directory,
-# and then checks out to the specified commit.
+"""
+This script is used to clone specific versions of repositories.
+It reads a JSON file containing repositories and their commit hashes, clones them into a specific directory,
+and then checks out to the specified commit.
+"""
 
 json_file = "custom_nodes.json"
 comfy_dir = "ComfyUI"

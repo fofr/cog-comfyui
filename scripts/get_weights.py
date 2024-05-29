@@ -1,4 +1,12 @@
 #!/usr/bin/env python3
+
+"""
+This script is used to download weight files specified in various input formats.
+It supports reading weight file names from plain text files, extracting them from JSON workflows,
+or directly from command-line arguments. The script utilizes the WeightsDownloader class
+to handle the actual downloading of the weight files.
+"""
+
 import sys
 import os
 import json

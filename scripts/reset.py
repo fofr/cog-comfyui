@@ -1,6 +1,11 @@
 #!/usr/bin/env python3
 import subprocess
 
+"""
+This script is used to reset the ComfyUI environment.
+It deletes the ComfyUI directory before reinstalling ComfyUI and every custom node.
+"""
+
 print("Preparing to reset the ComfyUI environment...")
 print(
     "This will delete the ComfyUI directory before reinstalling ComfyUI and every custom node."
