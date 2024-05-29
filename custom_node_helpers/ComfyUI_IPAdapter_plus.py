@@ -24,7 +24,7 @@ PRESETS = [
 
 class ComfyUI_IPAdapter_plus(CustomNodeHelper):
     @staticmethod
-    def prepare():
+    def prepare(**kwargs):
         # create the ipadapter folder in ComfyUI/models/ipadapter
         # if it doesn't exist at setup time then the plugin defers to the base directory
         # and won't look for our ipadaters that are downloaded on demand

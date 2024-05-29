@@ -16,6 +16,10 @@ BASE_PATH = "ComfyUI/models"
 
 
 class WeightsManifest:
+    @staticmethod
+    def base_url():
+        return BASE_URL
+
     def __init__(self, download_latest_weights_manifest=True):
         self.download_latest_weights_manifest = download_latest_weights_manifest
         self.weights_manifest = self._load_weights_manifest()

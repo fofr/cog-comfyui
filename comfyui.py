@@ -21,12 +21,11 @@ class ComfyUI:
     def __init__(self, server_address):
         self.weights_downloader = WeightsDownloader()
         self.server_address = server_address
-        helpers.ComfyUI_IPAdapter_plus.prepare()
 
     def start_server(self, output_directory, input_directory):
         self.input_directory = input_directory
         self.output_directory = output_directory
-        self.download_pre_start_models()
+        self.apply_helper_methods("prepare", weights_downloader=self.weights_downloader)
 
         start_time = time.time()
         server_thread = threading.Thread(
@@ -34,18 +33,15 @@ class ComfyUI:
         )
         server_thread.start()
         while not self.is_server_running():
-            # If more than a minute has passed
             if time.time() - start_time > 60:
                 raise TimeoutError("Server did not start within 60 seconds")
-
-            # Wait for 500ms before checking again
             time.sleep(0.5)
 
         elapsed_time = time.time() - start_time
         print(f"Server started in {elapsed_time:.2f} seconds")
 
     def run_server(self, output_directory, input_directory):
-        command = f"python ./ComfyUI/main.py --output-directory {output_directory} --input-directory {input_directory} --disable-metadata --gpu-only"
+        command = f"python ./ComfyUI/main.py --output-directory {output_directory} --input-directory {input_directory} --disable-metadata --highvram"
         server_process = subprocess.Popen(command, shell=True)
         server_process.wait()
 
@@ -57,10 +53,6 @@ class ComfyUI:
                 return response.status == 200
         except URLError:
             return False
-
-    def download_pre_start_models(self):
-        # Some models need to be downloaded and loaded before starting ComfyUI
-        self.weights_downloader.download_torch_checkpoints()
 
     def apply_helper_methods(self, method_name, *args, **kwargs):
         # Dynamically applies a method from helpers module with given args.

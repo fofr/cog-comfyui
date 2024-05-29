@@ -2,6 +2,11 @@ class CustomNodeHelper:
     # This class provides helper methods for managing node weights and checking unsupported nodes.
 
     @staticmethod
+    def prepare(**kwargs):
+        # Placeholder method to prepare a custom node before ComfyUI starts
+        pass
+
+    @staticmethod
     def weights_map(base_url):
         # Placeholder method for mapping weights based on a base URL.
         return {}
