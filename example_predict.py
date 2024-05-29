@@ -19,7 +19,7 @@ ALL_DIRECTORIES = [OUTPUT_DIR, INPUT_DIR, COMFYUI_TEMP_OUTPUT_DIR]
 mimetypes.add_type("image/webp", ".webp")
 
 # Save your example JSON to the same directory as predict.py
-api_json_file = "pulid_api.json"
+api_json_file = "workflow_api.json"
 
 
 class Predictor(BasePredictor):

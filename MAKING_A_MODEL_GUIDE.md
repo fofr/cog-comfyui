@@ -2,6 +2,10 @@
 
 This guide will help you adapt the `cog-comfyui` template repository for your own model.
 
+If you haven’t used `cog` before, this is a good starting guide:
+
+https://cog.run/getting-started-own-model
+
 ## Create a new repo from the template
 
 Use https://github.com/fofr/cog-comfyui as a template to create a new repository
@@ -111,3 +115,27 @@ The simplest way to add new nodes is to:
 - rerun `scripts/install_custom_nodes.py` to install the new nodes
 
 Some nodes will try to download weights on demand. You might want to avoid doing this from your Replicate model. The easiest fix is to make sure the downloaded weights are also pushed with your container. If you choose to do this, make sure to also update `.dockerignore`, which by default excludes weight from the container.
+
+## Running the model locally
+
+You can run the model with defaults via cog:
+
+```sh
+cog predict
+```
+
+Or if you want to pass inputs:
+
+```sh
+cog predict -i prompt="something" -i image=@/path/to/image.jpg
+```
+
+## Deploying your model to Replicate
+
+Create a new model from https://replicate.com/create
+
+Push your cog container to Replicate:
+
+```sh
+cog push r8.im/<username>/<model-name>
+```
