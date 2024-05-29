@@ -9,7 +9,9 @@ import uuid
 import websocket
 import random
 import requests
+import shutil
 import custom_node_helpers as helpers
+from pathlib import Path
 from node import Node
 from weights_downloader import WeightsDownloader
 from urllib.error import URLError
@@ -69,11 +71,10 @@ class ComfyUI:
             if callable(method):
                 method(*args, **kwargs)
 
-    def handle_weights(self, workflow):
+    def handle_weights(self, workflow, weights_to_download=[]):
         print("Checking weights")
         embeddings = self.weights_downloader.get_weights_by_type("EMBEDDINGS")
         embedding_to_fullname = {emb.split(".")[0]: emb for emb in embeddings}
-        weights_to_download = []
         weights_filetypes = self.weights_downloader.supported_filetypes
 
         for node in workflow.values():
@@ -254,3 +255,28 @@ class ComfyUI:
         ) as response:
             output = json.loads(response.read())
             return output[prompt_id]["outputs"]
+
+    def get_files(self, directories, prefix=""):
+        files = []
+        if isinstance(directories, str):
+            directories = [directories]
+
+        for directory in directories:
+            for f in os.listdir(directory):
+                if f == "__MACOSX":
+                    continue
+                path = os.path.join(directory, f)
+                if os.path.isfile(path):
+                    print(f"{prefix}{f}")
+                    files.append(Path(path))
+                elif os.path.isdir(path):
+                    print(f"{prefix}{f}/")
+                    files.extend(self.return_outputs(path, prefix=f"{prefix}{f}/"))
+        return files
+
+    def cleanup(self, directories):
+        self.clear_queue()
+        for directory in directories:
+            if os.path.exists(directory):
+                shutil.rmtree(directory)
+            os.makedirs(directory)

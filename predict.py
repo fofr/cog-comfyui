@@ -3,14 +3,15 @@ import shutil
 import tarfile
 import zipfile
 import mimetypes
-from PIL import Image
 from typing import List
 from cog import BasePredictor, Input, Path
 from comfyui import ComfyUI
+from cog_model_helpers import optimise_images
 
 OUTPUT_DIR = "/tmp/outputs"
 INPUT_DIR = "/tmp/inputs"
 COMFYUI_TEMP_OUTPUT_DIR = "ComfyUI/temp"
+ALL_DIRECTORIES = [OUTPUT_DIR, INPUT_DIR, COMFYUI_TEMP_OUTPUT_DIR]
 
 mimetypes.add_type("image/webp", ".webp")
 
@@ -22,13 +23,6 @@ class Predictor(BasePredictor):
     def setup(self):
         self.comfyUI = ComfyUI("127.0.0.1:8188")
         self.comfyUI.start_server(OUTPUT_DIR, INPUT_DIR)
-
-    def cleanup(self):
-        self.comfyUI.clear_queue()
-        for directory in [OUTPUT_DIR, INPUT_DIR, COMFYUI_TEMP_OUTPUT_DIR]:
-            if os.path.exists(directory):
-                shutil.rmtree(directory)
-            os.makedirs(directory)
 
     def handle_input_file(self, input_file: Path):
         file_extension = os.path.splitext(input_file)[1].lower()
@@ -45,22 +39,8 @@ class Predictor(BasePredictor):
 
         print("====================================")
         print(f"Inputs uploaded to {INPUT_DIR}:")
-        self.log_and_collect_files(INPUT_DIR)
+        self.comfyUI.get_files(INPUT_DIR)
         print("====================================")
-
-    def log_and_collect_files(self, directory, prefix=""):
-        files = []
-        for f in os.listdir(directory):
-            if f == "__MACOSX":
-                continue
-            path = os.path.join(directory, f)
-            if os.path.isfile(path):
-                print(f"{prefix}{f}")
-                files.append(Path(path))
-            elif os.path.isdir(path):
-                print(f"{prefix}{f}/")
-                files.extend(self.log_and_collect_files(path, prefix=f"{prefix}{f}/"))
-        return files
 
     def predict(
         self,
@@ -76,17 +56,8 @@ class Predictor(BasePredictor):
             description="Return any temporary files, such as preprocessed controlnet images. Useful for debugging.",
             default=False,
         ),
-        output_format: str = Input(
-            description="Format of the output images",
-            choices=["webp", "jpg", "png"],
-            default="webp",
-        ),
-        output_quality: int = Input(
-            description="Quality of the output images, from 0 to 100. 100 is best quality, 0 is lowest quality.",
-            default=80,
-            ge=0,
-            le=100,
-        ),
+        output_format: str = optimise_images.predict_output_format(),
+        output_quality: int = optimise_images.predict_output_quality(),
         randomise_seeds: bool = Input(
             description="Automatically randomise seeds (seed, noise_seed, rand_seed)",
             default=True,
@@ -97,7 +68,7 @@ class Predictor(BasePredictor):
         ),
     ) -> List[Path]:
         """Run a single prediction on the model"""
-        self.cleanup()
+        self.comfyUI.cleanup(ALL_DIRECTORIES)
 
         if input_file:
             self.handle_input_file(input_file)
@@ -114,30 +85,10 @@ class Predictor(BasePredictor):
 
         self.comfyUI.run_workflow(wf)
 
-        files = []
         output_directories = [OUTPUT_DIR]
         if return_temp_files:
             output_directories.append(COMFYUI_TEMP_OUTPUT_DIR)
 
-        for directory in output_directories:
-            print(f"Contents of {directory}:")
-            files.extend(self.log_and_collect_files(directory))
-
-        if output_quality < 100 or output_format in ["webp", "jpg"]:
-            optimised_files = []
-            for file in files:
-                if file.is_file() and file.suffix in [".jpg", ".jpeg", ".png"]:
-                    image = Image.open(file)
-                    optimised_file_path = file.with_suffix(f".{output_format}")
-                    image.save(
-                        optimised_file_path,
-                        quality=output_quality,
-                        optimize=True,
-                    )
-                    optimised_files.append(optimised_file_path)
-                else:
-                    optimised_files.append(file)
-
-            files = optimised_files
-
-        return files
+        return optimise_images.optimise_image_files(
+            output_format, output_quality, self.comfyUI.get_files(output_directories)
+        )
