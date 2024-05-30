@@ -263,8 +263,8 @@ class ComfyUI:
                     files.append(Path(path))
                 elif os.path.isdir(path):
                     print(f"{prefix}{f}/")
-                    files.extend(self.return_outputs(path, prefix=f"{prefix}{f}/"))
-        return files
+                    files.extend(self.get_files(path, prefix=f"{prefix}{f}/"))
+        return sorted(files)
 
     def cleanup(self, directories):
         self.clear_queue()
