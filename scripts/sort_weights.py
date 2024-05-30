@@ -10,7 +10,7 @@ from weights_manifest import WeightsManifest
 import custom_node_helpers as helpers
 
 def write_supported_weights():
-    weights_manifest = WeightsManifest(download_latest_weights_manifest=False)
+    weights_manifest = WeightsManifest()
     weight_lists = {
         "Checkpoints": weights_manifest.get_weights_by_type("CHECKPOINTS"),
         "Upscale models": weights_manifest.get_weights_by_type("UPSCALE_MODELS"),

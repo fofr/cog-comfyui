@@ -3,6 +3,7 @@ import time
 import os
 import json
 import custom_node_helpers as helpers
+from config import config
 
 UPDATED_WEIGHTS_MANIFEST_URL = (
     "https://raw.githubusercontent.com/fofr/cog-comfyui/main/weights.json"
@@ -10,8 +11,7 @@ UPDATED_WEIGHTS_MANIFEST_URL = (
 
 UPDATED_WEIGHTS_MANIFEST_PATH = "updated_weights.json"
 WEIGHTS_MANIFEST_PATH = "weights.json"
-
-BASE_URL = "https://weights.replicate.delivery/default/comfy-ui"
+BASE_URL = config["WEIGHTS_BASE_URL"]
 BASE_PATH = "ComfyUI/models"
 
 

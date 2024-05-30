@@ -1,5 +1,5 @@
 from custom_node_helper import CustomNodeHelper
-from weights_manifest import WeightsManifest
+from config import config
 
 MODELS = {
     "UNet.pth": "bdsqlsz/qinglong_controlnet-lllite/Annotators",
@@ -62,7 +62,7 @@ class ComfyUI_Controlnet_Aux(CustomNodeHelper):
     def prepare(**kwargs):
         kwargs["weights_downloader"].download_if_not_exists(
             "mobilenet_v2-b0353104.pth",
-            f"{WeightsManifest.base_url()}/custom_nodes/comfyui_controlnet_aux/mobilenet_v2-b0353104.pth.tar",
+            f"{config['WEIGHTS_BASE_URL']}/custom_nodes/comfyui_controlnet_aux/mobilenet_v2-b0353104.pth.tar",
             "/root/.cache/torch/hub/checkpoints/",
         )
 

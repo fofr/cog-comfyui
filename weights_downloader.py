@@ -1,10 +1,7 @@
 import subprocess
 import time
 import os
-
 from weights_manifest import WeightsManifest
-
-BASE_URL = "https://weights.replicate.delivery/default/comfy-ui"
 
 
 class WeightsDownloader:
