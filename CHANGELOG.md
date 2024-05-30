@@ -1,3 +1,17 @@
+## 2024-05-30
+
+- Refactor repo to make it easier to use as a template
+- Added guide in `MAKING_A_MODEL_GUIDE.md`
+
+New SDXL control nets:
+
+- [controlnet-openpose-sdxl-1.0.safetensors](https://huggingface.co/xinsir/controlnet-openpose-sdxl-1.0)
+- [controlnet-openpose-sdxl-1.0_twins.safetensors](https://huggingface.co/xinsir/controlnet-openpose-sdxl-1.0)
+- [controlnet-scribble-sdxl-1.0.safetensors](https://huggingface.co/xinsir/controlnet-scribble-sdxl-1.0)
+- [controlnet-canny-sdxl-1.0.safetensors](https://huggingface.co/xinsir/controlnet-canny-sdxl-1.0)
+- [controlnet-canny-sdxl-1.0_V2.safetensors](https://huggingface.co/xinsir/controlnet-canny-sdxl-1.0)
+-
+
 ## 2024-05-24
 
 [Update comfyui_controlnet_aux](https://github.com/Fannovel16/comfyui_controlnet_aux/compare/692a3d0...8e51eb3) to include support for:
