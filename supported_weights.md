@@ -416,6 +416,7 @@
 
 - bbox/face_yolov8m.pt
 - bbox/hand_yolov8s.pt
+- Eyes.pt
 - segm/hair_yolov8n-seg_60.pt
 - segm/person_yolov8m-seg.pt
 
