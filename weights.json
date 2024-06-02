@@ -434,9 +434,9 @@
     "bert-base-uncased"
   ],
   "ULTRALYTICS": [
+    "bbox/Eyes.pt",
     "bbox/face_yolov8m.pt",
     "bbox/hand_yolov8s.pt",
-    "bbox/Eyes.pt",
     "segm/hair_yolov8n-seg_60.pt",
     "segm/person_yolov8m-seg.pt"
   ],
@@ -474,5 +474,8 @@
   "GLIGEN": [
     "gligen_sd14_textbox_pruned.safetensors",
     "gligen_sd14_textbox_pruned_fp16.safetensors"
+  ],
+  "DYNAMICRAFTER": [
+    "tooncrafter_512_interp-fp16.safetensors"
   ]
 }
