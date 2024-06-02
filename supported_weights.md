@@ -114,6 +114,7 @@
 
 - models--QuanSun--EVA-CLIP
 - stable-diffusion-2-1-clip-fp16.safetensors
+- stable-diffusion-2-1-clip.safetensors
 
 ## CLIP Vision
 
