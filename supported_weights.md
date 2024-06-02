@@ -113,11 +113,13 @@
 ## CLIP
 
 - models--QuanSun--EVA-CLIP
+- stable-diffusion-2-1-clip-fp16.safetensors
 
 ## CLIP Vision
 
 - CLIP-ViT-bigG-14-laion2B-39B-b160k.safetensors
 - CLIP-ViT-H-14-laion2B-s32B-b79K.safetensors
+- CLIP-ViT-H-fp16.safetensors
 - clip-vit-large-patch14.bin
 - clip_vision_g.safetensors
 - IPAdapter_image_encoder_sd15.safetensors
