@@ -259,6 +259,7 @@
 
 ## ControlNet
 
+- animatediff_controlnet.ckpt
 - control-lora-canny-rank128.safetensors
 - control-lora-canny-rank256.safetensors
 - control-lora-depth-rank128.safetensors
