@@ -130,5 +130,9 @@
   {
     "repo": "https://github.com/rgthree/rgthree-comfy",
     "commit": "23fddb8"
+  },
+  {
+    "repo": "https://github.com/kijai/ComfyUI-DynamiCrafterWrapper",
+    "commit": "fbe8648"
   }
 ]
