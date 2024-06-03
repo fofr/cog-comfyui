@@ -22,8 +22,7 @@ New detailer:
 
 Update KJNodes to latest:
 
-- [KJNodes](https://github.com/kijai/ComfyUI-KJNodes/compare/48d5a18...
-5430564)
+- [KJNodes](https://github.com/kijai/ComfyUI-KJNodes/compare/48d5a18...5430564)
 
 ## 2024-05-30
 
