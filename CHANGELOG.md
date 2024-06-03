@@ -1,3 +1,30 @@
+## 2024-06-03
+
+New checkpoints:
+
+- [EpicrealismXL_Hades.safetensors](https://civitai.com/models/354130?modelVersionId=534487)
+- [epicrealismXL_v7FinalDestination.safetensors](https://civitai.com/models/277058/epicrealism-xl)
+
+New embedding:
+
+- [realisticvision-negative-embedding.pt](https://civitai.com/models/36070/negative-embedding-for-realistic-vision-v20)
+
+Models for ToonCrafter:
+
+- CLIP-ViT-H-fp16.safetensors
+- stable-diffusion-2-1-clip-fp16.safetensors
+- stable-diffusion-2-1-clip.safetensors
+- [tooncrafter_512_interp-fp16.safetensors](https://huggingface.co/Kijai/DynamiCrafter_pruned/tree/main)
+
+New detailer:
+
+- [bbox/Eyes.pt](https://civitai.com/models/150925/eyes-detection-adetailer)
+
+Update KJNodes to latest:
+
+- [KJNodes](https://github.com/kijai/ComfyUI-KJNodes/compare/48d5a18...
+5430564)
+
 ## 2024-05-30
 
 - Refactor repo to make it easier to use as a template
@@ -10,7 +37,6 @@ New SDXL control nets:
 - [controlnet-scribble-sdxl-1.0.safetensors](https://huggingface.co/xinsir/controlnet-scribble-sdxl-1.0)
 - [controlnet-canny-sdxl-1.0.safetensors](https://huggingface.co/xinsir/controlnet-canny-sdxl-1.0)
 - [controlnet-canny-sdxl-1.0_V2.safetensors](https://huggingface.co/xinsir/controlnet-canny-sdxl-1.0)
--
 
 ## 2024-05-24
 

@@ -22,7 +22,9 @@
 - dreamshaperXL_lightningDPMSDE.safetensors
 - dynavision_v20Bakedvae.safetensors
 - epicrealism_naturalSinRC1VAE.safetensors
+- Epicrealismxl_Hades.safetensors
 - epicrealismXL_v10.safetensors
+- epicrealismXL_v7FinalDestination.safetensors
 - Hyper-SDXL-1step-Unet-Comfyui.fp16.safetensors
 - Hyper-SDXL-1step-Unet.safetensors
 - imp_v10.safetensors
