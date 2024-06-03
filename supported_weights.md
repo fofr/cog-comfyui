@@ -219,6 +219,7 @@
 - JuggernautNegative-neg.pt
 - negative_hand-neg.pt
 - ng_deepnegative_v1_75t.pt
+- realisticvision-negative-embedding.pt
 - verybadimagenegative_v1.3.pt
 
 ## IPAdapter
