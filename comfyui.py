@@ -248,7 +248,7 @@ class ComfyUI:
             output = json.loads(response.read())
             return output[prompt_id]["outputs"]
 
-    def get_files(self, directories, prefix=""):
+    def get_files(self, directories, prefix="", file_extensions=None):
         files = []
         if isinstance(directories, str):
             directories = [directories]
@@ -264,6 +264,10 @@ class ComfyUI:
                 elif os.path.isdir(path):
                     print(f"{prefix}{f}/")
                     files.extend(self.get_files(path, prefix=f"{prefix}{f}/"))
+
+        if file_extensions:
+            files = [f for f in files if f.name.split(".")[-1] in file_extensions]
+
         return sorted(files)
 
     def cleanup(self, directories):
