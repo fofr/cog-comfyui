@@ -60,6 +60,7 @@
     "Realistic_Vision_V6.0_NV_B1_inpainting.safetensors",
     "Realistic_Vision_V6.0_NV_B1_inpainting_fp16.safetensors",
     "realisticLCMBYStable_v10.safetensors",
+    "realisticVisionV60B1_v51HyperVAE.safetensors",
     "RealVisXL_V2.0.safetensors",
     "RealVisXL_V3.0.safetensors",
     "RealVisXL_V3.0_Turbo.safetensors",
