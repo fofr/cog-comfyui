@@ -39,6 +39,20 @@ def upload_to_gcloud(local_file, destination_blob_name, subfolder):
     print(f"Successfully uploaded to {destination_path}")
 
 
+def upload_to_huggingface(local_file, subfolder):
+    print(f"Uploading {local_file} to huggingface under {subfolder}")
+    subprocess.run(
+        [
+            "huggingface-cli",
+            "upload",
+            "fofr/comfyui",
+            local_file,
+            f"{subfolder}/{local_file}",
+        ]
+    )
+    print(f"Successfully uploaded {local_file} to huggingface under {subfolder}")
+
+
 def remove_files(*filenames):
     print(f"About to remove the following files: {', '.join(filenames)}")
     for filename in filenames:
@@ -108,6 +122,7 @@ def process_file(url=None, filename=None, subfolder=None):
         local_file = filename
     tarred_file = tar_file(local_file)
     upload_to_gcloud(tarred_file, "gs://replicate-weights/comfy-ui", subfolder)
+    upload_to_huggingface(local_file, subfolder)
     update_weights_json(subfolder, local_file)
     remove_files(local_file, tarred_file)
     subprocess.run(["python", "scripts/sort_weights.py"])
@@ -122,7 +137,7 @@ def process_weights_file(weights_file, subfolder=None):
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Download a file, tar it, and upload to Google Cloud Storage"
+        description="Download a file, tar it, and upload to Google Cloud Storage and huggingface"
     )
     parser.add_argument(
         "file",
