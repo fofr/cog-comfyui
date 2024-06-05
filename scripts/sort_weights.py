@@ -5,9 +5,10 @@ import os
 import sys
 
 # Ensure the script can import WeightsManifest from the parent directory
-sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+sys.path.append(os.path.join(os.path.dirname(__file__), ".."))
 from weights_manifest import WeightsManifest
 import custom_node_helpers as helpers
+
 
 def write_supported_weights():
     weights_manifest = WeightsManifest()
@@ -39,8 +40,10 @@ def write_supported_weights():
         "PuLID": weights_manifest.get_weights_by_type("PULID"),
         "GLIGEN": weights_manifest.get_weights_by_type("GLIGEN"),
         "Anyline": helpers.ComfyUI_Anyline.models(),
-        "AnimateDiff": helpers.ComfyUI_AnimateDiff_Evolved.models(),
-        "AnimateDiff LORAs": helpers.ComfyUI_AnimateDiff_Evolved.loras(),
+        "AnimateDiff": weights_manifest.get_weights_by_type("ANIMATEDIFF_MODELS"),
+        "AnimateDiff LORAs": weights_manifest.get_weights_by_type(
+            "ANIMATEDIFF_MOTION_LORA"
+        ),
         "Frame Interpolation": helpers.ComfyUI_Frame_Interpolation.models(),
         "ControlNet Preprocessors": sorted(
             {
@@ -56,9 +59,10 @@ def write_supported_weights():
                 f.write(f"- {weight}\n")
             f.write("\n")
 
+
 def main():
     # Load the JSON data from a file
-    with open('weights.json', 'r') as file:
+    with open("weights.json", "r") as file:
         data = json.load(file)
 
     # Sort each array in the JSON data
@@ -67,11 +71,12 @@ def main():
             data[key].sort(key=str.casefold)
 
     # Write the sorted JSON data back to the file
-    with open('weights.json', 'w') as file:
+    with open("weights.json", "w") as file:
         json.dump(data, file, indent=2)
 
     # Write the supported weights to a markdown file
     write_supported_weights()
+
 
 if __name__ == "__main__":
     main()

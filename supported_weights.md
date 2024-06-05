@@ -509,23 +509,6 @@
 
 ## AnimateDiff
 
-- mm_sd_v14.ckpt
-- mm_sd_v15.ckpt
-- mm_sd_v15_v2.ckpt
-- mm_sdxl_v10_beta.ckpt
-- v3_sd15_adapter.ckpt
-- v3_sd15_mm.ckpt
-- v3_sd15_sparsectrl_rgb.ckpt
-- v3_sd15_sparsectrl_scribble.ckpt
-- temporaldiff-v1-animatediff.ckpt
-- mm-Stabilized_high.pth
-- mm-Stabilized_mid.pth
-- lt_long_mm_32_frames.ckpt
-- lt_long_mm_16_64_frames.ckpt
-- lt_long_mm_16_64_frames_v1.1.ckpt
-- sd15_t2v_beta.ckpt
-- hsxl_temporal_layers.f16.safetensors
-- hsxl_temporal_layers.safetensors
 - animatediff_lightning_1step_comfyui.safetensors
 - animatediff_lightning_1step_diffusers.safetensors
 - animatediff_lightning_2step_comfyui.safetensors
@@ -537,6 +520,23 @@
 - animatediffLCMMotion_v10.ckpt
 - AnimateLCM_sd15_t2v.ckpt
 - CameraCtrl_pruned.safetensors
+- hsxl_temporal_layers.f16.safetensors
+- hsxl_temporal_layers.safetensors
+- lt_long_mm_16_64_frames.ckpt
+- lt_long_mm_16_64_frames_v1.1.ckpt
+- lt_long_mm_32_frames.ckpt
+- mm-Stabilized_high.pth
+- mm-Stabilized_mid.pth
+- mm_sd_v14.ckpt
+- mm_sd_v15.ckpt
+- mm_sd_v15_v2.ckpt
+- mm_sdxl_v10_beta.ckpt
+- sd15_t2v_beta.ckpt
+- temporaldiff-v1-animatediff.ckpt
+- v3_sd15_adapter.ckpt
+- v3_sd15_mm.ckpt
+- v3_sd15_sparsectrl_rgb.ckpt
+- v3_sd15_sparsectrl_scribble.ckpt
 
 ## AnimateDiff LORAs
 
