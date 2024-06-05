@@ -96,16 +96,29 @@ class WeightsManifest:
 
     def _initialize_weights_map(self):
         weights_map = {}
+
+        def update_weights_map(source_map):
+            for k, v in source_map.items():
+                if k in weights_map:
+                    if isinstance(weights_map[k], list):
+                        weights_map[k].append(v)
+                    else:
+                        weights_map[k] = [weights_map[k], v]
+                else:
+                    weights_map[k] = v
+
         for key in self.weights_manifest.keys():
             if key.isupper():
-                weights_map.update(
-                    self._generate_weights_map(self.weights_manifest[key], key.lower())
+                map = self._generate_weights_map(
+                    self.weights_manifest[key], key.lower()
                 )
+                update_weights_map(map)
 
         for module_name in dir(helpers):
             module = getattr(helpers, module_name)
             if hasattr(module, "weights_map"):
-                weights_map.update(module.weights_map(BASE_URL))
+                map = module.weights_map(BASE_URL)
+                update_weights_map(map)
 
         return weights_map
 
