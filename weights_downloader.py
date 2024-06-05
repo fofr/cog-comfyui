@@ -19,6 +19,23 @@ class WeightsDownloader:
         self.weights_manifest = WeightsManifest()
         self.weights_map = self.weights_manifest.weights_map
 
+    def _run_pget(self, args, close_fds=False, timeout=None):
+        try:
+            output = subprocess.check_output(args, stderr=subprocess.STDOUT, close_fds=close_fds, universal_newlines=True, timeout=timeout)
+        except subprocess.CalledProcessError as e:
+            output = e.output
+            if "permission denied" in output:
+                pid_dir = os.getenv('XDG_RUNTIME_DIR', '/run/user/1000')
+                if not os.access(pid_dir, os.W_OK):
+                    pid_dir = os.path.expanduser("~")
+                new_args = args[:1] + ["--pid-file", f"{pid_dir}/pget.pid"] + args[1:]
+                try:
+                    output = subprocess.check_output(new_args, stderr=subprocess.STDOUT, close_fds=close_fds, universal_newlines=True, timeout=timeout)
+                except subprocess.CalledProcessError as e:
+                    raise
+            else:
+                raise
+
     def get_weights_by_type(self, type):
         return self.weights_manifest.get_weights_by_type(type)
 
@@ -62,7 +79,7 @@ class WeightsDownloader:
 
         print(f"⏳ Downloading {weight_str} to {dest}")
         start = time.time()
-        subprocess.check_call(
+        self._run_pget(
             ["pget", "--log-level", "warn", "-xf", url, dest], close_fds=False
         )
         elapsed_time = time.time() - start

@@ -32,6 +32,23 @@ class WeightsManifest:
             self._download_updated_weights_manifest()
         return self._merge_manifests()
 
+    def _run_pget(self, args, close_fds=False, timeout=None):
+        try:
+            output = subprocess.check_output(args, stderr=subprocess.STDOUT, close_fds=close_fds, universal_newlines=True, timeout=timeout)
+        except subprocess.CalledProcessError as e:
+            output = e.output
+            if "permission denied" in output:
+                pid_dir = os.getenv('XDG_RUNTIME_DIR', '/run/user/1000')
+                if not os.access(pid_dir, os.W_OK):
+                    pid_dir = os.path.expanduser("~")
+                new_args = args[:1] + ["--pid-file", f"{pid_dir}/pget.pid"] + args[1:]
+                try:
+                    output = subprocess.check_output(new_args, stderr=subprocess.STDOUT, close_fds=close_fds, universal_newlines=True, timeout=timeout)
+                except subprocess.CalledProcessError as e:
+                    raise
+            else:
+                raise
+
     def _download_updated_weights_manifest(self):
         if not os.path.exists(UPDATED_WEIGHTS_MANIFEST_PATH):
             print(
@@ -39,7 +56,7 @@ class WeightsManifest:
             )
             start = time.time()
             try:
-                subprocess.check_call(
+                self._run_pget(
                     [
                         "pget",
                         "--log-level",
