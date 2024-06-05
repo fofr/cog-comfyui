@@ -384,6 +384,7 @@
 - temporalnetversion2.ckpt
 - thibaud_xl_openpose.safetensors
 - thibaud_xl_openpose_256lora.safetensors
+- TTPLANET_Controlnet_Tile_realistic_v2_fp16.safetensors
 
 ## VAE
 
