@@ -87,7 +87,6 @@ class ComfyUI:
 
         for weight in weights_to_download:
             self.weights_downloader.download_weights(weight)
-            print(f"✅ {weight}")
 
         print("====================================")
 

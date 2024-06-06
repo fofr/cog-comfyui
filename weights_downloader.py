@@ -53,6 +53,8 @@ class WeightsDownloader:
 
         if not os.path.exists(path_string):
             self.download(weight_str, url, dest)
+        else:
+            print(f"✅ {weight_str} exists in {dest}")
 
     def download(self, weight_str, url, dest):
         if "/" in weight_str:
@@ -72,7 +74,7 @@ class WeightsDownloader:
             )
             file_size_megabytes = file_size_bytes / (1024 * 1024)
             print(
-                f"⌛️ Downloaded {weight_str} in {elapsed_time:.2f}s, size: {file_size_megabytes:.2f}MB"
+                f"✅ {weight_str} downloaded to {dest} in {elapsed_time:.2f}s, size: {file_size_megabytes:.2f}MB"
             )
         except FileNotFoundError:
-            print(f"⌛️ Downloaded {weight_str} in {elapsed_time:.2f}s")
+            print(f"✅ {weight_str} downloaded to {dest} in {elapsed_time:.2f}s")
