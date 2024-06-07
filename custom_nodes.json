@@ -130,5 +130,9 @@
   {
     "repo": "https://github.com/rgthree/rgthree-comfy",
     "commit": "23fddb8"
+  },
+  {
+    "repo": "https://github.com/laksjdjf/attention-couple-ComfyUI",
+    "commit": "8730461"
   }
 ]
