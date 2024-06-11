@@ -11,6 +11,7 @@
 - copaxTimelessxlSDXL1_v8.safetensors
 - crystalClearXL_ccxl.safetensors
 - Deliberate_v2.safetensors
+- disneyPixarCartoon_v10.safetensors
 - dreamlabsoil_V2_v2.safetensors
 - DreamShaper_6.2_BakedVae_pruned.safetensors
 - DreamShaper_6.31_BakedVae.safetensors
