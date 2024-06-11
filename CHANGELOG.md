@@ -1,5 +1,7 @@
 ## 2024-06-11
 
+[Update ComfyUI](https://github.com/comfyanonymous/ComfyUI/compare/eecd69b53a896343775bcb02a4f8349e7442ffd1...a82fae2) to latest. Includes SD3 nodes.
+
 New checkpoints:
 
 - [animagine-xl-3.0.safetensors](https://civitai.com/models/260267?modelVersionId=293564)
