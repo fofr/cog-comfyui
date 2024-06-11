@@ -1,3 +1,30 @@
+## 2024-06-11
+
+New checkpoints:
+
+- [animagine-xl-3.0.safetensors](https://civitai.com/models/260267?modelVersionId=293564)
+
+[Add araminta_k’s new loras](https://huggingface.co/alvdansen), most use "daiton style" as keyword:
+
+- araminta_k/abstract-anime-painting.safetensors,
+- araminta_k/araminta-k-illustration.safetensors,
+- araminta_k/BandW-Manga.safetensors,
+- araminta_k/gemini-anime.safetensors,
+- araminta_k/haute-couture-illustration.safetensors,
+- araminta_k/japanese-poster-prints.safetensors,
+- araminta_k/lost-and-lonely-manga.safetensors,
+- araminta_k/painting-light.safetensors,
+- araminta_k/pop-art-anime.safetensors,
+- araminta_k/sketched-out-manga.safetensors,
+- araminta_k/soft-ones.safetensors,
+- araminta_k/soft-pastel-anime.safetensors,
+- araminta_k/vincent-sketch-manga.safetensors
+
+Other new loras:
+
+- [RW_PS1v1.safetensors](https://civitai.com/models/55613/ps1-graphics-rw) (PS1 SD15 lora, "ps1 style")
+- [artificialguybr/3DRedmond15V-LiberteRedmond-3DRenderStyle-3DRenderAF.safetensors](https://huggingface.co/artificialguybr/3d-redmond-1-5v-3d-render-style-for-liberte-redmond-sd-1-5) ("3D Render Style, 3DRenderAF")
+
 ## 2024-06-03
 
 New checkpoints:
