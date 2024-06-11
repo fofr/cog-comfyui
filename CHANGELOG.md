@@ -1,3 +1,57 @@
+## 2024-06-11
+
+[Updated ComfyUI](https://github.com/comfyanonymous/ComfyUI/compare/eecd69b53a896343775bcb02a4f8349e7442ffd1...a82fae2) to latest. Includes SD3 nodes.
+
+Updated ComfyUI custom nodes:
+
+- [ComfyUI_IPAdapter_plus](https://github.com/cubiq/ComfyUI_IPAdapter_plus/compare/d33265a...7d8adae)
+- [ComfyUI-Inspire-Pack](https://github.com/ltdrdata/ComfyUI-Inspire-Pack/compare/0916454...9b2d22a)
+- [comfyui-tooling-nodes](https://github.com/Acly/comfyui-tooling-nodes/compare/294d366...2f39365)
+- [ComfyUI-AnimateDiff-Evolved](https://github.com/Kosinkadink/ComfyUI-AnimateDiff-Evolved/compare/eba6a50...e2313c4)
+- [ComfyUI-VideoHelperSuite](https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite/compare/acbf789...08dc3d6)
+- [ComfyUI-Advanced-ControlNet](https://github.com/Kosinkadink/ComfyUI-Advanced-ControlNet/compare/6788448...f6adc32)
+- [efficiency-nodes-comfyui](https://github.com/jags111/efficiency-nodes-comfyui/compare/97f284b...a5422d6)
+- [Derfuu_ComfyUI_ModdedNodes](https://github.com/Derfuu/Derfuu_ComfyUI_ModdedNodes/compare/2ace4c4...5c93bd1)
+- [ComfyUI_FizzNodes](https://github.com/FizzleDorf/ComfyUI_FizzNodes/compare/ebf7fbf...3db5b71)
+- [ComfyUI_tinyterraNodes](https://github.com/TinyTerra/ComfyUI_tinyterraNodes/compare/8d8bb56...732d417)
+- [ComfyUI-Custom-Scripts](https://github.com/pythongosssss/ComfyUI-Custom-Scripts/compare/9916c13...edc5321)
+- [masquerade-nodes-comfyui](https://github.com/BadCafeCode/masquerade-nodes-comfyui/compare/240209b...69a9449)
+- [comfyui-reactor-node](https://github.com/Gourieff/comfyui-reactor-node/compare/ae81f62...51ae8f6)
+- [was-node-suite-comfyui](https://github.com/WASasquatch/was-node-suite-comfyui/compare/33534f2...72290fc)
+- [comfyui_segment_anything](https://github.com/fofr/comfyui_segment_anything/compare/8bc6178...2916eb3)
+- [ComfyUI-BRIA_AI-RMBG](https://github.com/ZHO-ZHO-ZHO/ComfyUI-BRIA_AI-RMBG/compare/44a3f8f...827fcd6)
+- [ComfyUI-layerdiffuse](https://github.com/huchenlei/ComfyUI-layerdiffuse/compare/151f746...4b421cf)
+- [ComfyUI-KJNodes](https://github.com/kijai/ComfyUI-KJNodes/compare/5430564...cdd507d)
+- [PuLID_ComfyUI](https://github.com/cubiq/PuLID_ComfyUI/compare/45f7709...145a5ef)
+- [comfyui_jankhidiffusion](https://github.com/blepping/comfyui_jankhidiffusion/compare/e54ff4d...6111b81)
+- [ComfyUI-Anyline](https://github.com/TheMistoAI/ComfyUI-Anyline/compare/d84ba37...2f35c98)
+- [rgthree-comfy](https://github.com/rgthree/rgthree-comfy/compare/23fddb8...ab0a59a)
+
+New checkpoints:
+
+- [animagine-xl-3.0.safetensors](https://civitai.com/models/260267?modelVersionId=293564)
+
+[Add araminta_k’s new loras](https://huggingface.co/alvdansen), most use "daiton style" as keyword:
+
+- araminta_k/abstract-anime-painting.safetensors,
+- araminta_k/araminta-k-illustration.safetensors,
+- araminta_k/BandW-Manga.safetensors,
+- araminta_k/gemini-anime.safetensors,
+- araminta_k/haute-couture-illustration.safetensors,
+- araminta_k/japanese-poster-prints.safetensors,
+- araminta_k/lost-and-lonely-manga.safetensors,
+- araminta_k/painting-light.safetensors,
+- araminta_k/pop-art-anime.safetensors,
+- araminta_k/sketched-out-manga.safetensors,
+- araminta_k/soft-ones.safetensors,
+- araminta_k/soft-pastel-anime.safetensors,
+- araminta_k/vincent-sketch-manga.safetensors
+
+Other new loras:
+
+- [RW_PS1v1.safetensors](https://civitai.com/models/55613/ps1-graphics-rw) (PS1 SD15 lora, "ps1 style")
+- [artificialguybr/3DRedmond15V-LiberteRedmond-3DRenderStyle-3DRenderAF.safetensors](https://huggingface.co/artificialguybr/3d-redmond-1-5v-3d-render-style-for-liberte-redmond-sd-1-5) ("3D Render Style, 3DRenderAF")
+
 ## 2024-06-03
 
 New checkpoints:
