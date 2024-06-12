@@ -69,6 +69,9 @@
 - RealVisXL_V4.0.safetensors
 - RealVisXL_V4.0_Lightning.safetensors
 - rundiffusionXL_beta.safetensors
+- sd3_medium.safetensors
+- sd3_medium_incl_clips.safetensors
+- sd3_medium_incl_clips_t5xxlfp8.safetensors
 - sd_xl_base_1.0.safetensors
 - sd_xl_base_1.0_0.9vae.safetensors
 - sd_xl_refiner_1.0.safetensors
@@ -117,9 +120,13 @@
 
 ## CLIP
 
+- clip_g.safetensors
+- clip_l.safetensors
 - models--QuanSun--EVA-CLIP
 - stable-diffusion-2-1-clip-fp16.safetensors
 - stable-diffusion-2-1-clip.safetensors
+- t5xxl_fp16.safetensors
+- t5xxl_fp8_e4m3fn.safetensors
 
 ## CLIP Vision
 
