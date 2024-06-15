@@ -1,3 +1,15 @@
+## 2024-06-15
+
+Add SD3 weights and CLIP weights:
+
+- sd3_medium.safetensors
+- sd3_medium_incl_clips.safetensors
+- sd3_medium_incl_clips_t5xxlfp16.safetensors
+- sd3_medium_incl_clips_t5xxlfp8.safetensors
+- clip_g.safetensors
+- clip_l.safetensors
+- t5xxl_fp16.safetensors
+
 ## 2024-06-11
 
 [Updated ComfyUI](https://github.com/comfyanonymous/ComfyUI/compare/eecd69b53a896343775bcb02a4f8349e7442ffd1...a82fae2) to latest. Includes SD3 nodes.

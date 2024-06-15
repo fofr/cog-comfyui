@@ -71,6 +71,7 @@
     "rundiffusionXL_beta.safetensors",
     "sd3_medium.safetensors",
     "sd3_medium_incl_clips.safetensors",
+    "sd3_medium_incl_clips_t5xxlfp16.safetensors",
     "sd3_medium_incl_clips_t5xxlfp8.safetensors",
     "sd_xl_base_1.0.safetensors",
     "sd_xl_base_1.0_0.9vae.safetensors",
