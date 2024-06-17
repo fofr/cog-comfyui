@@ -63,7 +63,10 @@ class ComfyUI:
             if callable(method):
                 method(*args, **kwargs)
 
-    def handle_weights(self, workflow, weights_to_download=[]):
+    def handle_weights(self, workflow, weights_to_download=None):
+        if weights_to_download is None:
+            weights_to_download = []
+
         print("Checking weights")
         embeddings = self.weights_downloader.get_weights_by_type("EMBEDDINGS")
         embedding_to_fullname = {emb.split(".")[0]: emb for emb in embeddings}
