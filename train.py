@@ -4,6 +4,8 @@ import subprocess
 import requests
 import urllib.parse
 import shutil
+import json
+
 from typing import List
 from cog import BaseModel, Input, Path, Secret
 
@@ -127,7 +129,7 @@ def train(
         "CHECKPOINTS": checkpoints.splitlines() if checkpoints else [],
         "LORAS": loras.splitlines() if loras else [],
         "UPSCALE_MODELS": upscale_models.splitlines() if upscale_models else [],
-        "EMBEDDING_MODELS": embedding_models.splitlines() if embedding_models else [],
+        "EMBEDDINGS": embedding_models.splitlines() if embedding_models else [],
         "CONTROLNETS": controlnets.splitlines() if controlnets else [],
         "ANIMATEDIFF_MODELS": animatediff_models.splitlines()
         if animatediff_models
@@ -140,9 +142,10 @@ def train(
         k: [file.strip() for file in v] for k, v in lists_of_files.items() if v
     }
 
-    print(lists_of_files)
+    filenames = {}
 
     for file_type, files in lists_of_files.items():
+        filenames[file_type] = []
         for file in files:
             if file.startswith("https://"):
                 filename = get_filename_from_url(file)
@@ -151,8 +154,13 @@ def train(
                     filename=f"{user_models_directory_name}/{file_type.lower()}/{filename}",
                     civitai_api_token=civitai_api_token,
                 )
+                filenames[file_type].append(filename)
 
-    # Create a tar file for the new workflow data
+    weights_json_path = os.path.join(user_models_directory_name, "weights.json")
+    with open(weights_json_path, "w") as json_file:
+        json.dump(filenames, json_file, indent=2)
+
+    # Create a tar file of the weights
     with tarfile.open("weights.tar", "w") as tar:
         # Add the user_models directory to the tar file
         user_models_dir = Path(user_models_directory_name)
@@ -164,15 +172,14 @@ def train(
                         file_path, arcname=os.path.relpath(file_path, user_models_dir)
                     )
                     print(f"Added {file_path} to tar file.")
-    print("Finished creating tar file.")
 
     # Remove user_models directory
-
-    print("Cleaning user_models directory.")
     clean_user_models_dir(user_models_directory_name)
-    print("Finished cleaning user_models directory.")
 
-    with tarfile.open("weights.tar", "r") as tar:
-        tar.list(verbose=True)
+    print("====================================")
+    print("When using your new model, use these filenames in your JSON workflow:")
+    for file_type, files in filenames.items():
+        for filename in files:
+            print(filename)
 
     return TrainingOutput(weights=Path("weights.tar"))

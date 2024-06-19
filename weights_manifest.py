@@ -5,14 +5,12 @@ import json
 import custom_node_helpers as helpers
 from config import config
 
-UPDATED_WEIGHTS_MANIFEST_URL = (
-    "https://raw.githubusercontent.com/fofr/cog-comfyui/main/weights.json"
-)
-
-UPDATED_WEIGHTS_MANIFEST_PATH = "updated_weights.json"
+USER_WEIGHTS_MANIFEST_PATH = config["USER_WEIGHTS_MANIFEST_PATH"]
+REMOTE_WEIGHTS_MANIFEST_URL = config["REMOTE_WEIGHTS_MANIFEST_URL"]
+REMOTE_WEIGHTS_MANIFEST_PATH = "updated_weights.json"
 WEIGHTS_MANIFEST_PATH = "weights.json"
 BASE_URL = config["WEIGHTS_BASE_URL"]
-BASE_PATH = "ComfyUI/models"
+MODELS_PATH = config["MODELS_PATH"]
 
 
 class WeightsManifest:
@@ -33,9 +31,9 @@ class WeightsManifest:
         return self._merge_manifests()
 
     def _download_updated_weights_manifest(self):
-        if not os.path.exists(UPDATED_WEIGHTS_MANIFEST_PATH):
+        if not os.path.exists(REMOTE_WEIGHTS_MANIFEST_PATH):
             print(
-                f"Downloading updated weights manifest from {UPDATED_WEIGHTS_MANIFEST_URL}"
+                f"Downloading updated weights manifest from {REMOTE_WEIGHTS_MANIFEST_URL}"
             )
             start = time.time()
             try:
@@ -45,20 +43,20 @@ class WeightsManifest:
                         "--log-level",
                         "warn",
                         "-f",
-                        UPDATED_WEIGHTS_MANIFEST_URL,
-                        UPDATED_WEIGHTS_MANIFEST_PATH,
+                        REMOTE_WEIGHTS_MANIFEST_URL,
+                        REMOTE_WEIGHTS_MANIFEST_PATH,
                     ],
                     close_fds=False,
                     timeout=5,
                 )
                 print(
-                    f"Downloading {UPDATED_WEIGHTS_MANIFEST_URL} took: {(time.time() - start):.2f}s"
+                    f"Downloading {REMOTE_WEIGHTS_MANIFEST_URL} took: {(time.time() - start):.2f}s"
                 )
             except subprocess.CalledProcessError:
-                print(f"Failed to download {UPDATED_WEIGHTS_MANIFEST_URL}")
+                print(f"Failed to download {REMOTE_WEIGHTS_MANIFEST_URL}")
                 pass
             except subprocess.TimeoutExpired:
-                print(f"Download from {UPDATED_WEIGHTS_MANIFEST_URL} timed out")
+                print(f"Download from {REMOTE_WEIGHTS_MANIFEST_URL} timed out")
                 pass
 
     def _merge_manifests(self):
@@ -68,34 +66,37 @@ class WeightsManifest:
         else:
             original_manifest = {}
 
-        if not os.path.exists(UPDATED_WEIGHTS_MANIFEST_PATH):
-            return original_manifest
+        manifests_to_merge = [
+            REMOTE_WEIGHTS_MANIFEST_PATH,
+            USER_WEIGHTS_MANIFEST_PATH,
+        ]
 
-        with open(UPDATED_WEIGHTS_MANIFEST_PATH, "r") as f:
-            updated_manifest = json.load(f)
-
-        for key in updated_manifest:
-            if key in original_manifest:
-                for item in updated_manifest[key]:
-                    if item not in original_manifest[key]:
-                        print(f"Adding {item} to {key}")
-                        original_manifest[key].append(item)
-            else:
-                original_manifest[key] = updated_manifest[key]
+        for manifest_path in manifests_to_merge:
+            if os.path.exists(manifest_path):
+                with open(manifest_path, "r") as f:
+                    manifest_to_merge = json.load(f)
+                    for key in manifest_to_merge:
+                        if key in original_manifest:
+                            for item in manifest_to_merge[key]:
+                                if item not in original_manifest[key]:
+                                    print(f"Adding {item} to {key}")
+                                    original_manifest[key].append(item)
+                        else:
+                            original_manifest[key] = manifest_to_merge[key]
 
         return original_manifest
 
-    def _generate_weights_map(self, keys, dest):
-        return {
-            key: {
-                "url": f"{BASE_URL}/{dest}/{key}.tar",
-                "dest": f"{BASE_PATH}/{dest}",
-            }
-            for key in keys
-        }
-
     def _initialize_weights_map(self):
         weights_map = {}
+
+        def generate_weights_map(keys, dest):
+            return {
+                key: {
+                    "url": f"{BASE_URL}/{dest}/{key}.tar",
+                    "dest": f"{MODELS_PATH}/{dest}",
+                }
+                for key in keys
+            }
 
         def update_weights_map(source_map):
             for k, v in source_map.items():
@@ -109,9 +110,7 @@ class WeightsManifest:
 
         for key in self.weights_manifest.keys():
             if key.isupper():
-                map = self._generate_weights_map(
-                    self.weights_manifest[key], key.lower()
-                )
+                map = generate_weights_map(self.weights_manifest[key], key.lower())
                 update_weights_map(map)
 
         for module_name in dir(helpers):
