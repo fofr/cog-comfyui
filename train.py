@@ -8,8 +8,13 @@ import json
 
 from typing import List
 from cog import BaseModel, Input, Path, Secret
+from huggingface_hub import hf_hub_download
 
 os.environ["DOWNLOAD_LATEST_WEIGHTS_MANIFEST"] = "true"
+os.environ["HF_HUB_ENABLE_HF_TRANSFER"] = "1"
+
+HF_TEMP_DIR = "TEMP_HF"
+USER_MODELS_DIR = "user_models"
 
 
 def is_civitai_url(url: str):
@@ -30,6 +35,26 @@ def is_huggingface_url(url: str):
     return url.startswith("https://huggingface.co")
 
 
+def extract_parts_from_huggingface_url(url: str):
+    # HUGGINGFACE_CO_URL_TEMPLATE
+    # https://huggingface.co/{repo_id}/resolve/{revision}/{filename}
+
+    parsed_url = urllib.parse.urlparse(url)
+    path_parts = parsed_url.path.split("/")
+
+    if len(path_parts) < 5:
+        raise ValueError(
+            f"HuggingFace URL does not contain enough parts to extract all required parts: {url}"
+        )
+
+    repo_id = f"{path_parts[1]}/{path_parts[2]}"
+    revision = path_parts[4]
+    filename_and_path = path_parts[5:]
+    filename = filename_and_path[-1]
+
+    return repo_id, revision, filename_and_path, filename
+
+
 def get_filename_from_content_disposition(content_disposition):
     filename = None
     if "filename*" in content_disposition:
@@ -43,7 +68,9 @@ def get_filename_from_content_disposition(content_disposition):
     return filename
 
 
-def get_filename_from_url(url, civitai_api_token: Secret = None):
+def get_filename_from_url(
+    url, civitai_api_token: Secret = None
+):
     if is_civitai_url(url):
         url = civitai_url_with_token(url, civitai_api_token)
 
@@ -75,26 +102,64 @@ def get_filename_from_url(url, civitai_api_token: Secret = None):
         return str(e)
 
 
-def download_file(
-    url: str, filename: str = "checkpoint.safetensors", civitai_api_token: Secret = None
+def download_from_civitai(
+    url: str,
+    filename: str = "checkpoint.safetensors",
+    civitai_api_token: Secret = None,
 ):
-    if not (is_huggingface_url(url) or is_civitai_url(url)):
-        raise ValueError("URL must be from 'huggingface.co' or 'civitai.com'")
-
     print(f"Downloading {url} to {filename}")
     if is_civitai_url(url):
         url = civitai_url_with_token(url, civitai_api_token)
 
-    subprocess.run(["pget", "--log-level", "warn", "-f", url, filename], timeout=120)
+    if "." not in filename:
+        print(f"No extension found for {filename}, assuming safetensors")
+        filename += ".safetensors"
+
+    result = subprocess.run(
+        ["pget", "--log-level", "warn", "-f", url, filename], timeout=120
+    )
+    if result.returncode != 0:
+        raise RuntimeError("Download failed")
 
     print(f"Successfully downloaded {filename}")
     return filename
 
 
-def clean_user_models_dir(dir: str):
-    user_models_dir = Path(dir)
-    if user_models_dir.exists() and user_models_dir.is_dir():
-        shutil.rmtree(user_models_dir)
+def download_from_huggingface(
+    url: str,
+    filename: str = "checkpoint.safetensors",
+    file_type: str = "CHECKPOINTS",
+    huggingface_read_token: Secret = None,
+):
+    repo_id, revision, filename_and_path, filename = extract_parts_from_huggingface_url(
+        url
+    )
+    token = (
+        huggingface_read_token.get_secret_value() if huggingface_read_token else False
+    )
+    hf_hub_download(
+        repo_id=repo_id,
+        revision=revision,
+        filename="/".join(filename_and_path),
+        local_dir=HF_TEMP_DIR,
+        token=token,
+    )
+
+    # Move the downloaded file from HF_TEMP_DIR to the appropriate directory
+    src_path = os.path.join(HF_TEMP_DIR, "/".join(filename_and_path))
+    dest_dir = os.path.join(USER_MODELS_DIR, file_type.lower())
+    os.makedirs(dest_dir, exist_ok=True)
+    dest_path = os.path.join(dest_dir, filename)
+    shutil.move(src_path, dest_path)
+
+    return filename
+
+
+def clean_directories():
+    for dir in [HF_TEMP_DIR, USER_MODELS_DIR]:
+        dir = Path(dir)
+        if dir.exists() and dir.is_dir():
+            shutil.rmtree(dir)
 
 
 class TrainingOutput(BaseModel):
@@ -130,13 +195,16 @@ def train(
         description="A list of HuggingFace or CivitAI download URLs (use line breaks to upload multiples)",
         default=None,
     ),
+    huggingface_read_token: Secret = Input(
+        description="Optional: Your HuggingFace read token. Only needed if you are trying to download HuggingFace weights that require authentication. You can create or get a read token from https://huggingface.co/settings/tokens",
+        default=None,
+    ),
     civitai_api_token: Secret = Input(
-        description="Optional: Your CivitAI API token. Only needed if you are needing to download CivitAI weights that require authentication. You can create an API key from the bottom of https://civitai.com/user/account",
+        description="Optional: Your CivitAI API token. Only needed if you are trying to download CivitAI weights that require authentication. You can create an API key from the bottom of https://civitai.com/user/account",
         default=None,
     ),
 ) -> TrainingOutput:
-    user_models_directory_name = "user_models"
-    clean_user_models_dir(user_models_directory_name)
+    clean_directories()
 
     lists_of_urls = {
         "CHECKPOINTS": checkpoints if checkpoints else [],
@@ -156,23 +224,38 @@ def train(
     for file_type, urls in lists_of_urls.items():
         filenames[file_type] = []
         for url in urls:
-            if url.startswith("https://"):
+            if not (is_huggingface_url(url) or is_civitai_url(url)):
+                raise ValueError("URL must be from 'huggingface.co' or 'civitai.com'")
+
+            if is_civitai_url(url):
                 filename = get_filename_from_url(url)
-                file = download_file(
+                download_from_civitai(
                     url,
-                    filename=f"{user_models_directory_name}/{file_type.lower()}/{filename}",
+                    filename=f"{USER_MODELS_DIR}/{file_type.lower()}/{filename}",
                     civitai_api_token=civitai_api_token,
                 )
                 filenames[file_type].append(filename)
+            elif is_huggingface_url(url):
+                filename = download_from_huggingface(
+                    url,
+                    file_type=file_type,
+                    huggingface_read_token=huggingface_read_token,
+                )
+                filenames[file_type].append(filename)
 
-    weights_json_path = os.path.join(user_models_directory_name, "weights.json")
-    with open(weights_json_path, "w") as json_file:
-        json.dump(filenames, json_file, indent=2)
+    try:
+        weights_json_path = os.path.join(USER_MODELS_DIR, "weights.json")
+        with open(weights_json_path, "w") as json_file:
+            json.dump(filenames, json_file, indent=2)
+    except Exception as e:
+        raise RuntimeError(
+            f"No files were downloaded. Could not write weights.json: {e}"
+        )
 
     # Create a tar file of the weights
     with tarfile.open("weights.tar", "w") as tar:
         # Add the user_models directory to the tar file
-        user_models_dir = Path(user_models_directory_name)
+        user_models_dir = Path(USER_MODELS_DIR)
         if user_models_dir.exists() and user_models_dir.is_dir():
             for root, _, files in os.walk(user_models_dir):
                 for file in files:
@@ -182,8 +265,7 @@ def train(
                     )
                     print(f"Added {file_path} to tar file.")
 
-    # Remove user_models directory
-    clean_user_models_dir(user_models_directory_name)
+    clean_directories()
 
     print("====================================")
     print("When using your new model, use these filenames in your JSON workflow:")
