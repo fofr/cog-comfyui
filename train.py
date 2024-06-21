@@ -5,8 +5,8 @@ import requests
 import urllib.parse
 import shutil
 import json
+import time
 
-from typing import List
 from cog import BaseModel, Input, Path, Secret
 from huggingface_hub import hf_hub_download
 
@@ -68,9 +68,7 @@ def get_filename_from_content_disposition(content_disposition):
     return filename
 
 
-def get_filename_from_url(
-    url, civitai_api_token: Secret = None
-):
+def get_filename_from_url(url, civitai_api_token: Secret = None):
     if is_civitai_url(url):
         url = civitai_url_with_token(url, civitai_api_token)
 
@@ -97,6 +95,11 @@ def get_filename_from_url(
                 # Fallback to the last part of the URL if no Content-Disposition header is present
                 filename = url.split("/")[-1]
 
+        if "." not in filename:
+            print(f"No extension found for {filename}, assuming safetensors")
+            filename += ".safetensors"
+
+        print("civitai filename:", filename)
         return filename
     except Exception as e:
         return str(e)
@@ -108,32 +111,41 @@ def download_from_civitai(
     civitai_api_token: Secret = None,
 ):
     print(f"Downloading {url} to {filename}")
-    if is_civitai_url(url):
-        url = civitai_url_with_token(url, civitai_api_token)
+    url = civitai_url_with_token(url, civitai_api_token)
 
-    if "." not in filename:
-        print(f"No extension found for {filename}, assuming safetensors")
-        filename += ".safetensors"
-
-    result = subprocess.run(
-        ["pget", "--log-level", "warn", "-f", url, filename], timeout=120
-    )
-    if result.returncode != 0:
-        raise RuntimeError("Download failed")
+    start_time = time.time()
+    try:
+        result = subprocess.run(["pget", "-f", url, filename], timeout=600)
+        if result.returncode != 0:
+            raise RuntimeError(
+                "Download failed. You need to pass in a valid CivitAI API token if the download showed a 401 Unauthorized error. You can create an API key from the bottom of https://civitai.com/user/account"
+            )
+    except subprocess.TimeoutExpired:
+        raise RuntimeError("Download failed due to timeout")
 
     print(f"Successfully downloaded {filename}")
+    end_time = time.time()
+    print(f"Downloaded in: {end_time - start_time:.2f} seconds")
     return filename
 
 
 def download_from_huggingface(
     url: str,
-    filename: str = "checkpoint.safetensors",
     file_type: str = "CHECKPOINTS",
     huggingface_read_token: Secret = None,
 ):
     repo_id, revision, filename_and_path, filename = extract_parts_from_huggingface_url(
         url
     )
+
+    start_time = time.time()
+    print("Downloading from HuggingFace:")
+    print("url:", url)
+    print("repo_id:", repo_id)
+    print("revision:", revision)
+    print("filename_and_path:", "/".join(filename_and_path))
+    print("filename:", filename)
+
     token = (
         huggingface_read_token.get_secret_value() if huggingface_read_token else False
     )
@@ -152,6 +164,10 @@ def download_from_huggingface(
     dest_path = os.path.join(dest_dir, filename)
     shutil.move(src_path, dest_path)
 
+    print(f"Successfully downloaded {filename}")
+    end_time = time.time()
+    print(f"Downloaded in: {end_time - start_time:.2f} seconds")
+
     return filename
 
 
@@ -167,31 +183,31 @@ class TrainingOutput(BaseModel):
 
 
 def train(
-    checkpoints: List[str] = Input(
+    checkpoints: str = Input(
         description="A list of HuggingFace or CivitAI download URLs (use line breaks to upload multiples)",
         default=None,
     ),
-    loras: List[str] = Input(
+    loras: str = Input(
         description="A list of HuggingFace or CivitAI download URLs (use line breaks to upload multiples)",
         default=None,
     ),
-    upscale_models: List[str] = Input(
+    upscale_models: str = Input(
         description="A list of HuggingFace or CivitAI download URLs (use line breaks to upload multiples)",
         default=None,
     ),
-    embedding_models: List[str] = Input(
+    embedding_models: str = Input(
         description="A list of HuggingFace or CivitAI download URLs (use line breaks to upload multiples)",
         default=None,
     ),
-    controlnets: List[str] = Input(
+    controlnets: str = Input(
         description="A list of HuggingFace or CivitAI download URLs (use line breaks to upload multiples)",
         default=None,
     ),
-    animatediff_models: List[str] = Input(
+    animatediff_models: str = Input(
         description="A list of HuggingFace or CivitAI download URLs (use line breaks to upload multiples)",
         default=None,
     ),
-    animatediff_loras: List[str] = Input(
+    animatediff_loras: str = Input(
         description="A list of HuggingFace or CivitAI download URLs (use line breaks to upload multiples)",
         default=None,
     ),
@@ -207,13 +223,17 @@ def train(
     clean_directories()
 
     lists_of_urls = {
-        "CHECKPOINTS": checkpoints if checkpoints else [],
-        "LORAS": loras if loras else [],
-        "UPSCALE_MODELS": upscale_models if upscale_models else [],
-        "EMBEDDINGS": embedding_models if embedding_models else [],
-        "CONTROLNETS": controlnets if controlnets else [],
-        "ANIMATEDIFF_MODELS": animatediff_models if animatediff_models else [],
-        "ANIMATEDIFF_LORAS": animatediff_loras if animatediff_loras else [],
+        "CHECKPOINTS": checkpoints.splitlines() if checkpoints else [],
+        "LORAS": loras.splitlines() if loras else [],
+        "UPSCALE_MODELS": upscale_models.splitlines() if upscale_models else [],
+        "EMBEDDINGS": embedding_models.splitlines() if embedding_models else [],
+        "CONTROLNETS": controlnets.splitlines() if controlnets else [],
+        "ANIMATEDIFF_MODELS": animatediff_models.splitlines()
+        if animatediff_models
+        else [],
+        "ANIMATEDIFF_LORAS": animatediff_loras.splitlines()
+        if animatediff_loras
+        else [],
     }
     lists_of_urls = {
         k: [url.strip() for url in v] for k, v in lists_of_urls.items() if v
@@ -228,7 +248,7 @@ def train(
                 raise ValueError("URL must be from 'huggingface.co' or 'civitai.com'")
 
             if is_civitai_url(url):
-                filename = get_filename_from_url(url)
+                filename = get_filename_from_url(url, civitai_api_token)
                 download_from_civitai(
                     url,
                     filename=f"{USER_MODELS_DIR}/{file_type.lower()}/{filename}",
