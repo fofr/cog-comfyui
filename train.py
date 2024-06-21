@@ -12,6 +12,24 @@ from cog import BaseModel, Input, Path, Secret
 os.environ["DOWNLOAD_LATEST_WEIGHTS_MANIFEST"] = "true"
 
 
+def is_civitai_url(url: str):
+    return url.startswith("https://civitai.com")
+
+
+def civitai_url_with_token(url: str, civitai_api_token: Secret):
+    if not is_civitai_url(url):
+        return url
+
+    if not civitai_api_token:
+        return url
+
+    return f"{url}?token={civitai_api_token.get_secret_value()}"
+
+
+def is_huggingface_url(url: str):
+    return url.startswith("https://huggingface.co")
+
+
 def get_filename_from_content_disposition(content_disposition):
     filename = None
     if "filename*" in content_disposition:
@@ -25,7 +43,10 @@ def get_filename_from_content_disposition(content_disposition):
     return filename
 
 
-def get_filename_from_url(url):
+def get_filename_from_url(url, civitai_api_token: Secret = None):
+    if is_civitai_url(url):
+        url = civitai_url_with_token(url, civitai_api_token)
+
     try:
         # First try with HEAD request
         response = requests.head(url, allow_redirects=True)
@@ -49,7 +70,6 @@ def get_filename_from_url(url):
                 # Fallback to the last part of the URL if no Content-Disposition header is present
                 filename = url.split("/")[-1]
 
-        # print(f"Filename for {url}: {filename}")
         return filename
     except Exception as e:
         return str(e)
@@ -58,19 +78,12 @@ def get_filename_from_url(url):
 def download_file(
     url: str, filename: str = "checkpoint.safetensors", civitai_api_token: Secret = None
 ):
-    is_civitai = url.startswith("https://civitai.com")
-    is_huggingface = url.startswith("https://huggingface.co")
-
-    if not (is_huggingface or is_civitai):
+    if not (is_huggingface_url(url) or is_civitai_url(url)):
         raise ValueError("URL must be from 'huggingface.co' or 'civitai.com'")
 
-    if civitai_api_token and is_civitai:
-        print(f"Downloading {url} to {filename}")
-
-        # https://developer.civitai.com/docs/api/public-rest#get-apiv1models
-        url = f"{url}?token={civitai_api_token.get_secret_value()}"
-    else:
-        print(f"Downloading {url} to {filename}")
+    print(f"Downloading {url} to {filename}")
+    if is_civitai_url(url):
+        url = civitai_url_with_token(url, civitai_api_token)
 
     subprocess.run(["pget", "--log-level", "warn", "-f", url, filename], timeout=120)
 
@@ -89,31 +102,31 @@ class TrainingOutput(BaseModel):
 
 
 def train(
-    checkpoints: str = Input(
+    checkpoints: List[str] = Input(
         description="A list of HuggingFace or CivitAI download URLs (use line breaks to upload multiples)",
         default=None,
     ),
-    loras: str = Input(
+    loras: List[str] = Input(
         description="A list of HuggingFace or CivitAI download URLs (use line breaks to upload multiples)",
         default=None,
     ),
-    upscale_models: str = Input(
+    upscale_models: List[str] = Input(
         description="A list of HuggingFace or CivitAI download URLs (use line breaks to upload multiples)",
         default=None,
     ),
-    embedding_models: str = Input(
+    embedding_models: List[str] = Input(
         description="A list of HuggingFace or CivitAI download URLs (use line breaks to upload multiples)",
         default=None,
     ),
-    controlnets: str = Input(
+    controlnets: List[str] = Input(
         description="A list of HuggingFace or CivitAI download URLs (use line breaks to upload multiples)",
         default=None,
     ),
-    animatediff_models: str = Input(
+    animatediff_models: List[str] = Input(
         description="A list of HuggingFace or CivitAI download URLs (use line breaks to upload multiples)",
         default=None,
     ),
-    animatediff_loras: str = Input(
+    animatediff_loras: List[str] = Input(
         description="A list of HuggingFace or CivitAI download URLs (use line breaks to upload multiples)",
         default=None,
     ),
@@ -125,32 +138,28 @@ def train(
     user_models_directory_name = "user_models"
     clean_user_models_dir(user_models_directory_name)
 
-    lists_of_files = {
-        "CHECKPOINTS": checkpoints.splitlines() if checkpoints else [],
-        "LORAS": loras.splitlines() if loras else [],
-        "UPSCALE_MODELS": upscale_models.splitlines() if upscale_models else [],
-        "EMBEDDINGS": embedding_models.splitlines() if embedding_models else [],
-        "CONTROLNETS": controlnets.splitlines() if controlnets else [],
-        "ANIMATEDIFF_MODELS": animatediff_models.splitlines()
-        if animatediff_models
-        else [],
-        "ANIMATEDIFF_LORAS": animatediff_loras.splitlines()
-        if animatediff_loras
-        else [],
+    lists_of_urls = {
+        "CHECKPOINTS": checkpoints if checkpoints else [],
+        "LORAS": loras if loras else [],
+        "UPSCALE_MODELS": upscale_models if upscale_models else [],
+        "EMBEDDINGS": embedding_models if embedding_models else [],
+        "CONTROLNETS": controlnets if controlnets else [],
+        "ANIMATEDIFF_MODELS": animatediff_models if animatediff_models else [],
+        "ANIMATEDIFF_LORAS": animatediff_loras if animatediff_loras else [],
     }
-    lists_of_files = {
-        k: [file.strip() for file in v] for k, v in lists_of_files.items() if v
+    lists_of_urls = {
+        k: [url.strip() for url in v] for k, v in lists_of_urls.items() if v
     }
 
     filenames = {}
 
-    for file_type, files in lists_of_files.items():
+    for file_type, urls in lists_of_urls.items():
         filenames[file_type] = []
-        for file in files:
-            if file.startswith("https://"):
-                filename = get_filename_from_url(file)
+        for url in urls:
+            if url.startswith("https://"):
+                filename = get_filename_from_url(url)
                 file = download_file(
-                    file,
+                    url,
                     filename=f"{user_models_directory_name}/{file_type.lower()}/{filename}",
                     civitai_api_token=civitai_api_token,
                 )
