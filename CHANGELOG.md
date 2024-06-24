@@ -1,3 +1,24 @@
+## 2024-06-24
+
+### Add your own weights
+
+Visit the `train` tab on Replicate to create a new version of this model with your own weights:
+
+https://replicate.com/fofr/any-comfyui-workflow/train
+
+Here you can give public or private URLs to weights on HuggingFace and CivitAI. If URLs are private or need authentication, make sure to include an API key or access token.
+
+Check the training logs to see what filenames to use in your workflow JSON. For example:
+
+```
+Downloading from HuggingFace:
+...
+Size of the tar file: 217.88 MB
+====================================
+When using your new model, use these filenames in your JSON workflow:
+araminta_k_midsommar_cartoon.safetensors
+```
+
 ## 2024-06-15
 
 Add SD3 weights and CLIP weights:
