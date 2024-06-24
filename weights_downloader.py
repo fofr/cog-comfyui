@@ -45,18 +45,21 @@ class WeightsDownloader:
                 f"{weight_str} unavailable. View the list of available weights: https://github.com/fofr/cog-comfyui/blob/main/supported_weights.md"
             )
 
-    def download_if_not_exists(self, weight_str, url, dest):
+    def check_if_file_exists(self, weight_str, dest):
         if dest.endswith(weight_str):
             path_string = dest
         else:
             path_string = os.path.join(dest, weight_str)
+        return os.path.exists(path_string)
 
-        if not os.path.exists(path_string):
-            self.download(weight_str, url, dest)
-        else:
+    def download_if_not_exists(self, weight_str, url, dest):
+        if self.check_if_file_exists(weight_str, dest):
             print(f"✅ {weight_str} exists in {dest}")
+            return
+        WeightsDownloader.download(weight_str, url, dest)
 
-    def download(self, weight_str, url, dest):
+    @staticmethod
+    def download(weight_str, url, dest):
         if "/" in weight_str:
             subfolder = weight_str.rsplit("/", 1)[0]
             dest = os.path.join(dest, subfolder)

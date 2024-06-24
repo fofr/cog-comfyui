@@ -13,4 +13,5 @@ __pycache__
 weights.txt
 manifest.txt
 updated_weights.json
+downloaded_user_models/
 .cog

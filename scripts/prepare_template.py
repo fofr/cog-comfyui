@@ -12,7 +12,9 @@ FILES_TO_DELETE = [
     "scripts/push_weights_from_hf.py",
     "scripts/push_weights.py",
     "scripts/sort_weights.py",
+    "train.py",
 ]
+
 
 def prepare_template():
     """
@@ -47,5 +49,14 @@ def prepare_template():
 
     print("Replacing predict.py with example_predict.py")
     shutil.move("example_predict.py", "predict.py")
+
+    print("Removing train script from cog.yaml")
+    with open("cog.yaml", "r") as f:
+        lines = f.readlines()
+    with open("cog.yaml", "w") as f:
+        for line in lines:
+            if line.strip() != 'train: "train.py:train"':
+                f.write(line)
+
 
 prepare_template()

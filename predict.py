@@ -6,7 +6,10 @@ import mimetypes
 from typing import List
 from cog import BasePredictor, Input, Path
 from comfyui import ComfyUI
+from weights_downloader import WeightsDownloader
 from cog_model_helpers import optimise_images
+from config import config
+
 
 os.environ["DOWNLOAD_LATEST_WEIGHTS_MANIFEST"] = "true"
 mimetypes.add_type("image/webp", ".webp")
@@ -20,9 +23,35 @@ with open("examples/api_workflows/sd15_txt2img.json", "r") as file:
 
 
 class Predictor(BasePredictor):
-    def setup(self):
+    def setup(self, weights: str):
+        if bool(weights):
+            self.handle_user_weights(weights)
+
         self.comfyUI = ComfyUI("127.0.0.1:8188")
         self.comfyUI.start_server(OUTPUT_DIR, INPUT_DIR)
+
+    def handle_user_weights(self, weights: str):
+        print(f"Downloading user weights from: {weights}")
+        WeightsDownloader.download("weights.tar", weights, config["USER_WEIGHTS_PATH"])
+        for item in os.listdir(config["USER_WEIGHTS_PATH"]):
+            source = os.path.join(config["USER_WEIGHTS_PATH"], item)
+            destination = os.path.join(config["MODELS_PATH"], item)
+            if os.path.isdir(source):
+                if not os.path.exists(destination):
+                    print(f"Moving {source} to {destination}")
+                    shutil.move(source, destination)
+                else:
+                    for root, _, files in os.walk(source):
+                        for file in files:
+                            if not os.path.exists(os.path.join(destination, file)):
+                                print(
+                                    f"Moving {os.path.join(root, file)} to {destination}"
+                                )
+                                shutil.move(os.path.join(root, file), destination)
+                            else:
+                                print(
+                                    f"Skipping {file} because it already exists in {destination}"
+                                )
 
     def handle_input_file(self, input_file: Path):
         file_extension = os.path.splitext(input_file)[1].lower()

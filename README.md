@@ -30,6 +30,25 @@ See the commits on these repositories to see how to convert this repo into a new
 - https://github.com/fofr/cog-stickers
 - https://github.com/fofr/cog-material-transfer
 
+## Add your own weights
+
+Visit the `train` tab on Replicate to create a version of this model with your own weights:
+
+https://replicate.com/fofr/any-comfyui-workflow/train
+
+Here you can give public or private URLs to weights on HuggingFace and CivitAI. If URLs are private or need authentication, make sure to include an API key or access token.
+
+Check the training logs to see what filenames to use in your workflow JSON. For example:
+
+```
+Downloading from HuggingFace:
+...
+Size of the tar file: 217.88 MB
+====================================
+When using your new model, use these filenames in your JSON workflow:
+araminta_k_midsommar_cartoon.safetensors
+```
+
 ## How to use
 
 ### 1. Get your API JSON
