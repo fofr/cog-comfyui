@@ -273,7 +273,8 @@ def train(
         )
 
     # Create a tar file of the weights
-    with tarfile.open("weights.tar", "w") as tar:
+    tar_file_path = "weights.tar"
+    with tarfile.open(tar_file_path, "w") as tar:
         # Add the user_models directory to the tar file
         user_models_dir = Path(USER_MODELS_DIR)
         if user_models_dir.exists() and user_models_dir.is_dir():
@@ -284,6 +285,12 @@ def train(
                         file_path, arcname=os.path.relpath(file_path, user_models_dir)
                     )
                     print(f"Added {file_path} to tar file.")
+
+    tar_file_size = os.path.getsize(tar_file_path) / (1024 * 1024)  # size in MB
+    print(f"Size of the tar file: {tar_file_size:.2f} MB")
+
+    if tar_file_size > 9000:
+        print("If weights are larger than ~10GB, you may find that uploads will fail.")
 
     clean_directories()
 
