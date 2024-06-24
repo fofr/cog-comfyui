@@ -1,5 +1,7 @@
 ## 2024-06-24
 
+- Add [comfyui-prompter-fofrai](https://github.com/fofr/comfyui-prompter-fofrai) custom node
+
 ### Add your own weights
 
 Visit the `train` tab on Replicate to create a new version of this model with your own weights:

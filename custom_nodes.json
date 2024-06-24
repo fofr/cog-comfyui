@@ -130,5 +130,9 @@
   {
     "repo": "https://github.com/rgthree/rgthree-comfy",
     "commit": "ab0a59a"
+  },
+  {
+    "repo": "https://github.com/fofr/comfyui-prompter-fofrai",
+    "commit": "3e1f70d"
   }
 ]
