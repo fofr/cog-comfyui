@@ -1,7 +1,7 @@
 [
   {
     "repo": "https://github.com/cubiq/ComfyUI_IPAdapter_plus",
-    "commit": "7d8adae"
+    "commit": "2ff4fc4"
   },
   {
     "repo": "https://github.com/Fannovel16/comfyui_controlnet_aux",
@@ -133,6 +133,6 @@
   },
   {
     "repo": "https://github.com/fofr/comfyui-prompter-fofrai",
-    "commit": "3e1f70d"
+    "commit": "26c4a21"
   }
 ]
