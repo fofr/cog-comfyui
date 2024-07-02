@@ -20,6 +20,7 @@ build:
     - tqdm
     - psutil
     - spandrel
+    - soundfile
     - kornia>=0.7.1
     - websocket-client==1.6.3
 
