@@ -1,3 +1,20 @@
+## 2024-07-02
+
+- Update ComfyUI
+- Update [ComfyUI_IPAdapter_plus](https://github.com/cubiq/ComfyUI_IPAdapter_plus/compare/2ff4fc4...8208e27)
+- Update [ComfyUI-AnimateDiff-Evolved](https://github.com/Kosinkadink/ComfyUI-AnimateDiff-Evolved/compare/e2313c4...832e832)
+- Update [ComfyUI-Advanced-ControlNet](https://github.com/Kosinkadink/ComfyUI-Advanced-ControlNet/compare/f6adc32...7a456aa) (not backwards compatible)
+- Update [ComfyUI-VideoHelperSuite](https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite/compare/08dc3d6...0037f49)
+- Update [comfyui-prompter-fofrai](https://github.com/fofr/comfyui-prompter-fofrai/compare/26c4a21...3243a26)
+
+New weights:
+
+- [ponyDiffusionV6XL_v6StartWithThisOne.safetensors](https://huggingface.co/LyliaEngine/Pony_Diffusion_V6_XL)
+- [SD3-Controlnet-Canny.safetensors](https://huggingface.co/InstantX/SD3-Controlnet-Canny)
+- [SD3-Controlnet-Pose.safetensors](https://huggingface.co/InstantX/SD3-Controlnet-Pose)
+- [SD3-Controlnet-Tile.safetensors](https://huggingface.co/InstantX/SD3-Controlnet-Tile)
+- [controlnet-tile-sdxl-1.0.safetensors](https://huggingface.co/xinsir/controlnet-tile-sdxl-1.0/tree/main)
+
 ## 2024-06-24
 
 - Add [comfyui-prompter-fofrai](https://github.com/fofr/comfyui-prompter-fofrai) custom node

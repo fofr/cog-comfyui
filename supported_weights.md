@@ -237,6 +237,7 @@
 - theovercomer8sContrastFix_sd15.safetensors
 - theovercomer8sContrastFix_sd21768.safetensors
 - weight_slider-LECO-v1.safetensors
+- XboxAvatarRedmond.safetensors
 
 ## Embeddings
 
@@ -352,6 +353,7 @@
 - controlnet-scribble-sdxl-1.0.safetensors
 - controlnet-sd-xl-1.0-softedge-dexined.safetensors
 - controlnet-temporalnet-sdxl-1.0.safetensors
+- controlnet-tile-sdxl-1.0.safetensors
 - controlnet-zoe-depth-sdxl-1.0.safetensors
 - depth-anything.safetensors
 - depth-zoe-xl-v1.0-controlnet.safetensors
@@ -391,6 +393,9 @@
 - sargezt_xl_depth_faid_vidit.safetensors
 - sargezt_xl_depth_zeed.safetensors
 - sargezt_xl_softedge.safetensors
+- SD3-Controlnet-Canny.safetensors
+- SD3-Controlnet-Pose.safetensors
+- SD3-Controlnet-Tile.safetensors
 - t2i-adapter_diffusers_xl_canny.safetensors
 - t2i-adapter_diffusers_xl_depth_midas.safetensors
 - t2i-adapter_diffusers_xl_depth_zoe.safetensors
