@@ -237,7 +237,6 @@
 - theovercomer8sContrastFix_sd15.safetensors
 - theovercomer8sContrastFix_sd21768.safetensors
 - weight_slider-LECO-v1.safetensors
-- XboxAvatarRedmond.safetensors
 
 ## Embeddings
 

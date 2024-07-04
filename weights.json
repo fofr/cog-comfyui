@@ -557,5 +557,13 @@
     "v2_lora_TiltUp.ckpt",
     "v2_lora_ZoomIn.ckpt",
     "v2_lora_ZoomOut.ckpt"
+  ],
+  "LIVEPORTRAIT": [
+    "appearance_feature_extractor.safetensors",
+    "landmark.onnx",
+    "motion_extractor.safetensors",
+    "spade_generator.safetensors",
+    "stitching_retargeting_module.safetensors",
+    "warping_module.safetensors"
   ]
 }
