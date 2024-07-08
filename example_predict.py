@@ -4,7 +4,7 @@
 import os
 import mimetypes
 import json
-from PIL import Image, ExifTags
+import shutil
 from typing import List
 from cog import BasePredictor, Input, Path
 from comfyui import ComfyUI
@@ -43,29 +43,8 @@ class Predictor(BasePredictor):
         self,
         input_file: Path,
         filename: str = "image.png",
-        check_orientation: bool = True,
     ):
-        image = Image.open(input_file)
-
-        if check_orientation:
-            try:
-                for orientation in ExifTags.TAGS.keys():
-                    if ExifTags.TAGS[orientation] == "Orientation":
-                        break
-                exif = dict(image._getexif().items())
-
-                if exif[orientation] == 3:
-                    image = image.rotate(180, expand=True)
-                elif exif[orientation] == 6:
-                    image = image.rotate(270, expand=True)
-                elif exif[orientation] == 8:
-                    image = image.rotate(90, expand=True)
-            except (KeyError, AttributeError):
-                # EXIF data does not have orientation
-                # Do not rotate
-                pass
-
-        image.save(os.path.join(INPUT_DIR, filename))
+        shutil.copy(input_file, os.path.join(INPUT_DIR, filename))
 
     # Update nodes in the JSON workflow to modify your workflow based on the given inputs
     def update_workflow(self, workflow, **kwargs):
