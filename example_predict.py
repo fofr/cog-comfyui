@@ -39,6 +39,10 @@ class Predictor(BasePredictor):
             weights_to_download=[],
         )
 
+    def filename_with_extension(self, input_file, prefix):
+        extension = os.path.splitext(input_file.name)[1]
+        return f"{prefix}{extension}"
+
     def handle_input_file(
         self,
         input_file: Path,
@@ -84,7 +88,8 @@ class Predictor(BasePredictor):
         seed = seed_helper.generate(seed)
 
         if image:
-            self.handle_input_file(image)
+            image_filename = self.filename_with_extension(image, "image")
+            self.handle_input_file(image_filename)
 
         with open(api_json_file, "r") as file:
             workflow = json.loads(file.read())
@@ -93,6 +98,7 @@ class Predictor(BasePredictor):
             workflow,
             prompt=prompt,
             negative_prompt=negative_prompt,
+            image_filename=image_filename,
             seed=seed,
         )
 
