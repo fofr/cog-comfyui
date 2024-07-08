@@ -536,6 +536,12 @@
 - gligen_sd14_textbox_pruned.safetensors
 - gligen_sd14_textbox_pruned_fp16.safetensors
 
+## Language models
+
+- chatglm3-4bit.safetensors
+- chatglm3-8bit.safetensors
+- chatglm3-fp16.safetensors
+
 ## Anyline
 
 - MTEED.pth

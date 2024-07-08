@@ -565,5 +565,10 @@
     "spade_generator.safetensors",
     "stitching_retargeting_module.safetensors",
     "warping_module.safetensors"
+  ],
+  "LLM": [
+    "chatglm3-4bit.safetensors",
+    "chatglm3-8bit.safetensors",
+    "chatglm3-fp16.safetensors"
   ]
 }

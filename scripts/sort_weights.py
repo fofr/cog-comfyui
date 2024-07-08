@@ -39,6 +39,7 @@ def write_supported_weights():
         "REMBG (Remove background)": weights_manifest.get_weights_by_type("REMBG"),
         "PuLID": weights_manifest.get_weights_by_type("PULID"),
         "GLIGEN": weights_manifest.get_weights_by_type("GLIGEN"),
+        "Language models": weights_manifest.get_weights_by_type("LLM"),
         "Anyline": helpers.ComfyUI_Anyline.models(),
         "AnimateDiff": weights_manifest.get_weights_by_type("ANIMATEDIFF_MODELS"),
         "AnimateDiff LORAs": weights_manifest.get_weights_by_type(
