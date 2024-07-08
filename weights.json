@@ -567,8 +567,11 @@
     "warping_module.safetensors"
   ],
   "LLM": [
-    "chatglm3-4bit.safetensors",
-    "chatglm3-8bit.safetensors",
-    "chatglm3-fp16.safetensors"
+    "checkpoints/chatglm3-4bit.safetensors",
+    "checkpoints/chatglm3-8bit.safetensors",
+    "checkpoints/chatglm3-fp16.safetensors"
+  ],
+  "DIFFUSERS": [
+    "Kolors"
   ]
 }
