@@ -109,9 +109,9 @@ class WeightsManifest:
                     weights_map[k] = v
 
         for key in self.weights_manifest.keys():
-            if key.isupper():
-                map = generate_weights_map(self.weights_manifest[key], key.lower())
-                update_weights_map(map)
+            directory_name = "LLM" if key == "LLM" else key.lower()
+            map = generate_weights_map(self.weights_manifest[key], directory_name)
+            update_weights_map(map)
 
         for module_name in dir(helpers):
             module = getattr(helpers, module_name)
