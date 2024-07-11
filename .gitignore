@@ -10,6 +10,7 @@ __pycache__
 *.bin
 *.torchscript
 *.webp
+*.engine
 weights.txt
 manifest.txt
 updated_weights.json
