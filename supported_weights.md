@@ -6,6 +6,7 @@
 - albedobaseXL_v21.safetensors
 - animagine-xl-3.0.safetensors
 - anything-v3-fp16-pruned.safetensors
+- aura_flow_0.1.safetensors
 - CinematicRedmond.safetensors
 - copaxCuteXLSDXL10_v4.safetensors
 - copaxTimelessxlSDXL1_v8.safetensors
@@ -535,6 +536,10 @@
 
 - gligen_sd14_textbox_pruned.safetensors
 - gligen_sd14_textbox_pruned_fp16.safetensors
+
+## Diffusers
+
+- Kolors
 
 ## Language models
 

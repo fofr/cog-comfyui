@@ -6,6 +6,7 @@
     "albedobaseXL_v21.safetensors",
     "animagine-xl-3.0.safetensors",
     "anything-v3-fp16-pruned.safetensors",
+    "aura_flow_0.1.safetensors",
     "CinematicRedmond.safetensors",
     "copaxCuteXLSDXL10_v4.safetensors",
     "copaxTimelessxlSDXL1_v8.safetensors",
@@ -573,6 +574,7 @@
   ],
   "TENSORRT": [
     "dreamshaperXL_lightningDPMSDE_DYN_A40-b-1-1-1-h-512-1536-1024-w-512-1536-1024.engine",
+    "sd3_medium_DYN_A100-b-1-1-1-h-512-1536-1024-w-512-1536-1024.engine",
     "sd3_medium_DYN_A40-b-1-1-1-h-512-1536-1024-w-512-1536-1024.engine"
   ],
   "DIFFUSERS": [
