@@ -53,6 +53,7 @@ def write_supported_weights():
                 for filename, repo in helpers.ComfyUI_Controlnet_Aux.models().items()
             }
         ),
+        "TensorRT Engines": weights_manifest.get_weights_by_type("TENSORRT"),
     }
     with open("supported_weights.md", "w") as f:
         for weight_type, weights in weight_lists.items():
