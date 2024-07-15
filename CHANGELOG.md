@@ -13,7 +13,7 @@
 New weights:
 
 - [aura_flow_0.1.safetensors](https://huggingface.co/fal/AuraFlow)
-- [Kolors] diffusers model (https://huggingface.co/Kwai-Kolors/Kolors) and LLMs:
+- [Kolors diffusers model](https://huggingface.co/Kwai-Kolors/Kolors) and LLMs:
   - chatglm3-4bit.safetensors
   - chatglm3-8bit.safetensors
   - chatglm3-fp16.safetensors
