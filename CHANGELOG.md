@@ -37,6 +37,10 @@ FaceRestore weights:
 - GPEN-BFR-2048.onnx
 - GPEN-BFR-512.onnx
 
+Lora:
+
+- [charTurnBetaLora.safetensors](https://civitai.com/models/7252/charturnerbeta-lora-experimental)
+
 ## 2024-07-02
 
 - Update ComfyUI
