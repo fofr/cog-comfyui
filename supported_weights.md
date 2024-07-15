@@ -430,8 +430,11 @@
 
 ## UNets
 
+- iclight_sd15_fbc.safetensors
 - iclight_sd15_fbc_unet_ldm.safetensors
+- iclight_sd15_fc.safetensors
 - iclight_sd15_fc_unet_ldm.safetensors
+- iclight_sd15_fcon.safetensors
 - sdxl_lightning_1step_unet_x0.pth
 - sdxl_lightning_1step_unet_x0.safetensors
 - sdxl_lightning_2step_unet.pth
