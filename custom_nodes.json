@@ -120,6 +120,10 @@
     "commit": "5c065e1"
   },
   {
+    "repo": "https://github.com/kijai/ComfyUI-IC-Light",
+    "commit": "476303a"
+  },
+  {
     "repo": "https://github.com/blepping/comfyui_jankhidiffusion",
     "commit": "6111b81"
   },

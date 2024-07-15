@@ -62,6 +62,7 @@ def main():
         "anyline_api.json",
         "rembg_api.json",
         "pulid.json",
+        "kj_iclight_api.json",
         "segment_anything_api.json",
         "layer_diffuse_api.json",
         "was_clipseg_basic_api.json",

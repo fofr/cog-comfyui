@@ -1,8 +1,9 @@
 ## 2024-07-15
 
 - [Update ComfyUI](https://github.com/comfyanonymous/ComfyUI/compare/2f03201690e0fb8a3ec551a125b20d89c9019a02...29c2e26724d4982a3e33114eb9064f1a11f4f4ed)
-- Add [ComfyMath](https://github.com/evanspearman/ComfyMath) custom node
-- Add [SUPIR](https://github.com/kijai/ComfyUI-SUPIR) custom node
+- Add [ComfyMath](https://github.com/evanspearman/ComfyMath) custom nodes
+- Add [SUPIR](https://github.com/kijai/ComfyUI-SUPIR) custom nodes
+- Add KJ's [IC Light](https://github.com/kijai/ComfyUI-IC-Light) custom nodes
 - TensorRT engines added for SD3 on A40, A100 and H100
 - ComfyUI enums helper added for easy access to schedulers and samplers
 - Update [ReActor](https://github.com/Gourieff/comfyui-reactor-node/compare/51ae8f6...bcfd45c) to latest

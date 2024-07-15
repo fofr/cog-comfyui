@@ -1,0 +1,274 @@
+{
+  "2": {
+    "inputs": {
+      "ckpt_name": "juggernaut_reborn.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Load Checkpoint"
+    }
+  },
+  "4": {
+    "inputs": {
+      "text": "spotlight",
+      "clip": [
+        "2",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "5": {
+    "inputs": {
+      "text": "bad quality",
+      "clip": [
+        "2",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "7": {
+    "inputs": {
+      "samples": [
+        "19",
+        0
+      ],
+      "vae": [
+        "2",
+        2
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "9": {
+    "inputs": {
+      "image": "https://replicate.delivery/pbxt/L0gy7uyLE5UP0uz12cndDdSOIgw5R3rV5N6G2pbt7kEK9dCr/0_3.webp",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "19": {
+    "inputs": {
+      "seed": 100361857014338,
+      "steps": 25,
+      "cfg": 2.05,
+      "sampler_name": "euler",
+      "scheduler": "ddim_uniform",
+      "denoise": 0.9,
+      "model": [
+        "37",
+        0
+      ],
+      "positive": [
+        "44",
+        0
+      ],
+      "negative": [
+        "44",
+        1
+      ],
+      "latent_image": [
+        "20",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "KSampler"
+    }
+  },
+  "20": {
+    "inputs": {
+      "pixels": [
+        "35",
+        0
+      ],
+      "vae": [
+        "2",
+        2
+      ]
+    },
+    "class_type": "VAEEncode",
+    "_meta": {
+      "title": "VAE Encode"
+    }
+  },
+  "22": {
+    "inputs": {
+      "shape": "circle",
+      "frames": 1,
+      "location_x": 125,
+      "location_y": 256,
+      "grow": 0,
+      "frame_width": [
+        "39",
+        1
+      ],
+      "frame_height": [
+        "39",
+        2
+      ],
+      "shape_width": 256,
+      "shape_height": 512
+    },
+    "class_type": "CreateShapeMask",
+    "_meta": {
+      "title": "Create Shape Mask"
+    }
+  },
+  "35": {
+    "inputs": {
+      "mask": [
+        "43",
+        0
+      ]
+    },
+    "class_type": "MaskToImage",
+    "_meta": {
+      "title": "Convert Mask to Image"
+    }
+  },
+  "36": {
+    "inputs": {
+      "images": [
+        "7",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "37": {
+    "inputs": {
+      "model_path": "iclight_sd15_fc_unet_ldm.safetensors",
+      "model": [
+        "2",
+        0
+      ]
+    },
+    "class_type": "LoadAndApplyICLightUnet",
+    "_meta": {
+      "title": "Load And Apply IC-Light"
+    }
+  },
+  "39": {
+    "inputs": {
+      "width": 512,
+      "height": 512,
+      "interpolation": "nearest",
+      "method": "stretch",
+      "condition": "always",
+      "multiple_of": 0,
+      "image": [
+        "9",
+        0
+      ]
+    },
+    "class_type": "ImageResize+",
+    "_meta": {
+      "title": "🔧 Image Resize"
+    }
+  },
+  "41": {
+    "inputs": {
+      "images": [
+        "35",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "42": {
+    "inputs": {
+      "expand": 0,
+      "incremental_expandrate": 0,
+      "tapered_corners": true,
+      "flip_input": false,
+      "blur_radius": 11.700000000000001,
+      "lerp_alpha": 1,
+      "decay_factor": 1,
+      "fill_holes": false,
+      "mask": [
+        "22",
+        0
+      ]
+    },
+    "class_type": "GrowMaskWithBlur",
+    "_meta": {
+      "title": "Grow Mask With Blur"
+    }
+  },
+  "43": {
+    "inputs": {
+      "min": 0,
+      "max": 0.65,
+      "mask": [
+        "42",
+        0
+      ]
+    },
+    "class_type": "RemapMaskRange",
+    "_meta": {
+      "title": "Remap Mask Range"
+    }
+  },
+  "44": {
+    "inputs": {
+      "multiplier": 0.18215,
+      "positive": [
+        "4",
+        0
+      ],
+      "negative": [
+        "5",
+        0
+      ],
+      "vae": [
+        "2",
+        2
+      ],
+      "foreground": [
+        "45",
+        0
+      ]
+    },
+    "class_type": "ICLightConditioning",
+    "_meta": {
+      "title": "IC-Light Conditioning"
+    }
+  },
+  "45": {
+    "inputs": {
+      "pixels": [
+        "39",
+        0
+      ],
+      "vae": [
+        "2",
+        2
+      ]
+    },
+    "class_type": "VAEEncode",
+    "_meta": {
+      "title": "VAE Encode"
+    }
+  }
+}
