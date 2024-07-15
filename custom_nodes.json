@@ -146,5 +146,9 @@
   {
     "repo": "https://github.com/evanspearman/ComfyMath",
     "commit": "be9beab"
+  },
+  {
+    "repo": "https://github.com/brianfitzgerald/style_aligned_comfy",
+    "commit": "39741e3"
   }
 ]
