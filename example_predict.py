@@ -87,6 +87,7 @@ class Predictor(BasePredictor):
         # Make sure to set the seeds in your workflow
         seed = seed_helper.generate(seed)
 
+        image_filename = None
         if image:
             image_filename = self.filename_with_extension(image, "image")
             self.handle_input_file(image_filename)
