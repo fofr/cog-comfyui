@@ -5,6 +5,7 @@
 - Add [SUPIR](https://github.com/kijai/ComfyUI-SUPIR) custom nodes
 - Add KJ's [IC Light](https://github.com/kijai/ComfyUI-IC-Light) custom nodes
 - Add [StyleAligned](https://github.com/brianfitzgerald/style_aligned_comfy) custom nodes
+- Add [AttentionCouple](https://github.com/laksjdjf/attention-couple-ComfyUI) custom nodes
 - TensorRT engines added for SD3 on A40, A100 and H100
 - ComfyUI enums helper added for easy access to schedulers and samplers
 - Update [ReActor](https://github.com/Gourieff/comfyui-reactor-node/compare/51ae8f6...bcfd45c) to latest

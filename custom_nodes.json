@@ -150,5 +150,9 @@
   {
     "repo": "https://github.com/brianfitzgerald/style_aligned_comfy",
     "commit": "39741e3"
+  },
+  {
+    "repo": "https://github.com/laksjdjf/attention-couple-ComfyUI",
+    "commit": "8730461"
   }
 ]
