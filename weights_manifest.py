@@ -136,6 +136,9 @@ class WeightsManifest:
             "MODILL_XL_0.27_RC.safetensors",
             "epicrealismXL_v10.safetensors",
             "RMBG-1.4/model.pth",
+            "GPEN-BFR-1024.onnx",
+            "GPEN-BFR-2048.onnx",
+            "GPEN-BFR-512.onnx",
         ]
 
     def is_non_commercial_only(self, weight_str):

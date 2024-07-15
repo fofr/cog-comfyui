@@ -489,6 +489,9 @@
 - codeformer.pth
 - GFPGANv1.3.pth
 - GFPGANv1.4.pth
+- GPEN-BFR-1024.onnx
+- GPEN-BFR-2048.onnx
+- GPEN-BFR-512.onnx
 - RestoreFormer.pth
 
 ## Face detection models

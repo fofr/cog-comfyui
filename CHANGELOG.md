@@ -5,6 +5,7 @@
 - Add [SUPIR](https://github.com/kijai/ComfyUI-SUPIR) custom node
 - TensorRT engines added for SD3 on A40, A100 and H100
 - ComfyUI enums helper added for easy access to schedulers and samplers
+- Update [ReActor](https://github.com/Gourieff/comfyui-reactor-node/compare/51ae8f6...bcfd45c) to latest
 
 New weights:
 
@@ -29,6 +30,12 @@ LivePortrait weights:
 - spade_generator.safetensors
 - stitching_retargeting_module.safetensors
 - warping_module.safetensors
+
+FaceRestore weights:
+
+- GPEN-BFR-1024.onnx
+- GPEN-BFR-2048.onnx
+- GPEN-BFR-512.onnx
 
 ## 2024-07-02
 
