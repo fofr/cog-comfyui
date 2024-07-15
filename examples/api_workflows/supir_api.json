@@ -1,0 +1,235 @@
+{
+  "2": {
+    "inputs": {
+      "image": "https://replicate.delivery/pbxt/D1xnP9anGMLMKdNgEz8IM8VRMxb1fDmm6waHBZ2YeAhdKbGTA/R8_Kolor_00001_.webp",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "3": {
+    "inputs": {
+      "images": [
+        "14",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "5": {
+    "inputs": {
+      "use_tiled_vae": true,
+      "encoder_tile_size": 512,
+      "decoder_tile_size": 512,
+      "encoder_dtype": "auto",
+      "SUPIR_VAE": [
+        "21",
+        1
+      ],
+      "image": [
+        "13",
+        0
+      ]
+    },
+    "class_type": "SUPIR_first_stage",
+    "_meta": {
+      "title": "SUPIR First Stage (Denoiser)"
+    }
+  },
+  "7": {
+    "inputs": {
+      "seed": 174277455657960,
+      "steps": 10,
+      "cfg_scale_start": 2,
+      "cfg_scale_end": 1.5,
+      "EDM_s_churn": 5,
+      "s_noise": 1.0030000000000001,
+      "DPMPP_eta": 1,
+      "control_scale_start": 1,
+      "control_scale_end": 0.9,
+      "restore_cfg": 1,
+      "keep_model_loaded": false,
+      "sampler": "RestoreDPMPP2MSampler",
+      "sampler_tile_size": 1024,
+      "sampler_tile_stride": 512,
+      "SUPIR_model": [
+        "21",
+        0
+      ],
+      "latents": [
+        "11",
+        0
+      ],
+      "positive": [
+        "9",
+        0
+      ],
+      "negative": [
+        "9",
+        1
+      ]
+    },
+    "class_type": "SUPIR_sample",
+    "_meta": {
+      "title": "SUPIR Sampler"
+    }
+  },
+  "9": {
+    "inputs": {
+      "positive_prompt": "high quality, detailed, photograph of an old man",
+      "negative_prompt": "bad quality, blurry, messy",
+      "SUPIR_model": [
+        "21",
+        0
+      ],
+      "latents": [
+        "5",
+        2
+      ]
+    },
+    "class_type": "SUPIR_conditioner",
+    "_meta": {
+      "title": "SUPIR Conditioner"
+    }
+  },
+  "10": {
+    "inputs": {
+      "use_tiled_vae": true,
+      "decoder_tile_size": 512,
+      "SUPIR_VAE": [
+        "21",
+        1
+      ],
+      "latents": [
+        "7",
+        0
+      ]
+    },
+    "class_type": "SUPIR_decode",
+    "_meta": {
+      "title": "SUPIR Decode"
+    }
+  },
+  "11": {
+    "inputs": {
+      "use_tiled_vae": true,
+      "encoder_tile_size": 512,
+      "encoder_dtype": "auto",
+      "SUPIR_VAE": [
+        "5",
+        0
+      ],
+      "image": [
+        "5",
+        1
+      ]
+    },
+    "class_type": "SUPIR_encode",
+    "_meta": {
+      "title": "SUPIR Encode"
+    }
+  },
+  "13": {
+    "inputs": {
+      "width": 1536,
+      "height": 1536,
+      "interpolation": "lanczos",
+      "method": "keep proportion",
+      "condition": "always",
+      "multiple_of": 0,
+      "image": [
+        "2",
+        0
+      ]
+    },
+    "class_type": "ImageResize+",
+    "_meta": {
+      "title": "🔧 Image Resize"
+    }
+  },
+  "14": {
+    "inputs": {
+      "method": "mkl",
+      "image_ref": [
+        "2",
+        0
+      ],
+      "image_target": [
+        "10",
+        0
+      ]
+    },
+    "class_type": "ColorMatch",
+    "_meta": {
+      "title": "Color Match"
+    }
+  },
+  "20": {
+    "inputs": {
+      "rgthree_comparer": {
+        "images": [
+          {
+            "url": "/view?filename=rgthree.compare._temp_njjbe_00005_.png&type=temp&subfolder=&rand=0.6134253127223597",
+            "name": "A",
+            "selected": true
+          },
+          {
+            "url": "/view?filename=rgthree.compare._temp_njjbe_00006_.png&type=temp&subfolder=&rand=0.04342496184608513",
+            "name": "B",
+            "selected": true
+          }
+        ]
+      },
+      "image_a": [
+        "2",
+        0
+      ],
+      "image_b": [
+        "14",
+        0
+      ]
+    },
+    "class_type": "Image Comparer (rgthree)",
+    "_meta": {
+      "title": "Image Comparer (rgthree)"
+    }
+  },
+  "21": {
+    "inputs": {
+      "supir_model": "SUPIR-v0F.ckpt",
+      "fp8_unet": false,
+      "diffusion_dtype": "auto",
+      "high_vram": false,
+      "model": [
+        "22",
+        0
+      ],
+      "clip": [
+        "22",
+        1
+      ],
+      "vae": [
+        "22",
+        2
+      ]
+    },
+    "class_type": "SUPIR_model_loader_v2",
+    "_meta": {
+      "title": "SUPIR Model Loader (v2)"
+    }
+  },
+  "22": {
+    "inputs": {
+      "ckpt_name": "Juggernaut-XL_v9_RunDiffusionPhoto_v2.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Load Checkpoint"
+    }
+  }
+}

@@ -57,6 +57,7 @@ def run(output_fn, **kwargs):
 def main():
     BASE_PATH = "examples/api_workflows"
     examples_to_test = [
+        "supir_api.json",
         "anyline_api.json",
         "rembg_api.json",
         "pulid.json",
