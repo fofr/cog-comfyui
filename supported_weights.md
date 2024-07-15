@@ -92,6 +92,10 @@
 - segmind-vega.safetensors
 - SSD-1B.safetensors
 - starlightXLAnimated_v3.safetensors
+- SUPIR-v0F.ckpt
+- SUPIR-v0F_fp16.safetensors
+- SUPIR-v0Q.ckpt
+- SUPIR-v0Q_fp16.safetensors
 - svd.safetensors
 - svd_xt.safetensors
 - toonyou_beta6.safetensors
@@ -238,7 +242,6 @@
 - theovercomer8sContrastFix_sd15.safetensors
 - theovercomer8sContrastFix_sd21768.safetensors
 - weight_slider-LECO-v1.safetensors
-- XboxAvatarRedmond.safetensors
 
 ## Embeddings
 

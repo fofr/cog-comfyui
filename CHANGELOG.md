@@ -1,3 +1,35 @@
+## 2024-07-15
+
+- [Update ComfyUI](https://github.com/comfyanonymous/ComfyUI/compare/2f03201690e0fb8a3ec551a125b20d89c9019a02...29c2e26724d4982a3e33114eb9064f1a11f4f4ed)
+- Add [ComfyMath](https://github.com/evanspearman/ComfyMath) custom node
+- Add [SUPIR](https://github.com/kijai/ComfyUI-SUPIR) custom node
+- TensorRT engines added for SD3 on A40, A100 and H100
+- ComfyUI enums helper added for easy access to schedulers and samplers
+
+New weights:
+
+- [aura_flow_0.1.safetensors](https://huggingface.co/fal/AuraFlow)
+- [Kolors] diffusers model (https://huggingface.co/Kwai-Kolors/Kolors) and LLMs:
+  - chatglm3-4bit.safetensors
+  - chatglm3-8bit.safetensors
+  - chatglm3-fp16.safetensors
+
+SUPIR weights:
+
+- SUPIR-v0F.ckpt
+- SUPIR-v0F_fp16.safetensors
+- SUPIR-v0Q.ckpt
+- SUPIR-v0Q_fp16.safetensors
+
+LivePortrait weights:
+
+- appearance_feature_extractor.safetensors
+- landmark.onnx
+- motion_extractor.safetensors
+- spade_generator.safetensors
+- stitching_retargeting_module.safetensors
+- warping_module.safetensors
+
 ## 2024-07-02
 
 - Update ComfyUI

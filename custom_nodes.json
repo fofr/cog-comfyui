@@ -134,5 +134,13 @@
   {
     "repo": "https://github.com/fofr/comfyui-prompter-fofrai",
     "commit": "3243a26"
+  },
+  {
+    "repo": "https://github.com/kijai/ComfyUI-SUPIR",
+    "commit": "53fc4f8"
+  },
+  {
+    "repo": "https://github.com/evanspearman/ComfyMath",
+    "commit": "be9beab"
   }
 ]
