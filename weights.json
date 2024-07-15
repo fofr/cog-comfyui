@@ -557,6 +557,7 @@
     "v3_sd15_sparsectrl_scribble.ckpt"
   ],
   "ANIMATEDIFF_MOTION_LORA": [
+    "shatterAnimatediff_v10.safetensors",
     "v2_lora_PanLeft.ckpt",
     "v2_lora_PanRight.ckpt",
     "v2_lora_RollingAnticlockwise.ckpt",

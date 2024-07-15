@@ -590,6 +590,7 @@
 
 ## AnimateDiff LORAs
 
+- shatterAnimatediff_v10.safetensors
 - v2_lora_PanLeft.ckpt
 - v2_lora_PanRight.ckpt
 - v2_lora_RollingAnticlockwise.ckpt
