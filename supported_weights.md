@@ -230,6 +230,7 @@
 - MODILL_XL_0.27_RC.safetensors
 - more_details.safetensors
 - PerfectEyesXL.safetensors
+- Polaroidv2.safetensors
 - RW_PS1v1.safetensors
 - sd_xl_offset_example-lora_1.0.safetensors
 - sdxl_lightning_2step_lora.pth
