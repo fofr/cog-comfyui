@@ -96,13 +96,13 @@ def get_filename_from_url(url, civitai_api_token: str = None):
 
 
 def download_file(url, filename=None, civitai_api_token=None):
+    start_time = time.time()
     if is_civitai_url(url):
         if not filename:
             filename = get_filename_from_url(url, civitai_api_token)
         filename = confirm_filename(filename)
         url = civitai_url_with_token(url, civitai_api_token)
         print(f"Downloading {url} to {filename}")
-        start_time = time.time()
         try:
             result = subprocess.run(["pget", "-f", url, filename], timeout=600)
             if result.returncode != 0:
