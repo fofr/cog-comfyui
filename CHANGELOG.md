@@ -1,3 +1,10 @@
+## 2024-07-16
+
+New loras:
+
+- [hd_helper_v1.safetensors](https://civitai.com/models/110071/hd-helper) an SD15 helper for larger images
+- [Polaroidv2.safetensors](https://civitai.com/models/243554?modelVersionId=356493) (SDXL)
+
 ## 2024-07-15
 
 - [Update ComfyUI](https://github.com/comfyanonymous/ComfyUI/compare/2f03201690e0fb8a3ec551a125b20d89c9019a02...29c2e26724d4982a3e33114eb9064f1a11f4f4ed)
