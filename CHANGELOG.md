@@ -1,5 +1,14 @@
 ## 2024-07-16
 
+Fixes:
+
+- Allow duplicate URLs within workflow ([fixes #120](https://github.com/fofr/cog-comfyui/issues/120))
+
+New checkpoints:
+
+- [Realistic_Vision_V4.0.safetensors](https://huggingface.co/SG161222/Realistic_Vision_V4.0_noVAE)
+- [Realistic_Vision_V4.0-inpainting.safetensors](https://huggingface.co/SG161222/Realistic_Vision_V4.0_noVAE)
+
 New loras:
 
 - [hd_helper_v1.safetensors](https://civitai.com/models/110071/hd-helper) an SD15 helper for larger images
