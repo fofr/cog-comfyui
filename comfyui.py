@@ -122,10 +122,12 @@ class ComfyUI:
                                     response.raise_for_status()
                                     with open(filename, "wb") as file:
                                         file.write(response.content)
-                                    node["inputs"][input_key] = filename
                                     print(f"✅ {filename}")
                                 except requests.exceptions.RequestException as e:
                                     print(f"❌ Error downloading {input_value}: {e}")
+
+                            # The same URL may be included in a workflow more than once
+                            node["inputs"][input_key] = filename
 
                         elif self.is_image_or_video_value(input_value):
                             filename = os.path.join(
