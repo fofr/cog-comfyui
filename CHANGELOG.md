@@ -2,6 +2,24 @@
 
 - Update [ComfyUI-Impact-Pack](https://github.com/fofr/ComfyUI-Impact-Pack/compare/07a18e7..9ad8f85)
 
+Add more ultralytics detectors:
+
+- bbox/face_yolov8n.pt
+- bbox/face_yolov8n.pt
+- bbox/face_yolov8n_v2.pt
+- bbox/face_yolov8s.pt
+- bbox/hand_yolov8n.pt
+- segm/deepfashion2_yolov8s-seg.pt
+- segm/face_yolov8m-seg_60.pt
+- segm/face_yolov8n-seg2_60.pt
+- segm/hair_yolov8n-seg_60.pt
+- segm/hair_yolov8n-seg_60.pt
+- segm/person_yolov8n-seg.pt
+- segm/person_yolov8s-seg.pt
+- segm/skin_yolov8m-seg_400.pt
+- segm/skin_yolov8n-seg_400.pt
+- segm/skin_yolov8n-seg_800.pt
+
 ## 2024-07-16
 
 Fixes:

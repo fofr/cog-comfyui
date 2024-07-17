@@ -492,9 +492,23 @@
   "ULTRALYTICS": [
     "bbox/Eyes.pt",
     "bbox/face_yolov8m.pt",
+    "bbox/face_yolov8n.pt",
+    "bbox/face_yolov8n.pt",
+    "bbox/face_yolov8n_v2.pt",
+    "bbox/face_yolov8s.pt",
+    "bbox/hand_yolov8n.pt",
     "bbox/hand_yolov8s.pt",
+    "segm/deepfashion2_yolov8s-seg.pt",
+    "segm/face_yolov8m-seg_60.pt",
+    "segm/face_yolov8n-seg2_60.pt",
     "segm/hair_yolov8n-seg_60.pt",
-    "segm/person_yolov8m-seg.pt"
+    "segm/hair_yolov8n-seg_60.pt",
+    "segm/person_yolov8m-seg.pt",
+    "segm/person_yolov8n-seg.pt",
+    "segm/person_yolov8s-seg.pt",
+    "segm/skin_yolov8m-seg_400.pt",
+    "segm/skin_yolov8n-seg_400.pt",
+    "segm/skin_yolov8n-seg_800.pt"
   ],
   "LAYER_MODEL": [
     "layer_sd15_bg2fg.safetensors",
