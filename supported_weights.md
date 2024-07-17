@@ -44,6 +44,7 @@
 - motionctrl.pth
 - motionctrl_svd.ckpt
 - photonLCM_v10.safetensors
+- PixArt-Sigma-XL-2-1024-MS.pth
 - pixlAnimeCartoonComic_v10.safetensors
 - playground-v2.5-1024px-aesthetic.fp16.safetensors
 - ponyDiffusionV6XL_v6StartWithThisOne.safetensors
@@ -93,6 +94,8 @@
 - sdxlUnstableDiffusers_v11Rundiffusion.safetensors
 - segmind-vega.safetensors
 - SSD-1B.safetensors
+- stable_cascade_stage_b.safetensors
+- stable_cascade_stage_c.safetensors
 - starlightXLAnimated_v3.safetensors
 - SUPIR-v0F.ckpt
 - SUPIR-v0F_fp16.safetensors
@@ -357,12 +360,14 @@
 - controlnet-canny-sdxl-1.0.safetensors
 - controlnet-canny-sdxl-1.0_V2.safetensors
 - controlnet-depth-sdxl-1.0.fp16.safetensors
+- controlnet-depth-sdxl-1.0.safetensors
 - controlnet-openpose-sdxl-1.0.safetensors
 - controlnet-openpose-sdxl-1.0_twins.safetensors
 - controlnet-scribble-sdxl-1.0.safetensors
 - controlnet-sd-xl-1.0-softedge-dexined.safetensors
 - controlnet-temporalnet-sdxl-1.0.safetensors
 - controlnet-tile-sdxl-1.0.safetensors
+- controlnet-union-sdxl-1.0.safetensors
 - controlnet-zoe-depth-sdxl-1.0.safetensors
 - depth-anything.safetensors
 - depth-zoe-xl-v1.0-controlnet.safetensors
@@ -426,10 +431,13 @@
 - thibaud_xl_openpose.safetensors
 - thibaud_xl_openpose_256lora.safetensors
 - TTPLANET_Controlnet_Tile_realistic_v2_fp16.safetensors
+- TTPLANET_Controlnet_Tile_realistic_v2_rank256.safetensors
 
 ## VAE
 
 - sdxl_vae.safetensors
+- stable-cascade/effnet_encoder.safetensors
+- stable-cascade/stage_a.safetensors
 - vae-ft-mse-840000-ema-pruned.safetensors
 
 ## UNets
@@ -447,6 +455,14 @@
 - sdxl_lightning_4step_unet.safetensors
 - sdxl_lightning_8step_unet.pth
 - sdxl_lightning_8step_unet.safetensors
+- stable-cascade/stage_b.safetensors
+- stable-cascade/stage_b_bf16.safetensors
+- stable-cascade/stage_b_lite.safetensors
+- stable-cascade/stage_b_lite_bf16.safetensors
+- stable-cascade/stage_c.safetensors
+- stable-cascade/stage_c_bf16.safetensors
+- stable-cascade/stage_c_lite.safetensors
+- stable-cascade/stage_c_lite_bf16.safetensors
 
 ## PhotoMaker
 

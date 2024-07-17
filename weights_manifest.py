@@ -139,6 +139,18 @@ class WeightsManifest:
             "GPEN-BFR-1024.onnx",
             "GPEN-BFR-2048.onnx",
             "GPEN-BFR-512.onnx",
+            "stable_cascade_stage_b.safetensors",
+            "stable_cascade_stage_c.safetensors",
+            "stable-cascade/stage_b.safetensors",
+            "stable-cascade/stage_b_bf16.safetensors",
+            "stable-cascade/stage_b_lite.safetensors",
+            "stable-cascade/stage_b_lite_bf16.safetensors",
+            "stable-cascade/stage_c.safetensors",
+            "stable-cascade/stage_c_bf16.safetensors",
+            "stable-cascade/stage_c_lite.safetensors",
+            "stable-cascade/stage_c_lite_bf16.safetensors",
+            "stable-cascade/effnet_encoder.safetensors",
+            "stable-cascade/stage_a.safetensors",
         ]
 
     def is_non_commercial_only(self, weight_str):
