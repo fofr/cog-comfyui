@@ -2,6 +2,17 @@
 
 - Update [ComfyUI-Impact-Pack](https://github.com/fofr/ComfyUI-Impact-Pack/compare/07a18e7..9ad8f85)
 
+New controlnets:
+
+- [controlnet-depth-sdxl-1.0.safetensors](https://huggingface.co/xinsir/controlnet-depth-sdxl-1.0)
+- [controlnet-union-sdxl-1.0.safetensors](https://huggingface.co/xinsir/controlnet-union-sdxl-1.0)
+- [TTPLANET_Controlnet_Tile_realistic_v2_rank256.safetensors](https://huggingface.co/TTPlanet/TTPLanet_SDXL_Controlnet_Tile_Realistic)
+
+New checkpoints:
+
+- Stable Cascade (checkpoint, unet and vae)
+- [PixArt-Sigma-XL-2-1024-MS.pth](https://huggingface.co/PixArt-alpha/PixArt-Sigma/tree/main)
+
 Add more ultralytics detectors:
 
 - bbox/face_yolov8n.pt
