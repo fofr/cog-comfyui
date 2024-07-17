@@ -9,7 +9,8 @@
   },
   {
     "repo": "https://github.com/fofr/ComfyUI-Impact-Pack",
-    "commit": "07a18e7"
+    "commit": "9ad8f85",
+    "notes": "Fork of https://github.com/ltdrdata/ComfyUI-Impact-Pack which prevents automatic installation of dependencies"
   },
   {
     "repo": "https://github.com/ltdrdata/ComfyUI-Inspire-Pack",

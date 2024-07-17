@@ -36,6 +36,7 @@ for repo in repos:
         current_dir = os.getcwd()
         os.chdir(repo_path)
         subprocess.run(["git", "checkout", commit_hash])
+        subprocess.run(["git", "submodule", "update", "--init", "--recursive"])
 
         # Change back to the original directory after operations
         os.chdir(current_dir)

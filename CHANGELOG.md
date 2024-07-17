@@ -1,3 +1,7 @@
+## 2024-07-17
+
+- Update [ComfyUI-Impact-Pack](https://github.com/fofr/ComfyUI-Impact-Pack/compare/07a18e7..9ad8f85)
+
 ## 2024-07-16
 
 Fixes:
