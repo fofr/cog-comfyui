@@ -34,9 +34,10 @@ def write_urls_by_type(data, not_downloaded_filename, downloaded_weights):
             urls_by_type[model['type']].append((model['url'], model['filename']))
 
     for model_type, urls in urls_by_type.items():
-        with open(f"{not_downloaded_filename}_{model_type}.txt", 'w') as file:
-            for url, filename in urls:
-                file.write(f"{url} {filename}\n")
+        if urls:
+            with open(f"{not_downloaded_filename}_{model_type}.txt", 'w') as file:
+                for url, filename in urls:
+                    file.write(f"{url} {filename}\n")
 
 # Main function to orchestrate the download and list creation
 def main():
