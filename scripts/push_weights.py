@@ -120,7 +120,7 @@ def download_file(url, filename=None, civitai_api_token=None):
     else:
         if not filename:
             filename = get_filename_from_url(url)
-        filename = confirm_filename(filename)
+            filename = confirm_filename(filename)
         print(f"Downloading {url} to {filename}")
         subprocess.run(["pget", "-f", url, filename])
 
