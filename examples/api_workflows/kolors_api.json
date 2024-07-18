@@ -1,0 +1,133 @@
+{
+  "9": {
+    "inputs": {
+      "width": 968,
+      "height": 1152,
+      "batch_size": 1
+    },
+    "class_type": "EmptyLatentImage",
+    "_meta": {
+      "title": "Empty Latent Image"
+    }
+  },
+  "59": {
+    "inputs": {
+      "unet_name": "kolors.fp16.safetensors"
+    },
+    "class_type": "MZ_KolorsUNETLoader",
+    "_meta": {
+      "title": "MinusZone - Kolors UNET Loader"
+    }
+  },
+  "62": {
+    "inputs": {
+      "text": "",
+      "chatglm3_model": [
+        "66",
+        0
+      ],
+      "hid_proj": [
+        "59",
+        1
+      ]
+    },
+    "class_type": "MZ_ChatGLM3",
+    "_meta": {
+      "title": "MinusZone - ChatGLM3TextEncode"
+    }
+  },
+  "66": {
+    "inputs": {
+      "chatglm3_checkpoint": "checkpoints/chatglm3-8bit.safetensors"
+    },
+    "class_type": "MZ_ChatGLM3Loader",
+    "_meta": {
+      "title": "MinusZone - ChatGLM3Loader"
+    }
+  },
+  "67": {
+    "inputs": {
+      "text": "a landscape photo",
+      "chatglm3_model": [
+        "66",
+        0
+      ],
+      "hid_proj": [
+        "59",
+        1
+      ]
+    },
+    "class_type": "MZ_ChatGLM3",
+    "_meta": {
+      "title": "MinusZone - ChatGLM3TextEncode"
+    }
+  },
+  "70": {
+    "inputs": {
+      "vae_name": "sdxl_vae.safetensors"
+    },
+    "class_type": "VAELoader",
+    "_meta": {
+      "title": "Load VAE"
+    }
+  },
+  "79": {
+    "inputs": {
+      "seed": 1072524578891924,
+      "steps": 30,
+      "cfg": 4,
+      "sampler_name": "dpmpp_2m_sde_gpu",
+      "scheduler": "karras",
+      "denoise": 1,
+      "model": [
+        "59",
+        0
+      ],
+      "positive": [
+        "67",
+        0
+      ],
+      "negative": [
+        "62",
+        0
+      ],
+      "latent_image": [
+        "9",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "KSampler"
+    }
+  },
+  "80": {
+    "inputs": {
+      "samples": [
+        "79",
+        0
+      ],
+      "vae": [
+        "70",
+        0
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "89": {
+    "inputs": {
+      "filename_prefix": "ComfyUI",
+      "images": [
+        "80",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Image"
+    }
+  }
+}

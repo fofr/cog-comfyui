@@ -53,6 +53,7 @@ def write_supported_weights():
                 for filename, repo in helpers.ComfyUI_Controlnet_Aux.models().items()
             }
         ),
+        "UltraPixel": weights_manifest.get_weights_by_type("ULTRAPIXEL"),
         "TensorRT Engines": weights_manifest.get_weights_by_type("TENSORRT"),
     }
     with open("supported_weights.md", "w") as f:

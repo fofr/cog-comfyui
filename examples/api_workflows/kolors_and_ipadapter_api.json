@@ -1,0 +1,191 @@
+{
+  "9": {
+    "inputs": {
+      "width": 968,
+      "height": 1152,
+      "batch_size": 1
+    },
+    "class_type": "EmptyLatentImage",
+    "_meta": {
+      "title": "Empty Latent Image"
+    }
+  },
+  "59": {
+    "inputs": {
+      "unet_name": "kolors.fp16.safetensors"
+    },
+    "class_type": "MZ_KolorsUNETLoader",
+    "_meta": {
+      "title": "MinusZone - Kolors UNET Loader"
+    }
+  },
+  "62": {
+    "inputs": {
+      "text": "",
+      "chatglm3_model": [
+        "66",
+        0
+      ],
+      "hid_proj": [
+        "59",
+        1
+      ]
+    },
+    "class_type": "MZ_ChatGLM3",
+    "_meta": {
+      "title": "MinusZone - ChatGLM3TextEncode"
+    }
+  },
+  "66": {
+    "inputs": {
+      "chatglm3_checkpoint": "checkpoints/chatglm3-8bit.safetensors"
+    },
+    "class_type": "MZ_ChatGLM3Loader",
+    "_meta": {
+      "title": "MinusZone - ChatGLM3Loader"
+    }
+  },
+  "67": {
+    "inputs": {
+      "text": "a fierce red hair warrior woman wearing a white and gold armor with purple decorations. Highly detailed digital illustration, high quality, detailed, intricate",
+      "chatglm3_model": [
+        "66",
+        0
+      ],
+      "hid_proj": [
+        "59",
+        1
+      ]
+    },
+    "class_type": "MZ_ChatGLM3",
+    "_meta": {
+      "title": "MinusZone - ChatGLM3TextEncode"
+    }
+  },
+  "70": {
+    "inputs": {
+      "vae_name": "sdxl_vae.safetensors"
+    },
+    "class_type": "VAELoader",
+    "_meta": {
+      "title": "Load VAE"
+    }
+  },
+  "75": {
+    "inputs": {
+      "weight": 1,
+      "weight_type": "style transfer precise",
+      "combine_embeds": "concat",
+      "start_at": 0,
+      "end_at": 1,
+      "embeds_scaling": "V only",
+      "model": [
+        "59",
+        0
+      ],
+      "ipadapter": [
+        "76",
+        0
+      ],
+      "image": [
+        "77",
+        0
+      ],
+      "clip_vision": [
+        "78",
+        0
+      ]
+    },
+    "class_type": "IPAdapterAdvanced",
+    "_meta": {
+      "title": "IPAdapter Advanced"
+    }
+  },
+  "76": {
+    "inputs": {
+      "ipadapter_file": "Kolors-IP-Adapter-Plus.bin"
+    },
+    "class_type": "IPAdapterModelLoader",
+    "_meta": {
+      "title": "IPAdapter Model Loader"
+    }
+  },
+  "77": {
+    "inputs": {
+      "image": "https://tjzk.replicate.delivery/models_models_featured_image/b7f3dda4-03ee-4dc0-b854-d8f740c153d6/cover.a1ee0b3e.jpg",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "78": {
+    "inputs": {
+      "clip_name": "clip-vit-large-patch14-336.bin"
+    },
+    "class_type": "CLIPVisionLoader",
+    "_meta": {
+      "title": "Load CLIP Vision"
+    }
+  },
+  "79": {
+    "inputs": {
+      "seed": 13,
+      "steps": 30,
+      "cfg": 6.5,
+      "sampler_name": "dpmpp_2m_sde_gpu",
+      "scheduler": "karras",
+      "denoise": 1,
+      "model": [
+        "75",
+        0
+      ],
+      "positive": [
+        "67",
+        0
+      ],
+      "negative": [
+        "62",
+        0
+      ],
+      "latent_image": [
+        "9",
+        0
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "KSampler"
+    }
+  },
+  "80": {
+    "inputs": {
+      "samples": [
+        "79",
+        0
+      ],
+      "vae": [
+        "70",
+        0
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "89": {
+    "inputs": {
+      "filename_prefix": "ComfyUI",
+      "images": [
+        "80",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Image"
+    }
+  }
+}

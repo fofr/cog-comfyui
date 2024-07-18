@@ -1,3 +1,15 @@
+## 2024-07-18
+
+- [Update ComfyUI](https://github.com/comfyanonymous/ComfyUI/compare/29c2e26724d4982a3e33114eb9064f1a11f4f4ed..374e093e09c94b528d7c9dfc337c65cc5c433ee3)
+- Add Kolors native support
+- Add Kolors IPAdapter support
+
+Weights:
+
+- [kolors.fp16.safetensors](https://huggingface.co/Kwai-Kolors/Kolors/blob/main/unet/diffusion_pytorch_model.fp16.safetensors)
+- [Kolors-IP-Adapter-Plus.bin](https://huggingface.co/Kwai-Kolors/Kolors-IP-Adapter-Plus)
+- [clip-vit-large-patch14-336.bin](https://huggingface.co/Kwai-Kolors/Kolors-IP-Adapter-Plus/blob/main/image_encoder/pytorch_model.bin)
+
 ## 2024-07-17
 
 - Update [ComfyUI-Impact-Pack](https://github.com/fofr/ComfyUI-Impact-Pack/compare/07a18e7..9ad8f85)

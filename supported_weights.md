@@ -146,6 +146,7 @@
 - CLIP-ViT-bigG-14-laion2B-39B-b160k.safetensors
 - CLIP-ViT-H-14-laion2B-s32B-b79K.safetensors
 - CLIP-ViT-H-fp16.safetensors
+- clip-vit-large-patch14-336.bin
 - clip-vit-large-patch14.bin
 - clip_vision_g.safetensors
 - IPAdapter_image_encoder_sd15.safetensors
@@ -297,6 +298,7 @@
 - ip-adapter_sdxl_vit-h.safetensors
 - ip_plus_composition_sd15.safetensors
 - ip_plus_composition_sdxl.safetensors
+- Kolors-IP-Adapter-Plus.bin
 
 ## ControlNet
 
@@ -448,6 +450,7 @@
 - iclight_sd15_fc.safetensors
 - iclight_sd15_fc_unet_ldm.safetensors
 - iclight_sd15_fcon.safetensors
+- kolors.fp16.safetensors
 - sdxl_lightning_1step_unet_x0.pth
 - sdxl_lightning_1step_unet_x0.safetensors
 - sdxl_lightning_2step_unet.pth
@@ -713,6 +716,10 @@
 - torch/vgg16-397923af.pth
 - yzd-v/DWPose/dw-ll_ucoco_384.onnx
 - yzd-v/DWPose/yolox_l.onnx
+
+## UltraPixel
+
+- ultrapixel_t2i.safetensors
 
 ## TensorRT Engines
 

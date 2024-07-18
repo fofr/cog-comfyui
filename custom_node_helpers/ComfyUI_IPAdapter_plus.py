@@ -19,6 +19,7 @@ PRESETS = [
     "FACEID PORTRAIT UNNORM - SDXL only (strong)",
     # IPAdapterUnifiedLoaderCommunity
     "Composition",
+    "Kolors",
 ]
 
 
@@ -39,6 +40,8 @@ class ComfyUI_IPAdapter_plus(CustomNodeHelper):
         # clipvision
         if preset.startswith("VIT-G"):
             weights_to_add.append("CLIP-ViT-bigG-14-laion2B-39B-b160k.safetensors")
+        elif preset.startswith("Kolors"):
+            weights_to_add.append("clip-vit-large-patch14-336.bin")
         else:
             weights_to_add.append("CLIP-ViT-H-14-laion2B-s32B-b79K.safetensors")
 
@@ -130,6 +133,9 @@ class ComfyUI_IPAdapter_plus(CustomNodeHelper):
                     "ip_plus_composition_sdxl.safetensors",
                 ]
             )
+
+        if preset.startswith("Kolors"):
+            weights_to_add.append("Kolors-IP-Adapter-Plus.bin")
 
         if is_insightface:
             weights_to_add.append("models/buffalo_l")

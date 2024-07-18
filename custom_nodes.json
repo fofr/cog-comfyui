@@ -1,7 +1,7 @@
 [
   {
     "repo": "https://github.com/cubiq/ComfyUI_IPAdapter_plus",
-    "commit": "13fedc6"
+    "commit": "78ac59c"
   },
   {
     "repo": "https://github.com/Fannovel16/comfyui_controlnet_aux",
@@ -155,5 +155,9 @@
   {
     "repo": "https://github.com/laksjdjf/attention-couple-ComfyUI",
     "commit": "8730461"
+  },
+  {
+    "repo": "https://github.com/MinusZoneAI/ComfyUI-Kolors-MZ",
+    "commit": "755a8b4"
   }
 ]

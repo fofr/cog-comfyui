@@ -1,0 +1,474 @@
+{
+  "last_node_id": 92,
+  "last_link_id": 138,
+  "nodes": [
+    {
+      "id": 9,
+      "type": "EmptyLatentImage",
+      "pos": [
+        1710,
+        620
+      ],
+      "size": {
+        "0": 368.5347900390625,
+        "1": 106
+      },
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            108
+          ],
+          "shape": 3,
+          "label": "Latent"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "EmptyLatentImage"
+      },
+      "widgets_values": [
+        968,
+        1152,
+        1
+      ]
+    },
+    {
+      "id": 62,
+      "type": "MZ_ChatGLM3",
+      "pos": [
+        1680,
+        340
+      ],
+      "size": {
+        "0": 400,
+        "1": 200
+      },
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "chatglm3_model",
+          "type": "CHATGLM3MODEL",
+          "link": 84,
+          "label": "chatglm3_model",
+          "slot_index": 0
+        },
+        {
+          "name": "hid_proj",
+          "type": "TorchLinear",
+          "link": 79,
+          "label": "hid_proj"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            106
+          ],
+          "shape": 3,
+          "label": "CONDITIONING",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MZ_ChatGLM3"
+      },
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "id": 66,
+      "type": "MZ_ChatGLM3Loader",
+      "pos": [
+        1140,
+        180
+      ],
+      "size": {
+        "0": 315,
+        "1": 58
+      },
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "chatglm3_model",
+          "type": "CHATGLM3MODEL",
+          "links": [
+            84,
+            86
+          ],
+          "shape": 3,
+          "label": "chatglm3_model"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MZ_ChatGLM3Loader"
+      },
+      "widgets_values": [
+        "checkpoints/chatglm3-8bit.safetensors"
+      ]
+    },
+    {
+      "id": 80,
+      "type": "VAEDecode",
+      "pos": [
+        2690,
+        110
+      ],
+      "size": {
+        "0": 210,
+        "1": 46
+      },
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 110
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 111
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            133
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecode"
+      }
+    },
+    {
+      "id": 70,
+      "type": "VAELoader",
+      "pos": [
+        1130,
+        450
+      ],
+      "size": {
+        "0": 315,
+        "1": 58
+      },
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            111
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAELoader"
+      },
+      "widgets_values": [
+        "sdxl_vae.safetensors"
+      ]
+    },
+    {
+      "id": 59,
+      "type": "MZ_KolorsUNETLoader",
+      "pos": [
+        1140,
+        300
+      ],
+      "size": {
+        "0": 310.1650695800781,
+        "1": 78
+      },
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "outputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "links": [
+            138
+          ],
+          "shape": 3,
+          "label": "model",
+          "slot_index": 0
+        },
+        {
+          "name": "hid_proj",
+          "type": "TorchLinear",
+          "links": [
+            79,
+            87
+          ],
+          "shape": 3,
+          "label": "hid_proj",
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MZ_KolorsUNETLoader"
+      },
+      "widgets_values": [
+        "kolors.fp16.safetensors"
+      ]
+    },
+    {
+      "id": 89,
+      "type": "SaveImage",
+      "pos": [
+        2970,
+        115
+      ],
+      "size": [
+        1067.8416224097818,
+        1023.857724473168
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 133
+        }
+      ],
+      "properties": {},
+      "widgets_values": [
+        "ComfyUI"
+      ]
+    },
+    {
+      "id": 79,
+      "type": "KSampler",
+      "pos": [
+        2320,
+        110
+      ],
+      "size": {
+        "0": 315,
+        "1": 262
+      },
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 138
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 107
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 106
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 108
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            110
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSampler"
+      },
+      "widgets_values": [
+        1072524578891924,
+        "randomize",
+        30,
+        4,
+        "dpmpp_2m_sde_gpu",
+        "karras",
+        1
+      ]
+    },
+    {
+      "id": 67,
+      "type": "MZ_ChatGLM3",
+      "pos": [
+        1680,
+        80
+      ],
+      "size": {
+        "0": 400,
+        "1": 200
+      },
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "chatglm3_model",
+          "type": "CHATGLM3MODEL",
+          "link": 86,
+          "label": "chatglm3_model",
+          "slot_index": 0
+        },
+        {
+          "name": "hid_proj",
+          "type": "TorchLinear",
+          "link": 87,
+          "label": "hid_proj"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            107
+          ],
+          "shape": 3,
+          "label": "CONDITIONING",
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MZ_ChatGLM3"
+      },
+      "widgets_values": [
+        "a landscape photo"
+      ]
+    }
+  ],
+  "links": [
+    [
+      79,
+      59,
+      1,
+      62,
+      1,
+      "TorchLinear"
+    ],
+    [
+      84,
+      66,
+      0,
+      62,
+      0,
+      "CHATGLM3MODEL"
+    ],
+    [
+      86,
+      66,
+      0,
+      67,
+      0,
+      "CHATGLM3MODEL"
+    ],
+    [
+      87,
+      59,
+      1,
+      67,
+      1,
+      "TorchLinear"
+    ],
+    [
+      106,
+      62,
+      0,
+      79,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      107,
+      67,
+      0,
+      79,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      108,
+      9,
+      0,
+      79,
+      3,
+      "LATENT"
+    ],
+    [
+      110,
+      79,
+      0,
+      80,
+      0,
+      "LATENT"
+    ],
+    [
+      111,
+      70,
+      0,
+      80,
+      1,
+      "VAE"
+    ],
+    [
+      133,
+      80,
+      0,
+      89,
+      0,
+      "IMAGE"
+    ],
+    [
+      138,
+      59,
+      0,
+      79,
+      0,
+      "MODEL"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.6830134553650705,
+      "offset": [
+        -980.0173001441558,
+        -7.239964707542751
+      ]
+    }
+  },
+  "version": 0.4
+}
