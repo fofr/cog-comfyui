@@ -17,7 +17,7 @@ We've tried to include many of the most popular model weights and custom nodes:
 - [View list of supported weights](https://github.com/fofr/cog-comfyui/blob/main/supported_weights.md)
 - [View list of supported custom nodes](https://github.com/fofr/cog-comfyui/blob/main/custom_nodes.json)
 
-Raise an issue to request more custom nodes or models, or use this model as a template to roll your own.
+Raise an issue to request more custom nodes or models, or use the `train` tab on Replicate to use your own weights (see below).
 
 ## How to use
 
