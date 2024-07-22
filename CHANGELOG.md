@@ -1,3 +1,18 @@
+## 2024-07-22
+
+- Add B-Lora inference support using https://github.com/liusida/ComfyUI-B-LoRA
+- Add initial B-LoRA models:
+  - B-LoRA-cartoon_line.safetensors
+  - B-LoRA-ink_sketch.safetensors
+  - B-LoRA-pen_sketch.safetensors
+  - B_LoRA_colorful-squirrel.safetensors
+  - B_LoRA_pencil_boy.safetensors
+
+New weights:
+
+- [cocoamixxl_v4Stable.safetensors](https://civitai.com/models/530602?modelVersionId=609481)
+- [arcane_offset.safetensors](https://huggingface.co/Lykon/LoRA/tree/main)
+
 ## 2024-07-18
 
 - [Update ComfyUI](https://github.com/comfyanonymous/ComfyUI/compare/29c2e26724d4982a3e33114eb9064f1a11f4f4ed..374e093e09c94b528d7c9dfc337c65cc5c433ee3)
