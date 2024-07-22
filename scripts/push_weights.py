@@ -174,6 +174,7 @@ def get_subfolder():
         "upscale_models",
         "clip_vision",
         "loras",
+        "loras/b_lora",
         "embeddings",
         "controlnet",
         "ipadapter",
@@ -208,6 +209,16 @@ def update_weights_json(subfolder, filename):
     subfolder = subfolder.upper()
     with open("weights.json", "r+") as f:
         weights_data = json.load(f)
+        if "/" in subfolder and subfolder not in weights_data:
+            main_folder, sub_path = subfolder.split("/", 1)
+            sub_path = sub_path.lower()
+            if main_folder in weights_data:
+                subfolder = main_folder
+                filename = f"{sub_path}/{filename}"
+            else:
+                print(f"{subfolder} not found in weights.json")
+                return
+
         if subfolder in weights_data:
             if filename not in weights_data[subfolder]:
                 weights_data[subfolder].append(filename)

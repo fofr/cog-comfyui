@@ -159,5 +159,9 @@
   {
     "repo": "https://github.com/MinusZoneAI/ComfyUI-Kolors-MZ",
     "commit": "755a8b4"
+  },
+  {
+    "repo": "https://github.com/liusida/ComfyUI-B-LoRA",
+    "commit": "744b2e1"
   }
 ]
