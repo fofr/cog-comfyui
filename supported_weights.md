@@ -8,6 +8,7 @@
 - anything-v3-fp16-pruned.safetensors
 - aura_flow_0.1.safetensors
 - CinematicRedmond.safetensors
+- cocoamixxl_v4Stable.safetensors
 - copaxCuteXLSDXL10_v4.safetensors
 - copaxTimelessxlSDXL1_v8.safetensors
 - crystalClearXL_ccxl.safetensors
@@ -173,6 +174,7 @@
 - araminta_k/soft-ones.safetensors
 - araminta_k/soft-pastel-anime.safetensors
 - araminta_k/vincent-sketch-manga.safetensors
+- arcane_offset.safetensors
 - artificialguybr/3DRedmond-3DRenderStyle-3DRenderAF.safetensors
 - artificialguybr/3DRedmond15V-LiberteRedmond-3DRenderStyle-3DRenderAF.safetensors
 - artificialguybr/AnalogRedmond-AnalogRedmAF.safetensors
@@ -591,9 +593,9 @@
 
 ## Language models
 
-- chatglm3-4bit.safetensors
-- chatglm3-8bit.safetensors
-- chatglm3-fp16.safetensors
+- checkpoints/chatglm3-4bit.safetensors
+- checkpoints/chatglm3-8bit.safetensors
+- checkpoints/chatglm3-fp16.safetensors
 
 ## Anyline
 
