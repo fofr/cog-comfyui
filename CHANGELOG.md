@@ -1,5 +1,15 @@
 ## 2024-07-23
 
+- [Add comfyui-inpaint-nodes](https://github.com/Acly/comfyui-inpaint-nodes) and weights:
+  - big-lama.pt
+  - fooocus_inpaint_head.pth
+  - fooocus_lama.safetensors
+  - inpaint.fooocus.patch
+  - inpaint_v25.fooocus.patch
+  - inpaint_v26.fooocus.patch
+  - MAT_Places512_G_fp16.safetensors
+  - Places_512_FullData_G.pth
+
 - [Add PhotoMaker v2 (photomaker-v2.bin
 )](https://huggingface.co/TencentARC/PhotoMaker-V2)
 

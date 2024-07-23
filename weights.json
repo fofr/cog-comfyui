@@ -642,5 +642,15 @@
   ],
   "ULTRAPIXEL": [
     "ultrapixel_t2i.safetensors"
+  ],
+  "INPAINT": [
+    "big-lama.pt",
+    "fooocus_inpaint_head.pth",
+    "fooocus_lama.safetensors",
+    "inpaint.fooocus.patch",
+    "inpaint_v25.fooocus.patch",
+    "inpaint_v26.fooocus.patch",
+    "MAT_Places512_G_fp16.safetensors",
+    "Places_512_FullData_G.pth"
   ]
 }

@@ -163,5 +163,9 @@
   {
     "repo": "https://github.com/liusida/ComfyUI-B-LoRA",
     "commit": "744b2e1"
+  },
+  {
+    "repo": "https://github.com/Acly/comfyui-inpaint-nodes",
+    "commit": "717cb77"
   }
 ]

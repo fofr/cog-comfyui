@@ -189,6 +189,7 @@ def get_subfolder():
         "sams",
         "grounding-dino",
         "ultralytics",
+        "inpaint",
         "animatediff_models",
         "animatediff_motion_lora",
         "custom_nodes/comfyui_controlnet_aux",

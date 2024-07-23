@@ -14,6 +14,7 @@ class WeightsDownloader:
         ".onnx",
         ".torchscript",
         ".engine",
+        ".patch"
     ]
 
     def __init__(self):
