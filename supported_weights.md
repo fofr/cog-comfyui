@@ -53,6 +53,7 @@
 - proteus_v02.safetensors
 - ProteusV0.4-Lighting.safetensors
 - ProteusV0.4.safetensors
+- proteusV0.5.safetensors
 - rcnzCartoon3d_v20.safetensors
 - Realistic_Vision_V4.0-inpainting.safetensors
 - Realistic_Vision_V4.0.safetensors
