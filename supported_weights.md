@@ -478,6 +478,7 @@
 ## PhotoMaker
 
 - photomaker-v1.bin
+- photomaker-v2.bin
 
 ## InstantID
 

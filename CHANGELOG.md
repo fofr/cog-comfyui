@@ -1,3 +1,8 @@
+## 2024-07-23
+
+- [Add PhotoMaker v2 (photomaker-v2.bin
+)](https://huggingface.co/TencentARC/PhotoMaker-V2)
+
 ## 2024-07-22
 
 - Add B-Lora inference support using https://github.com/liusida/ComfyUI-B-LoRA

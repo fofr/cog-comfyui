@@ -467,7 +467,8 @@
     "stable-cascade/stage_c_lite_bf16.safetensors"
   ],
   "PHOTOMAKER": [
-    "photomaker-v1.bin"
+    "photomaker-v1.bin",
+    "photomaker-v2.bin"
   ],
   "INSTANTID": [
     "instantid-ip-adapter.bin"

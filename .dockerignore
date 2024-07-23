@@ -46,6 +46,7 @@ ComfyUI/custom_nodes/efficiency-nodes-comfyui/images
 # ComfyUI bits we just don’t need
 ComfyUI/tests
 ComfyUI/tests-ui
+ComfyUI/tests-unit
 ComfyUI/notebooks
 ComfyUI/script_examples
 ComfyUI/comfyui_screenshot.png
