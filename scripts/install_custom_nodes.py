@@ -41,7 +41,27 @@ for repo in repos:
         # Change back to the original directory after operations
         os.chdir(current_dir)
     else:
-        print(f"Skipping clone for {repo_name}, directory already exists")
+        current_dir = os.getcwd()
+        os.chdir(repo_path)
+
+        current_commit = (
+            subprocess.check_output(["git", "rev-parse", "HEAD"]).decode().strip()
+        )
+        print(f"Custom node installed for {repo_name} at {current_commit[:7]}")
+
+        if current_commit[:7] != commit_hash[:7]:
+            response = input(
+                f"Do you want to update {repo_name}? Current ({current_commit[:7]}) is different from ({commit_hash[:7]}) (y/n): "
+            )
+            if response.lower() == "y":
+                print(f"Checking out to commit {commit_hash}")
+                subprocess.run(["git", "fetch"])
+                subprocess.run(["git", "checkout", commit_hash])
+                subprocess.run(["git", "submodule", "update", "--init", "--recursive"])
+            else:
+                print("Skipping checkout, keeping current commit")
+
+        os.chdir(current_dir)
 
 # Copy custom node config files to the correct directory
 config_files = {
