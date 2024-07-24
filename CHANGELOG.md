@@ -1,3 +1,19 @@
+## 2024-07-24
+
+- Add [ComfyUI-BrushNet](https://github.com/nullquant/ComfyUI-BrushNet) custom node
+
+BrushNet weights:
+
+- brushnet_random_mask_brushnet_ckpt_sdxl_v0.safetensors
+- brushnet_random_mask_fp16.safetensors
+- brushnet_segmentation_mask_fp16.safetensors
+- powerpaint_brushnet_text_encoder_fp16.safetensors
+- powerpaint_v2.1.safetensors
+- powerpaint_v2.1_pytorch_model.bin
+- powerpaint_v2_brushnet_fp16.safetensors
+- random_mask_brushnet_ckpt_sdxl_v0.safetensors
+- segmentation_mask_brushnet_sdxl_v1.safetensors
+
 ## 2024-07-23
 
 - [Add comfyui-inpaint-nodes](https://github.com/Acly/comfyui-inpaint-nodes) and weights:
