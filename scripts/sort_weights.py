@@ -41,6 +41,7 @@ def write_supported_weights():
         "GLIGEN": weights_manifest.get_weights_by_type("GLIGEN"),
         "Diffusers": weights_manifest.get_weights_by_type("DIFFUSERS"),
         "Language models": weights_manifest.get_weights_by_type("LLM"),
+        "Inpainting models": weights_manifest.get_weights_by_type("INPAINT"),
         "Anyline": helpers.ComfyUI_Anyline.models(),
         "AnimateDiff": weights_manifest.get_weights_by_type("ANIMATEDIFF_MODELS"),
         "AnimateDiff LORAs": weights_manifest.get_weights_by_type(

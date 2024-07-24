@@ -645,12 +645,21 @@
   ],
   "INPAINT": [
     "big-lama.pt",
+    "brushnet_random_mask_brushnet_ckpt_sdxl_v0.safetensors",
+    "brushnet_random_mask_fp16.safetensors",
+    "brushnet_segmentation_mask_fp16.safetensors",
     "fooocus_inpaint_head.pth",
     "fooocus_lama.safetensors",
     "inpaint.fooocus.patch",
     "inpaint_v25.fooocus.patch",
     "inpaint_v26.fooocus.patch",
     "MAT_Places512_G_fp16.safetensors",
-    "Places_512_FullData_G.pth"
+    "Places_512_FullData_G.pth",
+    "powerpaint_brushnet_text_encoder_fp16.safetensors",
+    "powerpaint_v2.1.safetensors",
+    "powerpaint_v2.1_pytorch_model.bin",
+    "powerpaint_v2_brushnet_fp16.safetensors",
+    "random_mask_brushnet_ckpt_sdxl_v0.safetensors",
+    "segmentation_mask_brushnet_sdxl_v1.safetensors"
   ]
 }
