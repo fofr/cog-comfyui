@@ -1,0 +1,189 @@
+{
+  "12": {
+    "inputs": {
+      "images": [
+        "54",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "45": {
+    "inputs": {
+      "brushnet": "brushnet_random_mask_fp16.safetensors",
+      "dtype": "float16"
+    },
+    "class_type": "BrushNetLoader",
+    "_meta": {
+      "title": "BrushNet Loader"
+    }
+  },
+  "47": {
+    "inputs": {
+      "ckpt_name": "Realistic_Vision_V5.1.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Load Checkpoint"
+    }
+  },
+  "49": {
+    "inputs": {
+      "text": "underwater",
+      "clip": [
+        "47",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "50": {
+    "inputs": {
+      "text": "",
+      "clip": [
+        "47",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "52": {
+    "inputs": {
+      "seed": 0,
+      "steps": 50,
+      "cfg": 7.5,
+      "sampler_name": "euler",
+      "scheduler": "normal",
+      "denoise": 1,
+      "model": [
+        "62",
+        0
+      ],
+      "positive": [
+        "62",
+        1
+      ],
+      "negative": [
+        "62",
+        2
+      ],
+      "latent_image": [
+        "62",
+        3
+      ]
+    },
+    "class_type": "KSampler",
+    "_meta": {
+      "title": "KSampler"
+    }
+  },
+  "54": {
+    "inputs": {
+      "samples": [
+        "52",
+        0
+      ],
+      "vae": [
+        "47",
+        2
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "62": {
+    "inputs": {
+      "scale": 1,
+      "start_at": 0,
+      "end_at": 10000,
+      "model": [
+        "47",
+        0
+      ],
+      "vae": [
+        "47",
+        2
+      ],
+      "image": [
+        "66",
+        0
+      ],
+      "mask": [
+        "69",
+        0
+      ],
+      "brushnet": [
+        "45",
+        0
+      ],
+      "positive": [
+        "49",
+        0
+      ],
+      "negative": [
+        "50",
+        0
+      ]
+    },
+    "class_type": "BrushNet",
+    "_meta": {
+      "title": "BrushNet"
+    }
+  },
+  "66": {
+    "inputs": {
+      "image": "people-0_3.webp",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "67": {
+    "inputs": {},
+    "class_type": "BRIA_RMBG_ModelLoader_Zho",
+    "_meta": {
+      "title": "🧹BRIA_RMBG Model Loader"
+    }
+  },
+  "68": {
+    "inputs": {
+      "rmbgmodel": [
+        "67",
+        0
+      ],
+      "image": [
+        "66",
+        0
+      ]
+    },
+    "class_type": "BRIA_RMBG_Zho",
+    "_meta": {
+      "title": "🧹BRIA RMBG"
+    }
+  },
+  "69": {
+    "inputs": {
+      "mask": [
+        "68",
+        1
+      ]
+    },
+    "class_type": "InvertMask",
+    "_meta": {
+      "title": "InvertMask"
+    }
+  }
+}
