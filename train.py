@@ -227,7 +227,7 @@ def train(
         "LORAS": loras.splitlines() if loras else [],
         "UPSCALE_MODELS": upscale_models.splitlines() if upscale_models else [],
         "EMBEDDINGS": embedding_models.splitlines() if embedding_models else [],
-        "CONTROLNETS": controlnets.splitlines() if controlnets else [],
+        "CONTROLNET": controlnets.splitlines() if controlnets else [],
         "ANIMATEDIFF_MODELS": animatediff_models.splitlines()
         if animatediff_models
         else [],
