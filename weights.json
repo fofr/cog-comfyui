@@ -136,6 +136,8 @@
     "clip_g.safetensors",
     "clip_l.safetensors",
     "models--QuanSun--EVA-CLIP",
+    "sd15/model.fp16.safetensors",
+    "sd15/model.safetensors",
     "stable-diffusion-2-1-clip-fp16.safetensors",
     "stable-diffusion-2-1-clip.safetensors",
     "t5xxl_fp16.safetensors",
