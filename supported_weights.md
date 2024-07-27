@@ -7,6 +7,7 @@
 - animagine-xl-3.0.safetensors
 - anything-v3-fp16-pruned.safetensors
 - aura_flow_0.1.safetensors
+- aura_flow_0.2.safetensors
 - CinematicRedmond.safetensors
 - cocoamixxl_v4Stable.safetensors
 - copaxCuteXLSDXL10_v4.safetensors
