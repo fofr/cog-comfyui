@@ -171,5 +171,9 @@
   {
     "repo": "https://github.com/nullquant/ComfyUI-BrushNet",
     "commit": "dbd64b4"
+  },
+  {
+    "repo": "https://github.com/digitaljohn/comfyui-propost",
+    "commit": "e81291a"
   }
 ]
