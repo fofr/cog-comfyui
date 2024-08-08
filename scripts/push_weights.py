@@ -7,13 +7,18 @@ import json
 import requests
 import urllib.parse
 import time
+from huggingface_hub import hf_hub_download
 
 
 def check_gcloud_auth():
     try:
-        result = subprocess.run(["gcloud", "auth", "list"], capture_output=True, text=True)
+        result = subprocess.run(
+            ["gcloud", "auth", "list"], capture_output=True, text=True
+        )
         if "No credentialed accounts." in result.stdout:
-            print("Error: Not authenticated with gcloud. Please run 'gcloud auth login' first.")
+            print(
+                "Error: Not authenticated with gcloud. Please run 'gcloud auth login' first."
+            )
             sys.exit(1)
     except subprocess.CalledProcessError:
         print("Error: Failed to check gcloud authentication status.")
@@ -36,6 +41,26 @@ def civitai_url_with_token(url: str, civitai_api_token: str):
 
 def is_huggingface_url(url: str):
     return url.startswith("https://huggingface.co")
+
+
+def extract_parts_from_huggingface_url(url: str):
+    # HUGGINGFACE_CO_URL_TEMPLATE
+    # https://huggingface.co/{repo_id}/resolve/{revision}/{filename}
+
+    parsed_url = urllib.parse.urlparse(url)
+    path_parts = parsed_url.path.split("/")
+
+    if len(path_parts) < 5:
+        raise ValueError(
+            f"HuggingFace URL does not contain enough parts to extract all required parts: {url}"
+        )
+
+    repo_id = f"{path_parts[1]}/{path_parts[2]}"
+    revision = path_parts[4]
+    filename_and_path = path_parts[5:]
+    filename = filename_and_path[-1]
+
+    return repo_id, revision, filename_and_path, filename
 
 
 def get_filename_from_huggingface_url(url: str):
@@ -95,8 +120,9 @@ def get_filename_from_url(url, civitai_api_token: str = None):
         return None
 
 
-def download_file(url, filename=None, civitai_api_token=None):
+def download_file(url, filename=None, civitai_api_token=None, use_hf_hub=False):
     start_time = time.time()
+    huggingface_read_token = os.environ.get("HUGGINGFACE_READ_TOKEN")
     if is_civitai_url(url):
         if not filename:
             filename = get_filename_from_url(url, civitai_api_token)
@@ -112,11 +138,29 @@ def download_file(url, filename=None, civitai_api_token=None):
         except subprocess.TimeoutExpired:
             raise RuntimeError("Download failed due to timeout")
     elif is_huggingface_url(url):
-        if not filename:
-            filename = get_filename_from_huggingface_url(url)
-            filename = confirm_filename(filename)
-        print(f"Downloading from HuggingFace: {url} to {filename}")
-        subprocess.run(["pget", "-f", url, filename])
+        if use_hf_hub:
+            if not filename:
+                filename = get_filename_from_huggingface_url(url)
+                filename = confirm_filename(filename)
+            print(f"Downloading from HuggingFace Hub: {url} to {filename}")
+            repo_id, revision, filename_and_path, _ = (
+                extract_parts_from_huggingface_url(url)
+            )
+            token = huggingface_read_token if huggingface_read_token else None
+            hf_hub_download(
+                repo_id=repo_id,
+                revision=revision,
+                filename="/".join(filename_and_path),
+                local_dir=".",
+                local_dir_use_symlinks=False,
+                token=token,
+            )
+        else:
+            if not filename:
+                filename = get_filename_from_huggingface_url(url)
+                filename = confirm_filename(filename)
+            print(f"Downloading from HuggingFace: {url} to {filename}")
+            subprocess.run(["pget", "-f", url, filename])
     else:
         if not filename:
             filename = get_filename_from_url(url)
@@ -246,11 +290,16 @@ def confirm_filename(filename):
 
 
 def process_file(
-    url=None, filename=None, subfolder=None, no_hf=False, civitai_api_token=None
+    url=None,
+    filename=None,
+    subfolder=None,
+    no_hf=False,
+    civitai_api_token=None,
+    use_hf_hub=False,
 ):
     if url:
         print(f"Processing {url}")
-        local_file = download_file(url, filename, civitai_api_token)
+        local_file = download_file(url, filename, civitai_api_token, use_hf_hub)
     else:
         print(f"Processing {filename}")
         local_file = filename
@@ -265,12 +314,12 @@ def process_file(
 
 
 def process_weights_file(
-    weights_file, subfolder=None, no_hf=False, civitai_api_token=None
+    weights_file, subfolder=None, no_hf=False, civitai_api_token=None, use_hf_hub=False
 ):
     with open(weights_file, "r") as f:
         for line in f:
             url, filename = line.strip().split()
-            process_file(url, filename, subfolder, no_hf, civitai_api_token)
+            process_file(url, filename, subfolder, no_hf, civitai_api_token, use_hf_hub)
 
 
 def main():
@@ -298,6 +347,11 @@ def main():
         action="store_true",
         help="Do not upload to Hugging Face",
     )
+    parser.add_argument(
+        "--use_hf_hub",
+        action="store_true",
+        help="Use Hugging Face Hub to download weights",
+    )
     args = parser.parse_args()
 
     subfolder = get_subfolder()
@@ -305,7 +359,7 @@ def main():
 
     if args.weights_list:
         process_weights_file(
-            args.weights_list, subfolder, args.no_hf, civitai_api_token
+            args.weights_list, subfolder, args.no_hf, civitai_api_token, args.use_hf_hub
         )
     elif args.file:
         filename = args.filename if args.filename else None
@@ -316,6 +370,7 @@ def main():
                 subfolder=subfolder,
                 no_hf=args.no_hf,
                 civitai_api_token=civitai_api_token,
+                use_hf_hub=args.use_hf_hub,
             )
         elif os.path.isfile(args.file):
             process_file(
@@ -323,6 +378,7 @@ def main():
                 subfolder=subfolder,
                 no_hf=args.no_hf,
                 civitai_api_token=civitai_api_token,
+                use_hf_hub=args.use_hf_hub,
             )
         else:
             print(f"Error: The file or URL {args.file} is not valid.")
