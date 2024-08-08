@@ -31,8 +31,6 @@
 - Epicrealismxl_Hades.safetensors
 - epicrealismXL_v10.safetensors
 - epicrealismXL_v7FinalDestination.safetensors
-- flux1-dev.safetensors
-- flux1-schnell.safetensors
 - Hyper-SDXL-1step-Unet-Comfyui.fp16.safetensors
 - Hyper-SDXL-1step-Unet.safetensors
 - imp_v10.safetensors
@@ -460,6 +458,8 @@
 
 ## UNets
 
+- flux1-dev.safetensors
+- flux1-schnell.safetensors
 - iclight_sd15_fbc.safetensors
 - iclight_sd15_fbc_unet_ldm.safetensors
 - iclight_sd15_fc.safetensors
