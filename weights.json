@@ -11,8 +11,8 @@
     "CinematicRedmond.safetensors",
     "cocoamixxl_v4Stable.safetensors",
     "copaxCuteXLSDXL10_v4.safetensors",
-    "copaxTimelessxlSDXL1_v8.safetensors",
     "copaxTimelessxlSDXL1_v122.safetensors",
+    "copaxTimelessxlSDXL1_v8.safetensors",
     "crystalClearXL_ccxl.safetensors",
     "Deliberate_v2.safetensors",
     "disneyPixarCartoon_v10.safetensors",
@@ -31,6 +31,8 @@
     "Epicrealismxl_Hades.safetensors",
     "epicrealismXL_v10.safetensors",
     "epicrealismXL_v7FinalDestination.safetensors",
+    "flux1-dev.safetensors",
+    "flux1-schnell.safetensors",
     "Hyper-SDXL-1step-Unet-Comfyui.fp16.safetensors",
     "Hyper-SDXL-1step-Unet.safetensors",
     "imp_v10.safetensors",
@@ -442,6 +444,7 @@
     "Kolors-IP-Adapter-Plus.bin"
   ],
   "VAE": [
+    "ae.safetensors",
     "sdxl_vae.safetensors",
     "stable-cascade/effnet_encoder.safetensors",
     "stable-cascade/stage_a.safetensors",

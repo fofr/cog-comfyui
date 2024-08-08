@@ -1,5 +1,10 @@
 ## 2024-08-08
 
+- Add flux weights:
+  - flux1-dev.safetensors
+  - flux1-schnell.safetensors
+  - ae.safetensors
+
 - [Update ComfyUI to latest](https://github.com/comfyanonymous/ComfyUI/compare/374e093e09c94b528d7c9dfc337c65cc5c433ee3..8115d8cce97a3edaaad8b08b45ab37c6782e1cb4)
 - [Updated ComfyUI-BrushNet](https://github.com/nullquant/ComfyUI-BrushNet/compare/dbd64b4...a510eff)
 - [Updated ComfyUI-Kolors-MZ](https://github.com/MinusZoneAI/ComfyUI-Kolors-MZ/compare/755a8b4...8688054)
