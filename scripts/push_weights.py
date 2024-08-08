@@ -7,7 +7,6 @@ import json
 import requests
 import urllib.parse
 import time
-from huggingface_hub import hf_hub_download
 
 
 def check_gcloud_auth():
@@ -120,7 +119,7 @@ def get_filename_from_url(url, civitai_api_token: str = None):
         return None
 
 
-def download_file(url, filename=None, civitai_api_token=None, use_hf_hub=False):
+def download_file(url, filename=None, civitai_api_token=None, hf_cli_download=False):
     start_time = time.time()
     huggingface_read_token = os.environ.get("HUGGINGFACE_READ_TOKEN")
     if is_civitai_url(url):
@@ -138,22 +137,31 @@ def download_file(url, filename=None, civitai_api_token=None, use_hf_hub=False):
         except subprocess.TimeoutExpired:
             raise RuntimeError("Download failed due to timeout")
     elif is_huggingface_url(url):
-        if use_hf_hub:
-            if not filename:
-                filename = get_filename_from_huggingface_url(url)
-                filename = confirm_filename(filename)
-            print(f"Downloading from HuggingFace Hub: {url} to {filename}")
-            repo_id, revision, filename_and_path, _ = (
+        if hf_cli_download:
+            repo_id, revision, filename_and_path, extracted_filename = (
                 extract_parts_from_huggingface_url(url)
             )
+            if not filename:
+                filename = extracted_filename
+                filename = confirm_filename(filename)
+            print(f"Downloading from HuggingFace Hub: {url} to {filename}")
+
             token = huggingface_read_token if huggingface_read_token else None
-            hf_hub_download(
-                repo_id=repo_id,
-                revision=revision,
-                filename="/".join(filename_and_path),
-                local_dir=".",
-                local_dir_use_symlinks=False,
-                token=token,
+            subprocess.run(
+                [
+                    "huggingface-cli",
+                    "download",
+                    repo_id,
+                    "/".join(filename_and_path),
+                    "--revision",
+                    revision,
+                    "--local-dir",
+                    os.getcwd(),
+                    "--local-dir-use-symlinks",
+                    "False",
+                    "--force-download",
+                    *(["--token", token] if token else []),
+                ]
             )
         else:
             if not filename:
@@ -293,20 +301,20 @@ def process_file(
     url=None,
     filename=None,
     subfolder=None,
-    no_hf=False,
+    no_hf_upload=False,
     civitai_api_token=None,
-    use_hf_hub=False,
+    hf_cli_download=False,
 ):
     if url:
         print(f"Processing {url}")
-        local_file = download_file(url, filename, civitai_api_token, use_hf_hub)
+        local_file = download_file(url, filename, civitai_api_token, hf_cli_download)
     else:
         print(f"Processing {filename}")
         local_file = filename
 
     tarred_file = tar_file(local_file)
     upload_to_gcloud(tarred_file, "gs://replicate-weights/comfy-ui", subfolder)
-    if not no_hf:
+    if not no_hf_upload:
         upload_to_huggingface(local_file, subfolder)
     update_weights_json(subfolder, local_file)
     remove_files(local_file, tarred_file)
@@ -314,12 +322,23 @@ def process_file(
 
 
 def process_weights_file(
-    weights_file, subfolder=None, no_hf=False, civitai_api_token=None, use_hf_hub=False
+    weights_file,
+    subfolder=None,
+    no_hf_upload=False,
+    civitai_api_token=None,
+    hf_cli_download=False,
 ):
     with open(weights_file, "r") as f:
         for line in f:
             url, filename = line.strip().split()
-            process_file(url, filename, subfolder, no_hf, civitai_api_token, use_hf_hub)
+            process_file(
+                url,
+                filename,
+                subfolder,
+                no_hf_upload,
+                civitai_api_token,
+                hf_cli_download,
+            )
 
 
 def main():
@@ -343,12 +362,12 @@ def main():
         help="The weights list file with URLs to download",
     )
     parser.add_argument(
-        "--no-hf",
+        "--no_hf_upload",
         action="store_true",
         help="Do not upload to Hugging Face",
     )
     parser.add_argument(
-        "--use_hf_hub",
+        "--hf_cli_download",
         action="store_true",
         help="Use Hugging Face Hub to download weights",
     )
@@ -359,7 +378,11 @@ def main():
 
     if args.weights_list:
         process_weights_file(
-            args.weights_list, subfolder, args.no_hf, civitai_api_token, args.use_hf_hub
+            args.weights_list,
+            subfolder,
+            args.no_hf_upload,
+            civitai_api_token,
+            args.hf_cli_download,
         )
     elif args.file:
         filename = args.filename if args.filename else None
@@ -368,17 +391,17 @@ def main():
                 url=args.file,
                 filename=filename,
                 subfolder=subfolder,
-                no_hf=args.no_hf,
+                no_hf_upload=args.no_hf_upload,
                 civitai_api_token=civitai_api_token,
-                use_hf_hub=args.use_hf_hub,
+                hf_cli_download=args.hf_cli_download,
             )
         elif os.path.isfile(args.file):
             process_file(
                 filename=filename,
                 subfolder=subfolder,
-                no_hf=args.no_hf,
+                no_hf_upload=args.no_hf_upload,
                 civitai_api_token=civitai_api_token,
-                use_hf_hub=args.use_hf_hub,
+                hf_cli_download=args.hf_cli_download,
             )
         else:
             print(f"Error: The file or URL {args.file} is not valid.")
