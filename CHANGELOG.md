@@ -1,3 +1,29 @@
+## 2024-08-08
+
+- [Update ComfyUI to latest](https://github.com/comfyanonymous/ComfyUI/compare/374e093e09c94b528d7c9dfc337c65cc5c433ee3..8115d8cce97a3edaaad8b08b45ab37c6782e1cb4)
+- [Updated ComfyUI-BrushNet](https://github.com/nullquant/ComfyUI-BrushNet/compare/dbd64b4...a510eff)
+- [Updated ComfyUI-Kolors-MZ](https://github.com/MinusZoneAI/ComfyUI-Kolors-MZ/compare/755a8b4...8688054)
+- [Updated ComfyUI-Anyline](https://github.com/TheMistoAI/ComfyUI-Anyline/compare/2f35c98...17c8146)
+- [Updated comfyui_jankhidiffusion](https://github.com/blepping/comfyui_jankhidiffusion/compare/6111b81...d7eea2a)
+- [Updated ComfyUI-IC-Light-Native](https://github.com/huchenlei/ComfyUI-IC-Light-Native/compare/5c065e1...536739a)
+- [Updated PuLID_ComfyUI](https://github.com/cubiq/PuLID_ComfyUI/compare/145a5ef...158d6bc)
+- [Updated ComfyUI-HyperSDXL1StepUnetScheduler](https://github.com/fofr/ComfyUI-HyperSDXL1StepUnetScheduler/compare/5073c7a...3247161)
+- [Updated ComfyUI-Frame-Interpolation](https://github.com/Fannovel16/ComfyUI-Frame-Interpolation/compare/1c4c4b4...483dfe6)
+- [Updated ComfyUI-layerdiffuse](https://github.com/huchenlei/ComfyUI-layerdiffuse/compare/c5f1c0a...2cbfe39)
+- [Updated ComfyUI_InstantID](https://github.com/cubiq/ComfyUI_InstantID/compare/d8c70a0...6d95aa6)
+- [Updated comfyui-reactor-node](https://github.com/Gourieff/comfyui-reactor-node/compare/bcfd45c...2832357)
+- [Updated masquerade-nodes-comfyui](https://github.com/BadCafeCode/masquerade-nodes-comfyui/compare/69a9449...432cb4d)
+- [Updated ComfyUI-Custom-Scripts](https://github.com/pythongosssss/ComfyUI-Custom-Scripts/compare/edc5321...abf3711)
+- [Updated ComfyUI-PhotoMaker-Plus](https://github.com/shiimizu/ComfyUI-PhotoMaker-Plus/compare/4c61084...10c453a)
+- [Updated ComfyUI_UltimateSDUpscale](https://github.com/ssitu/ComfyUI_UltimateSDUpscale/compare/233f8b8...70083f5)
+- [Updated ComfyUI_FizzNodes](https://github.com/FizzleDorf/ComfyUI_FizzNodes/compare/3db5b71...0e30c12)
+- [Updated efficiency-nodes-comfyui](https://github.com/jags111/efficiency-nodes-comfyui/compare/a5422d6...b471390)
+- [Updated ComfyUI-Advanced-ControlNet](https://github.com/Kosinkadink/ComfyUI-Advanced-ControlNet/compare/7a456aa...68e5cd4)
+- [Updated ComfyUI-VideoHelperSuite](https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite/compare/0037f49...41ca443)
+- [Updated ComfyUI-AnimateDiff-Evolved](https://github.com/Kosinkadink/ComfyUI-AnimateDiff-Evolved/compare/832e832...925511d)
+- [Updated comfyui-tooling-nodes](https://github.com/Acly/comfyui-tooling-nodes/compare/2f39365...b5fec4a)
+- [Updated ComfyUI_IPAdapter_plus](https://github.com/cubiq/ComfyUI_IPAdapter_plus/compare/78ac59c...ce9b621)
+
 ## 2024-07-24
 
 - Add [ComfyUI-BrushNet](https://github.com/nullquant/ComfyUI-BrushNet) custom node
