@@ -7,6 +7,7 @@ import json
 import requests
 import urllib.parse
 import time
+from datetime import datetime
 
 
 def check_gcloud_auth():
@@ -35,7 +36,11 @@ def civitai_url_with_token(url: str, civitai_api_token: str):
     if not civitai_api_token:
         return url
 
-    return f"{url}?token={civitai_api_token}"
+    parsed_url = urllib.parse.urlparse(url)
+    query_params = urllib.parse.parse_qs(parsed_url.query)
+    query_params["token"] = [civitai_api_token]
+    new_query = urllib.parse.urlencode(query_params, doseq=True)
+    return urllib.parse.urlunparse(parsed_url._replace(query=new_query))
 
 
 def is_huggingface_url(url: str):
@@ -258,7 +263,7 @@ def get_subfolder():
         return subfolders[choice - 1]
 
 
-def update_weights_json(subfolder, filename):
+def update_weights_json(subfolder, filename, url):
     subfolder = subfolder.upper()
     with open("weights.json", "r+") as f:
         weights_data = json.load(f)
@@ -279,10 +284,48 @@ def update_weights_json(subfolder, filename):
                 json.dump(weights_data, f, indent=4)
                 f.truncate()
                 print(f"Added {filename} to {subfolder} in weights.json")
+                update_changelog(subfolder, filename, url)
             else:
                 print(f"{filename} already exists in {subfolder} in weights.json")
         else:
             print(f"{subfolder} not found in weights.json")
+
+
+def update_changelog(subfolder, filename, url):
+    changelog_file = "CHANGELOG.md"
+    today = datetime.now().strftime("%Y-%m-%d")
+    if url:
+        update_line = f"- [Added {filename} to {subfolder.lower()}]({url})\n"
+    else:
+        update_line = f"- Added {filename} to {subfolder.lower()}\n"
+
+    try:
+        with open(changelog_file, "r+") as file:
+            content = file.readlines()
+            if content[0].strip() != f"## {today}":
+                content.insert(0, f"\n## {today}\n\n")
+
+            # Find the index of the current day's section
+            today_index = next(
+                (i for i, line in enumerate(content) if line.strip() == f"## {today}"),
+                None,
+            )
+
+            if today_index is not None:
+                # Insert the update line right after the current day's header
+                content.insert(today_index + 1, update_line)
+            else:
+                # If today's section wasn't found (which shouldn't happen), append to the top
+                content.insert(2, update_line)
+
+            file.seek(0)
+            file.writelines(content)
+    except FileNotFoundError:
+        print(
+            f"Warning: Changelog file '{changelog_file}' not found. Skipping changelog update."
+        )
+    except IOError as e:
+        print(f"Error updating changelog: {e}")
 
 
 def confirm_filename(filename):
@@ -316,7 +359,7 @@ def process_file(
     upload_to_gcloud(tarred_file, "gs://replicate-weights/comfy-ui", subfolder)
     if not no_hf_upload:
         upload_to_huggingface(local_file, subfolder)
-    update_weights_json(subfolder, local_file)
+    update_weights_json(subfolder, local_file, url)
     remove_files(local_file, tarred_file)
     subprocess.run(["python", "scripts/sort_weights.py"])
 
