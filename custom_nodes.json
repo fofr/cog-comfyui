@@ -171,5 +171,9 @@
   {
     "repo": "https://github.com/nullquant/ComfyUI-BrushNet",
     "commit": "a510eff"
+  },
+  {
+    "repo": "https://github.com/fofr/comfyui-fofr-toolkit",
+    "commit": "e1c0aca"
   }
 ]
