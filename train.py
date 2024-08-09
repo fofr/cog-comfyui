@@ -28,7 +28,11 @@ def civitai_url_with_token(url: str, civitai_api_token: Secret):
     if not civitai_api_token:
         return url
 
-    return f"{url}?token={civitai_api_token.get_secret_value()}"
+    parsed_url = urllib.parse.urlparse(url)
+    query_params = urllib.parse.parse_qs(parsed_url.query)
+    query_params['token'] = [civitai_api_token.get_secret_value()]
+    new_query = urllib.parse.urlencode(query_params, doseq=True)
+    return urllib.parse.urlunparse(parsed_url._replace(query=new_query))
 
 
 def is_huggingface_url(url: str):
