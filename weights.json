@@ -222,6 +222,7 @@
     "b_lora/B-LoRA-pen_sketch.safetensors",
     "b_lora/B_LoRA_colorful-squirrel.safetensors",
     "b_lora/B_LoRA_pencil_boy.safetensors",
+    "badquality_v02.safetensors",
     "charTurnBetaLora.safetensors",
     "COOLKIDS_MERGE_V2.5.safetensors",
     "fofr/emoji.safetensors",
