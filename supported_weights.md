@@ -229,6 +229,7 @@
 - badquality_v02.safetensors
 - charTurnBetaLora.safetensors
 - COOLKIDS_MERGE_V2.5.safetensors
+- flux-RealismLora.safetensors
 - fofr/emoji.safetensors
 - glowneon_xl_v1.safetensors
 - Harrlogos_v2.0.safetensors

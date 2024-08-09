@@ -3,6 +3,7 @@
 - Add [comfyui-fofr-toolkit](https://github.com/fofr/comfyui-fofr-toolkit) custom node
 - [Added badquality_v02.safetensors to loras](https://civitai.com/models/259627/bad-quality-lora-or-sdxl)
 - [Added realismEngineSDXL_v30VAE.safetensors to checkpoints](https://civitai.com/models/152525/realism-engine-sdxl)
+- [Added flux-RealismLora.safetensors to loras](https://huggingface.co/XLabs-AI/flux-RealismLora)
 
 ## 2024-08-08
 
