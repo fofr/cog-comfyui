@@ -1,3 +1,7 @@
+## 2024-08-10
+
+- [Update ComfyUI](https://github.com/comfyanonymous/ComfyUI/compare/8115d8cce97a3edaaad8b08b45ab37c6782e1cb4...ae197f651b07389bfb778b690575043205a9a5c5)
+
 ## 2024-08-09
 
 - Add [comfyui-fofr-toolkit](https://github.com/fofr/comfyui-fofr-toolkit) custom node
