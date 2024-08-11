@@ -170,6 +170,7 @@
 - araminta_k/abstract-anime-painting.safetensors
 - araminta_k/araminta-k-illustration.safetensors
 - araminta_k/BandW-Manga.safetensors
+- araminta_k/flux_dev_frostinglane_araminta_k.safetensors
 - araminta_k/gemini-anime.safetensors
 - araminta_k/haute-couture-illustration.safetensors
 - araminta_k/japanese-poster-prints.safetensors

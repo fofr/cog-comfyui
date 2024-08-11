@@ -1,6 +1,7 @@
 ## 2024-08-11
 
 - [Update ComfyUI](https://github.com/comfyanonymous/ComfyUI/compare/8115d8cce97a3edaaad8b08b45ab37c6782e1cb4...e9589d6d9246d1ce5a810be1507ead39fff50e04)
+- [Add flux_dev_frostinglane_araminta_k.safetensors to loras](https://huggingface.co/alvdansen/frosting_lane_flux)
 
 ## 2024-08-09
 

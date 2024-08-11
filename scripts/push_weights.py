@@ -295,9 +295,9 @@ def update_changelog(subfolder, filename, url):
     changelog_file = "CHANGELOG.md"
     today = datetime.now().strftime("%Y-%m-%d")
     if url:
-        update_line = f"- [Added {filename} to {subfolder.lower()}]({url})\n"
+        update_line = f"- [Add {filename} to {subfolder.lower()}]({url})\n"
     else:
-        update_line = f"- Added {filename} to {subfolder.lower()}\n"
+        update_line = f"- Add {filename} to {subfolder.lower()}\n"
 
     try:
         with open(changelog_file, "r+") as file:
