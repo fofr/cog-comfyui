@@ -387,6 +387,7 @@
 - controlnet-temporalnet-sdxl-1.0.safetensors
 - controlnet-tile-sdxl-1.0.safetensors
 - controlnet-union-sdxl-1.0.safetensors
+- diffusion_pytorch_model.safetensorsgi
 - controlnet-zoe-depth-sdxl-1.0.safetensors
 - depth-anything.safetensors
 - depth-zoe-xl-v1.0-controlnet.safetensors
