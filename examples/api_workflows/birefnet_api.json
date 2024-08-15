@@ -1,0 +1,49 @@
+{
+  "1": {
+    "inputs": {
+      "image": "https://replicate.delivery/yhqm/Umt3TIPcLUorCN7TCywiH1oFE0OezlJhT5nMnQ4uOmQdLeSTA/out-3.webp",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "2": {
+    "inputs": {
+      "birefnet_model": "BiRefNet-DIS_ep580.pth"
+    },
+    "class_type": "BiRefNet_ModelLoader_Zho",
+    "_meta": {
+      "title": "🧹BiRefNet Model Loader"
+    }
+  },
+  "3": {
+    "inputs": {
+      "birefnetmodel": [
+        "2",
+        0
+      ],
+      "image": [
+        "1",
+        0
+      ]
+    },
+    "class_type": "BiRefNet_Zho",
+    "_meta": {
+      "title": "🧹BiRefNet"
+    }
+  },
+  "4": {
+    "inputs": {
+      "images": [
+        "3",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  }
+}

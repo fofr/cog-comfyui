@@ -1,3 +1,8 @@
+## 2024-08-15
+
+- [Update ComfyUI](https://github.com/comfyanonymous/ComfyUI/compare/8115d8cce97a3edaaad8b08b45ab37c6782e1cb4...3f5939add69c2a8fea2b892a46a48c2937dc4128)
+- [Add BiRefNet custom node](https://github.com/ZHO-ZHO-ZHO/ComfyUI-BiRefNet-ZHO)
+
 ## 2024-08-11
 
 - [Update ComfyUI](https://github.com/comfyanonymous/ComfyUI/compare/8115d8cce97a3edaaad8b08b45ab37c6782e1cb4...e9589d6d9246d1ce5a810be1507ead39fff50e04)
