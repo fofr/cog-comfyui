@@ -175,5 +175,9 @@
   {
     "repo": "https://github.com/fofr/comfyui-fofr-toolkit",
     "commit": "e1c0aca"
+  },
+  {
+    "repo": "https://github.com/ZHO-ZHO-ZHO/ComfyUI-BiRefNet-ZHO",
+    "commit": "5d18c12"
   }
 ]
