@@ -774,4 +774,7 @@
 ## XLABS
 
 - flux-ip-adapter.safetensors
+- flux-hed-controlnet-v3.safetensors
+- flux-canny-controlnet-v3.safetensors
+- flux-depth-controlnet-v3.safetensors
 
