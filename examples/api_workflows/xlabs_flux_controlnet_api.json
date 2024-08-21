@@ -1,0 +1,252 @@
+{
+  "3": {
+    "inputs": {
+      "noise_seed": 537066427924880,
+      "steps": 25,
+      "timestep_to_start_cfg": 1,
+      "true_gs": 2,
+      "image_to_image_strength": 0,
+      "model": [
+        "32",
+        0
+      ],
+      "conditioning": [
+        "5",
+        0
+      ],
+      "neg_conditioning": [
+        "19",
+        0
+      ],
+      "latent_image": [
+        "6",
+        0
+      ],
+      "controlnet_condition": [
+        "14",
+        0
+      ]
+    },
+    "class_type": "XlabsSampler",
+    "_meta": {
+      "title": "Xlabs Sampler"
+    }
+  },
+  "4": {
+    "inputs": {
+      "clip_name1": "clip_l.safetensors",
+      "clip_name2": "t5xxl_fp16.safetensors",
+      "type": "flux"
+    },
+    "class_type": "DualCLIPLoader",
+    "_meta": {
+      "title": "DualCLIPLoader"
+    }
+  },
+  "5": {
+    "inputs": {
+      "clip_l": "a photo",
+      "t5xxl": "a photo",
+      "guidance": 4,
+      "clip": [
+        "4",
+        0
+      ]
+    },
+    "class_type": "CLIPTextEncodeFlux",
+    "_meta": {
+      "title": "CLIPTextEncodeFlux"
+    }
+  },
+  "6": {
+    "inputs": {
+      "width": 1024,
+      "height": 1024,
+      "batch_size": 1
+    },
+    "class_type": "EmptyLatentImage",
+    "_meta": {
+      "title": "Empty Latent Image"
+    }
+  },
+  "7": {
+    "inputs": {
+      "samples": [
+        "3",
+        0
+      ],
+      "vae": [
+        "8",
+        0
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "8": {
+    "inputs": {
+      "vae_name": "ae.safetensors"
+    },
+    "class_type": "VAELoader",
+    "_meta": {
+      "title": "Load VAE"
+    }
+  },
+  "13": {
+    "inputs": {
+      "model_name": "flux-dev",
+      "controlnet_path": "flux-depth-controlnet-v3.safetensors"
+    },
+    "class_type": "LoadFluxControlNet",
+    "_meta": {
+      "title": "Load Flux ControlNet"
+    }
+  },
+  "14": {
+    "inputs": {
+      "strength": 0.7000000000000001,
+      "controlnet": [
+        "13",
+        0
+      ],
+      "image": [
+        "52",
+        0
+      ]
+    },
+    "class_type": "ApplyFluxControlNet",
+    "_meta": {
+      "title": "Apply Flux ControlNet"
+    }
+  },
+  "16": {
+    "inputs": {
+      "image": "https://replicate.delivery/yhqm/lZeWBoD7eqnHIUCks11CL7ZFQNXJoUFvj8n8dkaXmcJn8CUTA/out-0.webp",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "19": {
+    "inputs": {
+      "clip_l": "bad photo",
+      "t5xxl": "bad photo",
+      "guidance": 4,
+      "clip": [
+        "4",
+        0
+      ]
+    },
+    "class_type": "CLIPTextEncodeFlux",
+    "_meta": {
+      "title": "CLIPTextEncodeFlux"
+    }
+  },
+  "21": {
+    "inputs": {
+      "images": [
+        "7",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "23": {
+    "inputs": {
+      "filename_prefix": "canny_res",
+      "images": [
+        "7",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Image"
+    }
+  },
+  "32": {
+    "inputs": {
+      "unet_name": "flux1-dev.safetensors",
+      "weight_dtype": "default"
+    },
+    "class_type": "UNETLoader",
+    "_meta": {
+      "title": "Load Diffusion Model"
+    }
+  },
+  "39": {
+    "inputs": {
+      "images": [
+        "48",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "48": {
+    "inputs": {
+      "low_threshold": 100,
+      "high_threshold": 200,
+      "resolution": 1024,
+      "image": [
+        "16",
+        0
+      ]
+    },
+    "class_type": "CannyEdgePreprocessor",
+    "_meta": {
+      "title": "Canny Edge"
+    }
+  },
+  "51": {
+    "inputs": {
+      "safe": "enable",
+      "resolution": 1024,
+      "image": [
+        "16",
+        0
+      ]
+    },
+    "class_type": "HEDPreprocessor",
+    "_meta": {
+      "title": "HED Soft-Edge Lines"
+    }
+  },
+  "52": {
+    "inputs": {
+      "a": 6.283185307179586,
+      "bg_threshold": 0.1,
+      "resolution": 1024,
+      "image": [
+        "16",
+        0
+      ]
+    },
+    "class_type": "MiDaS-DepthMapPreprocessor",
+    "_meta": {
+      "title": "MiDaS Depth Map"
+    }
+  },
+  "53": {
+    "inputs": {
+      "images": [
+        "52",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  }
+}
