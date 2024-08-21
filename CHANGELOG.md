@@ -1,5 +1,6 @@
 ## 2024-08-21
 
+- [Add controlnet-union-promax-sdxl-1.0.safetensors to controlnet](https://huggingface.co/xinsir/controlnet-union-sdxl-1.0/resolve/main/diffusion_pytorch_model_promax.safetensors)
 - [Add juggernautXL_v9Rdphoto2Lightning.safetensors to checkpoints](https://civitai.com/models/133005?modelVersionId=357609)
 
 ## 2024-08-15

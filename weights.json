@@ -348,6 +348,7 @@
     "controlnet-sd-xl-1.0-softedge-dexined.safetensors",
     "controlnet-temporalnet-sdxl-1.0.safetensors",
     "controlnet-tile-sdxl-1.0.safetensors",
+    "controlnet-union-promax-sdxl-1.0.safetensors",
     "controlnet-union-sdxl-1.0.safetensors",
     "controlnet-zoe-depth-sdxl-1.0.safetensors",
     "depth-anything.safetensors",
