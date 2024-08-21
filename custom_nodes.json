@@ -183,5 +183,9 @@
   {
     "repo": "https://github.com/XLabs-AI/x-flux-comfyui",
     "commit": "42ca4f7"
+  },
+  {
+    "repo": "https://github.com/EeroHeikkinen/ComfyUI-eesahesNodes",
+    "commit": "c3420a2"
   }
 ]
