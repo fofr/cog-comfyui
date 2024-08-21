@@ -11,6 +11,7 @@ SAMPLERS = [
     "dpm_fast",
     "dpm_adaptive",
     "dpmpp_2s_ancestral",
+    "dpmpp_2s_ancestral_RF",
     "dpmpp_sde",
     "dpmpp_sde_gpu",
     "dpmpp_2m",
