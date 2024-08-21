@@ -1,3 +1,7 @@
+## 2024-08-21
+
+- [Add juggernautXL_v9Rdphoto2Lightning.safetensors to checkpoints](https://civitai.com/models/133005?modelVersionId=357609)
+
 ## 2024-08-15
 
 - [Update ComfyUI](https://github.com/comfyanonymous/ComfyUI/compare/8115d8cce97a3edaaad8b08b45ab37c6782e1cb4...3f5939add69c2a8fea2b892a46a48c2937dc4128)
