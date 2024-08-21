@@ -56,6 +56,7 @@ def write_supported_weights():
         ),
         "UltraPixel": weights_manifest.get_weights_by_type("ULTRAPIXEL"),
         "TensorRT Engines": weights_manifest.get_weights_by_type("TENSORRT"),
+        "XLABS": helpers.X_Flux_ComfyUI.models(),
     }
     with open("supported_weights.md", "w") as f:
         for weight_type, weights in weight_lists.items():

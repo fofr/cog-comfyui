@@ -771,3 +771,7 @@
 - sd3_medium_DYN_A40-b-1-1-1-h-512-1536-1024-w-512-1536-1024.engine
 - sd3_medium_DYN_H100-b-1-1-1-h-512-1536-1024-w-512-1536-1024.engine
 
+## XLABS
+
+- flux-ip-adapter.safetensors
+
