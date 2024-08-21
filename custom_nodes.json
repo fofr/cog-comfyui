@@ -187,5 +187,46 @@
   {
     "repo": "https://github.com/EeroHeikkinen/ComfyUI-eesahesNodes",
     "commit": "c3420a2"
+  },
+  {
+    "repo": "https://github.com/BlenderNeko/ComfyUI_Noise",
+    "commit": "0c9ec19"
+  },
+  {
+    "repo": "https://github.com/pythongosssss/ComfyUI-WD14-Tagger",
+    "commit": "4f1a857"
+  },
+  {
+    "repo": "https://github.com/cubiq/ComfyUI_FaceAnalysis",
+    "commit": "4e686e9"
+  },
+  {
+    "repo": "https://github.com/bash-j/mikey_nodes",
+    "commit": "14b5207"
+  },
+  {
+    "repo": "https://github.com/JPS-GER/ComfyUI_JPS-Nodes",
+    "commit": "0e2a9ac"
+  },
+  {
+    "repo": "https://github.com/chrisgoringe/cg-use-everywhere",
+    "commit": "80c4e6f"
+  },
+  {
+    "repo": "https://github.com/shadowcz007/comfyui-mixlab-nodes",
+    "commit": "c141ba4"
+  },
+  {
+    "repo": "https://github.com/crystian/ComfyUI-Crystools",
+    "commit": "09d8423"
+    
+  },
+  {
+    "repo": "https://github.com/flowtyone/ComfyUI-Flowty-LDSR",
+    "commit": "f9501ec"    
+  },
+  {
+    "repo": "https://github.com/alexopus/ComfyUI-Image-Saver",
+    "commit": "cad2c2e"
   }
 ]
