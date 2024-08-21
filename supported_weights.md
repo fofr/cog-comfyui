@@ -399,6 +399,7 @@
 - diffusers_xl_depth_full.safetensors
 - diffusers_xl_depth_mid.safetensors
 - diffusers_xl_depth_small.safetensors
+- flux.1-dev-controlnet-union.safetensors
 - instantid-controlnet.safetensors
 - ioclab_sd15_recolor.safetensors
 - ip-adapter_sd15.pth

@@ -4,6 +4,8 @@
 - [Add xlabs custom nodes](https://github.com/XLabs-AI/x-flux-comfyui)
 - Add xlabs v3 controlnets (flux-hed-controlnet-v3.safetensors, flux-canny-controlnet-v3.safetensors, flux-depth-controlnet-v3.safetensors)
 - [Add ipadapter/flux-ip-adapter.safetensors to xlabs](https://huggingface.co/XLabs-AI/flux-ip-adapter)
+- [Add ComfyUI-eesahesNodes](https://github.com/EeroHeikkinen/ComfyUI-eesahesNodes) for flux controlnet union support
+- [Add flux.1-dev-controlnet-union.safetensors to controlnet](https://huggingface.co/InstantX/FLUX.1-dev-Controlnet-Union)
 - [Add controlnet-union-promax-sdxl-1.0.safetensors to controlnet](https://huggingface.co/xinsir/controlnet-union-sdxl-1.0/resolve/main/diffusion_pytorch_model_promax.safetensors)
 - [Add juggernautXL_v9Rdphoto2Lightning.safetensors to checkpoints](https://civitai.com/models/133005?modelVersionId=357609)
 
