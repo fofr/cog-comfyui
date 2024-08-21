@@ -22,7 +22,10 @@ def write_supported_weights():
         "IPAdapter": weights_manifest.get_weights_by_type("IPADAPTER"),
         "ControlNet": weights_manifest.get_weights_by_type("CONTROLNET"),
         "VAE": weights_manifest.get_weights_by_type("VAE"),
-        "UNets": weights_manifest.get_weights_by_type("UNET"),
+        "Diffusion models (formerly Unets)": weights_manifest.get_weights_by_type(
+            "DIFFUSION_MODELS"
+        )
+        + weights_manifest.get_weights_by_type("UNET"),
         "PhotoMaker": weights_manifest.get_weights_by_type("PHOTOMAKER"),
         "InstantID": weights_manifest.get_weights_by_type("INSTANTID"),
         "InsightFace": weights_manifest.get_weights_by_type("INSIGHTFACE"),

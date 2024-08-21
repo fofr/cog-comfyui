@@ -463,7 +463,7 @@
 - stable-cascade/stage_a.safetensors
 - vae-ft-mse-840000-ema-pruned.safetensors
 
-## UNets
+## Diffusion models (formerly Unets)
 
 - flux1-dev.safetensors
 - flux1-schnell.safetensors

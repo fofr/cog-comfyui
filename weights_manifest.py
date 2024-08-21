@@ -90,6 +90,16 @@ class WeightsManifest:
         weights_map = {}
 
         def generate_weights_map(keys, dest):
+            # https://github.com/comfyanonymous/ComfyUI/commit/4f7a3cb6fbd58d7546b3c76ec1f418a2650ed709
+            if dest == "unet":
+                return {
+                    key: {
+                        "url": f"{BASE_URL}/{dest}/{key}.tar",
+                        "dest": f"{MODELS_PATH}/diffusion_models",
+                    }
+                    for key in keys
+                }
+
             return {
                 key: {
                     "url": f"{BASE_URL}/{dest}/{key}.tar",
@@ -151,7 +161,7 @@ class WeightsManifest:
             "stable_cascade_stage_c.safetensors",
             "svd.safetensors",
             "svd_xt.safetensors",
-            "turbovisionxlSuperFastXLBasedOnNew_tvxlV32Bakedvae"
+            "turbovisionxlSuperFastXLBasedOnNew_tvxlV32Bakedvae",
         ]
 
     def is_non_commercial_only(self, weight_str):

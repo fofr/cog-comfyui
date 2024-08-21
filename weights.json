@@ -481,6 +481,7 @@
     "stable-cascade/stage_c_lite.safetensors",
     "stable-cascade/stage_c_lite_bf16.safetensors"
   ],
+  "DIFFUSION_MODELS": [],
   "PHOTOMAKER": [
     "photomaker-v1.bin",
     "photomaker-v2.bin"
