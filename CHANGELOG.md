@@ -1,6 +1,6 @@
 ## 2024-08-21
 
-- [Update ComfyUI](https://github.com/comfyanonymous/ComfyUI/compare/3f5939a...5e806f5
+- [Update ComfyUI](https://github.com/comfyanonymous/ComfyUI/compare/3f5939a...5e806f5)
 - [Add xlabs custom nodes](https://github.com/XLabs-AI/x-flux-comfyui)
 - Add xlabs v3 controlnets (flux-hed-controlnet-v3.safetensors, flux-canny-controlnet-v3.safetensors, flux-depth-controlnet-v3.safetensors)
 - [Add ipadapter/flux-ip-adapter.safetensors to xlabs](https://huggingface.co/XLabs-AI/flux-ip-adapter)
