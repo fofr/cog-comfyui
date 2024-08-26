@@ -1,3 +1,8 @@
+
+## 2024-08-26
+
+- [Add FLUX.1-dev-ControlNet-Union-Pro.safetensors to controlnet](https://huggingface.co/Shakker-Labs/FLUX.1-dev-ControlNet-Union-Pro)
+
 ## 2024-08-21
 
 - [Update ComfyUI](https://github.com/comfyanonymous/ComfyUI/compare/3f5939a...5e806f5)
