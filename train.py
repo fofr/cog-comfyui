@@ -235,7 +235,7 @@ def train(
         "ANIMATEDIFF_MODELS": animatediff_models.splitlines()
         if animatediff_models
         else [],
-        "ANIMATEDIFF_LORAS": animatediff_loras.splitlines()
+        "ANIMATEDIFF_MOTION_LORA": animatediff_loras.splitlines()
         if animatediff_loras
         else [],
     }
