@@ -1,4 +1,30 @@
 
+## 2024-08-29
+
+- [Updated ComfyUI-eesahesNodes](https://github.com/EeroHeikkinen/ComfyUI-eesahesNodes/compare/c3420a2...cab7382)
+- [Updated x-flux-comfyui](https://github.com/XLabs-AI/x-flux-comfyui/compare/42ca4f7...f1610b2)
+- [Updated comfyui-fofr-toolkit](https://github.com/fofr/comfyui-fofr-toolkit/compare/e1c0aca...eb5fec4)
+- [Updated comfyui-inpaint-nodes](https://github.com/Acly/comfyui-inpaint-nodes/compare/717cb77...6ce66ff)
+- [Updated comfyui-prompter-fofrai](https://github.com/fofr/comfyui-prompter-fofrai/compare/3243a26...4a0318f)
+- [Updated rgthree-comfy](https://github.com/rgthree/rgthree-comfy/compare/ab0a59a...cae8e2a)
+- [Updated comfyui_jankhidiffusion](https://github.com/blepping/comfyui_jankhidiffusion/compare/d7eea2a...86afeb7)
+- [Updated ComfyUI-IC-Light](https://github.com/kijai/ComfyUI-IC-Light/compare/476303a...a936586)
+- [Updated ComfyUI-IC-Light-Native](https://github.com/huchenlei/ComfyUI-IC-Light-Native/compare/536739a...cdc61bc)
+- [Updated ComfyUI-KJNodes](https://github.com/kijai/ComfyUI-KJNodes/compare/2ead4fa...47a6da5)
+- [Updated ComfyUI-layerdiffuse](https://github.com/huchenlei/ComfyUI-layerdiffuse/compare/2cbfe39...6e4aeb2)
+- [Updated was-node-suite-comfyui](https://github.com/WASasquatch/was-node-suite-comfyui/compare/72290fc...fdb0f52)
+- [Updated ComfyUI-Custom-Scripts](https://github.com/pythongosssss/ComfyUI-Custom-Scripts/compare/abf3711...013894f)
+- [Updated ComfyUI_essentials](https://github.com/cubiq/ComfyUI_essentials/compare/5f1fc52...3777c5d)
+- [Updated ComfyUI_tinyterraNodes](https://github.com/TinyTerra/ComfyUI_tinyterraNodes/compare/732d417...52711d5)
+- [Updated ComfyUI_FizzNodes](https://github.com/FizzleDorf/ComfyUI_FizzNodes/compare/0e30c12...974b41c)
+- [Updated efficiency-nodes-comfyui](https://github.com/jags111/efficiency-nodes-comfyui/compare/b471390...3ead4af)
+- [Updated ComfyUI-Advanced-ControlNet](https://github.com/Kosinkadink/ComfyUI-Advanced-ControlNet/compare/68e5cd4...949843e)
+- [Updated ComfyUI-VideoHelperSuite](https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite/compare/41ca443...0376e57)
+- [Updated ComfyUI-AnimateDiff-Evolved](https://github.com/Kosinkadink/ComfyUI-AnimateDiff-Evolved/compare/925511d...34b7c52)
+- [Updated comfyui-tooling-nodes](https://github.com/Acly/comfyui-tooling-nodes/compare/b5fec4a...e0d0c3c)
+- [Updated comfyui_controlnet_aux](https://github.com/Fannovel16/comfyui_controlnet_aux/compare/8e51eb3...6c563c5)
+- [Updated ComfyUI_IPAdapter_plus](https://github.com/cubiq/ComfyUI_IPAdapter_plus/compare/ce9b621...88a7140)
+
 ## 2024-08-26
 
 - [Add FLUX.1-dev-ControlNet-Union-Pro.safetensors to controlnet](https://huggingface.co/Shakker-Labs/FLUX.1-dev-ControlNet-Union-Pro)
