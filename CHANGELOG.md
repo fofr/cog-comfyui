@@ -1,6 +1,10 @@
 
 ## 2024-08-29
 
+- [Update ComfyUI](https://github.com/comfyanonymous/ComfyUI/compare/5e806f5...b33cd61)
+
+Update custom nodes:
+
 - [Updated ComfyUI-eesahesNodes](https://github.com/EeroHeikkinen/ComfyUI-eesahesNodes/compare/c3420a2...cab7382)
 - [Updated x-flux-comfyui](https://github.com/XLabs-AI/x-flux-comfyui/compare/42ca4f7...f1610b2)
 - [Updated comfyui-fofr-toolkit](https://github.com/fofr/comfyui-fofr-toolkit/compare/e1c0aca...eb5fec4)
