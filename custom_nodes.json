@@ -129,8 +129,9 @@
     "commit": "86afeb7"
   },
   {
-    "repo": "https://github.com/TheMistoAI/ComfyUI-Anyline",
-    "commit": "17c8146"
+    "repo": "https://github.com/zcfire2017/ComfyUI-Anyline",
+    "commit": "017019e",
+    "notes": "Fork of https://github.com/TheMistoAI/ComfyUI-Anyline which fixes comfyui_controlnet_aux imports"
   },
   {
     "repo": "https://github.com/rgthree/rgthree-comfy",
