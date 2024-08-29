@@ -236,7 +236,7 @@ def get_subfolder():
         "controlnet",
         "ipadapter",
         "vae",
-        "unet",
+        "diffusion_models",
         "photomaker",
         "instantid",
         "insightface",

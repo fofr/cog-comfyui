@@ -33,6 +33,13 @@ Update custom nodes:
 
 - [Add FLUX.1-dev-ControlNet-Union-Pro.safetensors to controlnet](https://huggingface.co/Shakker-Labs/FLUX.1-dev-ControlNet-Union-Pro)
 
+## 2024-08-24
+
+- [Add Cyberpunk_typeface_flux_lora_v1.safetensors to loras](https://civitai.com/api/download/models/754682?type=Model&format=SafeTensor&token=da8e617e55e3e71da1662c6cfee4ba79)
+
+## 2024-08-22
+
+- [Add flux1-dev-fp8.safetensors to diffusion_models](https://huggingface.co/Kijai/flux-fp8/resolve/main/flux1-dev-fp8.safetensors?download=true)
 ## 2024-08-21
 
 - [Update ComfyUI](https://github.com/comfyanonymous/ComfyUI/compare/3f5939a...5e806f5)

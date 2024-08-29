@@ -232,6 +232,7 @@
 - badquality_v02.safetensors
 - charTurnBetaLora.safetensors
 - COOLKIDS_MERGE_V2.5.safetensors
+- Cyberpunk_typeface_flux_lora_v1.safetensors
 - flux-RealismLora.safetensors
 - fofr/emoji.safetensors
 - glowneon_xl_v1.safetensors
@@ -467,6 +468,7 @@
 
 ## Diffusion models (formerly Unets)
 
+- flux1-dev-fp8.safetensors
 - flux1-dev.safetensors
 - flux1-schnell.safetensors
 - iclight_sd15_fbc.safetensors
