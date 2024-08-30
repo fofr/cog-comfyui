@@ -188,5 +188,9 @@
   {
     "repo": "https://github.com/EeroHeikkinen/ComfyUI-eesahesNodes",
     "commit": "cab7382"
+  },
+  {
+    "repo": "https://github.com/Fannovel16/ComfyUI-Video-Matting",
+    "commit": "dd5ff37"
   }
 ]

@@ -1,4 +1,8 @@
 
+## 2024-08-39
+
+- Add [ComfyUI-Video-Matting](https://github.com/Fannovel16/ComfyUI-Video-Matting)
+
 ## 2024-08-29
 
 - [Update ComfyUI](https://github.com/comfyanonymous/ComfyUI/compare/5e806f5...b33cd61)

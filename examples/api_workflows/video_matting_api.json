@@ -1,0 +1,123 @@
+{
+  "1": {
+    "inputs": {
+      "video": "https://replicate.delivery/pbxt/K4PoZN3Q6JIiG61inQLKTxIYVpOVoAYCfxwQksNGTfnmGLUf/video%20(2).mp4",
+      "force_rate": 0,
+      "force_size": "Disabled",
+      "custom_width": 512,
+      "custom_height": 512,
+      "frame_load_cap": 0,
+      "skip_first_frames": 0,
+      "select_every_nth": 2
+    },
+    "class_type": "VHS_LoadVideo",
+    "_meta": {
+      "title": "Load Video (Upload) 🎥🅥🅗🅢"
+    }
+  },
+  "2": {
+    "inputs": {
+      "backbone": "resnet50",
+      "fp16": true,
+      "bg_color": "green",
+      "batch_size": 4,
+      "video_frames": [
+        "4",
+        0
+      ]
+    },
+    "class_type": "Robust Video Matting",
+    "_meta": {
+      "title": "Robust Video Matting"
+    }
+  },
+  "4": {
+    "inputs": {
+      "upscale_method": "nearest-exact",
+      "scale_by": 0.75,
+      "image": [
+        "1",
+        0
+      ]
+    },
+    "class_type": "ImageScaleBy",
+    "_meta": {
+      "title": "Upscale Image By"
+    }
+  },
+  "5": {
+    "inputs": {
+      "frame_rate": 15,
+      "loop_count": 0,
+      "filename_prefix": "RVM",
+      "format": "video/h264-mp4",
+      "pix_fmt": "yuv420p",
+      "crf": 19,
+      "save_metadata": true,
+      "pingpong": false,
+      "save_output": true,
+      "images": [
+        "4",
+        0
+      ]
+    },
+    "class_type": "VHS_VideoCombine",
+    "_meta": {
+      "title": "Original"
+    }
+  },
+  "6": {
+    "inputs": {
+      "frame_rate": 15,
+      "loop_count": 0,
+      "filename_prefix": "RVM",
+      "format": "video/h264-mp4",
+      "pix_fmt": "yuv420p",
+      "crf": 19,
+      "save_metadata": true,
+      "pingpong": false,
+      "save_output": true,
+      "images": [
+        "2",
+        0
+      ]
+    },
+    "class_type": "VHS_VideoCombine",
+    "_meta": {
+      "title": "Foreground"
+    }
+  },
+  "7": {
+    "inputs": {
+      "mask": [
+        "2",
+        1
+      ]
+    },
+    "class_type": "MaskToImage",
+    "_meta": {
+      "title": "Convert Mask to Image"
+    }
+  },
+  "8": {
+    "inputs": {
+      "frame_rate": 15,
+      "loop_count": 0,
+      "filename_prefix": "RVM",
+      "format": "video/h264-mp4",
+      "pix_fmt": "yuv420p",
+      "crf": 19,
+      "save_metadata": true,
+      "pingpong": false,
+      "save_output": true,
+      "images": [
+        "7",
+        0
+      ]
+    },
+    "class_type": "VHS_VideoCombine",
+    "_meta": {
+      "title": "Mask"
+    }
+  }
+}

@@ -782,3 +782,11 @@
 - flux-canny-controlnet-v3.safetensors
 - flux-depth-controlnet-v3.safetensors
 
+## Video Matting
+
+- rvm_mobilenetv3_fp16.torchscript
+- rvm_mobilenetv3_fp32.torchscript
+- rvm_resnet50_fp16.torchscript
+- rvm_resnet50_fp32.torchscript
+- briaai_rmbg_v1.4.pth
+
