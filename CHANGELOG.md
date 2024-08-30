@@ -2,6 +2,7 @@
 ## 2024-08-39
 
 - Add [ComfyUI-Video-Matting](https://github.com/Fannovel16/ComfyUI-Video-Matting)
+- Add [ComfyUI_ColorMod](https://github.com/city96/ComfyUI_ColorMod)
 
 ## 2024-08-29
 
