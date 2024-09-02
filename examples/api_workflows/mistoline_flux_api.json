@@ -1,0 +1,187 @@
+{
+  "10": {
+    "inputs": {
+      "clip_name1": "clip_l.safetensors",
+      "clip_name2": "t5xxl_fp8_e4m3fn.safetensors",
+      "type": "flux"
+    },
+    "class_type": "DualCLIPLoader",
+    "_meta": {
+      "title": "DualCLIPLoader"
+    }
+  },
+  "13": {
+    "inputs": {
+      "vae_name": "ae.safetensors"
+    },
+    "class_type": "VAELoader",
+    "_meta": {
+      "title": "Load VAE"
+    }
+  },
+  "15": {
+    "inputs": {
+      "lora_name": "Hyper-FLUX.1-dev-16steps-lora.safetensors",
+      "strength_model": 0.13,
+      "model": [
+        "41",
+        0
+      ]
+    },
+    "class_type": "LoraLoaderModelOnly",
+    "_meta": {
+      "title": "LoraLoaderModelOnly"
+    }
+  },
+  "17": {
+    "inputs": {
+      "model_name": "mistoline_flux.dev_v1.safetensors"
+    },
+    "class_type": "LoadTheMistoFluxControlNet",
+    "_meta": {
+      "title": "Load MistoCN-Flux.dev"
+    }
+  },
+  "19": {
+    "inputs": {
+      "batch_size": 1,
+      "guidance": 4,
+      "seed": 469350037018382,
+      "steps": 16,
+      "model": [
+        "15",
+        0
+      ],
+      "ae": [
+        "13",
+        0
+      ],
+      "positive": [
+        "26",
+        0
+      ],
+      "negative": [
+        "28",
+        0
+      ],
+      "controlnet_condition": [
+        "35",
+        0
+      ]
+    },
+    "class_type": "KSamplerTheMisto",
+    "_meta": {
+      "title": "KSampler for MistoCN-Flux.dev"
+    }
+  },
+  "22": {
+    "inputs": {
+      "images": [
+        "19",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "26": {
+    "inputs": {
+      "clip_l": "Model in modern attire with metallic accessories, in an old factory setting, Metallic sheen, Full-frame mirrorless, 35mm lens, f/2.8 aperture, ISO 500, off-camera flash",
+      "t5xxl": "Model in modern attire with metallic accessories, in an old factory setting, Metallic sheen, Full-frame mirrorless, 35mm lens, f/2.8 aperture, ISO 500, off-camera flash",
+      "guidance": 3.5,
+      "clip": [
+        "10",
+        0
+      ]
+    },
+    "class_type": "CLIPTextEncodeFlux",
+    "_meta": {
+      "title": "CLIPTextEncodeFlux"
+    }
+  },
+  "28": {
+    "inputs": {
+      "clip_l": "out of frame, lowres, text, error, cropped, worst quality, low quality, jpeg artifacts, ugly, duplicate, morbid, mutilated, out of frame, extra fingers, mutated hands, poorly drawn hands, poorly drawn face, mutation, deformed, blurry, bad anatomy, bad proportions, extra limbs, cloned face, disfigured, gross proportions, malformed limbs, missing arms, missing legs, extra arms, extra legs, fused fingers, too many fingers, long neck, username, watermark, signature.",
+      "t5xxl": "out of frame, lowres, text, error, cropped, worst quality, low quality, jpeg artifacts, ugly, duplicate, morbid, mutilated, out of frame, extra fingers, mutated hands, poorly drawn hands, poorly drawn face, mutation, deformed, blurry, bad anatomy, bad proportions, extra limbs, cloned face, disfigured, gross proportions, malformed limbs, missing arms, missing legs, extra arms, extra legs, fused fingers, too many fingers, long neck, username, watermark, signature.",
+      "guidance": 3.5,
+      "clip": [
+        "10",
+        0
+      ]
+    },
+    "class_type": "CLIPTextEncodeFlux",
+    "_meta": {
+      "title": "CLIPTextEncodeFlux"
+    }
+  },
+  "35": {
+    "inputs": {
+      "resolution": 960,
+      "strength": 0.5,
+      "controlnet": [
+        "17",
+        0
+      ],
+      "image": [
+        "36",
+        0
+      ]
+    },
+    "class_type": "ApplyTheMistoFluxControlNet",
+    "_meta": {
+      "title": "Apply MistoCN-Flux.dev"
+    }
+  },
+  "36": {
+    "inputs": {
+      "merge_with_lineart": "lineart_standard",
+      "resolution": 960,
+      "lineart_lower_bound": 0,
+      "lineart_upper_bound": 1,
+      "object_min_size": 36,
+      "object_connectivity": 1,
+      "image": [
+        "37",
+        0
+      ]
+    },
+    "class_type": "AnyLineArtPreprocessor_aux",
+    "_meta": {
+      "title": "AnyLine Lineart"
+    }
+  },
+  "37": {
+    "inputs": {
+      "image": "https://replicate.delivery/yhqm/MoWaTVhfDFU7GyNvrPCZveTOcBdv826ckZwq4gwIN970QgXTA/out-0.webp",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "38": {
+    "inputs": {
+      "images": [
+        "35",
+        1
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "41": {
+    "inputs": {
+      "unet_name": "flux1-dev-fp8.safetensors",
+      "weight_dtype": "default"
+    },
+    "class_type": "UNETLoader",
+    "_meta": {
+      "title": "Load Diffusion Model"
+    }
+  }
+}

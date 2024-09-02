@@ -1,0 +1,745 @@
+{
+  "last_node_id": 40,
+  "last_link_id": 44,
+  "nodes": [
+    {
+      "id": 13,
+      "type": "VAELoader",
+      "pos": [
+        60,
+        327
+      ],
+      "size": {
+        "0": 315,
+        "1": 58
+      },
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            19
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAELoader"
+      },
+      "widgets_values": [
+        "ae.safetensors"
+      ]
+    },
+    {
+      "id": 10,
+      "type": "DualCLIPLoader",
+      "pos": [
+        58,
+        27
+      ],
+      "size": {
+        "0": 348.2605285644531,
+        "1": 106
+      },
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            24,
+            26
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "DualCLIPLoader"
+      },
+      "widgets_values": [
+        "clip_l.safetensors",
+        "t5xxl_fp8_e4m3fn.safetensors",
+        "flux"
+      ]
+    },
+    {
+      "id": 36,
+      "type": "AnyLineArtPreprocessor_aux",
+      "pos": [
+        250,
+        569
+      ],
+      "size": {
+        "0": 315,
+        "1": 178
+      },
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 38
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": [
+            37
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "AnyLineArtPreprocessor_aux"
+      },
+      "widgets_values": [
+        "lineart_standard",
+        960,
+        0,
+        1,
+        36,
+        1
+      ]
+    },
+    {
+      "id": 17,
+      "type": "LoadTheMistoFluxControlNet",
+      "pos": [
+        54,
+        445
+      ],
+      "size": {
+        "0": 392,
+        "1": 60
+      },
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "ControlNet",
+          "type": "MistoFluxControlNet",
+          "links": [
+            40
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadTheMistoFluxControlNet"
+      },
+      "widgets_values": [
+        "mistoline_flux.dev_v1.safetensors"
+      ]
+    },
+    {
+      "id": 26,
+      "type": "CLIPTextEncodeFlux",
+      "pos": [
+        819,
+        29
+      ],
+      "size": {
+        "0": 400,
+        "1": 200
+      },
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 24
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            25
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncodeFlux"
+      },
+      "widgets_values": [
+        "Model in modern attire with metallic accessories, in an old factory setting, Metallic sheen, Full-frame mirrorless, 35mm lens, f/2.8 aperture, ISO 500, off-camera flash",
+        "Model in modern attire with metallic accessories, in an old factory setting, Metallic sheen, Full-frame mirrorless, 35mm lens, f/2.8 aperture, ISO 500, off-camera flash",
+        3.5
+      ]
+    },
+    {
+      "id": 4,
+      "type": "CheckpointLoaderSimple",
+      "pos": [
+        64,
+        179
+      ],
+      "size": {
+        "0": 315,
+        "1": 98
+      },
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            12
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [],
+          "slot_index": 1
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [],
+          "slot_index": 2
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CheckpointLoaderSimple"
+      },
+      "widgets_values": [
+        "flux1-dev-fp8.safetensors"
+      ]
+    },
+    {
+      "id": 28,
+      "type": "CLIPTextEncodeFlux",
+      "pos": [
+        823,
+        273
+      ],
+      "size": {
+        "0": 399.6443786621094,
+        "1": 156.8167266845703
+      },
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 26
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            27
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncodeFlux"
+      },
+      "widgets_values": [
+        "out of frame, lowres, text, error, cropped, worst quality, low quality, jpeg artifacts, ugly, duplicate, morbid, mutilated, out of frame, extra fingers, mutated hands, poorly drawn hands, poorly drawn face, mutation, deformed, blurry, bad anatomy, bad proportions, extra limbs, cloned face, disfigured, gross proportions, malformed limbs, missing arms, missing legs, extra arms, extra legs, fused fingers, too many fingers, long neck, username, watermark, signature.",
+        "out of frame, lowres, text, error, cropped, worst quality, low quality, jpeg artifacts, ugly, duplicate, morbid, mutilated, out of frame, extra fingers, mutated hands, poorly drawn hands, poorly drawn face, mutation, deformed, blurry, bad anatomy, bad proportions, extra limbs, cloned face, disfigured, gross proportions, malformed limbs, missing arms, missing legs, extra arms, extra legs, fused fingers, too many fingers, long neck, username, watermark, signature.",
+        3.5
+      ]
+    },
+    {
+      "id": 21,
+      "type": "Note",
+      "pos": [
+        587,
+        286
+      ],
+      "size": {
+        "0": 210,
+        "1": 122.03421020507812
+      },
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "Make sure to craft your prompts well—precision is more important than length, otherwise the result could be very bad.\n\nPrompt非常重要，请用AI或者自己写一个好的prompt，不然效果会很糟糕。"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 39,
+      "type": "Note",
+      "pos": [
+        774,
+        629
+      ],
+      "size": {
+        "0": 210,
+        "1": 122.03421020507812
+      },
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "Very sensitive to strength, please start with about 0.5 and gradually increase\n\n对strength非常敏感，请从0.5开始尝试逐步增加。"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 38,
+      "type": "PreviewImage",
+      "pos": [
+        1015,
+        479
+      ],
+      "size": {
+        "0": 332.62847900390625,
+        "1": 319.48089599609375
+      },
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 41
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      }
+    },
+    {
+      "id": 35,
+      "type": "ApplyTheMistoFluxControlNet",
+      "pos": [
+        593,
+        482
+      ],
+      "size": {
+        "0": 393,
+        "1": 102
+      },
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "controlnet",
+          "type": "MistoFluxControlNet",
+          "link": 40
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 37
+        }
+      ],
+      "outputs": [
+        {
+          "name": "controlnet_condition",
+          "type": "ControlNetCondition",
+          "links": [
+            39
+          ],
+          "slot_index": 0,
+          "shape": 3
+        },
+        {
+          "name": "cond_image",
+          "type": "IMAGE",
+          "links": [
+            41
+          ],
+          "slot_index": 1,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ApplyTheMistoFluxControlNet"
+      },
+      "widgets_values": [
+        960,
+        0.5
+      ]
+    },
+    {
+      "id": 19,
+      "type": "KSamplerTheMisto",
+      "pos": [
+        1251,
+        -121
+      ],
+      "size": {
+        "0": 330,
+        "1": 234
+      },
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 44
+        },
+        {
+          "name": "ae",
+          "type": "VAE",
+          "link": 19
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 25
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 27
+        },
+        {
+          "name": "controlnet_condition",
+          "type": "ControlNetCondition",
+          "link": 39
+        }
+      ],
+      "outputs": [
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": [
+            20
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSamplerTheMisto"
+      },
+      "widgets_values": [
+        1,
+        4,
+        1039574509141705,
+        "randomize",
+        16
+      ]
+    },
+    {
+      "id": 22,
+      "type": "PreviewImage",
+      "pos": [
+        1614,
+        -128
+      ],
+      "size": {
+        "0": 461.8827819824219,
+        "1": 499.9466247558594
+      },
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 20
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      }
+    },
+    {
+      "id": 20,
+      "type": "Note",
+      "pos": [
+        586,
+        55
+      ],
+      "size": {
+        "0": 210,
+        "1": 122.03421020507812
+      },
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "Make sure to craft your prompts well—precision is more important than length, otherwise the result could be very bad.\n\nPrompt非常重要，请用AI或者自己写一个好的prompt，不然效果会很糟糕。"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 40,
+      "type": "Note",
+      "pos": [
+        1258,
+        -232
+      ],
+      "size": {
+        "0": 210,
+        "1": 67.63623809814453
+      },
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "text": ""
+      },
+      "widgets_values": [
+        "no autoCFG\n\n不要使用自动CFG"
+      ],
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 37,
+      "type": "LoadImage",
+      "pos": [
+        -92,
+        568
+      ],
+      "size": {
+        "0": 315,
+        "1": 314
+      },
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            38
+          ],
+          "slot_index": 0,
+          "shape": 3
+        },
+        {
+          "name": "MASK",
+          "type": "MASK",
+          "links": null,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "example.png",
+        "image"
+      ]
+    },
+    {
+      "id": 15,
+      "type": "LoraLoaderModelOnly",
+      "pos": [
+        498,
+        -118
+      ],
+      "size": [
+        421.18783853534103,
+        82
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 12
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            44
+          ],
+          "slot_index": 0,
+          "shape": 3
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoraLoaderModelOnly"
+      },
+      "widgets_values": [
+        "Hyper-FLUX.1-dev-16steps-lora.safetensors",
+        0.13
+      ]
+    }
+  ],
+  "links": [
+    [
+      12,
+      4,
+      0,
+      15,
+      0,
+      "MODEL"
+    ],
+    [
+      19,
+      13,
+      0,
+      19,
+      1,
+      "VAE"
+    ],
+    [
+      20,
+      19,
+      0,
+      22,
+      0,
+      "IMAGE"
+    ],
+    [
+      24,
+      10,
+      0,
+      26,
+      0,
+      "CLIP"
+    ],
+    [
+      25,
+      26,
+      0,
+      19,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      26,
+      10,
+      0,
+      28,
+      0,
+      "CLIP"
+    ],
+    [
+      27,
+      28,
+      0,
+      19,
+      3,
+      "CONDITIONING"
+    ],
+    [
+      37,
+      36,
+      0,
+      35,
+      1,
+      "IMAGE"
+    ],
+    [
+      38,
+      37,
+      0,
+      36,
+      0,
+      "IMAGE"
+    ],
+    [
+      39,
+      35,
+      0,
+      19,
+      4,
+      "ControlNetCondition"
+    ],
+    [
+      40,
+      17,
+      0,
+      35,
+      0,
+      "MistoFluxControlNet"
+    ],
+    [
+      41,
+      35,
+      1,
+      38,
+      0,
+      "IMAGE"
+    ],
+    [
+      44,
+      15,
+      0,
+      19,
+      0,
+      "MODEL"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.9090909090909091,
+      "offset": [
+        309.62710287090897,
+        281.1781363587783
+      ]
+    }
+  },
+  "version": 0.4
+}

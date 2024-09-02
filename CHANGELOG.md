@@ -1,5 +1,6 @@
 ## 2024-09-02
 
+- [Add MistoLine Flux ControlNet custom nodes](https://github.com/TheMistoAI/MistoControlNet-Flux-dev)
 - [Add Hyper-FLUX.1-dev-8steps-lora.safetensors to loras](https://huggingface.co/ByteDance/Hyper-SD)
 - [Add Hyper-FLUX.1-dev-16steps-lora.safetensors to loras](https://huggingface.co/ByteDance/Hyper-SD)
 - [Add mistoline_flux.dev_v1.safetensors to controlnet](https://huggingface.co/TheMistoAI/MistoLine_Flux.dev)

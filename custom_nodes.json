@@ -196,5 +196,9 @@
   {
     "repo": "https://github.com/city96/ComfyUI_ColorMod",
     "commit": "2f14785"
+  },
+  {
+    "repo": "https://github.com/TheMistoAI/MistoControlNet-Flux-dev",
+    "commit": "79e3982"
   }
 ]

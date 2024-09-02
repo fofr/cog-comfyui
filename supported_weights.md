@@ -419,7 +419,6 @@
 - kohya_controllllite_xl_openpose_anime.safetensors
 - kohya_controllllite_xl_openpose_anime_v2.safetensors
 - kohya_controllllite_xl_scribble_anime.safetensors
-- mistoline_flux.dev_v1.safetensors
 - mistoLine_fp16.safetensors
 - mistoLine_rank256.safetensors
 - OpenPoseXL2.safetensors
@@ -792,4 +791,8 @@
 - rvm_resnet50_fp16.torchscript
 - rvm_resnet50_fp32.torchscript
 - briaai_rmbg_v1.4.pth
+
+## Misto ControlNet Flux
+
+- mistoline_flux.dev_v1.safetensors
 
