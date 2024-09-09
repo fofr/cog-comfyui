@@ -186,6 +186,13 @@ class ComfyUI:
             out = self.ws.recv()
             if isinstance(out, str):
                 message = json.loads(out)
+
+                if message["type"] == "execution_error":
+                    error_message = json.dumps(message, indent=2)
+                    raise Exception(
+                        f"There was an error executing your workflow:\n\n{error_message}"
+                    )
+
                 if message["type"] == "executing":
                     data = message["data"]
                     if data["node"] is None and data["prompt_id"] == prompt_id:
