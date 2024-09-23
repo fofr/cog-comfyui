@@ -3,6 +3,7 @@ import shutil
 import tarfile
 import zipfile
 import mimetypes
+from PIL import Image
 from typing import List
 from cog import BasePredictor, Input, Path
 from comfyui import ComfyUI
@@ -54,7 +55,8 @@ class Predictor(BasePredictor):
                                 )
 
     def handle_input_file(self, input_file: Path):
-        file_extension = os.path.splitext(input_file)[1].lower()
+        file_extension = self.get_file_extension(input_file)
+
         if file_extension == ".tar":
             with tarfile.open(input_file, "r") as tar:
                 tar.extractall(INPUT_DIR)
@@ -70,6 +72,26 @@ class Predictor(BasePredictor):
         print(f"Inputs uploaded to {INPUT_DIR}:")
         self.comfyUI.get_files(INPUT_DIR)
         print("====================================")
+
+    def get_file_extension(self, input_file: Path) -> str:
+        file_extension = os.path.splitext(input_file)[1].lower()
+        if not file_extension:
+            with open(input_file, "rb") as f:
+                file_signature = f.read(4)
+            if file_signature.startswith(b"\x1f\x8b"):  # gzip signature
+                file_extension = ".tar"
+            elif file_signature.startswith(b"PK"):  # zip signature
+                file_extension = ".zip"
+            else:
+                try:
+                    with Image.open(input_file) as img:
+                        file_extension = f".{img.format.lower()}"
+                        print(f"Determined file type: {file_extension}")
+                except Exception as e:
+                    raise ValueError(
+                        f"Unable to determine file type for: {input_file}, {e}"
+                    )
+        return file_extension
 
     def predict(
         self,
