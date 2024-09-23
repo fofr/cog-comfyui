@@ -1,3 +1,8 @@
+## 2024-09-23
+
+- [Fix broken pipe error](https://github.com/fofr/cog-comfyui/pull/172) causing ComfyUI workflows to stop when using cog v0.9.13 and later
+- [Update ComfyUI to latest](https://github.com/comfyanonymous/ComfyUI/compare/b33cd61..3a0eeee)
+
 ## 2024-09-02
 
 - [Add MistoLine Flux ControlNet custom nodes](https://github.com/TheMistoAI/MistoControlNet-Flux-dev)

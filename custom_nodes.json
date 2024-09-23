@@ -178,8 +178,9 @@
     "commit": "eb5fec4"
   },
   {
-    "repo": "https://github.com/ZHO-ZHO-ZHO/ComfyUI-BiRefNet-ZHO",
-    "commit": "5d18c12"
+    "repo": "https://github.com/shadel/ComfyUI-BiRefNet-ZHO",
+    "commit": "0f4879d",
+    "notes": "Fork of https://github.com/ZHO-ZHO-ZHO/ComfyUI-BiRefNet which fixes util imports"
   },
   {
     "repo": "https://github.com/XLabs-AI/x-flux-comfyui",
