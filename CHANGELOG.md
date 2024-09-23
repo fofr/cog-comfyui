@@ -3,6 +3,7 @@
 - [Fix broken pipe error](https://github.com/fofr/cog-comfyui/pull/172) causing ComfyUI workflows to stop when using cog v0.9.13 and later
 - [Update ComfyUI to latest](https://github.com/comfyanonymous/ComfyUI/compare/b33cd61..3a0eeee)
 - [Add ViT-L-14-TEXT-detail-improved-hiT-GmP-TE-only-HF.safetensors to clip](https://huggingface.co/zer0int/CLIP-GmP-ViT-L-14/blob/main/ViT-L-14-TEXT-detail-improved-hiT-GmP-TE-only-HF.safetensors) for improved long text in flux
+- [Add epicrealism_pureEvolutionV5-inpainting.safetensors to checkpoints](https://civitai.com/api/download/models/134361?type=Model&format=SafeTensor&size=pruned&fp=fp16)
 
 Update custom nodes:
 

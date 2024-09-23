@@ -29,6 +29,7 @@
 - dreamshaperXL_lightningDPMSDE.safetensors
 - dynavision_v20Bakedvae.safetensors
 - epicrealism_naturalSinRC1VAE.safetensors
+- epicrealism_pureEvolutionV5-inpainting.safetensors
 - Epicrealismxl_Hades.safetensors
 - epicrealismXL_v10.safetensors
 - epicrealismXL_v7FinalDestination.safetensors
