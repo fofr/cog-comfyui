@@ -149,6 +149,7 @@
 - stable-diffusion-2-1-clip.safetensors
 - t5xxl_fp16.safetensors
 - t5xxl_fp8_e4m3fn.safetensors
+- ViT-L-14-TEXT-detail-improved-hiT-GmP-TE-only-HF.safetensors
 
 ## CLIP Vision
 
@@ -792,7 +793,7 @@
 - rvm_resnet50_fp32.torchscript
 - briaai_rmbg_v1.4.pth
 
-## Misto ControlNet Flux
+## MistoLine Flux ControlNet
 
 - mistoline_flux.dev_v1.safetensors
 
