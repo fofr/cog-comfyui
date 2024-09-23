@@ -2,6 +2,9 @@
 
 - [Fix broken pipe error](https://github.com/fofr/cog-comfyui/pull/172) causing ComfyUI workflows to stop when using cog v0.9.13 and later
 - [Update ComfyUI to latest](https://github.com/comfyanonymous/ComfyUI/compare/b33cd61..3a0eeee)
+
+Update custom nodes:
+
 - [Updated x-flux-comfyui](https://github.com/XLabs-AI/x-flux-comfyui/compare/f1610b2...c4af981)
 - [Updated ComfyUI-BrushNet](https://github.com/nullquant/ComfyUI-BrushNet/compare/a510eff...4f1992e)
 - [Updated comfyui-inpaint-nodes](https://github.com/Acly/comfyui-inpaint-nodes/compare/6ce66ff...d3655fc)
