@@ -2,6 +2,26 @@
 
 - [Fix broken pipe error](https://github.com/fofr/cog-comfyui/pull/172) causing ComfyUI workflows to stop when using cog v0.9.13 and later
 - [Update ComfyUI to latest](https://github.com/comfyanonymous/ComfyUI/compare/b33cd61..3a0eeee)
+- [Updated x-flux-comfyui](https://github.com/XLabs-AI/x-flux-comfyui/compare/f1610b2...c4af981)
+- [Updated ComfyUI-BrushNet](https://github.com/nullquant/ComfyUI-BrushNet/compare/a510eff...4f1992e)
+- [Updated comfyui-inpaint-nodes](https://github.com/Acly/comfyui-inpaint-nodes/compare/6ce66ff...d3655fc)
+- [Updated ComfyMath](https://github.com/evanspearman/ComfyMath/compare/be9beab...939bb81)
+- [Updated rgthree-comfy](https://github.com/rgthree/rgthree-comfy/compare/cae8e2a...083ad2a)
+- [Updated ComfyUI-IC-Light](https://github.com/kijai/ComfyUI-IC-Light/compare/a936586...8a9f9c9)
+- [Updated PuLID_ComfyUI](https://github.com/cubiq/PuLID_ComfyUI/compare/158d6bc...13954de)
+- [Updated ComfyUI-KJNodes](https://github.com/kijai/ComfyUI-KJNodes/compare/47a6da5...13242fc)
+- [Updated was-node-suite-comfyui](https://github.com/WASasquatch/was-node-suite-comfyui/compare/fdb0f52...bb34bd4)
+- [Updated ComfyUI_InstantID](https://github.com/cubiq/ComfyUI_InstantID/compare/6d95aa6...579bdf6)
+- [Updated comfyui-reactor-node](https://github.com/Gourieff/comfyui-reactor-node/compare/2832357...89dba21)
+- [Updated ComfyUI-Custom-Scripts](https://github.com/pythongosssss/ComfyUI-Custom-Scripts/compare/013894f...626e001)
+- [Updated ComfyUI-PhotoMaker-Plus](https://github.com/shiimizu/ComfyUI-PhotoMaker-Plus/compare/10c453a...024da47)
+- [Updated ComfyUI-Advanced-ControlNet](https://github.com/Kosinkadink/ComfyUI-Advanced-ControlNet/compare/949843e...74d0c56)
+- [Updated ComfyUI-AnimateDiff-Evolved](https://github.com/Kosinkadink/ComfyUI-AnimateDiff-Evolved/compare/34b7c52...261fac8)
+- [Updated comfyui-tooling-nodes](https://github.com/Acly/comfyui-tooling-nodes/compare/e0d0c3c...1a24975)
+- [Updated ComfyUI-Inspire-Pack](https://github.com/ltdrdata/ComfyUI-Inspire-Pack/compare/9b2d22a...c0d54d8)
+- [Updated comfyui_controlnet_aux](https://github.com/Fannovel16/comfyui_controlnet_aux/compare/6c563c5...302a389)
+- [Updated ComfyUI_IPAdapter_plus](https://github.com/cubiq/ComfyUI_IPAdapter_plus/compare/88a7140...b188a6c)
+- [Removed deprecated ComfyUI-eesahesNodes](https://github.com/EeroHeikkinen/ComfyUI-eesahesNodes)
 
 ## 2024-09-02
 
