@@ -42,8 +42,30 @@ class ComfyUI:
 
     def run_server(self, output_directory, input_directory):
         command = f"python ./ComfyUI/main.py --output-directory {output_directory} --input-directory {input_directory} --disable-metadata"
-        server_process = subprocess.Popen(command, shell=True)
-        server_process.wait()
+
+        """
+        We need to capture the stdout and stderr from the server process
+        so that we can print the logs to the console. If we don't do this
+        then at the point where ComfyUI attempts to print it will throw a
+        broken pipe error. This only happens from cog v0.9.13 onwards.
+        """
+        server_process = subprocess.Popen(
+            command,
+            shell=True,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            universal_newlines=True,
+        )
+
+        def print_stdout():
+            for stdout_line in iter(server_process.stdout.readline, ""):
+                print(f"[ComfyUI] {stdout_line.strip()}")
+
+        stdout_thread = threading.Thread(target=print_stdout)
+        stdout_thread.start()
+
+        for stderr_line in iter(server_process.stderr.readline, ""):
+            print(f"[ComfyUI] {stderr_line.strip()}")
 
     def is_server_running(self):
         try:

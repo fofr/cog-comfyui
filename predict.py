@@ -18,7 +18,7 @@ INPUT_DIR = "/tmp/inputs"
 COMFYUI_TEMP_OUTPUT_DIR = "ComfyUI/temp"
 ALL_DIRECTORIES = [OUTPUT_DIR, INPUT_DIR, COMFYUI_TEMP_OUTPUT_DIR]
 
-with open("examples/api_workflows/xlabs_flux_controlnet_api.json", "r") as file:
+with open("examples/api_workflows/sd15_txt2img.json", "r") as file:
     EXAMPLE_WORKFLOW_JSON = file.read()
 
 
