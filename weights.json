@@ -551,6 +551,7 @@
     "bbox/face_yolov8s.pt",
     "bbox/hand_yolov8n.pt",
     "bbox/hand_yolov8s.pt",
+    "face_yolov8n.pt",
     "segm/deepfashion2_yolov8s-seg.pt",
     "segm/face_yolov8m-seg_60.pt",
     "segm/face_yolov8n-seg2_60.pt",
