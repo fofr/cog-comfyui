@@ -33,6 +33,7 @@
 - Epicrealismxl_Hades.safetensors
 - epicrealismXL_v10.safetensors
 - epicrealismXL_v7FinalDestination.safetensors
+- flux1-dev-fp8.safetensors
 - Hyper-SDXL-1step-Unet-Comfyui.fp16.safetensors
 - Hyper-SDXL-1step-Unet.safetensors
 - imp_v10.safetensors
@@ -472,7 +473,6 @@
 
 ## Diffusion models (formerly Unets)
 
-- flux1-dev-fp8.safetensors
 - flux1-dev.safetensors
 - flux1-schnell.safetensors
 - iclight_sd15_fbc.safetensors

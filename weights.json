@@ -33,6 +33,7 @@
     "Epicrealismxl_Hades.safetensors",
     "epicrealismXL_v10.safetensors",
     "epicrealismXL_v7FinalDestination.safetensors",
+    "flux1-dev-fp8.safetensors",
     "Hyper-SDXL-1step-Unet-Comfyui.fp16.safetensors",
     "Hyper-SDXL-1step-Unet.safetensors",
     "imp_v10.safetensors",
@@ -488,9 +489,7 @@
     "stable-cascade/stage_c_lite.safetensors",
     "stable-cascade/stage_c_lite_bf16.safetensors"
   ],
-  "DIFFUSION_MODELS": [
-    "flux1-dev-fp8.safetensors"
-  ],
+  "DIFFUSION_MODELS": [],
   "PHOTOMAKER": [
     "photomaker-v1.bin",
     "photomaker-v2.bin"

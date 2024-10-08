@@ -1,4 +1,8 @@
 
+## 2024-10-08
+
+- [Add flux1-dev-fp8.safetensors to checkpoints](https://huggingface.co/Comfy-Org/flux1-dev)
+
 ## 2024-09-24
 
 - Add face_yolov8n.pt to ultralytics
