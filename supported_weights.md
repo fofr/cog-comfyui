@@ -6,6 +6,7 @@
 - albedobaseXL_v21.safetensors
 - animagine-xl-3.0.safetensors
 - anything-v3-fp16-pruned.safetensors
+- artUniverse_sdxlV50.safetensors
 - aura_flow_0.1.safetensors
 - aura_flow_0.2.safetensors
 - aura_flow_0.3.safetensors
@@ -34,6 +35,7 @@
 - epicrealismXL_v10.safetensors
 - epicrealismXL_v7FinalDestination.safetensors
 - flux1-dev-fp8.safetensors
+- flux1-schnell-fp8.safetensors
 - Hyper-SDXL-1step-Unet-Comfyui.fp16.safetensors
 - Hyper-SDXL-1step-Unet.safetensors
 - imp_v10.safetensors

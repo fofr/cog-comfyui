@@ -1,7 +1,9 @@
 
 ## 2024-10-08
 
+- [Add flux1-schnell-fp8.safetensors to checkpoints](https://huggingface.co/Comfy-Org/flux1-schnell)
 - [Add flux1-dev-fp8.safetensors to checkpoints](https://huggingface.co/Comfy-Org/flux1-dev)
+- [Add artUniverse_sdxlV50.safetensors to checkpoints](https://civitai.com/models/123313/art-universe)
 
 ## 2024-09-24
 
