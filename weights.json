@@ -46,6 +46,7 @@
     "juggernautXL_juggernautX.safetensors",
     "juggernautXL_v8Rundiffusion.safetensors",
     "juggernautXL_v9Rdphoto2Lightning.safetensors",
+    "juggernautXL_version6Rundiffusion.safetensors",
     "juggerxlInpaint_juggerInpaintV8.safetensors",
     "LCM_Dreamshaper_v7_4k.safetensors",
     "leosamsHelloworldXL_helloworldXL60.safetensors",
@@ -79,6 +80,7 @@
     "Realistic_Vision_V6.0_NV_B1_inpainting.safetensors",
     "Realistic_Vision_V6.0_NV_B1_inpainting_fp16.safetensors",
     "realisticLCMBYStable_v10.safetensors",
+    "realisticVisionV51_v51VAE.safetensors",
     "realisticVisionV60B1_v51HyperVAE.safetensors",
     "RealVisXL_V2.0.safetensors",
     "RealVisXL_V3.0.safetensors",
@@ -124,7 +126,8 @@
     "v2-1_768-nonema-pruned.ckpt",
     "v2-1_768-nonema-pruned.safetensors",
     "wd-illusion-fp16.safetensors",
-    "x4-upscaler-ema.safetensors"
+    "x4-upscaler-ema.safetensors",
+    "zavychromaxl_v80.safetensors"
   ],
   "UPSCALE_MODELS": [
     "4x-AnimeSharp.pth",
@@ -133,8 +136,12 @@
     "4x-UltraSharp.pth",
     "4x_foolhardy_Remacri.pth",
     "4x_NMKD-Siax_200k.pth",
+    "4x_NMKD-Superscale-SP_178000_G.pth",
     "8x_NMKD-Superscale_150000_G.pth",
     "ESRGAN_4x.pth",
+    "OmniSR_X2_DIV2K.safetensors",
+    "OmniSR_X3_DIV2K.safetensors",
+    "OmniSR_X4_DIV2K.safetensors",
     "RealESRGAN_x2.pth",
     "RealESRGAN_x4.pth",
     "RealESRGAN_x4plus.pth",
@@ -162,7 +169,8 @@
     "clip_vision_g.safetensors",
     "IPAdapter_image_encoder_sd15.safetensors",
     "model.15.safetensors",
-    "model.sdxl.safetensors"
+    "model.sdxl.safetensors",
+    "SD1.5/model.safetensors"
   ],
   "LORAS": [
     "3d_render_style_xl.safetensors",
@@ -244,10 +252,12 @@
     "Hyper-SD15-1step-lora.safetensors",
     "Hyper-SD15-2steps-lora.safetensors",
     "Hyper-SD15-4steps-lora.safetensors",
+    "Hyper-SD15-8steps-CFG-lora.safetensors",
     "Hyper-SD15-8steps-lora.safetensors",
     "Hyper-SDXL-1step-lora.safetensors",
     "Hyper-SDXL-2steps-lora.safetensors",
     "Hyper-SDXL-4steps-lora.safetensors",
+    "Hyper-SDXL-8steps-CFG-lora.safetensors",
     "Hyper-SDXL-8steps-lora.safetensors",
     "ip-adapter-faceid-plus_sd15_lora.safetensors",
     "ip-adapter-faceid-plusv2_sd15_lora.safetensors",

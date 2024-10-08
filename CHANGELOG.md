@@ -1,6 +1,21 @@
 
 ## 2024-10-08
 
+Add models for [krita-ai-diffusion](https://github.com/Acly/krita-ai-diffusion):
+
+- [Add Hyper-SDXL-8steps-CFG-lora.safetensors to loras](https://huggingface.co/ByteDance/Hyper-SD/blob/main/Hyper-SDXL-8steps-CFG-lora.safetensors)
+- [Add Hyper-SD15-8steps-CFG-lora.safetensors to loras](https://huggingface.co/ByteDance/Hyper-SD/blob/main/Hyper-SD15-8steps-CFG-lora.safetensors)
+- [Add OmniSR_X4_DIV2K.safetensors to upscale_models](https://huggingface.co/Acly/Omni-SR/blob/main/OmniSR_X4_DIV2K.safetensors)
+- [Add OmniSR_X3_DIV2K.safetensors to upscale_models](https://huggingface.co/Acly/Omni-SR/blob/main/OmniSR_X3_DIV2K.safetensors)
+- [Add OmniSR_X2_DIV2K.safetensors to upscale_models](https://huggingface.co/Acly/Omni-SR/blob/main/OmniSR_X2_DIV2K.safetensors)
+- [Add 4x_NMKD-Superscale-SP_178000_G.pth to upscale_models](https://huggingface.co/gemasai/4x_NMKD-Superscale-SP_178000_G/blob/main/4x_NMKD-Superscale-SP_178000_G.pth)
+- [Add sd1.5/model.safetensors to clip_vision](https://huggingface.co/h94/IP-Adapter/blob/main/models/image_encoder/model.safetensors)
+- [Add realisticVisionV51_v51VAE.safetensors to checkpoints](https://huggingface.co/lllyasviel/fav_models/blob/main/fav/realisticVisionV51_v51VAE.safetensors)
+- [Add juggernautXL_version6Rundiffusion.safetensors to checkpoints](https://huggingface.co/lllyasviel/fav_models/blob/main/fav/juggernautXL_version6Rundiffusion.safetensors)
+- [Add zavychromaxl_v80.safetensors to checkpoints](https://huggingface.co/misri/zavychromaxl_v80/blob/main/zavychromaxl_v80.safetensors)
+
+Add checkpoints:
+
 - [Add flux1-schnell-fp8.safetensors to checkpoints](https://huggingface.co/Comfy-Org/flux1-schnell)
 - [Add flux1-dev-fp8.safetensors to checkpoints](https://huggingface.co/Comfy-Org/flux1-dev)
 - [Add artUniverse_sdxlV50.safetensors to checkpoints](https://civitai.com/models/123313/art-universe)
