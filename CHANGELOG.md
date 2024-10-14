@@ -1,3 +1,8 @@
+## 2024-10-11
+
+- Add flux1-schnell_DYN_H100-b-1-1-1-h-512-1536-1024-w-512-1536-1024.engine to tensorrt
+- Add flux1-dev_DYN_H100-b-1-1-1-h-512-1536-1024-w-512-1536-1024.engine to tensorrt
+- Add flux1-dev_DYN_A100-b-1-1-1-h-512-1536-1024-w-512-1536-1024.engine to tensorrt
 
 ## 2024-10-08
 
