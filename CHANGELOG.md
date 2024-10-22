@@ -1,3 +1,6 @@
+## 2024-10-22
+
+- [Add sd3_medium_vae.fp16.safetensors to vae](https://huggingface.co/stabilityai/stable-diffusion-3-medium-diffusers)
 
 ## 2024-10-08
 

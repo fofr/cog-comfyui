@@ -470,6 +470,7 @@
   ],
   "VAE": [
     "ae.safetensors",
+    "sd3_medium_vae.fp16.safetensors",
     "sdxl_vae.safetensors",
     "stable-cascade/effnet_encoder.safetensors",
     "stable-cascade/stage_a.safetensors",
