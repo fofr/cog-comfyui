@@ -1,3 +1,7 @@
+## 2024-10-24
+
+- [Upgrade ComfyUI to latest](https://github.com/comfyanonymous/ComfyUI/compare/3a0eeee32053f6c45c5ad4b3975f4ee229b01fbb...915fdb57454c094391d830cefb4ffdd24ed8088c)
+
 ## 2024-10-22
 
 - [Add sd3_medium_vae.fp16.safetensors to vae](https://huggingface.co/stabilityai/stable-diffusion-3-medium-diffusers)
