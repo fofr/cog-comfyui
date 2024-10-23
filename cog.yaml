@@ -27,6 +27,9 @@ build:
     - websocket-client==1.6.3
     - diffusers>=0.30.0
 
+    # Inspire
+    - webcolors
+
     # fix for pydantic issues in cog
     # https://github.com/replicate/cog/issues/1623
     - albumentations==1.4.3

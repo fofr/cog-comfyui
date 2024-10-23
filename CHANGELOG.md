@@ -1,6 +1,26 @@
-## 2024-10-24
+## 2024-10-23
 
 - [Upgrade ComfyUI to latest](https://github.com/comfyanonymous/ComfyUI/compare/3a0eeee32053f6c45c5ad4b3975f4ee229b01fbb...915fdb57454c094391d830cefb4ffdd24ed8088c)
+
+Update custom nodes:
+- [Updated x-flux-comfyui](https://github.com/XLabs-AI/x-flux-comfyui/compare/c4af981...45c8347)
+- [Updated comfyui-inpaint-nodes](https://github.com/Acly/comfyui-inpaint-nodes/compare/d3655fc...6fcdf55)
+- [Updated ComfyUI-Kolors-MZ](https://github.com/MinusZoneAI/ComfyUI-Kolors-MZ/compare/8688054...e02e185)
+- [Updated rgthree-comfy](https://github.com/rgthree/rgthree-comfy/compare/083ad2a...6f82a5c)
+- [Updated comfyui_jankhidiffusion](https://github.com/blepping/comfyui_jankhidiffusion/compare/86afeb7...4e66c60)
+- [Updated PuLID_ComfyUI](https://github.com/cubiq/PuLID_ComfyUI/compare/13954de...4e1fd40)
+- [Updated ComfyUI-Frame-Interpolation](https://github.com/Fannovel16/ComfyUI-Frame-Interpolation/compare/483dfe6...c336f71)
+- [Updated ComfyUI-KJNodes](https://github.com/kijai/ComfyUI-KJNodes/compare/13242fc...1ec5810)
+- [Updated was-node-suite-comfyui](https://github.com/WASasquatch/was-node-suite-comfyui/compare/bb34bd4...df5133b)
+- [Updated ComfyUI_InstantID](https://github.com/cubiq/ComfyUI_InstantID/compare/579bdf6...1ef34ef)
+- [Updated ComfyUI-PhotoMaker-Plus](https://github.com/shiimizu/ComfyUI-PhotoMaker-Plus/compare/024da47...604feb3)
+- [Updated ComfyUI_essentials](https://github.com/cubiq/ComfyUI_essentials/compare/ef70435...5b75a0e)
+- [Updated ComfyUI_UltimateSDUpscale](https://github.com/ssitu/ComfyUI_UltimateSDUpscale/compare/70083f5...e617ff2)
+- [Updated ComfyUI_tinyterraNodes](https://github.com/TinyTerra/ComfyUI_tinyterraNodes/compare/52711d5...13d0d70)
+- [Updated ComfyUI_FizzNodes](https://github.com/FizzleDorf/ComfyUI_FizzNodes/compare/974b41c...f2a63df)
+- [Updated comfyui-tooling-nodes](https://github.com/Acly/comfyui-tooling-nodes/compare/1a24975...63ab338)
+- [Updated ComfyUI-Inspire-Pack](https://github.com/ltdrdata/ComfyUI-Inspire-Pack/compare/c0d54d8...bfaaa6c)
+- [Updated comfyui_controlnet_aux](https://github.com/Fannovel16/comfyui_controlnet_aux/compare/302a389...7e40019)
 
 ## 2024-10-22
 
