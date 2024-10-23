@@ -54,6 +54,7 @@
 - majicmixRealistic_v7.safetensors
 - motionctrl.pth
 - motionctrl_svd.ckpt
+- OpenFlux-fp8_e4m3fn.safetensors
 - photonLCM_v10.safetensors
 - PixArt-Sigma-XL-2-1024-MS.pth
 - pixlAnimeCartoonComic_v10.safetensors
@@ -482,6 +483,7 @@
 ## VAE
 
 - ae.safetensors
+- mochi/mochi_preview_vae_bf16.safetensors
 - sd3_medium_vae.fp16.safetensors
 - sdxl_vae.safetensors
 - stable-cascade/effnet_encoder.safetensors
@@ -490,6 +492,7 @@
 
 ## Diffusion models (formerly Unets)
 
+- mochi/mochi_preview_dit_fp8_e4m3fn.safetensors
 - flux1-dev.safetensors
 - flux1-schnell.safetensors
 - iclight_sd15_fbc.safetensors

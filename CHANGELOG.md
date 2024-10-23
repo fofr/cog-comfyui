@@ -1,5 +1,11 @@
 ## 2024-10-23
 
+New weights:
+
+- [Add mochi_preview_vae_bf16.safetensors to vae/mochi](https://huggingface.co/Kijai/Mochi_preview_comfy)
+- [Add mochi_preview_dit_fp8_e4m3fn.safetensors to diffusion_models/mochi](https://huggingface.co/Kijai/Mochi_preview_comfy)
+- [Add OpenFlux-fp8_e4m3fn.safetensors to checkpoints](https://huggingface.co/Kijai/OpenFLUX-comfy)
+
 New SD3.5L weights:
 
 - [Add t5xxl_fp8_e4m3fn_scaled.safetensors to clip](https://huggingface.co/Comfy-Org/stable-diffusion-3.5-fp8)
