@@ -88,6 +88,9 @@
     "RealVisXL_V4.0.safetensors",
     "RealVisXL_V4.0_Lightning.safetensors",
     "rundiffusionXL_beta.safetensors",
+    "sd3.5_large.safetensors",
+    "sd3.5_large_fp8_scaled.safetensors",
+    "sd3.5_large_turbo.safetensors",
     "sd3_medium.safetensors",
     "sd3_medium_incl_clips.safetensors",
     "sd3_medium_incl_clips_t5xxlfp16.safetensors",
@@ -158,6 +161,7 @@
     "stable-diffusion-2-1-clip.safetensors",
     "t5xxl_fp16.safetensors",
     "t5xxl_fp8_e4m3fn.safetensors",
+    "t5xxl_fp8_e4m3fn_scaled.safetensors",
     "ViT-L-14-TEXT-detail-improved-hiT-GmP-TE-only-HF.safetensors"
   ],
   "CLIP_VISION": [

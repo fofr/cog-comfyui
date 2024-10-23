@@ -1,8 +1,16 @@
 ## 2024-10-23
 
+New SD3.5L weights:
+
+- [Add t5xxl_fp8_e4m3fn_scaled.safetensors to clip](https://huggingface.co/Comfy-Org/stable-diffusion-3.5-fp8)
+- [Add sd3.5_large_fp8_scaled.safetensors to checkpoints](https://huggingface.co/Comfy-Org/stable-diffusion-3.5-fp8)
+- Add sd3.5_large.safetensors to checkpoints
+- Add sd3.5_large_turbo.safetensors to checkpoints
+
 - [Upgrade ComfyUI to latest](https://github.com/comfyanonymous/ComfyUI/compare/3a0eeee32053f6c45c5ad4b3975f4ee229b01fbb...915fdb57454c094391d830cefb4ffdd24ed8088c)
 
 Update custom nodes:
+
 - [Updated x-flux-comfyui](https://github.com/XLabs-AI/x-flux-comfyui/compare/c4af981...45c8347)
 - [Updated comfyui-inpaint-nodes](https://github.com/Acly/comfyui-inpaint-nodes/compare/d3655fc...6fcdf55)
 - [Updated ComfyUI-Kolors-MZ](https://github.com/MinusZoneAI/ComfyUI-Kolors-MZ/compare/8688054...e02e185)
