@@ -258,11 +258,16 @@
 - hd_helper_v1.safetensors
 - Hyper-FLUX.1-dev-16steps-lora.safetensors
 - Hyper-FLUX.1-dev-8steps-lora.safetensors
+- Hyper-SD15-12steps-CFG-lora.safetensors
 - Hyper-SD15-1step-lora.safetensors
 - Hyper-SD15-2steps-lora.safetensors
 - Hyper-SD15-4steps-lora.safetensors
 - Hyper-SD15-8steps-CFG-lora.safetensors
 - Hyper-SD15-8steps-lora.safetensors
+- Hyper-SD3-16steps-CFG-lora.safetensors
+- Hyper-SD3-4steps-CFG-lora.safetensors
+- Hyper-SD3-8steps-CFG-lora.safetensors
+- Hyper-SDXL-12steps-CFG-lora.safetensors
 - Hyper-SDXL-1step-lora.safetensors
 - Hyper-SDXL-2steps-lora.safetensors
 - Hyper-SDXL-4steps-lora.safetensors

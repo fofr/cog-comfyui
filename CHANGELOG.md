@@ -1,3 +1,12 @@
+
+## 2024-11-05
+
+- [Add Hyper-SD3-8steps-CFG-lora.safetensors to loras](https://huggingface.co/ByteDance/Hyper-SD/)
+- [Add Hyper-SD3-4steps-CFG-lora.safetensors to loras](https://huggingface.co/ByteDance/Hyper-SD/)
+- [Add Hyper-SD3-16steps-CFG-lora.safetensors to loras](https://huggingface.co/ByteDance/Hyper-SD/)
+- [Add Hyper-SD15-12steps-CFG-lora.safetensors to loras](https://huggingface.co/ByteDance/Hyper-SD/)
+- [Add Hyper-SDXL-12steps-CFG-lora.safetensors to loras](https://huggingface.co/ByteDance/Hyper-SD/)
+
 ## 2024-10-23
 
 New weights:
