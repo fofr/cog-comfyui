@@ -1,6 +1,7 @@
 {
   "CHECKPOINTS": [
     "512-inpainting-ema.safetensors",
+    "AAM_XL_Anime_Mix.safetensors",
     "absolutereality_v181.safetensors",
     "albedobaseXL_v13.safetensors",
     "albedobaseXL_v21.safetensors",

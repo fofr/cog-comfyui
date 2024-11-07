@@ -1,6 +1,7 @@
 
 ## 2024-11-07
 
+- [Add AAM_XL_Anime_Mix.safetensors to checkpoints](https://huggingface.co/Lykon/AAM_XL_AnimeMix)
 - [Add realvisxlV50_v50LightningBakedvae.safetensors to checkpoints](https://civitai.com/models/139562/realvisxl-v50)
 
 ## 2024-11-05
