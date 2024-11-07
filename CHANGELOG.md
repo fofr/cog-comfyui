@@ -1,4 +1,8 @@
 
+## 2024-11-07
+
+- [Add realvisxlV50_v50LightningBakedvae.safetensors to checkpoints](https://civitai.com/models/139562/realvisxl-v50)
+
 ## 2024-11-05
 
 - [Add Hyper-SD3-8steps-CFG-lora.safetensors to loras](https://huggingface.co/ByteDance/Hyper-SD/)
