@@ -196,5 +196,9 @@
   {
     "repo": "https://github.com/TheMistoAI/MistoControlNet-Flux-dev",
     "commit": "79e3982"
+  },
+  {
+    "repo": "https://github.com/logtd/ComfyUI-Fluxtapoz",
+    "commit": "e0b9195"
   }
 ]

@@ -1,6 +1,14 @@
 
 ## 2024-11-07
 
+- [Update ComfyUI to latest](https://github.com/comfyanonymous/ComfyUI/compare/915fdb57454c094391d830cefb4ffdd24ed8088c...2865f913f754710922370fc1f332ef1bf53baab4) including genmo mochi support
+
+New custom nodes:
+
+- [Add ComfyUI-Fluxtapoz](https://github.com/logtd/ComfyUI-Fluxtapoz)
+
+New weights:
+
 - [Add AAM_XL_Anime_Mix.safetensors to checkpoints](https://huggingface.co/Lykon/AAM_XL_AnimeMix)
 - [Add realvisxlV50_v50LightningBakedvae.safetensors to checkpoints](https://civitai.com/models/139562/realvisxl-v50)
 
