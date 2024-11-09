@@ -200,7 +200,26 @@ class ComfyUI:
 
         if http_error:
             raise Exception(
-                "ComfyUI Error – Your workflow could not be run. This usually happens if you’re trying to use an unsupported node. Check the logs for 'KeyError: ' details, and go to https://github.com/fofr/cog-comfyui to see the list of supported custom nodes."
+                "ComfyUI Error – Your workflow could not be run. This usually happens if you're trying to use an unsupported node. Check the logs for 'KeyError: ' details, and go to https://github.com/fofr/cog-comfyui to see the list of supported custom nodes."
+            )
+
+    def _delete_corrupted_weights(self, error_data):
+        if "current_inputs" in error_data:
+            weights_to_delete = []
+            weights_filetypes = self.weights_downloader.supported_filetypes
+
+            for input_list in error_data["current_inputs"].values():
+                for input_value in input_list:
+                    if isinstance(input_value, str) and any(
+                        input_value.endswith(ft) for ft in weights_filetypes
+                    ):
+                        weights_to_delete.append(input_value)
+
+            for weight_file in list(set(weights_to_delete)):
+                self.weights_downloader.delete_weights(weight_file)
+
+            raise Exception(
+                "The weights for this workflow have been corrupted. They have been deleted and will be re-downloaded on the next run. Please try again."
             )
 
     def wait_for_prompt_completion(self, workflow, prompt_id):
@@ -210,6 +229,15 @@ class ComfyUI:
                 message = json.loads(out)
 
                 if message["type"] == "execution_error":
+                    error_data = message["data"]
+
+                    if (
+                        "exception_type" in error_data
+                        and error_data["exception_type"]
+                        == "safetensors_rust.SafetensorError"
+                    ):
+                        self._delete_corrupted_weights(error_data)
+
                     error_message = json.dumps(message, indent=2)
                     raise Exception(
                         f"There was an error executing your workflow:\n\n{error_message}"
