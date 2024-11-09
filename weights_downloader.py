@@ -14,7 +14,7 @@ class WeightsDownloader:
         ".onnx",
         ".torchscript",
         ".engine",
-        ".patch"
+        ".patch",
     ]
 
     def __init__(self):
@@ -83,3 +83,10 @@ class WeightsDownloader:
             )
         except FileNotFoundError:
             print(f"✅ {weight_str} downloaded to {dest} in {elapsed_time:.2f}s")
+
+    def delete_weights(self, weight_str):
+        if weight_str in self.weights_map:
+            weight_path = os.path.join(self.weights_map[weight_str]["dest"], weight_str)
+            if os.path.exists(weight_path):
+                os.remove(weight_path)
+                print(f"Deleted {weight_path}")
