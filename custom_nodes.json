@@ -5,7 +5,7 @@
   },
   {
     "repo": "https://github.com/Fannovel16/comfyui_controlnet_aux",
-    "commit": "7e40019"
+    "commit": "5a049bd"
   },
   {
     "repo": "https://github.com/fofr/ComfyUI-Impact-Pack",
@@ -14,7 +14,7 @@
   },
   {
     "repo": "https://github.com/ltdrdata/ComfyUI-Inspire-Pack",
-    "commit": "bfaaa6c"
+    "commit": "c6d53ec"
   },
   {
     "repo": "https://github.com/theUpsider/ComfyUI-Logic",
@@ -22,19 +22,19 @@
   },
   {
     "repo": "https://github.com/Acly/comfyui-tooling-nodes",
-    "commit": "63ab338"
+    "commit": "e2bd09d"
   },
   {
     "repo": "https://github.com/Kosinkadink/ComfyUI-AnimateDiff-Evolved",
-    "commit": "261fac8"
+    "commit": "b3e508a"
   },
   {
     "repo": "https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite",
-    "commit": "0376e57"
+    "commit": "d1d59ba"
   },
   {
     "repo": "https://github.com/Kosinkadink/ComfyUI-Advanced-ControlNet",
-    "commit": "74d0c56"
+    "commit": "172543b"
   },
   {
     "repo": "https://github.com/jags111/efficiency-nodes-comfyui",
@@ -46,11 +46,11 @@
   },
   {
     "repo": "https://github.com/FizzleDorf/ComfyUI_FizzNodes",
-    "commit": "f2a63df"
+    "commit": "7d6ea60"
   },
   {
     "repo": "https://github.com/TinyTerra/ComfyUI_tinyterraNodes",
-    "commit": "13d0d70"
+    "commit": "0387940"
   },
   {
     "repo": "https://github.com/ssitu/ComfyUI_UltimateSDUpscale",
@@ -58,7 +58,7 @@
   },
   {
     "repo": "https://github.com/cubiq/ComfyUI_essentials",
-    "commit": "5b75a0e"
+    "commit": "64e38fd"
   },
   {
     "repo": "https://github.com/shiimizu/ComfyUI-PhotoMaker-Plus",
@@ -66,7 +66,7 @@
   },
   {
     "repo": "https://github.com/pythongosssss/ComfyUI-Custom-Scripts",
-    "commit": "626e001"
+    "commit": "d6657cc"
   },
   {
     "repo": "https://github.com/BadCafeCode/masquerade-nodes-comfyui",
@@ -82,7 +82,7 @@
   },
   {
     "repo": "https://github.com/WASasquatch/was-node-suite-comfyui",
-    "commit": "df5133b"
+    "commit": "fe7e088"
   },
   {
     "repo": "https://github.com/fofr/comfyui_segment_anything",
@@ -102,7 +102,7 @@
   },
   {
     "repo": "https://github.com/kijai/ComfyUI-KJNodes",
-    "commit": "1ec5810"
+    "commit": "5f032e3"
   },
   {
     "repo": "https://github.com/Fannovel16/ComfyUI-Frame-Interpolation",
@@ -122,7 +122,7 @@
   },
   {
     "repo": "https://github.com/kijai/ComfyUI-IC-Light",
-    "commit": "8a9f9c9"
+    "commit": "7def1cf"
   },
   {
     "repo": "https://github.com/blepping/comfyui_jankhidiffusion",
@@ -134,7 +134,7 @@
   },
   {
     "repo": "https://github.com/rgthree/rgthree-comfy",
-    "commit": "6f82a5c"
+    "commit": "8df5e33"
   },
   {
     "repo": "https://github.com/fofr/comfyui-prompter-fofrai",
@@ -166,7 +166,7 @@
   },
   {
     "repo": "https://github.com/Acly/comfyui-inpaint-nodes",
-    "commit": "6fcdf55"
+    "commit": "422eccd"
   },
   {
     "repo": "https://github.com/nullquant/ComfyUI-BrushNet",
@@ -183,7 +183,7 @@
   },
   {
     "repo": "https://github.com/XLabs-AI/x-flux-comfyui",
-    "commit": "45c8347"
+    "commit": "0032855"
   },
   {
     "repo": "https://github.com/Fannovel16/ComfyUI-Video-Matting",

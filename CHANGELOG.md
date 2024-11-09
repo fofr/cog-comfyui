@@ -1,4 +1,23 @@
 
+## 2024-11-09
+
+- [Updated x-flux-comfyui](https://github.com/XLabs-AI/x-flux-comfyui/compare/45c8347...0032855)
+- [Updated comfyui-inpaint-nodes](https://github.com/Acly/comfyui-inpaint-nodes/compare/6fcdf55...422eccd)
+- [Updated rgthree-comfy](https://github.com/rgthree/rgthree-comfy/compare/6f82a5c...8df5e33)
+- [Updated ComfyUI-IC-Light](https://github.com/kijai/ComfyUI-IC-Light/compare/8a9f9c9...7def1cf)
+- [Updated ComfyUI-KJNodes](https://github.com/kijai/ComfyUI-KJNodes/compare/1ec5810...5f032e3)
+- [Updated was-node-suite-comfyui](https://github.com/WASasquatch/was-node-suite-comfyui/compare/df5133b...fe7e088)
+- [Updated ComfyUI-Custom-Scripts](https://github.com/pythongosssss/ComfyUI-Custom-Scripts/compare/626e001...d6657cc)
+- [Updated ComfyUI_essentials](https://github.com/cubiq/ComfyUI_essentials/compare/5b75a0e...64e38fd)
+- [Updated ComfyUI_tinyterraNodes](https://github.com/TinyTerra/ComfyUI_tinyterraNodes/compare/13d0d70...0387940)
+- [Updated ComfyUI_FizzNodes](https://github.com/FizzleDorf/ComfyUI_FizzNodes/compare/f2a63df...7d6ea60)
+- [Updated ComfyUI-Advanced-ControlNet](https://github.com/Kosinkadink/ComfyUI-Advanced-ControlNet/compare/74d0c56...172543b)
+- [Updated ComfyUI-VideoHelperSuite](https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite/compare/0376e57...d1d59ba)
+- [Updated ComfyUI-AnimateDiff-Evolved](https://github.com/Kosinkadink/ComfyUI-AnimateDiff-Evolved/compare/261fac8...b3e508a)
+- [Updated comfyui-tooling-nodes](https://github.com/Acly/comfyui-tooling-nodes/compare/63ab338...e2bd09d)
+- [Updated ComfyUI-Inspire-Pack](https://github.com/ltdrdata/ComfyUI-Inspire-Pack/compare/bfaaa6c...c6d53ec)
+- [Updated comfyui_controlnet_aux](https://github.com/Fannovel16/comfyui_controlnet_aux/compare/7e40019...5a049bd)
+
 ## 2024-11-07
 
 - [Update ComfyUI to latest](https://github.com/comfyanonymous/ComfyUI/compare/915fdb57454c094391d830cefb4ffdd24ed8088c...2865f913f754710922370fc1f332ef1bf53baab4) including genmo mochi support
