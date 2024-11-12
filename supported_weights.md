@@ -280,6 +280,7 @@
 - ip-adapter-faceid-plusv2_sdxl_lora.safetensors
 - ip-adapter-faceid_sd15_lora.safetensors
 - ip-adapter-faceid_sdxl_lora.safetensors
+- joel-illustrations-05-09-onblack.safetensors
 - lcm-lora-sdv1-5.safetensors
 - lcm-lora-ssd-1b.safetensors
 - lcm_lora_sdxl.safetensors
@@ -308,6 +309,7 @@
 - epiCNegative.pt
 - epiCRealism.pt
 - FastNegativeV2.pt
+- joel-illustrations-05-09-onblack_emb.safetensors
 - JuggernautNegative-neg.pt
 - negative_hand-neg.pt
 - ng_deepnegative_v1_75t.pt
