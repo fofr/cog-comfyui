@@ -486,6 +486,7 @@
   "VAE": [
     "ae.safetensors",
     "mochi/mochi_preview_vae_bf16.safetensors",
+    "mochi_vae.safetensors",
     "sd3_medium_vae.fp16.safetensors",
     "sdxl_vae.safetensors",
     "stable-cascade/effnet_encoder.safetensors",
@@ -519,7 +520,9 @@
     "stable-cascade/stage_c_lite_bf16.safetensors"
   ],
   "DIFFUSION_MODELS": [
-    "mochi/mochi_preview_dit_fp8_e4m3fn.safetensors"
+    "mochi/mochi_preview_dit_fp8_e4m3fn.safetensors",
+    "mochi_preview_bf16.safetensors",
+    "mochi_preview_fp8_scaled.safetensors"
   ],
   "PHOTOMAKER": [
     "photomaker-v1.bin",

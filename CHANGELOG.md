@@ -7,6 +7,11 @@
 - [Updated Derfuu_ComfyUI_ModdedNodes](https://github.com/Derfuu/Derfuu_ComfyUI_ModdedNodes/compare/5c93bd1...d0905be)
 - [Updated ComfyUI-Logic](https://github.com/theUpsider/ComfyUI-Logic/compare/fb88973...42d4f3d)
 
+New weights:
+- [Add mochi_preview_fp8_scaled.safetensors to diffusion_models](https://huggingface.co/Comfy-Org/mochi_preview_repackaged)
+- [Add mochi_preview_bf16.safetensors to diffusion_models](https://huggingface.co/Comfy-Org/mochi_preview_repackaged)
+- [Add mochi_vae.safetensors to vae](https://huggingface.co/Comfy-Org/mochi_preview_repackaged)
+
 ## 2024-11-09
 
 - [Updated x-flux-comfyui](https://github.com/XLabs-AI/x-flux-comfyui/compare/45c8347...0032855)
