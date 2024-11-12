@@ -18,21 +18,35 @@ changelog_file = "CHANGELOG.md"
 
 
 def get_latest_commit(repo_path):
+    def try_branch(branch):
+        try:
+            subprocess.run(
+                ["git", "fetch", "origin", branch],
+                cwd=repo_path,
+                check=True,
+                capture_output=True,
+            )
+            result = subprocess.run(
+                ["git", "rev-parse", f"origin/{branch}"],
+                cwd=repo_path,
+                check=True,
+                capture_output=True,
+                text=True,
+            )
+            return result.stdout.strip()
+        except subprocess.CalledProcessError:
+            return None
+
     try:
-        subprocess.run(
-            ["git", "fetch", "origin", "main"],
-            cwd=repo_path,
-            check=True,
-            capture_output=True,
-        )
-        result = subprocess.run(
-            ["git", "rev-parse", "origin/main"],
-            cwd=repo_path,
-            check=True,
-            capture_output=True,
-            text=True,
-        )
-        return result.stdout.strip()
+        # Try main branch first, fall back to master
+        for branch in ["main", "master"]:
+            commit = try_branch(branch)
+            if commit:
+                return commit
+
+        print(f"Failed to fetch latest commit for {repo_path}")
+        return None
+
     except subprocess.CalledProcessError:
         print(f"Failed to fetch latest commit for {repo_path}")
         return None

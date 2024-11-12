@@ -18,7 +18,7 @@
   },
   {
     "repo": "https://github.com/theUpsider/ComfyUI-Logic",
-    "commit": "fb88973"
+    "commit": "42d4f3d"
   },
   {
     "repo": "https://github.com/Acly/comfyui-tooling-nodes",
@@ -42,7 +42,7 @@
   },
   {
     "repo": "https://github.com/Derfuu/Derfuu_ComfyUI_ModdedNodes",
-    "commit": "5c93bd1"
+    "commit": "d0905be"
   },
   {
     "repo": "https://github.com/FizzleDorf/ComfyUI_FizzNodes",
