@@ -155,7 +155,7 @@
 - RealESRGAN_x4plus_anime_6B.pth
 - RealESRGAN_x8.pth
 
-## CLIP
+## Text Encoders
 
 - clip_g.safetensors
 - clip_l.safetensors

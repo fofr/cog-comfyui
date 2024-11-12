@@ -89,21 +89,20 @@ class WeightsManifest:
     def _initialize_weights_map(self):
         weights_map = {}
 
-        def generate_weights_map(keys, dest):
-            # https://github.com/comfyanonymous/ComfyUI/commit/4f7a3cb6fbd58d7546b3c76ec1f418a2650ed709
-            if dest == "unet":
-                return {
-                    key: {
-                        "url": f"{BASE_URL}/{dest}/{key}.tar",
-                        "dest": f"{MODELS_PATH}/diffusion_models",
-                    }
-                    for key in keys
-                }
+        def generate_weights_map(keys, directory_name):
+            directory_name = (
+                "LLM" if directory_name == "LLM" else directory_name.lower()
+            )
+
+            dest_path = {
+                "unet": f"{MODELS_PATH}/diffusion_models",
+                "clip": f"{MODELS_PATH}/text_encoders",
+            }.get(directory_name, f"{MODELS_PATH}/{directory_name}")
 
             return {
                 key: {
-                    "url": f"{BASE_URL}/{dest}/{key}.tar",
-                    "dest": f"{MODELS_PATH}/{dest}",
+                    "url": f"{BASE_URL}/{directory_name}/{key}.tar",
+                    "dest": dest_path,
                 }
                 for key in keys
             }
@@ -119,8 +118,7 @@ class WeightsManifest:
                     weights_map[k] = v
 
         for key in self.weights_manifest.keys():
-            directory_name = "LLM" if key == "LLM" else key.lower()
-            map = generate_weights_map(self.weights_manifest[key], directory_name)
+            map = generate_weights_map(self.weights_manifest[key], key)
             update_weights_map(map)
 
         for module_name in dir(helpers):
@@ -159,6 +157,10 @@ class WeightsManifest:
             "stable-cascade/stage_c_lite_bf16.safetensors",
             "stable_cascade_stage_b.safetensors",
             "stable_cascade_stage_c.safetensors",
+            "SUPIR-v0F.ckpt",
+            "SUPIR-v0F_fp16.safetensors",
+            "SUPIR-v0Q.ckpt",
+            "SUPIR-v0Q_fp16.safetensors",
             "svd.safetensors",
             "svd_xt.safetensors",
             "turbovisionxlSuperFastXLBasedOnNew_tvxlV32Bakedvae",

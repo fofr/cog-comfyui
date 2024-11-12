@@ -15,7 +15,8 @@ def write_supported_weights():
     weight_lists = {
         "Checkpoints": weights_manifest.get_weights_by_type("CHECKPOINTS"),
         "Upscale models": weights_manifest.get_weights_by_type("UPSCALE_MODELS"),
-        "CLIP": weights_manifest.get_weights_by_type("CLIP"),
+        "Text Encoders": weights_manifest.get_weights_by_type("TEXT_ENCODERS")
+        + weights_manifest.get_weights_by_type("CLIP"),
         "CLIP Vision": weights_manifest.get_weights_by_type("CLIP_VISION"),
         "LORAs": weights_manifest.get_weights_by_type("LORAS"),
         "Embeddings": weights_manifest.get_weights_by_type("EMBEDDINGS"),
