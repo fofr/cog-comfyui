@@ -16,14 +16,27 @@ comfy_dir = "ComfyUI"
 custom_nodes_dir = f"{comfy_dir}/custom_nodes/"
 changelog_file = "CHANGELOG.md"
 
+
 def get_latest_commit(repo_path):
     try:
-        subprocess.run(["git", "fetch", "origin", "main"], cwd=repo_path, check=True, capture_output=True)
-        result = subprocess.run(["git", "rev-parse", "origin/main"], cwd=repo_path, check=True, capture_output=True, text=True)
+        subprocess.run(
+            ["git", "fetch", "origin", "main"],
+            cwd=repo_path,
+            check=True,
+            capture_output=True,
+        )
+        result = subprocess.run(
+            ["git", "rev-parse", "origin/main"],
+            cwd=repo_path,
+            check=True,
+            capture_output=True,
+            text=True,
+        )
         return result.stdout.strip()
     except subprocess.CalledProcessError:
         print(f"Failed to fetch latest commit for {repo_path}")
         return None
+
 
 def update_json_file(repos):
     with open(json_file, "w") as file:
@@ -38,11 +51,18 @@ def update_changelog(repo_name, compare_url):
     try:
         with open(changelog_file, "r+") as file:
             content = file.readlines()
+
+            while content and not content[0].strip():
+                content.pop(0)
+
             if content[0].strip() != f"## {today}":
-                content.insert(0, f"\n## {today}\n\n")
+                content.insert(0, f"## {today}\n\n")
 
             # Find the index of the current day's section
-            today_index = next((i for i, line in enumerate(content) if line.strip() == f"## {today}"), None)
+            today_index = next(
+                (i for i, line in enumerate(content) if line.strip() == f"## {today}"),
+                None,
+            )
 
             if today_index is not None:
                 # Insert the update line right after the current day's header
@@ -54,9 +74,12 @@ def update_changelog(repo_name, compare_url):
             file.seek(0)
             file.writelines(content)
     except FileNotFoundError:
-        print(f"Warning: Changelog file '{changelog_file}' not found. Skipping changelog update.")
+        print(
+            f"Warning: Changelog file '{changelog_file}' not found. Skipping changelog update."
+        )
     except IOError as e:
         print(f"Error updating changelog: {e}")
+
 
 with open(json_file, "r") as file:
     repos = json.load(file)
@@ -92,10 +115,16 @@ for repo in repos:
         print(f"Comparison URL: {compare_url}")
 
         response = input("Do you want to update? (y/n): ")
-        if response.lower() == 'y':
+        if response.lower() == "y":
             print(f"Updating {repo_name}...")
-            subprocess.run(["git", "checkout", latest_commit], cwd=repo_path, check=True)
-            subprocess.run(["git", "submodule", "update", "--init", "--recursive"], cwd=repo_path, check=True)
+            subprocess.run(
+                ["git", "checkout", latest_commit], cwd=repo_path, check=True
+            )
+            subprocess.run(
+                ["git", "submodule", "update", "--init", "--recursive"],
+                cwd=repo_path,
+                check=True,
+            )
 
             repo["commit"] = latest_commit[:7]
             update_json_file(repos)
@@ -107,4 +136,6 @@ for repo in repos:
     else:
         print(f"{repo_name} is up to date")
 
-print("\nFinished checking for updates. custom_nodes.json and CHANGELOG.md have been updated if necessary.")
+print(
+    "\nFinished checking for updates. custom_nodes.json and CHANGELOG.md have been updated if necessary."
+)
