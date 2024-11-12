@@ -30,33 +30,80 @@ def civitai_url_with_token(url: str, civitai_api_token: Secret):
 
     parsed_url = urllib.parse.urlparse(url)
     query_params = urllib.parse.parse_qs(parsed_url.query)
-    query_params['token'] = [civitai_api_token.get_secret_value()]
+    query_params["token"] = [civitai_api_token.get_secret_value()]
     new_query = urllib.parse.urlencode(query_params, doseq=True)
     return urllib.parse.urlunparse(parsed_url._replace(query=new_query))
 
 
-def is_huggingface_url(url: str):
-    return url.startswith("https://huggingface.co")
+class HuggingFaceDownloader:
+    def __init__(self, temp_dir: str, user_models_dir: str):
+        self.temp_dir = "TEMP_HF"
+        self.user_models_dir = user_models_dir
 
+    def is_huggingface_url(self, url: str):
+        return url.startswith("https://huggingface.co")
 
-def extract_parts_from_huggingface_url(url: str):
-    # HUGGINGFACE_CO_URL_TEMPLATE
-    # https://huggingface.co/{repo_id}/resolve/{revision}/{filename}
+    def extract_parts_from_url(self, url: str):
+        # HUGGINGFACE_CO_URL_TEMPLATE
+        # https://huggingface.co/{repo_id}/resolve/{revision}/{filename}
+        parsed_url = urllib.parse.urlparse(url)
+        path_parts = parsed_url.path.split("/")
 
-    parsed_url = urllib.parse.urlparse(url)
-    path_parts = parsed_url.path.split("/")
+        if len(path_parts) < 5:
+            raise ValueError(
+                f"HuggingFace URL does not contain enough parts to extract all required parts: {url}"
+            )
 
-    if len(path_parts) < 5:
-        raise ValueError(
-            f"HuggingFace URL does not contain enough parts to extract all required parts: {url}"
+        repo_id = f"{path_parts[1]}/{path_parts[2]}"
+        revision = path_parts[4]
+        filename_and_path = path_parts[5:]
+        filename = filename_and_path[-1]
+
+        return repo_id, revision, filename_and_path, filename
+
+    def download(
+        self,
+        url: str,
+        file_type: str = "CHECKPOINTS",
+        huggingface_read_token: Secret = None,
+    ):
+        repo_id, revision, filename_and_path, filename = self.extract_parts_from_url(
+            url
         )
 
-    repo_id = f"{path_parts[1]}/{path_parts[2]}"
-    revision = path_parts[4]
-    filename_and_path = path_parts[5:]
-    filename = filename_and_path[-1]
+        start_time = time.time()
+        print("Downloading from HuggingFace:")
+        print("url:", url)
+        print("repo_id:", repo_id)
+        print("revision:", revision)
+        print("filename_and_path:", "/".join(filename_and_path))
+        print("filename:", filename)
 
-    return repo_id, revision, filename_and_path, filename
+        token = (
+            huggingface_read_token.get_secret_value()
+            if huggingface_read_token
+            else False
+        )
+        hf_hub_download(
+            repo_id=repo_id,
+            revision=revision,
+            filename="/".join(filename_and_path),
+            local_dir=self.temp_dir,
+            token=token,
+        )
+
+        # Move the downloaded file from temp_dir to the appropriate directory
+        src_path = os.path.join(self.temp_dir, "/".join(filename_and_path))
+        dest_dir = os.path.join(self.user_models_dir, file_type.lower())
+        os.makedirs(dest_dir, exist_ok=True)
+        dest_path = os.path.join(dest_dir, filename)
+        shutil.move(src_path, dest_path)
+
+        print(f"Successfully downloaded {filename}")
+        end_time = time.time()
+        print(f"Downloaded in: {end_time - start_time:.2f} seconds")
+
+        return filename
 
 
 def get_filename_from_content_disposition(content_disposition):
@@ -133,48 +180,6 @@ def download_from_civitai(
     return filename
 
 
-def download_from_huggingface(
-    url: str,
-    file_type: str = "CHECKPOINTS",
-    huggingface_read_token: Secret = None,
-):
-    repo_id, revision, filename_and_path, filename = extract_parts_from_huggingface_url(
-        url
-    )
-
-    start_time = time.time()
-    print("Downloading from HuggingFace:")
-    print("url:", url)
-    print("repo_id:", repo_id)
-    print("revision:", revision)
-    print("filename_and_path:", "/".join(filename_and_path))
-    print("filename:", filename)
-
-    token = (
-        huggingface_read_token.get_secret_value() if huggingface_read_token else False
-    )
-    hf_hub_download(
-        repo_id=repo_id,
-        revision=revision,
-        filename="/".join(filename_and_path),
-        local_dir=HF_TEMP_DIR,
-        token=token,
-    )
-
-    # Move the downloaded file from HF_TEMP_DIR to the appropriate directory
-    src_path = os.path.join(HF_TEMP_DIR, "/".join(filename_and_path))
-    dest_dir = os.path.join(USER_MODELS_DIR, file_type.lower())
-    os.makedirs(dest_dir, exist_ok=True)
-    dest_path = os.path.join(dest_dir, filename)
-    shutil.move(src_path, dest_path)
-
-    print(f"Successfully downloaded {filename}")
-    end_time = time.time()
-    print(f"Downloaded in: {end_time - start_time:.2f} seconds")
-
-    return filename
-
-
 def clean_directories():
     for dir in [HF_TEMP_DIR, USER_MODELS_DIR]:
         dir = Path(dir)
@@ -226,18 +231,21 @@ def train(
 ) -> TrainingOutput:
     clean_directories()
 
+    # Initialize downloader
+    hf_downloader = HuggingFaceDownloader(HF_TEMP_DIR, USER_MODELS_DIR)
+
     lists_of_urls = {
         "CHECKPOINTS": checkpoints.splitlines() if checkpoints else [],
         "LORAS": loras.splitlines() if loras else [],
         "UPSCALE_MODELS": upscale_models.splitlines() if upscale_models else [],
         "EMBEDDINGS": embedding_models.splitlines() if embedding_models else [],
         "CONTROLNET": controlnets.splitlines() if controlnets else [],
-        "ANIMATEDIFF_MODELS": animatediff_models.splitlines()
-        if animatediff_models
-        else [],
-        "ANIMATEDIFF_MOTION_LORA": animatediff_loras.splitlines()
-        if animatediff_loras
-        else [],
+        "ANIMATEDIFF_MODELS": (
+            animatediff_models.splitlines() if animatediff_models else []
+        ),
+        "ANIMATEDIFF_MOTION_LORA": (
+            animatediff_loras.splitlines() if animatediff_loras else []
+        ),
     }
     lists_of_urls = {
         k: [url.strip() for url in v] for k, v in lists_of_urls.items() if v
@@ -248,7 +256,7 @@ def train(
     for file_type, urls in lists_of_urls.items():
         filenames[file_type] = []
         for url in urls:
-            if not (is_huggingface_url(url) or is_civitai_url(url)):
+            if not (hf_downloader.is_huggingface_url(url) or is_civitai_url(url)):
                 raise ValueError("URL must be from 'huggingface.co' or 'civitai.com'")
 
             if is_civitai_url(url):
@@ -259,8 +267,8 @@ def train(
                     civitai_api_token=civitai_api_token,
                 )
                 filenames[file_type].append(filename)
-            elif is_huggingface_url(url):
-                filename = download_from_huggingface(
+            elif hf_downloader.is_huggingface_url(url):
+                filename = hf_downloader.download(
                     url,
                     file_type=file_type,
                     huggingface_read_token=huggingface_read_token,

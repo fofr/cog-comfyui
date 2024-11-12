@@ -86,24 +86,24 @@ class WeightsManifest:
 
         return original_manifest
 
+    def _get_directory_and_dest(self, weight_type):
+        directory_name = "LLM" if weight_type == "LLM" else weight_type.lower()
+        dest_path = (
+            f"{MODELS_PATH}/diffusion_models"
+            if directory_name == "unet"
+            else f"{MODELS_PATH}/{directory_name}"
+        )
+        return directory_name, dest_path
+
     def _initialize_weights_map(self):
         weights_map = {}
 
-        def generate_weights_map(keys, dest):
-            # https://github.com/comfyanonymous/ComfyUI/commit/4f7a3cb6fbd58d7546b3c76ec1f418a2650ed709
-            if dest == "unet":
-                return {
-                    key: {
-                        "url": f"{BASE_URL}/{dest}/{key}.tar",
-                        "dest": f"{MODELS_PATH}/diffusion_models",
-                    }
-                    for key in keys
-                }
-
+        def generate_weights_map(keys, weight_type):
+            directory_name, dest_path = self._get_directory_and_dest(weight_type)
             return {
                 key: {
-                    "url": f"{BASE_URL}/{dest}/{key}.tar",
-                    "dest": f"{MODELS_PATH}/{dest}",
+                    "url": f"{BASE_URL}/{directory_name}/{key}.tar",
+                    "dest": dest_path,
                 }
                 for key in keys
             }
@@ -119,8 +119,7 @@ class WeightsManifest:
                     weights_map[k] = v
 
         for key in self.weights_manifest.keys():
-            directory_name = "LLM" if key == "LLM" else key.lower()
-            map = generate_weights_map(self.weights_manifest[key], directory_name)
+            map = generate_weights_map(self.weights_manifest[key], key)
             update_weights_map(map)
 
         for module_name in dir(helpers):
@@ -169,3 +168,32 @@ class WeightsManifest:
 
     def get_weights_by_type(self, weight_type):
         return self.weights_manifest.get(weight_type, [])
+
+    def add_weight(self, weight_type, weight_name, url=None):
+        if weight_type not in self.weights_manifest:
+            raise ValueError(
+                f"Invalid weight_type: {weight_type}. Must be an existing type in the manifest."
+            )
+
+        if weight_name not in self.weights_manifest[weight_type]:
+            self.weights_manifest[weight_type].append(weight_name)
+            directory_name, dest_path = self._get_directory_and_dest(weight_type)
+            self.weights_map[weight_name] = {
+                "url": url if url else f"{BASE_URL}/{directory_name}/{weight_name}.tar",
+                "dest": dest_path,
+            }
+            return True
+
+        return False
+
+    def remove_weight(self, weight_type, weight_name):
+        """Remove a weight from the manifest"""
+        if (
+            weight_type in self.weights_manifest
+            and weight_name in self.weights_manifest[weight_type]
+        ):
+            self.weights_manifest[weight_type].remove(weight_name)
+            if weight_name in self.weights_map:
+                del self.weights_map[weight_name]
+            return True
+        return False
