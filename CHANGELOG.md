@@ -1,6 +1,8 @@
 ## 2024-11-12
 
 - [Update ComfyUI to latest](https://github.com/comfyanonymous/ComfyUI/compare/2865f913f754710922370fc1f332ef1bf53baab4...a72d152b0c8788b954004ee8c01e957701514e32)
+- [Updated ComfyUI-BrushNet](https://github.com/nullquant/ComfyUI-BrushNet/compare/4f1992e...e237b6e)
+- [Updated comfyui-tooling-nodes](https://github.com/Acly/comfyui-tooling-nodes/compare/e2bd09d...517790d)
 
 ## 2024-11-09
 

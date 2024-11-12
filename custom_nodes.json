@@ -22,7 +22,7 @@
   },
   {
     "repo": "https://github.com/Acly/comfyui-tooling-nodes",
-    "commit": "e2bd09d"
+    "commit": "517790d"
   },
   {
     "repo": "https://github.com/Kosinkadink/ComfyUI-AnimateDiff-Evolved",
@@ -170,7 +170,7 @@
   },
   {
     "repo": "https://github.com/nullquant/ComfyUI-BrushNet",
-    "commit": "4f1992e"
+    "commit": "e237b6e"
   },
   {
     "repo": "https://github.com/fofr/comfyui-fofr-toolkit",
