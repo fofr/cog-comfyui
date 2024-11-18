@@ -296,6 +296,7 @@
 - sdxl_lightning_8step_lora.pth
 - sdxl_lightning_8step_lora.safetensors
 - SDXLrender_v2.0.safetensors
+- SECourses_3D_Render_Style_Fixed_Dataset_With_Captions.safetensors
 - Segmind-VegaRT.safetensors
 - theovercomer8sContrastFix_sd15.safetensors
 - theovercomer8sContrastFix_sd21768.safetensors

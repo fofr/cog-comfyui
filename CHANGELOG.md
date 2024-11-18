@@ -1,3 +1,8 @@
+
+## 2024-11-18
+
+- [Add SECourses_3D_Render_Style_Fixed_Dataset_With_Captions.safetensors to loras](https://huggingface.co/MonsterMMORPG/3D-Cartoon-Style-FLUX)
+
 ## 2024-11-12
 
 - Move CLIP to text_encoders
