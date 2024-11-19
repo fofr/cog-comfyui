@@ -42,6 +42,12 @@ MODELS = {
     "depth_anything_vitl14.pth": "LiheYoung/Depth-Anything/checkpoints",
     "depth_anything_vitb14.pth": "LiheYoung/Depth-Anything/checkpoints",
     "depth_anything_vits14.pth": "LiheYoung/Depth-Anything/checkpoints",
+    "depth_anything_v2_vits.pth": "depth-anything/Depth-Anything-V2-Small",
+    "depth_anything_v2_vitb.pth": "depth-anything/Depth-Anything-V2-Base",
+    "depth_anything_v2_vitl.pth": "depth-anything/Depth-Anything-V2-Large",
+    "depth_anything_v2_vitg.pth": "depth-anything/Depth-Anything-V2-Giant",
+    "depth_anything_v2_metric_vkitti_vitl.pth": "depth-anything/Depth-Anything-V2-Metric-VKITTI-Large",
+    "depth_anything_v2_metric_hypersim_vitl.pth": "depth-anything/Depth-Anything-V2-Metric-Hypersim-Large",
     "diffusion_edge_indoor.pt": "hr16/Diffusion-Edge",
     "diffusion_edge_natrual.pt": "hr16/Diffusion-Edge",  # (model has a typo)
     "diffusion_edge_urban.pt": "hr16/Diffusion-Edge",
@@ -99,6 +105,14 @@ class ComfyUI_Controlnet_Aux(CustomNodeHelper):
                 "depth_anything_vitl14.pth",
                 "depth_anything_vitb14.pth",
                 "depth_anything_vits14.pth",
+            ],
+            "DepthAnythingV2Preprocessor": [
+                "depth_anything_v2_vitl.pth",
+                "depth_anything_v2_vitg.pth",
+                "depth_anything_v2_vitb.pth",
+                "depth_anything_v2_vits.pth",
+                "depth_anything_v2_metric_vkitti_vitl.pth",
+                "depth_anything_v2_metric_hypersim_vitl.pth",
             ],
             "Zoe_DepthAnythingPreprocessor": [
                 "depth_anything_metric_depth_indoor.pt",

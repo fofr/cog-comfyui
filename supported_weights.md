@@ -771,6 +771,12 @@
 - TheMistoAI/MistoLine/Anyline/MTEED.pth
 - bdsqlsz/qinglong_controlnet-lllite/Annotators/7_model.pth
 - bdsqlsz/qinglong_controlnet-lllite/Annotators/UNet.pth
+- depth-anything/Depth-Anything-V2-Base/depth_anything_v2_vitb.pth
+- depth-anything/Depth-Anything-V2-Giant/depth_anything_v2_vitg.pth
+- depth-anything/Depth-Anything-V2-Large/depth_anything_v2_vitl.pth
+- depth-anything/Depth-Anything-V2-Metric-Hypersim-Large/depth_anything_v2_metric_hypersim_vitl.pth
+- depth-anything/Depth-Anything-V2-Metric-VKITTI-Large/depth_anything_v2_metric_vkitti_vitl.pth
+- depth-anything/Depth-Anything-V2-Small/depth_anything_v2_vits.pth
 - dhkim2810/MobileSAM/mobile_sam.pt
 - hr16/ControlNet-HandRefiner-pruned/graphormer_hand_state_dict.bin
 - hr16/ControlNet-HandRefiner-pruned/hrnetv2_w64_imagenet_pretrained.pth
@@ -843,3 +849,4 @@
 ## MistoLine Flux ControlNet
 
 - mistoline_flux.dev_v1.safetensors
+
