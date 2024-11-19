@@ -1,3 +1,17 @@
+## 2024-11-19
+
+Add In-Context-LoRA:
+
+- [Add visual-identity-design.safetensors to loras/in_context_lora](https://huggingface.co/ali-vilab/In-Context-LoRA)
+- [Add sparklers-visual-effect.safetensors to loras/in_context_lora](https://huggingface.co/ali-vilab/In-Context-LoRA)
+- [Add sandstorm-visual-effect.safetensors to loras/in_context_lora](https://huggingface.co/ali-vilab/In-Context-LoRA)
+- [Add ppt-templates.safetensors to loras/in_context_lora](https://huggingface.co/ali-vilab/In-Context-LoRA)
+- [Add portrait-photography.safetensors to loras/in_context_lora](https://huggingface.co/ali-vilab/In-Context-LoRA)
+- [Add portrait-illustration.safetensors to loras/in_context_lora](https://huggingface.co/ali-vilab/In-Context-LoRA)
+- [Add home-decoration.safetensors to loras/in_context_lora](https://huggingface.co/ali-vilab/In-Context-LoRA)
+- [Add font-design.safetensors to loras/in_context_lora](https://huggingface.co/ali-vilab/In-Context-LoRA)
+- [Add film-storyboard.safetensors to loras/in_context_lora](https://huggingface.co/ali-vilab/In-Context-LoRA)
+- [Add couple-profile.safetensors to loras/in_context_lora](https://huggingface.co/ali-vilab/In-Context-LoRA)
 
 ## 2024-11-18
 
