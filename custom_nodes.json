@@ -14,7 +14,7 @@
   },
   {
     "repo": "https://github.com/ltdrdata/ComfyUI-Inspire-Pack",
-    "commit": "c6d53ec"
+    "commit": "3bcc1d4"
   },
   {
     "repo": "https://github.com/theUpsider/ComfyUI-Logic",
@@ -22,7 +22,7 @@
   },
   {
     "repo": "https://github.com/Acly/comfyui-tooling-nodes",
-    "commit": "517790d"
+    "commit": "50c3ffd"
   },
   {
     "repo": "https://github.com/Kosinkadink/ComfyUI-AnimateDiff-Evolved",
@@ -30,7 +30,7 @@
   },
   {
     "repo": "https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite",
-    "commit": "d1d59ba"
+    "commit": "3796aab"
   },
   {
     "repo": "https://github.com/Kosinkadink/ComfyUI-Advanced-ControlNet",
@@ -74,7 +74,7 @@
   },
   {
     "repo": "https://github.com/Gourieff/comfyui-reactor-node",
-    "commit": "89dba21"
+    "commit": "b3d85c7"
   },
   {
     "repo": "https://github.com/cubiq/ComfyUI_InstantID",
@@ -102,7 +102,7 @@
   },
   {
     "repo": "https://github.com/kijai/ComfyUI-KJNodes",
-    "commit": "5f032e3"
+    "commit": "5d7aaf9"
   },
   {
     "repo": "https://github.com/Fannovel16/ComfyUI-Frame-Interpolation",
@@ -166,7 +166,7 @@
   },
   {
     "repo": "https://github.com/Acly/comfyui-inpaint-nodes",
-    "commit": "422eccd"
+    "commit": "20092c3"
   },
   {
     "repo": "https://github.com/nullquant/ComfyUI-BrushNet",
@@ -199,6 +199,6 @@
   },
   {
     "repo": "https://github.com/logtd/ComfyUI-Fluxtapoz",
-    "commit": "e0b9195"
+    "commit": "4d30397"
   }
 ]
