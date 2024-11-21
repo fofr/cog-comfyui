@@ -1,3 +1,7 @@
+## 2024-11-21
+
+- [Update ComfyUI to latest](https://github.com/comfyanonymous/ComfyUI/compare/a72d152...8f0009a)
+
 ## 2024-11-19
 
 Add In-Context-LoRA:
