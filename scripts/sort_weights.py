@@ -46,6 +46,7 @@ def write_supported_weights():
         "Diffusers": weights_manifest.get_weights_by_type("DIFFUSERS"),
         "Language models": weights_manifest.get_weights_by_type("LLM"),
         "Inpainting models": weights_manifest.get_weights_by_type("INPAINT"),
+        "Style models": weights_manifest.get_weights_by_type("STYLE_MODELS"),
         "Anyline": helpers.ComfyUI_Anyline.models(),
         "AnimateDiff": weights_manifest.get_weights_by_type("ANIMATEDIFF_MODELS"),
         "AnimateDiff LORAs": weights_manifest.get_weights_by_type(

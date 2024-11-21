@@ -2,6 +2,26 @@
 
 - [Update ComfyUI to latest](https://github.com/comfyanonymous/ComfyUI/compare/a72d152...8f0009a)
 
+Flux tools:
+
+- [Add flux1-fill-dev.safetensors to diffusion_models](https://huggingface.co/black-forest-labs/FLUX.1-Fill-dev)
+- [Add flux1-redux-dev.safetensors to style_models](https://huggingface.co/black-forest-labs/FLUX.1-Redux-dev)
+- [Add flux1-depth-dev-lora.safetensors to loras](https://huggingface.co/black-forest-labs/FLUX.1-Depth-dev-lora)
+- [Add flux1-depth-dev.safetensors to diffusion_models](https://huggingface.co/black-forest-labs/FLUX.1-Depth-dev)
+- [Add flux1-canny-dev.safetensors to diffusion_models](https://huggingface.co/black-forest-labs/FLUX.1-Canny-dev)
+- [Add flux1-canny-dev-lora.safetensors to loras](https://huggingface.co/black-forest-labs/FLUX.1-Canny-dev-lora)
+- [Add sigclip_vision_patch14_384.safetensors to clip_vision](https://huggingface.co/Comfy-Org/sigclip_vision_384)
+
+Update custom nodes:
+
+- [Updated ComfyUI-Fluxtapoz](https://github.com/logtd/ComfyUI-Fluxtapoz/compare/e0b9195...4d30397)
+- [Updated comfyui-inpaint-nodes](https://github.com/Acly/comfyui-inpaint-nodes/compare/422eccd...20092c3)
+- [Updated ComfyUI-KJNodes](https://github.com/kijai/ComfyUI-KJNodes/compare/5f032e3...5d7aaf9)
+- [Updated comfyui-reactor-node](https://github.com/Gourieff/comfyui-reactor-node/compare/89dba21...b3d85c7)
+- [Updated ComfyUI-VideoHelperSuite](https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite/compare/d1d59ba...3796aab)
+- [Updated comfyui-tooling-nodes](https://github.com/Acly/comfyui-tooling-nodes/compare/517790d...50c3ffd)
+- [Updated ComfyUI-Inspire-Pack](https://github.com/ltdrdata/ComfyUI-Inspire-Pack/compare/c6d53ec...3bcc1d4)
+
 ## 2024-11-19
 
 Add In-Context-LoRA:

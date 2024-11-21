@@ -181,6 +181,7 @@
 - model.15.safetensors
 - model.sdxl.safetensors
 - SD1.5/model.safetensors
+- sigclip_vision_patch14_384.safetensors
 
 ## LORAs
 
@@ -254,6 +255,8 @@
 - COOLKIDS_MERGE_V2.5.safetensors
 - Cyberpunk_typeface_flux_lora_v1.safetensors
 - flux-RealismLora.safetensors
+- flux1-canny-dev-lora.safetensors
+- flux1-depth-dev-lora.safetensors
 - fofr/emoji.safetensors
 - glowneon_xl_v1.safetensors
 - Harrlogos_v2.0.safetensors
@@ -512,6 +515,9 @@
 
 ## Diffusion models (formerly Unets)
 
+- flux1-canny-dev.safetensors
+- flux1-depth-dev.safetensors
+- flux1-fill-dev.safetensors
 - mochi/mochi_preview_dit_fp8_e4m3fn.safetensors
 - mochi_preview_bf16.safetensors
 - mochi_preview_fp8_scaled.safetensors
@@ -688,6 +694,10 @@
 - powerpaint_v2_brushnet_fp16.safetensors
 - random_mask_brushnet_ckpt_sdxl_v0.safetensors
 - segmentation_mask_brushnet_sdxl_v1.safetensors
+
+## Style models
+
+- flux1-redux-dev.safetensors
 
 ## Anyline
 

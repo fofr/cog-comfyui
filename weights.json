@@ -178,7 +178,8 @@
     "IPAdapter_image_encoder_sd15.safetensors",
     "model.15.safetensors",
     "model.sdxl.safetensors",
-    "SD1.5/model.safetensors"
+    "SD1.5/model.safetensors",
+    "sigclip_vision_patch14_384.safetensors"
   ],
   "LORAS": [
     "3d_render_style_xl.safetensors",
@@ -251,6 +252,8 @@
     "COOLKIDS_MERGE_V2.5.safetensors",
     "Cyberpunk_typeface_flux_lora_v1.safetensors",
     "flux-RealismLora.safetensors",
+    "flux1-canny-dev-lora.safetensors",
+    "flux1-depth-dev-lora.safetensors",
     "fofr/emoji.safetensors",
     "glowneon_xl_v1.safetensors",
     "Harrlogos_v2.0.safetensors",
@@ -530,6 +533,9 @@
     "stable-cascade/stage_c_lite_bf16.safetensors"
   ],
   "DIFFUSION_MODELS": [
+    "flux1-canny-dev.safetensors",
+    "flux1-depth-dev.safetensors",
+    "flux1-fill-dev.safetensors",
     "mochi/mochi_preview_dit_fp8_e4m3fn.safetensors",
     "mochi_preview_bf16.safetensors",
     "mochi_preview_fp8_scaled.safetensors"
@@ -732,5 +738,8 @@
     "powerpaint_v2_brushnet_fp16.safetensors",
     "random_mask_brushnet_ckpt_sdxl_v0.safetensors",
     "segmentation_mask_brushnet_sdxl_v1.safetensors"
+  ],
+  "STYLE_MODELS": [
+    "flux1-redux-dev.safetensors"
   ]
 }
