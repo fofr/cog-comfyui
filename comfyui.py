@@ -324,7 +324,7 @@ class ComfyUI:
                     files.append(Path(path))
                 elif os.path.isdir(path):
                     print(f"{prefix}{f}/")
-                    files.extend(self.get_files(path, prefix=f"{prefix}{f}/"))
+                    self.get_files(path, prefix=f"{prefix}{f}/")
 
         if file_extensions:
             files = [f for f in files if f.name.split(".")[-1] in file_extensions]
