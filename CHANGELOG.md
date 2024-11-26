@@ -1,6 +1,11 @@
 ## 2024-11-26
 
 - [Update ComfyUI to latest](https://github.com/comfyanonymous/ComfyUI/compare/8f0009a...4c82741)
+- [Add sd3.5_large_controlnet_depth.safetensors to controlnet](https://huggingface.co/stabilityai/stable-diffusion-3.5-controlnets)
+- [Add sd3.5_large_controlnet_canny.safetensors to controlnet](https://huggingface.co/stabilityai/stable-diffusion-3.5-controlnets)
+- [Add sd3.5_large_controlnet_blur.safetensors to controlnet](https://huggingface.co/stabilityai/stable-diffusion-3.5-controlnets)
+- [Add ltx-video-2b-v0.9.safetensors to checkpoints](https://huggingface.co/Lightricks/LTX-Video)
+
 
 ## 2024-11-21
 

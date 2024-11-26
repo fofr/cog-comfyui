@@ -51,6 +51,7 @@
 - juggerxlInpaint_juggerInpaintV8.safetensors
 - LCM_Dreamshaper_v7_4k.safetensors
 - leosamsHelloworldXL_helloworldXL60.safetensors
+- ltx-video-2b-v0.9.safetensors
 - magicmixReverie_v10.safetensors
 - majicmixRealistic_v7.safetensors
 - motionctrl.pth
@@ -479,6 +480,9 @@
 - SD3-Controlnet-Canny.safetensors
 - SD3-Controlnet-Pose.safetensors
 - SD3-Controlnet-Tile.safetensors
+- sd3.5_large_controlnet_blur.safetensors
+- sd3.5_large_controlnet_canny.safetensors
+- sd3.5_large_controlnet_depth.safetensors
 - t2i-adapter_diffusers_xl_canny.safetensors
 - t2i-adapter_diffusers_xl_depth_midas.safetensors
 - t2i-adapter_diffusers_xl_depth_zoe.safetensors
