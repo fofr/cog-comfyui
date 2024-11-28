@@ -663,6 +663,7 @@
 ## PuLID
 
 - ip-adapter_pulid_sdxl_fp16.safetensors
+- pulid_flux_v0.9.0.safetensors
 
 ## GLIGEN
 

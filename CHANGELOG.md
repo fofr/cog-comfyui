@@ -1,3 +1,7 @@
+## 2024-11-28
+
+- [Add pulid_flux_v0.9.0.safetensors to pulid](https://huggingface.co/guozinan/PuLID)
+
 ## 2024-11-26
 
 - [Update ComfyUI to latest](https://github.com/comfyanonymous/ComfyUI/compare/8f0009a...4c82741)

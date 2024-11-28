@@ -200,5 +200,9 @@
   {
     "repo": "https://github.com/logtd/ComfyUI-Fluxtapoz",
     "commit": "4d30397"
+  },
+  {
+    "repo": "https://github.com/balazik/ComfyUI-PuLID-Flux",
+    "commit": "a80912f"
   }
 ]
