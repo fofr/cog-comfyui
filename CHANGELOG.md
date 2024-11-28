@@ -1,7 +1,23 @@
 ## 2024-11-28
 
+More flux-dev weights:
+
+- [Add flux1-dev-fp8-e5m2.safetensors to diffusion_models](https://huggingface.co/Kijai/flux-fp8)
+- [Add flux1-dev-fp8-e4m3fn.safetensors to diffusion_models](https://huggingface.co/Kijai/flux-fp8)
+
+Add support for ComfyUI-PuLID-Flux:
+
 - [Add support for ComfyUI-PuLID-Flux](https://github.com/balazik/ComfyUI-PuLID-Flux)
 - [Add pulid_flux_v0.9.0.safetensors to pulid](https://huggingface.co/guozinan/PuLID)
+
+Update custom nodes:
+
+- [Updated ComfyUI-PuLID-Flux](https://github.com/zhangp365/ComfyUI-PuLID-Flux/compare/f49d34f...29e1046)
+- [Updated rgthree-comfy](https://github.com/rgthree/rgthree-comfy/compare/8df5e33...6d22bbf)
+- [Updated ComfyUI-KJNodes](https://github.com/kijai/ComfyUI-KJNodes/compare/5d7aaf9...2838126)
+- [Updated ComfyUI_essentials](https://github.com/cubiq/ComfyUI_essentials/compare/64e38fd...5a4e5cd)
+- [Updated ComfyUI-VideoHelperSuite](https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite/compare/3796aab...fb56b2d)
+- [Updated ComfyUI-Inspire-Pack](https://github.com/ltdrdata/ComfyUI-Inspire-Pack/compare/3bcc1d4...18f02d9)
 
 ## 2024-11-26
 
@@ -10,7 +26,6 @@
 - [Add sd3.5_large_controlnet_canny.safetensors to controlnet](https://huggingface.co/stabilityai/stable-diffusion-3.5-controlnets)
 - [Add sd3.5_large_controlnet_blur.safetensors to controlnet](https://huggingface.co/stabilityai/stable-diffusion-3.5-controlnets)
 - [Add ltx-video-2b-v0.9.safetensors to checkpoints](https://huggingface.co/Lightricks/LTX-Video)
-
 
 ## 2024-11-21
 

@@ -539,6 +539,8 @@
   "DIFFUSION_MODELS": [
     "flux1-canny-dev.safetensors",
     "flux1-depth-dev.safetensors",
+    "flux1-dev-fp8-e4m3fn.safetensors",
+    "flux1-dev-fp8-e5m2.safetensors",
     "flux1-fill-dev.safetensors",
     "mochi/mochi_preview_dit_fp8_e4m3fn.safetensors",
     "mochi_preview_bf16.safetensors",

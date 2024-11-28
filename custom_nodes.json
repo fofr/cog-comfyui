@@ -14,7 +14,7 @@
   },
   {
     "repo": "https://github.com/ltdrdata/ComfyUI-Inspire-Pack",
-    "commit": "3bcc1d4"
+    "commit": "18f02d9"
   },
   {
     "repo": "https://github.com/theUpsider/ComfyUI-Logic",
@@ -30,7 +30,7 @@
   },
   {
     "repo": "https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite",
-    "commit": "3796aab"
+    "commit": "fb56b2d"
   },
   {
     "repo": "https://github.com/Kosinkadink/ComfyUI-Advanced-ControlNet",
@@ -58,7 +58,7 @@
   },
   {
     "repo": "https://github.com/cubiq/ComfyUI_essentials",
-    "commit": "64e38fd"
+    "commit": "5a4e5cd"
   },
   {
     "repo": "https://github.com/shiimizu/ComfyUI-PhotoMaker-Plus",
@@ -102,7 +102,7 @@
   },
   {
     "repo": "https://github.com/kijai/ComfyUI-KJNodes",
-    "commit": "5d7aaf9"
+    "commit": "2838126"
   },
   {
     "repo": "https://github.com/Fannovel16/ComfyUI-Frame-Interpolation",
@@ -134,7 +134,7 @@
   },
   {
     "repo": "https://github.com/rgthree/rgthree-comfy",
-    "commit": "8df5e33"
+    "commit": "6d22bbf"
   },
   {
     "repo": "https://github.com/fofr/comfyui-prompter-fofrai",
