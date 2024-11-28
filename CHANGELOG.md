@@ -1,5 +1,6 @@
 ## 2024-11-28
 
+- [Add support for ComfyUI-PuLID-Flux](https://github.com/balazik/ComfyUI-PuLID-Flux)
 - [Add pulid_flux_v0.9.0.safetensors to pulid](https://huggingface.co/guozinan/PuLID)
 
 ## 2024-11-26
