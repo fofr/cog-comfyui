@@ -542,6 +542,8 @@
     "flux1-dev-fp8-e4m3fn.safetensors",
     "flux1-dev-fp8-e5m2.safetensors",
     "flux1-fill-dev.safetensors",
+    "flux1-schnell-fp8-e4m3fn.safetensors",
+    "hunyuan_video_720_fp8_e4m3fn.safetensors",
     "mochi/mochi_preview_dit_fp8_e4m3fn.safetensors",
     "mochi_preview_bf16.safetensors",
     "mochi_preview_fp8_scaled.safetensors"

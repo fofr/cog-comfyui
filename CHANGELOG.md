@@ -1,4 +1,9 @@
+
+## 2024-12-03
+
+- [Add hunyuan_video_720_fp8_e4m3fn.safetensors to diffusion_models](https://huggingface.co/Kijai/HunyuanVideo_comfy/resolve/main/hunyuan_video_720_fp8_e4m3fn.safetensors?download=true)
 ## 2024-11-28
+- [Add flux1-schnell-fp8-e4m3fn.safetensors to diffusion_models](https://huggingface.co/Kijai/flux-fp8/resolve/main/flux1-schnell-fp8-e4m3fn.safetensors?download=true)
 
 More flux-dev weights:
 
