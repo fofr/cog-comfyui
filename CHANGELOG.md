@@ -1,7 +1,8 @@
-
 ## 2024-12-03
 
-- [Add hunyuan_video_720_fp8_e4m3fn.safetensors to diffusion_models](https://huggingface.co/Kijai/HunyuanVideo_comfy/resolve/main/hunyuan_video_720_fp8_e4m3fn.safetensors?download=true)
+- [Add hunyuan_video_vae_bf16.safetensors to vae](https://huggingface.co/Kijai/HunyuanVideo_comfy)
+- [Add hunyuan_video_720_fp8_e4m3fn.safetensors to diffusion_models](https://huggingface.co/Kijai/HunyuanVideo_comfy)
+
 ## 2024-11-28
 - [Add flux1-schnell-fp8-e4m3fn.safetensors to diffusion_models](https://huggingface.co/Kijai/flux-fp8/resolve/main/flux1-schnell-fp8-e4m3fn.safetensors?download=true)
 

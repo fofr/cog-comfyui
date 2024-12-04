@@ -502,6 +502,7 @@
   ],
   "VAE": [
     "ae.safetensors",
+    "hunyuan_video_vae_bf16.safetensors",
     "mochi/mochi_preview_vae_bf16.safetensors",
     "mochi_vae.safetensors",
     "sd3_medium_vae.fp16.safetensors",
