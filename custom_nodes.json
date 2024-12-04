@@ -205,5 +205,9 @@
     "repo": "https://github.com/zhangp365/ComfyUI-PuLID-Flux",
     "commit": "f49d34f",
     "notes": "Fork of https://github.com/balazik/ComfyUI-PuLID-Flux which fixes forward_orig method"
+  },
+  {
+    "repo": "https://github.com/kijai/ComfyUI-HunyuanVideoWrapper",
+    "commit": "8e680e9"
   }
 ]

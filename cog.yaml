@@ -10,12 +10,12 @@ build:
     - torchaudio
     - torchsde
     - einops
-    - transformers>=4.28.1
+    - transformers>=4.39.3
     - tokenizers>=0.13.3
     - sentencepiece
     - safetensors>=0.3.0
     - aiohttp
-    - accelerate
+    - accelerate>=1.1.1
     - pyyaml
     - Pillow
     - scipy
@@ -25,7 +25,7 @@ build:
     - soundfile
     - kornia>=0.7.1
     - websocket-client==1.6.3
-    - diffusers>=0.30.0
+    - diffusers>=0.31.0
 
     # Inspire
     - webcolors
