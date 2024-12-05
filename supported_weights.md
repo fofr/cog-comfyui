@@ -158,6 +158,7 @@
 
 ## Text Encoders
 
+- clip-vit-large-patch14
 - clip_g.safetensors
 - clip_l.safetensors
 - models--QuanSun--EVA-CLIP
@@ -684,6 +685,7 @@
 - checkpoints/chatglm3-4bit.safetensors
 - checkpoints/chatglm3-8bit.safetensors
 - checkpoints/chatglm3-fp16.safetensors
+- llava-llama-3-8b-text-encoder-tokenizer
 
 ## Inpainting models
 

@@ -90,6 +90,17 @@ class WeightsManifest:
         weights_map = {}
 
         def generate_weights_map(keys, directory_name):
+
+            # Special case for clip-vit-large-patch14
+            # ComfyUI-HunyuanVideoWrapper looks for it only in clip directory
+            if directory_name.lower() == "clip" and "clip-vit-large-patch14" in keys:
+                return {
+                    "clip-vit-large-patch14": {
+                        "url": f"{BASE_URL}/clip/clip-vit-large-patch14.tar",
+                        "dest": f"{MODELS_PATH}/clip",
+                    }
+                }
+
             directory_name = (
                 "LLM" if directory_name == "LLM" else directory_name.lower()
             )

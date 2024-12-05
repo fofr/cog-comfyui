@@ -157,6 +157,7 @@
   ],
   "TEXT_ENCODERS": [],
   "CLIP": [
+    "clip-vit-large-patch14",
     "clip_g.safetensors",
     "clip_l.safetensors",
     "models--QuanSun--EVA-CLIP",
@@ -713,7 +714,8 @@
   "LLM": [
     "checkpoints/chatglm3-4bit.safetensors",
     "checkpoints/chatglm3-8bit.safetensors",
-    "checkpoints/chatglm3-fp16.safetensors"
+    "checkpoints/chatglm3-fp16.safetensors",
+    "llava-llama-3-8b-text-encoder-tokenizer"
   ],
   "TENSORRT": [
     "dreamshaperXL_lightningDPMSDE_DYN_A40-b-1-1-1-h-512-1536-1024-w-512-1536-1024.engine",
