@@ -253,6 +253,7 @@
 - b_lora/B_LoRA_colorful-squirrel.safetensors
 - b_lora/B_LoRA_pencil_boy.safetensors
 - badquality_v02.safetensors
+- Canopus-LoRA-Flux-UltraRealism.safetensors
 - charTurnBetaLora.safetensors
 - COOLKIDS_MERGE_V2.5.safetensors
 - Cyberpunk_typeface_flux_lora_v1.safetensors
@@ -315,6 +316,7 @@
 - Segmind-VegaRT.safetensors
 - theovercomer8sContrastFix_sd15.safetensors
 - theovercomer8sContrastFix_sd21768.safetensors
+- Ton618-Epic-Realism-Flux-LoRA.safetensors
 - weight_slider-LECO-v1.safetensors
 
 ## Embeddings

@@ -1,3 +1,9 @@
+
+## 2024-12-10
+
+- [Add Ton618-Epic-Realism-Flux-LoRA.safetensors to loras](https://huggingface.co/prithivMLmods/Ton618-Epic-Realism-Flux-LoRA)
+- [Add Canopus-LoRA-Flux-UltraRealism.safetensors to loras](https://huggingface.co/prithivMLmods/Canopus-LoRA-Flux-UltraRealism-2.0)
+
 ## 2024-12-03
 
 - [Add hunyuan_video_vae_bf16.safetensors to vae](https://huggingface.co/Kijai/HunyuanVideo_comfy)
