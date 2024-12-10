@@ -1,6 +1,8 @@
 
 ## 2024-12-10
 
+- [Add Sketch_Illustration_Style_LoRA_-_Pony_V6_XL.safetensors to loras](https://civitai.com/api/download/models/882225?type=Model&format=SafeTensor)
+- [Add Smooth_Anime_2_Style_SDXL_LoRA_Pony_Diffusion_V6_XL.safetensors to loras](https://civitai.com/api/download/models/333607?type=Model&format=SafeTensor)
 - [Add Ton618-Epic-Realism-Flux-LoRA.safetensors to loras](https://huggingface.co/prithivMLmods/Ton618-Epic-Realism-Flux-LoRA)
 - [Add Canopus-LoRA-Flux-UltraRealism.safetensors to loras](https://huggingface.co/prithivMLmods/Canopus-LoRA-Flux-UltraRealism-2.0)
 

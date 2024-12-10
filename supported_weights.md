@@ -314,6 +314,8 @@
 - SDXLrender_v2.0.safetensors
 - SECourses_3D_Render_Style_Fixed_Dataset_With_Captions.safetensors
 - Segmind-VegaRT.safetensors
+- Sketch_Illustration_Style_LoRA_-_Pony_V6_XL.safetensors
+- Smooth_Anime_2_Style_SDXL_LoRA_Pony_Diffusion_V6_XL.safetensors
 - theovercomer8sContrastFix_sd15.safetensors
 - theovercomer8sContrastFix_sd21768.safetensors
 - Ton618-Epic-Realism-Flux-LoRA.safetensors
