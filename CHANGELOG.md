@@ -1,3 +1,6 @@
+## 2024-12-13
+
+- [Add dreamshaperXL_sfwV2TurboDPMSDE.safetensors to checkpoints](https://civitai.com/models/112902?modelVersionId=341981)
 
 ## 2024-12-10
 

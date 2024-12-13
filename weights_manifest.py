@@ -144,6 +144,7 @@ class WeightsManifest:
             "cocoamixxl_v4Stable.safetensors",
             "copaxTimelessxlSDXL1_v8.safetensors",
             "epicrealismXL_v10.safetensors",
+            "dreamshaperXL_sfwV2TurboDPMSDE.safetensors",
             "GPEN-BFR-1024.onnx",
             "GPEN-BFR-2048.onnx",
             "GPEN-BFR-512.onnx",
