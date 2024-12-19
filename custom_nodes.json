@@ -213,6 +213,6 @@
   {
     "repo": "https://github.com/fofr/ComfyUI-AdvancedLivePortrait",
     "notes": "Fork of https://github.com/PowerHouseMan/ComfyUI-AdvancedLivePortrait which removes `rich` dependency",
-    "commit": "e5bdc6b"
+    "commit": "f097659"
   }
 ]
