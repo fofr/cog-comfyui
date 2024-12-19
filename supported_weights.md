@@ -536,6 +536,7 @@
 - mochi/mochi_preview_dit_fp8_e4m3fn.safetensors
 - mochi_preview_bf16.safetensors
 - mochi_preview_fp8_scaled.safetensors
+- pixelwave_flux1Dev03.safetensors
 - flux1-dev.safetensors
 - flux1-schnell.safetensors
 - iclight_sd15_fbc.safetensors

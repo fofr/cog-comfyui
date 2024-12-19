@@ -1,5 +1,6 @@
 ## 2024-12-19
 
+- [Add pixelwave_flux1Dev03.safetensors to diffusion_models](https://civitai.com/models/141592?modelVersionId=992642)
 - [Add llava-llama-3-8b-v1_1-transformers to LLM models](https://huggingface.co/xtuner/llava-llama-3-8b-v1_1-transformers)
 - [Add ComfyUI-AdvancedLivePortrait](https://github.com/PowerHouseMan/ComfyUI-AdvancedLivePortrait)
 

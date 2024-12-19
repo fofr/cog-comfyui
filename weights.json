@@ -553,7 +553,8 @@
     "hunyuan_video_720_fp8_e4m3fn.safetensors",
     "mochi/mochi_preview_dit_fp8_e4m3fn.safetensors",
     "mochi_preview_bf16.safetensors",
-    "mochi_preview_fp8_scaled.safetensors"
+    "mochi_preview_fp8_scaled.safetensors",
+    "pixelwave_flux1Dev03.safetensors"
   ],
   "PHOTOMAKER": [
     "photomaker-v1.bin",
