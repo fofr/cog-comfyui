@@ -1,0 +1,68 @@
+{
+  "14": {
+    "inputs": {
+      "rotate_pitch": 0,
+      "rotate_yaw": 0,
+      "rotate_roll": 0,
+      "blink": 0,
+      "eyebrow": 0,
+      "wink": 23.5,
+      "pupil_x": 0,
+      "pupil_y": 0,
+      "aaa": 0,
+      "eee": 0,
+      "woo": 0,
+      "smile": 0,
+      "src_ratio": 1,
+      "sample_ratio": 1,
+      "sample_parts": "OnlyExpression",
+      "crop_factor": 1.7000000000000002,
+      "src_image": [
+        "15",
+        0
+      ]
+    },
+    "class_type": "ExpressionEditor",
+    "_meta": {
+      "title": "Expression Editor (PHM)"
+    }
+  },
+  "15": {
+    "inputs": {
+      "image": "https://replicate.delivery/yhqm/xkxWbasYQhZGKlfJqkz3UUAQj5LTqedA6EVppFWDGV2sfIAnA/expression_edit_preview4.webp",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "33": {
+    "inputs": {
+      "filename_prefix": "ExpressionEditing",
+      "images": [
+        "14",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Image"
+    }
+  },
+  "34": {
+    "inputs": {
+      "retargeting_eyes": 0,
+      "retargeting_mouth": 0,
+      "crop_factor": 1.7,
+      "turn_on": true,
+      "tracking_src_vid": false,
+      "animate_without_vid": false,
+      "command": ""
+    },
+    "class_type": "AdvancedLivePortrait",
+    "_meta": {
+      "title": "Advanced Live Portrait (PHM)"
+    }
+  }
+}
