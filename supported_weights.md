@@ -49,6 +49,7 @@
 - juggernautXL_v8Rundiffusion.safetensors
 - juggernautXL_v9Rdphoto2Lightning.safetensors
 - juggernautXL_version6Rundiffusion.safetensors
+- juggernautXLInpainting_xiInpainting.safetensors
 - juggerxlInpaint_juggerInpaintV8.safetensors
 - LCM_Dreamshaper_v7_4k.safetensors
 - leosamsHelloworldXL_helloworldXL60.safetensors
