@@ -1,3 +1,8 @@
+## 2024-12-19
+
+- [Add llava-llama-3-8b-v1_1-transformers to LLM models](https://huggingface.co/xtuner/llava-llama-3-8b-v1_1-transformers)
+- [Add ComfyUI-AdvancedLivePortrait](https://github.com/PowerHouseMan/ComfyUI-AdvancedLivePortrait)
+
 ## 2024-12-13
 
 - [Add dreamshaperXL_sfwV2TurboDPMSDE.safetensors to checkpoints](https://civitai.com/models/112902?modelVersionId=341981)

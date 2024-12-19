@@ -691,6 +691,7 @@
 - checkpoints/chatglm3-8bit.safetensors
 - checkpoints/chatglm3-fp16.safetensors
 - llava-llama-3-8b-text-encoder-tokenizer
+- llava-llama-3-8b-v1_1-transformers
 
 ## Inpainting models
 
