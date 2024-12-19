@@ -1,4 +1,6 @@
-## 2024-12-20
+## 2024-12-19
+
+- [Update ComfyUI to latest](https://github.com/comfyanonymous/ComfyUI/compare/4c82741...c441048)
 
 New weights:
 
