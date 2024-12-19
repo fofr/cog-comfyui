@@ -14,7 +14,7 @@
   },
   {
     "repo": "https://github.com/ltdrdata/ComfyUI-Inspire-Pack",
-    "commit": "18f02d9"
+    "commit": "685c5c0"
   },
   {
     "repo": "https://github.com/theUpsider/ComfyUI-Logic",
@@ -22,19 +22,19 @@
   },
   {
     "repo": "https://github.com/Acly/comfyui-tooling-nodes",
-    "commit": "50c3ffd"
+    "commit": "fe39d22"
   },
   {
     "repo": "https://github.com/Kosinkadink/ComfyUI-AnimateDiff-Evolved",
-    "commit": "b3e508a"
+    "commit": "4f1344e"
   },
   {
     "repo": "https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite",
-    "commit": "fb56b2d"
+    "commit": "6953fa2"
   },
   {
     "repo": "https://github.com/Kosinkadink/ComfyUI-Advanced-ControlNet",
-    "commit": "172543b"
+    "commit": "9632af9"
   },
   {
     "repo": "https://github.com/jags111/efficiency-nodes-comfyui",
@@ -50,7 +50,7 @@
   },
   {
     "repo": "https://github.com/TinyTerra/ComfyUI_tinyterraNodes",
-    "commit": "0387940"
+    "commit": "339ee9c"
   },
   {
     "repo": "https://github.com/ssitu/ComfyUI_UltimateSDUpscale",
@@ -58,15 +58,15 @@
   },
   {
     "repo": "https://github.com/cubiq/ComfyUI_essentials",
-    "commit": "5a4e5cd"
+    "commit": "33ff89f"
   },
   {
     "repo": "https://github.com/shiimizu/ComfyUI-PhotoMaker-Plus",
-    "commit": "604feb3"
+    "commit": "459f5c0"
   },
   {
     "repo": "https://github.com/pythongosssss/ComfyUI-Custom-Scripts",
-    "commit": "d6657cc"
+    "commit": "19a82e2"
   },
   {
     "repo": "https://github.com/BadCafeCode/masquerade-nodes-comfyui",
@@ -74,7 +74,7 @@
   },
   {
     "repo": "https://github.com/Gourieff/comfyui-reactor-node",
-    "commit": "b3d85c7"
+    "commit": "0576662"
   },
   {
     "repo": "https://github.com/cubiq/ComfyUI_InstantID",
@@ -102,7 +102,7 @@
   },
   {
     "repo": "https://github.com/kijai/ComfyUI-KJNodes",
-    "commit": "2838126"
+    "commit": "973ceb6"
   },
   {
     "repo": "https://github.com/Fannovel16/ComfyUI-Frame-Interpolation",
@@ -134,7 +134,7 @@
   },
   {
     "repo": "https://github.com/rgthree/rgthree-comfy",
-    "commit": "6d22bbf"
+    "commit": "5f2d8a1"
   },
   {
     "repo": "https://github.com/fofr/comfyui-prompter-fofrai",
@@ -199,16 +199,16 @@
   },
   {
     "repo": "https://github.com/logtd/ComfyUI-Fluxtapoz",
-    "commit": "4d30397"
+    "commit": "a6295c0"
   },
   {
     "repo": "https://github.com/zhangp365/ComfyUI-PuLID-Flux",
-    "commit": "f49d34f",
+    "commit": "29e1046",
     "notes": "Fork of https://github.com/balazik/ComfyUI-PuLID-Flux which fixes forward_orig method"
   },
   {
     "repo": "https://github.com/kijai/ComfyUI-HunyuanVideoWrapper",
-    "commit": "8e680e9"
+    "commit": "da2fb54"
   },
   {
     "repo": "https://github.com/fofr/ComfyUI-AdvancedLivePortrait",

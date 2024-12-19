@@ -1,9 +1,32 @@
-## 2024-12-19
+## 2024-12-20
+
+New weights:
 
 - [Add pixelwave_flux1Dev03.safetensors to diffusion_models](https://civitai.com/models/141592?modelVersionId=992642)
 - [Add juggernautXLInpainting_xiInpainting.safetensors to checkpoints](https://civitai.com/models/862813/juggernaut-xl-inpainting-updated)
 - [Add llava-llama-3-8b-v1_1-transformers to LLM models](https://huggingface.co/xtuner/llava-llama-3-8b-v1_1-transformers)
+
+New custom nodes:
+
 - [Add ComfyUI-AdvancedLivePortrait](https://github.com/PowerHouseMan/ComfyUI-AdvancedLivePortrait)
+
+Custom nodes updated:
+
+- [Updated ComfyUI-Fluxtapoz](https://github.com/logtd/ComfyUI-Fluxtapoz/compare/4d30397...a6295c0)
+- [Updated ComfyUI-HunyuanVideoWrapper](https://github.com/kijai/ComfyUI-HunyuanVideoWrapper/compare/8e680e9...da2fb54)
+- [Updated ComfyUI-PuLID-Flux](https://github.com/zhangp365/ComfyUI-PuLID-Flux/compare/f49d34f...29e1046)
+- [Updated rgthree-comfy](https://github.com/rgthree/rgthree-comfy/compare/6d22bbf...5f2d8a1)
+- [Updated ComfyUI-KJNodes](https://github.com/kijai/ComfyUI-KJNodes/compare/2838126...973ceb6)
+- [Updated comfyui-reactor-node](https://github.com/Gourieff/comfyui-reactor-node/compare/b3d85c7...0576662)
+- [Updated ComfyUI-Custom-Scripts](https://github.com/pythongosssss/ComfyUI-Custom-Scripts/compare/d6657cc...19a82e2)
+- [Updated ComfyUI-PhotoMaker-Plus](https://github.com/shiimizu/ComfyUI-PhotoMaker-Plus/compare/604feb3...459f5c0)
+- [Updated ComfyUI_essentials](https://github.com/cubiq/ComfyUI_essentials/compare/5a4e5cd...33ff89f)
+- [Updated ComfyUI_tinyterraNodes](https://github.com/TinyTerra/ComfyUI_tinyterraNodes/compare/0387940...339ee9c)
+- [Updated ComfyUI-Advanced-ControlNet](https://github.com/Kosinkadink/ComfyUI-Advanced-ControlNet/compare/172543b...9632af9)
+- [Updated ComfyUI-VideoHelperSuite](https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite/compare/fb56b2d...6953fa2)
+- [Updated ComfyUI-AnimateDiff-Evolved](https://github.com/Kosinkadink/ComfyUI-AnimateDiff-Evolved/compare/b3e508a...4f1344e)
+- [Updated comfyui-tooling-nodes](https://github.com/Acly/comfyui-tooling-nodes/compare/50c3ffd...fe39d22)
+- [Updated ComfyUI-Inspire-Pack](https://github.com/ltdrdata/ComfyUI-Inspire-Pack/compare/18f02d9...685c5c0)
 
 ## 2024-12-13
 
