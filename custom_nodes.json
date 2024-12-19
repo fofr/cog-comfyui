@@ -209,5 +209,9 @@
   {
     "repo": "https://github.com/kijai/ComfyUI-HunyuanVideoWrapper",
     "commit": "8e680e9"
+  },
+  {
+    "repo": "https://github.com/PowerHouseMan/ComfyUI-AdvancedLivePortrait",
+    "commit": "3bba732"
   }
 ]
