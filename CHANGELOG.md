@@ -3,6 +3,7 @@
 New custom nodes:
 
 - [Add ComfyUI-Florence2](https://github.com/kijai/ComfyUI-Florence2) custom node
+- [Add ComfyUI-segment-anything-2](https://github.com/kijai/ComfyUI-segment-anything-2) custom node
 
 New weights:
 
