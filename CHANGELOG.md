@@ -10,6 +10,22 @@ New weights:
 - [Add realvisxlV50_v50Bakedvae.safetensors to checkpoints](https://civitai.com/models/139562?modelVersionId=789646)
 - [Add ltx-video-2b-v0.9.1.safetensors to checkpoints](https://huggingface.co/Lightricks/LTX-Video/blob/main/ltx-video-2b-v0.9.1.safetensors)
 
+Florence2 weights:
+
+- [Add Florence-2-large-ft to LLM](https://huggingface.co/microsoft/Florence-2-large-ft)
+- [Add Florence-2-large-PromptGen-v1.5 to LLM](https://huggingface.co/MiaoshouAI/Florence-2-large-PromptGen-v1.5)
+- [Add Florence-2-base-PromptGen-v2.0 to LLM](https://huggingface.co/MiaoshouAI/Florence-2-base-PromptGen-v2.0)
+- [Add Florence-2-large to LLM](https://huggingface.co/microsoft/Florence-2-large)
+- [Add Florence-2-base-ft to LLM](https://huggingface.co/microsoft/Florence-2-base-ft)
+- [Add Florence-2-base-PromptGen-v1.5 to LLM](https://huggingface.co/MiaoshouAI/Florence-2-base-PromptGen-v1.5)
+- [Add Florence-2-base to LLM](https://huggingface.co/microsoft/Florence-2-base)
+- [Add Florence-2-SD3-Captioner to LLM](https://huggingface.co/gokaygokay/Florence-2-SD3-Captioner)
+- [Add Florence-2-Flux-Large to LLM](https://huggingface.co/gokaygokay/Florence-2-Flux-Large)
+- [Add Florence-2-DocVQA to LLM](https://huggingface.co/HuggingFaceM4/Florence-2-DocVQA)
+- [Add CogFlorence-2.2-Large to LLM](https://huggingface.co/thwri/CogFlorence-2.2-Large)
+- [Add CogFlorence-2.1-Large to LLM](https://huggingface.co/thwri/CogFlorence-2.1-Large)
+- [Add Florence-2-large-PromptGen-v2.0 to LLM](https://huggingface.co/MiaoshouAI/Florence-2-large-PromptGen-v2.0)
+
 SAM2 weights:
 
 - [Add sam2_hiera_tiny.safetensors to sam2](https://huggingface.co/Kijai/sam2-safetensors/blob/main/sam2_hiera_tiny.safetensors)

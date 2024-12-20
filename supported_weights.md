@@ -710,6 +710,19 @@
 - checkpoints/chatglm3-4bit.safetensors
 - checkpoints/chatglm3-8bit.safetensors
 - checkpoints/chatglm3-fp16.safetensors
+- CogFlorence-2.1-Large
+- CogFlorence-2.2-Large
+- Florence-2-base
+- Florence-2-base-ft
+- Florence-2-base-PromptGen-v1.5
+- Florence-2-base-PromptGen-v2.0
+- Florence-2-DocVQA
+- Florence-2-Flux-Large
+- Florence-2-large
+- Florence-2-large-ft
+- Florence-2-large-PromptGen-v1.5
+- Florence-2-large-PromptGen-v2.0
+- Florence-2-SD3-Captioner
 - llava-llama-3-8b-text-encoder-tokenizer
 - llava-llama-3-8b-v1_1-transformers
 
