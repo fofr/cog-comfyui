@@ -1,5 +1,6 @@
 ## 2024-12-20
 
+- [Add CN-anytest_v3-50000_fp16.safetensors to controlnet](https://huggingface.co/2vXpSwA7/iroiro-lora/blob/main/test_controlnet2/CN-anytest_v3-50000_fp16.safetensors)
 - [Add realvisxlV50_v50Bakedvae.safetensors to checkpoints](https://civitai.com/models/139562?modelVersionId=789646)
 - [Add ltx-video-2b-v0.9.1.safetensors to checkpoints](https://huggingface.co/Lightricks/LTX-Video/blob/main/ltx-video-2b-v0.9.1.safetensors)
 
