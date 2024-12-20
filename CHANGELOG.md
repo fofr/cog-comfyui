@@ -1,10 +1,16 @@
 ## 2024-12-20
 
+New custom nodes:
+
+- [Add ComfyUI-Florence2](https://github.com/kijai/ComfyUI-Florence2) custom node
+
+New weights:
+
 - [Add CN-anytest_v3-50000_fp16.safetensors to controlnet](https://huggingface.co/2vXpSwA7/iroiro-lora/blob/main/test_controlnet2/CN-anytest_v3-50000_fp16.safetensors)
 - [Add realvisxlV50_v50Bakedvae.safetensors to checkpoints](https://civitai.com/models/139562?modelVersionId=789646)
 - [Add ltx-video-2b-v0.9.1.safetensors to checkpoints](https://huggingface.co/Lightricks/LTX-Video/blob/main/ltx-video-2b-v0.9.1.safetensors)
 
-Added SAM2 weights:
+SAM2 weights:
 
 - [Add sam2_hiera_tiny.safetensors to sam2](https://huggingface.co/Kijai/sam2-safetensors/blob/main/sam2_hiera_tiny.safetensors)
 - [Add sam2_hiera_small.safetensors to sam2](https://huggingface.co/Kijai/sam2-safetensors/blob/main/sam2_hiera_small.safetensors)
