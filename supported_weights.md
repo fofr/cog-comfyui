@@ -53,6 +53,7 @@
 - juggerxlInpaint_juggerInpaintV8.safetensors
 - LCM_Dreamshaper_v7_4k.safetensors
 - leosamsHelloworldXL_helloworldXL60.safetensors
+- ltx-video-2b-v0.9.1.safetensors
 - ltx-video-2b-v0.9.safetensors
 - magicmixReverie_v10.safetensors
 - majicmixRealistic_v7.safetensors

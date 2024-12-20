@@ -1,3 +1,7 @@
+## 2024-12-20
+
+- [Add ltx-video-2b-v0.9.1.safetensors to checkpoints](https://huggingface.co/Lightricks/LTX-Video/blob/main/ltx-video-2b-v0.9.1.safetensors)
+
 ## 2024-12-19
 
 - [Update ComfyUI to latest](https://github.com/comfyanonymous/ComfyUI/compare/4c82741...c441048)

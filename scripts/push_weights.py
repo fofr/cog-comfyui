@@ -298,6 +298,11 @@ def update_changelog(subfolder, filename, url):
     changelog_file = "CHANGELOG.md"
     today = datetime.now().strftime("%Y-%m-%d")
     if url:
+        # Convert HuggingFace download URLs to blob URLs
+        if url.startswith("https://huggingface.co") and "/resolve/" in url:
+            url = url.replace("/resolve/", "/blob/")
+            if "?download=true" in url:
+                url = url.replace("?download=true", "")
         update_line = f"- [Add {filename} to {subfolder.lower()}]({url})\n"
     else:
         update_line = f"- Add {filename} to {subfolder.lower()}\n"
