@@ -93,6 +93,7 @@
 - RealVisXL_V3.0_Turbo.safetensors
 - RealVisXL_V4.0.safetensors
 - RealVisXL_V4.0_Lightning.safetensors
+- realvisxlV50_v50Bakedvae.safetensors
 - realvisxlV50_v50LightningBakedvae.safetensors
 - rundiffusionXL_beta.safetensors
 - sd3.5_large.safetensors
