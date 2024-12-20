@@ -32,6 +32,7 @@ def write_supported_weights():
         "InsightFace": weights_manifest.get_weights_by_type("INSIGHTFACE"),
         "Ultralytics": weights_manifest.get_weights_by_type("ULTRALYTICS"),
         "Segment anything models (SAM)": weights_manifest.get_weights_by_type("SAMS"),
+        "SAM2": weights_manifest.get_weights_by_type("SAM2"),
         "GroundingDino": weights_manifest.get_weights_by_type("GROUNDING-DINO"),
         "MMDets": weights_manifest.get_weights_by_type("MMDETS"),
         "Face restoration models": weights_manifest.get_weights_by_type(

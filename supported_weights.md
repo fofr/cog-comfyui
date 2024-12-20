@@ -617,6 +617,21 @@
 - sam_vit_h_4b8939.pth
 - sam_vit_l_0b3195.pth
 
+## SAM2
+
+- sam2.1_hiera_base_plus-fp16.safetensors
+- sam2.1_hiera_base_plus.safetensors
+- sam2.1_hiera_large-fp16.safetensors
+- sam2.1_hiera_large.safetensors
+- sam2.1_hiera_small-fp16.safetensors
+- sam2.1_hiera_small.safetensors
+- sam2.1_hiera_tiny-fp16.safetensors
+- sam2.1_hiera_tiny.safetensors
+- sam2_hiera_base_plus.safetensors
+- sam2_hiera_large.safetensors
+- sam2_hiera_small.safetensors
+- sam2_hiera_tiny.safetensors
+
 ## GroundingDino
 
 - groundingdino_swinb_cogcoor.pth

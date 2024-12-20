@@ -355,22 +355,28 @@ def process_file(
     no_hf_upload=False,
     civitai_api_token=None,
     hf_cli_download=False,
+    no_upload=False,
 ):
     if url:
         print(f"Processing {url}")
-        local_file = download_file(url, filename, civitai_api_token, hf_cli_download)
+        if no_upload and filename:
+            local_file = filename
+        else:
+            local_file = download_file(url, filename, civitai_api_token, hf_cli_download)
     else:
         if filename is None:
             raise ValueError("Filename must be provided if URL is not specified")
         print(f"Processing {filename}")
         local_file = filename
 
-    tarred_file = tar_file(local_file)
-    upload_to_gcloud(tarred_file, "gs://replicate-weights/comfy-ui", subfolder)
-    if not no_hf_upload:
-        upload_to_huggingface(local_file, subfolder)
+    if not no_upload:
+        tarred_file = tar_file(local_file)
+        upload_to_gcloud(tarred_file, "gs://replicate-weights/comfy-ui", subfolder)
+        if not no_hf_upload:
+            upload_to_huggingface(local_file, subfolder)
+        remove_files(local_file, tarred_file)
+
     update_weights_json(subfolder, local_file, url)
-    remove_files(local_file, tarred_file)
     subprocess.run(["python", "scripts/sort_weights.py"])
 
 
@@ -380,6 +386,7 @@ def process_weights_file(
     no_hf_upload=False,
     civitai_api_token=None,
     hf_cli_download=False,
+    no_upload=False,
 ):
     with open(weights_file, "r") as f:
         for line in f:
@@ -391,6 +398,7 @@ def process_weights_file(
                 no_hf_upload,
                 civitai_api_token,
                 hf_cli_download,
+                no_upload,
             )
 
 
@@ -424,6 +432,11 @@ def main():
         action="store_true",
         help="Use Hugging Face Hub to download weights",
     )
+    parser.add_argument(
+        "--no_upload",
+        action="store_true",
+        help="Skip uploading to storage but still update changelog and weights.json",
+    )
     args = parser.parse_args()
 
     subfolder = get_subfolder()
@@ -436,6 +449,7 @@ def main():
             args.no_hf_upload,
             civitai_api_token,
             args.hf_cli_download,
+            args.no_upload,
         )
     elif args.file:
         filename = args.filename if args.filename else None
@@ -447,6 +461,7 @@ def main():
                 no_hf_upload=args.no_hf_upload,
                 civitai_api_token=civitai_api_token,
                 hf_cli_download=args.hf_cli_download,
+                no_upload=args.no_upload,
             )
         elif os.path.isfile(args.file):
             process_file(
@@ -455,6 +470,7 @@ def main():
                 no_hf_upload=args.no_hf_upload,
                 civitai_api_token=civitai_api_token,
                 hf_cli_download=args.hf_cli_download,
+                no_upload=args.no_upload,
             )
         else:
             print(f"Error: The file or URL {args.file} is not valid.")

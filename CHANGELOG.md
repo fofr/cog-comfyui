@@ -4,6 +4,21 @@
 - [Add realvisxlV50_v50Bakedvae.safetensors to checkpoints](https://civitai.com/models/139562?modelVersionId=789646)
 - [Add ltx-video-2b-v0.9.1.safetensors to checkpoints](https://huggingface.co/Lightricks/LTX-Video/blob/main/ltx-video-2b-v0.9.1.safetensors)
 
+Added SAM2 weights:
+
+- [Add sam2_hiera_tiny.safetensors to sam2](https://huggingface.co/Kijai/sam2-safetensors/blob/main/sam2_hiera_tiny.safetensors)
+- [Add sam2_hiera_small.safetensors to sam2](https://huggingface.co/Kijai/sam2-safetensors/blob/main/sam2_hiera_small.safetensors)
+- [Add sam2_hiera_large.safetensors to sam2](https://huggingface.co/Kijai/sam2-safetensors/blob/main/sam2_hiera_large.safetensors)
+- [Add sam2_hiera_base_plus.safetensors to sam2](https://huggingface.co/Kijai/sam2-safetensors/blob/main/sam2_hiera_base_plus.safetensors)
+- [Add sam2.1_hiera_tiny.safetensors to sam2](https://huggingface.co/Kijai/sam2-safetensors/blob/main/sam2.1_hiera_tiny.safetensors)
+- [Add sam2.1_hiera_tiny-fp16.safetensors to sam2](https://huggingface.co/Kijai/sam2-safetensors/blob/main/sam2.1_hiera_tiny-fp16.safetensors)
+- [Add sam2.1_hiera_small.safetensors to sam2](https://huggingface.co/Kijai/sam2-safetensors/blob/main/sam2.1_hiera_small.safetensors)
+- [Add sam2.1_hiera_small-fp16.safetensors to sam2](https://huggingface.co/Kijai/sam2-safetensors/blob/main/sam2.1_hiera_small-fp16.safetensors)
+- [Add sam2.1_hiera_large.safetensors to sam2](https://huggingface.co/Kijai/sam2-safetensors/blob/main/sam2.1_hiera_large.safetensors)
+- [Add sam2.1_hiera_large-fp16.safetensors to sam2](https://huggingface.co/Kijai/sam2-safetensors/blob/main/sam2.1_hiera_large-fp16.safetensors)
+- [Add sam2.1_hiera_base_plus.safetensors to sam2](https://huggingface.co/Kijai/sam2-safetensors/blob/main/sam2.1_hiera_base_plus.safetensors)
+- [Add sam2.1_hiera_base_plus-fp16.safetensors to sam2](https://huggingface.co/Kijai/sam2-safetensors/blob/main/sam2.1_hiera_base_plus-fp16.safetensors)
+
 ## 2024-12-19
 
 - [Update ComfyUI to latest](https://github.com/comfyanonymous/ComfyUI/compare/4c82741...c441048)
