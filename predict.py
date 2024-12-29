@@ -104,7 +104,7 @@ class Predictor(BasePredictor):
             default=None,
         ),
         custom_lora_url: str = Input(
-            description="URL to a custom LoRA file. Will be downloaded and used in the workflow.",
+            description="URL to a custom LoRA file to be downloaded.",
             default=None,
         ),
         return_temp_files: bool = Input(
