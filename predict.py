@@ -128,14 +128,21 @@ class Predictor(BasePredictor):
         if custom_lora_url:
             downloader = WeightsDownloader()
             local_filename = os.path.basename(custom_lora_url.split('?')[0])
-            weights_map = {
+            
+            # Create a separate weights map just for this download
+            custom_weights_map = {
                 local_filename: {
                     "url": custom_lora_url,
                     "dest": "ComfyUI/models/loras/"
                 }
             }
-            downloader.weights_map.update(weights_map)
-            downloader.download_weights(local_filename)
+            
+            # Download using the isolated weights map
+            downloader.download_if_not_exists(
+                local_filename,
+                custom_weights_map[local_filename]["url"],
+                custom_weights_map[local_filename]["dest"]
+            )
 
         if input_file:
             self.handle_input_file(input_file)
