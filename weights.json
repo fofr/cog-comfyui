@@ -795,5 +795,9 @@
     "sam2_hiera_large.safetensors",
     "sam2_hiera_small.safetensors",
     "sam2_hiera_tiny.safetensors"
+  ],
+  "RESWAPPER": [
+    "reswapper_128.onnx",
+    "reswapper_256.onnx"
   ]
 }

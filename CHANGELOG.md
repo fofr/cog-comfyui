@@ -2,7 +2,28 @@
 
 - [Update ComfyUI to latest](https://github.com/comfyanonymous/ComfyUI/compare/c441048...916d1e1)
 
+Update custom nodes:
+
+- [Updated ComfyUI-HunyuanVideoWrapper](https://github.com/kijai/ComfyUI-HunyuanVideoWrapper/compare/da2fb54...e3a2fa7)
+- [Updated ComfyUI-PuLID-Flux](https://github.com/zhangp365/ComfyUI-PuLID-Flux/compare/29e1046...191cd99)
+- [Updated ComfyUI-Kolors-MZ](https://github.com/MinusZoneAI/ComfyUI-Kolors-MZ/compare/e02e185...ad5de83)
+- [Updated rgthree-comfy](https://github.com/rgthree/rgthree-comfy/compare/5f2d8a1...5d771b8)
+- [Updated comfyui_jankhidiffusion](https://github.com/blepping/comfyui_jankhidiffusion/compare/4e66c60...54d60e0)
+- [Updated ComfyUI-IC-Light-Native](https://github.com/huchenlei/ComfyUI-IC-Light-Native/compare/cdc61bc...9176645)
+- [Updated ComfyUI-KJNodes](https://github.com/kijai/ComfyUI-KJNodes/compare/973ceb6...4c5c26a)
+- [Updated ComfyUI-layerdiffuse](https://github.com/huchenlei/ComfyUI-layerdiffuse/compare/6e4aeb2...fffa28a)
+- [Updated was-node-suite-comfyui](https://github.com/WASasquatch/was-node-suite-comfyui/compare/fe7e088...056bada)
+- [Updated comfyui-reactor-node](https://github.com/Gourieff/comfyui-reactor-node/compare/0576662...3ea587d)
+- [Updated ComfyUI-Custom-Scripts](https://github.com/pythongosssss/ComfyUI-Custom-Scripts/compare/19a82e2...dff506c)
+- [Updated ComfyUI-Advanced-ControlNet](https://github.com/Kosinkadink/ComfyUI-Advanced-ControlNet/compare/9632af9...f7a42fe)
+- [Updated ComfyUI-VideoHelperSuite](https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite/compare/6953fa2...78753db)
+- [Updated ComfyUI-AnimateDiff-Evolved](https://github.com/Kosinkadink/ComfyUI-AnimateDiff-Evolved/compare/4f1344e...7ec4693)
+- [Updated ComfyUI-Inspire-Pack](https://github.com/ltdrdata/ComfyUI-Inspire-Pack/compare/685c5c0...bcbed07)
+
 New weights:
+
+- [Add reswapper_256.onnx to reswapper](https://huggingface.co/datasets/Gourieff/ReActor/blob/main/models/reswapper_256.onnx)
+- [Add reswapper_128.onnx to reswapper](https://huggingface.co/datasets/Gourieff/ReActor/blob/main/models/reswapper_128.onnx)
 - [Add hands-xl-sd-15-flux1-dev.safetensors to loras](https://civitai.com/models/200255/hands-xl-sd-15-flux1-dev?modelVersionId=804967)
 - [Add flux_turbo_v1_1.safetensors to loras](https://huggingface.co/alimama-creative/FLUX.1-Turbo-Alpha/blob/main/diffusion_pytorch_model.safetensors)
 - [Add FLUX.1-Turbo-Alpha.safetensors to loras](https://huggingface.co/alimama-creative/FLUX.1-Turbo-Alpha/blob/main/diffusion_pytorch_model.safetensors)

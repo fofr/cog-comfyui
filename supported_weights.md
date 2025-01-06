@@ -915,3 +915,8 @@
 
 - mistoline_flux.dev_v1.safetensors
 
+## Reswapper
+
+- reswapper_128.onnx
+- reswapper_256.onnx
+

@@ -65,6 +65,7 @@ def write_supported_weights():
         "XLABS": helpers.X_Flux_ComfyUI.models(),
         "Video Matting": helpers.ComfyUI_Video_Matting.models(),
         "MistoLine Flux ControlNet": helpers.Misto_Controlnet_Flux_Dev.models(),
+        "Reswapper": weights_manifest.get_weights_by_type("RESWAPPER"),
     }
     with open("supported_weights.md", "w") as f:
         for weight_type, weights in weight_lists.items():
