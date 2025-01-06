@@ -143,8 +143,9 @@ class WeightsManifest:
         return [
             "cocoamixxl_v4Stable.safetensors",
             "copaxTimelessxlSDXL1_v8.safetensors",
-            "epicrealismXL_v10.safetensors",
             "dreamshaperXL_sfwV2TurboDPMSDE.safetensors",
+            "dreamshaperXL_v21TurboDPMSDE.safetensors",
+            "epicrealismXL_v10.safetensors",
             "GPEN-BFR-1024.onnx",
             "GPEN-BFR-2048.onnx",
             "GPEN-BFR-512.onnx",
@@ -174,7 +175,7 @@ class WeightsManifest:
             "SUPIR-v0Q_fp16.safetensors",
             "svd.safetensors",
             "svd_xt.safetensors",
-            "turbovisionxlSuperFastXLBasedOnNew_tvxlV32Bakedvae",
+            "turbovisionxlSuperFastXLBasedOnNew_tvxlV32Bakedvae"
         ]
 
     def is_non_commercial_only(self, weight_str):

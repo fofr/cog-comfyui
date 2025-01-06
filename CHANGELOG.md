@@ -1,3 +1,8 @@
+
+## 2025-01-06
+
+- [Add dreamshaperXL_v21TurboDPMSDE.safetensors to checkpoints](https://civitai.com/models/112902?modelVersionId=351306)
+
 ## 2024-12-20
 
 - [Add CN-anytest_v3-50000_fp16.safetensors to controlnet](https://huggingface.co/2vXpSwA7/iroiro-lora/blob/main/test_controlnet2/CN-anytest_v3-50000_fp16.safetensors)
