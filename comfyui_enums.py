@@ -38,4 +38,5 @@ SCHEDULERS = [
     "ddim_uniform",
     "beta",
     "linear_quadratic",
+    "kl_optimal",
 ]

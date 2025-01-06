@@ -1,6 +1,8 @@
-
 ## 2025-01-06
 
+- [Update ComfyUI to latest](https://github.com/comfyanonymous/ComfyUI/compare/c441048...916d1e1)
+
+New weights:
 - [Add hands-xl-sd-15-flux1-dev.safetensors to loras](https://civitai.com/models/200255/hands-xl-sd-15-flux1-dev?modelVersionId=804967)
 - [Add flux_turbo_v1_1.safetensors to loras](https://huggingface.co/alimama-creative/FLUX.1-Turbo-Alpha/blob/main/diffusion_pytorch_model.safetensors)
 - [Add FLUX.1-Turbo-Alpha.safetensors to loras](https://huggingface.co/alimama-creative/FLUX.1-Turbo-Alpha/blob/main/diffusion_pytorch_model.safetensors)
