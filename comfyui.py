@@ -94,6 +94,8 @@ class ComfyUI:
         embedding_to_fullname = {emb.split(".")[0]: emb for emb in embeddings}
         weights_filetypes = self.weights_downloader.supported_filetypes
 
+        self.convert_lora_loader_nodes(workflow)
+
         for node in workflow.values():
             # Skip HFHubLoraLoader and LoraLoaderFromURL nodes since they handle their own weights
             if node.get("class_type") in ["HFHubLoraLoader", "LoraLoaderFromURL"]:
@@ -134,7 +136,7 @@ class ComfyUI:
         seen_inputs = set()
         for node in workflow.values():
             # Skip URLs in LoraLoaderFromURL nodes
-            if node.get("class_type") == "LoraLoaderFromURL":
+            if node.get("class_type") in ["LoraLoaderFromURL", "LoraLoader"]:
                 continue
 
             if "inputs" in node:
@@ -345,3 +347,14 @@ class ComfyUI:
             if os.path.exists(directory):
                 shutil.rmtree(directory)
             os.makedirs(directory)
+
+    def convert_lora_loader_nodes(self, workflow):
+        for node_id, node in workflow.items():
+            if node.get("class_type") == "LoraLoader":
+                inputs = node.get("inputs", {})
+                if "lora_name" in inputs and isinstance(inputs["lora_name"], str):
+                    if inputs["lora_name"].startswith(("http://", "https://")):
+                        print(f"Converting LoraLoader node {node_id} to LoraLoaderFromURL")
+                        node["class_type"] = "LoraLoaderFromURL"
+                        node["inputs"]["url"] = inputs["lora_name"]
+                        del node["inputs"]["lora_name"]
