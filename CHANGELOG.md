@@ -1,3 +1,8 @@
+## 2025-01-14
+
+- [Add ComfyUI-GlifNodes](https://github.com/glifxyz/ComfyUI-GlifNodes)
+  - Allows downloading safetensors lora weights from URLs using the `LoraLoaderFromURL` node, see [examples/api_workflows/glif_custom_lora_flux_civitai.json](examples/api_workflows/glif_custom_lora_flux_civitai.json)
+
 ## 2025-01-06
 
 - [Update ComfyUI to latest](https://github.com/comfyanonymous/ComfyUI/compare/c441048...916d1e1)
