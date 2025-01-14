@@ -95,6 +95,10 @@ class ComfyUI:
         weights_filetypes = self.weights_downloader.supported_filetypes
 
         for node in workflow.values():
+            # Skip HFHubLoraLoader and LoraLoaderFromURL nodes since they handle their own weights
+            if node.get("class_type") in ["HFHubLoraLoader", "LoraLoaderFromURL"]:
+                continue
+
             self.apply_helper_methods("add_weights", weights_to_download, Node(node))
 
             for input in node["inputs"].values():
