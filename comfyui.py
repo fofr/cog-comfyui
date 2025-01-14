@@ -135,7 +135,7 @@ class ComfyUI:
         print("Checking inputs")
         seen_inputs = set()
         for node in workflow.values():
-            # Skip URLs in LoraLoaderFromURL nodes
+            # Skip URLs in LoraLoader nodes
             if node.get("class_type") in ["LoraLoaderFromURL", "LoraLoader"]:
                 continue
 
