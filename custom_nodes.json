@@ -222,5 +222,9 @@
   {
     "repo": "https://github.com/kijai/ComfyUI-segment-anything-2",
     "commit": "059815e"
+  },
+  {
+    "repo": "https://github.com/glifxyz/ComfyUI-GlifNodes",
+    "commit": "b86352c"
   }
 ]
