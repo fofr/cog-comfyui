@@ -97,8 +97,8 @@ build:
     - open-clip-torch>=2.24.0
     - pytorch-lightning>=2.2.1
 
-    # For train.py
-    - huggingface_hub
+    # For train.py and custom loras
+    - huggingface_hub[hf-transfer]
 
     # ComfyUI-segment-anything-2
     - iopath

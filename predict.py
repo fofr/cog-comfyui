@@ -13,13 +13,15 @@ from config import config
 
 
 os.environ["DOWNLOAD_LATEST_WEIGHTS_MANIFEST"] = "true"
+os.environ["HF_HUB_ENABLE_HF_TRANSFER"] = "1"
+
 mimetypes.add_type("image/webp", ".webp")
 OUTPUT_DIR = "/tmp/outputs"
 INPUT_DIR = "/tmp/inputs"
 COMFYUI_TEMP_OUTPUT_DIR = "ComfyUI/temp"
 ALL_DIRECTORIES = [OUTPUT_DIR, INPUT_DIR, COMFYUI_TEMP_OUTPUT_DIR]
 
-with open("examples/api_workflows/advanced_live_portrait_api.json", "r") as file:
+with open("examples/api_workflows/glif_custom_lora_flux_hf.json", "r") as file:
     EXAMPLE_WORKFLOW_JSON = file.read()
 
 
