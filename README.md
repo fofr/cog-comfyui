@@ -78,6 +78,40 @@ Might be used in the workflow like:
 "directory": "references",
 ```
 
+### 3. Using custom LoRAs from CivitAI or HuggingFace
+
+You can use LoRAs directly from CivitAI, HuggingFace, or any other URL in two ways:
+
+#### Option 1: Use the LoraLoader node with a URL
+
+Use the direct download URL as the `lora_name`:
+
+```json
+{
+    "inputs": {
+      "lora_name": "https://huggingface.co/username/model/resolve/main/lora.safetensors",
+      ...
+    },
+    "class_type": "LoraLoader"
+}
+```
+
+#### Option 2: Use the LoraLoaderFromURL node
+
+Alternatively, use the dedicated LoraLoaderFromURL node from [ComfyUI-GlifNodes](https://github.com/glifxyz/ComfyUI-GlifNodes):
+
+```json
+{
+    "inputs": {
+      "url": "https://civitai.com/api/download/models/1163532",
+      ...
+    },
+    "class_type": "LoraLoaderFromURL"
+}
+```
+
+Both methods work the same way - the standard LoraLoader will automatically switch to use LoraLoaderFromURL when it detects a URL in the `lora_name` field.
+
 ### Run your workflow
 
 With all your inputs updated, you can now run your workflow.
