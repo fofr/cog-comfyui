@@ -86,7 +86,7 @@ You can use LoRAs directly from CivitAI, HuggingFace, or any other URL in two wa
 
 Use the direct download URL as the `lora_name`:
 
-```json
+```
 {
     "inputs": {
       "lora_name": "https://huggingface.co/username/model/resolve/main/lora.safetensors",
@@ -100,11 +100,11 @@ Use the direct download URL as the `lora_name`:
 
 Alternatively, use the dedicated LoraLoaderFromURL node from [ComfyUI-GlifNodes](https://github.com/glifxyz/ComfyUI-GlifNodes):
 
-```json
+```
 {
     "inputs": {
       "url": "https://civitai.com/api/download/models/1163532",
-      ...
+      // ...
     },
     "class_type": "LoraLoaderFromURL"
 }
