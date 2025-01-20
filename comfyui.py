@@ -358,3 +358,33 @@ class ComfyUI:
                         node["class_type"] = "LoraLoaderFromURL"
                         node["inputs"]["url"] = inputs["lora_name"]
                         del node["inputs"]["lora_name"]
+
+            # Handle LoRA Stacker nodes
+            elif node.get("class_type") == "LoRA Stacker":
+                inputs = node.get("inputs", {})
+                # Look for numbered lora_name fields (lora_name_1, lora_name_2, etc.)
+                for key in list(inputs.keys()):
+                    if key.startswith("lora_name_") and isinstance(inputs[key], str):
+                        value = inputs[key]
+                        if value.startswith(("http://", "https://")):
+                            # Create local filename without query parameters
+                            local_filename = os.path.basename(value.split('?')[0])
+                            
+                            # Create custom weights map for this download
+                            custom_weights_map = {
+                                local_filename: {
+                                    "url": value,
+                                    "dest": "ComfyUI/models/loras/"
+                                }
+                            }
+                            
+                            try:
+                                self.weights_downloader.download_if_not_exists(
+                                    local_filename,
+                                    custom_weights_map[local_filename]["url"],
+                                    custom_weights_map[local_filename]["dest"]
+                                )
+                                # Update the input to use the local filename
+                                inputs[key] = local_filename
+                            except Exception as e:
+                                print(f"❌ Error downloading LoRA from {value}: {e}")
