@@ -2,8 +2,11 @@
 
 - Add vit-base-nsfw-detector to nsfw_detector
 
+- [Add ComfyUI_PuLID_Flux_ll](https://github.com/lldacing/ComfyUI_PuLID_Flux_ll)
+  - Replacement for the faulty ComfyUI-PuLID-Flux custom node (facexlib is broken)
 - [Switch from comfyui-reactor-node to ComfyUI-ReActor](https://github.com/Gourieff/ComfyUI-ReActor)
   - Includes default NSFW checker, downloaded automatically
+  - Uses forked version of ComfyUI-ReActor which lazy loads NSFW checker to speed up startup times (https://github.com/Gourieff/ComfyUI-ReActor/pull/30)
 
 ## 2025-01-14
 

@@ -10,10 +10,6 @@ class ComfyUI_Reactor(CustomNodeHelper):
     }
 
     @staticmethod
-    def prepare(**kwargs):
-        kwargs["weights_downloader"].download("vit-base-nsfw-detector")
-
-    @staticmethod
     def add_weights(weights_to_download, node):
         if node.is_type_in(
             [
@@ -24,10 +20,11 @@ class ComfyUI_Reactor(CustomNodeHelper):
         ):
             weights_to_download.append("models/buffalo_l")
             weights_to_download.append("parsing_parsenet.pth")
+            weights_to_download.append("vit-base-nsfw-detector")
 
             if node.has_input("facedetection"):
                 facedetection_model = node.input("facedetection")
-                if facedetection_model in ComfyUI_Reactor_Node.facedetection_weights:
+                if facedetection_model in ComfyUI_Reactor.facedetection_weights:
                     weights_to_download.append(
-                        ComfyUI_Reactor_Node.facedetection_weights[facedetection_model]
+                        ComfyUI_Reactor.facedetection_weights[facedetection_model]
                     )

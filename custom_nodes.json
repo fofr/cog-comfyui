@@ -73,8 +73,9 @@
     "commit": "432cb4d"
   },
   {
-    "repo": "https://github.com/Gourieff/ComfyUI-ReActor",
-    "commit": "d2318ad"
+    "repo": "https://github.com/fofr/ComfyUI-ReActor",
+    "commit": "4a7587a",
+    "notes": "Fork of https://github.com/Gourieff/ComfyUI-ReActor which lazy loads NSFW checker to speed up startup times (https://github.com/Gourieff/ComfyUI-ReActor/pull/30)"
   },
   {
     "repo": "https://github.com/cubiq/ComfyUI_InstantID",
@@ -202,9 +203,8 @@
     "commit": "a6295c0"
   },
   {
-    "repo": "https://github.com/zhangp365/ComfyUI-PuLID-Flux",
-    "commit": "191cd99",
-    "notes": "Fork of https://github.com/balazik/ComfyUI-PuLID-Flux which fixes forward_orig method"
+    "repo": "https://github.com/lldacing/ComfyUI_PuLID_Flux_ll",
+    "commit": "c5ea258"
   },
   {
     "repo": "https://github.com/kijai/ComfyUI-HunyuanVideoWrapper",
