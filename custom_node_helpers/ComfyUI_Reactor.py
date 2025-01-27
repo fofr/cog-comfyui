@@ -10,6 +10,10 @@ class ComfyUI_Reactor_Node(CustomNodeHelper):
     }
 
     @staticmethod
+    def prepare(**kwargs):
+        kwargs["weights_downloader"].download("vit-base-nsfw-detector")
+
+    @staticmethod
     def add_weights(weights_to_download, node):
         if node.is_type_in(
             [

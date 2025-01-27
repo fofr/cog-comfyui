@@ -1,3 +1,10 @@
+## 2025-01-27
+
+- Add vit-base-nsfw-detector to nsfw_detector
+
+- [Switch from comfyui-reactor-node to ComfyUI-ReActor](https://github.com/Gourieff/ComfyUI-ReActor)
+  - Includes default NSFW checker, downloaded automatically
+
 ## 2025-01-14
 
 - [Add ComfyUI-GlifNodes](https://github.com/glifxyz/ComfyUI-GlifNodes)

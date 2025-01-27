@@ -799,5 +799,8 @@
   "RESWAPPER": [
     "reswapper_128.onnx",
     "reswapper_256.onnx"
+  ],
+  "NSFW_DETECTOR": [
+    "vit-base-nsfw-detector"
   ]
 }
