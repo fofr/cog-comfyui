@@ -16,8 +16,9 @@
       "width": 256,
       "height": 64,
       "interpolation": "lanczos",
-      "keep_proportion": true,
+      "method": "stretch",
       "condition": "always",
+      "multiple_of": 0,
       "image": [
         "7",
         0
@@ -153,6 +154,7 @@
   "15": {
     "inputs": {
       "amount": 45,
+      "device": "auto",
       "mask": [
         "20",
         0
@@ -269,6 +271,7 @@
   "37": {
     "inputs": {
       "factor": 1,
+      "method": "luminance (Rec.709)",
       "image": [
         "7",
         0
