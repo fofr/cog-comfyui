@@ -226,5 +226,13 @@
   {
     "repo": "https://github.com/glifxyz/ComfyUI-GlifNodes",
     "commit": "b86352c"
+  },
+  {
+    "repo": "https://github.com/lldacing/ComfyUI_Patches_ll",
+    "commit": "1acfbbd"
+  },
+  {
+    "repo": "https://github.com/chengzeyi/Comfy-WaveSpeed",
+    "commit": "a9caacb"
   }
 ]

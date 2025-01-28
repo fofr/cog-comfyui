@@ -1,3 +1,8 @@
+## 2025-01-28
+
+- [Add Comfy-WaveSpeed](https://github.com/chengzeyi/Comfy-WaveSpeed) custom node
+- [Add ComfyUI_Patches_ll](https://github.com/lldacing/ComfyUI_Patches_ll) custom node
+
 ## 2025-01-27
 
 - Add vit-base-nsfw-detector to nsfw_detector
