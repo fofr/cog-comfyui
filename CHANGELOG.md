@@ -1,5 +1,6 @@
 ## 2025-01-28
 
+- [Update ComfyUI to latest](https://github.com/comfyanonymous/ComfyUI/compare/916d1e1...255edf2)
 - Initial support for common model synonyms (see `weight_synonyms.json`)
 
 New weights:
@@ -14,6 +15,21 @@ New custom nodes:
 - [Add Comfy-WaveSpeed](https://github.com/chengzeyi/Comfy-WaveSpeed) custom node
 - [Add ComfyUI_Patches_ll](https://github.com/lldacing/ComfyUI_Patches_ll) custom node
 - [Add ComfyUI-InstantX-IPAdapter-SD3](https://github.com/Slickytail/ComfyUI-InstantX-IPAdapter-SD3) custom node
+
+Updated nodes:
+
+- [Updated ComfyUI-Florence2](https://github.com/kijai/ComfyUI-Florence2/compare/27714ba...dffd125)
+- [Updated ComfyUI-HunyuanVideoWrapper](https://github.com/kijai/ComfyUI-HunyuanVideoWrapper/compare/e3a2fa7...1c966f0)
+- [Updated ComfyUI-Fluxtapoz](https://github.com/logtd/ComfyUI-Fluxtapoz/compare/a6295c0...17c71be)
+- [Updated ComfyUI-Kolors-MZ](https://github.com/MinusZoneAI/ComfyUI-Kolors-MZ/compare/ad5de83...4653a73)
+- [Updated ComfyUI-IC-Light](https://github.com/kijai/ComfyUI-IC-Light/compare/7def1cf...0208191)
+- [Updated ComfyUI-KJNodes](https://github.com/kijai/ComfyUI-KJNodes/compare/4c5c26a...2abf557)
+- [Updated ComfyUI-Custom-Scripts](https://github.com/pythongosssss/ComfyUI-Custom-Scripts/compare/dff506c...bc8922d)
+- [Updated ComfyUI_UltimateSDUpscale](https://github.com/ssitu/ComfyUI_UltimateSDUpscale/compare/e617ff2...ff3fdfe)
+- [Updated ComfyUI-Advanced-ControlNet](https://github.com/Kosinkadink/ComfyUI-Advanced-ControlNet/compare/f7a42fe...23563ec)
+- [Updated ComfyUI-VideoHelperSuite](https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite/compare/78753db...565208b)
+- [Updated ComfyUI-AnimateDiff-Evolved](https://github.com/Kosinkadink/ComfyUI-AnimateDiff-Evolved/compare/7ec4693...7992292)
+- [Updated ComfyUI-Inspire-Pack](https://github.com/ltdrdata/ComfyUI-Inspire-Pack/compare/bcbed07...6158b5a)
 
 ## 2025-01-27
 

@@ -14,7 +14,7 @@
   },
   {
     "repo": "https://github.com/ltdrdata/ComfyUI-Inspire-Pack",
-    "commit": "bcbed07"
+    "commit": "6158b5a"
   },
   {
     "repo": "https://github.com/theUpsider/ComfyUI-Logic",
@@ -26,15 +26,15 @@
   },
   {
     "repo": "https://github.com/Kosinkadink/ComfyUI-AnimateDiff-Evolved",
-    "commit": "7ec4693"
+    "commit": "7992292"
   },
   {
     "repo": "https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite",
-    "commit": "78753db"
+    "commit": "565208b"
   },
   {
     "repo": "https://github.com/Kosinkadink/ComfyUI-Advanced-ControlNet",
-    "commit": "f7a42fe"
+    "commit": "23563ec"
   },
   {
     "repo": "https://github.com/jags111/efficiency-nodes-comfyui",
@@ -54,7 +54,7 @@
   },
   {
     "repo": "https://github.com/ssitu/ComfyUI_UltimateSDUpscale",
-    "commit": "e617ff2"
+    "commit": "ff3fdfe"
   },
   {
     "repo": "https://github.com/cubiq/ComfyUI_essentials",
@@ -66,7 +66,7 @@
   },
   {
     "repo": "https://github.com/pythongosssss/ComfyUI-Custom-Scripts",
-    "commit": "dff506c"
+    "commit": "bc8922d"
   },
   {
     "repo": "https://github.com/BadCafeCode/masquerade-nodes-comfyui",
@@ -103,7 +103,7 @@
   },
   {
     "repo": "https://github.com/kijai/ComfyUI-KJNodes",
-    "commit": "4c5c26a"
+    "commit": "2abf557"
   },
   {
     "repo": "https://github.com/Fannovel16/ComfyUI-Frame-Interpolation",
@@ -123,7 +123,7 @@
   },
   {
     "repo": "https://github.com/kijai/ComfyUI-IC-Light",
-    "commit": "7def1cf"
+    "commit": "0208191"
   },
   {
     "repo": "https://github.com/blepping/comfyui_jankhidiffusion",
@@ -159,7 +159,7 @@
   },
   {
     "repo": "https://github.com/MinusZoneAI/ComfyUI-Kolors-MZ",
-    "commit": "ad5de83"
+    "commit": "4653a73"
   },
   {
     "repo": "https://github.com/liusida/ComfyUI-B-LoRA",
@@ -200,7 +200,7 @@
   },
   {
     "repo": "https://github.com/logtd/ComfyUI-Fluxtapoz",
-    "commit": "a6295c0"
+    "commit": "17c71be"
   },
   {
     "repo": "https://github.com/lldacing/ComfyUI_PuLID_Flux_ll",
@@ -208,7 +208,7 @@
   },
   {
     "repo": "https://github.com/kijai/ComfyUI-HunyuanVideoWrapper",
-    "commit": "e3a2fa7"
+    "commit": "1c966f0"
   },
   {
     "repo": "https://github.com/fofr/ComfyUI-AdvancedLivePortrait",
@@ -217,7 +217,7 @@
   },
   {
     "repo": "https://github.com/kijai/ComfyUI-Florence2",
-    "commit": "27714ba"
+    "commit": "dffd125"
   },
   {
     "repo": "https://github.com/kijai/ComfyUI-segment-anything-2",
