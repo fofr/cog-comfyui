@@ -1,0 +1,371 @@
+{
+  "109": {
+    "inputs": {
+      "sampler_name": "euler"
+    },
+    "class_type": "KSamplerSelect",
+    "_meta": {
+      "title": "KSamplerSelect"
+    }
+  },
+  "111": {
+    "inputs": {
+      "noise_seed": 229307958837274
+    },
+    "class_type": "RandomNoise",
+    "_meta": {
+      "title": "RandomNoise"
+    }
+  },
+  "112": {
+    "inputs": {
+      "guidance": 3.5,
+      "conditioning": [
+        "191",
+        0
+      ]
+    },
+    "class_type": "FluxGuidance",
+    "_meta": {
+      "title": "FluxGuidance"
+    }
+  },
+  "113": {
+    "inputs": {
+      "width": 1024,
+      "height": 768,
+      "batch_size": 1
+    },
+    "class_type": "EmptySD3LatentImage",
+    "_meta": {
+      "title": "EmptySD3LatentImage"
+    }
+  },
+  "114": {
+    "inputs": {
+      "pulid_file": "pulid_flux_v0.9.1.safetensors"
+    },
+    "class_type": "PulidFluxModelLoader",
+    "_meta": {
+      "title": "Load PuLID Flux Model"
+    }
+  },
+  "119": {
+    "inputs": {},
+    "class_type": "PulidFluxEvaClipLoader",
+    "_meta": {
+      "title": "Load Eva Clip (PuLID Flux)"
+    }
+  },
+  "120": {
+    "inputs": {
+      "image": "https://replicate.delivery/yhqm/apYK6kZFfZUYRyoJ11NzhHY2YXbrjCHajYIiN9EznGR4qVrJA/out-0.webp",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "124": {
+    "inputs": {
+      "provider": "CUDA"
+    },
+    "class_type": "PulidFluxInsightFaceLoader",
+    "_meta": {
+      "title": "Load InsightFace (PuLID Flux)"
+    }
+  },
+  "169": {
+    "inputs": {
+      "model": [
+        "196",
+        0
+      ]
+    },
+    "class_type": "FluxForwardOverrider",
+    "_meta": {
+      "title": "FluxForwardOverrider"
+    }
+  },
+  "171": {
+    "inputs": {
+      "scheduler": "simple",
+      "steps": 28,
+      "denoise": 1,
+      "model": [
+        "177",
+        0
+      ]
+    },
+    "class_type": "BasicScheduler",
+    "_meta": {
+      "title": "BasicScheduler"
+    }
+  },
+  "173": {
+    "inputs": {
+      "model": [
+        "177",
+        0
+      ],
+      "conditioning": [
+        "112",
+        0
+      ]
+    },
+    "class_type": "BasicGuider",
+    "_meta": {
+      "title": "BasicGuider"
+    }
+  },
+  "174": {
+    "inputs": {
+      "images": [
+        "175",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "175": {
+    "inputs": {
+      "samples": [
+        "176",
+        0
+      ],
+      "vae": [
+        "199",
+        2
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "176": {
+    "inputs": {
+      "noise": [
+        "111",
+        0
+      ],
+      "guider": [
+        "173",
+        0
+      ],
+      "sampler": [
+        "109",
+        0
+      ],
+      "sigmas": [
+        "171",
+        0
+      ],
+      "latent_image": [
+        "113",
+        0
+      ]
+    },
+    "class_type": "SamplerCustomAdvanced",
+    "_meta": {
+      "title": "SamplerCustomAdvanced"
+    }
+  },
+  "177": {
+    "inputs": {
+      "rel_l1_thresh": 0.4,
+      "model": [
+        "169",
+        0
+      ]
+    },
+    "class_type": "ApplyTeaCachePatch",
+    "_meta": {
+      "title": "ApplyTeaCachePatch"
+    }
+  },
+  "190": {
+    "inputs": {
+      "weight": 1,
+      "start_at": 0,
+      "end_at": 1,
+      "model": [
+        "199",
+        0
+      ],
+      "pulid_flux": [
+        "114",
+        0
+      ],
+      "eva_clip": [
+        "119",
+        0
+      ],
+      "face_analysis": [
+        "124",
+        0
+      ],
+      "image": [
+        "198",
+        0
+      ],
+      "attn_mask": [
+        "193",
+        0
+      ]
+    },
+    "class_type": "ApplyPulidFlux",
+    "_meta": {
+      "title": "Apply PuLID Flux"
+    }
+  },
+  "191": {
+    "inputs": {
+      "text": "On the bustling streets of Neo Tokyo, two women are captured in a close-up shot. They are dressed in hoodies, with striking purple hair, embodying a cyberpunk aesthetic. Neon signs and holographic advertisements illuminate the background, casting vibrant colors and shadows. The scene is highly detailed and cinematic, presented in 4K high resolution, creating an immersive experience.",
+      "clip": [
+        "199",
+        1
+      ]
+    },
+    "class_type": "CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode (Prompt)"
+    }
+  },
+  "192": {
+    "inputs": {
+      "value": 0,
+      "width": 1024,
+      "height": 768
+    },
+    "class_type": "SolidMask",
+    "_meta": {
+      "title": "SolidMask"
+    }
+  },
+  "193": {
+    "inputs": {
+      "x": 0,
+      "y": 0,
+      "operation": "add",
+      "destination": [
+        "192",
+        0
+      ],
+      "source": [
+        "194",
+        0
+      ]
+    },
+    "class_type": "MaskComposite",
+    "_meta": {
+      "title": "MaskComposite"
+    }
+  },
+  "194": {
+    "inputs": {
+      "value": 1,
+      "width": 512,
+      "height": 768
+    },
+    "class_type": "SolidMask",
+    "_meta": {
+      "title": "SolidMask"
+    }
+  },
+  "195": {
+    "inputs": {
+      "mask": [
+        "193",
+        0
+      ]
+    },
+    "class_type": "MaskPreview+",
+    "_meta": {
+      "title": "🔧 Mask Preview"
+    }
+  },
+  "196": {
+    "inputs": {
+      "weight": 1,
+      "start_at": 0,
+      "end_at": 1,
+      "model": [
+        "190",
+        0
+      ],
+      "pulid_flux": [
+        "114",
+        0
+      ],
+      "eva_clip": [
+        "119",
+        0
+      ],
+      "face_analysis": [
+        "124",
+        0
+      ],
+      "image": [
+        "120",
+        0
+      ],
+      "attn_mask": [
+        "197",
+        0
+      ]
+    },
+    "class_type": "ApplyPulidFlux",
+    "_meta": {
+      "title": "Apply PuLID Flux"
+    }
+  },
+  "197": {
+    "inputs": {
+      "mask": [
+        "193",
+        0
+      ]
+    },
+    "class_type": "InvertMask",
+    "_meta": {
+      "title": "InvertMask"
+    }
+  },
+  "198": {
+    "inputs": {
+      "image": "https://replicate.delivery/yhqm/xeISZYToLazSA6eu7PPA6cGs7DeFg2AuMg9YqZKVeYwfIwkaC/out-3.webp",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "199": {
+    "inputs": {
+      "ckpt_name": "flux1-dev-fp8.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Load Checkpoint"
+    }
+  },
+  "200": {
+    "inputs": {
+      "filename_prefix": "ComfyUI",
+      "images": [
+        "175",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Image"
+    }
+  }
+}

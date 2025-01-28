@@ -165,6 +165,7 @@
     "clip-vit-large-patch14",
     "clip_g.safetensors",
     "clip_l.safetensors",
+    "EVA02_CLIP_L_336_psz14_s6B.pt",
     "models--QuanSun--EVA-CLIP",
     "sd15/model.fp16.safetensors",
     "sd15/model.safetensors",

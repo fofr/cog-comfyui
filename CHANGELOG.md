@@ -6,6 +6,7 @@ New weights:
 
 - [Add FLUX.1-dev-Controlnet-Inpainting-Beta.safetensors to controlnet](https://huggingface.co/alimama-creative/FLUX.1-dev-Controlnet-Inpainting-Beta/blob/main/diffusion_pytorch_model.safetensors)
 - [Add pulid_flux_v0.9.1.safetensors to pulid](https://huggingface.co/guozinan/PuLID/blob/main/pulid_flux_v0.9.1.safetensors)
+- [Add EVA02_CLIP_L_336_psz14_s6B.pt to clip](https://huggingface.co/QuanSun/EVA-CLIP/blob/main/EVA02_CLIP_L_336_psz14_s6B.pt)
 
 New custom nodes:
 
