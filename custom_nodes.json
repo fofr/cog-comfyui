@@ -234,5 +234,9 @@
   {
     "repo": "https://github.com/chengzeyi/Comfy-WaveSpeed",
     "commit": "a9caacb"
+  },
+  {
+    "repo": "https://github.com/Slickytail/ComfyUI-InstantX-IPAdapter-SD3",
+    "commit": "adf203e"
   }
 ]

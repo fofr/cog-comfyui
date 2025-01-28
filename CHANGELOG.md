@@ -1,17 +1,19 @@
 ## 2025-01-28
 
-- Initial support for common model synonyms
+- Initial support for common model synonyms (see `weight_synonyms.json`)
 
 New weights:
 
 - [Add FLUX.1-dev-Controlnet-Inpainting-Beta.safetensors to controlnet](https://huggingface.co/alimama-creative/FLUX.1-dev-Controlnet-Inpainting-Beta/blob/main/diffusion_pytorch_model.safetensors)
 - [Add pulid_flux_v0.9.1.safetensors to pulid](https://huggingface.co/guozinan/PuLID/blob/main/pulid_flux_v0.9.1.safetensors)
 - [Add EVA02_CLIP_L_336_psz14_s6B.pt to clip](https://huggingface.co/QuanSun/EVA-CLIP/blob/main/EVA02_CLIP_L_336_psz14_s6B.pt)
+- [Add SD3.5-Large-IP-Adapter.bin to ipadapter](https://huggingface.co/InstantX/SD3.5-Large-IP-Adapter/blob/main/ip-adapter.bin)
 
 New custom nodes:
 
 - [Add Comfy-WaveSpeed](https://github.com/chengzeyi/Comfy-WaveSpeed) custom node
 - [Add ComfyUI_Patches_ll](https://github.com/lldacing/ComfyUI_Patches_ll) custom node
+- [Add ComfyUI-InstantX-IPAdapter-SD3](https://github.com/Slickytail/ComfyUI-InstantX-IPAdapter-SD3) custom node
 
 ## 2025-01-27
 

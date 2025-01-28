@@ -97,7 +97,7 @@
 - realvisxlV50_v50Bakedvae.safetensors
 - realvisxlV50_v50LightningBakedvae.safetensors
 - rundiffusionXL_beta.safetensors
-- sd3.5_large.safetensors
+- sd3.5_large.safetensors (Also available as SD3.5-L.safetensors)
 - sd3.5_large_fp8_scaled.safetensors
 - sd3.5_large_turbo.safetensors
 - sd3_medium.safetensors
@@ -377,6 +377,7 @@
 - ip_plus_composition_sd15.safetensors
 - ip_plus_composition_sdxl.safetensors
 - Kolors-IP-Adapter-Plus.bin
+- SD3.5-Large-IP-Adapter.bin (Also available as ip_sd35l_instantx.bin)
 
 ## ControlNet
 

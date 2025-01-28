@@ -514,7 +514,8 @@
     "ip-adapter_sdxl_vit-h.safetensors",
     "ip_plus_composition_sd15.safetensors",
     "ip_plus_composition_sdxl.safetensors",
-    "Kolors-IP-Adapter-Plus.bin"
+    "Kolors-IP-Adapter-Plus.bin",
+    "SD3.5-Large-IP-Adapter.bin"
   ],
   "VAE": [
     "ae.safetensors",
