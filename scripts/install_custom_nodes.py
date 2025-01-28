@@ -30,13 +30,13 @@ for repo in repos:
         print(
             f"Cloning {repo_url} into {repo_path} and checking out to commit {commit_hash}"
         )
-        subprocess.run(["git", "clone", "--recursive", repo_url, repo_path])
+        subprocess.run(["git", "clone", "--recursive", "-q", repo_url, repo_path])
 
         # Store the current directory and change to the repository's directory
         current_dir = os.getcwd()
         os.chdir(repo_path)
-        subprocess.run(["git", "checkout", commit_hash])
-        subprocess.run(["git", "submodule", "update", "--init", "--recursive"])
+        subprocess.run(["git", "checkout", "-q", commit_hash])
+        subprocess.run(["git", "submodule", "update", "--init", "--recursive", "-q"])
 
         # Change back to the original directory after operations
         os.chdir(current_dir)
@@ -55,9 +55,9 @@ for repo in repos:
             )
             if response.lower() == "y":
                 print(f"Checking out to commit {commit_hash}")
-                subprocess.run(["git", "fetch"])
-                subprocess.run(["git", "checkout", commit_hash])
-                subprocess.run(["git", "submodule", "update", "--init", "--recursive"])
+                subprocess.run(["git", "fetch", "-q"])
+                subprocess.run(["git", "checkout", "-q", commit_hash])
+                subprocess.run(["git", "submodule", "update", "--init", "--recursive", "-q"])
             else:
                 print("Skipping checkout, keeping current commit")
 
