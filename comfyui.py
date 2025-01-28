@@ -144,6 +144,7 @@ class ComfyUI:
     def handle_inputs(self, workflow):
         print("Checking inputs")
         seen_inputs = set()
+        missing_inputs = []
         for node in workflow.values():
             # Skip URLs in LoraLoader nodes
             if node.get("class_type") in ["LoraLoaderFromURL", "LoraLoader"]:
@@ -167,6 +168,7 @@ class ComfyUI:
                                     print(f"✅ {filename}")
                                 except requests.exceptions.RequestException as e:
                                     print(f"❌ Error downloading {input_value}: {e}")
+                                    missing_inputs.append(filename)
 
                             # The same URL may be included in a workflow more than once
                             node["inputs"][input_key] = filename
@@ -177,8 +179,12 @@ class ComfyUI:
                             )
                             if not os.path.exists(filename):
                                 print(f"❌ {filename} not provided")
+                                missing_inputs.append(filename)
                             else:
                                 print(f"✅ {filename}")
+
+        if missing_inputs:
+            raise Exception(f"Missing required input files: {', '.join(missing_inputs)}")
 
         print("====================================")
 
@@ -220,7 +226,7 @@ class ComfyUI:
 
         if http_error:
             raise Exception(
-                "ComfyUI Error – Your workflow could not be run. This usually happens if you're trying to use an unsupported node. Check the logs for 'KeyError: ' details, and go to https://github.com/fofr/cog-comfyui to see the list of supported custom nodes."
+                "ComfyUI Error – Your workflow could not be run. Please check the logs for details."
             )
 
     def _delete_corrupted_weights(self, error_data):
