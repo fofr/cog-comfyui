@@ -1,23 +1,23 @@
 {
   "3": {
     "inputs": {
-      "seed": 1631588094,
-      "steps": 7,
-      "cfg": 2.6,
+      "seed": 1631591050,
+      "steps": 30,
+      "cfg": 4.5,
       "sampler_name": "ddpm",
-      "scheduler": "normal",
+      "scheduler": "karras",
       "denoise": 1,
       "model": [
-        "57",
+        "60",
         0
       ],
       "positive": [
-        "23",
-        0
+        "60",
+        1
       ],
       "negative": [
-        "23",
-        1
+        "60",
+        2
       ],
       "latent_image": [
         "5",
@@ -67,7 +67,7 @@
   },
   "11": {
     "inputs": {
-      "instantid_file": "ipadapter.bin"
+      "instantid_file": "instantid-ip-adapter.bin"
     },
     "class_type": "InstantIDModelLoader",
     "_meta": {
@@ -105,36 +105,9 @@
       "title": "Load ControlNet Model"
     }
   },
-  "23": {
-    "inputs": {
-      "strength": 0.65,
-      "start_percent": 0,
-      "end_percent": 1,
-      "positive": [
-        "57",
-        1
-      ],
-      "negative": [
-        "57",
-        2
-      ],
-      "control_net": [
-        "16",
-        0
-      ],
-      "image": [
-        "58",
-        0
-      ]
-    },
-    "class_type": "ControlNetApplyAdvanced",
-    "_meta": {
-      "title": "Apply ControlNet (Advanced)"
-    }
-  },
   "38": {
     "inputs": {
-      "provider": "CUDA"
+      "provider": "CPU"
     },
     "class_type": "InstantIDFaceAnalysis",
     "_meta": {
@@ -143,7 +116,7 @@
   },
   "39": {
     "inputs": {
-      "text": "watercolors portrait of a woman (happy laughing:1.15), masterpiece, artistry",
+      "text": "comic character. graphic illustration, comic art, graphic novel art, vibrant, highly detailed",
       "clip": [
         "4",
         1
@@ -156,7 +129,7 @@
   },
   "40": {
     "inputs": {
-      "text": "low quality, blurry, malformed, distorted",
+      "text": "photograph, deformed, glitch, noisy, realistic, stock photo",
       "clip": [
         "4",
         1
@@ -167,7 +140,7 @@
       "title": "CLIP Text Encode (Prompt)"
     }
   },
-  "57": {
+  "60": {
     "inputs": {
       "weight": 0.8,
       "start_at": 0,
@@ -180,7 +153,11 @@
         "38",
         0
       ],
-      "image_features": [
+      "control_net": [
+        "16",
+        0
+      ],
+      "image": [
         "13",
         0
       ],
@@ -200,22 +177,6 @@
     "class_type": "ApplyInstantID",
     "_meta": {
       "title": "Apply InstantID"
-    }
-  },
-  "58": {
-    "inputs": {
-      "faceanalysis": [
-        "38",
-        0
-      ],
-      "image": [
-        "13",
-        0
-      ]
-    },
-    "class_type": "FaceKeypointsPreprocessor",
-    "_meta": {
-      "title": "Face Keypoints Preprocessor"
     }
   }
 }

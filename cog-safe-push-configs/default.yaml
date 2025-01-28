@@ -24,6 +24,7 @@ predict:
         workflow_json: https://raw.githubusercontent.com/fofr/cog-comfyui/refs/heads/main/examples/api_workflows/glif_custom_lora_flux_hf.json
     - inputs:
         workflow_json: https://raw.githubusercontent.com/fofr/cog-comfyui/refs/heads/main/examples/api_workflows/instantid_default_api.json
+        return_temp_files: true
     - inputs:
         workflow_json: https://raw.githubusercontent.com/fofr/cog-comfyui/refs/heads/main/examples/api_workflows/ipadapter_faceid.json
     - inputs:
