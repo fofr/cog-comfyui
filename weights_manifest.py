@@ -9,6 +9,7 @@ USER_WEIGHTS_MANIFEST_PATH = config["USER_WEIGHTS_MANIFEST_PATH"]
 REMOTE_WEIGHTS_MANIFEST_URL = config["REMOTE_WEIGHTS_MANIFEST_URL"]
 REMOTE_WEIGHTS_MANIFEST_PATH = "updated_weights.json"
 WEIGHTS_MANIFEST_PATH = "weights.json"
+WEIGHTS_SYNONYMS_PATH = "weight_synonyms.json"
 BASE_URL = config["WEIGHTS_BASE_URL"]
 MODELS_PATH = config["MODELS_PATH"]
 
@@ -23,6 +24,7 @@ class WeightsManifest:
             os.getenv("DOWNLOAD_LATEST_WEIGHTS_MANIFEST", "false").lower() == "true"
         )
         self.weights_manifest = self._load_weights_manifest()
+        self.synonyms = self._initialize_synonyms()
         self.weights_map = self._initialize_weights_map()
 
     def _load_weights_manifest(self):
@@ -85,6 +87,13 @@ class WeightsManifest:
                             original_manifest[key] = manifest_to_merge[key]
 
         return original_manifest
+
+    def _initialize_synonyms(self):
+        with open(WEIGHTS_SYNONYMS_PATH, "r") as f:
+            return json.load(f)
+
+    def get_canonical_weight_str(self, weight_str):
+        return self.synonyms.get(weight_str, weight_str)
 
     def _initialize_weights_map(self):
         weights_map = {}
@@ -175,7 +184,7 @@ class WeightsManifest:
             "SUPIR-v0Q_fp16.safetensors",
             "svd.safetensors",
             "svd_xt.safetensors",
-            "turbovisionxlSuperFastXLBasedOnNew_tvxlV32Bakedvae"
+            "turbovisionxlSuperFastXLBasedOnNew_tvxlV32Bakedvae",
         ]
 
     def is_non_commercial_only(self, weight_str):

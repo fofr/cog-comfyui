@@ -21,6 +21,9 @@ class WeightsDownloader:
         self.weights_manifest = WeightsManifest()
         self.weights_map = self.weights_manifest.weights_map
 
+    def get_canonical_weight_str(self, weight_str):
+        return self.weights_manifest.get_canonical_weight_str(weight_str)
+
     def get_weights_by_type(self, type):
         return self.weights_manifest.get_weights_by_type(type)
 

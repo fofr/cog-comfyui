@@ -103,16 +103,26 @@ class ComfyUI:
 
             self.apply_helper_methods("add_weights", weights_to_download, Node(node))
 
-            for input in node["inputs"].values():
-                if isinstance(input, str):
-                    if any(key in input for key in embedding_to_fullname):
+            for input_key, input_value in node["inputs"].items():
+                if isinstance(input_value, str):
+                    if any(key in input_value for key in embedding_to_fullname):
                         weights_to_download.extend(
                             embedding_to_fullname[key]
                             for key in embedding_to_fullname
-                            if key in input
+                            if key in input_value
                         )
-                    elif any(input.endswith(ft) for ft in weights_filetypes):
-                        weights_to_download.append(input)
+                    elif any(input_value.endswith(ft) for ft in weights_filetypes):
+                        # Sometimes a model will have a number of common filenames
+                        weight_str = self.weights_downloader.get_canonical_weight_str(
+                            input_value
+                        )
+                        if weight_str != input_value:
+                            print(
+                                f"Converting model synonym {input_value} to {weight_str}"
+                            )
+                            node["inputs"][input_key] = weight_str
+
+                        weights_to_download.append(weight_str)
 
         weights_to_download = list(set(weights_to_download))
 
@@ -354,7 +364,9 @@ class ComfyUI:
                 inputs = node.get("inputs", {})
                 if "lora_name" in inputs and isinstance(inputs["lora_name"], str):
                     if inputs["lora_name"].startswith(("http://", "https://")):
-                        print(f"Converting LoraLoader node {node_id} to LoraLoaderFromURL")
+                        print(
+                            f"Converting LoraLoader node {node_id} to LoraLoaderFromURL"
+                        )
                         node["class_type"] = "LoraLoaderFromURL"
                         node["inputs"]["url"] = inputs["lora_name"]
                         del node["inputs"]["lora_name"]

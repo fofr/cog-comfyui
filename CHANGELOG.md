@@ -1,5 +1,14 @@
 ## 2025-01-28
 
+- Initial support for common model synonyms
+
+New weights:
+
+- [Add FLUX.1-dev-Controlnet-Inpainting-Beta.safetensors to controlnet](https://huggingface.co/alimama-creative/FLUX.1-dev-Controlnet-Inpainting-Beta/blob/main/diffusion_pytorch_model.safetensors)
+- [Add pulid_flux_v0.9.1.safetensors to pulid](https://huggingface.co/guozinan/PuLID/blob/main/pulid_flux_v0.9.1.safetensors)
+
+New custom nodes:
+
 - [Add Comfy-WaveSpeed](https://github.com/chengzeyi/Comfy-WaveSpeed) custom node
 - [Add ComfyUI_Patches_ll](https://github.com/lldacing/ComfyUI_Patches_ll) custom node
 

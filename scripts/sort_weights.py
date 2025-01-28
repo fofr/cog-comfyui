@@ -71,7 +71,14 @@ def write_supported_weights():
         for weight_type, weights in weight_lists.items():
             f.write(f"## {weight_type}\n\n")
             for weight in weights:
-                f.write(f"- {weight}\n")
+                synonyms = []
+                for syn, canonical in weights_manifest.synonyms.items():
+                    if canonical == weight:
+                        synonyms.append(syn)
+                if synonyms:
+                    f.write(f"- {weight} (Also available as {', '.join(synonyms)})\n")
+                else:
+                    f.write(f"- {weight}\n")
             f.write("\n")
 
 
