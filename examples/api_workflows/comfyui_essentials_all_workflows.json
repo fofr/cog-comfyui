@@ -16,8 +16,9 @@
       "width": 256,
       "height": 64,
       "interpolation": "lanczos",
-      "keep_proportion": true,
+      "method": "stretch",
       "condition": "always",
+      "multiple_of": 0,
       "image": [
         "7",
         0
@@ -56,7 +57,7 @@
   },
   "7": {
     "inputs": {
-      "image": "https://replicate.delivery/pbxt/qiQ6LiceeNrlDEVHH7HzS0yjI3WeAAerd1eWI4W2N98aViwRC/out-1.png",
+      "image": "https://replicate.delivery/pbxt/M0gpKVE9wmEtOQFNDOpwz1uGs0u6nK2NcE85IihwlN0ZEnMF/kill-bill-poster.jpg",
       "upload": "image"
     },
     "class_type": "LoadImage",
@@ -153,6 +154,7 @@
   "15": {
     "inputs": {
       "amount": 45,
+      "device": "auto",
       "mask": [
         "20",
         0
@@ -190,7 +192,7 @@
   },
   "20": {
     "inputs": {
-      "image": "cwf_inpaint_example_mask.png",
+      "image": "https://replicate.delivery/pbxt/M0gpLCYdCLbnhcz95Poy66q30XW9VSCN65DoDQ8IzdzlQonw/kill-bill-mask.png",
       "channel": "alpha",
       "upload": "image"
     },
@@ -269,6 +271,7 @@
   "37": {
     "inputs": {
       "factor": 1,
+      "method": "luminance (Rec.709)",
       "image": [
         "7",
         0

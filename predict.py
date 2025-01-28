@@ -10,6 +10,7 @@ from comfyui import ComfyUI
 from weights_downloader import WeightsDownloader
 from cog_model_helpers import optimise_images
 from config import config
+import requests
 
 
 os.environ["DOWNLOAD_LATEST_WEIGHTS_MANIFEST"] = "true"
@@ -24,7 +25,7 @@ ALL_DIRECTORIES = [OUTPUT_DIR, INPUT_DIR, COMFYUI_TEMP_OUTPUT_DIR]
 IMAGE_TYPES = [".jpg", ".jpeg", ".png", ".webp"]
 VIDEO_TYPES = [".mp4", ".mov", ".avi", ".mkv"]
 
-with open("examples/api_workflows/glif_custom_lora_flux_hf.json", "r") as file:
+with open("examples/api_workflows/instantid_default_api.json", "r") as file:
     EXAMPLE_WORKFLOW_JSON = file.read()
 
 
@@ -101,7 +102,7 @@ class Predictor(BasePredictor):
     def predict(
         self,
         workflow_json: str = Input(
-            description="Your ComfyUI workflow as JSON. You must use the API version of your workflow. Get it from ComfyUI using ‘Save (API format)’. Instructions here: https://github.com/fofr/cog-comfyui",
+            description="Your ComfyUI workflow as JSON string or URL. You must use the API version of your workflow. Get it from ComfyUI using 'Save (API format)'. Instructions here: https://github.com/fofr/cog-comfyui",
             default="",
         ),
         input_file: Path = Input(
@@ -129,7 +130,16 @@ class Predictor(BasePredictor):
         if input_file:
             self.handle_input_file(input_file)
 
-        wf = self.comfyUI.load_workflow(workflow_json or EXAMPLE_WORKFLOW_JSON)
+        workflow_json_content = workflow_json
+        if workflow_json.startswith(("http://", "https://")):
+            try:
+                response = requests.get(workflow_json)
+                response.raise_for_status()
+                workflow_json_content = response.text
+            except requests.exceptions.RequestException as e:
+                raise ValueError(f"Failed to download workflow JSON from URL: {e}")
+
+        wf = self.comfyUI.load_workflow(workflow_json_content or EXAMPLE_WORKFLOW_JSON)
 
         self.comfyUI.connect()
 

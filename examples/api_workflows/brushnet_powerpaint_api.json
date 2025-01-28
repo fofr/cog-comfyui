@@ -104,7 +104,7 @@
   },
   "58": {
     "inputs": {
-      "image": "ComfyUI_00002_-1.webp",
+      "image": "https://replicate.delivery/xezq/acQsSCLoTPpFLBJjoo2ueLIflEA9XAGFqi0X1Y8A33n2zM9TA/out-0.webp",
       "upload": "image"
     },
     "class_type": "LoadImage",
