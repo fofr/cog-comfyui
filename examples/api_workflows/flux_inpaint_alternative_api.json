@@ -1,0 +1,390 @@
+{
+  "8": {
+    "inputs": {
+      "samples": [
+        "13",
+        0
+      ],
+      "vae": [
+        "10",
+        0
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "10": {
+    "inputs": {
+      "vae_name": "ae.safetensors"
+    },
+    "class_type": "VAELoader",
+    "_meta": {
+      "title": "Load VAE"
+    }
+  },
+  "11": {
+    "inputs": {
+      "clip_name1": "t5xxl_fp16.safetensors",
+      "clip_name2": "clip_l.safetensors",
+      "type": "flux",
+      "device": "default"
+    },
+    "class_type": "DualCLIPLoader",
+    "_meta": {
+      "title": "DualCLIPLoader"
+    }
+  },
+  "12": {
+    "inputs": {
+      "unet_name": "flux1-dev.safetensors",
+      "weight_dtype": "fp8_e4m3fn"
+    },
+    "class_type": "UNETLoader",
+    "_meta": {
+      "title": "Load Diffusion Model"
+    }
+  },
+  "13": {
+    "inputs": {
+      "noise": [
+        "25",
+        0
+      ],
+      "guider": [
+        "141",
+        0
+      ],
+      "sampler": [
+        "16",
+        0
+      ],
+      "sigmas": [
+        "17",
+        0
+      ],
+      "latent_image": [
+        "139",
+        0
+      ]
+    },
+    "class_type": "SamplerCustomAdvanced",
+    "_meta": {
+      "title": "SamplerCustomAdvanced"
+    }
+  },
+  "16": {
+    "inputs": {
+      "sampler_name": "euler"
+    },
+    "class_type": "KSamplerSelect",
+    "_meta": {
+      "title": "KSamplerSelect"
+    }
+  },
+  "17": {
+    "inputs": {
+      "scheduler": "simple",
+      "steps": 30,
+      "denoise": 1,
+      "model": [
+        "12",
+        0
+      ]
+    },
+    "class_type": "BasicScheduler",
+    "_meta": {
+      "title": "BasicScheduler"
+    }
+  },
+  "25": {
+    "inputs": {
+      "noise_seed": 24
+    },
+    "class_type": "RandomNoise",
+    "_meta": {
+      "title": "RandomNoise"
+    }
+  },
+  "35": {
+    "inputs": {
+      "action": "append",
+      "tidy_tags": "no",
+      "text_a": "Albert Einstein",
+      "text_b": ""
+    },
+    "class_type": "StringFunction|pysssss",
+    "_meta": {
+      "title": "String Function 🐍"
+    }
+  },
+  "72": {
+    "inputs": {
+      "clip_l": [
+        "35",
+        0
+      ],
+      "t5xxl": [
+        "35",
+        0
+      ],
+      "guidance": 3.5,
+      "clip": [
+        "11",
+        0
+      ]
+    },
+    "class_type": "CLIPTextEncodeFlux",
+    "_meta": {
+      "title": "CLIPTextEncodeFlux"
+    }
+  },
+  "76": {
+    "inputs": {
+      "filename_prefix": "pl",
+      "images": [
+        "8",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Model Output"
+    }
+  },
+  "111": {
+    "inputs": {
+      "text": [
+        "35",
+        0
+      ],
+      "text2": "Albert Einstein"
+    },
+    "class_type": "ShowText|pysssss",
+    "_meta": {
+      "title": "Show Text 🐍"
+    }
+  },
+  "128": {
+    "inputs": {
+      "strength": 1,
+      "start_percent": 0,
+      "end_percent": 1,
+      "positive": [
+        "72",
+        0
+      ],
+      "negative": [
+        "131",
+        0
+      ],
+      "control_net": [
+        "133",
+        0
+      ],
+      "vae": [
+        "10",
+        0
+      ],
+      "image": [
+        "130",
+        0
+      ],
+      "mask": [
+        "138",
+        0
+      ]
+    },
+    "class_type": "ControlNetInpaintingAliMamaApply",
+    "_meta": {
+      "title": "ControlNetInpaintingAliMamaApply"
+    }
+  },
+  "130": {
+    "inputs": {
+      "image": "https://replicate.delivery/pbxt/M0gpKVE9wmEtOQFNDOpwz1uGs0u6nK2NcE85IihwlN0ZEnMF/kill-bill-poster.jpg",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "131": {
+    "inputs": {
+      "clip_l": "",
+      "t5xxl": "bad,ugly,deformed",
+      "guidance": 3.5,
+      "clip": [
+        "11",
+        0
+      ]
+    },
+    "class_type": "CLIPTextEncodeFlux",
+    "_meta": {
+      "title": "CLIPTextEncodeFlux"
+    }
+  },
+  "133": {
+    "inputs": {
+      "control_net_name": "0930_inpaint_cn.safetensors"
+    },
+    "class_type": "ControlNetLoader",
+    "_meta": {
+      "title": "Load ControlNet Model"
+    }
+  },
+  "134": {
+    "inputs": {
+      "mask": [
+        "138",
+        0
+      ]
+    },
+    "class_type": "MaskToImage",
+    "_meta": {
+      "title": "Convert Mask to Image"
+    }
+  },
+  "136": {
+    "inputs": {
+      "images": [
+        "134",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Preview Image"
+    }
+  },
+  "138": {
+    "inputs": {
+      "expand": 0,
+      "incremental_expandrate": 0,
+      "tapered_corners": false,
+      "flip_input": false,
+      "blur_radius": 0,
+      "lerp_alpha": 1,
+      "decay_factor": 1,
+      "fill_holes": false,
+      "mask": [
+        "146",
+        0
+      ]
+    },
+    "class_type": "GrowMaskWithBlur",
+    "_meta": {
+      "title": "Grow Mask With Blur"
+    }
+  },
+  "139": {
+    "inputs": {
+      "width": 1024,
+      "height": 1024,
+      "batch_size": 1
+    },
+    "class_type": "EmptySD3LatentImage",
+    "_meta": {
+      "title": "EmptySD3LatentImage"
+    }
+  },
+  "140": {
+    "inputs": {
+      "rgthree_comparer": {
+        "images": [
+          {
+            "name": "A",
+            "selected": true,
+            "url": "/api/view?filename=rgthree.compare._temp_kpvfg_00007_.png&type=temp&subfolder=&rand=0.27770674129742123"
+          },
+          {
+            "name": "B",
+            "selected": true,
+            "url": "/api/view?filename=rgthree.compare._temp_kpvfg_00008_.png&type=temp&subfolder=&rand=0.23642776855028602"
+          }
+        ]
+      },
+      "image_a": [
+        "8",
+        0
+      ],
+      "image_b": [
+        "130",
+        0
+      ]
+    },
+    "class_type": "Image Comparer (rgthree)",
+    "_meta": {
+      "title": "Image Comparer (rgthree)"
+    }
+  },
+  "141": {
+    "inputs": {
+      "cfg": 1,
+      "model": [
+        "12",
+        0
+      ],
+      "positive": [
+        "128",
+        0
+      ],
+      "negative": [
+        "128",
+        1
+      ]
+    },
+    "class_type": "CFGGuider",
+    "_meta": {
+      "title": "CFGGuider"
+    }
+  },
+  "144": {
+    "inputs": {
+      "x": 0,
+      "y": 0,
+      "resize_source": true,
+      "destination": [
+        "130",
+        0
+      ],
+      "source": [
+        "8",
+        0
+      ],
+      "mask": [
+        "138",
+        0
+      ]
+    },
+    "class_type": "ImageCompositeMasked",
+    "_meta": {
+      "title": "ImageCompositeMasked"
+    }
+  },
+  "145": {
+    "inputs": {
+      "images": [
+        "144",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Compose"
+    }
+  },
+  "146": {
+    "inputs": {
+      "image": "https://replicate.delivery/pbxt/M0gpLCYdCLbnhcz95Poy66q30XW9VSCN65DoDQ8IzdzlQonw/kill-bill-mask.png",
+      "channel": "alpha",
+      "upload": "image"
+    },
+    "class_type": "LoadImageMask",
+    "_meta": {
+      "title": "Load Image (as Mask)"
+    }
+  }
+}
