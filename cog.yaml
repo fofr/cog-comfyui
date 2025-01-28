@@ -3,7 +3,7 @@ build:
   cuda: "12.1"
   system_packages:
     - ffmpeg
-  python_version: "3.10"
+  python_version: "3.12"
   python_packages:
     - torch
     - torchvision
