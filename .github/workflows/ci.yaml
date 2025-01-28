@@ -9,6 +9,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+      with:
+        submodules: recursive
 
     - name: Set up Python
       uses: actions/setup-python@v4
@@ -27,6 +29,10 @@ jobs:
     - name: Install cog-safe-push
       run: |
         pip install git+https://github.com/replicate/cog-safe-push.git
+
+    - name: Install custom nodes
+      run: |
+        python ./scripts/install_custom_nodes.py
 
     - name: Push selected models
       env:
