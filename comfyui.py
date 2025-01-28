@@ -15,6 +15,7 @@ from cog import Path
 from node import Node
 from weights_downloader import WeightsDownloader
 from urllib.error import URLError
+import hashlib
 
 
 class ComfyUI:
@@ -367,9 +368,15 @@ class ComfyUI:
                     if key.startswith("lora_name_") and isinstance(inputs[key], str):
                         value = inputs[key]
                         if value.startswith(("http://", "https://")):
-                            # Create local filename without query parameters
-                            local_filename = os.path.basename(value.split('?')[0])
-                            
+                            # Verify file extension is .safetensors
+                            if not value.lower().split("?")[0].endswith(".safetensors"):
+                                print(f"❌ Skipping LoRA from {value}: Only .safetensors files are supported for security reasons")
+                                continue
+
+                            # Create unique filename by hashing the URL
+                            hashed_filename = hashlib.md5(value.encode()).hexdigest()
+                            local_filename = f"{hashed_filename}.safetensors"
+
                             # Create custom weights map for this download
                             custom_weights_map = {
                                 local_filename: {
@@ -377,7 +384,7 @@ class ComfyUI:
                                     "dest": "ComfyUI/models/loras/"
                                 }
                             }
-                            
+
                             try:
                                 self.weights_downloader.download_if_not_exists(
                                     local_filename,
