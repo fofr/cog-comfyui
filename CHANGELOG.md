@@ -1,7 +1,9 @@
 ## 2025-01-28
 
-- [Update ComfyUI to latest](https://github.com/comfyanonymous/ComfyUI/compare/916d1e1...255edf2)
+- You can now pass in a URL to a workflow JSON file, e.g. `https://raw.githubusercontent.com/fofr/cog-comfyui/refs/heads/main/examples/api_workflows/flux_txt2img_api.json`
+- `input_file` supports direct video uploads
 - Initial support for common model synonyms (see `weight_synonyms.json`)
+- Updated CI deployment using [`cog-safe-push`](https://github.com/replicate/cog-safe-push)
 
 New weights:
 
@@ -18,6 +20,7 @@ New custom nodes:
 
 Updated nodes:
 
+- [Updated ComfyUI to latest](https://github.com/comfyanonymous/ComfyUI/compare/916d1e1...255edf2)
 - [Updated ComfyUI-Florence2](https://github.com/kijai/ComfyUI-Florence2/compare/27714ba...dffd125)
 - [Updated ComfyUI-HunyuanVideoWrapper](https://github.com/kijai/ComfyUI-HunyuanVideoWrapper/compare/e3a2fa7...1c966f0)
 - [Updated ComfyUI-Fluxtapoz](https://github.com/logtd/ComfyUI-Fluxtapoz/compare/a6295c0...17c71be)
