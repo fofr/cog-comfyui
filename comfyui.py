@@ -370,7 +370,7 @@ class ComfyUI:
                         if value.startswith(("http://", "https://")):
                             # Verify file extension is .safetensors
                             if not value.lower().split("?")[0].endswith(".safetensors"):
-                                print(f"❌ Skipping LoRA from {value}: Only .safetensors files are supported for security reasons")
+                                print(f"❌ Skipping LoRA from {value}: Only .safetensors files are supported")
                                 continue
 
                             # Create unique filename by hashing the URL
