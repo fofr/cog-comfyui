@@ -29,6 +29,4 @@ predict:
     - inputs:
         workflow_json: https://raw.githubusercontent.com/fofr/cog-comfyui/refs/heads/main/examples/api_workflows/kolors_and_ipadapter_api.json
     - inputs:
-        workflow_json: https://raw.githubusercontent.com/fofr/cog-comfyui/refs/heads/main/examples/api_workflows/ipadapter_faceid_api.json
-    - inputs:
         workflow_json: https://raw.githubusercontent.com/fofr/cog-comfyui/refs/heads/main/examples/api_workflows/reactor_api.json

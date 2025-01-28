@@ -56,7 +56,7 @@
   },
   "7": {
     "inputs": {
-      "image": "https://replicate.delivery/pbxt/qiQ6LiceeNrlDEVHH7HzS0yjI3WeAAerd1eWI4W2N98aViwRC/out-1.png",
+      "image": "https://replicate.delivery/pbxt/M0gpKVE9wmEtOQFNDOpwz1uGs0u6nK2NcE85IihwlN0ZEnMF/kill-bill-poster.jpg",
       "upload": "image"
     },
     "class_type": "LoadImage",
@@ -190,7 +190,7 @@
   },
   "20": {
     "inputs": {
-      "image": "cwf_inpaint_example_mask.png",
+      "image": "https://replicate.delivery/pbxt/M0gpLCYdCLbnhcz95Poy66q30XW9VSCN65DoDQ8IzdzlQonw/kill-bill-mask.png",
       "channel": "alpha",
       "upload": "image"
     },
