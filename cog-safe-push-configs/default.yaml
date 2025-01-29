@@ -40,3 +40,6 @@ predict:
     - inputs:
         workflow_json: https://raw.githubusercontent.com/fofr/cog-comfyui/refs/heads/main/examples/api_workflows/reactor_api.json
         return_temp_files: true
+    - inputs:
+        workflow_json: https://raw.githubusercontent.com/fofr/cog-comfyui/refs/heads/main/examples/api_workflows/reactor_with_face_swap_opt_api.json
+        return_temp_files: true
