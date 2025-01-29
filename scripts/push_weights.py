@@ -231,7 +231,7 @@ def get_subfolder():
     subfolders = [
         "checkpoints",
         "upscale_models",
-        "clip",
+        "text_encoders",
         "clip_vision",
         "loras",
         "loras/b_lora",

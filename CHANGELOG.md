@@ -1,3 +1,11 @@
+## 2025-01-29
+
+- [Add Cosmos-1_0-Diffusion-7B-Video2World.safetensors to diffusion_models](https://huggingface.co/mcmonkey/cosmos-1.0/blob/main/Cosmos-1_0-Diffusion-7B-Video2World.safetensors)
+- [Add Cosmos-1_0-Diffusion-7B-Text2World.safetensors to diffusion_models](https://huggingface.co/mcmonkey/cosmos-1.0/blob/main/Cosmos-1_0-Diffusion-7B-Text2World.safetensors)
+- [Add cosmos_cv8x8x8_1.0.safetensors to vae](https://huggingface.co/comfyanonymous/cosmos_1.0_text_encoder_and_VAE_ComfyUI/blob/main/vae/cosmos_cv8x8x8_1.0.safetensors)
+- [Add oldt5_xxl_fp8_e4m3fn_scaled.safetensors to text_encoders](https://huggingface.co/comfyanonymous/cosmos_1.0_text_encoder_and_VAE_ComfyUI/blob/main/text_encoders/oldt5_xxl_fp8_e4m3fn_scaled.safetensors)
+- [Add Flux.1-dev-Controlnet-Upscaler.safetensors to controlnet](https://huggingface.co/jasperai/Flux.1-dev-Controlnet-Upscaler/blob/main/diffusion_pytorch_model.safetensors)
+
 ## 2025-01-28
 
 - You can now pass in a URL to a workflow JSON file, e.g. `https://raw.githubusercontent.com/fofr/cog-comfyui/refs/heads/main/examples/api_workflows/flux_txt2img_api.json`

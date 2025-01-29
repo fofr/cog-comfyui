@@ -160,7 +160,9 @@
     "RealESRGAN_x4plus_anime_6B.pth",
     "RealESRGAN_x8.pth"
   ],
-  "TEXT_ENCODERS": [],
+  "TEXT_ENCODERS": [
+    "oldt5_xxl_fp8_e4m3fn_scaled.safetensors"
+  ],
   "CLIP": [
     "clip-vit-large-patch14",
     "clip_g.safetensors",
@@ -424,6 +426,7 @@
     "FLUX.1-dev-Controlnet-Inpainting-Beta.safetensors",
     "FLUX.1-dev-ControlNet-Union-Pro.safetensors",
     "flux.1-dev-controlnet-union.safetensors",
+    "Flux.1-dev-Controlnet-Upscaler.safetensors",
     "instantid-controlnet.safetensors",
     "ioclab_sd15_recolor.safetensors",
     "ip-adapter_sd15.pth",
@@ -519,6 +522,7 @@
   ],
   "VAE": [
     "ae.safetensors",
+    "cosmos_cv8x8x8_1.0.safetensors",
     "hunyuan_video_vae_bf16.safetensors",
     "mochi/mochi_preview_vae_bf16.safetensors",
     "mochi_vae.safetensors",
@@ -555,6 +559,8 @@
     "stable-cascade/stage_c_lite_bf16.safetensors"
   ],
   "DIFFUSION_MODELS": [
+    "Cosmos-1_0-Diffusion-7B-Text2World.safetensors",
+    "Cosmos-1_0-Diffusion-7B-Video2World.safetensors",
     "flux1-canny-dev.safetensors",
     "flux1-depth-dev.safetensors",
     "flux1-dev-fp8-e4m3fn.safetensors",

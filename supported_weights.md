@@ -163,6 +163,7 @@
 
 ## Text Encoders
 
+- oldt5_xxl_fp8_e4m3fn_scaled.safetensors
 - clip-vit-large-patch14
 - clip_g.safetensors
 - clip_l.safetensors
@@ -464,7 +465,8 @@
 - FLUX.1-dev-Controlnet-Inpainting-Beta.safetensors (Also available as 0930_inpaint_cn.safetensors)
 - FLUX.1-dev-ControlNet-Union-Pro.safetensors
 - flux.1-dev-controlnet-union.safetensors
-- instantid-controlnet.safetensors
+- Flux.1-dev-Controlnet-Upscaler.safetensors
+- instantid-controlnet.safetensors (Also available as instantid/diffusion_pytorch_model.safetensors)
 - ioclab_sd15_recolor.safetensors
 - ip-adapter_sd15.pth
 - ip-adapter_sd15_plus.pth
@@ -526,6 +528,7 @@
 ## VAE
 
 - ae.safetensors
+- cosmos_cv8x8x8_1.0.safetensors
 - hunyuan_video_vae_bf16.safetensors
 - mochi/mochi_preview_vae_bf16.safetensors
 - mochi_vae.safetensors
@@ -537,6 +540,8 @@
 
 ## Diffusion models (formerly Unets)
 
+- Cosmos-1_0-Diffusion-7B-Text2World.safetensors
+- Cosmos-1_0-Diffusion-7B-Video2World.safetensors
 - flux1-canny-dev.safetensors
 - flux1-depth-dev.safetensors
 - flux1-dev-fp8-e4m3fn.safetensors
