@@ -462,6 +462,7 @@
 - diffusers_xl_depth_full.safetensors
 - diffusers_xl_depth_mid.safetensors
 - diffusers_xl_depth_small.safetensors
+- FLUX.1-dev-Controlnet-Canny.safetensors
 - FLUX.1-dev-Controlnet-Inpainting-Beta.safetensors (Also available as 0930_inpaint_cn.safetensors)
 - FLUX.1-dev-ControlNet-Union-Pro.safetensors
 - flux.1-dev-controlnet-union.safetensors

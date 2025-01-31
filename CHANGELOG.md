@@ -1,3 +1,7 @@
+## 2025-01-31
+
+- [Add FLUX.1-dev-Controlnet-Canny.safetensors to controlnet](https://huggingface.co/InstantX/FLUX.1-dev-Controlnet-Canny/blob/main/diffusion_pytorch_model.safetensors)
+
 ## 2025-01-29
 
 - [Add Cosmos-1_0-Diffusion-7B-Video2World.safetensors to diffusion_models](https://huggingface.co/mcmonkey/cosmos-1.0/blob/main/Cosmos-1_0-Diffusion-7B-Video2World.safetensors)
