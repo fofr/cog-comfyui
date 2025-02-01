@@ -374,8 +374,13 @@ class ComfyUI:
                                 continue
 
                             try:
-                                # Create unique filename by hashing the URL
-                                hashed_filename = hashlib.md5(value.encode()).hexdigest() + ".safetensors"
+                                # Extract base filename without extension from URL
+                                url_without_params = value.split("?")[0]
+                                filename = os.path.basename(url_without_params)
+                                filename_without_extension = os.path.splitext(filename)[0]
+                                # Generate unique filename by combining the original name with a URL hash
+                                hashed_url = hashlib.md5(value.encode()).hexdigest()[:8]
+                                hashed_filename = f"{filename_without_extension}_{hashed_url}.safetensors"
                                 dest = "ComfyUI/models/loras/"
 
                                 self.weights_downloader.download_if_not_exists(
