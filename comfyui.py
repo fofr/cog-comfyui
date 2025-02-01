@@ -373,25 +373,17 @@ class ComfyUI:
                                 print(f"❌ Skipping LoRA from {value}: Only .safetensors files are supported")
                                 continue
 
-                            # Create unique filename by hashing the URL
-                            hashed_filename = hashlib.md5(value.encode()).hexdigest()
-                            local_filename = f"{hashed_filename}.safetensors"
-
-                            # Create custom weights map for this download
-                            custom_weights_map = {
-                                local_filename: {
-                                    "url": value,
-                                    "dest": "ComfyUI/models/loras/"
-                                }
-                            }
-
                             try:
+                                # Create unique filename by hashing the URL
+                                hashed_filename = hashlib.md5(value.encode()).hexdigest() + ".safetensors"
+                                dest = "ComfyUI/models/loras/"
+
                                 self.weights_downloader.download_if_not_exists(
-                                    local_filename,
-                                    custom_weights_map[local_filename]["url"],
-                                    custom_weights_map[local_filename]["dest"]
+                                    hashed_filename,
+                                    value,
+                                    dest
                                 )
-                                # Update the input to use the local filename
-                                inputs[key] = local_filename
+                                # Update the input to use the local hashed filename
+                                inputs[key] = hashed_filename
                             except Exception as e:
                                 print(f"❌ Error downloading LoRA from {value}: {e}")
