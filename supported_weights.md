@@ -56,6 +56,8 @@
 - leosamsHelloworldXL_helloworldXL60.safetensors
 - ltx-video-2b-v0.9.1.safetensors
 - ltx-video-2b-v0.9.safetensors
+- lumina_2.safetensors
+- lumina_2_model_bf16.safetensors
 - magicmixReverie_v10.safetensors
 - majicmixRealistic_v7.safetensors
 - motionctrl.pth
@@ -163,6 +165,7 @@
 
 ## Text Encoders
 
+- gemma_2_2b_fp16.safetensors
 - oldt5_xxl_fp8_e4m3fn_scaled.safetensors
 - clip-vit-large-patch14
 - clip_g.safetensors
