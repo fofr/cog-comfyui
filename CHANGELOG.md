@@ -1,4 +1,11 @@
+
+## 2025-02-13
+
+- [Add albedobaseXL_v31Large.safetensors to checkpoints](https://civitai.com/models/140737?modelVersionId=1041855)
+
 ## 2025-02-10
+
+- [Add Flex.1-alpha.safetensors to checkpoints](https://huggingface.co/ostris/Flex.1-alpha/blob/main/Flex.1-alpha.safetensors)
 
 New weights:
 
