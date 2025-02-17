@@ -1,3 +1,6 @@
+## 2025-02-17
+
+- [Add PixelOE](https://github.com/KohakuBlueleaf/PixelOE) custom node
 
 ## 2025-02-13
 
