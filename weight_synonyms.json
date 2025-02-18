@@ -2,5 +2,6 @@
   "0930_inpaint_cn.safetensors": "FLUX.1-dev-Controlnet-Inpainting-Beta.safetensors",
   "ip_sd35l_instantx.bin": "SD3.5-Large-IP-Adapter.bin",
   "SD3.5-L.safetensors": "sd3.5_large.safetensors",
-  "instantid/diffusion_pytorch_model.safetensors": "instantid-controlnet.safetensors"
+  "instantid/diffusion_pytorch_model.safetensors": "instantid-controlnet.safetensors",
+  "ae.sft": "ae.safetensors"
 }
