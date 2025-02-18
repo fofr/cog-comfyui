@@ -24,8 +24,9 @@ def validate_github_url(url):
         parsed = urlparse(url)
         if parsed.netloc != "github.com":
             return None
-        # Remove any trailing .git
-        path = parsed.path.rstrip(".git")
+        path = parsed.path
+        if path.endswith('.git'):
+            path = path[:-4]
         return f"https://github.com{path}"
     except Exception:
         return None
@@ -33,7 +34,7 @@ def validate_github_url(url):
 
 def get_repo_name(url):
     """Extract repository name from GitHub URL."""
-    return os.path.basename(urlparse(url).path.rstrip(".git"))
+    return os.path.basename(urlparse(url).path)
 
 
 def clone_repository(url, repo_name):
