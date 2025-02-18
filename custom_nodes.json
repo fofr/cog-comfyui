@@ -246,5 +246,9 @@
   {
     "repo": "https://github.com/lrzjason/Comfyui-In-Context-Lora-Utils",
     "commit": "6ef772d"
+  },
+  {
+    "repo": "https://github.com/TTPlanetPig/Comfyui_TTP_Toolset",
+    "commit": "13bd85f"
   }
 ]

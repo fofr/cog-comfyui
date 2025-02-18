@@ -9,6 +9,7 @@ New weights:
 New custom nodes:
 
 - [Add Comfyui-In-Context-Lora-Utils](https://github.com/lrzjason/Comfyui-In-Context-Lora-Utils) custom node
+- [Add Comfyui_TTP_Toolset](https://github.com/TTPlanetPig/Comfyui_TTP_Toolset) custom node
 
 Updated custom nodes:
 
