@@ -5,7 +5,7 @@
   },
   {
     "repo": "https://github.com/Fannovel16/comfyui_controlnet_aux",
-    "commit": "5a049bd"
+    "commit": "1e9eac6"
   },
   {
     "repo": "https://github.com/fofr/ComfyUI-Impact-Pack",
@@ -22,7 +22,7 @@
   },
   {
     "repo": "https://github.com/Acly/comfyui-tooling-nodes",
-    "commit": "facd659"
+    "commit": "ea75515"
   },
   {
     "repo": "https://github.com/Kosinkadink/ComfyUI-AnimateDiff-Evolved",
@@ -30,7 +30,7 @@
   },
   {
     "repo": "https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite",
-    "commit": "8629188"
+    "commit": "c36626c"
   },
   {
     "repo": "https://github.com/Kosinkadink/ComfyUI-Advanced-ControlNet",
@@ -50,7 +50,7 @@
   },
   {
     "repo": "https://github.com/TinyTerra/ComfyUI_tinyterraNodes",
-    "commit": "b292f8e"
+    "commit": "251f805"
   },
   {
     "repo": "https://github.com/ssitu/ComfyUI_UltimateSDUpscale",
@@ -83,7 +83,7 @@
   },
   {
     "repo": "https://github.com/WASasquatch/was-node-suite-comfyui",
-    "commit": "2afeeeb"
+    "commit": "3ed45af"
   },
   {
     "repo": "https://github.com/fofr/comfyui_segment_anything",
@@ -103,7 +103,7 @@
   },
   {
     "repo": "https://github.com/kijai/ComfyUI-KJNodes",
-    "commit": "86b5453"
+    "commit": "095c8d4"
   },
   {
     "repo": "https://github.com/Fannovel16/ComfyUI-Frame-Interpolation",
@@ -135,7 +135,7 @@
   },
   {
     "repo": "https://github.com/rgthree/rgthree-comfy",
-    "commit": "5d771b8"
+    "commit": "31b784b"
   },
   {
     "repo": "https://github.com/fofr/comfyui-prompter-fofrai",
@@ -204,11 +204,11 @@
   },
   {
     "repo": "https://github.com/lldacing/ComfyUI_PuLID_Flux_ll",
-    "commit": "22a7030"
+    "commit": "d5cc097"
   },
   {
     "repo": "https://github.com/kijai/ComfyUI-HunyuanVideoWrapper",
-    "commit": "ce58968"
+    "commit": "2997d65"
   },
   {
     "repo": "https://github.com/fofr/ComfyUI-AdvancedLivePortrait",
@@ -242,5 +242,9 @@
   {
     "repo": "https://github.com/KohakuBlueleaf/PixelOE",
     "commit": "4a676a5"
+  },
+  {
+    "repo": "https://github.com/lrzjason/Comfyui-In-Context-Lora-Utils",
+    "commit": "6ef772d"
   }
 ]

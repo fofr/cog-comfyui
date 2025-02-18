@@ -166,7 +166,8 @@
   ],
   "TEXT_ENCODERS": [
     "gemma_2_2b_fp16.safetensors",
-    "oldt5_xxl_fp8_e4m3fn_scaled.safetensors"
+    "oldt5_xxl_fp8_e4m3fn_scaled.safetensors",
+    "ViT-L-14-TEXT-detail-improved-hiT-GmP-HF.safetensors"
   ],
   "CLIP": [
     "clip-vit-large-patch14",

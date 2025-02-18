@@ -169,6 +169,7 @@
 
 - gemma_2_2b_fp16.safetensors
 - oldt5_xxl_fp8_e4m3fn_scaled.safetensors
+- ViT-L-14-TEXT-detail-improved-hiT-GmP-HF.safetensors
 - clip-vit-large-patch14
 - clip_g.safetensors
 - clip_l.safetensors

@@ -1,3 +1,27 @@
+## 2025-02-18
+
+New weights:
+
+- [Add ViT-L-14-TEXT-detail-improved-hiT-GmP-HF.safetensors to text_encoders](https://huggingface.co/zer0int/CLIP-GmP-ViT-L-14/blob/main/ViT-L-14-TEXT-detail-improved-hiT-GmP-HF.safetensors)
+
+- [Update ComfyUI to latest](https://github.com/comfyanonymous/ComfyUI/compare/4027466...b07258c)
+
+New custom nodes:
+
+- [Add Comfyui-In-Context-Lora-Utils](https://github.com/lrzjason/Comfyui-In-Context-Lora-Utils) custom node
+
+Updated custom nodes:
+
+- [Updated ComfyUI-HunyuanVideoWrapper](https://github.com/kijai/ComfyUI-HunyuanVideoWrapper/compare/ce58968...2997d65)
+- [Updated ComfyUI_PuLID_Flux_ll](https://github.com/lldacing/ComfyUI_PuLID_Flux_ll/compare/22a7030...d5cc097)
+- [Updated rgthree-comfy](https://github.com/rgthree/rgthree-comfy/compare/5d771b8...31b784b)
+- [Updated ComfyUI-KJNodes](https://github.com/kijai/ComfyUI-KJNodes/compare/86b5453...095c8d4)
+- [Updated was-node-suite-comfyui](https://github.com/WASasquatch/was-node-suite-comfyui/compare/2afeeeb...3ed45af)
+- [Updated ComfyUI_tinyterraNodes](https://github.com/TinyTerra/ComfyUI_tinyterraNodes/compare/b292f8e...251f805)
+- [Updated ComfyUI-VideoHelperSuite](https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite/compare/8629188...c36626c)
+- [Updated comfyui-tooling-nodes](https://github.com/Acly/comfyui-tooling-nodes/compare/facd659...ea75515)
+- [Updated comfyui_controlnet_aux](https://github.com/Fannovel16/comfyui_controlnet_aux/compare/5a049bd...1e9eac6)
+
 ## 2025-02-17
 
 - [Add PixelOE](https://github.com/KohakuBlueleaf/PixelOE) custom node
