@@ -1,3 +1,8 @@
+
+## 2025-02-19
+
+- [Add creapromptLightning_v13.safetensors to checkpoints](https://civitai.com/models/383364?modelVersionId=453382)
+
 ## 2025-02-18
 
 New weights:
@@ -22,10 +27,6 @@ Updated custom nodes:
 - [Updated ComfyUI-VideoHelperSuite](https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite/compare/8629188...c36626c)
 - [Updated comfyui-tooling-nodes](https://github.com/Acly/comfyui-tooling-nodes/compare/facd659...ea75515)
 - [Updated comfyui_controlnet_aux](https://github.com/Fannovel16/comfyui_controlnet_aux/compare/5a049bd...1e9eac6)
-
-## 2025-02-17
-
-- [Add PixelOE](https://github.com/KohakuBlueleaf/PixelOE) custom node
 
 ## 2025-02-13
 

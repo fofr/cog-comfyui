@@ -17,6 +17,7 @@
 - copaxCuteXLSDXL10_v4.safetensors
 - copaxTimelessxlSDXL1_v122.safetensors
 - copaxTimelessxlSDXL1_v8.safetensors
+- creapromptLightning_v13.safetensors
 - crystalClearXL_ccxl.safetensors
 - Deliberate_v2.safetensors
 - disneyPixarCartoon_v10.safetensors
@@ -534,7 +535,7 @@
 
 ## VAE
 
-- ae.safetensors
+- ae.safetensors (Also available as ae.sft)
 - cosmos_cv8x8x8_1.0.safetensors
 - hunyuan_video_vae_bf16.safetensors
 - mochi/mochi_preview_vae_bf16.safetensors

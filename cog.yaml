@@ -49,7 +49,6 @@ build:
 
     # ComfyUI_essentials
     - numba
-    - pixeloe
 
     # ComfyUI_FizzNodes
     - pandas
