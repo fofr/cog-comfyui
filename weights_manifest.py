@@ -158,6 +158,7 @@ class WeightsManifest:
             "GPEN-BFR-1024.onnx",
             "GPEN-BFR-2048.onnx",
             "GPEN-BFR-512.onnx",
+            "illustriousXL_v01.safetensors",
             "inswapper_128.onnx",
             "inswapper_128_fp16.onnx",
             "MODILL_XL_0.27_RC.safetensors",

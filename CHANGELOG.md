@@ -1,4 +1,8 @@
 
+## 2025-02-25
+
+- [Add illustriousXL_v01.safetensors to checkpoints](https://civitai.com/api/download/models/889818?type=Model&format=SafeTensor&size=pruned&fp=fp16)
+
 ## 2025-02-19
 
 - [Add creapromptLightning_v13.safetensors to checkpoints](https://civitai.com/models/383364?modelVersionId=453382)
@@ -529,6 +533,7 @@ Update custom nodes:
 ## 2024-08-22
 
 - [Add flux1-dev-fp8.safetensors to diffusion_models](https://huggingface.co/Kijai/flux-fp8/resolve/main/flux1-dev-fp8.safetensors?download=true)
+
 ## 2024-08-21
 
 - [Update ComfyUI](https://github.com/comfyanonymous/ComfyUI/compare/3f5939a...5e806f5)
