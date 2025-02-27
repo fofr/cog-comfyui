@@ -26,6 +26,7 @@ build:
     - kornia>=0.7.1
     - websocket-client==1.6.3
     - diffusers>=0.31.0
+    - av
 
     # ComfyUI-AdvancedLivePortrait
     - dill

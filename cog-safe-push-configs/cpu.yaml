@@ -14,9 +14,6 @@ predict:
         workflow_json: https://raw.githubusercontent.com/fofr/cog-comfyui/refs/heads/main/examples/api_workflows/sd15_txt2img.json
         return_temp_files: true
     - inputs:
-        workflow_json: https://raw.githubusercontent.com/fofr/cog-comfyui/refs/heads/main/examples/api_workflows/wan_21_13b_t2v_api.json
-        return_temp_files: true
-    - inputs:
         workflow_json: https://raw.githubusercontent.com/fofr/cog-comfyui/refs/heads/main/examples/api_workflows/flux_pulid_with_attn_mask_api.json
         return_temp_files: true
     - inputs:
