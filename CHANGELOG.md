@@ -1,3 +1,35 @@
+## 2025-02-27
+
+Wan 2.1 weights:
+
+- [Add wan2.1_t2v_14B_bf16.safetensors to diffusion_models](https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/blob/main/split_files/diffusion_models/wan2.1_t2v_14B_bf16.safetensors)
+- [Add wan2.1_t2v_1.3B_bf16.safetensors to diffusion_models](https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/blob/main/split_files/diffusion_models/wan2.1_t2v_1.3B_bf16.safetensors)
+- [Add wan2.1_i2v_720p_14B_bf16.safetensors to diffusion_models](https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/blob/main/split_files/diffusion_models/wan2.1_i2v_720p_14B_bf16.safetensors)
+- [Add wan2.1_i2v_480p_14B_bf16.safetensors to diffusion_models](https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/blob/main/split_files/diffusion_models/wan2.1_i2v_480p_14B_bf16.safetensors)
+- [Add umt5_xxl_fp8_e4m3fn_scaled.safetensors to text_encoders](https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/blob/main/split_files/text_encoders/umt5_xxl_fp8_e4m3fn_scaled.safetensors)
+- [Add umt5_xxl_fp16.safetensors to text_encoders](https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/blob/main/split_files/text_encoders/umt5_xxl_fp16.safetensors)
+- [Add wan_2.1_vae.safetensors to vae](https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/blob/main/split_files/vae/wan_2.1_vae.safetensors)
+- [Add clip_vision_h.safetensors to clip_vision](https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/blob/main/split_files/clip_vision/clip_vision_h.safetensors)
+
+Updated ComfyUI:
+
+- [Update ComfyUI to latest](https://github.com/comfyanonymous/ComfyUI/compare/b07258c...b07f116)
+
+Updated custom nodes:
+
+- [Updated ComfyUI_Patches_ll](https://github.com/lldacing/ComfyUI_Patches_ll/compare/1acfbbd...952782a)
+- [Updated ComfyUI-HunyuanVideoWrapper](https://github.com/kijai/ComfyUI-HunyuanVideoWrapper/compare/2997d65...848168b)
+- [Updated ComfyUI_PuLID_Flux_ll](https://github.com/lldacing/ComfyUI_PuLID_Flux_ll/compare/d5cc097...5f1e91d)
+- [Updated comfyui-inpaint-nodes](https://github.com/Acly/comfyui-inpaint-nodes/compare/20092c3...b9039c2)
+- [Updated rgthree-comfy](https://github.com/rgthree/rgthree-comfy/compare/31b784b...32142fe)
+- [Updated ComfyUI-IC-Light-Native](https://github.com/huchenlei/ComfyUI-IC-Light-Native/compare/9176645...40883a8)
+- [Updated ComfyUI-KJNodes](https://github.com/kijai/ComfyUI-KJNodes/compare/095c8d4...1a4259f)
+- [Updated ComfyUI-layerdiffuse](https://github.com/huchenlei/ComfyUI-layerdiffuse/compare/fffa28a...b4f6a9e)
+- [Updated ComfyUI-Custom-Scripts](https://github.com/pythongosssss/ComfyUI-Custom-Scripts/compare/a53ef9b...bbda5e5)
+- [Updated ComfyUI_UltimateSDUpscale](https://github.com/ssitu/ComfyUI_UltimateSDUpscale/compare/ff3fdfe...1b6e60d)
+- [Updated ComfyUI_tinyterraNodes](https://github.com/TinyTerra/ComfyUI_tinyterraNodes/compare/251f805...b0fd2c9)
+- [Updated ComfyUI-VideoHelperSuite](https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite/compare/c36626c...4c7858d)
+- [Updated ComfyUI_IPAdapter_plus](https://github.com/cubiq/ComfyUI_IPAdapter_plus/compare/b188a6c...9d076a3)
 
 ## 2025-02-25
 

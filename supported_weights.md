@@ -171,6 +171,8 @@
 
 - gemma_2_2b_fp16.safetensors
 - oldt5_xxl_fp8_e4m3fn_scaled.safetensors
+- umt5_xxl_fp16.safetensors
+- umt5_xxl_fp8_e4m3fn_scaled.safetensors
 - ViT-L-14-TEXT-detail-improved-hiT-GmP-HF.safetensors
 - clip-vit-large-patch14
 - clip_g.safetensors
@@ -194,6 +196,7 @@
 - clip-vit-large-patch14-336.bin
 - clip-vit-large-patch14.bin
 - clip_vision_g.safetensors
+- clip_vision_h.safetensors
 - IPAdapter_image_encoder_sd15.safetensors
 - model.15.safetensors
 - model.sdxl.safetensors
@@ -546,6 +549,7 @@
 - stable-cascade/effnet_encoder.safetensors
 - stable-cascade/stage_a.safetensors
 - vae-ft-mse-840000-ema-pruned.safetensors
+- wan_2.1_vae.safetensors
 
 ## Diffusion models (formerly Unets)
 
@@ -562,6 +566,10 @@
 - mochi_preview_bf16.safetensors
 - mochi_preview_fp8_scaled.safetensors
 - pixelwave_flux1Dev03.safetensors
+- wan2.1_i2v_480p_14B_bf16.safetensors
+- wan2.1_i2v_720p_14B_bf16.safetensors
+- wan2.1_t2v_1.3B_bf16.safetensors
+- wan2.1_t2v_14B_bf16.safetensors
 - flux1-dev.safetensors
 - flux1-schnell.safetensors
 - iclight_sd15_fbc.safetensors
