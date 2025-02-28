@@ -10,7 +10,7 @@ If you haven’t used `cog` before or pushed a Replicate model, these are good s
 
 ## Create a new repo from the template
 
-Use https://github.com/fofr/cog-comfyui as a template to create a new repository
+Use https://github.com/replicate/cog-comfyui as a template to create a new repository
 
 ## Prepare the template
 

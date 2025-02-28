@@ -11,35 +11,35 @@ predict:
   predict_timeout: 600
   test_cases:
     - inputs:
-        workflow_json: https://raw.githubusercontent.com/fofr/cog-comfyui/refs/heads/main/examples/api_workflows/sd15_txt2img.json
+        workflow_json: https://raw.githubusercontent.com/replicate/cog-comfyui/refs/heads/main/examples/api_workflows/sd15_txt2img.json
         return_temp_files: true
     - inputs:
-        workflow_json: https://raw.githubusercontent.com/fofr/cog-comfyui/refs/heads/main/examples/api_workflows/flux_pulid_with_attn_mask_api.json
+        workflow_json: https://raw.githubusercontent.com/replicate/cog-comfyui/refs/heads/main/examples/api_workflows/flux_pulid_with_attn_mask_api.json
         return_temp_files: true
     - inputs:
-        workflow_json: https://raw.githubusercontent.com/fofr/cog-comfyui/refs/heads/main/examples/api_workflows/advanced_live_portrait_api.json
+        workflow_json: https://raw.githubusercontent.com/replicate/cog-comfyui/refs/heads/main/examples/api_workflows/advanced_live_portrait_api.json
         return_temp_files: true
     - inputs:
-        workflow_json: https://raw.githubusercontent.com/fofr/cog-comfyui/refs/heads/main/examples/api_workflows/brushnet_powerpaint_api.json
+        workflow_json: https://raw.githubusercontent.com/replicate/cog-comfyui/refs/heads/main/examples/api_workflows/brushnet_powerpaint_api.json
         return_temp_files: true
     - inputs:
-        workflow_json: https://raw.githubusercontent.com/fofr/cog-comfyui/refs/heads/main/examples/api_workflows/comfyui_essentials_all_workflows.json
+        workflow_json: https://raw.githubusercontent.com/replicate/cog-comfyui/refs/heads/main/examples/api_workflows/comfyui_essentials_all_workflows.json
         return_temp_files: true
     - inputs:
-        workflow_json: https://raw.githubusercontent.com/fofr/cog-comfyui/refs/heads/main/examples/api_workflows/glif_custom_lora_flux_hf.json
+        workflow_json: https://raw.githubusercontent.com/replicate/cog-comfyui/refs/heads/main/examples/api_workflows/glif_custom_lora_flux_hf.json
         return_temp_files: true
     - inputs:
-        workflow_json: https://raw.githubusercontent.com/fofr/cog-comfyui/refs/heads/main/examples/api_workflows/instantid_default_api.json
+        workflow_json: https://raw.githubusercontent.com/replicate/cog-comfyui/refs/heads/main/examples/api_workflows/instantid_default_api.json
         return_temp_files: true
     - inputs:
-        workflow_json: https://raw.githubusercontent.com/fofr/cog-comfyui/refs/heads/main/examples/api_workflows/ipadapter_faceid.json
+        workflow_json: https://raw.githubusercontent.com/replicate/cog-comfyui/refs/heads/main/examples/api_workflows/ipadapter_faceid.json
         return_temp_files: true
     - inputs:
-        workflow_json: https://raw.githubusercontent.com/fofr/cog-comfyui/refs/heads/main/examples/api_workflows/kolors_and_ipadapter_api.json
+        workflow_json: https://raw.githubusercontent.com/replicate/cog-comfyui/refs/heads/main/examples/api_workflows/kolors_and_ipadapter_api.json
         return_temp_files: true
     - inputs:
-        workflow_json: https://raw.githubusercontent.com/fofr/cog-comfyui/refs/heads/main/examples/api_workflows/reactor_api.json
+        workflow_json: https://raw.githubusercontent.com/replicate/cog-comfyui/refs/heads/main/examples/api_workflows/reactor_api.json
         return_temp_files: true
     - inputs:
-        workflow_json: https://raw.githubusercontent.com/fofr/cog-comfyui/refs/heads/main/examples/api_workflows/reactor_with_face_swap_opt_api.json
+        workflow_json: https://raw.githubusercontent.com/replicate/cog-comfyui/refs/heads/main/examples/api_workflows/reactor_with_face_swap_opt_api.json
         return_temp_files: true

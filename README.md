@@ -15,8 +15,8 @@ We recommend:
 
 We've tried to include many of the most popular model weights and custom nodes:
 
-- [View list of supported weights](https://github.com/fofr/cog-comfyui/blob/main/supported_weights.md)
-- [View list of supported custom nodes](https://github.com/fofr/cog-comfyui/blob/main/custom_nodes.json)
+- [View list of supported weights](https://github.com/replicate/cog-comfyui/blob/main/supported_weights.md)
+- [View list of supported custom nodes](https://github.com/replicate/cog-comfyui/blob/main/custom_nodes.json)
 
 Raise an issue to request more custom nodes or models, or use the `train` tab on Replicate to use your own weights (see below).
 
@@ -161,12 +161,12 @@ You'll need to be familiar with Python, and you'll also need a GPU to push your 
 The `kolors` model on Replicate is a good example to follow:
 
 - https://replicate.com/fofr/kolors (The model with it’s customised API)
-- https://github.com/fofr/cog-comfyui-kolors (The new repo)
+- https://github.com/replicate/cog-comfyui-kolors (The new repo)
 
 It was created from this repo, and then deployed using Cog. You can step through the commits of that repo to see what was changed and how, but broadly:
 
 - this repository is used as a template
-- the script [`scripts/prepare_template.py`](https://github.com/fofr/cog-comfyui/blob/main/scripts/prepare_template.py) is run first, to remove examples and unnecessary boilerplate
+- the script [`scripts/prepare_template.py`](https://github.com/replicate/cog-comfyui/blob/main/scripts/prepare_template.py) is run first, to remove examples and unnecessary boilerplate
 - `custom_nodes.json` is modified to add or remove custom nodes you need, making sure to also add or remove their dependencies from `cog.yaml`
 - run `./scripts/install_custom_nodes.py` to install the custom nodes (or `./scripts/reset.py` to reinstall ComfyUI and all custom nodes)
 - the workflow is added as `workflow_api.json`
@@ -200,16 +200,16 @@ After running the training, you'll have your own ComfyUI model with your customi
 Clone this repository:
 
 ```sh
-git clone --recurse-submodules https://github.com/fofr/cog-comfyui.git
+git clone --recurse-submodules https://github.com/replicate/cog-comfyui.git
 ```
 
-Run the [following script](https://github.com/fofr/cog-comfyui/blob/main/scripts/install_custom_nodes.py) to install all the custom nodes:
+Run the [following script](https://github.com/replicate/cog-comfyui/blob/main/scripts/install_custom_nodes.py) to install all the custom nodes:
 
 ```sh
 ./scripts/install_custom_nodes.py
 ```
 
-You can view the list of nodes in [custom_nodes.json](https://github.com/fofr/cog-comfyui/blob/main/custom_nodes.json)
+You can view the list of nodes in [custom_nodes.json](https://github.com/replicate/cog-comfyui/blob/main/custom_nodes.json)
 
 ### Running the Web UI from your Cog container
 
