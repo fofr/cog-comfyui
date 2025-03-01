@@ -52,3 +52,6 @@ predict:
     - inputs:
         workflow_json: https://raw.githubusercontent.com/replicate/cog-comfyui/refs/heads/main/examples/api_workflows/birefnet_api.json
         return_temp_files: true
+    - inputs:
+        workflow_json: https://raw.githubusercontent.com/replicate/cog-comfyui/refs/heads/main/examples/api_workflows/depth_anything_v2_api.json
+        return_temp_files: true
