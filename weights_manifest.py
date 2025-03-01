@@ -101,9 +101,7 @@ class WeightsManifest:
         def generate_weights_map(keys, directory_name):
             if directory_name == "BIREFNET":
                 directory_name = "BiRefNet"
-            elif directory_name == "LLM":
-                directory_name = "LLM"
-            else:
+            elif directory_name not in ["LLM", "FBCNN"]:
                 directory_name = directory_name.lower()
 
             dest_path = {

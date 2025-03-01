@@ -1,0 +1,39 @@
+{
+  "1": {
+    "inputs": {
+      "image": "https://replicate.delivery/czjl/bN35SK7p4yqNAxfG9Tgak5YuyfvTcGiAbqPltpbKEc0VRfJoA/tmp95lh8mhu.jpg",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "4": {
+    "inputs": {
+      "filename_prefix": "ComfyUI",
+      "images": [
+        "7",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Image"
+    }
+  },
+  "7": {
+    "inputs": {
+      "auto_detect": "enable",
+      "compression_level": 0,
+      "image": [
+        "1",
+        0
+      ]
+    },
+    "class_type": "JPEG artifacts removal FBCNN",
+    "_meta": {
+      "title": "JPEG Compression Removal - FBCNN"
+    }
+  }
+}

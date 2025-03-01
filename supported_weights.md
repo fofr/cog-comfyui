@@ -811,6 +811,10 @@
 - depth_anything_v2_vits_fp16.safetensors
 - depth_anything_v2_vits_fp32.safetensors
 
+## FBCNN (Jpeg artifact removal)
+
+- fbcnn_color.pth
+
 ## Anyline
 
 - MTEED.pth

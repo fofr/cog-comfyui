@@ -254,5 +254,9 @@
   {
     "repo": "https://github.com/kijai/ComfyUI-DepthAnythingV2",
     "commit": "003d7b4"
+  },
+  {
+    "repo": "https://github.com/Miosp/ComfyUI-FBCNN",
+    "commit": "c737c93"
   }
 ]

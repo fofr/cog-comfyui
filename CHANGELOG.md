@@ -4,10 +4,12 @@ New custom nodes:
 
 - [Add ComfyUI-DepthAnythingV2](https://github.com/kijai/ComfyUI-DepthAnythingV2) custom node
 - [Add ComfyUI_BiRefNet_ll](https://github.com/lldacing/ComfyUI_BiRefNet_ll) custom node
+- [Add ComfyUI-FBCNN](https://github.com/Miosp/ComfyUI-FBCNN) custom node
 
-New controlnet weights:
+New weights:
 
 - [Add controlnet-densepose-sdxl.safetensors to controlnet](https://huggingface.co/jschoormans/controlnet-densepose-sdxl/blob/main/diffusion_pytorch_model.safetensors)
+- [Add fbcnn_color.pth to fbcnn](https://github.com/jiaxi-jiang/FBCNN/releases/download/v1.0/fbcnn_color.pth)
 
 DepthAnything weights:
 
