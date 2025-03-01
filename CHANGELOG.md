@@ -1,3 +1,25 @@
+## 2025-03-01
+
+New custom nodes:
+
+- [Add ComfyUI_BiRefNet_ll](https://github.com/lldacing/ComfyUI_BiRefNet_ll) custom node
+
+BiRefNet weights:
+
+- [Add swin_large_patch4_window12_384_22kto1k.pth to birefnet](https://huggingface.co/ViperYX/BiRefNet/blob/main/swin_large_patch4_window12_384_22kto1k.pth)
+- [Add BiRefNet-ep480.pth to birefnet](https://huggingface.co/ViperYX/BiRefNet/blob/main/BiRefNet-ep480.pth)
+- [Add BiRefNet-DIS_ep580.pth to birefnet](https://huggingface.co/ViperYX/BiRefNet/blob/main/BiRefNet-DIS_ep580.pth)
+- [Add DIS-TR_TEs.safetensors to birefnet](https://huggingface.co/ZhengPeng7/BiRefNet-DIS5K-TR_TEs/blob/main/model.safetensors)
+- [Add COD.safetensors to birefnet](https://huggingface.co/ZhengPeng7/BiRefNet-COD/blob/main/model.safetensors)
+- [Add HRSOD.safetensors to birefnet](https://huggingface.co/ZhengPeng7/BiRefNet-HRSOD/blob/main/model.safetensors)
+- [Add DIS.safetensors to birefnet](https://huggingface.co/ZhengPeng7/BiRefNet-DIS5K/blob/main/model.safetensors)
+- [Add Matting.safetensors to birefnet](https://huggingface.co/ZhengPeng7/BiRefNet-matting/blob/main/model.safetensors)
+- [Add Portrait.safetensors to birefnet](https://huggingface.co/ZhengPeng7/BiRefNet-portrait/blob/main/model.safetensors)
+- [Add General-Lite-2K.safetensors to birefnet](https://huggingface.co/ZhengPeng7/BiRefNet_lite-2K/blob/main/model.safetensors)
+- [Add General-Lite.safetensors to birefnet](https://huggingface.co/ZhengPeng7/BiRefNet_T/blob/main/model.safetensors)
+- [Add General-HR.safetensors to birefnet](https://huggingface.co/ZhengPeng7/BiRefNet_HR/blob/main/model.safetensors)
+- [Add General.safetensors to birefnet](https://huggingface.co/ZhengPeng7/BiRefNet/blob/main/model.safetensors)
+
 ## 2025-02-27
 
 Wan 2.1 weights:

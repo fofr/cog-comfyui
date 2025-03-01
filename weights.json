@@ -829,5 +829,23 @@
   ],
   "NSFW_DETECTOR": [
     "vit-base-nsfw-detector"
+  ],
+  "BIREFNET": [
+    "BiRefNet-DIS_ep580.pth",
+    "BiRefNet-ep480.pth",
+    "COD.safetensors",
+    "DIS-TR_TEs.safetensors",
+    "DIS.safetensors",
+    "General-HR.safetensors",
+    "General-Lite-2K.safetensors",
+    "General-Lite.safetensors",
+    "General.safetensors",
+    "HRSOD.safetensors",
+    "Matting.safetensors",
+    "Portrait.safetensors",
+    "pvt_v2_b2.pth",
+    "pvt_v2_b5.pth",
+    "swin_base_patch4_window12_384_22kto1k.pth",
+    "swin_large_patch4_window12_384_22kto1k.pth"
   ]
 }

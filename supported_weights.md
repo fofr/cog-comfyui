@@ -776,6 +776,25 @@
 - random_mask_brushnet_ckpt_sdxl_v0.safetensors
 - segmentation_mask_brushnet_sdxl_v1.safetensors
 
+## BiRefNet
+
+- BiRefNet-DIS_ep580.pth
+- BiRefNet-ep480.pth
+- COD.safetensors
+- DIS-TR_TEs.safetensors
+- DIS.safetensors
+- General-HR.safetensors
+- General-Lite-2K.safetensors
+- General-Lite.safetensors
+- General.safetensors
+- HRSOD.safetensors
+- Matting.safetensors
+- Portrait.safetensors
+- pvt_v2_b2.pth
+- pvt_v2_b5.pth
+- swin_base_patch4_window12_384_22kto1k.pth
+- swin_large_patch4_window12_384_22kto1k.pth
+
 ## Style models
 
 - flux1-redux-dev.safetensors

@@ -99,9 +99,12 @@ class WeightsManifest:
         weights_map = {}
 
         def generate_weights_map(keys, directory_name):
-            directory_name = (
-                "LLM" if directory_name == "LLM" else directory_name.lower()
-            )
+            if directory_name == "BIREFNET":
+                directory_name = "BiRefNet"
+            elif directory_name == "LLM":
+                directory_name = "LLM"
+            else:
+                directory_name = directory_name.lower()
 
             dest_path = {
                 "unet": f"{MODELS_PATH}/diffusion_models",

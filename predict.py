@@ -25,7 +25,7 @@ ALL_DIRECTORIES = [OUTPUT_DIR, INPUT_DIR, COMFYUI_TEMP_OUTPUT_DIR]
 IMAGE_TYPES = [".jpg", ".jpeg", ".png", ".webp"]
 VIDEO_TYPES = [".mp4", ".mov", ".avi", ".mkv"]
 
-with open("examples/api_workflows/wan_21_13b_t2v_api.json", "r") as file:
+with open("examples/api_workflows/birefnet_api.json", "r") as file:
     EXAMPLE_WORKFLOW_JSON = file.read()
 
 

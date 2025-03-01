@@ -9,6 +9,7 @@ MODELS = [
     "swin_large_patch4_window12_384_22kto1k.pth",
 ]
 
+
 class ComfyUI_BiRefNet(CustomNodeHelper):
     @staticmethod
     def models():
@@ -18,13 +19,6 @@ class ComfyUI_BiRefNet(CustomNodeHelper):
     def add_weights(weights_to_download, node):
         if node.is_type("BiRefNet_ModelLoader_Zho"):
             weights_to_download.extend(MODELS)
-
-    @staticmethod
-    def weights_map(base_url):
-        return {
-            model: {
-                "url": f"{base_url}/BiRefNet/{model}.tar",
-                "dest": "ComfyUI/models/BiRefNet/",
-            }
-            for model in MODELS
-        }
+        elif node.is_type("AutoDownloadBiRefNetModel"):
+            model_name = node.input("model_name")
+            weights_to_download.append(f"{model_name}.safetensors")

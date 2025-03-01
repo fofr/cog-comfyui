@@ -250,6 +250,7 @@ def get_subfolder():
         "grounding-dino",
         "ultralytics",
         "inpaint",
+        "birefnet",
         "animatediff_models",
         "animatediff_motion_lora",
         "custom_nodes/comfyui_controlnet_aux",

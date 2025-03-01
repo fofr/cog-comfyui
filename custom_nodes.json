@@ -246,5 +246,9 @@
   {
     "repo": "https://github.com/TTPlanetPig/Comfyui_TTP_Toolset",
     "commit": "13bd85f"
+  },
+  {
+    "repo": "https://github.com/lldacing/ComfyUI_BiRefNet_ll",
+    "commit": "8bda575"
   }
 ]

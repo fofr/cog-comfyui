@@ -1,0 +1,52 @@
+{
+  "1": {
+    "inputs": {
+      "image": "https://tjzk.replicate.delivery/models_models_featured_image/6e164365-9cab-422b-bf05-76d127abe3a2/replicate-prediction-_OX51bG7.webp",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "2": {
+    "inputs": {
+      "model": [
+        "3",
+        0
+      ],
+      "images": [
+        "1",
+        0
+      ]
+    },
+    "class_type": "RembgByBiRefNet",
+    "_meta": {
+      "title": "RembgByBiRefNet"
+    }
+  },
+  "3": {
+    "inputs": {
+      "model_name": "General",
+      "device": "AUTO",
+      "dtype": "float32"
+    },
+    "class_type": "AutoDownloadBiRefNetModel",
+    "_meta": {
+      "title": "AutoDownloadBiRefNetModel"
+    }
+  },
+  "4": {
+    "inputs": {
+      "filename_prefix": "ComfyUI",
+      "images": [
+        "2",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Image"
+    }
+  }
+}
