@@ -2,7 +2,23 @@
 
 New custom nodes:
 
+- [Add ComfyUI-DepthAnythingV2](https://github.com/kijai/ComfyUI-DepthAnythingV2) custom node
 - [Add ComfyUI_BiRefNet_ll](https://github.com/lldacing/ComfyUI_BiRefNet_ll) custom node
+
+New controlnet weights:
+
+- [Add controlnet-densepose-sdxl.safetensors to controlnet](https://huggingface.co/jschoormans/controlnet-densepose-sdxl/blob/main/diffusion_pytorch_model.safetensors)
+
+DepthAnything weights:
+
+- [Add depth_anything_v2_vits_fp32.safetensors to depthanything](https://huggingface.co/Kijai/DepthAnythingV2-safetensors/blob/main/depth_anything_v2_vits_fp32.safetensors)
+- [Add depth_anything_v2_vits_fp16.safetensors to depthanything](https://huggingface.co/Kijai/DepthAnythingV2-safetensors/blob/main/depth_anything_v2_vits_fp16.safetensors)
+- [Add depth_anything_v2_vitl_fp32.safetensors to depthanything](https://huggingface.co/Kijai/DepthAnythingV2-safetensors/blob/main/depth_anything_v2_vitl_fp32.safetensors)
+- [Add depth_anything_v2_vitl_fp16.safetensors to depthanything](https://huggingface.co/Kijai/DepthAnythingV2-safetensors/blob/main/depth_anything_v2_vitl_fp16.safetensors)
+- [Add depth_anything_v2_vitb_fp32.safetensors to depthanything](https://huggingface.co/Kijai/DepthAnythingV2-safetensors/blob/main/depth_anything_v2_vitb_fp32.safetensors)
+- [Add depth_anything_v2_vitb_fp16.safetensors to depthanything](https://huggingface.co/Kijai/DepthAnythingV2-safetensors/blob/main/depth_anything_v2_vitb_fp16.safetensors)
+- [Add depth_anything_v2_metric_vkitti_vitl_fp32.safetensors to depthanything](https://huggingface.co/Kijai/DepthAnythingV2-safetensors/blob/main/depth_anything_v2_metric_vkitti_vitl_fp32.safetensors)
+- [Add depth_anything_v2_metric_hypersim_vitl_fp32.safetensors to depthanything](https://huggingface.co/Kijai/DepthAnythingV2-safetensors/blob/main/depth_anything_v2_metric_hypersim_vitl_fp32.safetensors)
 
 BiRefNet weights:
 

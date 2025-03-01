@@ -415,6 +415,7 @@
     "controlnet-canny-sdxl-1.0.fp16.safetensors",
     "controlnet-canny-sdxl-1.0.safetensors",
     "controlnet-canny-sdxl-1.0_V2.safetensors",
+    "controlnet-densepose-sdxl.safetensors",
     "controlnet-depth-sdxl-1.0.fp16.safetensors",
     "controlnet-depth-sdxl-1.0.safetensors",
     "controlnet-openpose-sdxl-1.0.safetensors",
@@ -847,5 +848,15 @@
     "pvt_v2_b5.pth",
     "swin_base_patch4_window12_384_22kto1k.pth",
     "swin_large_patch4_window12_384_22kto1k.pth"
+  ],
+  "DEPTHANYTHING": [
+    "depth_anything_v2_metric_hypersim_vitl_fp32.safetensors",
+    "depth_anything_v2_metric_vkitti_vitl_fp32.safetensors",
+    "depth_anything_v2_vitb_fp16.safetensors",
+    "depth_anything_v2_vitb_fp32.safetensors",
+    "depth_anything_v2_vitl_fp16.safetensors",
+    "depth_anything_v2_vitl_fp32.safetensors",
+    "depth_anything_v2_vits_fp16.safetensors",
+    "depth_anything_v2_vits_fp32.safetensors"
   ]
 }

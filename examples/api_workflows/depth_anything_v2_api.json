@@ -1,0 +1,50 @@
+{
+  "1": {
+    "inputs": {
+      "image": "https://tjzk.replicate.delivery/models_models_featured_image/6e164365-9cab-422b-bf05-76d127abe3a2/replicate-prediction-_OX51bG7.webp",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "4": {
+    "inputs": {
+      "filename_prefix": "ComfyUI",
+      "images": [
+        "6",
+        0
+      ]
+    },
+    "class_type": "SaveImage",
+    "_meta": {
+      "title": "Save Image"
+    }
+  },
+  "5": {
+    "inputs": {
+      "model": "depth_anything_v2_vitl_fp32.safetensors"
+    },
+    "class_type": "DownloadAndLoadDepthAnythingV2Model",
+    "_meta": {
+      "title": "DownloadAndLoadDepthAnythingV2Model"
+    }
+  },
+  "6": {
+    "inputs": {
+      "da_model": [
+        "5",
+        0
+      ],
+      "images": [
+        "1",
+        0
+      ]
+    },
+    "class_type": "DepthAnything_V2",
+    "_meta": {
+      "title": "Depth Anything V2"
+    }
+  }
+}

@@ -250,5 +250,9 @@
   {
     "repo": "https://github.com/lldacing/ComfyUI_BiRefNet_ll",
     "commit": "8bda575"
+  },
+  {
+    "repo": "https://github.com/kijai/ComfyUI-DepthAnythingV2",
+    "commit": "003d7b4"
   }
 ]

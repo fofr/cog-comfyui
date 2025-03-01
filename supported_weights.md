@@ -454,6 +454,7 @@
 - controlnet-canny-sdxl-1.0.fp16.safetensors
 - controlnet-canny-sdxl-1.0.safetensors
 - controlnet-canny-sdxl-1.0_V2.safetensors
+- controlnet-densepose-sdxl.safetensors
 - controlnet-depth-sdxl-1.0.fp16.safetensors
 - controlnet-depth-sdxl-1.0.safetensors
 - controlnet-openpose-sdxl-1.0.safetensors
@@ -798,6 +799,17 @@
 ## Style models
 
 - flux1-redux-dev.safetensors
+
+## DepthAnything
+
+- depth_anything_v2_metric_hypersim_vitl_fp32.safetensors
+- depth_anything_v2_metric_vkitti_vitl_fp32.safetensors
+- depth_anything_v2_vitb_fp16.safetensors
+- depth_anything_v2_vitb_fp32.safetensors
+- depth_anything_v2_vitl_fp16.safetensors
+- depth_anything_v2_vitl_fp32.safetensors
+- depth_anything_v2_vits_fp16.safetensors
+- depth_anything_v2_vits_fp32.safetensors
 
 ## Anyline
 
