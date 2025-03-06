@@ -12,6 +12,10 @@ Updated ComfyUI:
 
 - [Update ComfyUI to latest](https://github.com/comfyanonymous/ComfyUI/compare/b07f116...0124be4)
 
+New custom nodes:
+
+- [Add ComfyUI-LTXVideo](https://github.com/Lightricks/ComfyUI-LTXVideo) custom node
+
 Updated custom nodes:
 
 - [Updated ComfyUI-DepthAnythingV2](https://github.com/kijai/ComfyUI-DepthAnythingV2/compare/003d7b4...9d7cb8c)

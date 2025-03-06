@@ -258,5 +258,9 @@
   {
     "repo": "https://github.com/Miosp/ComfyUI-FBCNN",
     "commit": "c737c93"
+  },
+  {
+    "repo": "https://github.com/Lightricks/ComfyUI-LTXVideo",
+    "commit": "eabd4b6"
   }
 ]
