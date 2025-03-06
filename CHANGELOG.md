@@ -1,5 +1,13 @@
 ## 2025-03-06
 
+New weights:
+
+- [Add ltx-video-2b-v0.9.5.safetensors to checkpoints](https://huggingface.co/Lightricks/LTX-Video/blob/main/ltx-video-2b-v0.9.5.safetensors)
+- [Add llava_llama3_vision.safetensors to clip_vision](https://huggingface.co/Comfy-Org/HunyuanVideo_repackaged/blob/main/split_files/clip_vision/llava_llama3_vision.safetensors)
+- [Add hunyuan_video_image_to_video_720p_bf16.safetensors to diffusion_models](https://huggingface.co/Comfy-Org/HunyuanVideo_repackaged/blob/main/split_files/diffusion_models/hunyuan_video_image_to_video_720p_bf16.safetensors)
+
+Updated ComfyUI:
+
 - [Update ComfyUI to latest](https://github.com/comfyanonymous/ComfyUI/compare/b07f116...0124be4)
 
 Updated custom nodes:
