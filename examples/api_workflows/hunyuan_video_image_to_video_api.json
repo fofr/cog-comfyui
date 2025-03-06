@@ -1,0 +1,264 @@
+{
+  "10": {
+    "inputs": {
+      "vae_name": "hunyuan_video_vae_bf16.safetensors"
+    },
+    "class_type": "VAELoader",
+    "_meta": {
+      "title": "Load VAE"
+    }
+  },
+  "11": {
+    "inputs": {
+      "clip_name1": "clip_l.safetensors",
+      "clip_name2": "llava_llama3_fp8_scaled.safetensors",
+      "type": "hunyuan_video",
+      "device": "default"
+    },
+    "class_type": "DualCLIPLoader",
+    "_meta": {
+      "title": "DualCLIPLoader"
+    }
+  },
+  "12": {
+    "inputs": {
+      "unet_name": "hunyuan_video_image_to_video_720p_bf16.safetensors",
+      "weight_dtype": "default"
+    },
+    "class_type": "UNETLoader",
+    "_meta": {
+      "title": "Load Diffusion Model"
+    }
+  },
+  "13": {
+    "inputs": {
+      "noise": [
+        "25",
+        0
+      ],
+      "guider": [
+        "22",
+        0
+      ],
+      "sampler": [
+        "16",
+        0
+      ],
+      "sigmas": [
+        "17",
+        0
+      ],
+      "latent_image": [
+        "78",
+        1
+      ]
+    },
+    "class_type": "SamplerCustomAdvanced",
+    "_meta": {
+      "title": "SamplerCustomAdvanced"
+    }
+  },
+  "16": {
+    "inputs": {
+      "sampler_name": "euler"
+    },
+    "class_type": "KSamplerSelect",
+    "_meta": {
+      "title": "KSamplerSelect"
+    }
+  },
+  "17": {
+    "inputs": {
+      "scheduler": "simple",
+      "steps": 20,
+      "denoise": 1,
+      "model": [
+        "12",
+        0
+      ]
+    },
+    "class_type": "BasicScheduler",
+    "_meta": {
+      "title": "BasicScheduler"
+    }
+  },
+  "22": {
+    "inputs": {
+      "model": [
+        "67",
+        0
+      ],
+      "conditioning": [
+        "26",
+        0
+      ]
+    },
+    "class_type": "BasicGuider",
+    "_meta": {
+      "title": "BasicGuider"
+    }
+  },
+  "25": {
+    "inputs": {
+      "noise_seed": 187330947843879
+    },
+    "class_type": "RandomNoise",
+    "_meta": {
+      "title": "RandomNoise"
+    }
+  },
+  "26": {
+    "inputs": {
+      "guidance": 6,
+      "conditioning": [
+        "78",
+        0
+      ]
+    },
+    "class_type": "FluxGuidance",
+    "_meta": {
+      "title": "FluxGuidance"
+    }
+  },
+  "67": {
+    "inputs": {
+      "shift": 7,
+      "model": [
+        "12",
+        0
+      ]
+    },
+    "class_type": "ModelSamplingSD3",
+    "_meta": {
+      "title": "ModelSamplingSD3"
+    }
+  },
+  "73": {
+    "inputs": {
+      "tile_size": 256,
+      "overlap": 64,
+      "temporal_size": 64,
+      "temporal_overlap": 8,
+      "samples": [
+        "13",
+        0
+      ],
+      "vae": [
+        "10",
+        0
+      ]
+    },
+    "class_type": "VAEDecodeTiled",
+    "_meta": {
+      "title": "VAE Decode (Tiled)"
+    }
+  },
+  "75": {
+    "inputs": {
+      "filename_prefix": "ComfyUI",
+      "fps": 24,
+      "lossless": false,
+      "quality": 90,
+      "method": "default",
+      "images": [
+        "86",
+        0
+      ]
+    },
+    "class_type": "SaveAnimatedWEBP",
+    "_meta": {
+      "title": "SaveAnimatedWEBP"
+    }
+  },
+  "78": {
+    "inputs": {
+      "width": 720,
+      "height": 720,
+      "length": 57,
+      "batch_size": 1,
+      "positive": [
+        "80",
+        0
+      ],
+      "vae": [
+        "10",
+        0
+      ],
+      "start_image": [
+        "83",
+        0
+      ]
+    },
+    "class_type": "HunyuanImageToVideo",
+    "_meta": {
+      "title": "HunyuanImageToVideo"
+    }
+  },
+  "80": {
+    "inputs": {
+      "prompt": "a woman smiles",
+      "clip": [
+        "11",
+        0
+      ],
+      "clip_vision_output": [
+        "81",
+        0
+      ]
+    },
+    "class_type": "TextEncodeHunyuanVideo_ImageToVideo",
+    "_meta": {
+      "title": "Text Encode Hunyuan Video (ImageToVideo)"
+    }
+  },
+  "81": {
+    "inputs": {
+      "crop": "none",
+      "clip_vision": [
+        "82",
+        0
+      ],
+      "image": [
+        "83",
+        0
+      ]
+    },
+    "class_type": "CLIPVisionEncode",
+    "_meta": {
+      "title": "CLIP Vision Encode"
+    }
+  },
+  "82": {
+    "inputs": {
+      "clip_name": "llava_llama3_vision.safetensors"
+    },
+    "class_type": "CLIPVisionLoader",
+    "_meta": {
+      "title": "Load CLIP Vision"
+    }
+  },
+  "83": {
+    "inputs": {
+      "image": "https://tjzk.replicate.delivery/models_models_featured_image/ef3843c9-fe01-4589-ba9d-5ad9fbfdff14/hex94mc0v9rma0cnbj7vqzv56r.jpeg",
+      "upload": "image"
+    },
+    "class_type": "LoadImage",
+    "_meta": {
+      "title": "Load Image"
+    }
+  },
+  "86": {
+    "inputs": {
+      "batch_index": 4,
+      "length": 4096,
+      "image": [
+        "73",
+        0
+      ]
+    },
+    "class_type": "ImageFromBatch",
+    "_meta": {
+      "title": "ImageFromBatch"
+    }
+  }
+}

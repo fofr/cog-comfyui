@@ -171,6 +171,8 @@
 ## Text Encoders
 
 - gemma_2_2b_fp16.safetensors
+- llava_llama3_fp16.safetensors
+- llava_llama3_fp8_scaled.safetensors
 - oldt5_xxl_fp8_e4m3fn_scaled.safetensors
 - umt5_xxl_fp16.safetensors
 - umt5_xxl_fp8_e4m3fn_scaled.safetensors
