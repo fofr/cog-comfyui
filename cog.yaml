@@ -27,6 +27,7 @@ build:
     - websocket-client==1.6.3
     - diffusers>=0.31.0
     - av
+    - comfyui-frontend-package==1.10.17
 
     # ComfyUI-AdvancedLivePortrait
     - dill

@@ -1,3 +1,7 @@
+## 2025-03-06
+
+- [Update ComfyUI to latest](https://github.com/comfyanonymous/ComfyUI/compare/b07f116...0124be4)
+
 ## 2025-03-01
 
 New custom nodes:
