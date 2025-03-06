@@ -2,6 +2,18 @@
 
 - [Update ComfyUI to latest](https://github.com/comfyanonymous/ComfyUI/compare/b07f116...0124be4)
 
+Updated custom nodes:
+
+- [Updated ComfyUI-DepthAnythingV2](https://github.com/kijai/ComfyUI-DepthAnythingV2/compare/003d7b4...9d7cb8c)
+- [Updated ComfyUI_Patches_ll](https://github.com/lldacing/ComfyUI_Patches_ll/compare/952782a...f12f956)
+- [Updated ComfyUI-HunyuanVideoWrapper](https://github.com/kijai/ComfyUI-HunyuanVideoWrapper/compare/848168b...4863a2a)
+- [Updated ComfyUI-KJNodes](https://github.com/kijai/ComfyUI-KJNodes/compare/1a4259f...fa6d20e)
+- [Updated ComfyUI_UltimateSDUpscale](https://github.com/ssitu/ComfyUI_UltimateSDUpscale/compare/1b6e60d...edc4c95)
+- [Updated ComfyUI_tinyterraNodes](https://github.com/TinyTerra/ComfyUI_tinyterraNodes/compare/b0fd2c9...4de8756)
+- [Updated ComfyUI-Advanced-ControlNet](https://github.com/Kosinkadink/ComfyUI-Advanced-ControlNet/compare/b66cd70...da254b7)
+- [Updated ComfyUI-AnimateDiff-Evolved](https://github.com/Kosinkadink/ComfyUI-AnimateDiff-Evolved/compare/94eb456...916dd55)
+- [Updated ComfyUI-Inspire-Pack](https://github.com/ltdrdata/ComfyUI-Inspire-Pack/compare/ecf8ab6...ca5d942)
+
 ## 2025-03-01
 
 New custom nodes:
