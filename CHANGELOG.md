@@ -1,5 +1,18 @@
-
 ## 2025-03-10
+
+Updated ComfyUI and custom nodes:
+- [Updated ComfyUI-LTXVideo](https://github.com/Lightricks/ComfyUI-LTXVideo/compare/eabd4b6...e2a7351)
+- [Updated ComfyUI_Patches_ll](https://github.com/lldacing/ComfyUI_Patches_ll/compare/f12f956...314a84d)
+- [Updated ComfyUI-HunyuanVideoWrapper](https://github.com/kijai/ComfyUI-HunyuanVideoWrapper/compare/4863a2a...c31f1be)
+- [Updated ComfyMath](https://github.com/evanspearman/ComfyMath/compare/939bb81...c011772)
+- [Updated ComfyUI-KJNodes](https://github.com/kijai/ComfyUI-KJNodes/compare/fa6d20e...2639615)
+- [Updated was-node-suite-comfyui](https://github.com/WASasquatch/was-node-suite-comfyui/compare/3ed45af...9ae952b)
+- [Updated ComfyUI-Custom-Scripts](https://github.com/pythongosssss/ComfyUI-Custom-Scripts/compare/bbda5e5...2c09d59)
+- [Updated ComfyUI_UltimateSDUpscale](https://github.com/ssitu/ComfyUI_UltimateSDUpscale/compare/edc4c95...778a475)
+- [Updated ComfyUI_tinyterraNodes](https://github.com/TinyTerra/ComfyUI_tinyterraNodes/compare/4de8756...3eab514)
+- [Updated ComfyUI-VideoHelperSuite](https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite/compare/4c7858d...031c4ae)
+- [Updated ComfyUI-AnimateDiff-Evolved](https://github.com/Kosinkadink/ComfyUI-AnimateDiff-Evolved/compare/916dd55...9f2d24d)
+- [Update ComfyUI to latest](https://github.com/comfyanonymous/ComfyUI/compare/0124be4...b779349)
 
 More flavours of Wan 2.1:
 

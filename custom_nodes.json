@@ -26,11 +26,11 @@
   },
   {
     "repo": "https://github.com/Kosinkadink/ComfyUI-AnimateDiff-Evolved",
-    "commit": "916dd55"
+    "commit": "9f2d24d"
   },
   {
     "repo": "https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite",
-    "commit": "4c7858d"
+    "commit": "031c4ae"
   },
   {
     "repo": "https://github.com/Kosinkadink/ComfyUI-Advanced-ControlNet",
@@ -50,11 +50,11 @@
   },
   {
     "repo": "https://github.com/TinyTerra/ComfyUI_tinyterraNodes",
-    "commit": "4de8756"
+    "commit": "3eab514"
   },
   {
     "repo": "https://github.com/ssitu/ComfyUI_UltimateSDUpscale",
-    "commit": "edc4c95"
+    "commit": "778a475"
   },
   {
     "repo": "https://github.com/cubiq/ComfyUI_essentials",
@@ -66,7 +66,7 @@
   },
   {
     "repo": "https://github.com/pythongosssss/ComfyUI-Custom-Scripts",
-    "commit": "bbda5e5"
+    "commit": "2c09d59"
   },
   {
     "repo": "https://github.com/BadCafeCode/masquerade-nodes-comfyui",
@@ -83,7 +83,7 @@
   },
   {
     "repo": "https://github.com/WASasquatch/was-node-suite-comfyui",
-    "commit": "3ed45af"
+    "commit": "9ae952b"
   },
   {
     "repo": "https://github.com/fofr/comfyui_segment_anything",
@@ -103,7 +103,7 @@
   },
   {
     "repo": "https://github.com/kijai/ComfyUI-KJNodes",
-    "commit": "fa6d20e"
+    "commit": "2639615"
   },
   {
     "repo": "https://github.com/Fannovel16/ComfyUI-Frame-Interpolation",
@@ -147,7 +147,7 @@
   },
   {
     "repo": "https://github.com/evanspearman/ComfyMath",
-    "commit": "939bb81"
+    "commit": "c011772"
   },
   {
     "repo": "https://github.com/brianfitzgerald/style_aligned_comfy",
@@ -208,7 +208,7 @@
   },
   {
     "repo": "https://github.com/kijai/ComfyUI-HunyuanVideoWrapper",
-    "commit": "4863a2a"
+    "commit": "c31f1be"
   },
   {
     "repo": "https://github.com/fofr/ComfyUI-AdvancedLivePortrait",
@@ -229,7 +229,7 @@
   },
   {
     "repo": "https://github.com/lldacing/ComfyUI_Patches_ll",
-    "commit": "f12f956"
+    "commit": "314a84d"
   },
   {
     "repo": "https://github.com/chengzeyi/Comfy-WaveSpeed",
@@ -261,6 +261,6 @@
   },
   {
     "repo": "https://github.com/Lightricks/ComfyUI-LTXVideo",
-    "commit": "eabd4b6"
+    "commit": "e2a7351"
   }
 ]
