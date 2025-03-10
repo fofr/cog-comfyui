@@ -3,5 +3,6 @@
   "ip_sd35l_instantx.bin": "SD3.5-Large-IP-Adapter.bin",
   "SD3.5-L.safetensors": "sd3.5_large.safetensors",
   "instantid/diffusion_pytorch_model.safetensors": "instantid-controlnet.safetensors",
-  "ae.sft": "ae.safetensors"
+  "ae.sft": "ae.safetensors",
+  "hunyuan_video_v2_replace_image_to_video_720p_bf16.safetensors": "hunyuan_video_image_to_video_720p_bf16.safetensors"
 }

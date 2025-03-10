@@ -592,9 +592,19 @@
     "mochi_preview_fp8_scaled.safetensors",
     "pixelwave_flux1Dev03.safetensors",
     "wan2.1_i2v_480p_14B_bf16.safetensors",
+    "wan2.1_i2v_480p_14B_fp16.safetensors",
+    "wan2.1_i2v_480p_14B_fp8_e4m3fn.safetensors",
+    "wan2.1_i2v_480p_14B_fp8_scaled.safetensors",
     "wan2.1_i2v_720p_14B_bf16.safetensors",
+    "wan2.1_i2v_720p_14B_fp16.safetensors",
+    "wan2.1_i2v_720p_14B_fp8_e4m3fn.safetensors",
+    "wan2.1_i2v_720p_14B_fp8_scaled.safetensors",
     "wan2.1_t2v_1.3B_bf16.safetensors",
-    "wan2.1_t2v_14B_bf16.safetensors"
+    "wan2.1_t2v_1.3B_fp16.safetensors",
+    "wan2.1_t2v_14B_bf16.safetensors",
+    "wan2.1_t2v_14B_fp16.safetensors",
+    "wan2.1_t2v_14B_fp8_e4m3fn.safetensors",
+    "wan2.1_t2v_14B_fp8_scaled.safetensors"
   ],
   "PHOTOMAKER": [
     "photomaker-v1.bin",

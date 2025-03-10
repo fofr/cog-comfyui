@@ -93,6 +93,8 @@ class WeightsManifest:
             return json.load(f)
 
     def get_canonical_weight_str(self, weight_str):
+        if weight_str.endswith(".sft"):
+            weight_str = weight_str[:-4] + ".safetensors"
         return self.synonyms.get(weight_str, weight_str)
 
     def _initialize_weights_map(self):

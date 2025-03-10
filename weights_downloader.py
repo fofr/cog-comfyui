@@ -8,6 +8,7 @@ class WeightsDownloader:
     supported_filetypes = [
         ".ckpt",
         ".safetensors",
+        ".sft",
         ".pt",
         ".pth",
         ".bin",

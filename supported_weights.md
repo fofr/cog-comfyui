@@ -567,15 +567,25 @@
 - flux1-fill-dev.safetensors
 - flux1-schnell-fp8-e4m3fn.safetensors
 - hunyuan_video_720_fp8_e4m3fn.safetensors
-- hunyuan_video_image_to_video_720p_bf16.safetensors
+- hunyuan_video_image_to_video_720p_bf16.safetensors (Also available as hunyuan_video_v2_replace_image_to_video_720p_bf16.safetensors)
 - mochi/mochi_preview_dit_fp8_e4m3fn.safetensors
 - mochi_preview_bf16.safetensors
 - mochi_preview_fp8_scaled.safetensors
 - pixelwave_flux1Dev03.safetensors
 - wan2.1_i2v_480p_14B_bf16.safetensors
+- wan2.1_i2v_480p_14B_fp16.safetensors
+- wan2.1_i2v_480p_14B_fp8_e4m3fn.safetensors
+- wan2.1_i2v_480p_14B_fp8_scaled.safetensors
 - wan2.1_i2v_720p_14B_bf16.safetensors
+- wan2.1_i2v_720p_14B_fp16.safetensors
+- wan2.1_i2v_720p_14B_fp8_e4m3fn.safetensors
+- wan2.1_i2v_720p_14B_fp8_scaled.safetensors
 - wan2.1_t2v_1.3B_bf16.safetensors
+- wan2.1_t2v_1.3B_fp16.safetensors
 - wan2.1_t2v_14B_bf16.safetensors
+- wan2.1_t2v_14B_fp16.safetensors
+- wan2.1_t2v_14B_fp8_e4m3fn.safetensors
+- wan2.1_t2v_14B_fp8_scaled.safetensors
 - flux1-dev.safetensors
 - flux1-schnell.safetensors
 - iclight_sd15_fbc.safetensors

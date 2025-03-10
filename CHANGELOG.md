@@ -1,3 +1,19 @@
+
+## 2025-03-10
+
+More flavours of Wan 2.1:
+
+- [Add wan2.1_t2v_14B_fp8_scaled.safetensors to diffusion_models](https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/blob/main/split_files/diffusion_models/wan2.1_t2v_14B_fp8_scaled.safetensors)
+- [Add wan2.1_t2v_14B_fp8_e4m3fn.safetensors to diffusion_models](https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/blob/main/split_files/diffusion_models/wan2.1_t2v_14B_fp8_e4m3fn.safetensors)
+- [Add wan2.1_t2v_14B_fp16.safetensors to diffusion_models](https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/blob/main/split_files/diffusion_models/wan2.1_t2v_14B_fp16.safetensors)
+- [Add wan2.1_t2v_1.3B_fp16.safetensors to diffusion_models](https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/blob/main/split_files/diffusion_models/wan2.1_t2v_1.3B_fp16.safetensors)
+- [Add wan2.1_i2v_720p_14B_fp8_scaled.safetensors to diffusion_models](https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/blob/main/split_files/diffusion_models/wan2.1_i2v_720p_14B_fp8_scaled.safetensors)
+- [Add wan2.1_i2v_720p_14B_fp8_e4m3fn.safetensors to diffusion_models](https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/blob/main/split_files/diffusion_models/wan2.1_i2v_720p_14B_fp8_e4m3fn.safetensors)
+- [Add wan2.1_i2v_720p_14B_fp16.safetensors to diffusion_models](https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/blob/main/split_files/diffusion_models/wan2.1_i2v_720p_14B_fp16.safetensors)
+- [Add wan2.1_i2v_480p_14B_fp8_scaled.safetensors to diffusion_models](https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/blob/main/split_files/diffusion_models/wan2.1_i2v_480p_14B_fp8_scaled.safetensors)
+- [Add wan2.1_i2v_480p_14B_fp8_e4m3fn.safetensors to diffusion_models](https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/blob/main/split_files/diffusion_models/wan2.1_i2v_480p_14B_fp8_e4m3fn.safetensors)
+- [Add wan2.1_i2v_480p_14B_fp16.safetensors to diffusion_models](https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/blob/main/split_files/diffusion_models/wan2.1_i2v_480p_14B_fp16.safetensors)
+
 ## 2025-03-06
 
 New weights:
